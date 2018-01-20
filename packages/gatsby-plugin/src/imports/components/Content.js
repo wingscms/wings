@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import mdr from 'mobiledoc-dom-renderer';
-import { ImageCard } from '../lib/wings-mobiledoc-cards';
+import { ImageCard } from '@wingscms/mobiledoc-cards';
 
 const Renderer = mdr.default;
 
