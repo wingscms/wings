@@ -7,4 +7,4 @@ export const allCards = [
 export { default as createCard } from './createCard';
 
 export { default as ImageCard } from './ImageCard';
-export { default as ImageCardView } from './ImageCardView';
+export { default as ImageCardView } from './components/ImageCardView';
