@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-plugin-wings",
+  "name": "@wingscms/gatsby-plugin",
   "version": "0.1.1",
   "description": "A Gatsby plugin for Wings",
   "main": "index.js",
