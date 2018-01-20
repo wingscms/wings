@@ -11,7 +11,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "start": "babel -w src --out-dir .",
+    "start": "npm run build -- --watch",
     "build": "babel src --out-dir .",
     "prepublish": "cross-env NODE_ENV=production npm run build"
   },
