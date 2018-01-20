@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "public"
+
+[template]
+  incoming-hooks = ["Wings"]
+
+[template.environment]
+  WINGS_APP_SECRET = "Your Wings app secret"

@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "start": "gatsby develop -p 4000"
+  },
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "gatsby": "^1.9.149",
+    "gatsby-link": "^1.6.32",
+    "gatsby-plugin-netlify": "^1.0.12",
+    "gatsby-plugin-react-helmet": "^1.0.8",
+    "gatsby-plugin-react-next": "^1.0.7",
+    "gatsby-plugin-wings": "^0.1.0",
+    "recompose": "^0.26.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.14.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.5.1"
+  }
+}

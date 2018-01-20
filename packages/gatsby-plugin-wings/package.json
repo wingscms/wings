@@ -1,0 +1,40 @@
+{
+  "name": "gatsby-plugin-wings",
+  "version": "0.1.1",
+  "description": "A Gatsby plugin for Wings",
+  "main": "index.js",
+  "author": "Maarten Busstra <busstra.m@gmail.com>",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "wings"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "start": "babel -w src --out-dir .",
+    "build": "babel src --out-dir .",
+    "prepublish": "cross-env NODE_ENV=production npm run build"
+  },
+  "dependencies": {
+    "babel-eslint": "^8.1.2",
+    "babel-runtime": "^6.26.0",
+    "graphql-tag": "^2.6.1",
+    "mobiledoc-dom-renderer": "^0.6.5",
+    "mobiledoc-kit": "^0.10.20",
+    "node-fetch": "^1.7.3",
+    "react-mobiledoc-editor": "^0.3.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "cross-env": "^5.0.5",
+    "eslint": "^4.14.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.5.1"
+  }
+}
