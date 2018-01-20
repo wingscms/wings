@@ -29,13 +29,16 @@ export default ({
   class Button extends Component {
     static displayName = `${name}Button`;
     static propTypes = {
-      isEditing: PropTypes.bool.isRequired,
+      isEditing: PropTypes.bool,
+    };
+    static defaultProps = {
+      isEditing: false,
     };
     static contextTypes = {
       editor: PropTypes.object,
     };
     render() {
-      const { isEditing = false, ...props } = this.props;
+      const { isEditing, ...props } = this.props;
       const { editor } = this.context;
       return (
         <button
