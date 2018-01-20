@@ -1,3 +1,8 @@
 import React from 'react';
 
-export default ({ src }) => <img src={src} />;
+export default ({ src, ...props }) => (
+  <img
+    src={src}
+    {...props}
+  />
+);
