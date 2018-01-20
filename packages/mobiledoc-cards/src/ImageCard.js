@@ -1,6 +1,5 @@
-import React from 'react';
 import createCard from './createCard';
-import ImageCardView from './ImageCardView';
+import ImageCardView from './components/ImageCardView';
 
 export const CARD_NAME = 'ImageCard';
 
