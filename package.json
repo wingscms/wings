@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "lint": "eslint .",
     "changelog": "lerna-changelog"
   },
   "devDependencies": {
