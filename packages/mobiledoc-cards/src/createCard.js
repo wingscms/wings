@@ -14,6 +14,8 @@ export default ({
     static displayName = name;
     static propTypes = {
       isInEditor: PropTypes.bool.isRequired,
+      isEditing: PropTypes.bool.isRequired,
+      edit: PropTypes.func.isRequired,
       payload: PropTypes.object,
     };
     static defaultProps = {
@@ -21,8 +23,9 @@ export default ({
     };
 
     render() {
-      const { isInEditor, payload } = this.props;
-      return isInEditor ? <Editor {...this.props} /> : <ViewComp {...payload} />;
+      const { isInEditor, isEditing, edit, payload } = this.props;
+      if (!isInEditor) return <ViewComp {...payload} />;
+      return !isEditing ? <ViewComp {...payload} onClick={edit} /> : <Editor {...this.props} />;
     }
   }
 
