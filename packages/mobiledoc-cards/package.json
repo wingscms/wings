@@ -1,6 +1,6 @@
 {
   "name": "@wingscms/mobiledoc-cards",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "main": "dist/index.js",
   "scripts": {
     "start": "npm run build -- --watch",
