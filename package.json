@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "bootstrap": "lerna bootstrap",
     "lint": "eslint .",
     "changelog": "lerna-changelog"
   },
