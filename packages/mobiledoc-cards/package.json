@@ -1,5 +1,5 @@
 {
-  "name": "@wingscms/mobiledoc-cards",
+  "name": "@wingsplatform/mobiledoc-cards",
   "version": "0.4.0",
   "main": "dist/index.js",
   "scripts": {

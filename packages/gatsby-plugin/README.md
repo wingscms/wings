@@ -2,7 +2,7 @@
 
 ## Install
 
-`npm install @wingscms/gatsby-plugin`
+`npm install @wingsplatform/gatsby-plugin`
 
 ## Usage
 
@@ -12,7 +12,7 @@ In your `gatsby-config.js`:
 module.exports = {
   plugins: [
     {
-      resolve: '@wingscms/gatsby-plugin',
+      resolve: '@wingsplatform/gatsby-plugin',
       options: {
         appSecret: process.env.WINGS_APP_SECRET,
         components: {

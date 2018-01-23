@@ -10,7 +10,7 @@ module.exports = {
     'gatsby-plugin-react-next',
     'gatsby-plugin-netlify',
     {
-      resolve: '@wingscms/gatsby-plugin',
+      resolve: '@wingsplatform/gatsby-plugin',
       options: {
         appSecret: process.env.WINGS_APP_SECRET,
         components: {

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, setPropTypes, mapProps } from 'recompose';
-import { Content } from '@wingscms/gatsby-plugin';
+import { Content } from '@wingsplatform/gatsby-plugin';
 
 export default compose(
   mapProps(({ pathContext: { article } }) => ({ article })),
