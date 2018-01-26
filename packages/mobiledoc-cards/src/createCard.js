@@ -32,22 +32,19 @@ export default ({
   class Button extends Component {
     static displayName = `${name}Button`;
     static propTypes = {
-      isEditing: PropTypes.bool,
+      edit: PropTypes.bool,
     };
     static defaultProps = {
-      isEditing: false,
+      edit: false,
     };
     static contextTypes = {
       editor: PropTypes.object,
     };
     render() {
-      const { isEditing, ...props } = this.props;
+      const { edit, ...props } = this.props;
       const { editor } = this.context;
       return (
-        <button
-          {...props}
-          onClick={() => editor.insertCard(name, defaultPayload, isEditing)}
-        >
+        <button {...props} onClick={() => editor.insertCard(name, defaultPayload, edit)}>
           {buttonText || name}
         </button>
       );
