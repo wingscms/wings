@@ -1,6 +1,6 @@
 {
   "name": "@wingsplatform/gatsby-plugin",
-  "version": "0.1.20",
+  "version": "0.1.21",
   "description": "A Gatsby plugin for Wings",
   "main": "index.js",
   "author": "Maarten Busstra <busstra.m@gmail.com>",
