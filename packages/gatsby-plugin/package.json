@@ -16,7 +16,6 @@
     "prepublish": "cross-env NODE_ENV=production npm run build"
   },
   "dependencies": {
-    "@wingsplatform/mobiledoc-cards": "^0.5.1",
     "babel-runtime": "^6.26.0",
     "graphql-tag": "^2.6.1",
     "lodash.includes": "^4.3.0",
@@ -26,7 +25,11 @@
     "react-mobiledoc-editor": "^0.3.0"
   },
   "devDependencies": {
+    "@wingsplatform/mobiledoc-cards": "^0.5.1",
     "babel-cli": "^6.26.0",
     "cross-env": "^5.0.5"
+  },
+  "peerDependencies": {
+    "@wingsplatform/mobiledoc-cards": "^0.5.1"
   }
 }
