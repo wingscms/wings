@@ -22,7 +22,8 @@ export default class Content extends Component {
 
   static defaultProps = {
     cards: [],
-    unknownCardHandler: () => console.error('Unknown card type encountered.'),
+    unknownCardHandler: ({ env: { name } }) =>
+      console.error(`Unknown card type ${name} encountered.`),
   };
 
   componentDidMount() {
