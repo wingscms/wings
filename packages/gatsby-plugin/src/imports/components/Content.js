@@ -1,26 +1,47 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import includes from 'lodash.includes';
 import mdr from 'mobiledoc-dom-renderer';
-import { ImageCard } from '@wingsplatform/mobiledoc-cards';
+import { allCards } from '@wingsplatform/mobiledoc-cards';
+
+const mergeCards = (base, overrides) => {
+  const names = overrides.map(({ name }) => name);
+  const filtered = allCards.filter(c => !includes(names, c.name));
+
+  return filtered.concat(overrides);
+};
 
 const Renderer = mdr.default;
-
 
 export default class Content extends Component {
   static propTypes = {
     content: PropTypes.string.isRequired,
+    cards: PropTypes.array,
+    unknownCardHandler: PropTypes.func,
   };
+
+  static defaultProps = {
+    cards: [],
+    unknownCardHandler: () => console.error('Unknown card type encountered.'),
+  };
+
   componentDidMount() {
-    const rendered = this.renderer.render(JSON.parse(this.props.content));
+    const renderer = new Renderer({
+      cards: mergeCards(allCards, this.props.cards),
+      unknownCardHandler: this.props.unknownCardHandler,
+    });
+
+    const rendered = renderer.render(JSON.parse(this.props.content));
     this.ref.appendChild(rendered.result);
   }
 
-  renderer = new Renderer({
-    cards: [ImageCard],
-    // unknownCardHandler: () => {},
-  });
-
   render() {
-    return <div ref={(ref) => { this.ref = ref; }} />;
+    return (
+      <div
+        ref={(ref) => {
+          this.ref = ref;
+        }}
+      />
+    );
   }
 }
