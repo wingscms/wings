@@ -1,6 +1,6 @@
 {
   "name": "@wingsplatform/gatsby-plugin",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "description": "A Gatsby plugin for Wings",
   "main": "index.js",
   "author": "Maarten Busstra <busstra.m@gmail.com>",
@@ -25,7 +25,7 @@
     "react-mobiledoc-editor": "^0.3.0"
   },
   "devDependencies": {
-    "@wingsplatform/mobiledoc-cards": "^0.5.1",
+    "@wingsplatform/mobiledoc-cards": "^0.5.2",
     "babel-cli": "^6.26.0",
     "cross-env": "^5.0.5"
   },
