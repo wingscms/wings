@@ -37,11 +37,13 @@ export default class Content extends Component {
   }
 
   render() {
+    const { content, cards, unknownCardHandler, ...props } = this.props;
     return (
       <div
         ref={(ref) => {
           this.ref = ref;
         }}
+        {...props}
       />
     );
   }
