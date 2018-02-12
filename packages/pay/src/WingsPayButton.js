@@ -8,7 +8,6 @@ import withElements from './withElements';
 import withProvider from './withProvider';
 import DefaultButton from './DefaultButton';
 
-
 class WingsPayButton extends Component {
   static propTypes = {
     amount: PropTypes.number,
