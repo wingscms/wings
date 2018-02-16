@@ -2,14 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import includes from 'lodash.includes';
 import mdr from 'mobiledoc-dom-renderer';
-import _slugify from 'slugify';
 import { allCards } from '../';
-
-const slugify = s =>
-  _slugify(s, {
-    remove: /[$*_+~.()'"!\-:@]/g,
-    lower: true,
-  });
+import { slugify } from '../lib/utils';
 
 const Renderer = mdr.default;
 
@@ -21,7 +15,6 @@ const mergeCards = (base, overrides) => {
 };
 
 export default class Content extends Component {
-  static slugify = slugify;
   static propTypes = {
     content: PropTypes.string,
     cards: PropTypes.array,
