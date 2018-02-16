@@ -2,10 +2,10 @@
   "name": "@wingsplatform/pay",
   "version": "0.1.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "build/index.js",
   "scripts": {
     "start": "npm run build -- --watch",
-    "build": "babel src --out-dir dist",
+    "build": "babel src --out-dir build",
     "prepublish": "cross-env NODE_ENV=production npm run build"
   },
   "author": "Maarten Busstra <busstra.m@gmail.com>",
