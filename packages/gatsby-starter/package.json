@@ -7,6 +7,7 @@
     "start": "gatsby develop -p 4000"
   },
   "dependencies": {
+    "@wingsplatform/content": "^0.6.1",
     "@wingsplatform/gatsby-plugin": "^0.2.0",
     "dotenv": "^4.0.0",
     "gatsby": "^1.9.149",

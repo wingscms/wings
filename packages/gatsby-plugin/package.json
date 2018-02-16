@@ -24,6 +24,6 @@
     "cross-env": "^5.0.5"
   },
   "peerDependencies": {
-    "@wingsplatform/mobiledoc-cards": "^0.5.1"
+    "@wingsplatform/content": "^0.5.1"
   }
 }
