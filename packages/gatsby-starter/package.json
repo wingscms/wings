@@ -1,14 +1,14 @@
 {
   "name": "@wingsplatform/gatsby-starter",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop -p 4000"
   },
   "dependencies": {
-    "@wingsplatform/content": "^0.6.1",
-    "@wingsplatform/gatsby-plugin": "^0.2.0",
+    "@wingsplatform/content": "^0.6.2",
+    "@wingsplatform/gatsby-plugin": "^0.2.1",
     "dotenv": "^4.0.0",
     "gatsby": "^1.9.149",
     "gatsby-link": "^1.6.32",
