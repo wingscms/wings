@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import includes from 'lodash.includes';
 import mdr from 'mobiledoc-dom-renderer';
-import { allCards } from '@wingsplatform/mobiledoc-cards';
 import _slugify from 'slugify';
+import { allCards } from '../';
 
 const slugify = s => _slugify(s, {
   remove: /[$*_+~.()'"!\-:@]/g,
