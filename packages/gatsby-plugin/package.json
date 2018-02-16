@@ -22,7 +22,8 @@
     "mobiledoc-dom-renderer": "^0.6.5",
     "mobiledoc-kit": "^0.10.20",
     "node-fetch": "^1.7.3",
-    "react-mobiledoc-editor": "^0.3.0"
+    "react-mobiledoc-editor": "^0.3.0",
+    "slugify": "^1.2.9"
   },
   "devDependencies": {
     "@wingsplatform/mobiledoc-cards": "^0.5.2",
