@@ -2,7 +2,14 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "lint": "eslint .",
-    "changelog": "lerna-changelog"
+    "changelog": "lerna-changelog",
+    "lint": "eslint .",
+    "prettier": "prettier-eslint --write \"**/*.js\"",
+    "pre-commit": "lint-staged"
+  },
+  "pre-commit": ["pre-commit"],
+  "lint-staged": {
+    "*.js": ["prettier-eslint --write", "eslint", "git add"]
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -17,6 +24,10 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
     "lerna": "^2.7.1",
-    "lerna-changelog": "^0.7.0"
+    "lerna-changelog": "^0.7.0",
+    "lint-staged": "^6.1.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.10.2",
+    "prettier-eslint-cli": "^4.7.1"
   }
 }
