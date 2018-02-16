@@ -2,3 +2,4 @@
 packages/*/build
 
 packages/gatsby-plugin/imports
+packages/gatsby-plugin/*.js
