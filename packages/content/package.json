@@ -1,5 +1,5 @@
 {
-  "name": "@wingsplatform/mobiledoc-cards",
+  "name": "@wingsplatform/content",
   "version": "0.6.1",
   "main": "build/index.js",
   "scripts": {

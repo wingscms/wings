@@ -5,10 +5,11 @@ import mdr from 'mobiledoc-dom-renderer';
 import _slugify from 'slugify';
 import { allCards } from '../';
 
-const slugify = s => _slugify(s, {
-  remove: /[$*_+~.()'"!\-:@]/g,
-  lower: true,
-});
+const slugify = s =>
+  _slugify(s, {
+    remove: /[$*_+~.()'"!\-:@]/g,
+    lower: true,
+  });
 
 const Renderer = mdr.default;
 
@@ -55,11 +56,10 @@ export default class Content extends Component {
 
     const doc = JSON.parse(content);
     this.props.onLoad({
-      headers:
-        doc.cards
-          .filter(c => c[0] === 'HeaderCard')
-          .map(c => c[1])
-          .map(({ title }) => ({ id: slugify(title), title })),
+      headers: doc.cards
+        .filter(c => c[0] === 'HeaderCard')
+        .map(c => c[1])
+        .map(({ title }) => ({ id: slugify(title), title })),
     });
   };
 

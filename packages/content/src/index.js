@@ -1,8 +1,6 @@
 import ImageCard from './ImageCard';
 
-export const allCards = [
-  ImageCard,
-];
+export const allCards = [ImageCard];
 
 export { default as createCard } from './createCard';
 
