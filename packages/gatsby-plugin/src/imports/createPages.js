@@ -1,5 +1,3 @@
-import { mapProps } from 'recompose';
-
 const articleQuery = `
   {
     allWingsArticle {
@@ -20,8 +18,15 @@ const articleQuery = `
 `;
 
 export default async (
-  { boundActionCreators: { createPage }, graphql },
-  { components: { article } = [] },
+  {
+    boundActionCreators: { createPage },
+    graphql,
+  },
+  {
+    components: {
+      article,
+    } = [],
+  },
 ) => {
   if (!article) {
     console.error('article component unspecified');
@@ -34,7 +39,7 @@ export default async (
     if (!node.article.slug) return null;
     return createPage({
       path: `/${node.article.slug}`,
-      component: mapProps(({ pathContext: { article: a } }) => ({ article: a }))(article),
+      component: article,
       context: {
         id: node.id,
         article: node.article,
