@@ -8,6 +8,23 @@ const articleQuery = `
             title
             slug
             content
+            platforms {
+              all {
+                title
+                description
+                imageUrl
+              }
+              facebook {
+                title
+                description
+                imageUrl
+              }
+              twitter {
+                title
+                description
+                imageUrl
+              }
+            }
             updatedAt
             createdAt
           }
@@ -18,15 +35,8 @@ const articleQuery = `
 `;
 
 export default async (
-  {
-    boundActionCreators: { createPage },
-    graphql,
-  },
-  {
-    components: {
-      article,
-    } = [],
-  },
+  { boundActionCreators: { createPage }, graphql },
+  { components: { article } = [] },
 ) => {
   if (!article) {
     console.error('article component unspecified');

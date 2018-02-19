@@ -7,15 +7,30 @@ const articleQuery = `
       title
       slug
       content
+      platforms {
+        all {
+          title
+          description
+          imageUrl
+        }
+        facebook {
+          title
+          description
+          imageUrl
+        }
+        twitter {
+          title
+          description
+          imageUrl
+        }
+      }
       updatedAt
       createdAt
     }
   }
 `;
 
-export default async ({
-  boundActionCreators: { createNode },
-}, { endpoint, appSecret }) => {
+export default async ({ boundActionCreators: { createNode } }, { endpoint, appSecret }) => {
   try {
     const res = await query({
       query: articleQuery,
