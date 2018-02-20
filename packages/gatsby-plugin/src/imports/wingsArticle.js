@@ -12,11 +12,11 @@ const withSeo = Comp => (props) => {
         meta={[
           { name: 'description', content: all.description },
 
-          { name: 'og:title', content: facebook.title },
-          { name: 'og:description', content: facebook.description },
-          { name: 'og:image', content: facebook.imageUrl },
-          { name: 'og:image:secure_url', content: facebook.imageUrl },
-          { name: 'og:type', content: 'article' },
+          { property: 'og:title', content: facebook.title },
+          { property: 'og:description', content: facebook.description },
+          { property: 'og:image', content: facebook.imageUrl },
+          { property: 'og:image:secure_url', content: facebook.imageUrl },
+          { property: 'og:type', content: 'article' },
 
           { name: 'twitter:card', content: 'summary_large_image' },
           { name: 'twitter:title', content: twitter.title },
