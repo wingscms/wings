@@ -1,6 +1,6 @@
 {
   "name": "@wingsplatform/content",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "main": "build/index.js",
   "scripts": {
     "start": "npm run build -- --watch",
