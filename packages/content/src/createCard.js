@@ -20,7 +20,7 @@ export default ({
     };
     static defaultProps = {
       payload: {},
-      edit: false,
+      edit: () => {},
     };
 
     render() {
