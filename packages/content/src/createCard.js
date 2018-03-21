@@ -15,11 +15,12 @@ export default ({
     static propTypes = {
       isInEditor: PropTypes.bool.isRequired,
       isEditing: PropTypes.bool.isRequired,
-      edit: PropTypes.func.isRequired,
+      edit: PropTypes.func,
       payload: PropTypes.object,
     };
     static defaultProps = {
       payload: {},
+      edit: false,
     };
 
     render() {
