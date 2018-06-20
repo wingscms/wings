@@ -30,8 +30,6 @@ const articleQuery = `
           }
         }
       }
-      updatedAt
-      createdAt
     }
   }
 `;
