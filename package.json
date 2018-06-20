@@ -3,7 +3,6 @@
     "bootstrap": "lerna bootstrap",
     "lint": "eslint .",
     "changelog": "lerna-changelog",
-    "lint": "eslint .",
     "prettier": "prettier-eslint --write \"**/*.js\"",
     "pre-commit": "lint-staged"
   },
