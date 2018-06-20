@@ -15,13 +15,13 @@ const withSeo = Comp => (props) => {
           { property: 'og:title', content: facebook.title },
           { property: 'og:description', content: facebook.description },
           { property: 'og:image', content: facebook.imageUrl },
-          { property: 'og:image:secure_url', content: facebook.imageUrl },
+          { property: 'og:image:secure_url', content: facebook.medium.url },
           { property: 'og:type', content: 'article' },
 
           { name: 'twitter:card', content: 'summary_large_image' },
           { name: 'twitter:title', content: twitter.title },
           { name: 'twitter:description', content: twitter.description },
-          { name: 'twitter:image', content: twitter.imageUrl },
+          { name: 'twitter:image', content: twitter.medium.url },
         ]}
       />
       <Comp {...props} />

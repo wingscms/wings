@@ -12,17 +12,23 @@ const articleQuery = `
               all {
                 title
                 description
-                imageUrl
+                medium {
+                  url
+                }
               }
               facebook {
                 title
                 description
-                imageUrl
+                medium {
+                  url
+                }
               }
               twitter {
                 title
                 description
-                imageUrl
+                medium {
+                  url
+                }
               }
             }
             updatedAt
