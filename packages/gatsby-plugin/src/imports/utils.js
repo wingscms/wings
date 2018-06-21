@@ -7,10 +7,16 @@ export const md5 = d =>
     .update(d)
     .digest('hex');
 
-export const query = async ({ query: q, endpoint = 'https://api.wings-platform.com', token }) => {
+export const query = async ({
+  query: q,
+  endpoint = 'https://api.wings-platform.com',
+  token,
+  project,
+}) => {
   const res = await fetch(`${endpoint}?query=${encodeURIComponent(q)}`, {
     headers: {
       Authorization: `Bearer ${token}`,
+      'X-Wings-Project': project,
     },
   });
   return res.json();

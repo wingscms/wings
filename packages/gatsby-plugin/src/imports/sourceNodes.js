@@ -34,12 +34,13 @@ const articleQuery = `
   }
 `;
 
-export default async ({ boundActionCreators: { createNode } }, { endpoint, appSecret }) => {
+export default async ({ boundActionCreators: { createNode } }, { endpoint, project, appKey }) => {
   try {
     const res = await query({
       query: articleQuery,
       endpoint,
-      token: appSecret,
+      token: appKey,
+      project,
     });
     if (res.error) {
       console.error('Something went wrong connecting to Wings:', res.error);
