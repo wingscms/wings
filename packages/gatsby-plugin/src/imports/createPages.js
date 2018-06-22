@@ -38,9 +38,66 @@ const articleQuery = `
   }
 `;
 
+const eventQuery = `
+  {
+    allWingsCampaignEvent {
+      edges {
+        node {
+          id
+          event {
+            id
+            title
+            slug
+            intro
+            description
+            schedule {
+              start
+            }
+            location {
+              name
+              street
+              city
+              zip
+              country
+            }
+            fee {
+              amount
+              currencyCode
+            }
+            
+            platforms {
+              all {
+                title
+                description
+                medium {
+                  url
+                }
+              }
+              facebook {
+                title
+                description
+                medium {
+                  url
+                }
+              }
+              twitter {
+                title
+                description
+                medium {
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 export default async (
   { boundActionCreators: { createPage }, graphql },
-  { components: { article } = [] },
+  { components: { article, event } = [] },
 ) => {
   if (!article) {
     console.error('article component unspecified');
@@ -49,6 +106,8 @@ export default async (
 
   const res = await graphql(articleQuery);
   if (!res.data) return;
+  const events = await graphql(eventQuery);
+
   res.data.allWingsArticle.edges.forEach(({ node }) => {
     if (!node.article.slug) return null;
     return createPage({
@@ -57,6 +116,19 @@ export default async (
       context: {
         id: node.id,
         article: node.article,
+      },
+    });
+  });
+
+  events.data.allWingsCampaignEvent.edges.forEach(({ node }) => {
+    if (!node.event.slug) return null;
+
+    return createPage({
+      path: `/events/${node.event.slug}`,
+      component: event,
+      context: {
+        id: node.id,
+        event: node.event,
       },
     });
   });

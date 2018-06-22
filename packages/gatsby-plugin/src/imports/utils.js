@@ -21,15 +21,3 @@ export const query = async ({
   });
   return res.json();
 };
-
-export const articleToNode = a => ({
-  article: a,
-
-  id: a.id,
-  parent: null,
-  children: [],
-  internal: {
-    type: 'WingsArticle',
-    contentDigest: md5(JSON.stringify(a.id)),
-  },
-});
