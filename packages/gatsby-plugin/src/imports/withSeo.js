@@ -2,8 +2,7 @@ import React, { Fragment } from 'react';
 import Helmet from 'react-helmet';
 
 export default nodeName => Comp => (props) => {
-  console.log(props);
-
+  if (!props[nodeName]) return <Comp {...props} />;
   const { all, facebook, twitter } = props[nodeName].platforms;
   return (
     <Fragment>
