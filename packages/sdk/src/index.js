@@ -1,16 +1,16 @@
+import 'babel-polyfill';
+import { GraphQLClient } from 'graphql-request';
+
 export default class Wings {
   constructor({ endpoint = 'https://api.wings-platform.com', appKey, project }) {
-    this.endpoint = endpoint;
-    this.token = appKey;
-    this.project = project;
-  }
-  async query(query) {
-    const res = await fetch(`${this.endpoint}?query=${encodeURIComponent(query)}`, {
+    this.client = new GraphQLClient(endpoint, {
       headers: {
-        Authorization: `Bearer ${this.token}`,
-        'X-Wings-Project': this.project,
+        Authorization: `Bearer ${appKey}`,
+        'X-Wings-Project': project,
       },
     });
-    return res.json();
+  }
+  async query(...args) {
+    return this.client.request(...args);
   }
 }
