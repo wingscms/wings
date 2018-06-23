@@ -105,31 +105,33 @@ export default async (
   }
 
   const res = await graphql(articleQuery);
-  if (!res.data) return;
+  if (res.data) {
+    res.data.allWingsArticle.edges.forEach(({ node }) => {
+      if (!node.article.slug) return null;
+      return createPage({
+        path: `/${node.article.slug}`,
+        component: article,
+        context: {
+          id: node.id,
+          article: node.article,
+        },
+      });
+    });
+  }
+
   const events = await graphql(eventQuery);
+  if (events.data) {
+    events.data.allWingsCampaignEvent.edges.forEach(({ node }) => {
+      if (!node.event.slug) return null;
 
-  res.data.allWingsArticle.edges.forEach(({ node }) => {
-    if (!node.article.slug) return null;
-    return createPage({
-      path: `/${node.article.slug}`,
-      component: article,
-      context: {
-        id: node.id,
-        article: node.article,
-      },
+      return createPage({
+        path: `/events/${node.event.slug}`,
+        component: event,
+        context: {
+          id: node.id,
+          event: node.event,
+        },
+      });
     });
-  });
-
-  events.data.allWingsCampaignEvent.edges.forEach(({ node }) => {
-    if (!node.event.slug) return null;
-
-    return createPage({
-      path: `/events/${node.event.slug}`,
-      component: event,
-      context: {
-        id: node.id,
-        event: node.event,
-      },
-    });
-  });
+  }
 };

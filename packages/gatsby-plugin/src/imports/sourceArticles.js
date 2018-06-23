@@ -1,16 +1,20 @@
-import { md5, query } from './utils';
+import { md5, query, ensureNodeFields } from './utils';
 
-const articleToNode = a => ({
-  article: a,
+const articleToNode = (a) => {
+  const node = {
+    article: ensureNodeFields(a),
 
-  id: a.id,
-  parent: null,
-  children: [],
-  internal: {
-    type: 'WingsArticle',
-    contentDigest: md5(JSON.stringify(a.id)),
-  },
-});
+    id: a.id,
+    parent: null,
+    children: [],
+    internal: {
+      type: 'WingsArticle',
+      contentDigest: md5(JSON.stringify(a.id)),
+    },
+  };
+
+  return node;
+};
 
 const q = `
 {

@@ -1,7 +1,10 @@
-import { md5, query } from './utils';
+import { md5, query, ensureNodeFields } from './utils';
 
 const eventToNode = e => ({
-  event: { ...e, schedule: { start: e.schedule ? new Date(e.schedule.start) : null } },
+  event: ensureNodeFields({
+    ...e,
+    schedule: { start: e.schedule ? new Date(e.schedule.start) : null },
+  }),
 
   id: e.id,
   parent: null,
