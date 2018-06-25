@@ -13,7 +13,7 @@ export default nodeName => Comp => (props) => {
 
           { property: 'og:title', content: facebook.title },
           { property: 'og:description', content: facebook.description },
-          { property: 'og:image', content: facebook.medium.url },
+          { property: 'og:image', content: facebook.medium && facebook.medium.url },
           { property: 'og:image:secure_url', content: facebook.medium && facebook.medium.url },
           { property: 'og:type', content: nodeName === 'article' ? 'article' : '' },
 
