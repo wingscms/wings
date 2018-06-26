@@ -8,6 +8,9 @@ const articleQuery = `
             title
             slug
             content
+            image {
+              url
+            }
             platforms {
               all {
                 title

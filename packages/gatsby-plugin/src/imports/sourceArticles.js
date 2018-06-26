@@ -23,6 +23,9 @@ const q = `
     title
     slug
     content
+    image {
+      url
+    }
     platforms {
       all {
         title
