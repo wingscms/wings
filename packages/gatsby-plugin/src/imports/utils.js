@@ -24,10 +24,11 @@ export const query = async ({
 
 export const ensureNodeFields = (node) => {
   /* eslint-disable no-param-reassign */
-  const def = { url: '' };
-  node.platforms.all.medium = node.platforms.all.medium || def;
-  node.platforms.facebook.medium = node.platforms.facebook.medium || def;
-  node.platforms.twitter.medium = node.platforms.twitter.medium || def;
+  const defaultMedium = { url: '' };
+  node.platforms.all.medium = node.platforms.all.medium || defaultMedium;
+  node.platforms.facebook.medium = node.platforms.facebook.medium || defaultMedium;
+  node.platforms.twitter.medium = node.platforms.twitter.medium || defaultMedium;
+  node.image = node.image || defaultMedium;
   return node;
   /* eslint-enable no-param-reassign */
 };

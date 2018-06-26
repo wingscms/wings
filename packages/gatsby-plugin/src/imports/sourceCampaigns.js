@@ -27,6 +27,9 @@ const q = `
         slug
         intro
         description
+        image {
+          url
+        }
         schedule {
           start
           end

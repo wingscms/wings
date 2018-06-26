@@ -50,6 +50,9 @@ const eventQuery = `
             slug
             intro
             description
+            image {
+              url
+            }
             schedule {
               start
             }
