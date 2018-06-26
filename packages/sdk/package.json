@@ -1,6 +1,6 @@
 {
   "name": "@wingsplatform/sdk",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "build/index.js",
   "scripts": {
     "start": "npm run build -- --watch",
