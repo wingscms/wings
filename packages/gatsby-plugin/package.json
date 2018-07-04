@@ -22,8 +22,5 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "cross-env": "^5.0.5"
-  },
-  "peerDependencies": {
-    "@wingsplatform/content": "^0.5.1"
   }
 }
