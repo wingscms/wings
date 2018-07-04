@@ -1,5 +1,5 @@
 {
-  "name": "@wingsplatform/content",
+  "name": "@wingsplatform/react",
   "version": "0.7.4",
   "main": "build/index.js",
   "scripts": {
