@@ -118,7 +118,7 @@ export default async (
         path: `/${node.article.slug}`,
         component: article,
         context: {
-          id: node.id,
+          id: node.article.id,
           article: node.article,
         },
       });
@@ -134,7 +134,7 @@ export default async (
         path: `/events/${node.event.slug}`,
         component: event,
         context: {
-          id: node.id,
+          id: node.event.id,
           event: node.event,
         },
       });
