@@ -103,7 +103,7 @@ const eventQuery = `
 
 export default async (
   { boundActionCreators: { createPage }, graphql },
-  { components: { article, event } = [] },
+  { templates: { article, event } = {} },
 ) => {
   if (!article) {
     console.error('article component unspecified');
