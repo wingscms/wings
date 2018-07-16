@@ -22,13 +22,16 @@ export const query = async ({
   return res.json();
 };
 
+const DEFAULT_MEDIUM = { url: '' };
+
 export const ensureNodeFields = (node) => {
   /* eslint-disable no-param-reassign */
-  const defaultMedium = { url: '' };
-  node.platforms.all.medium = node.platforms.all.medium || defaultMedium;
-  node.platforms.facebook.medium = node.platforms.facebook.medium || defaultMedium;
-  node.platforms.twitter.medium = node.platforms.twitter.medium || defaultMedium;
-  node.image = node.image || defaultMedium;
+  ['all', 'facebook', 'twitter'].forEach((platform) => {
+    node.platforms[platform].title = node.platforms[platform].title || '';
+    node.platforms[platform].description = node.platforms[platform].description || '';
+    node.platforms[platform].medium = node.platforms[platform].medium || DEFAULT_MEDIUM;
+    node.image = node.image || DEFAULT_MEDIUM;
+  });
   return node;
   /* eslint-enable no-param-reassign */
 };
