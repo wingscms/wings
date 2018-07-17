@@ -41,6 +41,49 @@ const articleQuery = `
   }
 `;
 
+const entryQuery = `
+  {
+    allWingsEntry {
+      edges {
+        node {
+          entry {
+            id
+            title
+            slug
+            content
+            image {
+              url
+            }
+            platforms {
+              all {
+                title
+                description
+                medium {
+                  url
+                }
+              }
+              facebook {
+                title
+                description
+                medium {
+                  url
+                }
+              }
+              twitter {
+                title
+                description
+                medium {
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 const eventQuery = `
   {
     allWingsCampaignEvent {
@@ -103,7 +146,7 @@ const eventQuery = `
 
 export default async (
   { boundActionCreators: { createPage }, graphql },
-  { templates: { article, event } = {} },
+  { templates: { article, event, entry } = {} },
 ) => {
   if (!article) {
     console.error('article component unspecified');
@@ -120,6 +163,30 @@ export default async (
         context: {
           id: node.article.id,
           article: node.article,
+        },
+      });
+    });
+  }
+
+  const entries = await graphql(entryQuery);
+  if (
+    entries.data &&
+    entries.data.allWingsEntry &&
+    entries.data.allWingsEntry.edges &&
+    entries.data.allWingsEntry.edges.length
+  ) {
+    console.log(entries.data);
+
+    entries.data.allWingsEntry.edges.forEach(({ node }) => {
+      console.log(node);
+
+      if (!(node.entry.slug && entry)) return null;
+      return createPage({
+        path: `/${node.entry.slug}`,
+        component: entry,
+        context: {
+          id: node.entry.id,
+          entry: node.entry,
         },
       });
     });
