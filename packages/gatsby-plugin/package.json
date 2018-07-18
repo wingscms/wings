@@ -20,7 +20,7 @@
     "node-fetch": "^1.7.3"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "cross-env": "^5.0.5"
+    "babel-cli": "6.26.0",
+    "cross-env": "5.1.3"
   }
 }
