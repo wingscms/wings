@@ -1,4 +1,4 @@
-import { md5, query, ensureNodeFields } from './utils';
+import { md5, query, ensureNodeFields } from '../utils';
 
 const entryToNode = e => ({
   entry: ensureNodeFields(e),

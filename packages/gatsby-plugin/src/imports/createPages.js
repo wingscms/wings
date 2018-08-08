@@ -1,152 +1,8 @@
-const articleQuery = `
-  {
-    allWingsArticle {
-      edges {
-        node {
-          article {
-            id
-            title
-            slug
-            content
-            image {
-              url
-            }
-            platforms {
-              all {
-                title
-                description
-                medium {
-                  url
-                }
-              }
-              facebook {
-                title
-                description
-                medium {
-                  url
-                }
-              }
-              twitter {
-                title
-                description
-                medium {
-                  url
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
-
-const entryQuery = `
-  {
-    allWingsEntry {
-      edges {
-        node {
-          entry {
-            id
-            title
-            slug
-            content
-            image {
-              url
-            }
-            platforms {
-              all {
-                title
-                description
-                medium {
-                  url
-                }
-              }
-              facebook {
-                title
-                description
-                medium {
-                  url
-                }
-              }
-              twitter {
-                title
-                description
-                medium {
-                  url
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
-
-const eventQuery = `
-  {
-    allWingsCampaignEvent {
-      edges {
-        node {
-          id
-          event {
-            id
-            title
-            slug
-            intro
-            description
-            image {
-              url
-            }
-            schedule {
-              start
-            }
-            location {
-              name
-              street
-              city
-              zip
-              country
-            }
-            fee {
-              amount
-              currencyCode
-            }
-            
-            platforms {
-              all {
-                title
-                description
-                medium {
-                  url
-                }
-              }
-              facebook {
-                title
-                description
-                medium {
-                  url
-                }
-              }
-              twitter {
-                title
-                description
-                medium {
-                  url
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+import { articleQuery, campaignQuery, entryQuery, eventQuery } from './pagesQueries';
 
 export default async (
   { boundActionCreators: { createPage }, graphql },
-  { templates: { article, event, entry } = {} },
+  { templates: { article, campaign, event, entry } = {} },
 ) => {
   if (!article) {
     console.error('article component unspecified');
@@ -206,5 +62,23 @@ export default async (
         },
       });
     });
+  }
+
+  const campaigns = await graphql(campaignQuery);
+  if (campaigns.data) {
+    campaigns.data.allWingsCampaign.edges.forEach(({ node }) =>
+      // We need to add the ability to change campaign data in Wings (such as the slug here)
+      // if (!node.campaign.slug) return null;
+
+      createPage({
+        // Using id here until slug can be used. See previous comment.
+        path: `/campaigns/${node.campaign.id}`,
+        component: campaign,
+        context: {
+          id: node.campaign.id,
+          campaign: node.campaign,
+        },
+      }),
+    );
   }
 };

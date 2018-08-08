@@ -1,4 +1,4 @@
-import { md5, query, ensureNodeFields } from './utils';
+import { md5, query, ensureNodeFields } from '../utils';
 
 const eventToNode = e => ({
   event: ensureNodeFields({
@@ -21,6 +21,28 @@ const q = `
       id
       title
       slug
+      petitions {
+        id
+        title
+        slug
+        meta {
+          key
+          value
+        }
+        status
+        campaign {
+          id
+        }
+        intro
+        description
+        signatureCount
+        image {
+          id
+          caption
+          alt
+          url
+        }
+      }
       events {
         id
         title
