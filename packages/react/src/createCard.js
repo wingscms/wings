@@ -53,5 +53,6 @@ export default ({
   }
   const Card = classToDOMCard(MobiledocCard);
   Card.Button = Button;
+  Card.View = ViewComp;
   return Card;
 };
