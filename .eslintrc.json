@@ -16,7 +16,8 @@
     "jsx-a11y/alt-text": 0,
     "react/prop-types": 0,
     "react/sort-comp": 0,
-    "no-underscore-dangle": 0
+    "no-underscore-dangle": 0,
+    "import/prefer-default-export": 0
   },
   "globals": {
     "graphql": true
