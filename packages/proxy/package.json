@@ -1,6 +1,6 @@
 {
   "name": "@wingsplatform/proxy",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "build/index.js",
   "scripts": {
     "start": "npm run build -- --watch",
