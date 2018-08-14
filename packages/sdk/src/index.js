@@ -1,20 +1,8 @@
 import qs from 'qs';
 import 'babel-polyfill';
-import { GraphQLClient } from 'graphql-request';
 
-export default class Wings {
-  constructor({ endpoint = 'https://api.wings-platform.com', appKey, project }) {
-    this.client = new GraphQLClient(endpoint, {
-      headers: {
-        Authorization: `Bearer ${appKey}`,
-        'X-Wings-Project': project,
-      },
-    });
-  }
-  async query(...args) {
-    return this.client.request(...args);
-  }
-}
+export { default as Proxy } from './proxy';
+export { default } from './Wings';
 
 export const mediaUrl = (url, opts = {}) => {
   if (!Object.keys(opts).length || (!opts.width && !opts.height)) return mediaUrl;
