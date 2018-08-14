@@ -7,13 +7,7 @@ export default [
   {
     input: 'src/index.js',
     output: [{ file: pkg.main, format: 'cjs' }, { file: pkg.module, format: 'es' }],
-    external: [
-      'apollo-link-http',
-      'apollo-server-lambda',
-      'graphql-request',
-      'graphql-tools',
-      'node-fetch',
-    ],
+    external: ['apollo-link-http', 'graphql-request', 'graphql-tools', 'node-fetch'],
     plugins: [
       resolve(),
       commonjs({
