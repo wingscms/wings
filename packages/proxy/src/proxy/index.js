@@ -20,7 +20,7 @@ export default class Proxy {
           });
           this.server = new ApolloServer({ schema });
 
-          this.lambdaHandler.createHandler();
+          this.lambdaHandler = this.server.createHandler();
           this.bootstrapped = true;
           res();
         })
