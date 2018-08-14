@@ -1,20 +1,22 @@
 {
   "name": "@wingsplatform/proxy",
   "version": "0.0.7",
-  "main": "build/index.js",
+  "main": "build/index.cjs.js",
+  "module": "build/index.esm.js",
   "scripts": {
-    "start": "npm run build -- --watch",
-    "build": "babel src --out-dir build",
+    "start": "rollup -c -w",
+    "build": "rollup -c",
     "prepublish": "cross-env NODE_ENV=production npm run build"
   },
   "author": "Maarten Busstra <busstra.m@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "6.26.0",
-    "cross-env": "5.2.0"
-  },
-  "peerDependencies": {
-    "graphql": "^0.13.2"
+    "cross-env": "5.2.0",
+    "rollup": "^0.64.1",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-commonjs": "^9.1.5",
+    "rollup-plugin-node-resolve": "^3.3.0"
   },
   "dependencies": {
     "apollo-link-http": "^1.5.4",
