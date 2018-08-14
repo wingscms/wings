@@ -1,5 +1,4 @@
 import qs from 'qs';
-import 'babel-polyfill';
 
 export { default } from './Wings';
 

@@ -14,7 +14,6 @@
     "cross-env": "5.2.0"
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
     "graphql-request": "^1.6.0",
     "qs": "^6.5.2"
   }
