@@ -1,7 +1,6 @@
 import qs from 'qs';
 import 'babel-polyfill';
 
-export { default as Proxy } from './proxy';
 export { default } from './Wings';
 
 export const mediaUrl = (url, opts = {}) => {

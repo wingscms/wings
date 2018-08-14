@@ -1,5 +1,4 @@
 import { GraphQLClient } from 'graphql-request';
-import Proxy from './proxy';
 
 export default class Wings {
   constructor({ endpoint = 'https://api.wings-platform.com', appKey, project }) {
@@ -23,9 +22,4 @@ export default class Wings {
     Authorization: `Bearer ${this.appKey}`,
     'X-Wings-Project': this.project,
   });
-
-  createProxy({ schemas = [] } = {}) {
-    const proxy = new Proxy({ wings: this, schemas });
-    return proxy;
-  }
 }
