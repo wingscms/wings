@@ -8,23 +8,25 @@ export default class Proxy {
     this.schemas = schemas;
   }
 
-  bootstrap() {
+  async bootstrap() {
     if (this.pBootstrap) return this.pBootstrap;
 
-    this.pBootstrap = new Promise((res, rej) => {
+    this.pBootstrap = new Promise(async (res, rej) => {
       console.log('bootstrapping Wings proxy');
-      getSchema(this.wings)
-        .then((wingsSchema) => {
-          const schema = mergeSchemas({
-            schemas: [wingsSchema, ...this.schemas],
-          });
-          this.server = new ApolloServer({ schema });
+      try {
+        const wingsSchema = await getSchema(this.wings);
 
-          this.lambdaHandler = this.server.createHandler();
-          this.bootstrapped = true;
-          res();
-        })
-        .catch(rej);
+        const schema = mergeSchemas({
+          schemas: [wingsSchema, ...this.schemas],
+        });
+        this.server = new ApolloServer({ schema });
+
+        this.lambdaHandler = this.server.createHandler();
+        this.bootstrapped = true;
+        res();
+      } catch (e) {
+        rej(e);
+      }
     });
     return this.pBootstrap;
   }
@@ -33,10 +35,13 @@ export default class Proxy {
     return this.handler;
   }
 
-  handler = (...args) => {
+  handler = async (...args) => {
     console.log('proxy handler args:', args);
-    return new Promise((r) => {
-      this.bootstrap().then(() => r(this.lambdaHandler(...args)));
-    });
+    try {
+      await this.bootstrap();
+      this.lambdaHandler(...args);
+    } catch (e) {
+      console.log('handler fail', e);
+    }
   };
 }
