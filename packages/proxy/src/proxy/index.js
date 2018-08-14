@@ -35,13 +35,5 @@ export default class Proxy {
     return this.handler;
   }
 
-  handler = async (...args) => {
-    console.log('proxy handler args:', args);
-    try {
-      await this.bootstrap();
-      this.lambdaHandler(...args);
-    } catch (e) {
-      console.log('handler fail', e);
-    }
-  };
+  handler = (...args) => this.bootstrap().then(() => this.lambdaHandler(...args));
 }
