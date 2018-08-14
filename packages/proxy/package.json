@@ -1,6 +1,6 @@
 {
   "name": "@wingsplatform/proxy",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "main": "build/index.cjs.js",
   "module": "build/index.esm.js",
   "scripts": {
