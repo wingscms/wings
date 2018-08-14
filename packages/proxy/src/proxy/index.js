@@ -33,8 +33,10 @@ export default class Proxy {
     return this.handler;
   }
 
-  handler = (...args) =>
-    new Promise((r) => {
+  handler = (...args) => {
+    console.log('proxy handler args:', args);
+    return new Promise((r) => {
       this.bootstrap().then(() => r(this.lambdaHandler(...args)));
     });
+  };
 }
