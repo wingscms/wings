@@ -15,7 +15,7 @@ export default class Proxy {
       console.log('bootstrapping Wings proxy');
       try {
         const schema = mergeSchemas({
-          schemas: [await getSchema(), ...this.schemas],
+          schemas: [await getSchema(this.wings), ...this.schemas],
         });
         this.server = new ApolloServer({ schema });
 
