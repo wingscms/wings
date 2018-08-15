@@ -21,7 +21,7 @@ export default class Proxy {
         });
         this.server = new ApolloServer({
           schema,
-          context: ({ event, context }) => ({ handler: { event, context } }),
+          context: this.context || (({ event, context }) => ({ handler: { event, context } })),
         });
 
         this.lambdaHandler = this.server.createHandler();
@@ -34,7 +34,8 @@ export default class Proxy {
     return this.pBootstrap;
   }
 
-  createHandler() {
+  createHandler({ context } = {}) {
+    this.context = context;
     return this.handler;
   }
 
