@@ -19,7 +19,10 @@ export default class Proxy {
         const schema = mergeSchemas({
           schemas: [wingsSchema, ...this.schemas],
         });
-        this.server = new ApolloServer({ schema });
+        this.server = new ApolloServer({
+          schema,
+          context: ({ event, context }) => ({ handler: { event, context } }),
+        });
 
         this.lambdaHandler = this.server.createHandler();
         this.bootstrapped = true;
