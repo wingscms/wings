@@ -1,6 +1,6 @@
 {
   "name": "@wingsplatform/react",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "main": "build/index.js",
   "scripts": {
     "start": "npm run build -- --watch",
@@ -20,6 +20,7 @@
     "react-helmet": "^5.2.0"
   },
   "dependencies": {
+    "filter-invalid-dom-props": "^2.0.0",
     "lodash.includes": "^4.3.0",
     "mobiledoc-dom-renderer": "^0.6.5",
     "mobiledoc-kit": "^0.10.20",
