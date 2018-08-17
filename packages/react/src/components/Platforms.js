@@ -1,9 +1,8 @@
 import React, { Fragment } from 'react';
 import Helmet from 'react-helmet';
 
-export default nodeName => Comp => (props) => {
-  if (!props[nodeName]) return <Comp {...props} />;
-  const { all, facebook, twitter } = props[nodeName].platforms;
+const Platforms = ({ data }) => {
+  const { all, facebook, twitter } = data;
   return (
     <Fragment>
       <Helmet
@@ -15,7 +14,7 @@ export default nodeName => Comp => (props) => {
           { property: 'og:description', content: facebook.description },
           { property: 'og:image', content: facebook.medium && facebook.medium.url },
           { property: 'og:image:secure_url', content: facebook.medium && facebook.medium.url },
-          { property: 'og:type', content: nodeName === 'article' ? 'article' : '' },
+          { property: 'og:type', content: 'article' },
 
           { name: 'twitter:card', content: 'summary_large_image' },
           { name: 'twitter:title', content: twitter.title },
@@ -23,7 +22,8 @@ export default nodeName => Comp => (props) => {
           { name: 'twitter:image', content: twitter.medium && twitter.medium.url },
         ]}
       />
-      <Comp {...props} />
     </Fragment>
   );
 };
+
+export default Platforms;
