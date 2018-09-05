@@ -12,14 +12,14 @@ const Platforms = ({ data }) => {
 
           { property: 'og:title', content: facebook.title },
           { property: 'og:description', content: facebook.description },
-          { property: 'og:image', content: facebook.medium && facebook.medium.url },
-          { property: 'og:image:secure_url', content: facebook.medium && facebook.medium.url },
+          { property: 'og:image', content: facebook.imageUrl },
+          { property: 'og:image:secure_url', content: facebook.imageUrl },
           { property: 'og:type', content: 'article' },
 
           { name: 'twitter:card', content: 'summary_large_image' },
           { name: 'twitter:title', content: twitter.title },
           { name: 'twitter:description', content: twitter.description },
-          { name: 'twitter:image', content: twitter.medium && twitter.medium.url },
+          { name: 'twitter:image', content: twitter.imageUrl },
         ]}
       />
     </Fragment>
