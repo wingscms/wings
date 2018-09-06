@@ -3,9 +3,10 @@ import { mergeSchemas } from 'graphql-tools';
 import getSchema from './schema';
 
 export default class Proxy {
-  constructor({ wings, schemas = [] } = {}) {
+  constructor({ wings, schemas = [], apolloOpts = {} } = {}) {
     this.wings = wings;
     this.schemas = schemas;
+    this.apolloOpts = apolloOpts;
   }
 
   async bootstrap() {
@@ -22,6 +23,7 @@ export default class Proxy {
         this.server = new ApolloServer({
           schema,
           context: this.context || (({ event, context }) => ({ handler: { event, context } })),
+          ...this.apolloOpts,
         });
 
         this.lambdaHandler = this.server.createHandler();
