@@ -1,6 +1,6 @@
 {
   "name": "@wingsplatform/react",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "main": "build/index.js",
   "scripts": {
     "start": "npm run build -- --watch",
