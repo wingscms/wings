@@ -10,7 +10,7 @@ const SIZE = enumerate('MEDIUM', 'LARGE', 'EXTRALARGE');
 const FLOAT = enumerate('NONE', 'LEFT', 'RIGHT');
 
 const Image = styled.figure`
-  background: #efefef;
+  background: #f5f8fa;
   margin-left: 0;
   margin-right: 0;
   img {
@@ -20,7 +20,7 @@ const Image = styled.figure`
     width: auto;
   }
   figcaption {
-    background: #eee;
+    background: #f5f8fa;
     font-size: 14px;
     line-height: 1.4;
     padding: 10px;
