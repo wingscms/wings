@@ -1,29 +1,22 @@
 import React, { Fragment } from 'react';
-import Helmet from 'react-helmet';
 
-const Platforms = ({ data }) => {
+export default ({ data }) => {
   const { all, facebook, twitter } = data;
   return (
     <Fragment>
-      <Helmet
-        title={all.title}
-        meta={[
-          { name: 'description', content: all.description },
+      <title>{all.title}</title>
+      <meta name="description" content={all.description} />
 
-          { property: 'og:title', content: facebook.title },
-          { property: 'og:description', content: facebook.description },
-          { property: 'og:image', content: facebook.imageUrl },
-          { property: 'og:image:secure_url', content: facebook.imageUrl },
-          { property: 'og:type', content: 'article' },
+      <meta property="og:title" content={facebook.title} />
+      <meta property="og:description" content={facebook.description} />
+      <meta property="og:image" content={facebook.imageUrl} />
+      <meta property="og:image:secure_url" content={facebook.imageUrl} />
+      <meta property="og:type" content="article" />
 
-          { name: 'twitter:card', content: 'summary_large_image' },
-          { name: 'twitter:title', content: twitter.title },
-          { name: 'twitter:description', content: twitter.description },
-          { name: 'twitter:image', content: twitter.imageUrl },
-        ]}
-      />
+      <meta name="twitter:title" content={twitter.title} />
+      <meta name="twitter:description" content={twitter.description} />
+      <meta name="twitter:image" content={twitter.imageUrl} />
+      <meta name="twitter:card" content="summary_large_image" />
     </Fragment>
   );
 };
-
-export default Platforms;
