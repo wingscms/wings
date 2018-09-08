@@ -1,8 +1,8 @@
-import { ImageCard } from './cards';
+import { ImageCard, QuoteCard } from './cards';
 
-export const allCards = [ImageCard];
+export const allCards = [ImageCard, QuoteCard];
 
-export { ImageCard };
+export { ImageCard, QuoteCard };
 
 export { default as createCard } from './createCard';
 
