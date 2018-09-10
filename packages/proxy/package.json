@@ -13,11 +13,11 @@
   "devDependencies": {
     "babel-cli": "6.26.0",
     "cross-env": "5.2.0",
-    "graphql": "^0.13.2",
-    "rollup": "^0.64.1",
-    "rollup-plugin-babel": "^3.0.7",
-    "rollup-plugin-commonjs": "^9.1.5",
-    "rollup-plugin-node-resolve": "^3.3.0"
+    "graphql": "0.13.2",
+    "rollup": "0.64.1",
+    "rollup-plugin-babel": "3.0.7",
+    "rollup-plugin-commonjs": "9.1.5",
+    "rollup-plugin-node-resolve": "3.3.0"
   },
   "dependencies": {
     "apollo-link-http": "^1.5.4",
