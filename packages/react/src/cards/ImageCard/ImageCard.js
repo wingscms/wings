@@ -1,5 +1,4 @@
-import React from 'react';
-import { compose, setPropTypes, setStatic } from 'recompose';
+import React, { Component } from 'react';
 import classNames from 'classnames';
 import styled from 'styled-components';
 import filterProps from 'filter-invalid-dom-props';
@@ -46,10 +45,11 @@ const Image = styled.figure`
   }
 `;
 
-/* eslint-disable jsx-a11y/alt-text */
-export default compose(
-  setPropTypes({
-    mediaId: PropTypes.string.isRequired,
+export default class ImageCard extends Component {
+  static SIZE = SIZE;
+  static FLOAT = FLOAT;
+  static propTypes = {
+    mediaId: PropTypes.string,
     url: PropTypes.string,
     src: PropTypes.string,
     large: PropTypes.string,
@@ -57,8 +57,8 @@ export default compose(
     caption: PropTypes.string,
     size: PropTypes.number,
     float: PropTypes.number,
-  }),
-  setStatic('defaultProps', {
+  };
+  static defaultProps = {
     mediaId: '',
     url: '',
     large: '',
@@ -67,18 +67,19 @@ export default compose(
     caption: '',
     size: SIZE.LARGE,
     float: FLOAT.NONE,
-  }),
-  setStatic('SIZE', SIZE),
-  setStatic('FLOAT', FLOAT),
-)(({ size, float, className, caption, onClick, ...props }) => (
-  <Image
-    onClick={onClick}
-    className={classNames(`size-${size}`, className, {
-      [`align-${float}`]: size === SIZE.MEDIUM,
-    })}
-  >
-    <img {...filterProps(props)} />
-    {!caption ? null : <figcaption>{caption}</figcaption>}
-  </Image>
-));
-/* eslint-enable jsx-a11y/alt-text */
+  };
+  render() {
+    const { size, float, className, caption, onClick, ...props } = this.props;
+    return (
+      <Image
+        onClick={onClick}
+        className={classNames(`size-${size}`, className, {
+          [`align-${float}`]: size === SIZE.MEDIUM,
+        })}
+      >
+        <img {...filterProps(props)} />
+        {!caption ? null : <figcaption>{caption}</figcaption>}
+      </Image>
+    );
+  }
+}
