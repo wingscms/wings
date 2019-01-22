@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import propTypes, { defaultProps } from './propTypes';
 import Quote from './Quote';
 
-const Blockquote = Quote.extend``;
+const Blockquote = Quote;
 
 export default class BlockquoteView extends Component {
   static propTypes = propTypes;
