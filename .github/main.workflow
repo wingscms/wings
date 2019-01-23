@@ -4,7 +4,7 @@ workflow "Generate Changelog" {
 }
 
 action "Filters for GitHub Actions" {
-  uses = "actions/bin/filter@707718ee26483624de00bd146e073d915139a3d8"
+  uses = "actions/bin/filter@master"
   args = "action 'opened|synchronize'"
 }
 
