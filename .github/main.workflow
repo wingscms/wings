@@ -1,6 +1,6 @@
 workflow "Generate Changelog" {
-  resolves = ["Bootstrap"]
   on = "push"
+  resolves = ["Changelog"]
 }
 
 action "Filters for GitHub Actions" {
@@ -18,4 +18,10 @@ action "Bootstrap" {
   uses = "actions/npm@de7a3705a9510ee12702e124482fad6af249991b"
   args = "run bootstrap"
   needs = ["NPM Install"]
+}
+
+action "Changelog" {
+  uses = "actions/npm@de7a3705a9510ee12702e124482fad6af249991b"
+  needs = ["Bootstrap"]
+  args = "run changelog"
 }
