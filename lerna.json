@@ -5,9 +5,12 @@
   ],
   "version": "independent",
   "changelog": {
+    "repo": "wingsplatform/wings-packages",
     "labels": {
+      "feature": ":candy: Feature",
       "enhancement": ":rocket: Enhancement",
-      "bug": ":bug: Bug Fix"
+      "bug": ":bug: Bug Fix",
+      "docs": ":book: Documentation"
     },
     "cacheDir": ".changelog"
   }
