@@ -4,7 +4,8 @@
     "lint": "eslint .",
     "changelog": "lerna-changelog",
     "prettier": "prettier-eslint --write \"**/*.js\"",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "changelog": "lerna-changelog"
   },
   "pre-commit": [
     "pre-commit"
@@ -30,7 +31,7 @@
     "eslint-plugin-jsx-a11y": "6.0.3",
     "eslint-plugin-react": "7.5.1",
     "lerna": "2.8.0",
-    "lerna-changelog": "0.7.0",
+    "lerna-changelog": "^0.7.0",
     "lint-staged": "6.1.0",
     "pre-commit": "1.2.2",
     "prettier": "1.10.2",
