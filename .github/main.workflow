@@ -1,6 +1,6 @@
 workflow "Generate Changelog" {
-  on = "push"
   resolves = ["Changelog"]
+  on = "pull_request"
 }
 
 action "Filters for GitHub Actions" {
