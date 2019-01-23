@@ -1,27 +1,14 @@
 workflow "Generate Changelog" {
-  resolves = ["Changelog"]
   on = "pull_request"
+  resolves = ["Filters for GitHub Actions-1"]
 }
 
 action "Filters for GitHub Actions" {
   uses = "actions/bin/filter@master"
-  args = "action 'opened|synchronize'"
+  args = "label 'breaking|bug'"
 }
 
-action "NPM Install" {
-  uses = "actions/npm@de7a3705a9510ee12702e124482fad6af249991b"
-  needs = ["Filters for GitHub Actions"]
-  args = "install"
-}
-
-action "Bootstrap" {
-  uses = "actions/npm@de7a3705a9510ee12702e124482fad6af249991b"
-  args = "run bootstrap"
-  needs = ["NPM Install"]
-}
-
-action "Changelog" {
-  uses = "actions/npm@de7a3705a9510ee12702e124482fad6af249991b"
-  needs = ["Bootstrap"]
-  args = "run changelog"
+action "Filters for GitHub Actions-1" {
+  uses = "actions/bin/filter@707718ee26483624de00bd146e073d915139a3d8"
+  args = "label 'breaking|bug'"
 }
