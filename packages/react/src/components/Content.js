@@ -5,7 +5,7 @@ import mdr from 'mobiledoc-dom-renderer';
 import { allCards } from '../';
 import { slugify } from '../lib/utils';
 
-const Renderer = mdr.default;
+const Renderer = mdr;
 
 const mergeCards = (base, overrides) => {
   const names = overrides.map(({ name }) => name);
