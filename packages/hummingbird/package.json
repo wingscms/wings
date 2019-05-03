@@ -1,12 +1,12 @@
 {
   "name": "@wingscms/hummingbird",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "scripts": {
     "test": "jest"
   },
   "dependencies": {
     "@wingscms/crane": "^0.6.10",
-    "@wingscms/react": "^0.14.2",
+    "@wingscms/react": "^0.14.3",
     "@wingscms/sdk": "^0.1.4",
     "browser-locale": "^1.0.3",
     "classnames": "^2.2.6",
