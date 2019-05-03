@@ -17,10 +17,10 @@ export default [
     plugins: [
       resolve(),
       commonjs({
-        include: 'node_modules/**',
+        include: '../../node_modules/**',
       }),
       babel({
-        exclude: 'node_modules/**',
+        exclude: '../../node_modules/**',
         runtimeHelpers: true,
       }),
     ],
