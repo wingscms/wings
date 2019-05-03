@@ -1,0 +1,147 @@
+{
+  "name": "Petition",
+  "key": "petitiondata",
+  "definition": {
+    "type": "object",
+    "title": "Petition",
+    "properties": {
+      "onHome": {
+        "title": "On home",
+        "type": "boolean",
+        "default": false
+      },
+      "featuredHome": {
+        "title": "Featured on home",
+        "type": "boolean",
+        "default": false
+      },
+      "order": {
+        "title": "Order",
+        "type": "number"
+      },
+      "dropcap": {
+        "title": "Use dropcap",
+        "type": "boolean",
+        "default": true
+      },
+      "hideMenu": {
+        "title": "Hide menu",
+        "type": "boolean",
+        "default": false
+      },
+      "locale": {
+        "title": "Locale",
+        "type": "string"
+      },
+      "intro": {
+        "title": "Introduction",
+        "type": "string"
+      },
+      "customHTMLMeta": {
+        "title": "Custom HTML <meta>",
+        "type": "string"
+      },
+      "signupButtonCopy": {
+        "title": "Signup button copy",
+        "type": "string"
+      },
+      "cloudinaryVideoCloud": {
+        "title": "Cloudinary video cloud",
+        "type": "string"
+      },
+      "cloudinaryVideoId": {
+        "title": "Cloudinary video ID",
+        "type": "string"
+      },
+      "cloudinaryVideoAutoplay": {
+        "title": "Cloudinary video autoplay",
+        "type": "boolean"
+      },
+      "firstNameLabel": {
+        "title": "First name label",
+        "type": "string"
+      },
+      "firstNamePlaceholder": {
+        "title": "First name placeholder",
+        "type": "string"
+      },
+      "lastNameLabel": {
+        "title": "Last name label",
+        "type": "string"
+      },
+      "lastNamePlaceholder": {
+        "title": "Last name placeholder",
+        "type": "string"
+      },
+      "emailLabel": {
+        "title": "Email label",
+        "type": "string"
+      },
+      "emailPlaceholder": {
+        "title": "Email placeholder",
+        "type": "string"
+      },
+      "newsletterLabel": {
+        "title": "Newsletter label",
+        "type": "string"
+      },
+      "newsletterPlaceholder": {
+        "title": "Newsletter placeholder",
+        "type": "string"
+      },
+      "newsletterOptions": {
+        "title": "Newsletter options",
+        "type": "string"
+      },
+      "newsletterNotice": {
+        "title": "Newsletter notice",
+        "type": "string"
+      },
+      "newsletterWarning": {
+        "title": "Newsletter warning",
+        "type": "string"
+      },
+      "signatureMax": {
+        "title": "Max signature count",
+        "type": "number"
+      },
+      "hideFormCounter": {
+        "title": "Hide form counter",
+        "type": "boolean"
+      },
+      "formTitle": {
+        "title": "Form title",
+        "type": "string"
+      },
+      "newsletterWarning": {
+        "title": "Newsletter warning",
+        "type": "string"
+      },
+      "counterText": {
+        "title": "Counter text",
+        "type": "string"
+      },
+      "actionNetworkHelper": {
+        "title": "Action Network helper",
+        "type": "string"
+      },
+      "confirmationTitle": {
+        "title": "Confirmation title",
+        "type": "string"
+      },
+      "confirmationText": {
+        "title": "Confirmation text",
+        "type": "string"
+      },
+      "confirmedTitle": {
+        "title": "Confirmed title",
+        "type": "string"
+      },
+      "confirmedText": {
+        "title": "Confirmed text",
+        "type": "string"
+      }
+    }
+  },
+  "locations": ["node.campaign.petition"]
+}
