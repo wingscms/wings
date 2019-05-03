@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@wingscms/gatsby-starter-hummingbird",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "scripts": {
     "start": "rm -rf .cache && gatsby develop -p 4000",
     "build": "gatsby build"
