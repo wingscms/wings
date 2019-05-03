@@ -1,0 +1,39 @@
+{
+  "name": "Cloudinary Embed",
+  "key": "cloudinary",
+  "definition": {
+    "type": "object",
+    "title": "Cloudinary Embed",
+    "properties": {
+      "type": {
+        "title": "Type",
+        "type": "string",
+        "default": "cloudinary"
+      },
+      "resourceType": {
+        "title": "Resource type",
+        "type": "string",
+        "default": "video"
+      },
+      "cloudName": {
+        "title": "Cloud name",
+        "type": "string"
+      },
+      "id": {
+        "title": "Resource ID",
+        "type": "string"
+      },
+      "autoplay": {
+        "title": "Autoplay",
+        "type": "boolean",
+        "default": true 
+      },
+      "muted": {
+        "title": "Muted",
+        "type": "booelan",
+        "default": true
+      }
+    }
+  },
+  "locations": ["mobiledoc.datacard"]
+}

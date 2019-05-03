@@ -1,0 +1,16 @@
+export { default as Facebook } from './facebook';
+export { default as Github } from './github';
+export { default as Globe } from './globe';
+export { default as Googleplus } from './google-plus';
+export { default as Instagram } from './instagram';
+export { default as Linkedin } from './linkedin';
+export { default as Pinterest } from './pinterest';
+export { default as Reddit } from './reddit';
+export { default as Rss } from './rss';
+export { default as Skype } from './skype';
+export { default as Spotify } from './spotify';
+export { default as Twitch } from './rss';
+export { default as Twitter } from './twitter';
+export { default as Vimeo } from './vimeo';
+export { default as Whatsapp } from './whatsapp';
+export { default as Youtube } from './youtube';

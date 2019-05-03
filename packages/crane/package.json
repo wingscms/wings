@@ -1,0 +1,36 @@
+{
+  "name": "@wingscms/crane",
+  "version": "0.6.10",
+  "description": "",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "npm run build -- --watch",
+    "build": "babel src --out-dir build --copy-files",
+    "prepublish": "cross-env NODE_ENV=production npm run build",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook-build": "build-storybook -c .storybook -o .out"
+  },
+  "author": "Mark Jackson <markjackson@bureaubolster.nl>",
+  "devDependencies": {
+    "@storybook/addon-info": "^3.4.11",
+    "@storybook/addon-knobs": "^3.4.11",
+    "@storybook/react": "^3.4.11",
+    "babel-cli": "^6.26.0",
+    "cross-env": "^5.1.3",
+    "react-json-view": "^1.19.1",
+    "react-jsonschema-form": "^1.3.0",
+    "styled-components": "^4.1.3"
+  },
+  "dependencies": {
+    "chart.js": "^2.7.2",
+    "polished": "^1.9.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-feather": "^1.1.3",
+    "react-mailchimp-subscribe": "^2.1.0",
+    "recompose": "^0.26.0"
+  },
+  "peerDependencies": {
+    "styled-components": "^3 || ^4"
+  }
+}

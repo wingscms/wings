@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = "public"
+
+[template]
+  incoming-hooks = ["wings"]
+
+[template.environment]
+  GATSBY_WINGS_PROJECT = "YOUR_WINGS_PROJECT_ID"
+  GATSBY_WINGS_APP_KEY = "YOUR_WINGS_APP_KEY"
+
+
+[context.production]
+  environment = { GATSBY_ENV = "production" }

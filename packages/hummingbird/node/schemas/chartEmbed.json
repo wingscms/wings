@@ -1,0 +1,20 @@
+{
+  "name": "Chart Embed",
+  "key": "chart",
+  "definition": {
+    "type": "object",
+    "title": "Chart Embed",
+    "properties": {
+      "type": {
+        "title": "Type",
+        "type": "string",
+        "default": "chart"
+      },
+      "chartData": {
+        "title": "Chart data",
+        "type": "string"
+      }
+    }
+  },
+  "locations": ["mobiledoc.datacard"]
+}

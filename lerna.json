@@ -1,16 +1,15 @@
 {
   "lerna": "2.7.1",
+  "version": "independent",
+  "useworkSpaces": true,
+  "npmClient": "yarn",
   "packages": [
     "packages/*"
   ],
-  "version": "independent",
   "changelog": {
-    "repo": "wingsplatform/wings-packages",
     "labels": {
-      "feature": ":candy: Feature",
       "enhancement": ":rocket: Enhancement",
-      "bug": ":bug: Bug Fix",
-      "docs": ":book: Documentation"
+      "bug": ":bug: Bug Fix"
     },
     "cacheDir": ".changelog"
   }

@@ -1,0 +1,38 @@
+{
+  "name": "Event Embed",
+  "key": "eventEmbed",
+  "definition": {
+    "type": "object",
+    "title": "Event Embed",
+    "properties": {
+      "type": {
+        "title": "Type",
+        "type": "string",
+        "default": "eventEmbed"
+      },
+      "eventId": {
+        "title": "Event ID",
+        "type": "string"
+      },
+      "ctaText": {
+        "title": "Call to action text",
+        "type": "string"
+      },
+      "ctaButtonText": {
+        "title": "Call to action button text",
+        "type": "string"
+      },
+      "expandable": {
+        "title": "Expandable",
+        "type": "boolean",
+        "default": true
+      },
+      "useBackgroundImage": {
+        "title": "Use background image",
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  "locations": ["mobiledoc.datacard"]
+}

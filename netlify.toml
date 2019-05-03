@@ -1,0 +1,7 @@
+[build]
+  base = "packages/gatsby-starter-hummingbird"
+  publish = "packages/gatsby-starter-hummingbird/public"
+
+
+[context.production]
+  environment = { GATSBY_ENV = "production" }

@@ -1,0 +1,20 @@
+{
+  "name": "Twitter Embed",
+  "key": "twitter",
+  "definition": {
+    "type": "object",
+    "title": "Twitter Embed",
+    "properties": {
+      "type": {
+        "title": "Type",
+        "type": "string",
+        "default": "twitter"
+      },
+      "tweetId": {
+        "title": "Tweet ID",
+        "type": "string"
+      }
+    }
+  },
+  "locations": ["mobiledoc.datacard"]
+}
