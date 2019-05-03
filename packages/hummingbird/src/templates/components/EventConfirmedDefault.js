@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { MenuContentWrapper } from '@hummingbird/design';
+import { MenuContentWrapper } from '@wingscms/crane';
 
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';

@@ -1,4 +1,4 @@
-import Wings from '@wingsplatform/sdk';
+import Wings from '@wingscms/sdk';
 
 export default new Wings({
   project: process.env.GATSBY_WINGS_PROJECT,

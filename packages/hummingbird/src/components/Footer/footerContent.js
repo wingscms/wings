@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Newsletter } from '@hummingbird/design';
+import { Newsletter } from '@wingscms/crane';
 import styled from 'styled-components';
 import Section from './Section';
 import AnchorButton from '../AnchorButton';

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { createCard } from '@wingsplatform/react';
-import { Breakout, Gallery } from '@hummingbird/design';
+import { createCard } from '@wingscms/react';
+import { Breakout, Gallery } from '@wingscms/crane';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
 import Chart from './Chart';
 import Video from './Video';

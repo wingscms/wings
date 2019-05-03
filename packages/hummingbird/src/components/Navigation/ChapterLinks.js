@@ -3,7 +3,7 @@
 import React from 'react';
 import Scroll from 'react-scroll-to-element';
 import styled from 'styled-components';
-import { toggleSlideMenu } from '@hummingbird/design';
+import { toggleSlideMenu } from '@wingscms/crane';
 
 const ChapterItem = styled.div`
   display: block;

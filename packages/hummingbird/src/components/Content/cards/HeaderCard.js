@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled, { withTheme } from 'styled-components';
 import Fade from 'react-reveal/Fade';
-import { createCard, slugify } from '@wingsplatform/react';
+import { createCard, slugify } from '@wingscms/react';
 import wide from '../../../styles/wide';
 import Intro from '../../Text/Intro';
 

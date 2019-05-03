@@ -1,5 +1,5 @@
 import React from 'react';
-import { createCard, Content as WContent } from '@wingsplatform/react';
+import { createCard, Content as WContent } from '@wingscms/react';
 import { ThemeProvider, withTheme } from 'styled-components';
 import {
   QuoteCard,

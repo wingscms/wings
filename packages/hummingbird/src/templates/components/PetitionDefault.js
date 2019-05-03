@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { MenuContentWrapper, CloudinaryVideoProvider, Video } from '@hummingbird/design';
+import { MenuContentWrapper, CloudinaryVideoProvider, Video } from '@wingscms/crane';
 import qs from 'qs';
 
 import wings from '../../data/wings';

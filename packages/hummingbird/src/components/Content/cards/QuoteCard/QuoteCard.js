@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { createCard } from '@wingsplatform/react';
+import { createCard } from '@wingscms/react';
 import propTypes from './propTypes';
 import BlockquoteView from './BlockquoteView';
 import PullquoteView from './PullquoteView';

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { TextInput, Select } from '@hummingbird/design';
+import { TextInput, Select } from '@wingscms/crane';
 import { push } from 'gatsby-link';
 import AnchorButton from '../AnchorButton';
 import wings from '../../data/wings';

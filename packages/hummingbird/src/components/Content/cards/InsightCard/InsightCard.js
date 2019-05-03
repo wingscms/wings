@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { createCard } from '@wingsplatform/react';
+import { createCard } from '@wingscms/react';
 import propTypes, { defaultProps } from './propTypes';
 
 import wide from '../../../../styles/wide';

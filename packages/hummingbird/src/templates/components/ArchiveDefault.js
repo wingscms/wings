@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import _Link, { navigate } from 'gatsby-link';
-import { ComplexCard, FlexGrid, MenuContentWrapper } from '@hummingbird/design';
+import { ComplexCard, FlexGrid, MenuContentWrapper } from '@wingscms/crane';
 import _Content from '../../components/Content';
 import Layout from '../../components/Layout';
 import Navigation from '../../components/Navigation';
@@ -84,12 +84,19 @@ const HighlightedArticles = styled.div`
 
 export default class ArchiveDefault extends Component {
   getShareUrls = () => {
-    const { location, pageContext: { additionalContext: { entry } } } = this.props;
+    const {
+      location,
+      pageContext: {
+        additionalContext: { entry },
+      },
+    } = this.props;
     return makeShareUrls(entry.platforms, location.href || '', entry.meta);
   };
 
   getNavigationUrls = () => {
-    const { pageContext: { first, last, index, pathPrefix } } = this.props;
+    const {
+      pageContext: { first, last, index, pathPrefix },
+    } = this.props;
     const prev = ['', pathPrefix, index === 2 ? null : index - 1].filter(e => e !== null).join('/');
     const next = ['', pathPrefix, index + 1].join('/');
     return {
@@ -99,7 +106,12 @@ export default class ArchiveDefault extends Component {
   };
 
   render() {
-    const { pageContext: { group, additionalContext: { entry } } } = this.props;
+    const {
+      pageContext: {
+        group,
+        additionalContext: { entry },
+      },
+    } = this.props;
     const { previous: previousUrl, next: nextUrl } = this.getNavigationUrls();
     return (
       <Layout>

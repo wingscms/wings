@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { toggleSlideMenu, languageList } from '@hummingbird/design';
+import { toggleSlideMenu, languageList } from '@wingscms/crane';
 
 const ChaptersToggleContainer = styled.div`
   position: fixed;

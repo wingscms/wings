@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { push } from 'gatsby-link';
-import { TextInput, Select, ConfirmationBox } from '@hummingbird/design';
+import { TextInput, Select, ConfirmationBox } from '@wingscms/crane';
 import AnchorButton from '../../AnchorButton';
 import wings from '../../../data/wings';
 

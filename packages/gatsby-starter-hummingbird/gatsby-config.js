@@ -8,7 +8,7 @@ module.exports = {
   },
   __experimentalThemes: [
     {
-      resolve: '@hummingbird/gatsby-theme',
+      resolve: '@wingscms/hummingbird',
       options: {
         wings: {
           project: process.env.GATSBY_WINGS_PROJECT,

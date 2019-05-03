@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { MenuContentWrapper } from '@hummingbird/design';
+import { MenuContentWrapper } from '@wingscms/crane';
 import Layout from '../../components/Layout';
 import _Content from '../../components/Content';
 import Navigation from '../../components/Navigation';

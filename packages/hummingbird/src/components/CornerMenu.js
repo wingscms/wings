@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Scroll from 'react-scroll-to-element';
 import { navigate } from 'gatsby';
 import styled, { withTheme } from 'styled-components';
-import { languageList, LanguagePicker, toggleSlideMenu } from '@hummingbird/design';
+import { languageList, LanguagePicker, toggleSlideMenu } from '@wingscms/crane';
 
 import chaptersImage from '../img/chapters.svg';
 import shareImage from '../img/share.svg';

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled, { withTheme } from 'styled-components';
-import { SchemaForm, Amount } from '@hummingbird/design';
+import { SchemaForm, Amount } from '@wingscms/crane';
 import Button from '../../../Button';
 import wings from '../../../../data/wings';
 

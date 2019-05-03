@@ -2,7 +2,7 @@
 /* eslint-disable no-param-reassign */
 import React from 'react';
 import styled from 'styled-components';
-import { Chart } from '@hummingbird/design';
+import { Chart } from '@wingscms/crane';
 
 import wide from '../../../../styles/wide';
 

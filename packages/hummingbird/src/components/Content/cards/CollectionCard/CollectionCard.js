@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { createCard } from '@wingsplatform/react';
-import { FlexGrid } from '@hummingbird/design';
+import { createCard } from '@wingscms/react';
+import { FlexGrid } from '@wingscms/crane';
 import styled from 'styled-components';
 
 import propTypes, { defaultProps } from './propTypes';

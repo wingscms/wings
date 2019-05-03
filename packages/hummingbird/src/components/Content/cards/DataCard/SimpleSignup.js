@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Newsletter, MailchimpForm } from '@hummingbird/design';
+import { Newsletter, MailchimpForm } from '@wingscms/crane';
 
 const StyledMailchimpForm = styled(MailchimpForm)`
   margin: 80px 0;

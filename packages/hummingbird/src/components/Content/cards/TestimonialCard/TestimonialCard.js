@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import qs from 'qs';
 import classNames from 'classnames';
 import { StickyContainer, Sticky } from 'react-sticky';
-import { createCard, Content } from '@wingsplatform/react';
+import { createCard, Content } from '@wingscms/react';
 import styled from 'styled-components';
 import propTypes, { defaultProps } from './propTypes';
 import wide from '../../../../styles/wide';

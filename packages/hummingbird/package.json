@@ -5,9 +5,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "@hummingbird/design": "^0.6.10",
-    "@wingsplatform/react": "^0.14.2",
-    "@wingsplatform/sdk": "^0.1.4",
+    "@wingscms/crane": "^0.6.10",
+    "@wingscms/react": "^0.14.2",
+    "@wingscms/sdk": "^0.1.4",
     "browser-locale": "^1.0.3",
     "classnames": "^2.2.6",
     "cloudinary-react": "^1.1.0",

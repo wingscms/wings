@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { createCard } from '@wingsplatform/react';
+import { createCard } from '@wingscms/react';
 import styled from 'styled-components';
 import wide from '../../../styles/wide';
 
@@ -61,7 +61,7 @@ class EmbedCard extends Component {
         width: /width="(\d+)"/i,
         height: /height="(\d+)"/i,
       });
-      const percentage = height / width * 100;
+      const percentage = (height / width) * 100;
       this.setState({ percentage });
     }, 0);
   }

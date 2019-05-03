@@ -1,4 +1,4 @@
-import { MenuItem } from '@hummingbird/design';
+import { MenuItem } from '@wingscms/crane';
 import styled from 'styled-components';
 
 export default styled(MenuItem)`

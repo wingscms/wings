@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from 'react';
-import { createSvgIcon } from '@hummingbird/design';
+import { createSvgIcon } from '@wingscms/crane';
 
 export default createSvgIcon(
   <React.Fragment>

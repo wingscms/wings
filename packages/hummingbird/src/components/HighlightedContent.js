@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComplexCard, SimpleCard, FlexGrid } from '@hummingbird/design';
+import { ComplexCard, SimpleCard, FlexGrid } from '@wingscms/crane';
 import { navigate } from 'gatsby-link';
 import styled from 'styled-components';
 

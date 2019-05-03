@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { compose, setPropTypes, setStatic } from 'recompose';
 import classNames from 'classnames';
 import Fade from 'react-reveal/Fade';
-import { createCard } from '@wingsplatform/react';
+import { createCard } from '@wingscms/react';
 import propTypes, { defaultProps } from './propTypes';
 import { SIZE, FLOAT } from './enums';
 import { ALIGNLEFT, ALIGNRIGHT } from '../../../../styles/floats';
@@ -89,21 +89,22 @@ const Image = styled.figure`
 `;
 
 /* eslint-disable jsx-a11y/alt-text */
-const ImageCard = compose(setPropTypes(propTypes), setStatic('defaultProps', defaultProps))(
-  ({ size, float, className, mediaId, url, caption, onClick, _mediaId, ...props }) => (
-    <Fade bottom distance="20px">
-      <Image
-        onClick={onClick}
-        className={classNames(`size-${size}`, className, {
-          [`align-${float}`]: size === SIZE.MEDIUM,
-        })}
-      >
-        <img {...props} />
-        {!caption ? null : <figcaption>{caption}</figcaption>}
-      </Image>
-    </Fade>
-  ),
-);
+const ImageCard = compose(
+  setPropTypes(propTypes),
+  setStatic('defaultProps', defaultProps),
+)(({ size, float, className, mediaId, url, caption, onClick, _mediaId, ...props }) => (
+  <Fade bottom distance="20px">
+    <Image
+      onClick={onClick}
+      className={classNames(`size-${size}`, className, {
+        [`align-${float}`]: size === SIZE.MEDIUM,
+      })}
+    >
+      <img {...props} />
+      {!caption ? null : <figcaption>{caption}</figcaption>}
+    </Image>
+  </Fade>
+));
 /* eslint-enable jsx-a11y/alt-text */
 
 export default createCard({

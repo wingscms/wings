@@ -23,7 +23,7 @@ module.exports = ({
     {
       resolve: 'gatsby-plugin-compile-es6-packages',
       options: {
-        modules: ['@hummingbird/gatsby-theme'],
+        modules: ['@wingscms/hummingbird'],
       },
     },
     'gatsby-plugin-react-helmet',
@@ -67,8 +67,8 @@ module.exports = ({
               }
               return true;
             })
-            .filter(
-              x => (hasMeta(x.node) ? !metaToObject(x.node.context.entry._meta.noIndex) : true),
+            .filter(x =>
+              (hasMeta(x.node) ? !metaToObject(x.node.context.entry._meta.noIndex) : true),
             )
             .map(x => ({
               url: site.siteMetadata.siteUrl + x.node.path,

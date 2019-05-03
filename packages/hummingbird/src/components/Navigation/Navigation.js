@@ -2,13 +2,7 @@
 
 import React, { Component } from 'react';
 import styled, { withTheme } from 'styled-components';
-import {
-  Burger,
-  LanguagePicker,
-  ShareButtons,
-  SlideMenu,
-  toggleSlideMenu,
-} from '@hummingbird/design';
+import { Burger, LanguagePicker, ShareButtons, SlideMenu, toggleSlideMenu } from '@wingscms/crane';
 import { Link, navigate } from 'gatsby';
 
 import facebookIcon from '../../img/facebook.svg';

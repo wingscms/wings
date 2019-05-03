@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { MenuContentWrapper } from '@hummingbird/design';
+import { MenuContentWrapper } from '@wingscms/crane';
 import Layout from '../../components/Layout';
 import _Content from '../../components/Content';
 import Navigation from '../../components/Navigation';
@@ -35,7 +35,10 @@ export default class PageDefault extends Component {
   }
 
   render() {
-    const { entry, entry: { meta = {} } } = this.props.pageContext;
+    const {
+      entry,
+      entry: { meta = {} },
+    } = this.props.pageContext;
     const { translations } = entry;
     const { dropCap, hideMenu } = meta;
     const { shareUrls } = this.state;

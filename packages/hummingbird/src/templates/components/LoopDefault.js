@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
-import { MenuContentWrapper } from '@hummingbird/design';
+import { MenuContentWrapper } from '@wingscms/crane';
 import Layout from '../../components/Layout';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
@@ -41,7 +41,12 @@ const NavLink = props => (
 );
 
 export default class ArticleDefault extends Component {
-  constructor({ location, pageContext: { additionalContext: { entry } } }) {
+  constructor({
+    location,
+    pageContext: {
+      additionalContext: { entry },
+    },
+  }) {
     super();
     this.state = {
       headers: [],
