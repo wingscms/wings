@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import classNames from 'classnames';
 import { MenuContentWrapper } from '@wingscms/crane';
 import Layout from '../../components/Layout';
-import _Content from '../../components/Content';
+import Content from '../../components/Content';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
@@ -13,8 +14,6 @@ import CornerMenu from '../../components/CornerMenu';
 
 import { authorIconBlack, calendarIconBlack } from '../../img/icons';
 import { makeShareUrls, parseBool } from '../../../lib/utils';
-
-const ContentComp = styled(_Content)``;
 
 const Article = styled.article`
   margin: 0 auto;
@@ -117,106 +116,158 @@ const StyledMenuContentWrapper = styled(MenuContentWrapper)`
 const formatMinutes = m => (m < 10 ? `0${m}` : m);
 
 export default class ArticleDefault extends Component {
-  constructor({ wrapContent = c => c, wrapMain = c => c, pageContext: { entry }, location }) {
-    super();
+  static Navigation = ({
+    entry: {
+      title,
+      translations,
+      platforms,
+      menu,
+      locale,
+      meta: { shareMessage, chapterMenu, hideMenu },
+    },
+    headers,
+    shareUrls,
+  }) => (
+    <Navigation
+      chapters={headers}
+      chapterMenu={chapterMenu && chapterMenu === 'slide'}
+      shareUrls={shareUrls}
+      shareMessage={shareMessage || (platforms && platforms.all && platforms.all.description)}
+      title={`${({ theme }) => theme.siteTitle} - ${title}`}
+      items={menu && menu.items}
+      translations={translations}
+      locale={locale}
+      hideMenu={hideMenu}
+    />
+  );
+
+  static CornerMenu = ({
+    entry: {
+      meta: { chapterMenu, shareMessage },
+      translations,
+      locale,
+    },
+    headers,
+  }) => (
+    <CornerMenu
+      chapterMenu={chapterMenu}
+      chapters={headers}
+      shareMessage={shareMessage}
+      locale={locale}
+      translations={translations}
+    />
+  );
+
+  static Header = ({ entry }) => <Header article={entry} />;
+  static Main = ({
+    entry: {
+      meta: { chapterMenu, intro, pubDate, author, dropCap },
+      content,
+    },
+    headers,
+    onHeadersChange,
+  }) => {
+    const publish = new Date(pubDate);
+    return (
+      <main>
+        <Article
+          className={classNames('article', {
+            'drop-cap': typeof dropCap === 'undefined' || parseBool(dropCap),
+          })}
+        >
+          <div id="article-start">
+            {intro ? (
+              <Intro>
+                <p>{intro}</p>
+                <InfoWrapper>
+                  {author ? (
+                    <Info>
+                      <Icon src={authorIconBlack} />
+                      <InfoSpan>{author}</InfoSpan>
+                    </Info>
+                  ) : null}
+                  {pubDate ? (
+                    <Info>
+                      <Icon src={calendarIconBlack} />
+                      <DateSpan day={publish.getDate()}>
+                        {formatMinutes(publish.getDate())}-{formatMinutes(publish.getMonth() + 1)}-
+                        {publish.getFullYear()}
+                      </DateSpan>
+                    </Info>
+                  ) : null}
+                </InfoWrapper>
+              </Intro>
+            ) : null}
+            {(!chapterMenu || chapterMenu !== 'slide') && headers.length ? (
+              <Chapters chapters={headers} />
+            ) : null}
+          </div>
+          <Content
+            className="article-body"
+            id="article-body"
+            content={content}
+            onLoad={({ headers: h }) => onHeadersChange(h)}
+          />
+        </Article>
+      </main>
+    );
+  };
+
+  static defaultProps = {
+    children: [
+      <ArticleDefault.CornerMenu />,
+      <ArticleDefault.Navigation />,
+      <ArticleDefault.Header />,
+      <ArticleDefault.Main />,
+    ],
+  };
+
+  constructor(props) {
+    super(props);
+    const {
+      pageContext: { entry },
+      location,
+    } = props;
     this.state = {
       headers: [],
       shareUrls: makeShareUrls(entry.platforms, location.href || '', entry.meta),
     };
-
-    this.components = {
-      Content: wrapContent(ContentComp),
-      Main: wrapMain('main'),
-    };
   }
+  children = () => {
+    const {
+      pageContext: {
+        entry,
+        entry: { translations: _translations },
+      },
+      children,
+    } = this.props;
+    const { headers, shareUrls } = this.state;
+    const translations = Object.keys(_translations || {}).map(_locale => ({
+      _locale,
+      path: _translations[_locale].path,
+    }));
+
+    const childProps = {
+      entry: { ...entry, translations },
+      headers,
+      shareUrls,
+      onHeadersChange: h => this.setState({ headers: h }),
+    };
+
+    return React.Children.map(children, element => React.cloneElement(element, childProps));
+  };
 
   render() {
     const {
       pageContext: {
-        entry,
-        entry: {
-          translations,
-          platforms,
-          meta,
-          meta: { chapterMenu, hideMenu, intro, pubDate, author, dropCap },
-        },
+        entry: { type },
       },
     } = this.props;
-    const { Content, Main } = this.components;
-
-    const { headers, shareUrls } = this.state;
-    const publish = new Date(pubDate);
-
-    const translationPaths = Object.keys(translations || {}).map(_locale => ({
-      _locale,
-      path: entry.translations[_locale].path,
-    }));
     return (
       <Layout>
         <StyledMenuContentWrapper id="content-wrapper" className="article">
-          {entry.type.id === 'article' && <ProgressBar />}
-          <CornerMenu
-            chapterMenu={chapterMenu}
-            chapters={headers}
-            shareMessage={meta.shareMessage}
-            locale={entry.locale}
-            translations={translationPaths}
-          />
-          <Navigation
-            chapters={headers}
-            chapterMenu={chapterMenu && chapterMenu === 'slide'}
-            shareUrls={shareUrls}
-            shareMessage={
-              meta.shareMessage || (platforms && platforms.all && platforms.all.description)
-            }
-            title={`${({ theme }) => theme.siteTitle} - ${entry.title}`}
-            items={entry.menu && entry.menu.items}
-            translations={translationPaths}
-            locale={entry.locale}
-            hideMenu={hideMenu}
-          />
-          <Header article={entry} />
-          <Main>
-            <Article
-              className={`article${
-                typeof dropCap === 'undefined' || parseBool(dropCap) ? ' drop-cap' : ''
-              }`}
-            >
-              <div id="article-start">
-                {intro ? (
-                  <Intro>
-                    <p>{intro}</p>
-                    <InfoWrapper>
-                      {author ? (
-                        <Info>
-                          <Icon src={authorIconBlack} />
-                          <InfoSpan>{author}</InfoSpan>
-                        </Info>
-                      ) : null}
-                      {pubDate ? (
-                        <Info>
-                          <Icon src={calendarIconBlack} />
-                          <DateSpan day={publish.getDate()}>
-                            {formatMinutes(publish.getDate())}-
-                            {formatMinutes(publish.getMonth() + 1)}-{publish.getFullYear()}
-                          </DateSpan>
-                        </Info>
-                      ) : null}
-                    </InfoWrapper>
-                  </Intro>
-                ) : null}
-                {(!chapterMenu || chapterMenu !== 'slide') && headers.length ? (
-                  <Chapters chapters={headers} />
-                ) : null}
-              </div>
-              <Content
-                className="article-body"
-                id="article-body"
-                content={entry.content}
-                onLoad={({ headers: h }) => this.setState({ headers: h })}
-              />
-            </Article>
-          </Main>
+          {type.id === 'article' && <ProgressBar />}
+          {this.children()}
           <Footer />
         </StyledMenuContentWrapper>
       </Layout>
