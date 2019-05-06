@@ -20,7 +20,8 @@
     "import/prefer-default-export": 0,
     "no-nested-ternary": 0,
     "no-debugger": 0,
-    "global-require": 0
+    "global-require": 0,
+    "no-mixed-operators": 0
   },
   "globals": {
     "graphql": true

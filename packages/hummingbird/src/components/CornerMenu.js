@@ -187,21 +187,26 @@ class CornerMenu extends Component {
   }
 
   componentDidMount() {
-    const self = this;
     // eslint-disable-next-line react/no-did-mount-set-state
     this.setState({
       url: encodeURIComponent(`http://${window.location.hostname}${window.location.pathname}`),
     });
-    window.addEventListener('scroll', () => {
-      const { hidden } = self.state;
-      if (window.scrollY > 200 && hidden) {
-        self.setState({ hidden: false });
-      }
-      if (window.scrollY < 200 && !hidden) {
-        self.setState({ hidden: true });
-      }
-    });
+    window.addEventListener('scroll', this.handleScroll);
   }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = () => {
+    const { hidden } = this.state;
+    if (window.scrollY > 200 && hidden) {
+      this.setState({ hidden: false });
+    }
+    if (window.scrollY < 200 && !hidden) {
+      this.setState({ hidden: true });
+    }
+  };
 
   render() {
     const {

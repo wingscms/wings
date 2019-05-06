@@ -23,14 +23,19 @@ export default class ProgressBar extends Component {
   };
 
   componentDidMount() {
-    window.addEventListener('scroll', () => requestAnimationFrame(this.updatePercentage));
+    window.addEventListener('scroll', this.updatePercentage);
   }
 
-  updatePercentage = () => {
-    const { scrollY, innerHeight, document } = window;
-    const percentage = 100 / (document.body.clientHeight - innerHeight) * scrollY;
-    this.setState({ percentage });
-  };
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.updatePercentage);
+  }
+
+  updatePercentage = () =>
+    requestAnimationFrame(() => {
+      const { scrollY, innerHeight, document } = window;
+      const percentage = (100 / (document.body.clientHeight - innerHeight)) * scrollY;
+      this.setState({ percentage });
+    });
 
   render() {
     return (

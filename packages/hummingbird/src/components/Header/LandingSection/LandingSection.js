@@ -91,11 +91,16 @@ export default class LandingSection extends Component {
   state = {
     scrollY: 0,
   };
+
   componentDidMount() {
-    window.addEventListener('scroll', () => requestAnimationFrame(this.updatePercentage));
+    window.addEventListener('scroll', () => this.updatePercentage);
   }
 
-  updatePercentage = () => this.setState({ scrollY: window.scrollY });
+  componentWillUnmount() {
+    window.removeEventListener('scroll', () => this.updatePercentage);
+  }
+
+  updatePercentage = () => requestAnimationFrame(() => this.setState({ scrollY: window.scrollY }));
   render() {
     if (typeof window === 'undefined') return <div />;
     const { article: { title, image = {}, meta = {} } = {} } = this.props;
