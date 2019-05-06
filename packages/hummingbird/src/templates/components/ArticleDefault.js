@@ -118,7 +118,6 @@ const formatMinutes = m => (m < 10 ? `0${m}` : m);
 export default class ArticleDefault extends Component {
   static Navigation = ({
     entry: {
-      title,
       translations,
       platforms,
       menu,
@@ -133,7 +132,6 @@ export default class ArticleDefault extends Component {
       chapterMenu={chapterMenu && chapterMenu === 'slide'}
       shareUrls={shareUrls}
       shareMessage={shareMessage || (platforms && platforms.all && platforms.all.description)}
-      title={`${({ theme }) => theme.siteTitle} - ${title}`}
       items={menu && menu.items}
       translations={translations}
       locale={locale}
