@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import classNames from 'classnames';
 import { toggleSlideMenu, languageList } from '@wingscms/crane';
 
 const ChaptersToggleContainer = styled.div`
@@ -38,32 +39,35 @@ const ChaptersToggleContainer = styled.div`
 `;
 
 export default class ChaptersToggle extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hidden: true,
-    };
-  }
+  state = {
+    hidden: true,
+  };
 
   componentDidMount() {
-    const self = this;
-    window.addEventListener('scroll', () => {
-      const { hidden } = self.state;
-      if (window.scrollY > 200 && hidden) {
-        self.setState({ hidden: false });
-      }
-      if (window.scrollY < 200 && !hidden) {
-        self.setState({ hidden: true });
-      }
-    });
+    window.addEventListener('scroll', this.handleScroll);
   }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = () => {
+    const { hidden } = this.state;
+    if (window.scrollY > 200 && hidden) {
+      this.setState({ hidden: false });
+    }
+    if (window.scrollY < 200 && !hidden) {
+      this.setState({ hidden: true });
+    }
+  };
+
   render() {
     const { locale } = this.props;
     const { hidden } = this.state;
     return (
       <ChaptersToggleContainer
         locale={locale}
-        className={hidden ? 'hidden' : ''}
+        className={classNames({ hidden })}
         onClick={(e) => {
           e.preventDefault();
           toggleSlideMenu(
