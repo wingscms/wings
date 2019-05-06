@@ -45,6 +45,9 @@ const Form = styled.form`
 `;
 
 export default class EventForm extends Component {
+  static defaultProps = {
+    buttonText: 'Submit',
+  };
   state = {
     firstName: '',
     lastName: '',
