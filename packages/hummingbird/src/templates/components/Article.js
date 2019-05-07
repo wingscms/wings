@@ -1,14 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import classNames from 'classnames';
-import { Entry } from '@wingscms/hummingbird';
-import Layout from '../../components/Layout';
+import Entry from './Entry';
 import Content from '../../components/Content';
-import Footer from '../../components/Footer';
 import Chapters from '../../components/Chapters';
 import Intro from '../../components/Text/Intro';
 import { authorIconBlack, calendarIconBlack } from '../../img/icons';
-import { makeShareUrls, parseBool } from '../../../lib/utils';
+import { parseBool } from '../../../lib/utils';
 
 const ArticleWrapper = styled.article`
   margin: 0 auto;
@@ -82,7 +80,11 @@ const DateSpan = styled.span`
 
 const formatMinutes = m => (m < 10 ? `0${m}` : m);
 
-export default class Article extends Entry {
+export default class Article extends Component {
+  static ProgressBar = Entry.ProgressBar;
+  static CornerMenu = Entry.CornerMenu;
+  static Navigation = Entry.Navigation;
+  static Header = Entry.Header;
   static Main = ({
     entry: {
       meta: { chapterMenu, intro, pubDate, author, dropCap },
@@ -142,61 +144,12 @@ export default class Article extends Entry {
       <Article.ProgressBar />,
       <Article.CornerMenu />,
       <Article.Navigation />,
-      <Article.FullWidthHeader />,
+      <Article.Header />,
       <Article.Main />,
     ],
   };
 
-  constructor(props) {
-    super(props);
-    const {
-      pageContext: { entry },
-      location,
-    } = props;
-    this.state = {
-      headers: [],
-      shareUrls: makeShareUrls(entry.platforms, location.href || '', entry.meta),
-    };
-  }
-
-  children = () => {
-    const {
-      pageContext: {
-        entry,
-        entry: { translations: _translations },
-        loop,
-        featured,
-      },
-      children,
-    } = this.props;
-    const { headers, shareUrls } = this.state;
-    const translations = Object.keys(_translations || {}).map(_locale => ({
-      _locale,
-      path: _translations[_locale].path,
-    }));
-
-    const childProps = {
-      entry: { ...entry, translations },
-      headers,
-      shareUrls,
-      loop,
-      featured,
-      onHeadersChange: h => this.setState({ headers: h }),
-    };
-
-    return React.Children.map(children, element => React.cloneElement(element, childProps));
-  };
-
   render() {
-    return (
-      <Layout>
-        <div id={this.props.id}>
-          <Article.StyledMenuContentWrapper id="content-wrapper" className="article">
-            {this.children()}
-            <Footer />
-          </Article.StyledMenuContentWrapper>
-        </div>
-      </Layout>
-    );
+    return <Entry {...this.props} />;
   }
 }

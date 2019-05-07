@@ -202,8 +202,8 @@ export default class extends Component {
                   </VideoContainer>
                 ) : null}
                 <PetitionProposition>
-                  {title ? <Title>{title}</Title> : null}
-                  {intro ? <Intro>{intro}</Intro> : null}
+                  {title && <Title>{title}</Title>}
+                  {intro && <Intro fullWidth>{intro}</Intro>}
                   <Content
                     content={petition.description}
                     className="article-body petition-description"

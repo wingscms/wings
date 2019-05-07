@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const Intro = styled.div`
+export default styled.div`
   color: black;
   width: 100vw;
   max-width: 1100px;
@@ -18,11 +18,12 @@ const Intro = styled.div`
   @media screen and (min-width: 800px) {
     font-size: ${({ theme }) => theme.fontSizeIntro * 23}px;
   }
-  .petition &,
-  .event & {
-    max-width: 100%;
-    padding: 0;
-  }
-`;
 
-export default Intro;
+  ${({ fullWidth }) =>
+    (!fullWidth
+      ? null
+      : css`
+          max-width: 100%;
+          padding: 0;
+        `)}
+`;
