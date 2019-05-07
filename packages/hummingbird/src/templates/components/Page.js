@@ -1,12 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-
-import { Entry } from '@wingscms/hummingbird';
-import Layout from '../../components/Layout';
+import Entry from './Entry';
 import _Content from '../../components/Content';
-import Footer from '../../components/Footer';
-
-import { makeShareUrls, parseBool } from '../../../lib/utils';
 
 const LandingSection = styled.div`
   background-image: url(${({ image }) => image});
@@ -48,6 +43,12 @@ const ContentWrapper = styled.div`
 `;
 
 export default class Page extends Entry {
+  static ProgressBar = Entry.ProgressBar;
+  static CornerMenu = Entry.CornerMenu;
+  static Navigation = Entry.Navigation;
+  static Header = Entry.Header;
+  static StackedHeader = Entry.StackedHeader;
+
   static SimpleTitle = (props) => {
     const { hidden, entry } = props;
     return (
@@ -72,61 +73,7 @@ export default class Page extends Entry {
     children: [<Page.Navigation />, <Page.StackedHeader />, <Page.Main />],
   };
 
-  constructor({ pageContext: { entry }, location }) {
-    super();
-    this.state = {
-      shareUrls: makeShareUrls(entry.platforms, location.href || '', entry.meta || entry.meta.seo),
-    };
-  }
-
-  children = () => {
-    const {
-      pageContext: {
-        entry,
-        entry: { translations: _translations },
-        loop,
-        featured,
-      },
-      children,
-    } = this.props;
-    const { headers, shareUrls } = this.state;
-    const translations = Object.keys(_translations || {}).map(_locale => ({
-      _locale,
-      path: _translations[_locale].path,
-    }));
-
-    const childProps = {
-      entry: { ...entry, translations },
-      headers,
-      shareUrls,
-      loop,
-      featured,
-      onHeadersChange: h => this.setState({ headers: h }),
-    };
-
-    return React.Children.map(children, element => React.cloneElement(element, childProps));
-  };
-
   render() {
-    const {
-      pageContext: {
-        entry: {
-          meta: { dropCap },
-        },
-      },
-    } = this.props;
-    return (
-      <Layout>
-        <div id={this.props.id}>
-          <Page.StyledMenuContentWrapper
-            id="content-wrapper"
-            className={`page${parseBool(dropCap) ? ' drop-cap' : ''}`}
-          >
-            {this.children()}
-            <Footer />
-          </Page.StyledMenuContentWrapper>
-        </div>
-      </Layout>
-    );
+    return <Entry {...this.props} />;
   }
 }

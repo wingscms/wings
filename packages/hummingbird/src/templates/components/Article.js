@@ -85,6 +85,8 @@ export default class Article extends Component {
   static CornerMenu = Entry.CornerMenu;
   static Navigation = Entry.Navigation;
   static Header = Entry.Header;
+  static StackedHeader = Entry.StackedHeader;
+
   static Main = ({
     entry: {
       meta: { chapterMenu, intro, pubDate, author, dropCap },
