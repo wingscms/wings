@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import classNames from 'classnames';
 import Entry from './Entry';
 import _Content from '../../components/Content';
 
@@ -49,14 +50,11 @@ export default class Page extends Entry {
   static Header = Entry.Header;
   static StackedHeader = Entry.StackedHeader;
 
-  static SimpleTitle = (props) => {
-    const { hidden, entry } = props;
-    return (
-      <Title {...props} className={hidden ? 'hidden' : ''}>
-        {entry.title}
-      </Title>
-    );
-  };
+  static SimpleTitle = ({ entry, hidden, className, children, ...props }) => (
+    <Title {...props} className={classNames(className, { hidden })}>
+      {entry.title || children}
+    </Title>
+  );
 
   static Main = ({ entry }) => (
     <ContentWrapper>
