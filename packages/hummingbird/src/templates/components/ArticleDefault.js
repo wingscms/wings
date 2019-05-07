@@ -263,11 +263,13 @@ export default class ArticleDefault extends Component {
     } = this.props;
     return (
       <Layout>
-        <StyledMenuContentWrapper id="content-wrapper" className="article">
-          {type.id === 'article' && <ProgressBar />}
-          {this.children()}
-          <Footer />
-        </StyledMenuContentWrapper>
+        <div id={this.props.id}>
+          <StyledMenuContentWrapper id="content-wrapper" className="article">
+            {type.id === 'article' && <ProgressBar />}
+            {this.children()}
+            <Footer />
+          </StyledMenuContentWrapper>
+        </div>
       </Layout>
     );
   }

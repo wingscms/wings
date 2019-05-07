@@ -5,7 +5,6 @@ import Layout from '../../components/Layout';
 import _Content from '../../components/Content';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
-import ProgressBar from '../../components/ProgressBar';
 import HighlightedContent from '../../components/HighlightedContent';
 
 import { parseBool } from '../../../lib/utils';
@@ -49,62 +48,142 @@ const Page = styled.article`
   padding: 0 20px;
 `;
 
-export default class PageHome extends Component {
-  orderedContent(layout) {
-    const { entry, loop, featured } = this.props.pageContext;
-    const { dropCap } = entry.meta;
-    if (!layout.includes('title')) {
-      layout.unshift('hiddenTitle');
+const StyledMenuContentWrapper = styled(MenuContentWrapper)`
+  .slide-menu.chapters {
+    position: fixed;
+    z-index: 50;
+  }
+  &.chaptersOpen {
+    .slide-menu.chapters {
+      position: fixed;
+      margin-left: 300px;
+      top: 0;
+      height: 100vh;
     }
-    return layout.map((x, i) => {
-      const props = { key: `page-layout-${i}` };
-      switch (x) {
-        case 'hiddenTitle':
-        case 'title':
-          return (
-            <Title {...props} className={x === 'hiddenTitle' ? 'hidden' : ''}>
-              {entry.title}
-            </Title>
-          );
-        case 'highlightedContent':
-          return loop.length < 1 && featured.length < 1 ? null : (
-            <HighlightedContent {...props} entry={entry} featured={featured} loop={loop} />
-          );
-        case 'entryContent':
-          return (
-            <Page {...props} className={`page home${parseBool(dropCap) ? ' drop-cap' : ''}`}>
-              <Content className="article-body" id="article-body" content={entry.content} />
-            </Page>
-          );
-        default:
-          return <div {...props} />;
+  }
+  @media screen and (max-width: 800px) {
+    .slide-menu.chapters {
+      left: -100vw;
+    }
+    &.chaptersOpen {
+      margin-left: 100vw;
+      padding-right: 100vw;
+      width: calc(100% + 100vw);
+      .slide-menu.chapters {
+        margin-left: 100vw;
       }
-    });
+    }
+  }
+`;
+
+export default class PageHome extends Component {
+  static Navigation = ({
+    entry: {
+      translations,
+      menu,
+      locale,
+      meta: { hideMenu },
+    },
+    headers,
+  }) => (
+    <Navigation
+      chapters={headers}
+      items={menu && menu.items}
+      translations={translations}
+      locale={locale}
+      hideMenu={hideMenu}
+    />
+  );
+
+  static LandingSection = ({ entry }) =>
+    (entry.image && entry.image.url ? (
+      <LandingSection image={entry.image && entry.image.url} />
+    ) : null);
+
+  static HighlightedContent = (props) => {
+    const { entry, loop, featured } = props;
+    return loop.length < 1 && featured.length < 1 ? null : (
+      <HighlightedContent {...props} entry={entry} featured={featured} loop={loop} />
+    );
+  };
+
+  static EntryContent = (props) => {
+    const {
+      entry: {
+        meta: { dropCap },
+      },
+      entry,
+    } = props;
+    return (
+      <Page {...props} className={`page home${parseBool(dropCap) ? ' drop-cap' : ''}`}>
+        <Content className="article-body" id="article-body" content={entry.content} />
+      </Page>
+    );
+  };
+
+  static Title = (props) => {
+    const { hidden, entry } = props;
+    return (
+      <Title {...props} className={hidden ? 'hidden' : ''}>
+        {entry.title}
+      </Title>
+    );
+  };
+
+  static defaultProps = {
+    children: [
+      <PageHome.Navigation />,
+      <PageHome.Title hidden={false} />,
+      <PageHome.LandingSection />,
+      <PageHome.EntryContent />,
+      <PageHome.HighlightedContent />,
+    ],
+  };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      headers: [],
+    };
   }
 
+  children = () => {
+    const {
+      pageContext: {
+        entry,
+        entry: { translations: _translations },
+        loop,
+        featured,
+      },
+      children,
+    } = this.props;
+    const { headers, shareUrls } = this.state;
+    const translations = Object.keys(_translations || {}).map(_locale => ({
+      _locale,
+      path: _translations[_locale].path,
+    }));
+
+    const childProps = {
+      entry: { ...entry, translations },
+      headers,
+      shareUrls,
+      loop,
+      featured,
+      onHeadersChange: h => this.setState({ headers: h }),
+    };
+
+    return React.Children.map(children, element => React.cloneElement(element, childProps));
+  };
+
   render() {
-    const { entry } = this.props.pageContext;
-    const { meta, translations } = entry;
-    const { hideMenu, layoutOrder = 'entryContent,highlightedContent' } = meta;
     return (
       <Layout>
-        <MenuContentWrapper id="content-wrapper" className="article">
-          {entry.type.id === 'article' && <ProgressBar />}
-          <Navigation
-            items={entry.menu && entry.menu.items}
-            translations={Object.keys(translations || {}).map(locale => ({
-              locale,
-              path: entry.translations[locale].path,
-            }))}
-            locale={entry.locale}
-            hideMenu={hideMenu}
-          />
-          {entry.image && entry.image.url ? (
-            <LandingSection image={entry.image && entry.image.url} />
-          ) : null}
-          {this.orderedContent(layoutOrder.split(','))}
-          <Footer />
-        </MenuContentWrapper>
+        <div id={this.props.id}>
+          <StyledMenuContentWrapper id="content-wrapper" className="article">
+            {this.children()}
+            <Footer />
+          </StyledMenuContentWrapper>
+        </div>
       </Layout>
     );
   }
