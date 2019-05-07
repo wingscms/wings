@@ -87,7 +87,7 @@ export default withTheme(({ theme }) => (
       ) : null}
       {footerContent(theme.footerContent)}
     </Container>
-    <BolsterLink href="https://wings-platform.com">Powered by Wings</BolsterLink>
+    <BolsterLink href="https://wings.dev">Powered by Wings</BolsterLink>
     <BolsterLink href="https://bureaubolster.nl">
       Made with{' '}
       <span role="img" aria-label="heart emoji">
