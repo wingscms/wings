@@ -1,16 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import classNames from 'classnames';
-import { MenuContentWrapper } from '@wingscms/crane';
 import Layout from '../../components/Layout';
 import Content from '../../components/Content';
-import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
-import Header from '../../components/Header';
 import Chapters from '../../components/Chapters';
-import ProgressBar from '../../components/ProgressBar';
 import Intro from '../../components/Text/Intro';
-import CornerMenu from '../../components/CornerMenu';
+import Entry from './Entry';
 
 import { authorIconBlack, calendarIconBlack } from '../../img/icons';
 import { makeShareUrls, parseBool } from '../../../lib/utils';
@@ -85,78 +81,9 @@ const DateSpan = styled.span`
   }
 `;
 
-const StyledMenuContentWrapper = styled(MenuContentWrapper)`
-  .slide-menu.chapters {
-    position: fixed;
-    z-index: 50;
-  }
-  &.chaptersOpen {
-    .slide-menu.chapters {
-      position: fixed;
-      margin-left: 300px;
-      top: 0;
-      height: 100vh;
-    }
-  }
-  @media screen and (max-width: 800px) {
-    .slide-menu.chapters {
-      left: -100vw;
-    }
-    &.chaptersOpen {
-      margin-left: 100vw;
-      padding-right: 100vw;
-      width: calc(100% + 100vw);
-      .slide-menu.chapters {
-        margin-left: 100vw;
-      }
-    }
-  }
-`;
-
 const formatMinutes = m => (m < 10 ? `0${m}` : m);
 
-export default class Article extends Component {
-  static Navigation = ({
-    entry: {
-      translations,
-      platforms,
-      menu,
-      locale,
-      meta: { shareMessage, chapterMenu, hideMenu },
-    },
-    headers,
-    shareUrls,
-  }) => (
-    <Navigation
-      chapters={headers}
-      chapterMenu={chapterMenu && chapterMenu === 'slide'}
-      shareUrls={shareUrls}
-      shareMessage={shareMessage || (platforms && platforms.all && platforms.all.description)}
-      items={menu && menu.items}
-      translations={translations}
-      locale={locale}
-      hideMenu={hideMenu}
-    />
-  );
-
-  static CornerMenu = ({
-    entry: {
-      meta: { chapterMenu, shareMessage },
-      translations,
-      locale,
-    },
-    headers,
-  }) => (
-    <CornerMenu
-      chapterMenu={chapterMenu}
-      chapters={headers}
-      shareMessage={shareMessage}
-      locale={locale}
-      translations={translations}
-    />
-  );
-
-  static Header = ({ entry }) => <Header article={entry} />;
+export default class Article extends Entry {
   static Main = ({
     entry: {
       meta: { chapterMenu, intro, pubDate, author, dropCap },
@@ -213,9 +140,10 @@ export default class Article extends Component {
 
   static defaultProps = {
     children: [
+      <Article.ProgressBar />,
       <Article.CornerMenu />,
       <Article.Navigation />,
-      <Article.Header />,
+      <Article.FullWidthHeader />,
       <Article.Main />,
     ],
   };
@@ -231,11 +159,14 @@ export default class Article extends Component {
       shareUrls: makeShareUrls(entry.platforms, location.href || '', entry.meta),
     };
   }
+
   children = () => {
     const {
       pageContext: {
         entry,
         entry: { translations: _translations },
+        loop,
+        featured,
       },
       children,
     } = this.props;
@@ -249,6 +180,8 @@ export default class Article extends Component {
       entry: { ...entry, translations },
       headers,
       shareUrls,
+      loop,
+      featured,
       onHeadersChange: h => this.setState({ headers: h }),
     };
 
@@ -256,19 +189,13 @@ export default class Article extends Component {
   };
 
   render() {
-    const {
-      pageContext: {
-        entry: { type },
-      },
-    } = this.props;
     return (
       <Layout>
         <div id={this.props.id}>
-          <StyledMenuContentWrapper id="content-wrapper" className="article">
-            {type.id === 'article' && <ProgressBar />}
+          <Article.StyledMenuContentWrapper id="content-wrapper" className="article">
             {this.children()}
             <Footer />
-          </StyledMenuContentWrapper>
+          </Article.StyledMenuContentWrapper>
         </div>
       </Layout>
     );

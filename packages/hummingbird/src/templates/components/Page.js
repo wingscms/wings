@@ -1,13 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { MenuContentWrapper } from '@wingscms/crane';
 import Layout from '../../components/Layout';
 import _Content from '../../components/Content';
-import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
-import HighlightedContent from '../../components/HighlightedContent';
-import { StackedHeader } from '../../components/Header';
-
+import Entry from './Entry';
 import { makeShareUrls, parseBool } from '../../../lib/utils';
 
 const LandingSection = styled.div`
@@ -49,54 +45,8 @@ const ContentWrapper = styled.div`
   padding: 0 20px;
 `;
 
-const StyledMenuContentWrapper = styled(MenuContentWrapper)`
-  .slide-menu.chapters {
-    position: fixed;
-    z-index: 50;
-  }
-  &.chaptersOpen {
-    .slide-menu.chapters {
-      position: fixed;
-      margin-left: 300px;
-      top: 0;
-      height: 100vh;
-    }
-  }
-  @media screen and (max-width: 800px) {
-    .slide-menu.chapters {
-      left: -100vw;
-    }
-    &.chaptersOpen {
-      margin-left: 100vw;
-      padding-right: 100vw;
-      width: calc(100% + 100vw);
-      .slide-menu.chapters {
-        margin-left: 100vw;
-      }
-    }
-  }
-`;
-
-export default class Page extends Component {
-  static Navigation = ({
-    entry: {
-      translations,
-      menu,
-      locale,
-      meta: { hideMenu },
-    },
-    headers,
-  }) => (
-    <Navigation
-      chapters={headers}
-      items={menu && menu.items}
-      translations={translations}
-      locale={locale}
-      hideMenu={hideMenu}
-    />
-  );
-
-  static Title = (props) => {
+export default class Page extends Entry {
+  static SimpleTitle = (props) => {
     const { hidden, entry } = props;
     return (
       <Title {...props} className={hidden ? 'hidden' : ''}>
@@ -104,12 +54,6 @@ export default class Page extends Component {
       </Title>
     );
   };
-
-  static Header = ({ entry }) => (
-    <ContentWrapper>
-      <StackedHeader article={entry} />
-    </ContentWrapper>
-  );
 
   static Main = ({ entry }) => (
     <ContentWrapper>
@@ -121,13 +65,6 @@ export default class Page extends Component {
     (entry.image && entry.image.url ? (
       <LandingSection image={entry.image && entry.image.url} />
     ) : null);
-
-  static HighlightedContent = (props) => {
-    const { entry, loop, featured } = props;
-    return loop.length < 1 && featured.length < 1 ? null : (
-      <HighlightedContent {...props} entry={entry} featured={featured} loop={loop} />
-    );
-  };
 
   static defaultProps = {
     children: [<Page.Navigation />, <Page.Header />, <Page.Main />],
@@ -179,13 +116,13 @@ export default class Page extends Component {
     return (
       <Layout>
         <div id={this.props.id}>
-          <StyledMenuContentWrapper
+          <Page.StyledMenuContentWrapper
             id="content-wrapper"
             className={`page${parseBool(dropCap) ? ' drop-cap' : ''}`}
           >
             {this.children()}
             <Footer />
-          </StyledMenuContentWrapper>
+          </Page.StyledMenuContentWrapper>
         </div>
       </Layout>
     );
