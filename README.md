@@ -3,7 +3,8 @@
 
 ## Packages
 
-- @wingscms/pay
+- @wingscms/crane
+- @wingscms/hummingbird
 - @wingscms/proxy
 - @wingscms/react
 - @wingscms/sdk
