@@ -1,5 +1,5 @@
 import React from 'react';
-import Page from './components/Page';
+import { Page } from '@wingscms/hummingbird';
 
 export default props => (
   <Page {...props}>
