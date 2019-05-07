@@ -15,7 +15,7 @@ import CornerMenu from '../../components/CornerMenu';
 import { authorIconBlack, calendarIconBlack } from '../../img/icons';
 import { makeShareUrls, parseBool } from '../../../lib/utils';
 
-const Article = styled.article`
+const ArticleWrapper = styled.article`
   margin: 0 auto;
   max-width: 800px;
   padding: 0 20px;
@@ -115,7 +115,7 @@ const StyledMenuContentWrapper = styled(MenuContentWrapper)`
 
 const formatMinutes = m => (m < 10 ? `0${m}` : m);
 
-export default class ArticleDefault extends Component {
+export default class Article extends Component {
   static Navigation = ({
     entry: {
       translations,
@@ -168,7 +168,7 @@ export default class ArticleDefault extends Component {
     const publish = new Date(pubDate);
     return (
       <main>
-        <Article
+        <ArticleWrapper
           className={classNames('article', {
             'drop-cap': typeof dropCap === 'undefined' || parseBool(dropCap),
           })}
@@ -206,17 +206,17 @@ export default class ArticleDefault extends Component {
             content={content}
             onLoad={({ headers: h }) => onHeadersChange(h)}
           />
-        </Article>
+        </ArticleWrapper>
       </main>
     );
   };
 
   static defaultProps = {
     children: [
-      <ArticleDefault.CornerMenu />,
-      <ArticleDefault.Navigation />,
-      <ArticleDefault.Header />,
-      <ArticleDefault.Main />,
+      <Article.CornerMenu />,
+      <Article.Navigation />,
+      <Article.Header />,
+      <Article.Main />,
     ],
   };
 

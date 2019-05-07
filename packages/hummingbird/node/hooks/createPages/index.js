@@ -95,7 +95,7 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
   articles.forEach((entry) => {
     createPage({
       path: entry.path,
-      component: require.resolve('../../../src/templates/ArticleDefault.js'),
+      component: require.resolve('../../../src/templates/Article.js'),
       context: { entry, siteMeta },
     });
   });
@@ -139,7 +139,7 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
     } else {
       createPage({
         path: entry.path,
-        component: require.resolve('../../../src/templates/PageDefault.js'),
+        component: require.resolve('../../../src/templates/Page.js'),
         context: { entry, siteMeta },
       });
     }

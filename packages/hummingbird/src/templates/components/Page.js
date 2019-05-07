@@ -5,9 +5,24 @@ import Layout from '../../components/Layout';
 import _Content from '../../components/Content';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
+import HighlightedContent from '../../components/HighlightedContent';
 import { StackedHeader } from '../../components/Header';
 
 import { makeShareUrls, parseBool } from '../../../lib/utils';
+
+const LandingSection = styled.div`
+  background-image: url(${({ image }) => image});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  width: 100%;
+  height: 50vh;
+  max-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 const Content = styled(_Content)`
   p:first-child {
@@ -15,6 +30,16 @@ const Content = styled(_Content)`
     @media screen and (min-width: 800px) {
       margin-top: 3em;
     }
+  }
+`;
+
+const Title = styled.h1`
+  margin: 0 auto 80px auto;
+  text-align: center;
+  &.hidden {
+    position: absolute;
+    opacity: 0;
+    left: -99999999px;
   }
 `;
 
@@ -52,7 +77,7 @@ const StyledMenuContentWrapper = styled(MenuContentWrapper)`
   }
 `;
 
-export default class PageDefault extends Component {
+export default class Page extends Component {
   static Navigation = ({
     entry: {
       translations,
@@ -71,6 +96,15 @@ export default class PageDefault extends Component {
     />
   );
 
+  static Title = (props) => {
+    const { hidden, entry } = props;
+    return (
+      <Title {...props} className={hidden ? 'hidden' : ''}>
+        {entry.title}
+      </Title>
+    );
+  };
+
   static Header = ({ entry }) => (
     <ContentWrapper>
       <StackedHeader article={entry} />
@@ -83,8 +117,20 @@ export default class PageDefault extends Component {
     </ContentWrapper>
   );
 
+  static LandingSection = ({ entry }) =>
+    (entry.image && entry.image.url ? (
+      <LandingSection image={entry.image && entry.image.url} />
+    ) : null);
+
+  static HighlightedContent = (props) => {
+    const { entry, loop, featured } = props;
+    return loop.length < 1 && featured.length < 1 ? null : (
+      <HighlightedContent {...props} entry={entry} featured={featured} loop={loop} />
+    );
+  };
+
   static defaultProps = {
-    children: [<PageDefault.Navigation />, <PageDefault.Header />, <PageDefault.Main />],
+    children: [<Page.Navigation />, <Page.Header />, <Page.Main />],
   };
 
   constructor({ pageContext: { entry }, location }) {
