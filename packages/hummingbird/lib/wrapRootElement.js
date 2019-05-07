@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { Provider as PluginOptionsProvider } from '../src/ctx/PluginContext';
+import { Provider as PluginOptionsProvider } from '../src/ctx/PluginOptions';
 import createTheme from './theme';
 
 export default ({ element }, pluginOptions) => {

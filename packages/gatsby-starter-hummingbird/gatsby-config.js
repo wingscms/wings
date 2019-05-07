@@ -44,11 +44,16 @@ module.exports = {
               rows: [
                 {
                   type: 'social',
-                  profiles: {
-                    facebook: 'https://facebook.com', // '#fff', '#000'
-                    twitter: 'https://twitter.com', // '#fff', '#000'],
-                    instagram: 'https://instragram.com', // '#fff', '#000'],
-                  },
+                  profiles: [
+                    {
+                      platform: 'facebook',
+                      url: 'https://facebook.com/bureaubolster',
+                    },
+                    {
+                      platform: 'twitter',
+                      url: 'https://twitter.com/bureaubolster',
+                    },
+                  ],
                 },
               ],
             },

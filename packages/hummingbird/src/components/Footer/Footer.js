@@ -1,8 +1,9 @@
 import React from 'react';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
+import { usePluginOptions } from '../../ctx/PluginOptions';
 
 import Section from './Section';
-import footerContent from './footerContent';
+import FooterColumns from './FooterColumns';
 
 const Wrap = styled.div`
   background: ${({ theme }) => theme.footerBackgroundColor};
@@ -48,6 +49,11 @@ const CTASection = styled(Section)`
   font-weight: bolder;
   font-size: 24px;
   line-height: 1.2;
+
+  .title {
+    font-size: 24px;
+    margin: 12px 0;
+  }
 `;
 
 const BolsterLink = styled.a`
@@ -72,28 +78,33 @@ const Logo = styled.img`
   max-height: 80px;
 `;
 
-export default withTheme(({ theme }) => (
-  <Wrap>
-    <Container>
-      {theme.footerTitle || theme.footerLogoUrl ? (
-        <CTASection>
-          {theme.footerTitle}
-          {theme.footerLogoUrl ? (
-            <a href={theme.footerLogoLink || '/'}>
-              <Logo src={theme.footerLogoUrl} alt="logo" />
-            </a>
-          ) : null}
-        </CTASection>
-      ) : null}
-      {footerContent(theme.footerContent)}
-    </Container>
-    <BolsterLink href="https://wings.dev">Powered by Wings</BolsterLink>
-    <BolsterLink href="https://bureaubolster.nl">
-      Made with{' '}
-      <span role="img" aria-label="heart emoji">
-        ❤️
-      </span>{' '}
-      at Bolster
-    </BolsterLink>
-  </Wrap>
-));
+export default () => {
+  const { footer } = usePluginOptions();
+  return (
+    <Wrap>
+      <Container>
+        {footer.title || footer.logoUrl ? (
+          <CTASection>
+            <div className="title">{footer.title}</div>
+            <div>
+              {footer.logoUrl && (
+                <a href={footer.logoLink || '/'}>
+                  <Logo src={footer.logoUrl} alt="logo" />
+                </a>
+              )}
+            </div>
+          </CTASection>
+        ) : null}
+        <FooterColumns columns={footer.columns} />
+        <BolsterLink href="https://wings.dev">Powered by Wings</BolsterLink>
+        <BolsterLink href="https://bureaubolster.nl">
+          Made with{' '}
+          <span role="img" aria-label="heart emoji">
+            ❤️
+          </span>{' '}
+          at Bolster
+        </BolsterLink>
+      </Container>
+    </Wrap>
+  );
+};
