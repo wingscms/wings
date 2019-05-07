@@ -67,10 +67,9 @@ export default class Entry extends Component {
   );
 
   static HighlightedContent = (props) => {
-    const { entry, loop, featured } = props;
-    return loop.length < 1 && featured.length < 1 ? null : (
-      <HighlightedContent {...props} entry={entry} featured={featured} loop={loop} />
-    );
+    const { loop = [], featured = [] } = props;
+    if (loop.length < 1 && featured.length < 1) return '';
+    return <HighlightedContent {...props} />;
   };
 
   static Navigation = ({
