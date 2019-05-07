@@ -13,6 +13,34 @@ const ContentWrapper = styled.div`
   padding: 0 20px;
 `;
 
+const StyledMenuContentWrapper = styled(MenuContentWrapper)`
+  .slide-menu.chapters {
+    position: fixed;
+    z-index: 50;
+  }
+  &.chaptersOpen {
+    .slide-menu.chapters {
+      position: fixed;
+      margin-left: 300px;
+      top: 0;
+      height: 100vh;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .slide-menu.chapters {
+      left: -100vw;
+    }
+    &.chaptersOpen {
+      margin-left: 100vw;
+      padding-right: 100vw;
+      width: calc(100% + 100vw);
+      .slide-menu.chapters {
+        margin-left: 100vw;
+      }
+    }
+  }
+`;
+
 export default class Entry extends Component {
   static CornerMenu = ({
     entry: {
@@ -71,31 +99,7 @@ export default class Entry extends Component {
     </ContentWrapper>
   );
 
-  static StyledMenuContentWrapper = styled(MenuContentWrapper)`
-    .slide-menu.chapters {
-      position: fixed;
-      z-index: 50;
-    }
-    &.chaptersOpen {
-      .slide-menu.chapters {
-        position: fixed;
-        margin-left: 300px;
-        top: 0;
-        height: 100vh;
-      }
-    }
-    @media screen and (max-width: 800px) {
-      .slide-menu.chapters {
-        left: -100vw;
-      }
-      &.chaptersOpen {
-        margin-left: 100vw;
-        padding-right: 100vw;
-        width: calc(100% + 100vw);
-        .slide-menu.chapters {
-          margin-left: 100vw;
-        }
-      }
-    }
-  `;
+  static StyledMenuContentWrapper = props => (
+    <StyledMenuContentWrapper {...props}>{props.children}</StyledMenuContentWrapper>
+  );
 }

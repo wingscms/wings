@@ -5,7 +5,7 @@ export default props => (
   <Article {...props}>
     <Article.CornerMenu />
     <Article.Navigation />
-    <Article.Header />
+    <Article.FullWidthHeader />
     <Article.Main />
   </Article>
 );

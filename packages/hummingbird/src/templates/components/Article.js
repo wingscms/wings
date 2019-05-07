@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import classNames from 'classnames';
+import { Entry } from '@wingscms/hummingbird';
 import Layout from '../../components/Layout';
 import Content from '../../components/Content';
 import Footer from '../../components/Footer';
 import Chapters from '../../components/Chapters';
 import Intro from '../../components/Text/Intro';
-import Entry from './Entry';
-
 import { authorIconBlack, calendarIconBlack } from '../../img/icons';
 import { makeShareUrls, parseBool } from '../../../lib/utils';
 

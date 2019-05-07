@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+
+import { Entry } from '@wingscms/hummingbird';
 import Layout from '../../components/Layout';
 import _Content from '../../components/Content';
 import Footer from '../../components/Footer';
-import Entry from './Entry';
+
 import { makeShareUrls, parseBool } from '../../../lib/utils';
 
 const LandingSection = styled.div`
@@ -67,7 +69,7 @@ export default class Page extends Entry {
     ) : null);
 
   static defaultProps = {
-    children: [<Page.Navigation />, <Page.Header />, <Page.Main />],
+    children: [<Page.Navigation />, <Page.StackedHeader />, <Page.Main />],
   };
 
   constructor({ pageContext: { entry }, location }) {
