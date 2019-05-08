@@ -36,11 +36,10 @@ export default class EntryCollection extends Component {
     wings
       .query(
         `query {
-        ${this.props.items.map(
-    (x, i) =>
-      (x.id
-        ? `
-          item${i}: entry(id: "${x.id}") {
+        ${this.props.items.map((x, i) =>
+    (x.id || typeof x === 'string'
+      ? `
+          item${i}: entry(id: "${x.id || x}") {
             id
             title
             type {
@@ -86,13 +85,13 @@ export default class EntryCollection extends Component {
             updatedAt
           }
         `
-        : ''),
+      : ''),
   )}}`,
       )
       .then((res) => {
         const data = [];
         this.props.items.map((x, i) => {
-          if (x.id) {
+          if (x.id || typeof x === 'string') {
             data.push(res[`item${i}`]);
           } else if (typeof x === 'object' && x.type === 'custom') {
             data.push({
