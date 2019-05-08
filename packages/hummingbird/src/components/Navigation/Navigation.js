@@ -137,6 +137,7 @@ class Navigation extends Component {
       hideMenu,
       shareUrls,
       theme,
+      children,
     } = this.props;
     const { visible } = this.state;
     return (
@@ -175,6 +176,7 @@ class Navigation extends Component {
           <Link to="/">
             <Logo />
           </Link>
+          {children}
           {hideMenu ? null : (
             <MenuButton active={visible} onClick={this.toggleNav}>
               <Burger active={visible} color="#000000" type="spin" />
