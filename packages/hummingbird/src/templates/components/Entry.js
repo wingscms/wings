@@ -149,10 +149,7 @@ export default class Entry extends Component {
         <div id={this.props.id}>
           <MenuContentWrapper
             id="content-wrapper"
-            className={classNames(
-              { [type.id]: parseBool(type.id) },
-              { 'drop-cap': parseBool(dropCap) },
-            )}
+            className={classNames(type.id, { 'drop-cap': parseBool(dropCap) })}
           >
             {this.children()}
             <Footer />
