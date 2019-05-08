@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled, { withTheme } from 'styled-components';
 import { navigate } from 'gatsby';
 import browserLocale from 'browser-locale';
+import Fonts from './FontImport';
 
 import GlobalStyles from '../styles/articleBody';
 
@@ -50,6 +51,7 @@ class Layout extends Component {
     return (
       <div>
         <GlobalStyles />
+        <Fonts />
         <Main>{children}</Main>
       </div>
     );
