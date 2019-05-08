@@ -139,6 +139,7 @@ export default class Entry extends Component {
     const {
       pageContext: {
         entry: {
+          type,
           meta: { dropCap },
         },
       },
@@ -148,7 +149,10 @@ export default class Entry extends Component {
         <div id={this.props.id}>
           <MenuContentWrapper
             id="content-wrapper"
-            className={classNames('page', { 'drop-cap': parseBool(dropCap) })}
+            className={classNames(
+              { [type.id]: parseBool(type.id) },
+              { 'drop-cap': parseBool(dropCap) },
+            )}
           >
             {this.children()}
             <Footer />
