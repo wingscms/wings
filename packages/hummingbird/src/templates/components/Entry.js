@@ -82,6 +82,7 @@ export default class Entry extends Component {
     },
     headers,
     shareUrls,
+    ...props
   }) => (
     <Navigation
       chapters={headers}
@@ -92,6 +93,7 @@ export default class Entry extends Component {
       translations={translations}
       locale={locale}
       hideMenu={hideMenu}
+      {...props}
     />
   );
 
