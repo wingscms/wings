@@ -272,7 +272,7 @@ export default class PetitionForm extends Component {
           {newsletterNotice || 'Note: you can unsubscribe at any time.'}
         </p>
         <CTAButton onClick={this.handleSubmit} disabled={attempted && confirmed}>
-          {this.props.buttonText}
+          {this.props.buttonText || 'Submit'}
         </CTAButton>
         {attempted && error ? <Warning>Something went wrong.</Warning> : null}
         {attempted && newsletter === newsletterOptions[0] ? (
