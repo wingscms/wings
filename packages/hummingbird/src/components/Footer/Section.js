@@ -7,8 +7,9 @@ export default styled.div`
   font-size: 16px;
   line-height: 1.5;
   .title {
+    font-size: 20px;
     font-weight: bolder;
-    margin-bottom: 0;
+    margin-bottom: 8px;
   }
   > * + .title {
     margin-top: 1.5em;

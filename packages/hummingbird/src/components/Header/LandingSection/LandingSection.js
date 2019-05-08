@@ -106,7 +106,7 @@ export default class LandingSection extends Component {
     const { article: { title, image = {}, meta = {} } = {} } = this.props;
     const { scrollY } = this.state;
 
-    const backgroundImage = image.url || '';
+    const backgroundImage = (image && image.url) || '';
     return (
       <div>
         <Scroll type="id" element="article-start">

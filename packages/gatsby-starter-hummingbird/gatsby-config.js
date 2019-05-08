@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const { getDesign, getTypographyConfig } = require('./node/utils');
+const { getDesign, getTypographyConfig, getFooterConfig } = require('./node/utils');
 
 module.exports = {
   siteMetadata: {
@@ -20,46 +20,46 @@ module.exports = {
         basicAuth: process.env.BASIC_AUTH,
         design: {
           ...getDesign(),
-          // primaryColor: '#ef5b58',
-          // secondaryColor: '#000000',
-          // colorWhite: '#ffffff',
-          // colorBlack: '#212121',
-          // textColor: '#212121',
-          // linkColor: '#ef5b58',
-          // linkColorHover: '#000000',
-          // darkLinkColor: '#ef5b58',
-          // darklinkColorHover: '#000000',
-          // navigationColor: '#ffffff',
-          // languagePickerColor: '#ffffff',
-          // languagePickerColorHover: '#ef5b58',
-          // footerLogoUrl:
-          //   'https://s3-eu-central-1.amazonaws.com/jaaps-screenshots/hummingbird-black-footer.png',
-          // faviconUrl:
-          //   'https://s3-eu-central-1.amazonaws.com/jaaps-screenshots/hummingbird-favicon.png',
-          // logoUrl:
-          //   'https://s3-eu-central-1.amazonaws.com/jaaps-screenshots/hummingbird-black-footer.png',
         },
         typography: {
           ...getTypographyConfig(),
         },
-        footerContent: [
-          [
-            ['title', 'Contact'],
-            ['text', ['', 'Example Street 42', 'Example City', '4242DB', 'Somewhere']],
-          ],
-          [
-            ['title', 'Social'],
-            ['text', ['']],
-            [
-              'social',
-              [
-                ['facebook', 'https://facebook.com', '#fff', '#000'],
-                ['twitter', 'https://twitter.com', '#fff', '#000'],
-                ['instagram', 'https://instragram.com', '#fff', '#000'],
+        footer: {
+          title: 'Hummingbird',
+          logoUrl:
+            'https://s3-eu-central-1.amazonaws.com/jaaps-screenshots/hummingbird-black-footer.png',
+          logoLink: 'https://wings.dev',
+          columns: [
+            {
+              title: 'Contact',
+              rows: [
+                {
+                  type: 'text',
+                  content: 'Example Street 42<br/>Example City<br/1234AB<br/Somewhere',
+                },
               ],
-            ],
+            },
+            {
+              title: 'Social',
+              rows: [
+                {
+                  type: 'social',
+                  profiles: [
+                    {
+                      platform: 'facebook',
+                      url: 'https://facebook.com/bureaubolster',
+                    },
+                    {
+                      platform: 'twitter',
+                      url: 'https://twitter.com/bureaubolster',
+                    },
+                  ],
+                },
+              ],
+            },
           ],
-        ],
+          ...getFooterConfig(),
+        },
       },
     },
   ],

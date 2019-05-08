@@ -19,7 +19,11 @@ const getDesign = () => {
 const getTypographyConfig = () =>
   parseJSON(process.env.GATSBY_TYPOGRAPHY_CONFIG, { message: "Couldn't parse typography config." });
 
+const getFooterConfig = () =>
+  parseJSON(process.env.GATSBY_FOOTER_CONFIG, { message: "Couldn't parse footer config." });
+
 module.exports = {
   getDesign,
   getTypographyConfig,
+  getFooterConfig,
 };
