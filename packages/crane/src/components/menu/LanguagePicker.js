@@ -69,7 +69,7 @@ export default class LanguagePicker extends Component {
     /** Hover background color for the items */
     backgroundColorHover: PropTypes.string,
     /** Whether to show the dropdown above or below */
-    showAbove: PropTypes.boolean,
+    showAbove: PropTypes.bool,
   };
   static defaultProps = {
     current: 'en',
@@ -99,14 +99,17 @@ export default class LanguagePicker extends Component {
           showAbove={showAbove}
           backgroundColor={backgroundColor}
         >
-          {translations.sort((a, b) => (a.locale < b.locale ? -1 : 1)).map(trans => (
-            <Translation
-              backgroundColorHover={backgroundColorHover}
-              onClick={e => onClickHandler(e, trans, translations, languageList)}
-            >
-              {languageList[trans.locale] ? languageList[trans.locale].nativeName : null}
-            </Translation>
-          ))}
+          {translations
+            .sort((a, b) => (a.locale < b.locale ? -1 : 1))
+            .map(trans => (
+              <Translation
+                key={trans.locale}
+                backgroundColorHover={backgroundColorHover}
+                onClick={e => onClickHandler(e, trans, translations, languageList)}
+              >
+                {languageList[trans.locale] ? languageList[trans.locale].nativeName : null}
+              </Translation>
+            ))}
         </Translations>
       </Wrapper>
     );
