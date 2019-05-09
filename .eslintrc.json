@@ -22,7 +22,8 @@
     "no-debugger": 0,
     "global-require": 0,
     "no-mixed-operators": 0,
-    "react/no-array-index-key": 0
+    "react/no-array-index-key": 0,
+    "react/no-multi-comp": 0
   },
   "globals": {
     "graphql": true
