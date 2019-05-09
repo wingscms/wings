@@ -2,13 +2,37 @@ import React from 'react';
 import styled from 'styled-components';
 import { compose, setPropTypes, setStatic } from 'recompose';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 import Fade from 'react-reveal/Fade';
 import { createCard } from '@wingscms/react';
-import propTypes, { defaultProps } from './propTypes';
-import { SIZE, FLOAT } from './enums';
-import { ALIGNLEFT, ALIGNRIGHT } from '../../../../styles/floats';
+import { enumerate } from '../../lib/utils';
+import { ALIGNLEFT, ALIGNRIGHT } from '../styles/floats';
+import wide from '../styles/wide';
 
-import wide from '../../../../styles/wide';
+const SIZE = enumerate('MEDIUM', 'LARGE', 'EXTRALARGE');
+const FLOAT = enumerate('NONE', 'LEFT', 'RIGHT');
+
+const propTypes = {
+  mediaId: PropTypes.string.isRequired,
+  url: PropTypes.string,
+  src: PropTypes.string,
+  large: PropTypes.string,
+  alt: PropTypes.string,
+  caption: PropTypes.string,
+  size: PropTypes.number,
+  float: PropTypes.number,
+};
+
+const defaultProps = {
+  mediaId: '',
+  url: '',
+  large: '',
+  src: '',
+  alt: '',
+  caption: '',
+  size: SIZE.LARGE,
+  float: FLOAT.NONE,
+};
 
 const Image = styled.figure`
   margin: 40px 0;

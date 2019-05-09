@@ -4,7 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Chart } from '@wingscms/crane';
 
-import wide from '../../../../styles/wide';
+import wide from '../../styles/wide';
 
 const ChartWrapper = styled.div`
   ${wide};

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import wings from '../../../../data/wings';
-import HighlightedContent from '../../../HighlightedContent';
-import { ensureNodeFields, patchI18n } from '../../../../../node/utils';
+import wings from '../../data/wings';
+import HighlightedContent from '../../components/HighlightedContent';
+import { ensureNodeFields, patchI18n } from '../../../node/utils';
 
-import wide from '../../../../styles/wide';
+import wide from '../../styles/wide';
 
 const { GATSBY__TEMP_I18N_DEFAULT_LOCALE: defaultLocale = 'en' } = process.env;
 

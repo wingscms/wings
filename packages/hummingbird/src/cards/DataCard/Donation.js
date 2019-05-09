@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled, { withTheme } from 'styled-components';
 import { SchemaForm, Amount } from '@wingscms/crane';
-import Button from '../../../Button';
-import wings from '../../../../data/wings';
+import Button from '../../components/Button';
+import wings from '../../data/wings';
 
 const StyledForm = styled(SchemaForm)`
   border: none;

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { createCard } from '@wingscms/react';
-import propTypes, { defaultProps } from './propTypes';
-import AnchorButton from '../../../AnchorButton';
+import AnchorButton from '../components/AnchorButton';
 
-import wide from '../../../../styles/wide';
+import wide from '../styles/wide';
 
 const CTA = styled.div`
   margin: 80px 0;
@@ -105,8 +104,6 @@ const CTAButton = styled(AnchorButton)`
 `;
 
 class CTACardView extends Component {
-  static defaultProps = defaultProps;
-  static setPropTypes = propTypes;
   render() {
     const { title, text, actionText, actionUrl } = this.props;
     return (

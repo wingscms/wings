@@ -4,8 +4,7 @@ import classNames from 'classnames';
 import { StickyContainer, Sticky } from 'react-sticky';
 import { createCard, Content } from '@wingscms/react';
 import styled from 'styled-components';
-import propTypes, { defaultProps } from './propTypes';
-import wide from '../../../../styles/wide';
+import wide from '../styles/wide';
 
 const Testimonial = styled.section`
   ${wide};
@@ -172,8 +171,14 @@ const mediaUrl = (url, opts = {}) => {
 };
 
 class TestimonialCard extends Component {
-  static defaultProps = defaultProps;
-  static setPropTypes = propTypes;
+  static defaultProps = {
+    title: '',
+    intro: '',
+    mediaId: '',
+    src: '',
+    url: '',
+    content: '',
+  };
   render() {
     const { title, intro, content, url, ...props } = this.props;
     const sized = mediaUrl(url, { width: 760, height: 1280 });

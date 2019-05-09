@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { createCard } from '@wingscms/react';
-import propTypes, { defaultProps } from './propTypes';
 
-import wide from '../../../../styles/wide';
+import wide from '../styles/wide';
 
 const Insight = styled.div`
   font-size: 30px;
@@ -38,8 +38,12 @@ const Insight = styled.div`
 `;
 
 class InsightCardView extends Component {
-  static defaultProps = defaultProps;
-  static setPropTypes = propTypes;
+  static defaultProps = {
+    text: PropTypes.node,
+  };
+  static defaultProps = {
+    text: '',
+  };
   render() {
     const { text, ...props } = this.props;
     return (

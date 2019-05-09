@@ -37,3 +37,11 @@ export const metaToObject = meta => meta.reduce((m, v) => ({ ...m, [v.key]: v.va
 
 export const dataToObject = data =>
   data.reduce((a, c) => ({ ...a, [c.key]: JSON.parse(c.data) }), {});
+
+export const enumerate = (...args) => {
+  const obj = {};
+  args.forEach((arg, i) => {
+    obj[(obj[arg] = i)] = arg;
+  });
+  return obj;
+};
