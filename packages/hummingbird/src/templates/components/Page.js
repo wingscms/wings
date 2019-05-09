@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import classNames from 'classnames';
+import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import Entry from './Entry';
 import _Content from '../../components/Content';
 
@@ -51,7 +52,7 @@ export default class Page extends Entry {
   static StackedHeader = Entry.StackedHeader;
 
   static SimpleTitle = ({ entry, hidden, className, children, ...props }) => (
-    <Title {...props} className={classNames(className, { hidden })}>
+    <Title {...filterInvalidDOMProps(props)} className={classNames(className, { hidden })}>
       {entry.title || children}
     </Title>
   );
