@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import styled, { withTheme } from 'styled-components';
 import { Burger, LanguagePicker, ShareButtons, SlideMenu, toggleSlideMenu } from '@wingscms/crane';
 import { Link, navigate } from 'gatsby';
+import filterInvalidDOMProps from 'filter-invalid-dom-props';
 
 import facebookIcon from '../../img/facebook.svg';
 import twitterIcon from '../../img/twitter.svg';
@@ -115,17 +116,14 @@ const StyledShareButtons = styled(ShareButtons)`
 `;
 
 class Navigation extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { visible: false };
-    this.toggleNav = this.toggleNav.bind(this);
-  }
+  state = { visible: false };
 
-  toggleNav(e) {
+  toggleNav = (e) => {
+    const { visible } = this.state;
     e.preventDefault();
-    toggleSlideMenu(this.state.visible);
-    this.setState({ visible: !this.state.visible });
-  }
+    toggleSlideMenu(visible);
+    this.setState({ visible: !visible });
+  };
 
   render() {
     const {
@@ -138,10 +136,11 @@ class Navigation extends Component {
       shareUrls,
       theme,
       children,
+      ...props
     } = this.props;
     const { visible } = this.state;
     return (
-      <Wrap {...this.props}>
+      <Wrap {...filterInvalidDOMProps(props)}>
         <Container className={visible ? 'visible' : ''}>
           {chapterMenu && chapters ? (
             <SlideMenu

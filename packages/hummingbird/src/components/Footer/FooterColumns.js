@@ -45,16 +45,17 @@ const SocialMediaWrapper = styled.div`
 
 export default ({ columns }) => {
   if (!columns) return null;
-  return columns.map(column => (
-    <Section>
+  return columns.map((column, k) => (
+    <Section key={`footer-column-${k}`}>
       {column.title && <span className="title">{column.title}</span>}
-      {column.rows.map((row) => {
+      {column.rows.map((row, i) => {
+        const key = `footer-row-${i}`;
         switch (row.type) {
           case 'text':
-            return <AddressLine dangerouslySetInnerHTML={{ __html: row.content }} />;
+            return <AddressLine key={key} dangerouslySetInnerHTML={{ __html: row.content }} />;
           case 'link':
             return (
-              <AddressLine>
+              <AddressLine key={key}>
                 <a className="footerLink" href={row.url}>
                   {row.text || row.url}
                 </a>
@@ -62,21 +63,28 @@ export default ({ columns }) => {
             );
           case 'button':
             return (
-              <AnchorButton href={row.url} size="small">
+              <AnchorButton key={key} href={row.url} size="small">
                 {row.text}
               </AnchorButton>
             );
           case 'social':
             return (
-              <SocialMediaWrapper>
-                {row.profiles.map(({ platform, url, iconColor, backgroundColor }) =>
-                  socialMediaIcon(platform, url, iconColor, backgroundColor),
+              <SocialMediaWrapper key={key}>
+                {row.profiles.map(({ platform, url, iconColor, backgroundColor }, j) =>
+                  socialMediaIcon(
+                    platform,
+                    url,
+                    iconColor,
+                    backgroundColor,
+                    `footer-social-icon-${j}`,
+                  ),
                 )}
               </SocialMediaWrapper>
             );
           case 'mailchimp':
             return (
               <MailchimpForm
+                key={key}
                 action={row.action}
                 buttonLabel={row.buttonLabel}
                 confirmationText={row.confirmationText}
@@ -85,7 +93,7 @@ export default ({ columns }) => {
               />
             );
           default:
-            return null;
+            return <div key={key} />;
         }
       })}
     </Section>
