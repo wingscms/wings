@@ -5,7 +5,8 @@ import { TwitterTweetEmbed } from 'react-twitter-embed';
 import Chart from './Chart';
 import Video from './Video';
 import Audio from './Audio';
-import Collection from './Collection';
+import EntryCollection from './EntryCollection';
+import EventCollection from './EventCollection';
 import SignupEmbed from './SignupEmbed';
 import SimpleSignup from './SimpleSignup';
 import Donation from './Donation';
@@ -35,7 +36,13 @@ class DataCardView extends Component {
         }
         return <div />;
       case 'collection':
-        return <Collection items={data.items} />;
+        switch (data.collectionType) {
+          case 'event':
+            return <EventCollection items={data.items} />;
+          case 'entry':
+          default:
+            return <EntryCollection items={data.items} />;
+        }
       case 'highlightedText':
         return (
           <Breakout
