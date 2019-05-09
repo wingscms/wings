@@ -38,7 +38,7 @@ const PageWrapper = ({
         <html lang={locale || 'en'} />
         {translations &&
           translations.map(trans => (
-            <link rel="alternate" hrefLang={trans.locale} href={trans.path} />
+            <link key={trans.locale} rel="alternate" hrefLang={trans.locale} href={trans.path} />
           ))}
         <link rel="icon" type="image/ico" sizes="16x16" href={theme.faviconUrl} />
         {/* SEO meta tags */}

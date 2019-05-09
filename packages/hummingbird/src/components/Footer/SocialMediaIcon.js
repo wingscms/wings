@@ -41,11 +41,11 @@ const Icon = styled.div`
   }
 `;
 
-export default (name, url, iconColor, backgroundColor) => {
+export default (name, url, iconColor, backgroundColor, key) => {
   switch (name) {
     case 'facebook':
       return (
-        <Icon iconColor={iconColor || '#3b5998'} backgroundColor={backgroundColor}>
+        <Icon key={key} iconColor={iconColor || '#3b5998'} backgroundColor={backgroundColor}>
           <a href={url}>
             <Facebook />
           </a>
@@ -53,7 +53,7 @@ export default (name, url, iconColor, backgroundColor) => {
       );
     case 'github':
       return (
-        <Icon iconColor={iconColor || '#4078c0'} backgroundColor={backgroundColor}>
+        <Icon key={key} iconColor={iconColor || '#4078c0'} backgroundColor={backgroundColor}>
           <a href={url}>
             <Github />
           </a>
@@ -61,7 +61,7 @@ export default (name, url, iconColor, backgroundColor) => {
       );
     case 'googleplus':
       return (
-        <Icon iconColor={iconColor || '#d34836'} backgroundColor={backgroundColor}>
+        <Icon key={key} iconColor={iconColor || '#d34836'} backgroundColor={backgroundColor}>
           <a href={url}>
             <Googleplus />
           </a>
@@ -69,7 +69,7 @@ export default (name, url, iconColor, backgroundColor) => {
       );
     case 'instagram':
       return (
-        <Icon iconColor={iconColor || '#e95950'} backgroundColor={backgroundColor}>
+        <Icon key={key} iconColor={iconColor || '#e95950'} backgroundColor={backgroundColor}>
           <a href={url}>
             <Instagram />
           </a>
@@ -77,7 +77,7 @@ export default (name, url, iconColor, backgroundColor) => {
       );
     case 'linkedin':
       return (
-        <Icon iconColor={iconColor || '#0077B5'} backgroundColor={backgroundColor}>
+        <Icon key={key} iconColor={iconColor || '#0077B5'} backgroundColor={backgroundColor}>
           <a href={url}>
             <Linkedin />
           </a>
@@ -85,7 +85,7 @@ export default (name, url, iconColor, backgroundColor) => {
       );
     case 'pinterest':
       return (
-        <Icon iconColor={iconColor || '#BD081C'} backgroundColor={backgroundColor}>
+        <Icon key={key} iconColor={iconColor || '#BD081C'} backgroundColor={backgroundColor}>
           <a href={url}>
             <Pinterest />
           </a>
@@ -93,7 +93,7 @@ export default (name, url, iconColor, backgroundColor) => {
       );
     case 'reddit':
       return (
-        <Icon iconColor={iconColor || '#ff4500'} backgroundColor={backgroundColor}>
+        <Icon key={key} iconColor={iconColor || '#ff4500'} backgroundColor={backgroundColor}>
           <a href={url}>
             <Reddit />
           </a>
@@ -101,7 +101,7 @@ export default (name, url, iconColor, backgroundColor) => {
       );
     case 'rss':
       return (
-        <Icon iconColor={iconColor || '#f26522'} backgroundColor={backgroundColor}>
+        <Icon key={key} iconColor={iconColor || '#f26522'} backgroundColor={backgroundColor}>
           <a href={url}>
             <Rss />
           </a>
@@ -109,7 +109,7 @@ export default (name, url, iconColor, backgroundColor) => {
       );
     case 'skype':
       return (
-        <Icon iconColor={iconColor || '#00aff0'} backgroundColor={backgroundColor}>
+        <Icon key={key} iconColor={iconColor || '#00aff0'} backgroundColor={backgroundColor}>
           <a href={url}>
             <Skype />
           </a>
@@ -117,7 +117,7 @@ export default (name, url, iconColor, backgroundColor) => {
       );
     case 'spotify':
       return (
-        <Icon iconColor={iconColor || '#1db954'} backgroundColor={backgroundColor}>
+        <Icon key={key} iconColor={iconColor || '#1db954'} backgroundColor={backgroundColor}>
           <a href={url}>
             <Spotify />
           </a>
@@ -125,7 +125,7 @@ export default (name, url, iconColor, backgroundColor) => {
       );
     case 'twitch':
       return (
-        <Icon iconColor={iconColor || '#6441a5'} backgroundColor={backgroundColor}>
+        <Icon key={key} iconColor={iconColor || '#6441a5'} backgroundColor={backgroundColor}>
           <a href={url}>
             <Twitch />
           </a>
@@ -133,7 +133,7 @@ export default (name, url, iconColor, backgroundColor) => {
       );
     case 'twitter':
       return (
-        <Icon iconColor={iconColor || '#1da1f2'} backgroundColor={backgroundColor}>
+        <Icon key={key} iconColor={iconColor || '#1da1f2'} backgroundColor={backgroundColor}>
           <a href={url}>
             <Twitter />
           </a>
@@ -141,7 +141,7 @@ export default (name, url, iconColor, backgroundColor) => {
       );
     case 'vimeo':
       return (
-        <Icon iconColor={iconColor || '#1ab7ea'} backgroundColor={backgroundColor}>
+        <Icon key={key} iconColor={iconColor || '#1ab7ea'} backgroundColor={backgroundColor}>
           <a href={url}>
             <Vimeo />
           </a>
@@ -149,7 +149,7 @@ export default (name, url, iconColor, backgroundColor) => {
       );
     case 'whatsapp':
       return (
-        <Icon iconColor={iconColor || '#075e54'} backgroundColor={backgroundColor}>
+        <Icon key={key} iconColor={iconColor || '#075e54'} backgroundColor={backgroundColor}>
           <a href={url}>
             <Whatsapp />
           </a>
@@ -157,7 +157,7 @@ export default (name, url, iconColor, backgroundColor) => {
       );
     case 'youtube':
       return (
-        <Icon iconColor={iconColor || '#ff0000'} backgroundColor={backgroundColor}>
+        <Icon key={key} iconColor={iconColor || '#ff0000'} backgroundColor={backgroundColor}>
           <a href={url}>
             <Youtube />
           </a>
