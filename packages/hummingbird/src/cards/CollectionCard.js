@@ -3,9 +3,7 @@ import { createCard } from '@wingscms/react';
 import { FlexGrid } from '@wingscms/crane';
 import styled from 'styled-components';
 
-import propTypes, { defaultProps } from './propTypes';
-
-import { Facebook, Globe, Instagram, Linkedin, Twitter } from '../../../../img/svg/social';
+import { Facebook, Globe, Instagram, Linkedin, Twitter } from '../img/svg/social';
 
 const Title = styled.h3`
   color: ${({ theme }) => theme.headingColor};
@@ -121,9 +119,6 @@ const StyledFlexGrid = styled(FlexGrid)`
 `;
 
 class CollectionCardView extends Component {
-  static defaultProps = defaultProps;
-  static setPropTypes = propTypes;
-
   mapOrganisations() {
     return this.props.items.map((x, i) => (
       // eslint-disable-next-line

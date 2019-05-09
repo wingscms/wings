@@ -12,7 +12,7 @@ import {
   CollectionCard,
   TestimonialCard,
   QACard,
-} from './cards';
+} from '../cards';
 
 const provideTheme = theme => (card) => {
   const Component = card.View;

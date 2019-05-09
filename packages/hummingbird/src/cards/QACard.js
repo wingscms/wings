@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { createCard } from '@wingscms/react';
-import Content from '../../Content';
-
-// import wide from '../../../../styles/wide';
+import Content from '../components/Content';
 
 const Title = styled.h3`
   font-size: 40px;

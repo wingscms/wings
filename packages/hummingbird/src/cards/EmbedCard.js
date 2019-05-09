@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { createCard } from '@wingscms/react';
 import styled from 'styled-components';
-import wide from '../../../styles/wide';
+import wide from '../styles/wide';
 
 const Figure = styled.figure`
   ${wide};

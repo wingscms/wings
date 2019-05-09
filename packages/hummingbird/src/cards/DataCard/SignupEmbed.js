@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import SignupEmbed from '../../../Embed';
+import SignupEmbed from '../../components/Embed';
 
-import wide from '../../../../styles/wide';
+import wide from '../../styles/wide';
 
 const Wrapper = styled.div`
   ${wide};

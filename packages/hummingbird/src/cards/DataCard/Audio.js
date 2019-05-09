@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
 
-import { Play, Pause } from '../../../../img/svg';
+import { Play, Pause } from '../../img/svg';
 
 const icon = css`
   height: 30px;
@@ -133,7 +133,7 @@ export default class Audio extends Component {
     this.timelineHover.style.width = '0px';
     const rect = this.timeline.getBoundingClientRect();
     const x = e.clientX - rect.left;
-    this.player.currentTime = x / this.timeline.offsetWidth * this.player.duration;
+    this.player.currentTime = (x / this.timeline.offsetWidth) * this.player.duration;
     this.positionHandle(x);
   };
 
@@ -169,7 +169,7 @@ export default class Audio extends Component {
   timelineClick = (e) => {
     const rect = this.timeline.getBoundingClientRect();
     const x = e.clientX - rect.left;
-    this.player.currentTime = x / this.timeline.offsetWidth * this.player.duration;
+    this.player.currentTime = (x / this.timeline.offsetWidth) * this.player.duration;
     this.positionHandle(x);
   };
 
