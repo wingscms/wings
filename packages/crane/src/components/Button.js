@@ -26,7 +26,7 @@ const small = css`
 export default styled.button`
   text-decoration: none;
   background-image: none;
-  background-color: ${({ theme }) => console.log('theme', theme) || theme.primaryColor};
+  background-color: ${({ theme }) => theme.primaryColor};
   color: ${({ theme }) => theme.secondaryColor};
   font-size: 24px;
   font-weight: bold;
