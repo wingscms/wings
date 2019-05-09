@@ -1,6 +1,6 @@
 {
   "name": "@wingscms/crane",
-  "version": "0.6.11",
+  "version": "0.6.12",
   "description": "",
   "main": "build/index.js",
   "scripts": {
