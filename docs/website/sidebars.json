@@ -3,7 +3,7 @@
     "General": ["users-general-settings"]
   },
   "developers": {
-    "API": ["developers-api-authentication"],
-    "Hummingbird": ["developers-hummingbird-getting-started"]
+    "API": ["dev-api-authentication"],
+    "Hummingbird": ["dev-hummingbird-getting-started"]
   }
 }

@@ -8,8 +8,8 @@ module.exports = {
   projectName: 'Wings-docs',
   organizationName: 'Wings',
   headerLinks: [
-    { label: 'Users', doc: 'getting-started' },
-    { label: 'Developers', doc: 'developers-getting-started' },
+    { label: 'Users', doc: 'users-general-getting-started' },
+    { label: 'Developers', doc: 'dev-general-getting-started' },
     { label: 'Home', href: 'https://wings.dev' },
     { label: 'Dashboard', href: 'https://admin.wings.dev' },
   ],
