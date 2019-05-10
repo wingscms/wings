@@ -1,8 +1,9 @@
 {
   "users": {
-    "General": ["users/general/settings"]
+    "General": ["users/general/getting-started", "users/general/settings"]
   },
   "developers": {
+    "General": ["dev/general/getting-started"],
     "API": ["dev/api/authentication"],
     "Hummingbird": ["dev/hummingbird/getting-started"]
   }
