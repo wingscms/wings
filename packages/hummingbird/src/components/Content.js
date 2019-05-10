@@ -40,7 +40,7 @@ const CARDS = [
 ];
 
 const Content = withTheme(({ theme, ...props }) => (
-  <WContent cards={CARDS.map(provideTheme(theme))} {...props} />
+  <WContent _useExperimentalReactRenderer cards={CARDS.map(provideTheme(theme))} {...props} />
 ));
 
 export default Content;

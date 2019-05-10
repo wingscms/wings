@@ -33,7 +33,7 @@ export default class EntryCollection extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     wings
       .query(
         `query {
