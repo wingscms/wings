@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { mediaUrl } from '@wingscms/sdk';
 import wings from '../../data/wings';
 import HighlightedContent from '../../components/HighlightedContent';
 import { ensureNodeFields, patchI18n } from '../../../node/utils';
@@ -92,7 +93,11 @@ export default class EntryCollection extends Component {
         const data = [];
         this.props.items.map((x, i) => {
           if (x.id || typeof x === 'string') {
-            data.push(res[`item${i}`]);
+            const item = res[`item${i}`];
+            if (item.image && item.image.url) {
+              item.image.url = mediaUrl(item.image.url, { width: 625 }) || '';
+            }
+            data.push(item);
           } else if (typeof x === 'object' && x.type === 'custom') {
             data.push({
               title: x.title,
@@ -103,7 +108,7 @@ export default class EntryCollection extends Component {
               },
               image: {
                 name: x.image,
-                url: x.image,
+                url: mediaUrl(x.image, { width: 625 }),
                 id: x.image,
                 alt: x.image,
                 caption: '',

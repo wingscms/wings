@@ -1,5 +1,6 @@
 import React from 'react';
 import { ComplexCard, SimpleCard, FlexGrid } from '@wingscms/crane';
+import { mediaUrl } from '@wingscms/sdk';
 import { navigate } from 'gatsby-link';
 import styled from 'styled-components';
 
@@ -26,8 +27,8 @@ export default ({ entry, loop, featured, divisions }) => (
             node.platforms.facebook &&
             node.platforms.facebook.imageUrl &&
             node.platforms.facebook.imageUrl
-              ? node.platforms.facebook.imageUrl
-              : node.image && node.image.url
+              ? mediaUrl(node.platforms.facebook.imageUrl, { width: 625 })
+              : node.image && node.image.url && mediaUrl(node.image.url, { width: 625 })
           }
           onClickHandler={() => {
             if (node.meta.featuredUrl) {
@@ -73,8 +74,8 @@ export default ({ entry, loop, featured, divisions }) => (
               node.platforms.facebook &&
               node.platforms.facebook.imageUrl &&
               node.platforms.facebook.imageUrl
-                ? node.platforms.facebook.imageUrl
-                : node.image && node.image.url
+                ? mediaUrl(node.platforms.facebook.imageUrl, { width: 625 })
+                : node.image && node.image.url && mediaUrl(node.image.url, { width: 625 })
             }
             onClickHandler={() => {
               if (node.meta.featuredUrl) {
