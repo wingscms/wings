@@ -1,5 +1,6 @@
 /* global window */
 import React, { Component } from 'react';
+import { mediaUrl } from '@wingscms/sdk';
 import styled from 'styled-components';
 import widont from 'widont';
 
@@ -58,7 +59,7 @@ export default class LandingSection extends Component {
         <Title>{title}</Title>
         {image ? (
           <ImageContainer>
-            <img src={image} alt={image.caption} />
+            <img src={mediaUrl(image, { width: 1160 })} alt={image.caption} />
           </ImageContainer>
         ) : null}
       </TitleContainer>
