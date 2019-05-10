@@ -1,10 +1,3 @@
-/**
- * Copyright (c) 2017-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 const React = require('react');
 
 class Footer extends React.Component {
@@ -41,12 +34,12 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>Contact</h5>
-            <a href="https://www.wings-platform.com" target="_blank" rel="noreferrer noopener">
-              Wings-platform.com
+            <a href="https://wings.dev" target="_blank" rel="noreferrer noopener">
+              wings.dev
             </a>
             <a href="https://www.bureaubolster.nl">Bureau Bolster</a>
             <a href="https://twitter.com/bureaubolster" target="_blank" rel="noreferrer noopener">
-              Bolster (Twitter)
+              Bureau Bolster (Twitter)
             </a>
           </div>
         </section>
