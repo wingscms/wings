@@ -1,3 +1,8 @@
+---
+id: developers-api-authentication
+title: Getting Started
+---
+
 # Authentication
 
 Whenever you want to connect to your Wings project, it's recommended to create an app in Settings.

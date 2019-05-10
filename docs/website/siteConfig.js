@@ -1,6 +1,6 @@
 // See https://docusaurus.io/docs/site-config
 
-const siteConfig = {
+module.exports = {
   title: 'Wings',
   tagline: 'Documentation for Wings',
   url: 'https://docs.wings.dev',
@@ -10,7 +10,8 @@ const siteConfig = {
   headerLinks: [
     { label: 'Users', doc: 'getting-started' },
     { label: 'Developers', doc: 'developers-getting-started' },
-    { label: 'Blog', href: 'https://wings.dev' },
+    { label: 'Home', href: 'https://wings.dev' },
+    { label: 'Dashboard', href: 'https://admin.wings.dev' },
   ],
   headerIcon: 'img/wings_logo.svg',
   footerIcon: 'img/wings_logo.svg',
@@ -23,11 +24,9 @@ const siteConfig = {
   highlight: {
     theme: 'default',
   },
-  scripts: ['https://buttons.github.io/buttons.js'],
+  scripts: [],
   onPageNav: 'separate',
   cleanUrl: true,
-  ogImage: 'img/previewimage.png',
-  twitterImage: 'img/previewimage.png',
+  ogImage: 'img/preview.png',
+  twitterImage: 'img/preview.png',
 };
-
-module.exports = siteConfig;

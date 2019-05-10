@@ -1,8 +1,9 @@
 {
   "users": {
-    "General": ["getting-started", "general-social-media-tips"]
+    "General": ["users-general-settings"]
   },
   "developers": {
-    "General": ["developers-getting-started"]
+    "API": ["developers-api-authentication"],
+    "Hummingbird": ["developers-hummingbird-getting-started"]
   }
 }
