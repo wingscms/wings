@@ -28,14 +28,9 @@ class Footer extends React.Component {
             )}
           </a>
           <div>
-            <h5>Docs</h5>
-            <a href={this.docUrl('doc1', this.props.language)}>Getting Started</a>
-            <a href={this.docUrl('doc2', this.props.language)}>Meta values</a>
-          </div>
-          <div>
             <h5>Contact</h5>
             <a href="https://wings.dev" target="_blank" rel="noreferrer noopener">
-              wings.dev
+              Wings
             </a>
             <a href="https://www.bureaubolster.nl">Bureau Bolster</a>
             <a href="https://twitter.com/bureaubolster" target="_blank" rel="noreferrer noopener">
