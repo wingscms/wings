@@ -57,7 +57,6 @@ export default class Content extends Component {
   };
 
   render() {
-    console.log('DOM');
     const { content, cards, unknownCardHandler, onLoad, ...props } = this.props;
     return (
       <div

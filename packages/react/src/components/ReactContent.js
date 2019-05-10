@@ -65,7 +65,6 @@ export default class Content extends Component {
   };
 
   render() {
-    console.log('react');
     const { content, cards, unknownCardHandler, onLoad, ...props } = this.props;
     return <div {...props}>{!content ? null : this.renderer.render(JSON.parse(content))}</div>;
   }
