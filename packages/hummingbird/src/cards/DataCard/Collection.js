@@ -94,8 +94,9 @@ export default class EntryCollection extends Component {
         this.props.items.map((x, i) => {
           if (x.id || typeof x === 'string') {
             const item = res[`item${i}`];
-            item.image.url =
-              item.image && item.image.url ? mediaUrl(item.image.url, { width: 625 }) : '';
+            if (item.image && item.image.url) {
+              item.image.url = mediaUrl(item.image.url, { width: 625 }) || '';
+            }
             data.push(item);
           } else if (typeof x === 'object' && x.type === 'custom') {
             data.push({
