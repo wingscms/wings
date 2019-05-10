@@ -1,5 +1,4 @@
 ---
-id: dev-hummingbird-getting-started
 title: Getting Started
 ---
 

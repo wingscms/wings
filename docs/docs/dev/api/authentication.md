@@ -1,5 +1,4 @@
 ---
-id: dev-api-authentication
 title: Getting Started
 ---
 

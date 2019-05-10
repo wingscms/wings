@@ -1,5 +1,4 @@
 ---
-id: users-general-settings
 title: Settings
 ---
 
