@@ -131,8 +131,8 @@ export default class Article extends Component {
             ) : null}
           </div>
           <Content
-            className="article-body"
-            id="article-body"
+            className="mobiledoc-content"
+            id="entry-content"
             content={content}
             onLoad={({ headers: h }) => onHeadersChange(h)}
           />

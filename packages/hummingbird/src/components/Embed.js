@@ -276,7 +276,7 @@ export default class PetitionEmbed extends Component {
             {(ctaText && ctaText.length > 0) || !description ? (
               <p>{ctaText}</p>
             ) : (
-              <Content content={description} className="article-body petition-description" />
+              <Content content={description} className="mobiledoc-content petition-description" />
             )}
             <AnchorButton
               href={typeof window !== 'undefined' ? `${window.location.origin}/${slug}` : ''}

@@ -208,7 +208,7 @@ class TestimonialCard extends Component {
             </ImageWrap>
           )}
           <ContentWrap>
-            <Content content={content} className="article-body" />
+            <Content content={content} className="mobiledoc-content" />
           </ContentWrap>
         </Wrap>
       </Testimonial>

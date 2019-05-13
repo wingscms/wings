@@ -50,7 +50,7 @@ export default ({ event }) => (
   <OuterContainerBottom>
     <InnerContainerBottom>
       <ContentContainer>
-        <Content content={event.description} className="article-body" />
+        <Content content={event.description} className="mobiledoc-content" />
         <CtaButton
           onClick={(e) => {
             e.preventDefault();

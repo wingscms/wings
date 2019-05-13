@@ -13,7 +13,7 @@ const Container = styled.div`
   background: ${({ theme }) => theme.primaryColor};
   margin-top: 80px;
   margin-bottom: 80px;
-  .article-body > div:first-child & {
+  .mobiledoc-content > div:first-child & {
     margin-top: 0 !important;
   }
   @media screen and (max-width: 800px) {

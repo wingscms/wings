@@ -4,7 +4,7 @@ export default createGlobalStyle`
   .twitter-tweet {
     margin: 20px auto;
   }
-  .article-body {
+  .mobiledoc-content {
     font-size: 16px;
     @media screen and (min-width: 600px) {
       font-size: 18px;
