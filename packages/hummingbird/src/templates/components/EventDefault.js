@@ -6,9 +6,7 @@ import { MenuContentWrapper } from '@wingscms/crane';
 import qs from 'qs';
 
 import Content from '../../components/Content';
-
-import Footer from '../../components/Footer';
-import Layout from '../../components/Layout';
+import Layout from '../../components/LayoutDefault';
 import Navigation from '../../components/Navigation';
 import { InfoContainer, EventForm } from '../../components/Event';
 
@@ -183,7 +181,6 @@ export default class extends Component {
               <Title>Info</Title>
               <InfoContainer schedule={schedule} fee={fee} location={location} />
             </ContentContainer>
-            <Footer />
           </Wrapper>
         </MenuContentWrapper>
       </Layout>

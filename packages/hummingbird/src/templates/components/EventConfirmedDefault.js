@@ -8,7 +8,7 @@ import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 
 import { ContentContainer, Title, Wrapper } from '../../components/Petition/ConfirmationPages';
-import Layout from '../../components/Layout';
+import Layout from '../../components/LayoutDefault';
 
 import { makeShareUrls } from '../../../lib/utils';
 

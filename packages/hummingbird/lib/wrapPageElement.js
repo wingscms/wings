@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
+import { navigate } from 'gatsby';
+import browserLocale from 'browser-locale';
 import { parseBool } from '../lib/utils';
 import { useTheme } from '../lib/styled';
 
@@ -23,15 +25,42 @@ const PageWrapper = ({
     title,
     platforms = {},
     locale,
-    translations: _translations,
+    translations,
     meta,
     meta: { noSiteTitle },
   } = node;
+  useEffect(() => {
+    if (typeof window !== 'undefined' && translations && translations.length > 0) {
+      if (
+        localStorage.getItem(
+          `hasLanguageRedirectRunBefore${window.location.hostname}${node.path}`,
+        ) === null
+      ) {
+        const lang = browserLocale().split('-')[0];
+        let containsTranslation = false;
+        let path = '';
+        localStorage.setItem(
+          `hasLanguageRedirectRunBefore${window.location.hostname}${node.path}`,
+          true,
+        );
+        translations.forEach((x) => {
+          localStorage.setItem(
+            `hasLanguageRedirectRunBefore${window.location.hostname}${x.path}`,
+            true,
+          );
+          if (x.locale === lang) {
+            containsTranslation = true;
+            // eslint-disable-next-line
+            path = x.path;
+          }
+        });
+        if (containsTranslation && translations && locale !== lang) {
+          navigate(path);
+        }
+      }
+    }
+  }, []);
 
-  const translations = Object.keys(_translations || {}).map(_locale => ({
-    locale: _locale,
-    path: node.translations[_locale].path,
-  }));
   return (
     <React.Fragment>
       <Helmet title={generateTitle(noSiteTitle, title, siteTitle, 'all', platforms)}>

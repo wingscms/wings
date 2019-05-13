@@ -15,12 +15,11 @@ const filterArchive = (archive, filterVal) =>
     .filter(x => !x.meta.noIndex)
     .filter(x => !x.meta.isArchive)
     .filter(x => !x.meta.isHome)
-    .filter(
-      x =>
-        (!filterVal
-          ? true
-          : x.meta.archiveFilter &&
-            x.meta.archiveFilter.split(',').filter(y => y === filterVal).length > 0),
+    .filter(x =>
+      (!filterVal
+        ? true
+        : x.meta.archiveFilter &&
+          x.meta.archiveFilter.split(',').filter(y => y === filterVal).length > 0),
     );
 
 const getArchive = (type, types, filter = '') => {
@@ -46,7 +45,7 @@ const patchI18n = (nodes, { defaultLocale = 'en' } = {}) =>
       ..._node,
       locale,
       path: constructPath(_node.meta.isHome, locale, defaultLocale, _node),
-      translations: {},
+      translations: [],
     };
     const patched = _patched.concat([node]);
 
@@ -58,10 +57,10 @@ const patchI18n = (nodes, { defaultLocale = 'en' } = {}) =>
       patched
         .filter(isTranslation({ slug: p.slug, locale: p.locale }))
         .forEach(({ translations, ...translation }) => {
-          p.translations = {
+          p.translations = [
             ...p.translations,
-            [translation.locale]: translation,
-          };
+            { locale: translation.locale, path: translation.path },
+          ];
         });
       return p;
     });

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import Layout from '../../components/Layout';
+import Layout from '../../components/LayoutDefault';
 import Navigation from '../../components/Navigation';
 
 export default () => (
