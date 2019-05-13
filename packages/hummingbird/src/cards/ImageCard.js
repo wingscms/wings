@@ -55,9 +55,10 @@ const Image = styled.figure`
     ${ALIGNLEFT};
     margin-top: 20px;
     margin-bottom: 20px;
+    padding-right: 20px;
     @media screen and (min-width: 800px) {
-      margin-top: 40px;
-      margin-bottom: 40px;
+      margin-top: 20px;
+      margin-bottom: 20px;
       figcaption {
         padding: 10px 0;
       }
@@ -67,9 +68,10 @@ const Image = styled.figure`
     ${ALIGNRIGHT};
     margin-top: 20px;
     margin-bottom: 20px;
+    padding-left: 20px;
     @media screen and (min-width: 800px) {
-      margin-top: 40px;
-      margin-bottom: 40px;
+      margin-top: 20px;
+      margin-bottom: 20px;
       figcaption {
         padding: 10px 0;
       }
