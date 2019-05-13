@@ -14,7 +14,7 @@ export default class ConfirmPage extends Component {
     shareUrls: makeShareUrls(
       this.props.pageContext.event.platforms,
       this.props.location.href ? this.props.location.href : '',
-      this.props.pageContext.event.meta || this.props.pageContext.data.seo,
+      this.props.pageContext.event.meta,
     ),
   };
 

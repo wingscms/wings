@@ -50,7 +50,7 @@ export default class ArticleDefault extends Component {
     super();
     this.state = {
       headers: [],
-      shareUrls: makeShareUrls(entry.platforms, location.href || '', entry.meta || entry.data.seo),
+      shareUrls: makeShareUrls(entry.platforms, location.href || '', entry.meta),
     };
   }
 

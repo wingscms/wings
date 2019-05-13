@@ -111,15 +111,6 @@ const PageWrapper = ({
         {platforms.facebook && platforms.facebook.imageUrl ? (
           <meta property="fb:image" content={platforms.facebook.imageUrl} />
         ) : null}
-        {/* Custom meta */}
-        {process.env.GATSBY_CUSTOM_META
-          ? JSON.parse(process.env.GATSBY_CUSTOM_META).map(x => (
-            <meta name={x.name} content={x.content} />
-            ))
-          : null}
-        {meta && meta.customHTMLMeta
-          ? JSON.parse(meta.customHTMLMeta).map(x => <meta name={x.name} content={x.content} />)
-          : null}
       </Helmet>
       {children}
     </React.Fragment>
