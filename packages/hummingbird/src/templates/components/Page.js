@@ -59,7 +59,7 @@ export default class Page extends Entry {
 
   static Main = ({ entry }) => (
     <ContentWrapper>
-      <Content className="article-body" id="article-body" content={entry.content} />
+      <Content className="mobiledoc-content" id="mobiledoc-content" content={entry.content} />
     </ContentWrapper>
   );
 

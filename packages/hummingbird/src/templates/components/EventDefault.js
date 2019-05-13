@@ -147,8 +147,8 @@ export default class extends Component {
                   {intro ? <Intro fullWidth>{intro}</Intro> : null}
                   <Content
                     content={event.description}
-                    className="article-body petition-description"
-                    id="article-body"
+                    className="mobiledoc-content petition-description"
+                    id="mobiledoc-content"
                   />
                 </PetitionProposition>
                 <FormContainer id="fb-form-container">
