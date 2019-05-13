@@ -207,7 +207,7 @@ export default class extends Component {
                   <Content
                     content={petition.description}
                     className="mobiledoc-content petition-description"
-                    id="mobiledoc-content"
+                    id="petition-description"
                   />
                 </PetitionProposition>
                 <FormContainer id="fb-form-container">

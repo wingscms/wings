@@ -120,11 +120,7 @@ export default class ArchiveDefault extends Component {
           <Page className="page archive">
             <Title>{entry.title}</Title>
             {entry.content ? (
-              <Content
-                className="mobiledoc-content"
-                id="mobiledoc-content"
-                content={entry.content}
-              />
+              <Content className="mobiledoc-content" id="entry-content" content={entry.content} />
             ) : null}
             <HighlightedArticles>
               <FlexGrid

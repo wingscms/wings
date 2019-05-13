@@ -132,7 +132,7 @@ export default class Article extends Component {
           </div>
           <Content
             className="mobiledoc-content"
-            id="mobiledoc-content"
+            id="entry-content"
             content={content}
             onLoad={({ headers: h }) => onHeadersChange(h)}
           />

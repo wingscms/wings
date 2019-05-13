@@ -148,7 +148,7 @@ export default class extends Component {
                   <Content
                     content={event.description}
                     className="mobiledoc-content petition-description"
-                    id="mobiledoc-content"
+                    id="event-content"
                   />
                 </PetitionProposition>
                 <FormContainer id="fb-form-container">
