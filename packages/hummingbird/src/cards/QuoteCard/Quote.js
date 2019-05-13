@@ -40,9 +40,9 @@ export default styled.figure`
       font-family: ${({ theme }) => theme.typography.options.headerFontFamily.join(', ')};
       font-size: 24px;
       line-height: 1.2;
-    @media screen and (min-width: 800px) {
-      font-size: 42px;
-    }
+      @media screen and (min-width: 800px) {
+        font-size: 28px;
+      }
     }
   }
   &.pullquote-${FLOAT.NONE} {
@@ -65,12 +65,6 @@ export default styled.figure`
     @media screen and (max-width: 800px) {
       width: 100%;
       float: none;
-    }
-    @media screen and (min-width: 400px) {
-      padding: 1.5rem;
-    }
-    @media screen and (min-width: 1080px) {
-      padding: 2rem;
     }
   }
   aside,
