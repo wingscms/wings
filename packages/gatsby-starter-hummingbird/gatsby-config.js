@@ -4,7 +4,7 @@ const { getDesign, getTypographyConfig, getFooterConfig } = require('./node/util
 
 module.exports = {
   siteMetadata: {
-    siteUrl: process.env.SITE_URL || process.env.URL || 'https://bureaubolster.com',
+    siteUrl: process.env.SITE_URL || process.env.URL || 'https://wings.dev',
   },
   __experimentalThemes: [
     {

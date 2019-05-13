@@ -52,6 +52,7 @@ const Translations = styled.div`
   left: 0;
   overflow: auto;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   height: auto;
   max-height: 275px;
 `;
