@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import _Link, { navigate } from 'gatsby-link';
 import { ComplexCard, FlexGrid, MenuContentWrapper } from '@wingscms/crane';
 import _Content from '../../components/Content';
-import Layout from '../../components/Layout';
+import Layout from '../../components/LayoutDefault';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 

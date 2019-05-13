@@ -1,48 +1,17 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import classNames from 'classnames';
-import { MenuContentWrapper as _MenuContentWrapper } from '@wingscms/crane';
 import CornerMenu from '../../components/CornerMenu';
 import HighlightedContent from '../../components/HighlightedContent';
 import Header, { StackedHeader } from '../../components/Header';
 import Navigation from '../../components/Navigation';
 import ProgressBar from '../../components/ProgressBar';
-import Layout from '../../components/Layout';
-import Footer from '../../components/Footer';
-import { makeShareUrls, parseBool } from '../../../lib/utils';
+import LayoutDefault from '../../components/LayoutDefault';
+import { makeShareUrls } from '../../../lib/utils';
 
 const ContentWrapper = styled.div`
   margin: 0 auto;
   max-width: 760px;
   padding: 0 20px;
-`;
-
-const MenuContentWrapper = styled(_MenuContentWrapper)`
-  .slide-menu.chapters {
-    position: fixed;
-    z-index: 50;
-  }
-  &.chaptersOpen {
-    .slide-menu.chapters {
-      position: fixed;
-      margin-left: 300px;
-      top: 0;
-      height: 100vh;
-    }
-  }
-  @media screen and (max-width: 800px) {
-    .slide-menu.chapters {
-      left: -100vw;
-    }
-    &.chaptersOpen {
-      margin-left: 100vw;
-      padding-right: 100vw;
-      width: calc(100% + 100vw);
-      .slide-menu.chapters {
-        margin-left: 100vw;
-      }
-    }
-  }
 `;
 
 export default class Entry extends Component {
@@ -107,56 +76,38 @@ export default class Entry extends Component {
     headers: [],
   };
 
-  children = () => {
+  static defaultProps = {
+    layout: LayoutDefault,
+  };
+
+  childProps = () => {
     const {
-      pageContext: {
-        entry,
-        entry: { translations: _translations },
-        loop,
-        featured,
-      },
-      children,
+      pageContext: { entry, loop, featured },
       location,
     } = this.props;
     const { headers } = this.state;
     const shareUrls = makeShareUrls(entry.platforms, location.href || '', entry.meta);
-    const translations = Object.keys(_translations || {}).map(_locale => ({
-      _locale,
-      path: _translations[_locale].path,
-    }));
-
-    const childProps = {
-      entry: { ...entry, translations },
+    return {
+      entry,
       headers,
       shareUrls,
       loop,
       featured,
       onHeadersChange: h => this.setState({ headers: h }),
     };
-
-    return React.Children.map(children, element => React.cloneElement(element, childProps));
   };
 
+  children = () =>
+    React.Children.map(this.props.children, element =>
+      React.cloneElement(element, this.childProps()),
+    );
+
   render() {
-    const {
-      pageContext: {
-        entry: {
-          type,
-          meta: { dropCap },
-        },
-      },
-    } = this.props;
+    const { layout: Layout } = this.props;
     return (
       <Layout>
-        <div id={this.props.id}>
-          <MenuContentWrapper
-            id="content-wrapper"
-            className={classNames(type.id, { 'drop-cap': parseBool(dropCap) })}
-          >
-            {this.children()}
-            <Footer />
-          </MenuContentWrapper>
-        </div>
+        <Entry.Navigation {...this.childProps()} />
+        {this.children()}
       </Layout>
     );
   }

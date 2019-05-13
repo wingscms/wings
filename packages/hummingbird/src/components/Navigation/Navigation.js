@@ -187,7 +187,7 @@ class Navigation extends Component {
               <LanguagePicker
                 backgroundColor={theme.languagePickerColor}
                 backgroundColorHover={theme.languagePickerHoverColor}
-                translations={translations.map(x => ({ ...x, locale: x._locale }))}
+                translations={translations}
                 current={locale}
                 onClickHandler={(e, trans) => {
                   e.preventDefault();

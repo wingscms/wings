@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
 import { MenuContentWrapper } from '@wingscms/crane';
-import Layout from '../../components/Layout';
+import Layout from '../../components/LayoutDefault';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 

@@ -10,8 +10,7 @@ import wings from '../../data/wings';
 import Content from '../../components/Content';
 import Intro from '../../components/Text/Intro';
 
-import Footer from '../../components/Footer';
-import Layout from '../../components/Layout';
+import Layout from '../../components/LayoutDefault';
 import Navigation from '../../components/Navigation';
 
 import { makeShareUrls } from '../../../lib/utils';
@@ -247,7 +246,6 @@ export default class extends Component {
                 </FormContainer>
               </MainContainerInner>
             </MainContainerOuter>
-            <Footer />
           </Wrapper>
         </MenuContentWrapper>
       </Layout>

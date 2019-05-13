@@ -145,7 +145,6 @@ export default class Article extends Component {
     children: [
       <Article.ProgressBar />,
       <Article.CornerMenu />,
-      <Article.Navigation />,
       <Article.Header />,
       <Article.Main />,
     ],
