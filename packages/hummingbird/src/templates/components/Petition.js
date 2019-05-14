@@ -2,65 +2,13 @@
 
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { MenuContentWrapper, CloudinaryVideoProvider, Video } from '@wingscms/crane';
-import qs from 'qs';
-
-import wings from '../../data/wings';
-
+import { CloudinaryVideoProvider, Video } from '@wingscms/crane';
 import Content from '../../components/Content';
 import Intro from '../../components/Text/Intro';
-
-import Layout from '../../components/LayoutDefault';
-import Navigation from '../../components/Navigation';
-
-import { makeShareUrls } from '../../../lib/utils';
-
-import PetitionForm, {
-  PetitionCounter,
-  PetitionProposition as _PetitionProposition,
-} from '../../components/Petition/PetitionForm';
-
+import { PetitionCounter } from '../../components/Petition/PetitionForm';
 import Container from '../../components/Container';
-
-const Wrapper = styled(Container)`
-  background-color: ${({ theme }) => theme.appBackgroundColor};
-`;
-
-const BackgroundContainer = styled(Container)`
-  background-image: url(${props => props.backgroundImage});
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 40px 20px;
-  min-height: 200px;
-  > div {
-    padding: 20px 20px;
-    max-width: 1160px;
-    width: 100%;
-    margin: 0 auto;
-    background-color: ${({ theme }) => theme.primaryColor};
-    border-radius: 4px;
-  }
-  @media screen and (max-width: 800px) {
-    padding: 10px;
-    width: 100%;
-    max-width: 100%;
-  }
-`;
-
-const BackgroundContainerTop = styled(BackgroundContainer)`
-  height: 100vh;
-  max-height: 700px;
-  @media screen and (max-width: 800px) {
-    height: 60vh;
-  }
-  @media screen and (max-width: 800px) and (max-height: 720px) {
-    height: 60vh;
-  }
-  @media screen and (max-width: 800px) and (max-height: 530px) {
-    height: 100vh;
-  }
-`;
+import CampaignForm from '../../components/CampaignForm';
+import Campaign from './Campaign';
 
 const MainContainerOuter = styled(Container)`
   margin-top: -300px;
@@ -93,8 +41,6 @@ const FormContainer = styled.div`
     width: 100%;
   }
 `;
-
-const PetitionProposition = styled(_PetitionProposition)``;
 
 const FormContainerInner = styled.div`
   padding: 40px;
@@ -135,120 +81,102 @@ const VideoContainer = styled.div`
 `;
 
 export default class Petition extends Component {
-  constructor({ pageContext: { petition }, location }) {
-    super();
-    this.state = {
-      loading: true,
-      shareUrls: makeShareUrls(petition.platforms, location.href || '', petition.meta),
-      petition,
+  static Navigation = Campaign.Navigation;
+  static Header = Campaign.Header;
+  static Main = class Main extends Component {
+    state = {
+      signatureCount: null,
     };
-  }
+    render() {
+      const {
+        pageContext: {
+          node: { title, intro, meta },
+          node,
+        },
+        formProps = {},
+      } = this.props;
+      const { signatureCount } = this.state;
+      return (
+        <MainContainerOuter>
+          <MainContainerInner>
+            {meta.cloudinaryVideoCloud && meta.cloudinaryVideoId ? (
+              <VideoContainer>
+                <CloudinaryVideoProvider
+                  cloudName={meta.cloudinaryVideoCloud}
+                  videoId={meta.cloudinaryVideoId}
+                >
+                  <Video
+                    poster={`//res.cloudinary.com/${
+                      meta.cloudinaryVideoCloud
+                    }/video/upload/vc_auto/${meta.cloudinaryVideoId}.jpg`}
+                    autoplay={meta.cloudinaryVideoAutoplay ? 'autoplay' : null}
+                    muted={meta.cloudinaryVideoAutoplay ? 'muted' : null}
+                    playsinline="playsinline"
+                  />
+                </CloudinaryVideoProvider>
+              </VideoContainer>
+            ) : null}
+            <Campaign.Proposition>
+              {title && <Title>{title}</Title>}
+              {intro && <Intro fullWidth>{intro}</Intro>}
+              <Content
+                content={node.description}
+                className="mobiledoc-content petition-description"
+                id="petition-description"
+              />
+            </Campaign.Proposition>
+            <FormContainer id="fb-form-container">
+              <CounterContainer>
+                <PetitionCounter
+                  current={signatureCount || node.signatureCount}
+                  max={500}
+                  descriptionText={meta.counterText || 'mensen hebben deze petitie al ondertekend'}
+                />
+              </CounterContainer>
+              <FormContainerInner>
+                <CampaignForm
+                  id={node.id}
+                  type="petition"
+                  onLoad={p => this.setState({ signatureCount: p.signatureCount })}
+                  {...formProps}
+                />
+              </FormContainerInner>
+            </FormContainer>
+          </MainContainerInner>
+        </MainContainerOuter>
+      );
+    }
+  };
 
-  componentDidMount() {
-    wings
-      .query(
-        `
-        query Petition ($id: String!) {
-          petition(id: $id) {
-            signatureCount
-          }
-        }
-        `,
-        { id: this.props.pageContext.petition.id },
-      )
-      .then(({ petition: { signatureCount = 0 } = {} }) => {
-        this.setState(({ petition }) => ({
-          petition: { ...petition, signatureCount },
-          loading: false,
-        }));
-      })
-      .catch((err) => {
-        console.error(err);
-        this.setState({ error: true });
-      });
-  }
+  static defaultProps = {
+    children: [<Petition.Navigation />, <Petition.Header />, <Petition.Main />],
+  };
 
-  getQueryParams = () => qs.parse((this.props.location.search || '').replace('?', ''));
+  // componentDidMount() {
+  //   wings
+  //     .query(
+  //       `
+  //       query Petition ($id: String!) {
+  //         petition(id: $id) {
+  //           signatureCount
+  //         }
+  //       }
+  //       `,
+  //       { id: this.props.pageContext.petition.id },
+  //     )
+  //     .then(({ petition: { signatureCount = 0 } = {} }) => {
+  //       this.setState(({ petition }) => ({
+  //         petition: { ...petition, signatureCount },
+  //         loading: false,
+  //       }));
+  //     })
+  //     .catch((err) => {
+  //       console.error(err);
+  //       this.setState({ error: true });
+  //     });
+  // }
 
   render() {
-    // eslint-disable-next-line
-    const { shareUrls, loading, error, petition = {} } = this.state;
-    const { title, intro, meta } = petition;
-    const metaObj = meta;
-    return (
-      <Layout>
-        <MenuContentWrapper id="content-wrapper" className="petition">
-          <Wrapper>
-            <Navigation shareUrls={shareUrls} items={petition.menu && petition.menu.items} />
-            <BackgroundContainerTop backgroundImage={petition.image ? petition.image.url : ''} />
-            <MainContainerOuter>
-              <MainContainerInner>
-                {metaObj.cloudinaryVideoCloud && metaObj.cloudinaryVideoId ? (
-                  <VideoContainer>
-                    <CloudinaryVideoProvider
-                      cloudName={metaObj.cloudinaryVideoCloud}
-                      videoId={metaObj.cloudinaryVideoId}
-                    >
-                      <Video
-                        poster={`//res.cloudinary.com/${
-                          metaObj.cloudinaryVideoCloud
-                        }/video/upload/vc_auto/${metaObj.cloudinaryVideoId}.jpg`}
-                        autoplay={metaObj.cloudinaryVideoAutoplay ? 'autoplay' : null}
-                        muted={metaObj.cloudinaryVideoAutoplay ? 'muted' : null}
-                        playsinline="playsinline"
-                      />
-                    </CloudinaryVideoProvider>
-                  </VideoContainer>
-                ) : null}
-                <PetitionProposition>
-                  {title && <Title>{title}</Title>}
-                  {intro && <Intro fullWidth>{intro}</Intro>}
-                  <Content
-                    content={petition.description}
-                    className="mobiledoc-content petition-description"
-                    id="petition-description"
-                  />
-                </PetitionProposition>
-                <FormContainer id="fb-form-container">
-                  <CounterContainer>
-                    <PetitionCounter
-                      current={petition.signatureCount}
-                      max={500}
-                      descriptionText={
-                        metaObj.counterText || 'mensen hebben deze petitie al ondertekend'
-                      }
-                    />
-                  </CounterContainer>
-                  <FormContainerInner>
-                    <PetitionForm
-                      onError={() => this.setState({ error: true })}
-                      petitionId={`${petition.id}`}
-                      loading={loading}
-                      privacyLink={metaObj.privacyLink}
-                      privacyText={metaObj.privacyText}
-                      formTitle={metaObj.formTitle}
-                      keepMeUpdatedText={metaObj.keepMeUpdatedText}
-                      buttonText={metaObj.signupButtonCopy}
-                      actionNetworkHelper={metaObj.actionNetworkHelper}
-                      confirmationText={metaObj.confirmationText}
-                      confirmationTitle={metaObj.confirmationTitle}
-                      firstNameLabel={metaObj.firstNameLabel}
-                      firstNamePlaceholder={metaObj.firstNamePlaceholder}
-                      lastNameLabel={metaObj.lastNameLabel}
-                      lastNamePlaceholder={metaObj.lastNamePlaceholder}
-                      emailLabel={metaObj.emailLabel}
-                      emailPlaceholder={metaObj.emailPlaceholder}
-                      newsletterLabel={metaObj.newsletterLabel}
-                      newsletterOptions={metaObj.newsletterOptions}
-                      newsletterNotice={metaObj.newsletterNotice}
-                    />
-                  </FormContainerInner>
-                </FormContainer>
-              </MainContainerInner>
-            </MainContainerOuter>
-          </Wrapper>
-        </MenuContentWrapper>
-      </Layout>
-    );
+    return <Campaign {...this.props} />;
   }
 }

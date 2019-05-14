@@ -16,6 +16,9 @@ import Textarea from './Textarea';
 import URLInput from './URLInput';
 
 const StyledForm = styled(Form)`
+  fieldset {
+    border: 0;
+  }
   .form-group {
     margin-bottom: 10px;
     &:last-child {

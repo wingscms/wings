@@ -1,7 +1,7 @@
 import { GraphQLClient } from 'graphql-request';
 
 export default class Wings {
-  constructor({ endpoint = 'https://api.wings-platform.com', appKey, project }) {
+  constructor({ endpoint = 'https://api.wings.dev', appKey, project }) {
     this.endpoint = endpoint;
     this.appKey = appKey;
     this.project = project;

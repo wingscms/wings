@@ -1,5 +1,3 @@
-/* global window */
-
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
@@ -66,15 +64,11 @@ const ToggleButton = styled.div`
   }
 `;
 
-export default class PetitionProposition extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      height: '',
-      show: false,
-    };
-    this.togglePropositionBound = this.toggleProposition.bind(this);
-  }
+export default class Proposition extends Component {
+  state = {
+    height: '',
+    show: false,
+  };
 
   componentDidMount() {
     if (windowExists) {
@@ -83,9 +77,7 @@ export default class PetitionProposition extends Component {
     }
   }
 
-  toggleProposition() {
-    this.setState({ show: !this.state.show });
-  }
+  toggleProposition = () => this.setState(({ show }) => ({ show: !show }));
 
   render() {
     const { height, show } = this.state;
@@ -93,7 +85,7 @@ export default class PetitionProposition extends Component {
     return (
       <PropositionContainer height={height} show={show}>
         {children}
-        <ToggleButton onClick={this.togglePropositionBound}>
+        <ToggleButton onClick={this.toggleProposition}>
           {show ? (
             <React.Fragment>
               Collapse

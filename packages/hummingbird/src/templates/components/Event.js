@@ -1,61 +1,11 @@
-/* eslint-disable no-shadow */
-
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { MenuContentWrapper } from '@wingscms/crane';
-import qs from 'qs';
-
+import Campaign from './Campaign';
 import Content from '../../components/Content';
-import Layout from '../../components/LayoutDefault';
-import Navigation from '../../components/Navigation';
-import { InfoContainer, EventForm } from '../../components/Event';
-
-import { makeShareUrls } from '../../../lib/utils';
-
-import { PetitionProposition as _PetitionProposition } from '../../components/Petition/PetitionForm';
+import { InfoContainer } from '../../components/Event';
+import CampaignForm from '../../components/CampaignForm';
 import { ContentContainer } from '../../components/Petition/ConfirmationPages';
-
 import Container from '../../components/Container';
-
-const Wrapper = styled(Container)`
-  background-color: ${({ theme }) => theme.appBackgroundColor};
-`;
-
-const BackgroundContainer = styled(Container)`
-  background-image: url(${props => props.backgroundImage});
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 40px 20px;
-  min-height: 200px;
-  > div {
-    padding: 20px 20px;
-    max-width: 1160px;
-    width: 100%;
-    margin: 0 auto;
-    background-color: ${({ theme }) => theme.primaryColor};
-    border-radius: 4px;
-  }
-  @media screen and (max-width: 800px) {
-    padding: 10px;
-    width: 100%;
-    max-width: 100%;
-  }
-`;
-
-const BackgroundContainerTop = styled(BackgroundContainer)`
-  height: 100vh;
-  max-height: 700px;
-  @media screen and (max-width: 800px) {
-    height: 60vh;
-  }
-  @media screen and (max-width: 800px) and (max-height: 720px) {
-    height: 60vh;
-  }
-  @media screen and (max-width: 800px) and (max-height: 530px) {
-    height: 100vh;
-  }
-`;
 
 const MainContainerOuter = styled(Container)`
   margin-top: -300px;
@@ -92,8 +42,6 @@ const FormContainer = styled.div`
   }
 `;
 
-const PetitionProposition = styled(_PetitionProposition)``;
-
 const FormContainerInner = styled.div`
   padding: 40px;
   display: block;
@@ -115,75 +63,48 @@ const Intro = styled.p`
   font-size: 1.2em;
 `;
 
-export default class extends Component {
-  constructor({ pageContext: { event }, location }) {
-    super();
-    this.state = {
-      loading: true,
-      shareUrls: makeShareUrls(event.platforms, location.href || '', event.meta),
-      event,
-    };
-  }
+export default class EventTemplate extends Component {
+  static Header = Campaign.Header;
+  static Navigation = Campaign.Navigation;
 
-  getQueryParams = () => qs.parse((this.props.location.search || '').replace('?', ''));
-
-  render() {
-    // eslint-disable-next-line
-    const { shareUrls, loading, error, event } = this.state;
-    const { title, intro, schedule, fee, location, meta } = event;
-    const metaObj = meta;
+  static Main = ({ pageContext: { node }, formProps = {} }) => {
+    const { title, intro } = node;
     return (
-      <Layout>
-        <MenuContentWrapper id="content-wrapper" className="petition">
-          <Wrapper>
-            <Navigation shareUrls={shareUrls} items={event.menu && event.menu.items} />
-            <BackgroundContainerTop backgroundImage={event.image ? event.image.url : ''} />
-            <MainContainerOuter>
-              <MainContainerInner>
-                <PetitionProposition>
-                  {title ? <Title>{title}</Title> : null}
-                  {intro ? <Intro fullWidth>{intro}</Intro> : null}
-                  <Content
-                    content={event.description}
-                    className="mobiledoc-content petition-description"
-                    id="event-content"
-                  />
-                </PetitionProposition>
-                <FormContainer id="fb-form-container">
-                  <FormContainerInner>
-                    <EventForm
-                      onError={() => this.setState({ error: true })}
-                      eventId={`${event.id}`}
-                      loading={loading}
-                      privacyLink={metaObj.privacyLink}
-                      privacyText={metaObj.privacyText}
-                      formTitle={metaObj.formTitle}
-                      keepMeUpdatedText={metaObj.keepMeUpdatedText}
-                      buttonText={metaObj.signupButtonCopy}
-                      actionNetworkHelper={metaObj.actionNetworkHelper}
-                      confirmationText={metaObj.confirmationText}
-                      confirmationTitle={metaObj.confirmationTitle}
-                      firstNameLabel={metaObj.firstNameLabel}
-                      firstNamePlaceholder={metaObj.firstNamePlaceholder}
-                      lastNameLabel={metaObj.lastNameLabel}
-                      lastNamePlaceholder={metaObj.lastNamePlaceholder}
-                      emailLabel={metaObj.emailLabel}
-                      emailPlaceholder={metaObj.emailPlaceholder}
-                      newsletterLabel={metaObj.newsletterLabel}
-                      newsletterOptions={metaObj.newsletterOptions}
-                      newsletterNotice={metaObj.newsletterNotice}
-                    />
-                  </FormContainerInner>
-                </FormContainer>
-              </MainContainerInner>
-            </MainContainerOuter>
-            <ContentContainer style={{ marginBottom: '40px' }}>
-              <Title>Info</Title>
-              <InfoContainer schedule={schedule} fee={fee} location={location} />
-            </ContentContainer>
-          </Wrapper>
-        </MenuContentWrapper>
-      </Layout>
+      <MainContainerOuter>
+        <MainContainerInner>
+          <Campaign.Proposition>
+            {title ? <Title>{title}</Title> : null}
+            {intro ? <Intro fullWidth>{intro}</Intro> : null}
+            <Content content={node.description} className="mobiledoc-content" id="event-content" />
+          </Campaign.Proposition>
+          <FormContainer id="fb-form-container">
+            <FormContainerInner>
+              <CampaignForm type="event" id={node.id} {...formProps} />
+            </FormContainerInner>
+          </FormContainer>
+        </MainContainerInner>
+      </MainContainerOuter>
     );
+  };
+  static Details = ({
+    pageContext: {
+      node: { schedule, location, fee },
+    },
+  }) => (
+    <ContentContainer style={{ marginBottom: '40px' }}>
+      <Title>Info</Title>
+      <InfoContainer schedule={schedule} fee={fee} location={location} />
+    </ContentContainer>
+  );
+  static defaultProps = {
+    children: [
+      <EventTemplate.Navigation />,
+      <EventTemplate.Header />,
+      <EventTemplate.Main />,
+      <EventTemplate.Details />,
+    ],
+  };
+  render() {
+    return <Campaign {...this.props} />;
   }
 }
