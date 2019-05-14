@@ -151,17 +151,17 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
     homepage = true;
     createPage({
       path: h ? '/' : `${petition.path}`,
-      component: require.resolve('../../../src/templates/PetitionDefault.js'),
+      component: require.resolve('../../../src/templates/Petition'),
       context: { petition, siteMeta },
     });
     createPage({
       path: h ? '/confirm' : `${petition.path}/confirm`,
-      component: require.resolve('../../../src/templates/PetitionConfirmDefault.js'),
+      component: require.resolve('../../../src/templates/PetitionConfirm'),
       context: { petition, siteMeta },
     });
     createPage({
       path: h ? '/confirmed' : `${petition.path}/confirmed`,
-      component: require.resolve('../../../src/templates/PetitionConfirmedDefault.js'),
+      component: require.resolve('../../../src/templates/PetitionConfirmed'),
       context: { petition, siteMeta },
     });
   });
@@ -172,17 +172,17 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
     homepage = h ? true : homepage;
     createPage({
       path: h ? '/' : `${event.path}`,
-      component: require.resolve('../../../src/templates/EventDefault.js'),
+      component: require.resolve('../../../src/templates/Event'),
       context: { event, siteMeta },
     });
     createPage({
       path: h ? '/confirm' : `${event.path}/confirm`,
-      component: require.resolve('../../../src/templates/EventConfirmDefault.js'),
+      component: require.resolve('../../../src/templates/EventConfirm'),
       context: { event, siteMeta },
     });
     createPage({
       path: h ? '/confirmed' : `${event.path}/confirmed`,
-      component: require.resolve('../../../src/templates/EventConfirmedDefault.js'),
+      component: require.resolve('../../../src/templates/EventConfirmed'),
       context: { event, siteMeta },
     });
   });

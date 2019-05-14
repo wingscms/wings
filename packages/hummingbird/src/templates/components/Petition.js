@@ -134,7 +134,7 @@ const VideoContainer = styled.div`
   }
 `;
 
-export default class extends Component {
+export default class Petition extends Component {
   constructor({ pageContext: { petition }, location }) {
     super();
     this.state = {
