@@ -152,30 +152,6 @@ export default class Petition extends Component {
     children: [<Petition.Navigation />, <Petition.Header />, <Petition.Main />],
   };
 
-  // componentDidMount() {
-  //   wings
-  //     .query(
-  //       `
-  //       query Petition ($id: String!) {
-  //         petition(id: $id) {
-  //           signatureCount
-  //         }
-  //       }
-  //       `,
-  //       { id: this.props.pageContext.petition.id },
-  //     )
-  //     .then(({ petition: { signatureCount = 0 } = {} }) => {
-  //       this.setState(({ petition }) => ({
-  //         petition: { ...petition, signatureCount },
-  //         loading: false,
-  //       }));
-  //     })
-  //     .catch((err) => {
-  //       console.error(err);
-  //       this.setState({ error: true });
-  //     });
-  // }
-
   render() {
     return <Campaign {...this.props} />;
   }
