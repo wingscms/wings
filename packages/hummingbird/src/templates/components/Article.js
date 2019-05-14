@@ -144,6 +144,7 @@ export default class Article extends Component {
   static defaultProps = {
     children: [
       <Article.ProgressBar />,
+      <Article.Navigation />,
       <Article.CornerMenu />,
       <Article.Header />,
       <Article.Main />,

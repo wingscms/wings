@@ -69,7 +69,7 @@ export default class Page extends Entry {
     ) : null);
 
   static defaultProps = {
-    children: [<Page.StackedHeader />, <Page.Main />],
+    children: [<Page.Navigation />, <Page.StackedHeader />, <Page.Main />],
   };
 
   render() {

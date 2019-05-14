@@ -104,11 +104,6 @@ export default class Entry extends Component {
 
   render() {
     const { layout: Layout } = this.props;
-    return (
-      <Layout>
-        <Entry.Navigation {...this.childProps()} />
-        {this.children()}
-      </Layout>
-    );
+    return <Layout>{this.children()}</Layout>;
   }
 }
