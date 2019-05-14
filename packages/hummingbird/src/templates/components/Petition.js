@@ -31,6 +31,7 @@ const MainContainerInner = styled(Container)`
 const FormContainer = styled.div`
   display: inline-block;
   width: 460px;
+  min-height: 644px;
   background-color: ${({ theme }) => theme.primaryColor};
   color: ${({ theme }) => theme.darkHeadingColor};
   vertical-align: top;
