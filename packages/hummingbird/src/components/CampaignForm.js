@@ -91,6 +91,7 @@ export default class CampaignForm extends Component {
     processSubmission: PropTypes.func,
     onLoad: PropTypes.func,
     disabledFields: PropTypes.array,
+    schemaFormProps: PropTypes.object,
   };
   static defaultProps = {
     onSubmit: null,
@@ -98,6 +99,7 @@ export default class CampaignForm extends Component {
     processSubmission: s => s,
     onLoad: v => console.log('onLoad', v),
     disabledFields: [],
+    schemaFormProps: {},
   };
 
   state = {
@@ -246,7 +248,12 @@ export default class CampaignForm extends Component {
     return loading ? (
       'loading'
     ) : (
-      <SchemaForm schema={schema} onSubmit={this.handleSubmit.bind(this)} autoValidate={false}>
+      <SchemaForm
+        autoValidate={false}
+        {...this.props.schemaFormProps}
+        schema={schema}
+        onSubmit={this.handleSubmit.bind(this)}
+      >
         {this.props.children || <Button>{this.getSubmitText()}</Button>}
       </SchemaForm>
     );
