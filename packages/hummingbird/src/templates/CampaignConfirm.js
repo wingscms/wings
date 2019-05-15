@@ -1,4 +1,4 @@
 import React from 'react';
-import Template from './components/EventConfirm';
+import Template from './components/CampaignConfirm';
 
 export default props => <Template {...props} />;

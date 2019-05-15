@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Petition from './Petition';
+import Campaign from './Campaign';
 
-export default class PetitionConfirm extends Component {
+export default class CampaignConfirm extends Component {
   static Main = (props) => {
     const {
       pageContext: {
@@ -9,19 +9,19 @@ export default class PetitionConfirm extends Component {
       },
     } = props;
     return (
-      <Petition.Content {...props}>
-        <Petition.Title>{meta.confirmationTitle || 'We zijn er nog niet...'}</Petition.Title>
+      <Campaign.Content {...props}>
+        <Campaign.Title>{meta.confirmationTitle || 'We zijn er nog niet...'}</Campaign.Title>
         <p>
           {meta.confirmationText ||
             'We hebben je een mailtje gestuurd met een bevestigingslink, om te zorgen dat alle ondertekeningen echt zijn. Als je daarop klikt, telt je ondertekening mee. Alvast bedankt!'}
         </p>
-      </Petition.Content>
+      </Campaign.Content>
     );
   };
   static defaultProps = {
-    children: [<Petition.Navigation />, <PetitionConfirm.Main />],
+    children: [<Campaign.Navigation />, <CampaignConfirm.Main />],
   };
   render() {
-    return <Petition {...this.props} />;
+    return <Campaign {...this.props} />;
   }
 }

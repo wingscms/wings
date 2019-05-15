@@ -71,10 +71,18 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
       eventsRes.data.wings.events.edges) ||
     [];
 
-  const articles = processNodes(articleEdges.map(edgeToNode));
-  const pages = processNodes(pageEdges.map(edgeToNode));
-  const petitions = processNodes(petitionEdges.map(edgeToNode));
-  const events = processNodes(eventEdges.map(edgeToNode));
+  const setResourceType = resourceType => node => ({ ...node, resourceType });
+
+  const articles = processNodes(
+    articleEdges.map(edgeToNode).map(setResourceType('node.entry.article')),
+  );
+  const pages = processNodes(pageEdges.map(edgeToNode).map(setResourceType('node.entry.page')));
+  const petitions = processNodes(
+    petitionEdges.map(edgeToNode).map(setResourceType('node.campaign.petition')),
+  );
+  const events = processNodes(
+    eventEdges.map(edgeToNode).map(setResourceType('node.campaign.event')),
+  );
 
   const allNodes = []
     .concat(articles)
@@ -151,18 +159,18 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
     homepage = true;
     createPage({
       path: h ? '/' : `${petition.path}`,
-      component: require.resolve('../../../src/templates/Petition'),
-      context: { petition, siteMeta },
+      component: require.resolve('../../../src/templates/Campaign'),
+      context: { node: petition, siteMeta },
     });
     createPage({
       path: h ? '/confirm' : `${petition.path}/confirm`,
-      component: require.resolve('../../../src/templates/PetitionConfirm'),
-      context: { petition, siteMeta },
+      component: require.resolve('../../../src/templates/CampaignConfirm'),
+      context: { node: petition, siteMeta },
     });
     createPage({
       path: h ? '/confirmed' : `${petition.path}/confirmed`,
-      component: require.resolve('../../../src/templates/PetitionConfirmed'),
-      context: { petition, siteMeta },
+      component: require.resolve('../../../src/templates/CampaignConfirmed'),
+      context: { node: petition, siteMeta },
     });
   });
 
@@ -172,18 +180,18 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
     homepage = h ? true : homepage;
     createPage({
       path: h ? '/' : `${event.path}`,
-      component: require.resolve('../../../src/templates/Event'),
-      context: { event, siteMeta },
+      component: require.resolve('../../../src/templates/Campaign'),
+      context: { node: event, siteMeta },
     });
     createPage({
       path: h ? '/confirm' : `${event.path}/confirm`,
-      component: require.resolve('../../../src/templates/EventConfirm'),
-      context: { event, siteMeta },
+      component: require.resolve('../../../src/templates/CampaignConfirm'),
+      context: { node: event, siteMeta },
     });
     createPage({
       path: h ? '/confirmed' : `${event.path}/confirmed`,
-      component: require.resolve('../../../src/templates/EventConfirmed'),
-      context: { event, siteMeta },
+      component: require.resolve('../../../src/templates/CampaignConfirmed'),
+      context: { node: event, siteMeta },
     });
   });
 

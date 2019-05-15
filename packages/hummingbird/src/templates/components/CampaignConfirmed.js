@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Petition from './Petition';
+import Campaign from './Campaign';
 import facebookLogo from '../../img/facebook.svg';
 import twitterLogo from '../../img/twitter.svg';
 import whatsappLogo from '../../img/whatsapp.svg';
@@ -54,7 +54,7 @@ const ShareTitle = styled.h2`
   }
 `;
 
-export default class PetitionConfirmed extends Component {
+export default class CampaignConfirmed extends Component {
   static Main = (props) => {
     const {
       pageContext: {
@@ -63,8 +63,8 @@ export default class PetitionConfirmed extends Component {
       },
     } = props;
     return (
-      <Petition.Content {...props}>
-        <Petition.Title>{meta.confirmedTitle || 'Bedankt!'}</Petition.Title>
+      <Campaign.Content {...props}>
+        <Campaign.Title>{meta.confirmedTitle || 'Bedankt!'}</Campaign.Title>
         <Text>
           {meta.confirmedText || 'We zijn weer wat dichterbij het behalen van onze doelen.'}
         </Text>
@@ -85,13 +85,13 @@ export default class PetitionConfirmed extends Component {
             <img src={emailIcon} alt="Deel via e-mail" />
           </ShareButton>
         </ShareContainer>
-      </Petition.Content>
+      </Campaign.Content>
     );
   };
   static defaultProps = {
-    children: [<Petition.Navigation />, <PetitionConfirmed.Main />],
+    children: [<Campaign.Navigation />, <CampaignConfirmed.Main />],
   };
   render() {
-    return <Petition {...this.props} />;
+    return <Campaign {...this.props} />;
   }
 }
