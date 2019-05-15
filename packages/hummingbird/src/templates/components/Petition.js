@@ -72,6 +72,9 @@ const Title = styled.h1`
 export default class Petition extends Component {
   static Navigation = Campaign.Navigation;
   static Header = Campaign.Header;
+  static Title = Campaign.Title;
+  static Content = Campaign.Content;
+  static Wrapper = Campaign.Wrapper;
   static Main = class Main extends Component {
     state = {
       signatureCount: null,
