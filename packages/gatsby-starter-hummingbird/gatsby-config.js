@@ -27,7 +27,7 @@ module.exports = {
         footer: {
           title: 'Hummingbird',
           logoUrl:
-            'https://s3-eu-central-1.amazonaws.com/jaaps-screenshots/hummingbird-black-footer.png',
+            'https://files.wings.dev/cgk9KpT3eETFQvfqz/1557917914578/hummingbird-black-footer.png',
           logoLink: 'https://wings.dev',
           columns: [
             {
@@ -35,7 +35,12 @@ module.exports = {
               rows: [
                 {
                   type: 'text',
-                  content: 'Example Street 42<br/>Example City<br/1234AB<br/Somewhere',
+                  content: 'Example Street 42<br/>Example City<br/1234AB<br/Europe',
+                },
+                {
+                  type: 'link',
+                  url: 'mailto:dev@wings.dev',
+                  content: 'dev@wings.dev',
                 },
               ],
             },
