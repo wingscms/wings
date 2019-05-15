@@ -2,9 +2,8 @@
 
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { CloudinaryVideoProvider, Video } from '@wingscms/crane';
 import Content from '../../components/Content';
-import Intro from '../../components/Text/Intro';
+import Intro from '../../components/Intro';
 import { PetitionCounter } from '../../components/Petition/PetitionForm';
 import Container from '../../components/Container';
 import CampaignForm from '../../components/CampaignForm';
@@ -70,17 +69,6 @@ const Title = styled.h1`
   }
 `;
 
-const VideoContainer = styled.div`
-  width: calc(100% - 540px);
-  position: absolute;
-  transform: translateY(-100%);
-  @media screen and (max-width: 1000px) {
-    position: relative;
-    width: calc(100% - 0px);
-    transform: translateY(0);
-  }
-`;
-
 export default class Petition extends Component {
   static Navigation = Campaign.Navigation;
   static Header = Campaign.Header;
@@ -100,23 +88,6 @@ export default class Petition extends Component {
       return (
         <MainContainerOuter>
           <MainContainerInner>
-            {meta.cloudinaryVideoCloud && meta.cloudinaryVideoId ? (
-              <VideoContainer>
-                <CloudinaryVideoProvider
-                  cloudName={meta.cloudinaryVideoCloud}
-                  videoId={meta.cloudinaryVideoId}
-                >
-                  <Video
-                    poster={`//res.cloudinary.com/${
-                      meta.cloudinaryVideoCloud
-                    }/video/upload/vc_auto/${meta.cloudinaryVideoId}.jpg`}
-                    autoplay={meta.cloudinaryVideoAutoplay ? 'autoplay' : null}
-                    muted={meta.cloudinaryVideoAutoplay ? 'muted' : null}
-                    playsinline="playsinline"
-                  />
-                </CloudinaryVideoProvider>
-              </VideoContainer>
-            ) : null}
             <Campaign.Proposition>
               {title && <Title>{title}</Title>}
               {intro && <Intro fullWidth>{intro}</Intro>}

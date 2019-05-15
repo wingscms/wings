@@ -6,7 +6,7 @@ import widont from 'widont';
 import Title from './Title';
 import Subtitle from './Subtitle';
 
-import downArrowImage from '../../../img/arrow-down.svg';
+import downArrowImage from '../../../../../img/arrow-down.svg';
 
 const Container = styled.header`
   cursor: pointer;

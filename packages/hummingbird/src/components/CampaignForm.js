@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { SchemaForm } from '@wingscms/crane';
-import Button from './Button';
+import _Button from './Button';
 import wings from '../data/wings';
 
 const PETITION_QUERY = `
-query ($id: String!) {
-  campaign: petition(id: $id) {
-    id
-    title
-    submissionSchema
-    signatureCount
+  query ($id: String!) {
+    campaign: petition(id: $id) {
+      id
+      title
+      submissionSchema
+      signatureCount
+    }
   }
-}
+`;
+
+const PETITION_MUTATION = `
+  mutation PetitionSignUp($id: String!, $input: SignPetitionInput!) {
+    signPetition(id: $id, input: $input) {
+      id
+    }
+  }
 `;
 
 const EVENT_QUERY = `
@@ -21,6 +30,14 @@ const EVENT_QUERY = `
       id
       title
       submissionSchema
+    }
+  }
+`;
+
+const EVENT_MUTATION = `
+  mutation EventSignUp($id: String!, $input: EventSignUpInput!) {
+    signUpForEvent(id: $id, input: $input) {
+      id
     }
   }
 `;
@@ -35,6 +52,35 @@ const FUNDRAISER_QUERY = `
   }
 `;
 
+const FUNDRAISER_MUTATION = `
+  mutation Donate($id: String, $input: DonationInput!) {
+    donation: donate(id: $id, input: $input) {
+      id
+      order {
+        id
+        paymentUrl
+      }
+    }
+  }
+`;
+
+const Button = styled(_Button)`
+  background-color: #000;
+  color: #fff;
+  margin-top: 40px;
+  width: auto;
+  &:after {
+    display: none;
+  }
+  &:hover {
+    text-decoration: none;
+    color: ${({ theme }) => theme.primaryColor};
+  }
+  @media screen and (max-width: 800px) {
+    font-size: 22px;
+  }
+`;
+
 // TODO: move to @wingscms/react (needs a provider for Wings client first)
 export default class CampaignForm extends Component {
   static propTypes = {
@@ -42,11 +88,13 @@ export default class CampaignForm extends Component {
     type: PropTypes.string.isRequired,
     onSubmit: PropTypes.func,
     processSchema: PropTypes.func,
+    processSubmission: PropTypes.func,
     onLoad: PropTypes.func,
   };
   static defaultProps = {
-    onSubmit: () => {},
+    onSubmit: null,
     processSchema: s => s,
+    processSubmission: s => s,
     onLoad: v => console.log('onLoad', v),
   };
 
@@ -82,6 +130,19 @@ export default class CampaignForm extends Component {
     }
   };
 
+  mutation = () => {
+    switch (this.props.type) {
+      case 'petition':
+        return PETITION_MUTATION;
+      case 'event':
+        return EVENT_MUTATION;
+      case 'fundraiser':
+        return FUNDRAISER_MUTATION;
+      default:
+        return null;
+    }
+  };
+
   getFormSchema() {
     const schema = this.props.formSchema || this.state.formSchema;
     return schema ? this.processSchema(schema) : schema;
@@ -91,7 +152,15 @@ export default class CampaignForm extends Component {
     const schema = { ...s, properties: { ...s.properties } };
     delete schema.properties.privacyConsent;
     delete schema.properties.terms;
+    schema.required = schema.required.filter(f => ['terms', 'privacyConsent'].indexOf(f) < 0);
     return this.props.processSchema(schema);
+  };
+
+  processSubmission = (sub) => {
+    const submission = { ...sub };
+    submission.terms = true;
+    submission.privacyConsent = true;
+    return this.props.processSubmission(submission);
   };
 
   getSubmitText() {
@@ -136,47 +205,44 @@ export default class CampaignForm extends Component {
     });
   }
 
-  // async submit() {
-  //   const { formState, amount } = this.state;
-  //   const res = await wings.query(
-  //     `
-  //     mutation Donate($id: String, $input: DonationInput!) {
-  //       donation: donate(id: $id, input: $input) {
-  //         id
-  //         order {
-  //           id
-  //           paymentUrl
-  //         }
-  //       }
-  //     }
-  //   `,
-  //     {
-  //       id: this.props.fundraiserId,
-  //       input: {
-  //         data: JSON.stringify(formState),
-  //         amount: amount * 100 || 1000,
-  //         redirectUrl: `${window.location.origin}/payment/success`,
-  //       },
-  //     },
-  //   );
-  //   if (res.donation && res.donation.id) {
-  //     window.location.assign(res.donation.order.paymentUrl);
-  //   }
-  //   return res;
-  // }
+  async submit(formData) {
+    const { amount } = this.state;
+    try {
+      const res = await wings.query(this.mutation(), {
+        id: this.props.id,
+        input: {
+          data: JSON.stringify(formData),
+          ...(this.props.type === 'donation' && {
+            amount: amount * 100 || 1000,
+          }),
+          redirectUrl: this.props.redirectUrl,
+        },
+      });
+      if (res.donation && res.donation.id) {
+        window.location.assign(res.donation.order.paymentUrl);
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  }
 
-  handleSubmit = (...args) => {
-    debugger;
-    // e.preventDefault();
-    this.props.onSubmit(...args);
+  handleSubmit = ({ formData: fd }, event) => {
+    const formData = this.processSubmission(fd);
+    if (this.props.onSubmit) {
+      this.props.onSubmit(formData, event);
+      return;
+    }
+    this.submit(formData);
   };
 
   render() {
+    const { fetching } = this.state;
     const schema = this.getFormSchema();
-    return !schema ? (
+    const loading = !schema || fetching;
+    return loading ? (
       'loading'
     ) : (
-      <SchemaForm schema={schema} onSubmit={this.handleSubmit}>
+      <SchemaForm schema={schema} onSubmit={this.handleSubmit.bind(this)} autoValidate={false}>
         {this.props.children || <Button>{this.getSubmitText()}</Button>}
       </SchemaForm>
     );

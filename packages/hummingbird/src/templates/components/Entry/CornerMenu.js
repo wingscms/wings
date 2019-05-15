@@ -5,12 +5,12 @@ import { navigate } from 'gatsby';
 import styled, { withTheme } from 'styled-components';
 import { languageList, LanguagePicker, toggleSlideMenu } from '@wingscms/crane';
 
-import chaptersImage from '../img/chapters.svg';
-import shareImage from '../img/share.svg';
-import facebookImage from '../img/facebook.svg';
-import twitterImage from '../img/twitter.svg';
-import whatsappImage from '../img/whatsapp.svg';
-import languageIcon from '../img/language.svg';
+import chaptersImage from '../../../img/chapters.svg';
+import shareImage from '../../../img/share.svg';
+import facebookImage from '../../../img/facebook.svg';
+import twitterImage from '../../../img/twitter.svg';
+import whatsappImage from '../../../img/whatsapp.svg';
+import languageIcon from '../../../img/language.svg';
 
 const Container = styled.div`
   position: fixed;

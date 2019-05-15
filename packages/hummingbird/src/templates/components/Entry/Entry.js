@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import CornerMenu from '../../components/CornerMenu';
-import HighlightedContent from '../../components/HighlightedContent';
-import Header, { StackedHeader } from '../../components/Header';
-import Navigation from '../../components/Navigation';
-import ProgressBar from '../../components/ProgressBar';
-import LayoutDefault from '../../components/LayoutDefault';
-import { makeShareUrls } from '../../../lib/utils';
+import CornerMenu from './CornerMenu';
+import HighlightedContent from './HighlightedContent';
+import Header, { StackedHeader } from './Header';
+import Navigation from '../../../components/Navigation';
+import ProgressBar from './ProgressBar';
+import LayoutDefault from '../../../components/LayoutDefault';
+import { makeShareUrls } from '../../../../lib/utils';
 
 const ContentWrapper = styled.div`
   margin: 0 auto;

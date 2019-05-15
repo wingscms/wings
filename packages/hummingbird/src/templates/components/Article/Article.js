@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import classNames from 'classnames';
-import Entry from './Entry';
-import Content from '../../components/Content';
-import Chapters from '../../components/Chapters';
-import Intro from '../../components/Text/Intro';
-import { authorIconBlack, calendarIconBlack } from '../../img/icons';
-import { parseBool } from '../../../lib/utils';
+import Entry from '../Entry';
+import _Content from '../../../components/Content';
+import Chapters from './Chapters';
+import Intro from '../../../components/Intro';
+import { authorIconBlack, calendarIconBlack } from '../../../img/icons';
+import { parseBool } from '../../../../lib/utils';
 
 const ArticleWrapper = styled.article`
   margin: 0 auto;
@@ -16,6 +16,15 @@ const ArticleWrapper = styled.article`
   position: relative;
   > p:first-child {
     margin-top: 2em;
+  }
+`;
+
+const Content = styled(_Content)`
+  p:first-child {
+    margin-top: 2em;
+    @media screen and (min-width: 800px) {
+      margin-top: 3em;
+    }
   }
 `;
 

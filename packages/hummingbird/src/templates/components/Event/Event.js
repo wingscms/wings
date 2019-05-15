@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Campaign from './Campaign';
-import Content from '../../components/Content';
-import { InfoContainer } from '../../components/Event';
-import CampaignForm from '../../components/CampaignForm';
-import { ContentContainer } from '../../components/Petition/ConfirmationPages';
-import Container from '../../components/Container';
+import Campaign from '../Campaign';
+import Content from '../../../components/Content';
+import InfoContainer from './InfoContainer';
+import CampaignForm from '../../../components/CampaignForm';
+import { ContentContainer } from '../../../components/Petition/ConfirmationPages';
+import Container from '../../../components/Container';
 
 const MainContainerOuter = styled(Container)`
   margin-top: -300px;

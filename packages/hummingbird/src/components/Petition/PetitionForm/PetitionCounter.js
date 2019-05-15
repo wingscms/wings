@@ -69,7 +69,7 @@ const StyledCounterInner = styled(StyledCounter)`
 `;
 
 const Counter = ({ current, max }) => {
-  const width = current >= max ? 100 : 100 / max * current;
+  const width = current >= max ? 100 : (100 / max) * current;
   return (
     <StyledCounter>
       <StyledCounterInner width={width} />
@@ -78,35 +78,12 @@ const Counter = ({ current, max }) => {
 };
 
 export default class PetitionCounter extends Component {
-  state = {
+  static defaultProps = {
     current: 0,
   };
-  componentDidMount() {
-    if (this.props.actionNetworkHelper) {
-      fetch(
-        `${
-          process.env.NODE_ENV === 'development' ? 'http://localhost:9000' : '/.netlify/functions'
-        }/actionnetworkparticipants`,
-        {
-          method: 'POST',
-          body: JSON.stringify({
-            actionNetworkHelper: this.props.actionNetworkHelper,
-          }),
-        },
-      )
-        .then(res => res.json())
-        .then((res) => {
-          this.setState({ current: res.participants });
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  }
-  count = () => this.state.current || this.props.current || 0;
   render() {
+    const { current } = this.props;
     const { max = 1000, descriptionText } = this.props;
-    const current = this.count();
     return (
       <Container>
         <TopContainer>
