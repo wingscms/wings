@@ -90,12 +90,14 @@ export default class CampaignForm extends Component {
     processSchema: PropTypes.func,
     processSubmission: PropTypes.func,
     onLoad: PropTypes.func,
+    disabledFields: PropTypes.array,
   };
   static defaultProps = {
     onSubmit: null,
     processSchema: s => s,
     processSubmission: s => s,
     onLoad: v => console.log('onLoad', v),
+    disabledFields: [],
   };
 
   state = {
@@ -149,10 +151,12 @@ export default class CampaignForm extends Component {
   }
 
   processSchema = (s) => {
+    const { disabledFields } = this.props;
     const schema = { ...s, properties: { ...s.properties } };
-    delete schema.properties.privacyConsent;
-    delete schema.properties.terms;
-    schema.required = schema.required.filter(f => ['terms', 'privacyConsent'].indexOf(f) < 0);
+    disabledFields.forEach((field) => {
+      delete schema.properties[field];
+    });
+    schema.required = schema.required.filter(f => disabledFields.indexOf(f) < 0);
     return this.props.processSchema(schema);
   };
 

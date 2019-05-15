@@ -80,7 +80,12 @@ export default class EventTemplate extends Component {
           </Campaign.Proposition>
           <FormContainer id="fb-form-container">
             <FormContainerInner>
-              <CampaignForm type="event" id={node.id} {...formProps} />
+              <CampaignForm
+                type="event"
+                id={node.id}
+                disabledFields={['terms', 'privacyConsent']}
+                {...formProps}
+              />
             </FormContainerInner>
           </FormContainer>
         </MainContainerInner>

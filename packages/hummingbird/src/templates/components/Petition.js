@@ -110,6 +110,7 @@ export default class Petition extends Component {
                   id={node.id}
                   type="petition"
                   onLoad={p => this.setState({ signatureCount: p.signatureCount })}
+                  disabledFields={['terms', 'privacyConsent']}
                   {...formProps}
                 />
               </FormContainerInner>
@@ -121,7 +122,7 @@ export default class Petition extends Component {
   };
 
   static defaultProps = {
-    children: [<Petition.Navigation />, <Petition.Header />, <Petition.Main />],
+    children: [<Petition.Navigation />, <Petition.Header />, <Petition.Main />, 'hello'],
   };
 
   render() {
