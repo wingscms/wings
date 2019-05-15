@@ -57,14 +57,14 @@ export default ({ columns }) => {
             return (
               <AddressLine key={key}>
                 <a className="footerLink" href={row.url}>
-                  {row.text || row.url}
+                  {row.content || row.url}
                 </a>
               </AddressLine>
             );
           case 'button':
             return (
               <AnchorButton key={key} href={row.url} size="small">
-                {row.text}
+                {row.content}
               </AnchorButton>
             );
           case 'social':
