@@ -21,7 +21,7 @@ const defaults = {
   ],
 };
 
-const themeOptions = process.env.GATSBY_HUMMINGBIRD_OPTIONS;
+const themeOptions = process.env.GATSBY_HUMMINGBIRD_CONFIG;
 const legacyConfig = process.env.GATSBY_TYPOGRAPHY_CONFIG;
 
 const optionsOrConfig = parseJSON(themeOptions || legacyConfig, {

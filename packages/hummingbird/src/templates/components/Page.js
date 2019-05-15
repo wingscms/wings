@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import classNames from 'classnames';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
@@ -44,12 +44,11 @@ const ContentWrapper = styled.div`
   padding: 0 20px;
 `;
 
-export default class Page extends Entry {
-  static ProgressBar = Entry.ProgressBar;
-  static CornerMenu = Entry.CornerMenu;
+export default class Page extends Component {
   static Navigation = Entry.Navigation;
   static Header = Entry.Header;
   static StackedHeader = Entry.StackedHeader;
+  static HighlightedContent = Entry.HighlightedContent;
 
   static SimpleTitle = ({ entry, hidden, className, children, ...props }) => (
     <Title {...filterInvalidDOMProps(props)} className={classNames(className, { hidden })}>

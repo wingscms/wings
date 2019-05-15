@@ -12,8 +12,8 @@ export default ({
   customBodyFontUrl = null, // String
 
   // images
-  logoUrl = 'https://files.wings-platform.com/1532472414726/wings4-2.png', // String
-  faviconUrl = 'https://files.wings-platform.com/1532472414726/wings4-2.png', // String
+  logoUrl = 'https://files.wings.dev/1532472414726/wings4-2.png', // String
+  faviconUrl = 'https://files.wings.dev/1532472414726/wings4-2.png', // String
 
   // menus
   navigationColor = '#ffffff', // String (color code)

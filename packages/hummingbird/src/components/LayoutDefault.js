@@ -45,9 +45,11 @@ export default class Layout extends Component {
     return (
       <React.Fragment>
         <Main>
-          <MenuContentWrapper id="content-wrapper">{children}</MenuContentWrapper>
+          <MenuContentWrapper id="content-wrapper">
+            {children}
+            <Footer />
+          </MenuContentWrapper>
         </Main>
-        <Footer />
       </React.Fragment>
     );
   }

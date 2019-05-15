@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-for */
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const StyledInput = styled.input`
   font-size: inherit;
@@ -17,6 +17,12 @@ const StyledInput = styled.input`
   ${({ inputStyles }) => inputStyles || ''} &[type='color'] {
     min-height: 36px;
   }
+  ${({ error }) =>
+    (!error
+      ? null
+      : css`
+          background-color: #ffcfcf;
+        `)};
 `;
 
 function BaseInput(props) {
@@ -59,10 +65,9 @@ function BaseInput(props) {
     inputProps.step = schema.multipleOf;
   }
 
-  // eslint-disable-next-line no-shadow
-  const _onChange = ({ target: { value } }) => {
+  const _onChange = ({ target: { value: v } }) => {
     const emptyValue = options && options.emptyValue ? options.emptyValue : '';
-    props.onChange(value === '' ? emptyValue : value);
+    props.onChange(v === '' ? emptyValue : v);
   };
   return (
     <div>
@@ -80,6 +85,7 @@ function BaseInput(props) {
         value={value == null ? '' : value}
         theme={formContext.theme}
         inputStyles={formContext.inputStyles}
+        error={rawErrors && rawErrors.length}
         {...inputProps}
         onChange={_onChange}
         onBlur={onBlur && (event => onBlur(inputProps.id, event.target.value))}

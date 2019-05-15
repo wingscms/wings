@@ -16,6 +16,9 @@ import Textarea from './Textarea';
 import URLInput from './URLInput';
 
 const StyledForm = styled(Form)`
+  fieldset {
+    border: 0;
+  }
   .form-group {
     margin-bottom: 10px;
     &:last-child {
@@ -50,7 +53,21 @@ export default (props) => {
   };
 
   return (
-    <StyledForm {...props} widgets={widgets}>
+    <StyledForm
+      ErrorList={() => null}
+      transformErrors={errors =>
+        errors.map((error) => {
+          if (error.name === 'required') {
+            error.message = 'This field is required.'; // eslint-disable-line no-param-reassign
+          } else {
+            error.message = ''; // eslint-disable-line no-param-reassign
+          }
+          return error;
+        })
+      }
+      {...props}
+      widgets={widgets}
+    >
       {children}
     </StyledForm>
   );
