@@ -122,7 +122,7 @@ export default class Petition extends Component {
   };
 
   static defaultProps = {
-    children: [<Petition.Navigation />, <Petition.Header />, <Petition.Main />, 'hello'],
+    children: [<Petition.Navigation />, <Petition.Header />, <Petition.Main />],
   };
 
   render() {
