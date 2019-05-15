@@ -1,13 +1,11 @@
-/* eslint-disable no-shadow */
-
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Content from '../../components/Content';
-import Intro from '../../components/Intro';
-import { PetitionCounter } from '../../components/Petition/PetitionForm';
-import Container from '../../components/Container';
-import CampaignForm from '../../components/CampaignForm';
-import Campaign from './Campaign';
+import Content from '../../../components/Content';
+import Intro from '../../../components/Intro';
+import Container from '../../../components/Container';
+import CampaignForm from '../../../components/CampaignForm';
+import Campaign from '../Campaign';
+import PetitionCounter from './PetitionCounter';
 
 const MainContainerOuter = styled(Container)`
   margin-top: -300px;

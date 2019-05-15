@@ -1,5 +1,3 @@
-/* eslint-disable no-shadow */
-
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Petition from './Petition';
