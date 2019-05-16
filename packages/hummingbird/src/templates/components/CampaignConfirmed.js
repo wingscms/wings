@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Campaign from './Campaign';
 import facebookLogo from '../../img/facebook.svg';
@@ -59,10 +59,14 @@ export default class CampaignConfirmed extends Component {
     const {
       pageContext: {
         node: { meta },
-        shareUrls,
+        _shareUrls,
       },
     } = props;
-    console.log('CampaignConfirmed props', props);
+    const [shareUrls, setShareUrls] = useState({});
+    useEffect(() => {
+      setShareUrls(_shareUrls);
+    }, []);
+    console.log('CampaignConfirmed shareUrls state', shareUrls);
     return (
       <Campaign.Content {...props}>
         <Campaign.Title>{meta.confirmedTitle || 'Bedankt!'}</Campaign.Title>

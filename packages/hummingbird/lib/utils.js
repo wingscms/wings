@@ -16,7 +16,6 @@ export const parseJSON = (
 export const parseBool = str => (str === 'false' ? false : str === '0' ? false : !!str);
 
 export const makeShareUrls = (platforms, url, meta) => {
-  console.log('makeShareUrls', platforms, url, meta);
   const { all, facebook, twitter } = platforms;
   const res = {
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
@@ -32,7 +31,6 @@ export const makeShareUrls = (platforms, url, meta) => {
       `${facebook.description || all.description} ${url}`,
     )}`,
   };
-  console.log('makeShareUrls res', res);
   return res;
 };
 
