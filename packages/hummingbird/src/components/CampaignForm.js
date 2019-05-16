@@ -232,13 +232,18 @@ export default class CampaignForm extends Component {
     }
   }
 
-  handleSubmit = ({ formData: fd }, event) => {
-    const formData = this.processSubmission(fd);
-    if (this.props.onSubmit) {
-      this.props.onSubmit(formData, event);
-      return;
+  handleSubmit = async ({ formData: fd }, event) => {
+    try {
+      const formData = this.processSubmission(fd);
+      if (this.props.onSubmit) {
+        await this.submit(formData);
+        this.props.onSubmit(formData, event);
+        return;
+      }
+      await this.submit(formData);
+    } catch (err) {
+      console.error(err);
     }
-    this.submit(formData);
   };
 
   render() {
