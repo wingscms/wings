@@ -184,6 +184,9 @@ export default class Campaign extends Component {
       setSignatureCount(campaign.signatureCount);
       if (formProps.onLoad) formProps.onLoad(campaign);
     };
+    const getUrl = path =>
+      [window.location.origin, window.location.pathname.replace(/\/$/, ''), path].join('');
+
     return (
       <React.Fragment>
         <MainContainerOuter>
@@ -215,8 +218,9 @@ export default class Campaign extends Component {
                   id={node.id}
                   disabledFields={['terms', 'privacyConsent']}
                   onSubmit={() => {
-                    window.location.assign(`${window.location.href}confirm`);
+                    window.location.assign(getUrl('/confirm'));
                   }}
+                  redirectUrl={getUrl('/confirmed')}
                   {...formProps}
                   onLoad={handleCampaignLoad}
                 />
