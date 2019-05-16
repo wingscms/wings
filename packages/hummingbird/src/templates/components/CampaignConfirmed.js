@@ -53,7 +53,7 @@ const ShareTitle = styled.h2`
     font-size: 32px;
   }
 `;
-
+const SHARE_TITLE = "Deel alsjeblieft deze petitie met je collega's en vrienden:";
 export default class CampaignConfirmed extends Component {
   static Main = (props) => {
     const {
@@ -69,9 +69,7 @@ export default class CampaignConfirmed extends Component {
           {meta.confirmedText || 'We zijn weer wat dichterbij het behalen van onze doelen.'}
         </Text>
         <ShareContainer>
-          <ShareTitle>
-            {'Deel alsjeblieft deze petitie met je collega&quot;s en vrienden:'}
-          </ShareTitle>
+          <ShareTitle>{SHARE_TITLE}</ShareTitle>
           <ShareButton href={shareUrls.facebook} target="_blank" rel="noopener noreferrer">
             <img src={facebookLogo} alt="Deel op Facebook" />
           </ShareButton>
