@@ -8,6 +8,7 @@ export default class CampaignConfirm extends Component {
         node: { meta },
       },
     } = props;
+    console.log('CampaignConfirm props', props);
     return (
       <Campaign.Content {...props}>
         <Campaign.Title>{meta.confirmationTitle || 'We zijn er nog niet...'}</Campaign.Title>

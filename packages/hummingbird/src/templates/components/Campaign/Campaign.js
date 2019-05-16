@@ -259,6 +259,7 @@ export default class Campaign extends Component {
     const url = (location.href || '').replace(/\/confirm(?:ed)?$/, '');
     console.log(node.platforms, url, node.meta, location);
     const shareUrls = makeShareUrls(node.platforms, url, node.meta);
+    console.log('shareUrls', shareUrls);
     return {
       ...props,
       pageContext: {

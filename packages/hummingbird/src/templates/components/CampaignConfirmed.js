@@ -62,6 +62,7 @@ export default class CampaignConfirmed extends Component {
         shareUrls,
       },
     } = props;
+    console.log('CampaignConfirmed props', props);
     return (
       <Campaign.Content {...props}>
         <Campaign.Title>{meta.confirmedTitle || 'Bedankt!'}</Campaign.Title>
