@@ -215,7 +215,7 @@ export default class Campaign extends Component {
                   id={node.id}
                   disabledFields={['terms', 'privacyConsent']}
                   onSubmit={() => {
-                    window.location.assign(`${window.location.pathname}/confirm`);
+                    window.location.assign(`${window.location.href}confirm`);
                   }}
                   {...formProps}
                   onLoad={handleCampaignLoad}
