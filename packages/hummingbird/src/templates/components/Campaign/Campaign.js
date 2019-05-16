@@ -197,7 +197,7 @@ export default class Campaign extends Component {
                 id="event-content"
               />
             </Campaign.Proposition>
-            <FormContainer id="fb-form-container">
+            <FormContainer id="campaign-form-container">
               {resourceType === 'node.campaign.petition' && (
                 <CounterContainer>
                   <PetitionCounter

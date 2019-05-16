@@ -64,6 +64,16 @@ const ToggleButton = styled.div`
   }
 `;
 
+function updateHeight(comp) {
+  const campaignFormContainer = window.document.getElementById('campaign-form-container');
+  const campaignForm = window.document.getElementById('campaign-form');
+  if (campaignForm) {
+    comp.setState({ height: campaignFormContainer.offsetHeight });
+  } else {
+    setTimeout(() => updateHeight(comp), 100);
+  }
+}
+
 export default class Proposition extends Component {
   state = {
     height: '',
@@ -72,8 +82,7 @@ export default class Proposition extends Component {
 
   componentDidMount() {
     if (windowExists) {
-      const formContainer = window.document.getElementById('fb-form-container');
-      this.setState({ height: formContainer.offsetHeight }); // eslint-disable-line
+      updateHeight(this);
     }
   }
 
