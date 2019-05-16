@@ -1,6 +1,6 @@
 // components
 export { default as Button } from './src/components/Button/Button';
-export { default as Content } from './src/components/Content';
+export { default as Content } from './src/components/Content/Content';
 export { default as LayoutDefault } from './src/components/LayoutDefault';
 
 // templates
