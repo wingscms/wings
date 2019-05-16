@@ -249,6 +249,7 @@ export default class CampaignForm extends Component {
       'loading'
     ) : (
       <SchemaForm
+        id="campaign-form"
         autoValidate={false}
         {...this.props.schemaFormProps}
         schema={schema}
