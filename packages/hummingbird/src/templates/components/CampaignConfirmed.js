@@ -59,14 +59,17 @@ export default class CampaignConfirmed extends Component {
     const {
       pageContext: {
         node: { meta },
-        _shareUrls,
+        shareUrls: _shareUrls,
       },
     } = props;
+
+    // forcing a rerender due to the URLs on being available at build-time
+    // client rehydration doesn't trigger one ¯\(ツ)/¯
     const [shareUrls, setShareUrls] = useState({});
     useEffect(() => {
       setShareUrls(_shareUrls);
     }, []);
-    console.log('CampaignConfirmed shareUrls state', shareUrls);
+
     return (
       <Campaign.Content {...props}>
         <Campaign.Title>{meta.confirmedTitle || 'Bedankt!'}</Campaign.Title>
