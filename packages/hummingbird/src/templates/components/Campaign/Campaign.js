@@ -257,6 +257,7 @@ export default class Campaign extends Component {
     } = props;
     const node = petition || event || _node;
     const url = (location.href || '').replace(/\/confirm(?:ed)?$/, '');
+    console.log(node.platforms, url, node.meta, location);
     const shareUrls = makeShareUrls(node.platforms, url, node.meta);
     return {
       ...props,
