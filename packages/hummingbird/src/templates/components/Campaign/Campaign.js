@@ -185,7 +185,9 @@ export default class Campaign extends Component {
       if (formProps.onLoad) formProps.onLoad(campaign);
     };
     const getUrl = path =>
-      [window.location.origin, window.location.pathname.replace(/\/$/, ''), path].join('');
+      (typeof window !== 'undefined' &&
+        [window.location.origin, window.location.pathname.replace(/\/$/, ''), path].join('')) ||
+      '';
 
     return (
       <React.Fragment>
