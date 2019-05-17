@@ -12,9 +12,9 @@
   },
   "author": "Mark Jackson <markjackson@bureaubolster.nl>",
   "devDependencies": {
-    "@storybook/addon-info": "^3.4.11",
-    "@storybook/addon-knobs": "^3.4.11",
-    "@storybook/react": "^3.4.11",
+    "@storybook/addon-info": "^5.0.11",
+    "@storybook/addon-knobs": "^5.0.11",
+    "@storybook/react": "^5.0.11",
     "babel-cli": "^6.26.0",
     "cross-env": "^5.1.3",
     "react-json-view": "^1.19.1",
