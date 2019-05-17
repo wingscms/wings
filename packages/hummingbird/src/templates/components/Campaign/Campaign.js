@@ -137,6 +137,7 @@ const Title = styled.h1`
 const Intro = styled.p`
   font-size: 1.2em;
 `;
+
 const CounterContainer = styled(FormContainerInner)`
   padding: 20px 40px;
   background-color: #fff;
@@ -146,6 +147,7 @@ const CounterContainer = styled(FormContainerInner)`
     max-width: 100%;
   }
 `;
+
 export default class Campaign extends Component {
   static Proposition = Proposition;
   static Navigation = ({ pageContext: { shareUrls, node = {} } = {} }) => (
@@ -177,6 +179,7 @@ export default class Campaign extends Component {
         node,
       },
       formProps = {},
+      counterInterval = 1000,
     } = props;
     const [signatureCount, setSignatureCount] = useState(null);
     const handleCampaignLoad = (campaign) => {
@@ -188,6 +191,7 @@ export default class Campaign extends Component {
       (typeof window !== 'undefined' &&
         [window.location.origin, window.location.pathname.replace(/\/$/, ''), path].join('')) ||
       '';
+    const calcMax = (signatures, interval) => signatures + (interval - (signatures % interval));
 
     return (
       <React.Fragment>
@@ -207,7 +211,7 @@ export default class Campaign extends Component {
                 <CounterContainer>
                   <PetitionCounter
                     current={signatureCount || node.signatureCount}
-                    max={500}
+                    max={calcMax(signatureCount || node.signatureCount, counterInterval)}
                     descriptionText={
                       meta.counterText || 'mensen hebben deze petitie al ondertekend'
                     }
