@@ -1,8 +1,4 @@
-/* eslint-disable max-len */
 const path = require('path');
-
-const metaToObject = meta => meta.reduce((m, v) => ({ ...m, [v.key]: v.value }), {});
-const hasMeta = node => node.context && node.context.entry && node.context.entry.meta;
 
 module.exports = ({
   wings: { project: wingsProject, appKey: wingsAppKey, endpoint: wingsEndpoint },
@@ -43,39 +39,15 @@ module.exports = ({
               node {
                 id
                 path
-                context {
-                  entry {
-                    _meta {
-                      key
-                      value
-                    }
-                  }
-                }
               }
             }
           }
         }`,
         serialize: ({ site, allSitePage }) =>
           allSitePage.edges
-            .filter((x) => {
-              const splitPath = x.node.path.split('/');
-              if (
-                splitPath[splitPath.length - 1] === 'confirm' ||
-                splitPath[splitPath.length - 1] === 'confirmed'
-              ) {
-                return false;
-              }
-              return true;
-            })
-            .filter(x =>
-              (hasMeta(x.node) ? !metaToObject(x.node.context.entry._meta.noIndex) : true),
-            )
+            .filter(({ node }) => !/\/confirm(?:ed)?$/.test(node.path))
             .map(x => ({
               url: site.siteMetadata.siteUrl + x.node.path,
-              priority:
-                hasMeta(x.node) && metaToObject(x.node.context.entry._meta).sitemapPriority
-                  ? Number(metaToObject(x.node.context.entry._meta).sitemapPriority)
-                  : 0.7,
             })),
       },
     },
