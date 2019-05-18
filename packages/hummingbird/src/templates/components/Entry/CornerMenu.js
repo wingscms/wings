@@ -241,7 +241,7 @@ class CornerMenu extends Component {
           windowExists && translations.length < 1 && (!chapterMenu || chapterMenu !== 'slide') ? (
             <Scroll type="id" element="chapter-list">
               <ChaptersLink>
-                <span>{locale ? languageList[locale].chaptersName : 'Hoofdstukken'}</span>
+                <span>{locale ? languageList[locale].chaptersName : 'Chapters'}</span>
                 <ChapterImage src={chaptersImage} />
               </ChaptersLink>
             </Scroll>
@@ -259,7 +259,7 @@ class CornerMenu extends Component {
                 );
               }}
             >
-              <span>{locale ? languageList[locale].chaptersName : 'Hoofdstukken'}</span>
+              <span>{locale ? languageList[locale].chaptersName : 'Chapters'}</span>
               <ChapterImage src={chaptersImage} slideMenu />
             </ChaptersLink>
           )

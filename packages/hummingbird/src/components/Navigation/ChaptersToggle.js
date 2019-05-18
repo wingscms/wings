@@ -15,7 +15,7 @@ const ChaptersToggleContainer = styled.div`
   cursor: pointer;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
   &:after {
-    content: '${({ locale }) => (locale ? languageList[locale].chaptersName : 'Hoofdstukken')}';
+    content: '${({ locale }) => (locale ? languageList[locale].chaptersName : 'Chapters')}';
     position: absolute;
     top: 50%;
     transform: translateX(-50%) translateY(-50%) rotate(-90deg);
