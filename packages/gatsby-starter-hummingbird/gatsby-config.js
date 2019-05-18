@@ -4,7 +4,7 @@ const { getDesign, getTypographyConfig, getFooterConfig } = require('./node/util
 
 module.exports = {
   siteMetadata: {
-    siteUrl: process.env.SITE_URL || process.env.URL || 'https://wings.dev',
+    siteUrl: process.env.SITE_URL || process.env.URL || 'http://localhost:4000',
   },
   __experimentalThemes: [
     {
@@ -16,7 +16,6 @@ module.exports = {
           endpoint: process.env.GATSBY_WINGS_ENDPOINT,
         },
         blockRobots: process.env.BLOCK_ROBOTS || process.env.GATSBY_ENV !== 'production',
-        gaTrackingId: process.env.GA_TRACKING_ID,
         basicAuth: process.env.BASIC_AUTH,
         design: {
           ...getDesign(),

@@ -6,7 +6,8 @@ module.exports = ({
   basicAuth,
 } = {}) => ({
   siteMetadata: {
-    siteTitle: 'Hummingbird',
+    siteTitle: 'Wings',
+    siteUrl: process.env.SITE_URL || process.env.URL,
   },
   plugins: [
     {
