@@ -164,9 +164,11 @@ export default class CampaignForm extends Component {
   };
 
   processSubmission = (sub) => {
+    const { disabledFields } = this.props;
     const submission = { ...sub };
-    submission.terms = true;
-    submission.privacyConsent = true;
+    disabledFields.forEach((field) => {
+      submission[field] = true;
+    });
     return this.props.processSubmission(submission);
   };
 

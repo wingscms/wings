@@ -218,7 +218,6 @@ export default class Campaign extends Component {
                 <CampaignForm
                   type={resourceType.split('.')[2]}
                   id={node.id}
-                  disabledFields={['terms', 'privacyConsent']}
                   onSubmit={() => {
                     window.location.assign(getUrl('/confirm'));
                   }}
