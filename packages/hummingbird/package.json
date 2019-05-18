@@ -1,6 +1,6 @@
 {
   "name": "@wingscms/hummingbird",
-  "version": "0.14.13",
+  "version": "0.15.0-alpha.0",
   "scripts": {
     "test": "jest"
   },
