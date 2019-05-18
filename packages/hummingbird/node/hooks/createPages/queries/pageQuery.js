@@ -1,7 +1,7 @@
 module.exports = `
 {
   wings {
-    entries(type: "page") {
+    nodes: entries(type: "page") {
       edges {
         node {
           id

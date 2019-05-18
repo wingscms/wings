@@ -173,7 +173,7 @@ export default class Campaign extends Component {
   static Main = (props) => {
     const {
       pageContext: {
-        node: { resourceType, title, intro, meta },
+        node: { resourceType, title, intro },
         node,
       },
       formProps = {},
@@ -210,9 +210,7 @@ export default class Campaign extends Component {
                   <PetitionCounter
                     current={signatureCount}
                     max={signatureGoal}
-                    descriptionText={
-                      meta.counterText || 'mensen hebben deze petitie al ondertekend'
-                    }
+                    descriptionText="mensen hebben deze petitie al ondertekend"
                   />
                 </CounterContainer>
               )}
@@ -259,7 +257,7 @@ export default class Campaign extends Component {
     } = props;
     const node = petition || event || _node;
     const url = (location.href || '').replace(/\/confirm(?:ed)?$/, '');
-    const shareUrls = makeShareUrls(node.platforms, url, node.meta);
+    const shareUrls = makeShareUrls(node.platforms, url);
     return {
       ...props,
       pageContext: {

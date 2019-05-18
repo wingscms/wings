@@ -6,6 +6,5 @@ export default props => (
     <Page.Navigation />
     <Page.SimpleTitle />
     <Page.Main />
-    <Page.HighlightedContent />
   </Page>
 );

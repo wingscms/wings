@@ -1,7 +1,7 @@
 module.exports = `
 {
   wings {
-    petitions {
+    nodes: petitions {
       edges {
         node {
           id

@@ -1,6 +1,6 @@
 module.exports = `{
   wings {
-    events {
+    nodes: events {
       edges {
         node {
           id

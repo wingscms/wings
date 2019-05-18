@@ -1,13 +1,4 @@
 import React from 'react';
-import { LandingSection, StackedHeader } from './index';
+import LandingSection from './LandingSection';
 
-export default ({ article }) => {
-  const { meta } = article;
-  switch (meta.headerType) {
-    case 'stacked':
-      return <StackedHeader article={article} />;
-    case 'landingSection':
-    default:
-      return <LandingSection article={article} />;
-  }
-};
+export default ({ article }) => <LandingSection article={article} />;

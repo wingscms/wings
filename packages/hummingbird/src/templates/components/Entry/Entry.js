@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import CornerMenu from './CornerMenu';
-import HighlightedContent from './HighlightedContent';
 import Header, { StackedHeader } from './Header';
 import Navigation from '../../../components/Navigation';
 import ProgressBar from './ProgressBar';
@@ -16,59 +15,32 @@ const ContentWrapper = styled.div`
 
 export default class Entry extends Component {
   static ProgressBar = ProgressBar;
-  static Header = ({ entry, ...props }) => <Header article={entry} {...props} />;
+  static Header = ({ node, ...props }) => <Header article={node} {...props} />;
 
-  static CornerMenu = ({
-    entry: {
-      meta: { chapterMenu, shareMessage },
-      translations,
-      locale,
-    },
-    headers,
-  }) => (
-    <CornerMenu
-      chapterMenu={chapterMenu}
-      chapters={headers}
-      shareMessage={shareMessage}
-      locale={locale}
-      translations={translations}
-    />
+  static CornerMenu = ({ node: { translations, locale }, headers }) => (
+    <CornerMenu chapters={headers} locale={locale} translations={translations} />
   );
 
-  static HighlightedContent = (props) => {
-    const { loop = [], featured = [] } = props;
-    if (loop.length < 1 && featured.length < 1) return '';
-    return <HighlightedContent {...props} />;
-  };
-
   static Navigation = ({
-    entry: {
-      translations,
-      platforms,
-      menu,
-      locale,
-      meta: { shareMessage, chapterMenu, hideMenu },
-    },
+    node: { translations, platforms, menu, locale },
     headers,
     shareUrls,
     ...props
   }) => (
     <Navigation
       chapters={headers}
-      chapterMenu={chapterMenu && chapterMenu === 'slide'}
       shareUrls={shareUrls}
-      shareMessage={shareMessage || (platforms && platforms.all && platforms.all.description)}
+      shareMessage={platforms && platforms.all && platforms.all.description}
       items={menu && menu.items}
       translations={translations}
       locale={locale}
-      hideMenu={hideMenu}
       {...props}
     />
   );
 
-  static StackedHeader = ({ entry }) => (
+  static StackedHeader = ({ node }) => (
     <ContentWrapper>
-      <StackedHeader article={entry} />
+      <StackedHeader article={node} />
     </ContentWrapper>
   );
 
@@ -82,13 +54,13 @@ export default class Entry extends Component {
 
   childProps = () => {
     const {
-      pageContext: { entry, loop, featured },
+      pageContext: { node, loop, featured },
       location,
     } = this.props;
     const { headers } = this.state;
-    const shareUrls = makeShareUrls(entry.platforms, location.href || '', entry.meta);
+    const shareUrls = makeShareUrls(node.platforms, location.href || '');
     return {
-      entry,
+      node,
       headers,
       shareUrls,
       loop,

@@ -2,17 +2,10 @@ import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { navigate } from 'gatsby';
 import browserLocale from 'browser-locale';
-import { parseBool } from '../lib/utils';
 import { useTheme } from '../lib/styled';
 
-const generateTitle = (noSiteTitle, title, siteTitle, platform, platforms) => {
-  if (!parseBool(noSiteTitle)) {
-    return platforms[platform] && platforms[platform].title
-      ? `${platforms[platform].title} - ${siteTitle}`
-      : `${title} - ${siteTitle}`;
-  }
-  return platforms[platform] && platforms[platform].title ? platforms[platform].title : title;
-};
+const generateTitle = (title, siteTitle, platform, platforms) =>
+  (platforms[platform] && platforms[platform].title ? platforms[platform].title : title);
 
 const PageWrapper = ({
   pageContext: { entry, petition, event, node: _node, siteMeta: { siteTitle } = {} },
@@ -21,14 +14,7 @@ const PageWrapper = ({
   const theme = useTheme();
   const node = entry || petition || event || _node;
   if (!node) return children;
-  const {
-    title,
-    platforms = {},
-    locale,
-    translations,
-    meta,
-    meta: { noSiteTitle },
-  } = node;
+  const { title, platforms = {}, locale, translations } = node;
   useEffect(() => {
     if (typeof window !== 'undefined' && translations && translations.length > 0) {
       if (
@@ -63,21 +49,20 @@ const PageWrapper = ({
 
   return (
     <React.Fragment>
-      <Helmet title={generateTitle(noSiteTitle, title, siteTitle, 'all', platforms)}>
+      <Helmet title={generateTitle(title, siteTitle, 'all', platforms)}>
         <html lang={locale || 'en'} />
         {translations &&
           translations.map(trans => (
             <link key={trans.locale} rel="alternate" hrefLang={trans.locale} href={trans.path} />
           ))}
         <link rel="icon" type="image/ico" sizes="16x16" href={theme.faviconUrl} />
-        {/* SEO meta tags */}
         {platforms.all && platforms.all.description ? (
           <meta name="description" content={platforms.all.description} />
         ) : null}
         {platforms.facebook && platforms.facebook.title ? (
           <meta
             property="og:title"
-            content={generateTitle(noSiteTitle, title, siteTitle, 'facebook', platforms)}
+            content={generateTitle(title, siteTitle, 'facebook', platforms)}
           />
         ) : null}
         {platforms.all && platforms.all.description ? (
@@ -89,7 +74,7 @@ const PageWrapper = ({
         {platforms.twitter && platforms.twitter.title ? (
           <meta
             property="twitter:title"
-            content={generateTitle(noSiteTitle, title, siteTitle, 'twitter', platforms)}
+            content={generateTitle(title, siteTitle, 'twitter', platforms)}
           />
         ) : null}
         {platforms.twitter && platforms.twitter.description ? (
@@ -102,7 +87,7 @@ const PageWrapper = ({
         {platforms.facebook && platforms.facebook.title ? (
           <meta
             property="fb:title"
-            content={generateTitle(noSiteTitle, title, siteTitle, 'facebook', platforms)}
+            content={generateTitle(title, siteTitle, 'facebook', platforms)}
           />
         ) : null}
         {platforms.facebook && platforms.facebook.description ? (

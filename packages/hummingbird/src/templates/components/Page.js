@@ -48,7 +48,6 @@ export default class Page extends Component {
   static Navigation = Entry.Navigation;
   static Header = Entry.Header;
   static StackedHeader = Entry.StackedHeader;
-  static HighlightedContent = Entry.HighlightedContent;
 
   static SimpleTitle = ({ entry, hidden, className, children, ...props }) => (
     <Title {...filterInvalidDOMProps(props)} className={classNames(className, { hidden })}>
