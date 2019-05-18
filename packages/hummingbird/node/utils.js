@@ -5,6 +5,23 @@ const isTranslation = ({ slug, locale }) => node => locale !== node.locale && sl
 const constructPath = (locale, defaultLocale, node) =>
   (locale === defaultLocale ? node.path : `/${locale}/${node.slug}`);
 
+const makeShareUrls = (platforms, url) => {
+  const { all, facebook, twitter } = platforms;
+  const res = {
+    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+    twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+      url,
+    )}&text=${encodeURIComponent(twitter.description || all.description)}`,
+    whatsapp: `whatsapp://send?text=${encodeURIComponent(
+      `${facebook.description || all.description} ${url}`,
+    )}`,
+    email: `mailto:?subject=${encodeURIComponent(all.title)}&body=${encodeURIComponent(
+      `${facebook.description || all.description} ${url}`,
+    )}`,
+  };
+  return res;
+};
+
 const patchI18n = (nodes, { defaultLocale = 'en' } = {}) =>
   nodes.reduce((_patched, _node, i) => {
     const { meta: { locale = defaultLocale } = {} } = _node;
@@ -40,6 +57,7 @@ const getThemeFromStore = (store) => {
 
 module.exports = {
   filterByLocale,
+  makeShareUrls,
   patchI18n,
   getThemeFromStore,
 };

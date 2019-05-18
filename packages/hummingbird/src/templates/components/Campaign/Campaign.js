@@ -5,7 +5,6 @@ import CampaignForm from '../../../components/CampaignForm';
 import Container from '../../../components/Container';
 import PetitionCounter from './PetitionCounter';
 import EventDetails from './EventDetails';
-import { makeShareUrls } from '../../../../lib/utils';
 import LayoutDefault from '../../../components/LayoutDefault';
 import Navigation from '../../../components/Navigation';
 import Proposition from './Proposition';
@@ -178,8 +177,8 @@ export default class Campaign extends Component {
       },
       formProps = {},
     } = props;
-    const [signatureCount, setSignatureCount] = useState(null);
-    const [signatureGoal, setSignatureGoal] = useState(null);
+    const [signatureCount, setSignatureCount] = useState(0);
+    const [signatureGoal, setSignatureGoal] = useState(0);
     const handleCampaignLoad = (campaign) => {
       if (!resourceType === 'node.campaign.petition') return;
       setSignatureCount(campaign.signatureCount);
@@ -201,7 +200,7 @@ export default class Campaign extends Component {
               <Content
                 content={node.description}
                 className="mobiledoc-content"
-                id="event-content"
+                id="campaign-content"
               />
             </Campaign.Proposition>
             <FormContainer id="campaign-form-container">
@@ -210,7 +209,7 @@ export default class Campaign extends Component {
                   <PetitionCounter
                     current={signatureCount}
                     max={signatureGoal}
-                    descriptionText="mensen hebben deze petitie al ondertekend"
+                    descriptionText="people signed this petition"
                   />
                 </CounterContainer>
               )}
@@ -249,21 +248,10 @@ export default class Campaign extends Component {
   };
 
   childProps = () => {
-    const { children: _, ...props } = this.props;
-    const {
-      pageContext: { petition, event, node: _node },
-      location,
-    } = props;
-    const node = petition || event || _node;
-    const url = (location.href || '').replace(/\/confirm(?:ed)?$/, '');
-    const shareUrls = makeShareUrls(node.platforms, url);
+    const { children, ...props } = this.props;
     return {
       ...props,
-      pageContext: {
-        ...props.pageContext,
-        node,
-        shareUrls,
-      },
+      ...this.props.childProps,
     };
   };
 

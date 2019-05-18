@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Navigation from '../../../components/Navigation';
 import LayoutDefault from '../../../components/LayoutDefault';
-import { makeShareUrls } from '../../../../lib/utils';
 
 export default class Entry extends Component {
   static Navigation = Navigation;
@@ -11,14 +10,9 @@ export default class Entry extends Component {
   };
 
   childProps = () => {
-    const {
-      pageContext: { node },
-      location,
-    } = this.props;
-    const shareUrls = makeShareUrls(node.platforms, location.href || '');
+    const { children, ...props } = this.props;
     return {
-      node,
-      shareUrls,
+      ...props,
       ...this.props.childProps,
     };
   };

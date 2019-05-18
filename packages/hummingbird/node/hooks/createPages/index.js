@@ -3,7 +3,7 @@ const pageQuery = require('./queries/pageQuery');
 const petitionQuery = require('./queries/petitionQuery');
 const eventQuery = require('./queries/eventQuery');
 const siteMetaQuery = require('./queries/siteMeta');
-const { patchI18n } = require('../../utils');
+const { patchI18n, makeShareUrls } = require('../../utils');
 
 const {
   GATSBY__TEMP_I18N_ENABLED: i18nEnabled,
@@ -64,24 +64,30 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
         (res.data && res.data.wings && res.data.wings.nodes && res.data.wings.nodes.edges) || [];
       const nodes = processNodes(edges.map(({ node }) => node).map(setResourceType(resourceType)));
       console.log(`[hummingbird] found ${nodes.length} of ${resourceType}`);
+
       // GENERATE ARTICLES
       nodes.forEach((node) => {
         const path = prefix + node.path;
+        const context = {
+          node,
+          siteMeta,
+          shareUrls: makeShareUrls(node.platforms, siteMeta.siteUrl + path),
+        };
         createPage({
           path,
           component: require.resolve(template),
-          context: { node, siteMeta },
+          context,
         });
         if (!(node.resourceType.split('.')[1] === 'campaign')) return;
         createPage({
           path: `${path}/confirm`,
           component: require.resolve('../../../src/templates/CampaignConfirm'),
-          context: { node, siteMeta },
+          context,
         });
         createPage({
           path: `${path}/confirmed`,
           component: require.resolve('../../../src/templates/CampaignConfirmed'),
-          context: { node, siteMeta },
+          context,
         });
       });
     }),

@@ -49,7 +49,7 @@ const Title = styled.h1`
   }
 `;
 
-export default class LandingSection extends Component {
+export default class Header extends Component {
   render() {
     const { article } = this.props;
     const title = widont(article.title);
