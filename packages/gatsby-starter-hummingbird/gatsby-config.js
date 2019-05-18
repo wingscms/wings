@@ -38,7 +38,7 @@ module.exports = {
                 },
                 {
                   type: 'link',
-                  url: 'mailto:dev@wings.dev',
+                  url: 'mailto:info@wings.dev',
                   content: 'info@wings.dev',
                 },
               ],
