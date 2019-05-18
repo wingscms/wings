@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import classNames from 'classnames';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
-import Entry from './Entry';
-import _Content from '../../components/Content';
+import Entry from '../Entry';
+import _Content from '../../../components/Content';
+import Header from './Header';
 
 const LandingSection = styled.div`
   background-image: url(${({ image }) => image});
@@ -47,9 +48,22 @@ const ContentWrapper = styled.div`
 export default class Page extends Component {
   static Navigation = Entry.Navigation;
   static Header = Entry.Header;
-  static StackedHeader = Entry.StackedHeader;
+  static Header = ({ node }) => (
+    <ContentWrapper>
+      <Header article={node} />
+    </ContentWrapper>
+  );
+  static Navigation = ({ node: { translations, platforms, menu, locale }, shareUrls }) => (
+    <Entry.Navigation
+      shareUrls={shareUrls}
+      shareMessage={platforms && platforms.all && platforms.all.description}
+      items={menu && menu.items}
+      translations={translations}
+      locale={locale}
+    />
+  );
 
-  static SimpleTitle = ({ node, hidden, className, children, ...props }) => (
+  static Title = ({ node, hidden, className, children, ...props }) => (
     <Title {...filterInvalidDOMProps(props)} className={classNames(className, { hidden })}>
       {node.title || children}
     </Title>
@@ -65,7 +79,7 @@ export default class Page extends Component {
     (node.image && node.image.url ? <LandingSection image={node.image && node.image.url} /> : null);
 
   static defaultProps = {
-    children: [<Page.Navigation />, <Page.StackedHeader />, <Page.Main />],
+    children: [<Page.Navigation />, <Page.Header />, <Page.Main />],
   };
 
   render() {

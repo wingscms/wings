@@ -224,6 +224,7 @@ class CornerMenu extends Component {
         {translations.length > 0 ? (
           <LanguagePickerWrap>
             <LanguageIcon src={languageIcon} />
+            CornerMenu
             <LanguagePicker
               showAbove
               backgroundColor={theme.languagePickerColor}

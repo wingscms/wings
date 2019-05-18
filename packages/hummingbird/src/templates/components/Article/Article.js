@@ -4,6 +4,9 @@ import classNames from 'classnames';
 import Entry from '../Entry';
 import _Content from '../../../components/Content';
 import Chapters from './Chapters';
+import CornerMenu from './CornerMenu';
+import ProgressBar from './ProgressBar';
+import Header from './Header';
 
 const ArticleWrapper = styled.article`
   margin: 0 auto;
@@ -26,13 +29,31 @@ const Content = styled(_Content)`
 `;
 
 export default class Article extends Component {
-  static ProgressBar = Entry.ProgressBar;
-  static CornerMenu = Entry.CornerMenu;
-  static Navigation = Entry.Navigation;
-  static Header = Entry.Header;
-  static StackedHeader = Entry.StackedHeader;
+  static ProgressBar = ProgressBar;
+  static Header = ({ node, ...props }) => <Header article={node} {...props} />;
 
-  static Main = ({ node: { content }, headers, onHeadersChange }) => (
+  static Navigation = ({
+    node: { translations, platforms, menu, locale },
+    headers,
+    shareUrls,
+    ...props
+  }) => (
+    <Entry.Navigation
+      chapters={headers}
+      shareUrls={shareUrls}
+      shareMessage={platforms && platforms.all && platforms.all.description}
+      items={menu && menu.items}
+      translations={translations}
+      locale={locale}
+      {...props}
+    />
+  );
+
+  static CornerMenu = ({ node: { translations, locale }, headers }) => (
+    <CornerMenu chapters={headers} locale={locale} translations={translations} />
+  );
+
+  static Main = ({ node: { content }, headers = [], onHeadersChange }) => (
     <main>
       <ArticleWrapper className={classNames('article')}>
         <div id="article-start">{headers.length ? <Chapters chapters={headers} /> : null}</div>
@@ -56,7 +77,14 @@ export default class Article extends Component {
     ],
   };
 
+  state = { headers: [] };
+
+  childProps = () => ({
+    headers: this.state.headers,
+    onHeadersChange: headers => this.setState({ headers }),
+  });
+
   render() {
-    return <Entry {...this.props} />;
+    return <Entry {...this.props} childProps={this.childProps()} />;
   }
 }
