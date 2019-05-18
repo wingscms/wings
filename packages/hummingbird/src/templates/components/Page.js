@@ -49,22 +49,20 @@ export default class Page extends Component {
   static Header = Entry.Header;
   static StackedHeader = Entry.StackedHeader;
 
-  static SimpleTitle = ({ entry, hidden, className, children, ...props }) => (
+  static SimpleTitle = ({ node, hidden, className, children, ...props }) => (
     <Title {...filterInvalidDOMProps(props)} className={classNames(className, { hidden })}>
-      {entry.title || children}
+      {node.title || children}
     </Title>
   );
 
-  static Main = ({ entry }) => (
+  static Main = ({ node }) => (
     <ContentWrapper>
-      <Content className="mobiledoc-content" id="entry-content" content={entry.content} />
+      <Content className="mobiledoc-content" id="entry-content" content={node.content} />
     </ContentWrapper>
   );
 
-  static LandingSection = ({ entry }) =>
-    (entry.image && entry.image.url ? (
-      <LandingSection image={entry.image && entry.image.url} />
-    ) : null);
+  static LandingSection = ({ node }) =>
+    (node.image && node.image.url ? <LandingSection image={node.image && node.image.url} /> : null);
 
   static defaultProps = {
     children: [<Page.Navigation />, <Page.StackedHeader />, <Page.Main />],

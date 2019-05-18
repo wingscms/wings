@@ -12,7 +12,7 @@ const {
 
 const ensureNodeFields = node => ({
   ...node,
-  path: node.slug.split('/')[0],
+  path: `/${node.slug.split('/')[0]}`,
 });
 
 const filterEmptySlugs = node => !!node.slug.split('/')[0];
