@@ -58,7 +58,7 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
     siteMetaRes.data && siteMetaRes.data.site && siteMetaRes.data.site;
 
   await Promise.all(
-    resources.map(async ({ resourceType, prefix, query, template }) => {
+    resources.map(async ({ resourceType, prefix = '', query, template }) => {
       const res = await graphql(query);
       const edges =
         (res.data && res.data.wings && res.data.wings.nodes && res.data.wings.nodes.edges) || [];
