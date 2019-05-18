@@ -28,17 +28,24 @@ const setResourceType = resourceType => node => ({ ...node, resourceType });
 const resources = [
   {
     resourceType: 'node.entry.article',
+    prefix: '/articles',
     query: articleQuery,
     template: '../../../src/templates/Article.js',
   },
-  { resourceType: 'node.entry.page', query: pageQuery, template: '../../../src/templates/Page' },
+  {
+    resourceType: 'node.entry.page',
+    query: pageQuery,
+    template: '../../../src/templates/Page',
+  },
   {
     resourceType: 'node.campaign.petition',
+    prefix: '/petitions',
     query: petitionQuery,
     template: '../../../src/templates/Campaign',
   },
   {
     resourceType: 'node.campaign.event',
+    prefix: '/events',
     query: eventQuery,
     template: '../../../src/templates/Campaign',
   },
@@ -51,7 +58,7 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
     siteMetaRes.data && siteMetaRes.data.site && siteMetaRes.data.site;
 
   await Promise.all(
-    resources.map(async ({ resourceType, query, template }) => {
+    resources.map(async ({ resourceType, prefix, query, template }) => {
       const res = await graphql(query);
       const edges =
         (res.data && res.data.wings && res.data.wings.nodes && res.data.wings.nodes.edges) || [];
@@ -59,19 +66,20 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
       console.log(`[hummingbird] found ${nodes.length} of ${resourceType}`);
       // GENERATE ARTICLES
       nodes.forEach((node) => {
+        const path = prefix + node.path;
         createPage({
-          path: node.path,
+          path,
           component: require.resolve(template),
           context: { node, siteMeta },
         });
         if (!(node.resourceType.split('.')[1] === 'campaign')) return;
         createPage({
-          path: `${node.path}/confirm`,
+          path: `${path}/confirm`,
           component: require.resolve('../../../src/templates/CampaignConfirm'),
           context: { node, siteMeta },
         });
         createPage({
-          path: `${node.path}/confirmed`,
+          path: `${path}/confirmed`,
           component: require.resolve('../../../src/templates/CampaignConfirmed'),
           context: { node, siteMeta },
         });
