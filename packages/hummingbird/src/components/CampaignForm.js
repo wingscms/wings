@@ -12,6 +12,7 @@ const PETITION_QUERY = `
       title
       submissionSchema
       signatureCount
+      signatureGoal
     }
   }
 `;
@@ -221,7 +222,7 @@ export default class CampaignForm extends Component {
           ...(this.props.type === 'donation' && {
             amount: amount * 100 || 1000,
           }),
-          redirectUrl: this.props.redirectUrl,
+          redirectUrl: this.props.redirectUrl, // default to current URL?
         },
       });
       if (res.donation && res.donation.id) {

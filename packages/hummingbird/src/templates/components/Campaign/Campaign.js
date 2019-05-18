@@ -179,9 +179,11 @@ export default class Campaign extends Component {
       formProps = {},
     } = props;
     const [signatureCount, setSignatureCount] = useState(null);
+    const [signatureGoal, setSignatureGoal] = useState(null);
     const handleCampaignLoad = (campaign) => {
       if (!resourceType === 'node.campaign.petition') return;
       setSignatureCount(campaign.signatureCount);
+      setSignatureGoal(campaign.signatureGoal);
       if (formProps.onLoad) formProps.onLoad(campaign);
     };
     const getUrl = path =>
@@ -206,8 +208,8 @@ export default class Campaign extends Component {
               {resourceType === 'node.campaign.petition' && (
                 <CounterContainer>
                   <PetitionCounter
-                    current={signatureCount || node.signatureCount}
-                    max={500}
+                    current={signatureCount}
+                    max={signatureGoal}
                     descriptionText={
                       meta.counterText || 'mensen hebben deze petitie al ondertekend'
                     }
