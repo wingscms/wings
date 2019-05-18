@@ -21,6 +21,7 @@ module.exports = `
             data
           }
           signatureCount
+          signatureGoal
           intro
           description
           image {
