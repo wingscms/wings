@@ -3,7 +3,6 @@ const path = require('path');
 module.exports = ({
   wings: { project: wingsProject, appKey: wingsAppKey, endpoint: wingsEndpoint },
   blockRobots,
-  gaTrackingId,
   basicAuth,
 } = {}) => ({
   siteMetadata: {
@@ -104,18 +103,5 @@ module.exports = ({
         },
       },
     },
-    ...(!gaTrackingId
-      ? []
-      : [
-        {
-          resolve: 'gatsby-plugin-google-analytics',
-          options: {
-            trackingId: gaTrackingId,
-            head: true,
-            anonymize: true,
-            respectDNT: true,
-          },
-        },
-      ]),
   ],
 });
