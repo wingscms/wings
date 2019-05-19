@@ -6,14 +6,6 @@ workflow "Publish" {
   ]
 }
 
-action "Lerna Publish" {
-  uses = "docker://node"
-  needs = ["Build"]
-  runs = "npx"
-  args = "lerna publish from-git"
-  secrets = ["NPM_TOKEN"]
-}
-
 action "Install" {
   uses = "docker://node"
   runs = "npx"
@@ -25,4 +17,25 @@ action "Build" {
   needs = ["Install"]
   runs = "npx"
   args = "lerna run --ignore @wingscms/gatsby-starter-hummingbird build"
+}
+
+action "Test" {
+  uses = "docker://node"
+  needs = ["Build"]
+  runs = "npx"
+  args = "lerna run test"
+}
+
+action "Master" {
+  needs = "Test"
+  uses = "actions/bin/filter@master"
+  args = "branch master"
+}
+
+action "Lerna Publish" {
+  uses = "docker://node"
+  needs = ["Master"]
+  runs = "npx"
+  args = "lerna publish from-git"
+  secrets = ["NPM_TOKEN"]
 }
