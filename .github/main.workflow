@@ -33,9 +33,8 @@ action "Master" {
 }
 
 action "Lerna Publish" {
-  uses = "docker://node"
+  uses = "MrBoolean/action-lerna@master"
   needs = ["Master"]
-  runs = "npx"
-  args = "lerna publish from-package"
+  args = "publish from-git"
   secrets = ["NPM_TOKEN"]
 }
