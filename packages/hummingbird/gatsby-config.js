@@ -46,6 +46,7 @@ module.exports = ({
         serialize: ({ site, allSitePage }) =>
           allSitePage.edges
             .filter(({ node }) => !/\/confirm(?:ed)?$/.test(node.path))
+            .filter(({ node }) => node.path !== '/_labs/preview')
             .map(x => ({
               url: site.siteMetadata.siteUrl + x.node.path,
             })),
