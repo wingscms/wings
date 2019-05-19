@@ -30,30 +30,41 @@ const Content = styled(_Content)`
 
 export default class Article extends Component {
   static ProgressBar = ProgressBar;
-  static Header = ({ node, ...props }) => <Header article={node} {...props} />;
+  static Header = ({ pageContext: { node, ...props } }) => <Header article={node} {...props} />;
 
-  static Navigation = ({
-    node: { translations, platforms, menu, locale },
-    headers,
-    shareUrls,
-    ...props
+  static Navigation = ({ pageContext: _props }) => {
+    const {
+      node: { translations, platforms, menu, locale },
+      headers,
+      shareUrls,
+      ...props
+    } = _props;
+    return (
+      <Entry.Navigation
+        chapters={headers}
+        shareUrls={shareUrls}
+        shareMessage={platforms && platforms.all && platforms.all.description}
+        items={menu && menu.items}
+        translations={translations}
+        locale={locale}
+        {...props}
+      />
+    );
+  };
+  static CornerMenu = ({
+    pageContext: {
+      node: { translations, locale },
+      headers,
+    },
+  }) => <CornerMenu chapters={headers} locale={locale} translations={translations} />;
+
+  static Main = ({
+    pageContext: {
+      node: { content },
+    },
+    headers = [],
+    onHeadersChange,
   }) => (
-    <Entry.Navigation
-      chapters={headers}
-      shareUrls={shareUrls}
-      shareMessage={platforms && platforms.all && platforms.all.description}
-      items={menu && menu.items}
-      translations={translations}
-      locale={locale}
-      {...props}
-    />
-  );
-
-  static CornerMenu = ({ node: { translations, locale }, headers }) => (
-    <CornerMenu chapters={headers} locale={locale} translations={translations} />
-  );
-
-  static Main = ({ node: { content }, headers = [], onHeadersChange }) => (
     <main>
       <ArticleWrapper className={classNames('article')}>
         <div id="article-start">{headers.length ? <Chapters chapters={headers} /> : null}</div>
