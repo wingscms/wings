@@ -1,9 +1,6 @@
 {
   "name": "@wingscms/hummingbird",
   "version": "0.15.0",
-  "scripts": {
-    "test": "jest"
-  },
   "dependencies": {
     "@wingscms/crane": "^0.8.1",
     "@wingscms/react": "^0.15.1",
