@@ -42,7 +42,7 @@ class QACardView extends Component {
       <div>
         <Title>{title}</Title>
         {content.map(x => (
-          <div>
+          <div key={`qacard-${x._id}`}>
             <Question>
               <Content content={x.question} />
             </Question>
