@@ -36,6 +36,6 @@ action "Lerna Publish" {
   uses = "docker://node"
   needs = ["Master"]
   runs = "npx"
-  args = "lerna publish from-git"
+  args = "lerna publish from-package"
   secrets = ["NPM_TOKEN"]
 }
