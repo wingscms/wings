@@ -35,6 +35,6 @@ action "Master" {
 action "Lerna Publish" {
   uses = "MrBoolean/action-lerna@master"
   needs = ["Master"]
-  args = "publish from-git"
+  args = "publish from-git --yes"
   secrets = ["NPM_TOKEN"]
 }
