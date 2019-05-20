@@ -33,8 +33,9 @@ action "Master" {
 }
 
 action "Lerna Publish" {
-  uses = "MrBoolean/action-lerna@master"
+  uses = "actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680"
   needs = ["Master"]
-  args = "publish from-git --yes"
+  args = "lerna publish from-git --yes"
   secrets = ["NPM_AUTH_TOKEN"]
+  runs = "npx"
 }
