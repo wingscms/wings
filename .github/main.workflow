@@ -1,9 +1,9 @@
-workflow "Publish" {
-  on = "push"
+workflow "Build, test, publish" {
   resolves = [
     "Lerna Publish",
     "Build",
   ]
+  on = "push"
 }
 
 action "Install" {
