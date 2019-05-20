@@ -1,6 +1,6 @@
 {
   "name": "@wingscms/hummingbird",
-  "version": "0.15.1",
+  "version": "0.15.2",
   "dependencies": {
     "@wingscms/crane": "^0.8.1",
     "@wingscms/react": "^0.15.1",
