@@ -2,11 +2,18 @@ workflow "Build, test, publish" {
   resolves = [
     "Lerna Publish",
     "Build",
+    "Not Tag",
   ]
   on = "push"
 }
 
+action "Not Tag" {
+  uses = "actions/bin/filter@3c0b4f0e63ea54ea5df2914b4fabf383368cd0da"
+  args = "not tag"
+}
+
 action "Install" {
+  needs = ["Not Tag"]
   uses = "docker://node"
   runs = "npx"
   args = "yarn --frozen-lockfile"
