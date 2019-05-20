@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.8](https://github.com/wingscms/wings/compare/@wingscms/proxy@0.2.7...@wingscms/proxy@0.2.8) (2019-05-20)
+
+
+### Bug Fixes
+
+* update readme ([d1fd718](https://github.com/wingscms/wings/commit/d1fd718))
+
+
+
+
+
 ## [0.2.7](https://github.com/wingscms/wings/compare/@wingscms/proxy@0.2.6...@wingscms/proxy@0.2.7) (2019-05-20)
 
 
