@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.6](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.15.5...@wingscms/hummingbird@0.15.6) (2019-05-22)
+
+
+### Bug Fixes
+
+* minimum height of layout ([4797458](https://github.com/wingscms/wings/commit/4797458))
+
+
+
+
+
 ## [0.15.5](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.15.4...@wingscms/hummingbird@0.15.5) (2019-05-22)
 
 **Note:** Version bump only for package @wingscms/hummingbird
