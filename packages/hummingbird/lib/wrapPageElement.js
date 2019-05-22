@@ -2,16 +2,17 @@ import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { navigate } from 'gatsby';
 import browserLocale from 'browser-locale';
-import { IntlProvider } from 'react-intl';
+import { IntlProvider, addLocaleData } from 'react-intl';
 import { useTheme } from '../lib/styled';
 
+addLocaleData({ locale: 'de-DE' });
 const generateTitle = (title, siteTitle, platform, platforms) =>
   (platforms[platform] && platforms[platform].title ? platforms[platform].title : title);
 const msg = {
-  'en-us': {
+  'en-US': {
     greeting: 'Hello',
   },
-  de: {
+  'de-DE': {
     greeting: 'Hallo',
   },
 };
@@ -22,7 +23,7 @@ const PageWrapper = ({
   const theme = useTheme();
   const node = entry || petition || event || _node;
   if (!node) return children;
-  const { title, platforms = {}, locale, translations } = node;
+  const { title, platforms = {}, locale = 'de-DE', translations } = node;
   useEffect(() => {
     if (typeof window !== 'undefined' && translations && translations.length > 0) {
       if (
@@ -105,7 +106,7 @@ const PageWrapper = ({
           <meta property="fb:image" content={platforms.facebook.imageUrl} />
         ) : null}
       </Helmet>
-      <IntlProvider locale="en-us" messages={msg}>
+      <IntlProvider locale={locale} messages={msg[locale]}>
         {children}
       </IntlProvider>
     </React.Fragment>
