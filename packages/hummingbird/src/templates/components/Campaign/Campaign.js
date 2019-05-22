@@ -180,7 +180,7 @@ export default class Campaign extends Component {
     const [signatureCount, setSignatureCount] = useState(0);
     const [signatureGoal, setSignatureGoal] = useState(0);
     const handleCampaignLoad = (campaign) => {
-      if (!resourceType === 'node.campaign.petition') return;
+      if (!(resourceType === 'node.petition')) return;
       setSignatureCount(campaign.signatureCount);
       setSignatureGoal(campaign.signatureGoal);
       if (formProps.onLoad) formProps.onLoad(campaign);
@@ -204,7 +204,7 @@ export default class Campaign extends Component {
               />
             </Campaign.Proposition>
             <FormContainer id="campaign-form-container">
-              {resourceType === 'node.campaign.petition' && (
+              {resourceType === 'node.petition' && (
                 <CounterContainer>
                   <PetitionCounter
                     current={signatureCount}
@@ -215,7 +215,7 @@ export default class Campaign extends Component {
               )}
               <FormContainerInner>
                 <CampaignForm
-                  type={resourceType.split('.')[2]}
+                  type={resourceType.split('.')[1]}
                   id={node.id}
                   onSubmit={() => {
                     window.location.assign(getUrl('/confirm'));
@@ -228,7 +228,7 @@ export default class Campaign extends Component {
             </FormContainer>
           </MainContainerInner>
         </MainContainerOuter>
-        {resourceType === 'node.campaign.event' && (
+        {resourceType === 'node.event' && (
           <Campaign.Title style={{ marginBottom: '40px' }} {...props}>
             <EventDetails
               title={<Campaign.Title>Info</Campaign.Title>}
