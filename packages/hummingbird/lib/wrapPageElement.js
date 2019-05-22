@@ -2,11 +2,19 @@ import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { navigate } from 'gatsby';
 import browserLocale from 'browser-locale';
+import { IntlProvider } from 'react-intl';
 import { useTheme } from '../lib/styled';
 
 const generateTitle = (title, siteTitle, platform, platforms) =>
   (platforms[platform] && platforms[platform].title ? platforms[platform].title : title);
-
+const msg = {
+  'en-us': {
+    greeting: 'Hello',
+  },
+  de: {
+    greeting: 'Hallo',
+  },
+};
 const PageWrapper = ({
   pageContext: { entry, petition, event, node: _node, siteMeta: { siteTitle } = {} },
   children,
@@ -97,7 +105,9 @@ const PageWrapper = ({
           <meta property="fb:image" content={platforms.facebook.imageUrl} />
         ) : null}
       </Helmet>
-      {children}
+      <IntlProvider locale="en-us" messages={msg}>
+        {children}
+      </IntlProvider>
     </React.Fragment>
   );
 };
