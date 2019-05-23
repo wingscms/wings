@@ -55,7 +55,6 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
   const appRes = await graphql(appQuery);
   const { home: { node: { id: homeNodeId } = {} } = {} } =
     appRes.data && appRes.data.wings && appRes.data.wings.currentApp;
-  console.log(homeNodeId);
   await Promise.all(
     resources.map(async ({ resourceType, prefix = '', query, template }) => {
       const res = await graphql(query);
