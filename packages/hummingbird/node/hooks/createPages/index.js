@@ -16,11 +16,19 @@ const ensureNodeFields = node => ({
   path: `/${node.slug.split('/')[0]}`,
 });
 
-const verifySlugs = (node, homeNodeId) =>
-  node.id === homeNodeId || (!!node.slug && !!node.slug.split('/')[0]);
+const verifySlug = (node) => {
+  if (!node.slug || !node.slug.split('/')[0]) {
+    console.error(`[hummingbird] invalid slug for article with id ${node.id}`);
 
-const processNodes = (_nodes, homeNodeId) => {
-  let nodes = _nodes.filter(node => verifySlugs(node, homeNodeId)).map(ensureNodeFields);
+    process.exit(1);
+  }
+};
+
+const processNodes = (_nodes) => {
+  let nodes = _nodes.map((node) => {
+    verifySlug(node);
+    return ensureNodeFields(node);
+  });
   if (i18nEnabled) nodes = patchI18n(nodes, defaultLocale);
   return nodes;
 };
@@ -60,7 +68,7 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
       const res = await graphql(query);
       const edges =
         (res.data && res.data.wings && res.data.wings.nodes && res.data.wings.nodes.edges) || [];
-      const nodes = processNodes(edges.map(({ node }) => node), homeNodeId);
+      const nodes = processNodes(edges.map(({ node }) => node));
       console.log(`[hummingbird] found ${nodes.length} of ${resourceType}`);
 
       // GENERATE ARTICLES
