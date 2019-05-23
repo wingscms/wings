@@ -16,10 +16,11 @@ const ensureNodeFields = node => ({
   path: `/${node.slug.split('/')[0]}`,
 });
 
-const filterEmptySlugs = node => !!node.slug.split('/')[0];
+const filterEmptySlugs = (node, homeNodeId) =>
+  node.id === homeNodeId || (!!node.slug && !!node.slug.split('/')[0]);
 
-const processNodes = (_nodes) => {
-  let nodes = _nodes.filter(filterEmptySlugs).map(ensureNodeFields);
+const processNodes = (_nodes, homeNodeId) => {
+  let nodes = _nodes.filter(node => filterEmptySlugs(node, homeNodeId)).map(ensureNodeFields);
   if (i18nEnabled) nodes = patchI18n(nodes, defaultLocale);
   return nodes;
 };
@@ -54,13 +55,13 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
   const appRes = await graphql(appQuery);
   const { home: { node: { id: homeNodeId } = {} } = {} } =
     appRes.data && appRes.data.wings && appRes.data.wings.currentApp;
-
+  console.log(homeNodeId);
   await Promise.all(
     resources.map(async ({ resourceType, prefix = '', query, template }) => {
       const res = await graphql(query);
       const edges =
         (res.data && res.data.wings && res.data.wings.nodes && res.data.wings.nodes.edges) || [];
-      const nodes = processNodes(edges.map(({ node }) => node));
+      const nodes = processNodes(edges.map(({ node }) => node), homeNodeId);
       console.log(`[hummingbird] found ${nodes.length} of ${resourceType}`);
 
       // GENERATE ARTICLES
