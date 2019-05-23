@@ -16,11 +16,11 @@ const ensureNodeFields = node => ({
   path: `/${node.slug.split('/')[0]}`,
 });
 
-const filterEmptySlugs = (node, homeNodeId) =>
+const verifySlugs = (node, homeNodeId) =>
   node.id === homeNodeId || (!!node.slug && !!node.slug.split('/')[0]);
 
 const processNodes = (_nodes, homeNodeId) => {
-  let nodes = _nodes.filter(node => filterEmptySlugs(node, homeNodeId)).map(ensureNodeFields);
+  let nodes = _nodes.filter(node => verifySlugs(node, homeNodeId)).map(ensureNodeFields);
   if (i18nEnabled) nodes = patchI18n(nodes, defaultLocale);
   return nodes;
 };
