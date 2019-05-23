@@ -4,6 +4,7 @@ module.exports = `{
       edges {
         node {
           resourceType
+          nodeType
           id
           title
           intro
