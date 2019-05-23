@@ -73,7 +73,8 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
         };
         createPage({
           path,
-          component: require.resolve(template),
+          component:
+            node.id === homeNodeId ? '../../../src/templates/PageHome' : require.resolve(template),
           context,
         });
         if (['petition', 'event'].indexOf(node.resourceType.split('.')[1]) < 0) return;
