@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.7](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.15.6...@wingscms/hummingbird@0.15.7) (2019-05-23)
+
+
+### Bug Fixes
+
+* use PageHome template if page is homepage ([#114](https://github.com/wingscms/wings/issues/114)) ([1b93621](https://github.com/wingscms/wings/commit/1b93621))
+
+
+
+
+
 ## [0.15.6](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.15.5...@wingscms/hummingbird@0.15.6) (2019-05-22)
 
 
