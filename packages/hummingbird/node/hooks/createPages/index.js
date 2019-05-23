@@ -18,7 +18,7 @@ const ensureNodeFields = node => ({
 
 const verifySlug = (node) => {
   if (!node.slug || !node.slug.split('/')[0]) {
-    console.error(`[hummingbird] invalid slug for article with id ${node.id}`);
+    console.error(`[hummingbird] invalid slug for ${node.nodeType} with id ${node.id}`);
 
     process.exit(1);
   }
@@ -81,10 +81,7 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
         };
         createPage({
           path,
-          component:
-            node.id === homeNodeId
-              ? require.resolve('../../../src/templates/PageHome')
-              : require.resolve(template),
+          component: require.resolve(template),
           context,
         });
         if (['petition', 'event'].indexOf(node.resourceType.split('.')[1]) < 0) return;
