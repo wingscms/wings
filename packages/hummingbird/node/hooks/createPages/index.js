@@ -65,7 +65,8 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
 
       // GENERATE ARTICLES
       nodes.forEach((node) => {
-        const path = node.id === homeNodeId ? '/' : prefix + node.path;
+        const isHome = node.id === homeNodeId;
+        const path = isHome ? '/' : prefix + node.path;
         const context = {
           node,
           siteMeta,
@@ -73,7 +74,9 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
         };
         createPage({
           path,
-          component: require.resolve(template),
+          component: isHome
+            ? require.resolve('../../../src/templates/PageHome')
+            : require.resolve(template),
           context,
         });
         if (['petition', 'event'].indexOf(node.resourceType.split('.')[1]) < 0) return;
