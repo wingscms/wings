@@ -17,7 +17,7 @@ const ensureNodeFields = node => ({
 });
 
 const verifySlug = (node) => {
-  if (!node.slug || !node.slug.split('/')[0]) {
+  if (!node.slug || !/^[a-z0-9]+(?:-[a-z0-9]+)*?$/.exec(node.slug)) {
     console.error(`[hummingbird] invalid slug for ${node.nodeType} with id ${node.id}`);
 
     process.exit(1);
