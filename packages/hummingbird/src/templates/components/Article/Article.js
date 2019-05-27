@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import classNames from 'classnames';
 import Entry from '../Entry';
-import _Content from '../../../components/Content';
+import Content from '../../../components/Content';
 import Chapters from './Chapters';
 import CornerMenu from './CornerMenu';
 import ProgressBar from './ProgressBar';
@@ -10,21 +10,13 @@ import Header from './Header';
 
 const ArticleWrapper = styled.article`
   margin: 0 auto;
+  margin-top: 2em;
   max-width: 800px;
   padding: 0 20px;
   min-height: 100vh;
   position: relative;
-  > p:first-child {
-    margin-top: 2em;
-  }
-`;
-
-const Content = styled(_Content)`
-  p:first-child {
-    margin-top: 2em;
-    @media screen and (min-width: 800px) {
-      margin-top: 3em;
-    }
+  @media screen and (min-width: 800px) {
+    margin-top: 3em;
   }
 `;
 
