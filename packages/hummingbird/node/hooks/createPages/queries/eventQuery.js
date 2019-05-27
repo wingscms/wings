@@ -1,8 +1,10 @@
 module.exports = `{
   wings {
-    events {
+    nodes: events {
       edges {
         node {
+          resourceType
+          nodeType
           id
           title
           intro

@@ -6,6 +6,17 @@
   "packages": [
     "packages/*"
   ],
+  "command": {
+    "publish": {
+      "allowBranch": "master",
+      "conventionalCommits": true
+    },
+    "version": {
+      "allowBranch": "master",
+      "conventionalCommits": true,
+      "message": "chore(release): publish"
+    }
+  },
   "changelog": {
     "labels": {
       "enhancement": ":rocket: Enhancement",

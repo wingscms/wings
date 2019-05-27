@@ -1,12 +1,9 @@
 {
   "name": "@wingscms/hummingbird",
-  "version": "0.14.12",
-  "scripts": {
-    "test": "jest"
-  },
+  "version": "0.16.0",
   "dependencies": {
-    "@wingscms/crane": "^0.8.0",
-    "@wingscms/react": "^0.15.1",
+    "@wingscms/crane": "^0.8.2",
+    "@wingscms/react": "^0.15.2",
     "@wingscms/sdk": "^0.3.7",
     "browser-locale": "^1.0.3",
     "classnames": "^2.2.6",
@@ -18,7 +15,6 @@
     "gatsby-paginate": "^1.0.17",
     "gatsby-plugin-catch-links": "^2.0.13",
     "gatsby-plugin-compile-es6-packages": "^1.1.0",
-    "gatsby-plugin-google-analytics": "^2.0.18",
     "gatsby-plugin-netlify": "^2.0.13",
     "gatsby-plugin-nprogress": "^2.0.10",
     "gatsby-plugin-page-creator": "^2.0.12",

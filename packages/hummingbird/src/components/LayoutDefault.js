@@ -3,11 +3,16 @@ import styled from 'styled-components';
 import { MenuContentWrapper as _MenuContentWrapper } from '@wingscms/crane';
 import DefaultFooter from './Footer';
 
-const Main = styled.main`
+const LayoutContainer = styled.main`
   width: 100%;
   position: relative;
   overflow: hidden;
 `;
+
+const ContentContainer = styled.div`
+  min-height: 100vh;
+`;
+
 const MenuContentWrapper = styled(_MenuContentWrapper)`
   .slide-menu.chapters {
     position: fixed;
@@ -43,14 +48,12 @@ export default class Layout extends Component {
   render() {
     const { children, footer: Footer } = this.props;
     return (
-      <React.Fragment>
-        <Main>
-          <MenuContentWrapper id="content-wrapper">
-            {children}
-            <Footer />
-          </MenuContentWrapper>
-        </Main>
-      </React.Fragment>
+      <LayoutContainer>
+        <MenuContentWrapper id="content-wrapper">
+          <ContentContainer>{children}</ContentContainer>
+          <Footer />
+        </MenuContentWrapper>
+      </LayoutContainer>
     );
   }
 }

@@ -5,7 +5,6 @@ import CampaignForm from '../../../components/CampaignForm';
 import Container from '../../../components/Container';
 import PetitionCounter from './PetitionCounter';
 import EventDetails from './EventDetails';
-import { makeShareUrls } from '../../../../lib/utils';
 import LayoutDefault from '../../../components/LayoutDefault';
 import Navigation from '../../../components/Navigation';
 import Proposition from './Proposition';
@@ -173,15 +172,17 @@ export default class Campaign extends Component {
   static Main = (props) => {
     const {
       pageContext: {
-        node: { resourceType, title, intro, meta },
+        node: { resourceType, title, intro },
         node,
       },
       formProps = {},
     } = props;
-    const [signatureCount, setSignatureCount] = useState(null);
+    const [signatureCount, setSignatureCount] = useState(0);
+    const [signatureGoal, setSignatureGoal] = useState(0);
     const handleCampaignLoad = (campaign) => {
-      if (!resourceType === 'node.campaign.petition') return;
+      if (!(resourceType === 'node.petition')) return;
       setSignatureCount(campaign.signatureCount);
+      setSignatureGoal(campaign.signatureGoal);
       if (formProps.onLoad) formProps.onLoad(campaign);
     };
     const getUrl = path =>
@@ -199,26 +200,23 @@ export default class Campaign extends Component {
               <Content
                 content={node.description}
                 className="mobiledoc-content"
-                id="event-content"
+                id="campaign-content"
               />
             </Campaign.Proposition>
             <FormContainer id="campaign-form-container">
-              {resourceType === 'node.campaign.petition' && (
+              {resourceType === 'node.petition' && (
                 <CounterContainer>
                   <PetitionCounter
-                    current={signatureCount || node.signatureCount}
-                    max={500}
-                    descriptionText={
-                      meta.counterText || 'mensen hebben deze petitie al ondertekend'
-                    }
+                    current={signatureCount}
+                    max={signatureGoal}
+                    descriptionText="people signed this petition"
                   />
                 </CounterContainer>
               )}
               <FormContainerInner>
                 <CampaignForm
-                  type={resourceType.split('.')[2]}
+                  type={resourceType.split('.')[1]}
                   id={node.id}
-                  disabledFields={['terms', 'privacyConsent']}
                   onSubmit={() => {
                     window.location.assign(getUrl('/confirm'));
                   }}
@@ -230,7 +228,7 @@ export default class Campaign extends Component {
             </FormContainer>
           </MainContainerInner>
         </MainContainerOuter>
-        {resourceType === 'node.campaign.event' && (
+        {resourceType === 'node.event' && (
           <Campaign.Title style={{ marginBottom: '40px' }} {...props}>
             <EventDetails
               title={<Campaign.Title>Info</Campaign.Title>}
@@ -250,21 +248,10 @@ export default class Campaign extends Component {
   };
 
   childProps = () => {
-    const { children: _, ...props } = this.props;
-    const {
-      pageContext: { petition, event, node: _node },
-      location,
-    } = props;
-    const node = petition || event || _node;
-    const url = (location.href || '').replace(/\/confirm(?:ed)?$/, '');
-    const shareUrls = makeShareUrls(node.platforms, url, node.meta);
+    const { children, ...props } = this.props;
     return {
       ...props,
-      pageContext: {
-        ...props.pageContext,
-        node,
-        shareUrls,
-      },
+      ...this.props.childProps,
     };
   };
 

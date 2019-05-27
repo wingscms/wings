@@ -12,6 +12,7 @@ const PETITION_QUERY = `
       title
       submissionSchema
       signatureCount
+      signatureGoal
     }
   }
 `;
@@ -163,9 +164,11 @@ export default class CampaignForm extends Component {
   };
 
   processSubmission = (sub) => {
+    const { disabledFields } = this.props;
     const submission = { ...sub };
-    submission.terms = true;
-    submission.privacyConsent = true;
+    disabledFields.forEach((field) => {
+      submission[field] = true;
+    });
     return this.props.processSubmission(submission);
   };
 
@@ -184,7 +187,7 @@ export default class CampaignForm extends Component {
   }
 
   maybeFetch() {
-    if (this.getFormSchema() || this.state.fetching) return;
+    if (this.getFormSchema() || !this.query() || this.state.fetching) return;
     this.setState({ fetching: true }, async () => {
       let campaign;
       let formSchema;
@@ -221,7 +224,7 @@ export default class CampaignForm extends Component {
           ...(this.props.type === 'donation' && {
             amount: amount * 100 || 1000,
           }),
-          redirectUrl: this.props.redirectUrl,
+          redirectUrl: this.props.redirectUrl, // default to current URL?
         },
       });
       if (res.donation && res.donation.id) {

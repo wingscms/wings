@@ -1,9 +1,11 @@
 module.exports = `
 {
   wings {
-    entries(type: "article") {
+    nodes: entries(type: "article") {
       edges {
         node {
+          resourceType
+          nodeType
           id
           slug
           content

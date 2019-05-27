@@ -4,7 +4,7 @@ const { getDesign, getTypographyConfig, getFooterConfig } = require('./node/util
 
 module.exports = {
   siteMetadata: {
-    siteUrl: process.env.SITE_URL || process.env.URL || 'https://wings.dev',
+    siteUrl: process.env.SITE_URL || process.env.URL || 'http://localhost:4000',
   },
   __experimentalThemes: [
     {
@@ -16,7 +16,6 @@ module.exports = {
           endpoint: process.env.GATSBY_WINGS_ENDPOINT,
         },
         blockRobots: process.env.BLOCK_ROBOTS || process.env.GATSBY_ENV !== 'production',
-        gaTrackingId: process.env.GA_TRACKING_ID,
         basicAuth: process.env.BASIC_AUTH,
         design: {
           ...getDesign(),
@@ -25,9 +24,8 @@ module.exports = {
           ...getTypographyConfig(),
         },
         footer: {
-          title: 'Hummingbird',
-          logoUrl:
-            'https://files.wings.dev/cgk9KpT3eETFQvfqz/1557917914578/hummingbird-black-footer.png',
+          title: 'Wings',
+          logoUrl: 'https://files.wings.dev/1532458206273/wings4-2.png?w=300&quality=100',
           logoLink: 'https://wings.dev',
           columns: [
             {
@@ -35,12 +33,12 @@ module.exports = {
               rows: [
                 {
                   type: 'text',
-                  content: 'Example Street 42<br/>Example City<br/1234AB<br/Europe',
+                  content: ['Voorhaven 31', '3025HC Rotterdam', 'Netherlands'].join('<br/>'),
                 },
                 {
                   type: 'link',
-                  url: 'mailto:dev@wings.dev',
-                  content: 'dev@wings.dev',
+                  url: 'mailto:info@wings.dev',
+                  content: 'info@wings.dev',
                 },
               ],
             },
@@ -51,12 +49,8 @@ module.exports = {
                   type: 'social',
                   profiles: [
                     {
-                      platform: 'facebook',
-                      url: 'https://facebook.com/bureaubolster',
-                    },
-                    {
                       platform: 'twitter',
-                      url: 'https://twitter.com/bureaubolster',
+                      url: 'https://twitter.com/wingscms',
                     },
                   ],
                 },

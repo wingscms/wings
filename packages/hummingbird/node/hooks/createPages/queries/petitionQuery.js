@@ -1,9 +1,11 @@
 module.exports = `
 {
   wings {
-    petitions {
+    nodes: petitions {
       edges {
         node {
+          resourceType
+          nodeType
           id
           title
           slug
@@ -21,6 +23,7 @@ module.exports = `
             data
           }
           signatureCount
+          signatureGoal
           intro
           description
           image {

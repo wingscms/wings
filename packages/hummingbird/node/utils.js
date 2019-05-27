@@ -1,41 +1,25 @@
-const isFeatured = node => !!node.meta.featuredHome;
-const shouldDisplayOnHome = node => !!node.meta.onHome;
 const filterByLocale = (locale, node) => !!(locale === node.locale);
-const sortByMeta = key => (a, b) => a.meta[key] - b.meta[key];
-const metaToObject = meta => meta.reduce((m, v) => ({ ...m, [v.key]: v.value }), {});
-const ensureNodeFields = node => ({
-  ...node,
-  _meta: node.meta,
-  meta: node.meta ? metaToObject(node.meta) : {},
-  path: node.slug || '/',
-});
-
-const filterArchive = (archive, filterVal) =>
-  archive
-    .filter(x => !x.meta.noIndex)
-    .filter(x => !x.meta.isArchive)
-    .filter(x => !x.meta.isHome)
-    .filter(x =>
-      (!filterVal
-        ? true
-        : x.meta.archiveFilter &&
-          x.meta.archiveFilter.split(',').filter(y => y === filterVal).length > 0),
-    );
-
-const getArchive = (type, types, filter = '') => {
-  if (types[type]) {
-    return filterArchive(types[type], filter);
-  }
-  return filterArchive(types.article, filter);
-};
 
 const isTranslation = ({ slug, locale }) => node => locale !== node.locale && slug === node.slug;
 
-const constructPath = (isHome, locale, defaultLocale, node) => {
-  if (isHome) {
-    return locale === defaultLocale ? '/' : `/${locale}`;
-  }
-  return locale === defaultLocale ? node.path : `/${locale}/${node.slug}`;
+const constructPath = (locale, defaultLocale, node) =>
+  (locale === defaultLocale ? node.path : `/${locale}/${node.slug}`);
+
+const makeShareUrls = (platforms, url) => {
+  const { all, facebook, twitter } = platforms;
+  const res = {
+    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+    twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+      url,
+    )}&text=${encodeURIComponent(twitter.description || all.description)}`,
+    whatsapp: `whatsapp://send?text=${encodeURIComponent(
+      `${facebook.description || all.description} ${url}`,
+    )}`,
+    email: `mailto:?subject=${encodeURIComponent(all.title)}&body=${encodeURIComponent(
+      `${facebook.description || all.description} ${url}`,
+    )}`,
+  };
+  return res;
 };
 
 const patchI18n = (nodes, { defaultLocale = 'en' } = {}) =>
@@ -44,7 +28,7 @@ const patchI18n = (nodes, { defaultLocale = 'en' } = {}) =>
     const node = {
       ..._node,
       locale,
-      path: constructPath(_node.meta.isHome, locale, defaultLocale, _node),
+      path: constructPath(locale, defaultLocale, _node),
       translations: [],
     };
     const patched = _patched.concat([node]);
@@ -66,28 +50,14 @@ const patchI18n = (nodes, { defaultLocale = 'en' } = {}) =>
     });
   }, []);
 
-const filterEmptySlugs = (node) => {
-  if (node.path !== '/') {
-    return true;
-  } else if (node.path === '/' && node.meta.isHome) {
-    return true;
-  }
-  return false;
-};
-
 const getThemeFromStore = (store) => {
   const { config } = store.getState();
   return config.__experimentalThemes.find(theme => theme.resolve.indexOf('hummingbird') > -1);
 };
 
 module.exports = {
-  ensureNodeFields,
-  getArchive,
-  isFeatured,
   filterByLocale,
-  filterEmptySlugs,
+  makeShareUrls,
   patchI18n,
-  shouldDisplayOnHome,
-  sortByMeta,
   getThemeFromStore,
 };

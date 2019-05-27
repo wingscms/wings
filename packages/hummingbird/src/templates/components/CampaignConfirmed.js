@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import Campaign from './Campaign';
 import facebookLogo from '../../img/facebook.svg';
@@ -53,29 +53,17 @@ const ShareTitle = styled.h2`
     font-size: 32px;
   }
 `;
-const SHARE_TITLE = "Deel alsjeblieft deze petitie met je collega's en vrienden:";
+const SHARE_TITLE = 'Please share this petition with your friends and colleagues:';
 export default class CampaignConfirmed extends Component {
   static Main = (props) => {
     const {
-      pageContext: {
-        node: { meta },
-        shareUrls: _shareUrls,
-      },
+      pageContext: { shareUrls },
     } = props;
-
-    // forcing a rerender due to the URLs on being available at build-time
-    // client rehydration doesn't trigger one ¯\(ツ)/¯
-    const [shareUrls, setShareUrls] = useState({});
-    useEffect(() => {
-      setShareUrls(_shareUrls);
-    }, []);
 
     return (
       <Campaign.Content {...props}>
-        <Campaign.Title>{meta.confirmedTitle || 'Bedankt!'}</Campaign.Title>
-        <Text>
-          {meta.confirmedText || 'We zijn weer wat dichterbij het behalen van onze doelen.'}
-        </Text>
+        <Campaign.Title>Hurray!</Campaign.Title>
+        <Text>Thanks to you, we are one step closer towards our goals.</Text>
         <ShareContainer>
           <ShareTitle>{SHARE_TITLE}</ShareTitle>
           <ShareButton href={shareUrls.facebook} target="_blank" rel="noopener noreferrer">

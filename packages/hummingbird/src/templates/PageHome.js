@@ -4,8 +4,7 @@ import { Page } from '@wingscms/hummingbird';
 export default props => (
   <Page {...props}>
     <Page.Navigation />
-    <Page.SimpleTitle />
+    <Page.Title />
     <Page.Main />
-    <Page.HighlightedContent />
   </Page>
 );

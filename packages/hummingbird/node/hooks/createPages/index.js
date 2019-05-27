@@ -1,208 +1,130 @@
-const createPaginatedPages = require('gatsby-paginate');
 const articleQuery = require('./queries/articleQuery');
 const pageQuery = require('./queries/pageQuery');
 const petitionQuery = require('./queries/petitionQuery');
 const eventQuery = require('./queries/eventQuery');
 const siteMetaQuery = require('./queries/siteMeta');
-const {
-  ensureNodeFields,
-  getArchive,
-  isFeatured,
-  filterByLocale,
-  filterEmptySlugs,
-  shouldDisplayOnHome,
-  sortByMeta,
-  patchI18n,
-} = require('../../utils');
+const appQuery = require('./queries/appQuery');
+const { patchI18n, makeShareUrls } = require('../../utils');
 
 const {
   GATSBY__TEMP_I18N_ENABLED: i18nEnabled,
   GATSBY__TEMP_I18N_DEFAULT_LOCALE: defaultLocale = 'en',
+  GATSBY_WINGS_PROJECT: projectId,
 } = process.env;
 
+const ensureNodeFields = node => ({
+  ...node,
+  path: `/${node.slug.split('/')[0]}`,
+});
+
+const WINGS_ADMIN_PATH = {
+  entry: '/entries',
+  page: '/entries',
+  petition: '/petitions',
+  event: '/events',
+};
+
+const isValidSlug = slug => !!slug && /^[a-z0-9]+(?:-[a-z0-9]+)*?$/.exec(slug);
+const contains = (arr, el) => arr.indexOf(el) > 0;
+const adminUrl = node =>
+  `https://admin.wings.dev/${projectId}${WINGS_ADMIN_PATH[node.nodeType]}/${node.id}`;
+
+const verifySlugs = (nodes) => {
+  const processedSlugs = [];
+  const invalidNodes = [];
+  nodes.forEach((node) => {
+    if (!isValidSlug(node.slug) || contains(processedSlugs, node.slug)) invalidNodes.push(node);
+    processedSlugs.push(node.slug);
+  });
+  if (invalidNodes.length) {
+    invalidNodes.forEach((node) => {
+      console.error(
+        `[hummingbird] invalid/duplicate slug (${node.slug}) for ${node.nodeType}: ${adminUrl(
+          node,
+        )}`,
+      );
+    });
+    process.exit(1);
+  }
+};
+
 const processNodes = (_nodes) => {
-  let nodes = _nodes.map(ensureNodeFields).filter(filterEmptySlugs);
+  verifySlugs(_nodes);
+  let nodes = _nodes.map(node => ensureNodeFields(node));
   if (i18nEnabled) nodes = patchI18n(nodes, defaultLocale);
   return nodes;
 };
 
-const edgeToNode = ({ node }) => node;
+const resources = [
+  {
+    resourceType: 'node.entry.article',
+    prefix: '/articles',
+    query: articleQuery,
+    template: '../../../src/templates/Article.js',
+  },
+  {
+    resourceType: 'node.entry.page',
+    query: pageQuery,
+    template: '../../../src/templates/Page',
+  },
+  {
+    resourceType: 'node.petition',
+    prefix: '/petitions',
+    query: petitionQuery,
+    template: '../../../src/templates/Campaign',
+  },
+  {
+    resourceType: 'node.event',
+    prefix: '/events',
+    query: eventQuery,
+    template: '../../../src/templates/Campaign',
+  },
+];
 
 module.exports = async ({ graphql, actions: { createPage } }) => {
   // QUERIES
-  const [articleRes, pageRes, petitionsRes, eventsRes, siteMetaRes] = await Promise.all([
-    graphql(articleQuery),
-    graphql(pageQuery),
-    graphql(petitionQuery),
-    graphql(eventQuery),
-    graphql(siteMetaQuery),
-  ]);
-
+  const siteMetaRes = await graphql(siteMetaQuery);
   const { siteMetadata: siteMeta } =
     siteMetaRes.data && siteMetaRes.data.site && siteMetaRes.data.site;
-  const articleEdges =
-    (articleRes.data &&
-      articleRes.data.wings &&
-      articleRes.data.wings.entries &&
-      articleRes.data.wings.entries.edges) ||
-    [];
+  const appRes = await graphql(appQuery);
+  const { home: { node: { id: homeNodeId } = {} } = {} } =
+    appRes.data && appRes.data.wings && appRes.data.wings.currentApp;
+  await Promise.all(
+    resources.map(async ({ resourceType, prefix = '', query, template }) => {
+      const res = await graphql(query);
+      const edges =
+        (res.data && res.data.wings && res.data.wings.nodes && res.data.wings.nodes.edges) || [];
+      const nodes = processNodes(edges.map(({ node }) => node));
+      console.log(`[hummingbird] found ${nodes.length} of ${resourceType}`);
 
-  const pageEdges =
-    (pageRes &&
-      pageRes.data &&
-      pageRes.data.wings &&
-      pageRes.data.wings.entries &&
-      pageRes.data.wings.entries.edges) ||
-    [];
-
-  const petitionEdges =
-    (petitionsRes &&
-      petitionsRes.data &&
-      petitionsRes.data.wings &&
-      petitionsRes.data.wings.petitions &&
-      petitionsRes.data.wings.petitions.edges) ||
-    [];
-
-  const eventEdges =
-    (eventsRes &&
-      eventsRes.data &&
-      eventsRes.data.wings &&
-      eventsRes.data.wings.events &&
-      eventsRes.data.wings.events.edges) ||
-    [];
-
-  const setResourceType = resourceType => node => ({ ...node, resourceType });
-
-  const articles = processNodes(
-    articleEdges.map(edgeToNode).map(setResourceType('node.entry.article')),
-  );
-  const pages = processNodes(pageEdges.map(edgeToNode).map(setResourceType('node.entry.page')));
-  const petitions = processNodes(
-    petitionEdges.map(edgeToNode).map(setResourceType('node.campaign.petition')),
-  );
-  const events = processNodes(
-    eventEdges.map(edgeToNode).map(setResourceType('node.campaign.event')),
-  );
-
-  const allNodes = []
-    .concat(articles)
-    .concat(pages)
-    .concat(petitions)
-    .concat(events);
-
-  const featured = allNodes.filter(isFeatured);
-  const homeNodes = allNodes.filter(shouldDisplayOnHome);
-  const loop = homeNodes.length ? homeNodes.sort(sortByMeta('order')) : [];
-
-  if (!articles.length) console.log('no articles found');
-  if (!pages.length) console.log('no pages found');
-  if (!petitions.length) console.log('no petitions found');
-  if (!events.length) console.log('no events found');
-
-  // GENERATE ARTICLES
-  articles.forEach((entry) => {
-    createPage({
-      path: entry.path,
-      component: require.resolve('../../../src/templates/Article.js'),
-      context: { entry, siteMeta },
-    });
-  });
-  // GENERATE PAGES
-  let homepage = false;
-  pages.forEach((entry) => {
-    // Create home page
-    if (entry.meta.isHome === 'true') {
-      homepage = true;
-      createPage({
-        path: i18nEnabled ? entry.path : '/',
-        component: require.resolve('../../../src/templates/PageHome.js'),
-        context: {
-          entry,
-          featured: i18nEnabled ? featured.filter(x => filterByLocale(entry.locale, x)) : featured,
-          loop: i18nEnabled ? loop.filter(x => filterByLocale(entry.locale, x)) : loop,
+      // GENERATE ARTICLES
+      nodes.forEach((node) => {
+        const isHome = node.id === homeNodeId;
+        const path = isHome ? '/' : prefix + node.path;
+        const context = {
+          node,
           siteMeta,
-        },
+          shareUrls: makeShareUrls(node.platforms, siteMeta.siteUrl + path),
+        };
+        createPage({
+          path,
+          component: isHome
+            ? require.resolve('../../../src/templates/PageHome')
+            : require.resolve(template),
+          context,
+        });
+        if (['petition', 'event'].indexOf(node.resourceType.split('.')[1]) < 0) return;
+        createPage({
+          path: `${path}/confirm`,
+          component: require.resolve('../../../src/templates/CampaignConfirm'),
+          context,
+        });
+        createPage({
+          path: `${path}/confirmed`,
+          component: require.resolve('../../../src/templates/CampaignConfirmed'),
+          context,
+        });
       });
-      // Archive page
-    } else if (entry.meta && entry.meta.isArchive === 'true') {
-      const { archiveType, archiveFilter } = entry.meta;
-      createPaginatedPages({
-        edges: getArchive(
-          archiveType,
-          {
-            article: articles,
-            petition: petitions,
-            event: events,
-            page: pages,
-            all: allNodes,
-          },
-          archiveFilter,
-        ),
-        createPage,
-        pageTemplate: require.resolve('../../../src/templates/ArchiveDefault.js'),
-        pageLength: 12,
-        pathPrefix: `${entry.slug}`,
-        context: { entry, siteMeta },
-      });
-    } else {
-      createPage({
-        path: entry.path,
-        component: require.resolve('../../../src/templates/Page.js'),
-        context: { entry, siteMeta },
-      });
-    }
-  });
-
-  // GENERATE PETITIONS
-  petitions.forEach((petition) => {
-    const h = petition.meta.isHome === 'true';
-    homepage = true;
-    createPage({
-      path: h ? '/' : `${petition.path}`,
-      component: require.resolve('../../../src/templates/Campaign'),
-      context: { node: petition, siteMeta },
-    });
-    createPage({
-      path: h ? '/confirm' : `${petition.path}/confirm`,
-      component: require.resolve('../../../src/templates/CampaignConfirm'),
-      context: { node: petition, siteMeta },
-    });
-    createPage({
-      path: h ? '/confirmed' : `${petition.path}/confirmed`,
-      component: require.resolve('../../../src/templates/CampaignConfirmed'),
-      context: { node: petition, siteMeta },
-    });
-  });
-
-  // GENERATE EVENTS
-  events.forEach((event) => {
-    const h = event.meta.isHome === 'true';
-    homepage = h ? true : homepage;
-    createPage({
-      path: h ? '/' : `${event.path}`,
-      component: require.resolve('../../../src/templates/Campaign'),
-      context: { node: event, siteMeta },
-    });
-    createPage({
-      path: h ? '/confirm' : `${event.path}/confirm`,
-      component: require.resolve('../../../src/templates/CampaignConfirm'),
-      context: { node: event, siteMeta },
-    });
-    createPage({
-      path: h ? '/confirmed' : `${event.path}/confirmed`,
-      component: require.resolve('../../../src/templates/CampaignConfirmed'),
-      context: { node: event, siteMeta },
-    });
-  });
-
-  if (!homepage) {
-    createPaginatedPages({
-      edges: articleRes.data.wings.entries.edges,
-      createPage,
-      pageTemplate: require.resolve('../../../src/templates/LoopDefault.js'),
-      pageLength: 5,
-      pathPrefix: '',
-      context: { entry: articleRes.data.wings.entries.edges[0].node, siteMeta },
-    });
-  }
+    }),
+  );
 };

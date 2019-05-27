@@ -58,7 +58,7 @@ export default (props) => {
       transformErrors={errors =>
         errors.map((error) => {
           if (error.name === 'required') {
-            error.message = 'This field is required.'; // eslint-disable-line no-param-reassign
+            error.message = 'this field is required'; // eslint-disable-line no-param-reassign
           } else {
             error.message = ''; // eslint-disable-line no-param-reassign
           }

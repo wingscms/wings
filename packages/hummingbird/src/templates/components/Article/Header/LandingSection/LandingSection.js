@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Scroll from 'react-scroll-to-element';
 import widont from 'widont';
 import Title from './Title';
-import Subtitle from './Subtitle';
 
 import downArrowImage from '../../../../../img/arrow-down.svg';
 
@@ -103,7 +102,7 @@ export default class LandingSection extends Component {
   updatePercentage = () => requestAnimationFrame(() => this.setState({ scrollY: window.scrollY }));
   render() {
     if (typeof window === 'undefined') return <div />;
-    const { article: { title, image = {}, meta = {} } = {} } = this.props;
+    const { article: { title, image = {} } = {} } = this.props;
     const { scrollY } = this.state;
 
     const backgroundImage = (image && image.url) || '';
@@ -125,11 +124,6 @@ export default class LandingSection extends Component {
                 <Title>
                   <span>{widont(title)}</span>
                 </Title>
-                {!meta.subtitle || (
-                  <Subtitle>
-                    <span>{widont(meta.subtitle)}</span>
-                  </Subtitle>
-                )}
               </TitleContainer>
               <ArrowContainer>
                 <Arrow src={downArrowImage} />

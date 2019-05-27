@@ -83,7 +83,7 @@ export default class PetitionCounter extends Component {
   };
   render() {
     const { current } = this.props;
-    const { max = 1000, descriptionText } = this.props;
+    const { max, descriptionText } = this.props;
     return (
       <Container>
         <TopContainer>
@@ -92,8 +92,12 @@ export default class PetitionCounter extends Component {
           </CurrentText>
           <DescriptionText>{descriptionText}</DescriptionText>
         </TopContainer>
-        <Counter current={current} max={max} />
-        <MaxText>{format(max)}</MaxText>
+        {!max ? null : (
+          <React.Fragment>
+            <Counter current={current} max={max} />
+            <MaxText>{format(max)}</MaxText>
+          </React.Fragment>
+        )}
       </Container>
     );
   }
