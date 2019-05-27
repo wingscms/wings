@@ -3,17 +3,8 @@ import styled from 'styled-components';
 import classNames from 'classnames';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import Entry from '../Entry';
-import _Content from '../../../components/Content';
+import Content from '../../../components/Content';
 import Header from './Header';
-
-const Content = styled(_Content)`
-  p:first-child {
-    margin-top: 2em;
-    @media screen and (min-width: 800px) {
-      margin-top: 3em;
-    }
-  }
-`;
 
 const Title = styled.h1`
   margin: 0 auto 80px auto;
@@ -27,8 +18,12 @@ const Title = styled.h1`
 
 const ContentWrapper = styled.div`
   margin: 0 auto;
+  margin-top: 2em;
   max-width: 760px;
   padding: 0 20px;
+  @media screen and (min-width: 800px) {
+    margin-top: 3em;
+  }
 `;
 
 export default class Page extends Component {
