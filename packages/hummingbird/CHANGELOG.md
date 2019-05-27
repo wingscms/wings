@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.1](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.16.0...@wingscms/hummingbird@0.16.1) (2019-05-27)
+
+
+### Bug Fixes
+
+* spacing between header and content in entries ([#115](https://github.com/wingscms/wings/issues/115)) ([efd02ac](https://github.com/wingscms/wings/commit/efd02ac))
+
+
+
+
+
 # [0.16.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.15.7...@wingscms/hummingbird@0.16.0) (2019-05-23)
 
 
