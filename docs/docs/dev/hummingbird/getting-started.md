@@ -2,9 +2,9 @@
 title: Getting Started
 ---
 
-## Setup
+## Initialize your Gatsby project
 
-TODO:
+You can follow this quickstart: https://www.gatsbyjs.org/docs/quick-start
 
 - theme install
 - theme config
