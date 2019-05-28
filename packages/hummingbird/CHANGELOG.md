@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.2](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.16.1...@wingscms/hummingbird@0.16.2) (2019-05-28)
+
+
+### Bug Fixes
+
+* **hummingbird:** fix build error when no home node set ([#119](https://github.com/wingscms/wings/issues/119)) ([7a4d373](https://github.com/wingscms/wings/commit/7a4d373))
+
+
+
+
+
 ## [0.16.1](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.16.0...@wingscms/hummingbird@0.16.1) (2019-05-27)
 
 
