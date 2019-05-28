@@ -5,6 +5,6 @@
   "developers": {
     "General": ["dev/general/getting-started"],
     "API": ["dev/api/authentication"],
-    "Hummingbird": ["dev/hummingbird/getting-started", "dev/hummingbird/shadowing"]
+    "Hummingbird": ["dev/hummingbird/getting-started", "dev/hummingbird/shadowing", "dev/hummingbird/deployment"]
   }
 }

@@ -2,16 +2,88 @@
 title: Getting Started
 ---
 
-## Initialize your Gatsby project
+## Create your project
 
-You can follow this quickstart: https://www.gatsbyjs.org/docs/quick-start
+```sh
+$ mkdir my-project
+$ cd my-project
+```
 
-- theme install
-- theme config
+## Initialize npm & install modules
 
+Add a `package.json` file:
 
-## Deployment
+```json
+{
+  "private": true,
+  "scripts": {
+    "start": "gatsby develop",
+    "build": "gatsby build"
+  },
+  "dependencies": {
+    "@wingscms/hummingbird": "^0.16.2",
+    "dotenv": "^8.0.0",
+    "gatsby": "^2.7.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
+```
 
-https://www.gatsbyjs.org/docs/deploying-and-hosting/
+And install the modules:
 
-We recommend Netlify to support redirects in the future.
+```sh
+$ npm install
+```
+
+## Gatsby/Hummingbird configuration
+
+In the root of your project, add a `gatsby-config.js` file:
+
+```js
+// gatsby-config.js
+
+require("dotenv").config()
+
+module.exports = {
+  siteMetadata: {
+    title: `My Project`,
+    siteUrl: process.env.SITE_URL || process.env.URL || 'http://localhost:8000',
+  },
+  __experimentalThemes: [
+    {
+      resolve: "@wingscms/hummingbird",
+      options: {
+        wings: {
+          project: process.env.GATSBY_WINGS_PROJECT,
+          appKey: process.env.GATSBY_WINGS_APP_KEY,
+        },
+        design: {},
+        footer: {},
+      },
+    },
+  ],
+}
+```
+
+## Add environment variables
+
+Because we're using the `dotenv` package, we can add a `.env` file in the root. The config we defined before references `GATSBY_WINGS_PROJECT`/`GATSBY_WINGS_APP_KEY`, so we need to define these in our `.env` file for local development:
+
+```env
+# .env
+
+GATSBY_WINGS_PROJECT=<your project ID>
+GATSBY_WINGS_APP_KEY=<your app key>
+```
+
+> NOTE: to create an app key, you can create an app at
+> `Settings`->`Apps`->`Add App` in the [Wings dashboard](https://admin.wings.dev). Here you can assign a default main menu and home page for your app, and reveal your project ID and app key by clicking `Show Connection Info`.
+
+## Fire up your development server
+
+Now you just need to run the `start` script to get going!
+
+```sh
+$ npm start
+```
