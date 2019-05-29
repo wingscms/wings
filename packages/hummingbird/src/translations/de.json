@@ -4,10 +4,14 @@
   "app.campaign.confirmed.title": "Hurra!",
   "app.campaign.confirmed.text": "Dank Dir sind wir unserem Ziel wieder einen Schritt näher!",
   "app.campaign.confirmed.shareTitle": "Bitte teile diese Petition mit Deinen Freunden und Kollegen:",
+  "app.campaign.form.loading": "wird geladen",
   "app.cornerMenu.chapters.title": "Kapitel",
   "app.petition.counter.description": "{signatureCount, plural, one {Person hat} other {Leute haben}} die Petition unterzeichnet",
   "app.404.message": "Oh nein! Die Seite die Du Dir ansehen wolltest ist unauffindbar.",
   "app.landingSection.container": "gehe zum Inhaltsverzeichnis",
   "app.campaign.proposition.toggle.collapse": "Schließen",
-  "app.campaign.proposition.toggle.expand": "Mehr anzeigen"
+  "app.campaign.proposition.toggle.expand": "Mehr anzeigen",
+  "app.footer.love.message": "Mit {love} gemacht von Bolster",
+  "app.footer.love.emoji": "Liebe",
+  "app.footer.powered.message": "Möglich dank Wings"
 }

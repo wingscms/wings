@@ -4,10 +4,14 @@
   "app.campaign.confirmed.title": "Hoezee!",
   "app.campaign.confirmed.text": "Dankzij jou zijn we weer een stapje dichter bij ons doel!",
   "app.campaign.confirmed.shareTitle": "Deel de petitie met je vrienden en collega’s:",
+  "app.campaign.form.loading": "aan het laden",
   "app.cornerMenu.chapters.title": "Hoofdstukken",
   "app.petition.counter.description": "{signatureCount, plural, one {persoon heeft} other {mensen hebben}} de petitie getekend",
   "app.404.message": "O jee! Deze pagina bestaat helemaal niet.",
   "app.landingSection.container": "ga naar de inhoudsopgave",
   "app.campaign.proposition.toggle.collapse": "Inklappen",
-  "app.campaign.proposition.toggle.expand": "Uitklappen"
+  "app.campaign.proposition.toggle.expand": "Uitklappen",
+  "app.footer.love.message": "Met {love} gemaakt door Bolster",
+  "app.footer.love.emoji": "liefde",
+  "app.footer.powered.message": "Mogelijk dankzij Wings"
 }

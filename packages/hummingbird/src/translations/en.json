@@ -4,10 +4,14 @@
   "app.campaign.confirmed.title": "Hurray!",
   "app.campaign.confirmed.text": "Thanks to you, we are one step closer towards our goals.",
   "app.campaign.confirmed.shareTitle": "Please share this petition with your friends and colleagues:",
+  "app.campaign.form.loading": "loading",
   "app.cornerMenu.chapters.title": "Chapters",
   "app.petition.counter.description": "{signatureCount, plural, one {person has} other {people have}} signed this petition",
   "app.404.message": "Uh oh. We couldn't find what you were looking for.",
   "app.landingSection.container": "view the table of contents",
   "app.campaign.proposition.toggle.collapse": "Collapse",
-  "app.campaign.proposition.toggle.expand": "Read more"
+  "app.campaign.proposition.toggle.expand": "Read more",
+  "app.footer.love.message": "Made with {love} at Bolster",
+  "app.footer.love.emoji": "love",
+  "app.footer.powered.message": "Powered by Wings"
 }

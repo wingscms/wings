@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { SchemaForm } from '@wingscms/crane';
+import { FormattedMessage } from 'react-intl';
 import _Button from './Button';
 import wings from '../data/wings';
 
@@ -254,7 +255,11 @@ export default class CampaignForm extends Component {
     const schema = this.getFormSchema();
     const loading = !schema || fetching;
     return loading ? (
-      'loading'
+      <FormattedMessage
+        id="app.campaign.form.loading"
+        description="Form loading message"
+        defaultMessage="loading"
+      />
     ) : (
       <SchemaForm
         id="campaign-form"

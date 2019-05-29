@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FormattedMessage } from 'react-intl';
 import { usePluginOptions } from '../../ctx/PluginOptions';
 
 import Section from './Section';
@@ -78,6 +79,16 @@ const Logo = styled.img`
   max-height: 80px;
 `;
 
+const LoveEmoji = () => (
+  <FormattedMessage id="app.footer.love.emoji" description="Love Emoji" defaultMessage="love">
+    {txt => (
+      <span role="img" aria-label={txt}>
+        ❤️
+      </span>
+    )}
+  </FormattedMessage>
+);
+
 export default () => {
   const { footer } = usePluginOptions();
   return (
@@ -96,13 +107,22 @@ export default () => {
           </CTASection>
         ) : null}
         <FooterColumns columns={footer.columns} />
-        <BolsterLink href="https://wings.dev">Powered by Wings</BolsterLink>
+        <BolsterLink href="https://wings.dev">
+          <FormattedMessage
+            id="app.footer.powered.message"
+            description="Powered by Wings message"
+            defaultMessage="Powered by Wings"
+          />
+        </BolsterLink>
         <BolsterLink href="https://bureaubolster.nl">
-          Made with{' '}
-          <span role="img" aria-label="heart emoji">
-            ❤️
-          </span>{' '}
-          at Bolster
+          <FormattedMessage
+            id="app.footer.love.message"
+            description="Made by Bolster message"
+            defaultMessage="Made with {love} at Bolster"
+            values={{
+              love: <LoveEmoji />,
+            }}
+          />
         </BolsterLink>
       </Container>
     </Wrap>
