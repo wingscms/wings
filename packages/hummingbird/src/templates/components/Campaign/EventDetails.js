@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FormattedMessage, FormattedDate, FormattedTime } from 'react-intl';
+import { FormattedMessage, FormattedDate, FormattedTime, FormattedNumber } from 'react-intl';
 
 const InfoContainer = styled.div``;
 
@@ -25,14 +25,6 @@ const MetaContent = styled.div`
     margin: 0;
   }
 `;
-
-const getCurrencySymbol = (currencyCode) => {
-  switch (currencyCode) {
-    case 'EUR':
-    default:
-      return '€';
-  }
-};
 
 const Wrapper = styled.div`
   display: block;
@@ -114,8 +106,12 @@ export default ({ title, fee, location, schedule }) => {
               />
             </MetaName>
             <MetaContent>
-              {getCurrencySymbol(fee.currencyCode)}
-              {fee.amount}
+              <FormattedNumber
+                value={fee.amount}
+                currency={fee.currencyCode}
+                currencyDisplay="symbol"
+                style="currency" // eslint-disable-line react/style-prop-object
+              />
             </MetaContent>
           </MetaContainer>
         ) : null}
