@@ -29,7 +29,7 @@ const PageWrapper = ({
   const theme = useTheme();
   const node = entry || petition || event || _node;
   if (!node) return children;
-  const { title, platforms = {}, locale = 'nl', translations } = node;
+  const { title, platforms = {}, locale = 'en', translations } = node;
   const language = locale.split(/[-_]/)[0];
   useEffect(() => {
     if (typeof window !== 'undefined' && translations && translations.length > 0) {
