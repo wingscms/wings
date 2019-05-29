@@ -13,5 +13,9 @@
   "app.campaign.proposition.toggle.expand": "Uitklappen",
   "app.footer.love.message": "Met {love} gemaakt door Bolster",
   "app.footer.love.emoji": "liefde",
-  "app.footer.powered.message": "Mogelijk dankzij Wings"
+  "app.footer.powered.message": "Mogelijk dankzij Wings",
+  "app.event.details.startLabel": "Begin",
+  "app.event.details.endLabel": "Einde",
+  "app.event.details.locationLabel": "Plaats",
+  "app.event.details.feeLabel": "Entree"
 }

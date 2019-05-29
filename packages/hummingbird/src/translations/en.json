@@ -13,5 +13,9 @@
   "app.campaign.proposition.toggle.expand": "Read more",
   "app.footer.love.message": "Made with {love} at Bolster",
   "app.footer.love.emoji": "love",
-  "app.footer.powered.message": "Powered by Wings"
+  "app.footer.powered.message": "Powered by Wings",
+  "app.event.details.startLabel": "Start",
+  "app.event.details.endLabel": "End",
+  "app.event.details.locationLabel": "Location",
+  "app.event.details.feeLabel": "Price"
 }
