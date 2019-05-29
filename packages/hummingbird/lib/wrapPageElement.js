@@ -3,19 +3,25 @@ import Helmet from 'react-helmet';
 import { navigate } from 'gatsby';
 import browserLocale from 'browser-locale';
 import { IntlProvider, addLocaleData } from 'react-intl';
+import localeDe from 'react-intl/locale-data/de';
+import localeEn from 'react-intl/locale-data/en';
+import localeNl from 'react-intl/locale-data/nl';
 import { useTheme } from '../lib/styled';
+import messagesDe from '../src/translations/de';
+import messagesEn from '../src/translations/en';
+import messagesNl from '../src/translations/nl';
 
-addLocaleData({ locale: 'de-DE' });
+addLocaleData([...localeDe, ...localeEn, ...localeNl]);
+
+const messages = {
+  de: messagesDe,
+  en: messagesEn,
+  nl: messagesNl,
+};
+
 const generateTitle = (title, siteTitle, platform, platforms) =>
   (platforms[platform] && platforms[platform].title ? platforms[platform].title : title);
-const msg = {
-  'en-US': {
-    greeting: 'Hello',
-  },
-  'de-DE': {
-    greeting: 'Hallo',
-  },
-};
+
 const PageWrapper = ({
   pageContext: { entry, petition, event, node: _node, siteMeta: { siteTitle } = {} },
   children,
@@ -23,7 +29,8 @@ const PageWrapper = ({
   const theme = useTheme();
   const node = entry || petition || event || _node;
   if (!node) return children;
-  const { title, platforms = {}, locale = 'de-DE', translations } = node;
+  const { title, platforms = {}, locale = 'nl', translations } = node;
+  const language = locale.split(/[-_]/)[0];
   useEffect(() => {
     if (typeof window !== 'undefined' && translations && translations.length > 0) {
       if (
@@ -106,7 +113,7 @@ const PageWrapper = ({
           <meta property="fb:image" content={platforms.facebook.imageUrl} />
         ) : null}
       </Helmet>
-      <IntlProvider locale={locale} messages={msg[locale]}>
+      <IntlProvider locale={locale} messages={messages[language]}>
         {children}
       </IntlProvider>
     </React.Fragment>

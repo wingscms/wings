@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { FormattedMessage } from 'react-intl';
 import Campaign from './Campaign';
 import facebookLogo from '../../img/facebook.svg';
 import twitterLogo from '../../img/twitter.svg';
@@ -53,7 +54,6 @@ const ShareTitle = styled.h2`
     font-size: 32px;
   }
 `;
-const SHARE_TITLE = 'Please share this petition with your friends and colleagues:';
 export default class CampaignConfirmed extends Component {
   static Main = (props) => {
     const {
@@ -62,10 +62,25 @@ export default class CampaignConfirmed extends Component {
 
     return (
       <Campaign.Content {...props}>
-        <Campaign.Title>Hurray!</Campaign.Title>
-        <Text>Thanks to you, we are one step closer towards our goals.</Text>
+        <FormattedMessage
+          id="app.campaign.confirmed.title"
+          description="Title of campaign submission success."
+          defaultMessage="Hurray!"
+          tagName={Campaign.Title}
+        />
+        <FormattedMessage
+          id="app.campaign.confirmed.text"
+          description="Text of campaign submission success."
+          defaultMessage="Thanks to you, we are one step closer towards our goals."
+          tagName={Text}
+        />
         <ShareContainer>
-          <ShareTitle>{SHARE_TITLE}</ShareTitle>
+          <FormattedMessage
+            id="app.campaign.confirmed.shareTitle"
+            description="Title above campaign share buttons."
+            defaultMessage="Please share this petition with your friends and colleagues:"
+            tagName={ShareTitle}
+          />
           <ShareButton href={shareUrls.facebook} target="_blank" rel="noopener noreferrer">
             <img src={facebookLogo} alt="Deel op Facebook" />
           </ShareButton>

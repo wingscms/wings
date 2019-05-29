@@ -1,0 +1,9 @@
+{
+  "app.campaign.confirm.title": "We zijn er bijna!",
+  "app.campaign.confirm.body": "We hebben je net een mail gestuurd met een bevestigingslink. Wanneer je deze link volgt wordt je ondertekening geteld. Bedankt alvast!",
+  "app.campaign.confirmed.title": "Hoezee!",
+  "app.campaign.confirmed.text": "Dankzij jou zijn we weer een stapje dichter bij ons doel!",
+  "app.campaign.confirmed.shareTitle": "Deel de petitie met je vrienden en collega’s:",
+  "app.cornerMenu.chapters.title": "Hoofdstukken",
+  "app.petition.counter.description": "{signatureCount, plural, one {persoon heeft} other {mensen hebben}} de petitie getekend"
+}

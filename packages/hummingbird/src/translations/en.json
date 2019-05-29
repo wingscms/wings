@@ -1,0 +1,9 @@
+{
+  "app.campaign.confirm.title": "We’re almost there!",
+  "app.campaign.confirm.body": "We have sent you an email with a confirmation link to make sure all signatures are genuine. If you follow that link, your signature will count. Thanks!",
+  "app.campaign.confirmed.title": "Hurray!",
+  "app.campaign.confirmed.text": "Thanks to you, we are one step closer towards our goals.",
+  "app.campaign.confirmed.shareTitle": "Please share this petition with your friends and colleagues:",
+  "app.cornerMenu.chapters.title": "Chapters",
+  "app.petition.counter.description": "people signed this petition"
+}
