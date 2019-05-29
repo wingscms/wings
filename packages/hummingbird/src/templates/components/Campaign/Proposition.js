@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { FormattedMessage } from 'react-intl';
 
 import arrowDown from '../../../img/arrowdown.png';
 import arrowUp from '../../../img/arrowup.png';
@@ -97,12 +98,20 @@ export default class Proposition extends Component {
         <ToggleButton onClick={this.toggleProposition}>
           {show ? (
             <React.Fragment>
-              Collapse
+              <FormattedMessage
+                id="app.campaign.proposition.toggle.collapse"
+                description="Collapse proposition button text"
+                defaultMessage="Collapse"
+              />
               <Arrow src={arrowUp} />
             </React.Fragment>
           ) : (
             <React.Fragment>
-              Read more
+              <FormattedMessage
+                id="app.campaign.proposition.toggle.expand"
+                description="Expand proposition button text"
+                defaultMessage="Read more"
+              />
               <Arrow src={arrowDown} />
             </React.Fragment>
           )}

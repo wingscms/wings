@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Scroll from 'react-scroll-to-element';
 import widont from 'widont';
+import { FormattedMessage } from 'react-intl';
 import Title from './Title';
 
 import downArrowImage from '../../../../../img/arrow-down.svg';
@@ -86,6 +87,19 @@ const Arrow = styled.img`
   }
 `;
 
+const TranslatedContainer = ({ children }) => (
+  <FormattedMessage
+    id="app.landingSection.container"
+    description="Title of landing section container"
+    defaultMessage="view the table of contents"
+  >
+    {txt => (
+      <Container id="landing-section" title={txt}>
+        {children}
+      </Container>
+    )}
+  </FormattedMessage>
+);
 export default class LandingSection extends Component {
   state = {
     scrollY: 0,
@@ -109,7 +123,7 @@ export default class LandingSection extends Component {
     return (
       <div>
         <Scroll type="id" element="article-start">
-          <Container id="landing-section" title="ga naar de inhoudsopgave">
+          <TranslatedContainer>
             <BackgroundImageContainerOuter
               style={{ marginTop: scrollY > 84 ? scrollY / 2 - 84 / 2 : 0 }}
             >
@@ -129,7 +143,7 @@ export default class LandingSection extends Component {
                 <Arrow src={downArrowImage} />
               </ArrowContainer>
             </ContentContainer>
-          </Container>
+          </TranslatedContainer>
         </Scroll>
       </div>
     );
