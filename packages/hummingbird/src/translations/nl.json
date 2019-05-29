@@ -17,5 +17,6 @@
   "app.event.details.startLabel": "Begin",
   "app.event.details.endLabel": "Einde",
   "app.event.details.locationLabel": "Plaats",
-  "app.event.details.feeLabel": "Entree"
+  "app.event.details.feeLabel": "Entree",
+  "app.event.details.title": "Info"
 }

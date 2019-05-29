@@ -246,7 +246,15 @@ export default class Campaign extends Component {
         {resourceType === 'node.campaign.event' && (
           <Campaign.Title style={{ marginBottom: '40px' }} {...props}>
             <EventDetails
-              title={<Campaign.Title>Info</Campaign.Title>}
+              title={
+                <Campaign.Title>
+                  <FormattedMessage
+                    id="app.event.details.title"
+                    description="Title for Event metadata"
+                    defaultMessage="Info"
+                  />
+                </Campaign.Title>
+              }
               schedule={node.schedule}
               fee={node.fee}
               location={node.location}
