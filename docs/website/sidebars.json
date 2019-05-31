@@ -3,7 +3,8 @@
     "General": ["users/general/getting-started", "users/general/settings"]
   },
   "developers": {
-    "General": ["dev/general/getting-started"],
+    "General": ["dev/general/getting-started", "dev/general/data-model"],
+    "Publishing": ["dev/publishing/editor"],
     "API": ["dev/api/authentication"],
     "Hummingbird": ["dev/hummingbird/getting-started", "dev/hummingbird/shadowing", "dev/hummingbird/deployment"]
   }

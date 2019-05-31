@@ -2,6 +2,8 @@
 title: Getting Started
 ---
 
+Hummingbird is an official Wings Gatsby theme you can use to display Wings content.
+
 ## Create your project
 
 ```sh
