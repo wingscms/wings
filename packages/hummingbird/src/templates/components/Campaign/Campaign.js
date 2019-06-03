@@ -208,7 +208,7 @@ export default class Campaign extends Component {
               {resourceType === 'node.petition' && (
                 <CounterContainer>
                   <FormattedMessage
-                    id="app.petition.counter.description"
+                    id="hummingbird.Campaign.petitionCounterDescription.text"
                     description="Description for petition counter component"
                     defaultMessage="{signatureCount, plural,
                       one {person has}
@@ -249,7 +249,7 @@ export default class Campaign extends Component {
               title={
                 <Campaign.Title>
                   <FormattedMessage
-                    id="app.event.details.title"
+                    id="hummingbird.EventDetails.title.text"
                     description="Title for Event metadata"
                     defaultMessage="Info"
                   />

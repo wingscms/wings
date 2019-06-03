@@ -63,20 +63,20 @@ export default class CampaignConfirmed extends Component {
     return (
       <Campaign.Content {...props}>
         <FormattedMessage
-          id="app.campaign.confirmed.title"
+          id="hummingbird.CampaignConfirmed.title.text"
           description="Title of campaign submission success."
           defaultMessage="Hurray!"
           tagName={Campaign.Title}
         />
         <FormattedMessage
-          id="app.campaign.confirmed.text"
+          id="hummingbird.CampaignConfirmed.text"
           description="Text of campaign submission success."
           defaultMessage="Thanks to you, we are one step closer towards our goals."
           tagName={Text}
         />
         <ShareContainer>
           <FormattedMessage
-            id="app.campaign.confirmed.shareTitle"
+            id="hummingbird.CampaignConfirmed.shareTitle.text"
             description="Title above campaign share buttons."
             defaultMessage="Please share this petition with your friends and colleagues:"
             tagName={ShareTitle}

@@ -256,7 +256,7 @@ export default class CampaignForm extends Component {
     const loading = !schema || fetching;
     return loading ? (
       <FormattedMessage
-        id="app.campaign.form.loading"
+        id="hummingbird.CampaignForm.loading.text"
         description="Form loading message"
         defaultMessage="loading"
       />

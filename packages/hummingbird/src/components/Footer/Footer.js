@@ -80,7 +80,11 @@ const Logo = styled.img`
 `;
 
 const LoveEmoji = () => (
-  <FormattedMessage id="app.footer.love.emoji" description="Love Emoji" defaultMessage="love">
+  <FormattedMessage
+    id="hummingbird.Footer.loveMessage.emoji"
+    description="Love Emoji"
+    defaultMessage="love"
+  >
     {txt => (
       <span role="img" aria-label={txt}>
         ❤️
@@ -109,14 +113,14 @@ export default () => {
         <FooterColumns columns={footer.columns} />
         <BolsterLink href="https://wings.dev">
           <FormattedMessage
-            id="app.footer.powered.message"
+            id="hummingbird.Footer.poweredMessage.text"
             description="Powered by Wings message"
             defaultMessage="Powered by Wings"
           />
         </BolsterLink>
         <BolsterLink href="https://bureaubolster.nl">
           <FormattedMessage
-            id="app.footer.love.message"
+            id="hummingbird.Footer.loveMessage.text"
             description="Made by Bolster message"
             defaultMessage="Made with {love} at Bolster"
             values={{

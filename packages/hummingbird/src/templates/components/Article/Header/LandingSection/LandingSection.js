@@ -89,7 +89,7 @@ const Arrow = styled.img`
 
 const TranslatedContainer = ({ children }) => (
   <FormattedMessage
-    id="app.landingSection.container"
+    id="hummingbird.LandingSection.container.titleAttribute"
     description="Title of landing section container"
     defaultMessage="view the table of contents"
   >

@@ -99,7 +99,7 @@ export default class Proposition extends Component {
           {show ? (
             <React.Fragment>
               <FormattedMessage
-                id="app.campaign.proposition.toggle.collapse"
+                id="hummingbird.Campaign.propositionToggleCollapse.text"
                 description="Collapse proposition button text"
                 defaultMessage="Collapse"
               />
@@ -108,7 +108,7 @@ export default class Proposition extends Component {
           ) : (
             <React.Fragment>
               <FormattedMessage
-                id="app.campaign.proposition.toggle.expand"
+                id="hummingbird.Campaign.propositionToggleExpand.text"
                 description="Expand proposition button text"
                 defaultMessage="Read more"
               />

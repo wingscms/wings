@@ -54,7 +54,7 @@ export default ({ title, fee, location, schedule }) => {
           <MetaContainer>
             <MetaName>
               <FormattedMessage
-                id="app.event.details.startLabel"
+                id="hummingbird.EventDetails.startLabel.text"
                 description="Label for Event Start date"
                 defaultMessage="Start"
               />
@@ -68,7 +68,7 @@ export default ({ title, fee, location, schedule }) => {
           <MetaContainer>
             <MetaName>
               <FormattedMessage
-                id="app.event.details.endLabel"
+                id="hummingbird.EventDetails.endLabel.text"
                 description="Label for Event End date"
                 defaultMessage="End"
               />
@@ -82,7 +82,7 @@ export default ({ title, fee, location, schedule }) => {
           <MetaContainer>
             <MetaName>
               <FormattedMessage
-                id="app.event.details.locationLabel"
+                id="hummingbird.EventDetails.locationLabel.text"
                 description="Label for Event Location"
                 defaultMessage="Location"
               />
@@ -100,7 +100,7 @@ export default ({ title, fee, location, schedule }) => {
           <MetaContainer>
             <MetaName>
               <FormattedMessage
-                id="app.event.details.feeLabel"
+                id="hummingbird.EventDetails.feeLabel.text"
                 description="Label for Event Fee"
                 defaultMessage="Price"
               />

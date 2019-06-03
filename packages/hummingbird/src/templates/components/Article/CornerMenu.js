@@ -244,7 +244,7 @@ class CornerMenu extends Component {
             <Scroll type="id" element="chapter-list">
               <ChaptersLink>
                 <FormattedMessage
-                  id="app.cornerMenu.chapters.title"
+                  id="hummingbird.CornerMenu.chaptersTitle.text"
                   description="Corner menu chapters title"
                   defaultMessage="Chapters"
                 />
@@ -266,7 +266,7 @@ class CornerMenu extends Component {
               }}
             >
               <FormattedMessage
-                id="app.cornerMenu.chapters.title"
+                id="hummingbird.CornerMenu.chaptersTitle.text"
                 description="Corner menu chapters title"
                 defaultMessage="Chapters"
               />
