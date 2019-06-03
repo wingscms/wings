@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ShareContainer = styled.div`
+  display: inline-block;
   float: right;
   height: 100%;
   > p {
