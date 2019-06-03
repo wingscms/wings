@@ -1,4 +1,6 @@
 import React from 'react';
 import LandingSection from './LandingSection';
 
-export default ({ article }) => <LandingSection article={article} />;
+export default ({ article, landingSectionTitleAttribute }) => (
+  <LandingSection article={article} titleAttribute={landingSectionTitleAttribute} />
+);

@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Scroll from 'react-scroll-to-element';
 import widont from 'widont';
-import { FormattedMessage } from 'react-intl';
 import Title from './Title';
 
 import downArrowImage from '../../../../../img/arrow-down.svg';
@@ -86,20 +85,6 @@ const Arrow = styled.img`
     margin: 10px auto 40px auto;
   }
 `;
-
-const TranslatedContainer = ({ children }) => (
-  <FormattedMessage
-    id="hummingbird.LandingSection.container.titleAttribute"
-    description="Title of landing section container"
-    defaultMessage="view the table of contents"
-  >
-    {txt => (
-      <Container id="landing-section" title={txt}>
-        {children}
-      </Container>
-    )}
-  </FormattedMessage>
-);
 export default class LandingSection extends Component {
   state = {
     scrollY: 0,
@@ -116,14 +101,14 @@ export default class LandingSection extends Component {
   updatePercentage = () => requestAnimationFrame(() => this.setState({ scrollY: window.scrollY }));
   render() {
     if (typeof window === 'undefined') return <div />;
-    const { article: { title, image = {} } = {} } = this.props;
+    const { article: { title, image = {} } = {}, titleAttribute } = this.props;
     const { scrollY } = this.state;
 
     const backgroundImage = (image && image.url) || '';
     return (
       <div>
         <Scroll type="id" element="article-start">
-          <TranslatedContainer>
+          <Container id="landing-section" title={titleAttribute}>
             <BackgroundImageContainerOuter
               style={{ marginTop: scrollY > 84 ? scrollY / 2 - 84 / 2 : 0 }}
             >
@@ -143,7 +128,7 @@ export default class LandingSection extends Component {
                 <Arrow src={downArrowImage} />
               </ArrowContainer>
             </ContentContainer>
-          </TranslatedContainer>
+          </Container>
         </Scroll>
       </div>
     );

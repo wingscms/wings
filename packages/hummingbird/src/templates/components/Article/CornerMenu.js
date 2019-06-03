@@ -4,7 +4,6 @@ import Scroll from 'react-scroll-to-element';
 import { navigate } from 'gatsby';
 import styled, { withTheme } from 'styled-components';
 import { LanguagePicker, toggleSlideMenu } from '@wingscms/crane';
-import { FormattedMessage } from 'react-intl';
 
 import chaptersImage from '../../../img/chapters.svg';
 import shareImage from '../../../img/share.svg';
@@ -213,6 +212,7 @@ class CornerMenu extends Component {
     const {
       chapterMenu,
       chapters = [],
+      chaptersTitle,
       locale,
       shareMessage,
       translations = [],
@@ -243,11 +243,7 @@ class CornerMenu extends Component {
           windowExists && translations.length < 1 && (!chapterMenu || chapterMenu !== 'slide') ? (
             <Scroll type="id" element="chapter-list">
               <ChaptersLink>
-                <FormattedMessage
-                  id="hummingbird.CornerMenu.chaptersTitle.text"
-                  description="Corner menu chapters title"
-                  defaultMessage="Chapters"
-                />
+                {chaptersTitle}
                 <ChapterImage src={chaptersImage} />
               </ChaptersLink>
             </Scroll>
@@ -265,11 +261,7 @@ class CornerMenu extends Component {
                 );
               }}
             >
-              <FormattedMessage
-                id="hummingbird.CornerMenu.chaptersTitle.text"
-                description="Corner menu chapters title"
-                defaultMessage="Chapters"
-              />
+              {chaptersTitle}
               <ChapterImage src={chaptersImage} slideMenu />
             </ChaptersLink>
           )
