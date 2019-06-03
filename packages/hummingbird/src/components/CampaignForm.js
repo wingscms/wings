@@ -188,7 +188,7 @@ export default class CampaignForm extends Component {
   }
 
   maybeFetch() {
-    if (this.getFormSchema() || this.state.fetching) return;
+    if (this.getFormSchema() || !this.query() || this.state.fetching) return;
     this.setState({ fetching: true }, async () => {
       let campaign;
       let formSchema;

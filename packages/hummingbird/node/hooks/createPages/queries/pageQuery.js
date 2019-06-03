@@ -4,6 +4,8 @@ module.exports = `
     nodes: entries(type: "page") {
       edges {
         node {
+          resourceType
+          nodeType
           id
           slug
           content

@@ -3,6 +3,8 @@ module.exports = `{
     nodes: events {
       edges {
         node {
+          resourceType
+          nodeType
           id
           title
           intro

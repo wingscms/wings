@@ -4,6 +4,8 @@ module.exports = `
     nodes: petitions {
       edges {
         node {
+          resourceType
+          nodeType
           id
           title
           slug
