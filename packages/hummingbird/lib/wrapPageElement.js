@@ -30,7 +30,7 @@ const PageWrapper = ({
   const node = entry || petition || event || _node;
   if (!node) return children;
   const { title, platforms = {}, locale = 'en', translations } = node;
-  const language = locale.split(/[-_]/)[0];
+  const language = locale.split('-')[0];
   useEffect(() => {
     if (typeof window !== 'undefined' && translations && translations.length > 0) {
       if (
