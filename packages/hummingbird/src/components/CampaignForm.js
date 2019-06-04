@@ -66,6 +66,15 @@ const FUNDRAISER_MUTATION = `
   }
 `;
 
+const FIELDS = {
+  EMAIL: 'email',
+  FIRSTNAME: 'firstName',
+  LASTNAME: 'lastName',
+  NEWSLETTER: 'newsletter',
+  PRIVACY: 'privacyConsent',
+  TERMS: 'terms',
+};
+
 const Button = styled(_Button)`
   background-color: #000;
   color: #fff;
@@ -103,6 +112,36 @@ const messages = defineMessages({
     id: 'hummingbird.CampaignForm.petitionSubmit.text',
     description: 'Campaign form petition submit button label',
     defaultMessage: 'Sign',
+  },
+  [FIELDS.EMAIL]: {
+    id: 'hummingbird.CampaignForm.emailLabel.text',
+    description: 'Campaign form email field label',
+    defaultMessage: 'Email address',
+  },
+  [FIELDS.FIRSTNAME]: {
+    id: 'hummingbird.CampaignForm.firstNameLabel.text',
+    description: 'Campaign form first name field label',
+    defaultMessage: 'First name',
+  },
+  [FIELDS.LASTNAME]: {
+    id: 'hummingbird.CampaignForm.lastNameLabel.text',
+    description: 'Campaign form last name field label',
+    defaultMessage: 'Last name',
+  },
+  [FIELDS.NEWSLETTER]: {
+    id: 'hummingbird.CampaignForm.newsletterLabel.text',
+    description: 'Campaign form newsletter checkbox label',
+    defaultMessage: 'Stay up to date',
+  },
+  [FIELDS.PRIVACY]: {
+    id: 'hummingbird.CampaignForm.privacyConsentLabel.text',
+    description: 'Campaign form privacy consent checkbox label',
+    defaultMessage: 'Agree to our privacy policy',
+  },
+  [FIELDS.TERMS]: {
+    id: 'hummingbird.CampaignForm.termsLabel.text',
+    description: 'Campaign form terms checkbox label',
+    defaultMessage: 'Agree to our terms & conditions',
   },
 });
 
@@ -177,6 +216,22 @@ class CampaignForm extends Component {
     return schema ? this.processSchema(schema) : schema;
   }
 
+  localizeSchema(schema) {
+    const { intl } = this.props;
+    const _schema = { ...schema };
+    Object.values(FIELDS).map((x) => {
+      _schema.properties = {
+        ..._schema.properties,
+        [x]: {
+          ..._schema.properties[x],
+          title: intl.formatMessage(messages[x]),
+        },
+      };
+      return null;
+    });
+    return _schema;
+  }
+
   processSchema = (s) => {
     const { disabledFields } = this.props;
     const schema = { ...s, properties: { ...s.properties } };
@@ -184,7 +239,8 @@ class CampaignForm extends Component {
       delete schema.properties[field];
     });
     schema.required = schema.required.filter(f => disabledFields.indexOf(f) < 0);
-    return this.props.processSchema(schema);
+
+    return this.props.processSchema(this.localizeSchema(schema));
   };
 
   processSubmission = (sub) => {
@@ -197,16 +253,17 @@ class CampaignForm extends Component {
   };
 
   getSubmitText() {
-    if (this.props.submitText) return this.props.submitText;
-    switch (this.props.type) {
+    const { intl, type, submitText = '' } = this.props;
+    if (submitText) return submitText;
+    switch (type) {
       case 'event':
-        return this.props.intl.formatMessage(messages.eventSubmit);
+        return intl.formatMessage(messages.eventSubmit);
       case 'petition':
-        return this.props.intl.formatMessage(messages.petitionSubmit);
+        return intl.formatMessage(messages.petitionSubmit);
       case 'fundraiser':
-        return this.props.intl.formatMessage(messages.fundraiserSubmit);
+        return intl.formatMessage(messages.fundraiserSubmit);
       default:
-        return this.props.intl.formatMessage(messages.defaultSubmit);
+        return intl.formatMessage(messages.defaultSubmit);
     }
   }
 
