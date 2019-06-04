@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React, { Component } from 'react';
-import { randomString } from '../../util';
+import { randomString } from '../../lib/utils';
 import { AudioOn, AudioOff } from '../icons';
 
 const Wrapper = styled.div`

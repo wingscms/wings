@@ -62,4 +62,4 @@ export { Signup, SignupForm, Newsletter, NewsletterForm, MailchimpForm } from '.
 export { default as languageList } from './data/languageList';
 
 // Utils
-export { createSvgIcon } from './util';
+export { createSvgIcon } from './lib/utils';
