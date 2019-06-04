@@ -1,5 +1,5 @@
 import React from 'react';
-import { text, select } from '@storybook/addon-knobs/react';
+import { text, select, boolean } from '@storybook/addon-knobs/react';
 import theme from '../../styles/theme';
 import Button from '../../../src/components/Button';
 
@@ -13,9 +13,24 @@ export const ButtonStory = () => (
     type={select('Type', { normal: 'normal', outline: 'outline' }, 'normal')}
     intent={select(
       'Intent',
-      { primary: 'primary', success: 'success', warning: 'warning', danger: 'danger' },
-      'primary',
+      {
+        none: 'none',
+        primary: 'primary',
+        success: 'success',
+        warning: 'warning',
+        danger: 'danger',
+      },
+      'none',
     )}
+    size={select(
+      'Size',
+      {
+        normal: 'normal',
+        small: 'small',
+      },
+      'normal',
+    )}
+    disabled={boolean('Disabled', false)}
   >
     {text('Button Text', 'Oh my, a button!')}
   </Button>
