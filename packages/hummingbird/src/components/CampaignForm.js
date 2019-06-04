@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { SchemaForm } from '@wingscms/crane';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import _Button from './Button';
 import wings from '../data/wings';
 
@@ -83,8 +83,31 @@ const Button = styled(_Button)`
   }
 `;
 
+const messages = defineMessages({
+  defaultSubmit: {
+    id: 'hummingbird.CampaignForm.defaultSubmit.text',
+    description: 'Campaign form default submit button label',
+    defaultMessage: 'Submit',
+  },
+  eventSubmit: {
+    id: 'hummingbird.CampaignForm.eventSubmit.text',
+    description: 'Campaign form event submit button label',
+    defaultMessage: 'Attend',
+  },
+  fundraiserSubmit: {
+    id: 'hummingbird.CampaignForm.fundraiserSubmit.text',
+    description: 'Campaign form fundraiser submit button label',
+    defaultMessage: 'Donate',
+  },
+  petitionSubmit: {
+    id: 'hummingbird.CampaignForm.petitionSubmit.text',
+    description: 'Campaign form petition submit button label',
+    defaultMessage: 'Sign',
+  },
+});
+
 // TODO: move to @wingscms/react (needs a provider for Wings client first)
-export default class CampaignForm extends Component {
+class CampaignForm extends Component {
   static propTypes = {
     id: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
@@ -177,13 +200,13 @@ export default class CampaignForm extends Component {
     if (this.props.submitText) return this.props.submitText;
     switch (this.props.type) {
       case 'event':
-        return 'Attend';
+        return this.props.intl.formatMessage(messages.eventSubmit);
       case 'petition':
-        return 'Sign';
+        return this.props.intl.formatMessage(messages.petitionSubmit);
       case 'fundraiser':
-        return 'Donate';
+        return this.props.intl.formatMessage(messages.fundraiserSubmit);
       default:
-        return 'Submit';
+        return this.props.intl.formatMessage(messages.defaultSubmit);
     }
   }
 
@@ -273,3 +296,5 @@ export default class CampaignForm extends Component {
     );
   }
 }
+
+export default injectIntl(CampaignForm);

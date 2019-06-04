@@ -69,7 +69,7 @@ export default class CampaignConfirmed extends Component {
           tagName={Campaign.Title}
         />
         <FormattedMessage
-          id="hummingbird.CampaignConfirmed.text"
+          id="hummingbird.CampaignConfirmed.body.text"
           description="Text of campaign submission success."
           defaultMessage="Thanks to you, we are one step closer towards our goals."
           tagName={Text}
