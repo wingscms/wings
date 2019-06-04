@@ -7,6 +7,10 @@ module.exports = `
           resourceType
           nodeType
           id
+          locale {
+            id
+            name
+          }
           slug
           content
           type {

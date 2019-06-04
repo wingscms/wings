@@ -29,8 +29,13 @@ const PageWrapper = ({
   const theme = useTheme();
   const node = entry || petition || event || _node;
   if (!node) return children;
-  const { title, platforms = {}, locale = 'en', translations } = node;
-  const language = locale.split('-')[0];
+  const {
+    title,
+    platforms = {},
+    locale: { id: localeId = 'en' },
+    translations,
+  } = node;
+  const language = localeId.split('-')[0];
   useEffect(() => {
     if (typeof window !== 'undefined' && translations && translations.length > 0) {
       if (
@@ -56,7 +61,7 @@ const PageWrapper = ({
             path = x.path;
           }
         });
-        if (containsTranslation && translations && locale !== lang) {
+        if (containsTranslation && translations && localeId !== lang) {
           navigate(path);
         }
       }
@@ -66,7 +71,7 @@ const PageWrapper = ({
   return (
     <React.Fragment>
       <Helmet title={generateTitle(title, siteTitle, 'all', platforms)}>
-        <html lang={locale || 'en'} />
+        <html lang={localeId || 'en'} />
         {translations &&
           translations.map(trans => (
             <link key={trans.locale} rel="alternate" hrefLang={trans.locale} href={trans.path} />
@@ -113,7 +118,7 @@ const PageWrapper = ({
           <meta property="fb:image" content={platforms.facebook.imageUrl} />
         ) : null}
       </Helmet>
-      <IntlProvider locale={locale} messages={messages[language]}>
+      <IntlProvider locale={localeId} messages={messages[language]}>
         {children}
       </IntlProvider>
     </React.Fragment>
