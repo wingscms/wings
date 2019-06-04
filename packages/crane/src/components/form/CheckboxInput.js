@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import randomString from '../../util/randomString';
+import randomString from '../../lib/utils/randomString';
 
 const StyledInput = styled.input`
   background-color: #f1f1f1;

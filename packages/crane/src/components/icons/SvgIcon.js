@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { classNameFromString, randomString } from '../../util';
+import { classNameFromString, randomString } from '../../lib/utils';
 
 function SvgIcon(props) {
   const { children, component: Component, title, viewBox, ...other } = props;

@@ -1,21 +1,34 @@
 import styled, { css } from 'styled-components';
+import { getTextColor } from '../lib/utils';
 
-const ghost = css`
-  border: 2px solid ${({ theme }) => theme.secondaryColor};
+const outline = css`
+  border: 2px solid ${({ theme }) => theme.colorPrimary};
+  padding: 14px 38px;
   background-color: transparent;
-  color: ${({ theme }) => theme.secondaryColor};
+  color: ${({ theme }) => theme.colorPrimary};
   &:hover {
-    background-color: ${({ theme }) => theme.secondaryColor};
-    opacity: 1;
+    /* background-color: ${({ theme }) => theme.colorPrimary}; */
   }
 `;
 
-const reverse = css`
-  background-color: ${({ theme }) => theme.secondaryColor};
-  color: ${({ theme }) => theme.primaryColor};
-  &:hover {
-    background-color: ${({ theme }) => theme.secondaryColor};
-  }
+const intentPrimary = css`
+  background-color: ${({ theme }) => theme.colorPrimary};
+  color: ${({ theme }) => getTextColor({ backgroundColor: theme.colorPrimary, theme })};
+`;
+
+const intentSuccess = css`
+  background-color: ${({ theme }) => theme.colorSuccess};
+  color: ${({ theme }) => getTextColor({ backgroundColor: theme.colorSuccess, theme })};
+`;
+
+const intentWarning = css`
+  background-color: ${({ theme }) => theme.colorWarning};
+  color: ${({ theme }) => getTextColor({ backgroundColor: theme.colorWarning, theme })};
+`;
+
+const intentDanger = css`
+  background-color: ${({ theme }) => theme.colorDanger};
+  color: ${({ theme }) => getTextColor({ backgroundColor: theme.colorDanger, theme })};
 `;
 
 const small = css`
@@ -26,56 +39,45 @@ const small = css`
 export default styled.button`
   text-decoration: none;
   background-image: none;
-  background-color: ${({ theme }) => theme.primaryColor};
-  color: ${({ theme }) => theme.secondaryColor};
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 1.25;
+  /* color: ${({ theme }) => theme.colorSecondary}; */
+  font-size: 1rem;
   padding: 16px 40px;
-  border-radius: 3px;
   border: 0;
   cursor: pointer;
   display: block;
   position: relative;
-  transition: all 0.15s linear;
-  text-align: center;
-  margin-right: auto;
-  &:after {
-    transition: all 0.15s linear;
-    height: 3px;
-    width: 0%;
-    content: '';
-    position: absolute;
-    background-color: ${({ theme }) => theme.primaryColor};
-    bottom: 0;
-    left: 0;
-    border-radius: 5px;
-  }
-  &:hover {
+  transition: all 0.15s ease-in-out;
+  &:hover,
+  &:active {
     opacity: 0.8;
     background-image: none;
     text-decoration: none;
   }
   &:active {
-    background-color: ${({ theme }) => theme.primaryColor};
-    &:after {
-      width: 100%;
-    }
-  }
-  &:active {
-    top: 1px;
+    transform: translateY(1px);
   }
   @media screen and (min-width: 800px) {
     margin-right: 0;
     display: inline-block;
     width: auto;
   }
+  ${({ intent }) => {
+    switch (intent) {
+      case 'success':
+        return intentSuccess;
+      case 'warning':
+        return intentWarning;
+      case 'danger':
+        return intentDanger;
+      case 'primary':
+      default:
+        return intentPrimary;
+    }
+  }}
   ${({ buttonType, type }) => {
     switch (buttonType || type) {
-      case 'ghost':
-        return ghost;
-      case 'reverse':
-        return reverse;
+      case 'outline':
+        return outline;
       default:
         return '';
     }
