@@ -11,7 +11,7 @@ const CTA = styled.div`
   width: 100vw;
   text-align: center;
   .inner {
-    background: ${({ theme }) => theme.primaryColor};
+    background: ${({ theme }) => theme.colorPrimary};
     padding: 40px;
     margin: 0 auto;
     max-width: 1160px;
@@ -44,7 +44,7 @@ const CTA = styled.div`
       min-width: 45%;
       max-width: 45%;
       flex-basis: auto;
-      color: ${({ theme }) => theme.darkTextColor};
+      color: ${({ theme }) => theme.darkcolorText};
       text-align: left;
       margin: 0;
       padding: 0 10px;
@@ -80,7 +80,7 @@ const CTAButton = styled(AnchorButton)`
   background-color: ${({ theme }) => theme.darkAppBackgroundColor};
   background-image: none;
   border: 2px solid ${({ theme }) => theme.dividerBlack};
-  color: ${({ theme }) => theme.darkTextColor};
+  color: ${({ theme }) => theme.darkcolorText};
   font-family: ${({ theme }) => theme.typography.options.headerFontFamily.join(', ')};
   padding: 20px 40px;
   border-radius: 3px;
@@ -94,7 +94,7 @@ const CTAButton = styled(AnchorButton)`
   &:hover,
   &:active {
     background-color: ${({ theme }) => theme.iconColorHover};
-    color: ${({ theme }) => theme.darkTextColor};
+    color: ${({ theme }) => theme.darkcolorText};
   }
   @media screen and (max-width: 800px) {
     margin-right: auto;

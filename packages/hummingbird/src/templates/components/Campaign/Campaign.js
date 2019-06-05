@@ -21,7 +21,7 @@ const BackgroundContainer = styled(Container)`
     max-width: 1160px;
     width: 100%;
     margin: 0 auto;
-    background-color: ${({ theme }) => theme.primaryColor};
+    background-color: ${({ theme }) => theme.colorPrimary};
     border-radius: 4px;
   }
   @media screen and (max-width: 800px) {
@@ -105,7 +105,7 @@ const FormContainer = styled.div`
   display: inline-block;
   width: 460px;
   min-height: 500px;
-  background-color: ${({ theme }) => theme.primaryColor};
+  background-color: ${({ theme }) => theme.colorPrimary};
   color: ${({ theme }) => theme.darkHeadingColor};
   vertical-align: top;
   border-radius: 4px;

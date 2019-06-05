@@ -21,7 +21,7 @@ const Insight = styled.div`
     margin-bottom: 80px;
   }
   .inner {
-    background: ${({ theme }) => theme.primaryColor};
+    background: ${({ theme }) => theme.colorPrimary};
     margin: 0 auto;
     max-width: 1160px;
   }

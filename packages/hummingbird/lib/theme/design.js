@@ -1,33 +1,39 @@
 // set defaults here:
 export default ({
   // colors
-  primaryColor = '#4856C9', // String (color code)
-  secondaryColor = '#000000', // String (color code),
-  textColor = '#212121', // String (color code)
-  linkColor, // String (color code)
-  darkLinkColor, // String (color code)
-
-  // fonts
-  customHeaderFontUrl = null, // String
-  customBodyFontUrl = null, // String
+  colorPrimary = '#ef5b58',
+  colorSecondary = '#212121',
+  colorSuccess = '#0F9960',
+  colorWarning = '#F29D49',
+  colorDanger = '#DB3737',
+  colorBackground = '#ffffff',
+  colorBackgroundDark = '#212121',
+  colorText = '#212121',
+  colorTextDark = '#ffffff',
+  colorLink,
+  colorLinkDark,
 
   // images
-  logoUrl = 'https://files.wings.dev/1532472414726/wings4-2.png', // String
-  faviconUrl = 'https://files.wings.dev/1532472414726/wings4-2.png', // String
+  logoUrl = 'https://files.wings.dev/1532472414726/wings4-2.png',
+  logoFooterUrl,
+  faviconUrl = 'https://files.wings.dev/1532472414726/wings4-2.png',
+
+  // fonts
+  customHeaderFontUrl = null,
+  customBodyFontUrl = null,
 
   // menus
-  navigationColor = '#ffffff', // String (color code)
-  languagePickerColor = '#ffffff', // String (color code)
+  navigationColor = '#ffffff',
+  languagePickerColor = '#ffffff',
   languagePickerHoverColor,
 
   // footer
-  footerTitle = null, // String
-  footerBackgroundColor, // String (color code)
-  footerLogoUrl = null, // String
-  footerAddress = null, // Array[String]
-  footerEmail = null, // String (email)
-  footerPhone = null, // String
-  footerLinkColor, // String (color code)
+  footerTitle = null,
+  footerBackgroundColor,
+  footerAddress = null,
+  footerEmail = null,
+  footerPhone = null,
+  footercolorLink,
 
   // landing
   landingSectionSubTitleColor,
@@ -39,9 +45,9 @@ export default ({
   darkAppBackgroundColor = '#000000',
   headingColor = '#000000',
   darkHeadingColor = '#ffffff',
-  darkTextColor = '#f5f8fa',
+  darkcolorText = '#f5f8fa',
 
-  iconColor = '#4856C9',
+  iconColor,
   iconColorHover = '#182026',
   dividerBlack = 'rgba(16, 22, 26, 0.15)',
 
@@ -58,31 +64,37 @@ export default ({
   lineHeightFirstLetter = '0.8',
 }) => ({
   // use waterfall mapping here:
-  primaryColor,
-  secondaryColor,
-  textColor,
-  linkColor: linkColor || primaryColor,
-  darkLinkColor: darkLinkColor || primaryColor,
+  colorPrimary,
+  colorSecondary,
+  colorSuccess,
+  colorWarning,
+  colorDanger,
+  colorBackground,
+  colorBackgroundDark,
+  colorText,
+  colorTextDark,
+  colorLink: colorLink || colorPrimary,
+  colorLinkDark: colorLinkDark || colorLink,
 
   customHeaderFontUrl,
   customBodyFontUrl,
 
   logoUrl,
+  logoFooterUrl,
   faviconUrl,
 
   navigationColor,
   languagePickerColor,
-  languagePickerHoverColor: languagePickerHoverColor || primaryColor,
+  languagePickerHoverColor: languagePickerHoverColor || colorPrimary,
 
   footerTitle,
-  footerBackgroundColor: footerBackgroundColor || primaryColor,
-  footerLogoUrl,
+  footerBackgroundColor: footerBackgroundColor || colorPrimary,
   footerAddress,
   footerEmail,
   footerPhone,
-  footerLinkColor: footerLinkColor || secondaryColor,
+  footercolorLink: footercolorLink || colorSecondary,
 
-  landingSectionSubTitleColor: landingSectionSubTitleColor || primaryColor,
+  landingSectionSubTitleColor: landingSectionSubTitleColor || colorPrimary,
   landingSectionSubTitleBackground,
   landingSectionTitleBackground,
 
@@ -90,9 +102,9 @@ export default ({
   darkAppBackgroundColor,
   headingColor,
   darkHeadingColor,
-  darkTextColor,
+  darkcolorText,
 
-  iconColor,
+  iconColor: iconColor || colorPrimary,
   iconColorHover,
   dividerBlack,
 

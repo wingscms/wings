@@ -61,10 +61,10 @@ const StyledCounter = styled.div`
 const StyledCounterInner = styled(StyledCounter)`
   width: ${props => `${props.width || 0}%`};
   margin-top: 0;
-  background-color: ${({ theme }) => theme.primaryColor};
+  background-color: ${({ theme }) => theme.colorPrimary};
   transition: all 1.5s ease-in-out;
   .green & {
-    background-color: ${({ theme }) => theme.secondaryColor};
+    background-color: ${({ theme }) => theme.colorSecondary};
   }
 `;
 

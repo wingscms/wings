@@ -16,8 +16,8 @@ export default styled.figure`
       text-decoration: none;
       background-image: linear-gradient(
         120deg,
-        ${({ theme }) => theme.primaryColor} 0%,
-        ${({ theme }) => theme.primaryColor} 100%
+        ${({ theme }) => theme.colorPrimary} 0%,
+        ${({ theme }) => theme.colorPrimary} 100%
       );
       background-repeat: no-repeat;
       background-size: 100% 2px;
@@ -26,9 +26,9 @@ export default styled.figure`
       &:hover,
       &:focus {
         background-size: 100% 4px;
-        background-image: linear-gradient(120deg, ${({ theme }) => theme.primaryColor} 0%, ${({
+        background-image: linear-gradient(120deg, ${({ theme }) => theme.colorPrimary} 0%, ${({
   theme,
-}) => theme.primaryColor} 100%);
+}) => theme.colorPrimary} 100%);
       }
     }
   &.pullquote-${FLOAT.NONE},
@@ -69,14 +69,14 @@ export default styled.figure`
   }
   aside,
   blockquote {
-    color: ${({ theme }) => theme.primaryColor};
+    color: ${({ theme }) => theme.colorPrimary};
     padding: 0;
   }
   aside {
     font-weight: ${({ theme }) => theme.fontWeightPullquote};
   }
   blockquote {
-    color: ${({ theme }) => theme.textColor};
+    color: ${({ theme }) => theme.colorText};
     padding: 0;
     font-weight: ${({ theme }) => theme.fontWeightBlockquote};
     text-align: left;
@@ -95,7 +95,7 @@ export default styled.figure`
   }
   figcaption {
     margin-top: 1rem;
-    color: ${({ theme }) => theme.textColor};
+    color: ${({ theme }) => theme.colorText};
     &:before {
       content: '— ';
     }

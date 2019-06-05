@@ -8,7 +8,7 @@ const ChapterList = styled.ul`
   margin: 0 auto;
   line-height: 55px;
   padding: 100px 0;
-  background-color: ${({ theme }) => theme.primaryColor};
+  background-color: ${({ theme }) => theme.colorPrimary};
   position: relative;
   &:before {
     position: absolute;
@@ -36,7 +36,7 @@ const ChapterItem = styled.li`
   position: relative;
   transition: all 0.3s linear;
   -webkit-transition: all 0.3s linear;
-  color: ${({ theme }) => theme.textColor};
+  color: ${({ theme }) => theme.colorText};
   font-size: 42px;
   line-height: 55px;
   text-align: center;
@@ -44,7 +44,7 @@ const ChapterItem = styled.li`
   font-weight: ${({ theme }) => theme.typography.headerFontWeight || 'bold'};
   a {
     text-decoration: none;
-    color: ${({ theme }) => theme.textColor};
+    color: ${({ theme }) => theme.colorText};
     position: relative;
     transition: all 0.1s linear;
     -webkit-transition: all 0.1s linear;
@@ -56,7 +56,7 @@ const ChapterItem = styled.li`
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    color: ${({ theme }) => theme.primaryColor};
+    color: ${({ theme }) => theme.colorPrimary};
     opacity: 0.3;
     font-size: 90px;
     transition: all 0.1s linear;
@@ -66,7 +66,7 @@ const ChapterItem = styled.li`
   &:active {
     &:before {
       font-size: 100px;
-      color: ${({ theme }) => theme.primaryColor};
+      color: ${({ theme }) => theme.colorPrimary};
       opacity: 1;
     }
   }

@@ -10,7 +10,7 @@ import Intro from '../components/Intro';
 
 const Container = styled.div`
   ${wide};
-  background: ${({ theme }) => theme.primaryColor};
+  background: ${({ theme }) => theme.colorPrimary};
   margin-top: 80px;
   margin-bottom: 80px;
   .mobiledoc-content > div:first-child & {
@@ -54,7 +54,7 @@ const Title = styled.h2`
 `;
 
 const Marker = styled.span`
-  color: ${({ theme }) => theme.textColor};
+  color: ${({ theme }) => theme.colorText};
   opacity: 0.3;
   font-size: 80px;
   font-weight: bold;

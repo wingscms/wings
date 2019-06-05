@@ -19,8 +19,8 @@ export default createGlobalStyle`
     text-decoration: none;
     background-image: linear-gradient(
       120deg,
-      ${({ theme }) => theme.primaryColor} 0%,
-      ${({ theme }) => theme.primaryColor} 100%
+      ${({ theme }) => theme.colorPrimary} 0%,
+      ${({ theme }) => theme.colorPrimary} 100%
     );
     background-repeat: no-repeat;
     background-size: 100% 2px;
@@ -29,12 +29,12 @@ export default createGlobalStyle`
     &:hover,
     &:focus {
       background-size: 100% 4px;
-      background-image: linear-gradient(120deg, ${({ theme }) => theme.primaryColor} 0%, ${({
+      background-image: linear-gradient(120deg, ${({ theme }) => theme.colorPrimary} 0%, ${({
   theme,
-}) => theme.primaryColor} 100%);
+}) => theme.colorPrimary} 100%);
     }
   }
-    color: ${({ theme }) => theme.textColor};
+    color: ${({ theme }) => theme.colorText};
     padding-bottom: 40px;
     font-weight: ${({ theme }) => theme.fontWeightBody};
     > * {
@@ -61,7 +61,7 @@ export default createGlobalStyle`
       margin-top: 2em;
       &::first-letter {
         font-weight: ${({ theme }) => theme.fontWeightFirstLetter}!important;
-        color: ${({ theme }) => theme.primaryColor};
+        color: ${({ theme }) => theme.colorPrimary};
         float: left;
         line-height: ${({ theme }) => theme.lineHeightFirstLetter};
         margin: 0.075em 0.1em -0.1em 0;
@@ -77,7 +77,7 @@ export default createGlobalStyle`
     }
 
     > blockquote {
-      border-left: 2px solid ${({ theme }) => theme.primaryColor};
+      border-left: 2px solid ${({ theme }) => theme.colorPrimary};
       margin: 0;
       padding: 0 0 0 1rem;
       color: #000;
@@ -100,7 +100,7 @@ export default createGlobalStyle`
       position: relative;
       &::first-letter {
         font-weight: ${({ theme }) => theme.fontWeightFirstLetter}!important;
-        color: ${({ theme }) => theme.primaryColor};
+        color: ${({ theme }) => theme.colorPrimary};
         float: left;
         line-height: ${({ theme }) => theme.lineHeightFirstLetter};
         margin: 0.075em 0.1em -0.2em 0;

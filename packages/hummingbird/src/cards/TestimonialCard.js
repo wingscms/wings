@@ -48,7 +48,7 @@ const Wrap = styled(StickyContainer)`
 `;
 
 const Title = styled.h2`
-  color: ${({ theme }) => (theme.brand ? theme.brand : theme.primaryColor)};
+  color: ${({ theme }) => (theme.brand ? theme.brand : theme.colorPrimary)};
   font-size: 2rem;
   line-height: 1;
   font-family: 'Schmalfette', sans-serif;

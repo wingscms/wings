@@ -18,8 +18,8 @@ export default styled(MenuItem)`
     text-decoration: none;
     background-image: linear-gradient(
       120deg,
-      ${({ theme }) => theme.primaryColor} 0%,
-      ${({ theme }) => theme.primaryColor} 100%
+      ${({ theme }) => theme.colorPrimary} 0%,
+      ${({ theme }) => theme.colorPrimary} 100%
     ) !important;
     font-family: ${({ theme }) => theme.typography.options.headerFontFamily.join(', ')};
     background-repeat: no-repeat;
@@ -36,7 +36,7 @@ export default styled(MenuItem)`
   }
   &.special {
     a {
-      color: ${({ theme }) => theme.primaryColor};
+      color: ${({ theme }) => theme.colorPrimary};
     }
   }
   &.current {

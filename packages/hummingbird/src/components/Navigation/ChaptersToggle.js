@@ -6,7 +6,7 @@ import { toggleSlideMenu, languageList } from '@wingscms/crane';
 const ChaptersToggleContainer = styled.div`
   position: fixed;
   width: 50px;
-  background-color: ${({ theme }) => theme.primaryColor};
+  background-color: ${({ theme }) => theme.colorPrimary};
   left: 0;
   margin-left: 0;
   top: 0;
@@ -25,7 +25,7 @@ const ChaptersToggleContainer = styled.div`
     transition: 0.2s all ease-in-out;
   }
   &:hover {
-    background-color: ${({ theme }) => theme.secondaryColor};
+    background-color: ${({ theme }) => theme.colorSecondary};
   }
   .chaptersOpen & {
     margin-left: 300px;

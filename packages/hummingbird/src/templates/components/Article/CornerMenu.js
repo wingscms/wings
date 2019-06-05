@@ -31,7 +31,7 @@ const ChaptersLink = styled.a`
   width: ${({ slideMenu }) => (slideMenu ? '65px' : '270px')};
   display: inline;
   font-weight: bold;
-  color: ${({ theme }) => theme.textColor};
+  color: ${({ theme }) => theme.colorText};
   font-size: 18px;
   float: left;
   text-decoration: none;
@@ -88,10 +88,10 @@ const ShareLink = styled.a`
   transition: all 0.15s linear;
   cursor: pointer;
   &:hover {
-    background-color: ${({ theme }) => theme.primaryColor};
+    background-color: ${({ theme }) => theme.colorPrimary};
     &:last-of-type {
       &:after {
-        border-color: ${({ theme }) => theme.primaryColor} transparent transparent transparent;
+        border-color: ${({ theme }) => theme.colorPrimary} transparent transparent transparent;
       }
     }
   }

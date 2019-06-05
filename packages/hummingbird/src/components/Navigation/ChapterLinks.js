@@ -21,7 +21,7 @@ const ChapterItem = styled.div`
     color: #333;
     text-decoration: none;
     background-image: ${({ theme }) =>
-    `linear-gradient(120deg, ${theme.primaryColor} 0%, ${theme.primaryColor} 100%)`} !important;
+    `linear-gradient(120deg, ${theme.colorPrimary} 0%, ${theme.colorPrimary} 100%)`} !important;
     font-family: ${({ theme }) => theme.typography.options.headerFontFamily.join(', ')};
     background-repeat: no-repeat;
     background-size: 0% 4px;
@@ -37,7 +37,7 @@ const ChapterItem = styled.div`
   }
   &.special {
     a {
-      color: ${({ theme }) => theme.primaryColor};
+      color: ${({ theme }) => theme.colorPrimary};
     }
   }
   &:hover,

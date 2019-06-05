@@ -7,7 +7,7 @@ const ShareContainer = styled.div`
   height: 100%;
   > p {
     font-size: 15px;
-    color: ${({ theme }) => theme.primaryColor};
+    color: ${({ theme }) => theme.colorPrimary};
     margin: 0 10px 0 0;
   }
   @media screen and (max-width: 800px) {
@@ -25,7 +25,7 @@ const ShareImage = styled.img`
   transform: translateY(-50%);
   &:hover,
   &:active {
-    background-color: ${({ theme }) => theme.primaryColor};
+    background-color: ${({ theme }) => theme.colorPrimary};
   }
   a:last-child & {
     margin-right: 20px;

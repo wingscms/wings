@@ -63,7 +63,7 @@ const BolsterLink = styled.a`
   width: 100%;
   padding: 0 20px;
   text-align: left;
-  color: ${({ theme }) => theme.footerLinkColor};
+  color: ${({ theme }) => theme.footercolorLink};
   text-decoration: none;
   font-size: 12px;
   background-image: none;

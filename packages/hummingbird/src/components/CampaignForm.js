@@ -75,7 +75,7 @@ const Button = styled(_Button)`
   }
   &:hover {
     text-decoration: none;
-    color: ${({ theme }) => theme.primaryColor};
+    color: ${({ theme }) => theme.colorPrimary};
   }
   @media screen and (max-width: 800px) {
     font-size: 22px;

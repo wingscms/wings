@@ -50,7 +50,7 @@ const OrganisationContent = styled.div`
 `;
 
 const OrganisationName = styled.h3`
-  color: ${({ theme }) => theme.textColor};
+  color: ${({ theme }) => theme.colorText};
   text-align: left;
   padding: 0;
   @media screen and (max-width: 900px) {
@@ -80,7 +80,7 @@ const PersonImg = styled.img`
 `;
 
 const PersonName = styled.h3`
-  color: ${({ theme }) => theme.textColor};
+  color: ${({ theme }) => theme.colorText};
   font-weight: 800;
   text-align: center;
   padding: 0;
