@@ -2,7 +2,14 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs/react';
 import { withInfo } from '@storybook/addon-info';
 import { ExpandableStory, ExpandableInfo } from './components/atoms';
-import { ButtonStory, ButtonInfo, CounterStory, CounterInfo } from './components/core';
+import {
+  ButtonStory,
+  ButtonInfo,
+  CounterStory,
+  CounterInfo,
+  ImageStory,
+  ImageInfo,
+} from './components/core';
 import {
   BlockquoteStory,
   BlockquoteInfo,
@@ -55,7 +62,6 @@ import {
 } from './components/cards';
 import { HighlightedQuoteStory, HighlightedQuoteInfo } from './components/highlightedContent';
 import { GalleryStory, GalleryInfo } from './components/galleries';
-import { ImageStory, ImageInfo } from './components/images';
 import {
   BurgerStory,
   BurgerInfo,
@@ -69,7 +75,8 @@ import { SignupStory, SignupInfo, NewsletterStory, NewsletterInfo } from './comp
 storiesOf('Core', module)
   .addDecorator(withKnobs)
   .add('Button', withInfo(ButtonInfo)(ButtonStory))
-  .add('Counter', withInfo(CounterInfo)(CounterStory));
+  .add('Counter', withInfo(CounterInfo)(CounterStory))
+  .add('Image', withInfo(ImageInfo)(ImageStory));
 
 const textStories = storiesOf('Text', module).addDecorator(withKnobs);
 textStories.add('Breakout', withInfo(BreakoutInfo)(BreakoutStory));
@@ -111,7 +118,6 @@ cardStories.add('Node Complex', withInfo(ComplexCardInfo)(ComplexCardStory));
 cardStories.add('Node Simple', withInfo(SimpleCardInfo)(SimpleCardStory));
 
 const imageStories = storiesOf('Images and Galleries', module).addDecorator(withKnobs);
-imageStories.add('Image', withInfo(ImageInfo)(ImageStory));
 imageStories.add('Gallery', withInfo(GalleryInfo)(GalleryStory));
 
 const navigationStories = storiesOf('Navigation', module).addDecorator(withKnobs);

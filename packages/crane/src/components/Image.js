@@ -3,8 +3,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Eye } from '../icons';
-import { Caption } from '../atoms';
+import { Eye } from './icons';
+import { Caption } from './atoms';
 
 const StyledFigure = styled.figure`
   max-width: 100%;

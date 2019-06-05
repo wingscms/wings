@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Calendar, Check, Message, Pin, User } from '../icons';
-import { Counter } from '../atoms';
+import Counter from '../Counter';
 import Container from './Container';
 
 const OuterContainer = styled.div`

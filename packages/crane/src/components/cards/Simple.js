@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Container from './Container';
-import { Counter } from '../atoms';
+import Counter from '../Counter';
 
 const OuterContainer = styled.div`
   display: block;
