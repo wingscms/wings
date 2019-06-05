@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs/react';
 import { withInfo } from '@storybook/addon-info';
-import { CounterStory, CounterInfo, ExpandableStory, ExpandableInfo } from './components/atoms';
-import { ButtonStory, ButtonInfo } from './components/core';
+import { ExpandableStory, ExpandableInfo } from './components/atoms';
+import { ButtonStory, ButtonInfo, CounterStory, CounterInfo } from './components/core';
 import {
   BlockquoteStory,
   BlockquoteInfo,
@@ -66,6 +66,11 @@ import {
 } from './components/navigation';
 import { SignupStory, SignupInfo, NewsletterStory, NewsletterInfo } from './components/signup';
 
+storiesOf('Core', module)
+  .addDecorator(withKnobs)
+  .add('Button', withInfo(ButtonInfo)(ButtonStory))
+  .add('Counter', withInfo(CounterInfo)(CounterStory));
+
 const textStories = storiesOf('Text', module).addDecorator(withKnobs);
 textStories.add('Breakout', withInfo(BreakoutInfo)(BreakoutStory));
 
@@ -83,9 +88,6 @@ formInputStories.add('Range Input', withInfo(RangeInputInfo)(RangeInputStory));
 formInputStories.add('Textarea', withInfo(TextareaInfo)(TextareaStory));
 formInputStories.add('Select', withInfo(SelectInfo)(SelectStory));
 formInputStories.add('Radio', withInfo(RadioInfo)(RadioStory));
-
-const coreStories = storiesOf('Core', module).addDecorator(withKnobs);
-coreStories.add('Button', withInfo(ButtonInfo)(ButtonStory));
 
 const formSchemaStories = storiesOf('Forms/JSON Schema', module).addDecorator(withKnobs);
 formSchemaStories.add('Schema Form', withInfo(SchemaFormInfo)(SchemaFormStory));
@@ -118,7 +120,7 @@ navigationStories.add('MenuItem', withInfo(MenuItemInfo)(MenuItemStory));
 navigationStories.add('Language Picker', withInfo(LanguagePickerInfo)(LanguagePickerStory));
 
 const atomStories = storiesOf('Uncategorised', module).addDecorator(withKnobs);
-atomStories.add('Counter', withInfo(CounterInfo)(CounterStory));
+
 atomStories.add('Expandable', withInfo(ExpandableInfo)(ExpandableStory));
 
 const signupStories = storiesOf('Signup', module).addDecorator(withKnobs);

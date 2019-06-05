@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import Content from '../../../components/Content';
 import CampaignForm from '../../../components/CampaignForm';
 import Container from '../../../components/Container';
@@ -145,7 +145,8 @@ const CounterContainer = styled(FormContainerInner)`
     max-width: 100%;
   }
 `;
-export default class Campaign extends Component {
+
+class Campaign extends Component {
   static Proposition = Proposition;
   static Navigation = ({ pageContext: { shareUrls, node = {} } = {} }) => (
     <Navigation shareUrls={shareUrls} items={node.menu && node.menu.items} />
@@ -176,6 +177,7 @@ export default class Campaign extends Component {
         node,
       },
       formProps = {},
+      theme = {},
     } = props;
     const [signatureCount, setSignatureCount] = useState(0);
     const [signatureGoal, setSignatureGoal] = useState(0);
@@ -210,6 +212,7 @@ export default class Campaign extends Component {
                     current={signatureCount}
                     max={signatureGoal}
                     descriptionText="people signed this petition"
+                    theme={theme}
                   />
                 </CounterContainer>
               )}
@@ -249,6 +252,7 @@ export default class Campaign extends Component {
 
   childProps = () => {
     const { children, ...props } = this.props;
+    debugger;
     return {
       ...props,
       ...this.props.childProps,
@@ -269,3 +273,5 @@ export default class Campaign extends Component {
     );
   }
 }
+
+export default withTheme(Campaign);

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { getTextColor } from '../lib/utils';
+import { getIntentColor, getTextColor } from '../lib/utils';
 
 const outline = ({ color }) =>
   css`
@@ -8,28 +8,6 @@ const outline = ({ color }) =>
     color: ${color};
     padding: 12px 36px;
   `;
-
-const getColor = ({ intent, theme }) => {
-  let color;
-  switch (intent) {
-    case 'success':
-      color = theme.colorSuccess;
-      break;
-    case 'warning':
-      color = theme.colorWarning;
-      break;
-    case 'danger':
-      color = theme.colorDanger;
-      break;
-    case 'primary':
-      color = theme.colorPrimary;
-      break;
-    case 'none':
-    default:
-      color = theme.colorSecondary;
-  }
-  return color;
-};
 
 const getType = ({ color, type }) => {
   switch (type) {
@@ -53,7 +31,7 @@ const getSize = ({ size }) => {
 };
 
 const buttonStyles = ({ disabled, intent, size, theme, type }) => {
-  const color = getColor({ intent, theme });
+  const color = getIntentColor({ intent, theme });
   const typeCSS = getType({ color, theme, type });
   const sizeCSS = getSize({ size });
   const disabledCSS = !disabled
@@ -89,6 +67,6 @@ const buttonStyles = ({ disabled, intent, size, theme, type }) => {
 };
 
 export default styled.button`
-  ${({ disabled, intent, size, theme, type }) =>
+  ${({ disabled, intent, size, theme = {}, type }) =>
     buttonStyles({ disabled, intent, size, theme, type })}
 `;
