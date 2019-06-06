@@ -19,7 +19,7 @@
   "hummingbird.CampaignForm.petitionSubmit.text": "Unterzeichnen",
   "hummingbird.CampaignForm.privacyConsentLabel.text": "Einverstanden mit Datenschutzrichtlinie",
   "hummingbird.CampaignForm.termsLabel.text": "Einverstanden mit AGB",
-  "hummingbird.CornerMenu.chaptersTitle.text": "Kapitel",
+  "hummingbird.Chapters.title.text": "Kapitel",
   "hummingbird.EventDetails.endLabel.text": "Ende",
   "hummingbird.EventDetails.feeLabel.text": "Eintritt",
   "hummingbird.EventDetails.locationLabel.text": "Ort",
@@ -28,5 +28,5 @@
   "hummingbird.Footer.loveMessage.emoji": "Liebe",
   "hummingbird.Footer.loveMessage.text": "Mit {love} gemacht von Bolster",
   "hummingbird.Footer.poweredMessage.text": "Möglich dank Wings",
-  "hummingbird.LandingSection.container.titleAttribute": "gehe zum Inhaltsverzeichnis"
+  "hummingbird.LandingSection.tocLinkTooltip.text": "gehe zum Inhaltsverzeichnis"
 }

@@ -19,7 +19,7 @@
   "hummingbird.CampaignForm.petitionSubmit.text": "Sign",
   "hummingbird.CampaignForm.privacyConsentLabel.text": "Agree to our privacy policy",
   "hummingbird.CampaignForm.termsLabel.text": "Agree to our terms & conditions",
-  "hummingbird.CornerMenu.chaptersTitle.text": "Chapters",
+  "hummingbird.Chapters.title.text": "Chapters",
   "hummingbird.EventDetails.endLabel.text": "End",
   "hummingbird.EventDetails.feeLabel.text": "Price",
   "hummingbird.EventDetails.locationLabel.text": "Location",
@@ -28,5 +28,5 @@
   "hummingbird.Footer.loveMessage.emoji": "love",
   "hummingbird.Footer.loveMessage.text": "Made with {love} at Bolster",
   "hummingbird.Footer.poweredMessage.text": "Powered by Wings",
-  "hummingbird.LandingSection.container.titleAttribute": "view the table of contents"
+  "hummingbird.LandingSection.tocLinkTooltip.text": "view the table of contents"
 }

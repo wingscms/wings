@@ -219,7 +219,7 @@ class CampaignForm extends Component {
   localizeSchema(schema) {
     const { intl } = this.props;
     const _schema = { ...schema };
-    Object.values(FIELDS).map((x) => {
+    Object.values(FIELDS).forEach((x) => {
       _schema.properties = {
         ..._schema.properties,
         [x]: {

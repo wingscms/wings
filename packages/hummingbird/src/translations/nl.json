@@ -19,7 +19,7 @@
   "hummingbird.CampaignForm.petitionSubmit.text": "Onderteken",
   "hummingbird.CampaignForm.privacyConsentLabel.text": "Akkoord met privacybeleid",
   "hummingbird.CampaignForm.termsLabel.text": "Akkoord met algemene voorwaarden",
-  "hummingbird.CornerMenu.chaptersTitle.text": "Hoofdstukken",
+  "hummingbird.Chapters.title.text": "Hoofdstukken",
   "hummingbird.EventDetails.endLabel.text": "Einde",
   "hummingbird.EventDetails.feeLabel.text": "Entree",
   "hummingbird.EventDetails.locationLabel.text": "Plaats",
@@ -28,5 +28,5 @@
   "hummingbird.Footer.loveMessage.emoji": "liefde",
   "hummingbird.Footer.loveMessage.text": "Met {love} gemaakt door Bolster",
   "hummingbird.Footer.poweredMessage.text": "Mogelijk dankzij Wings",
-  "hummingbird.LandingSection.container.titleAttribute": "ga naar de inhoudsopgave"
+  "hummingbird.LandingSection.tocLinkTooltip.text": "ga naar de inhoudsopgave"
 }

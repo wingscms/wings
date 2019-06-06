@@ -23,13 +23,13 @@ const ArticleWrapper = styled.article`
 
 const messages = defineMessages({
   chaptersTitle: {
-    id: 'hummingbird.CornerMenu.chaptersTitle.text',
-    description: 'Corner menu chapters title',
+    id: 'hummingbird.Chapters.title.text',
+    description: 'Title for list of chapters',
     defaultMessage: 'Chapters',
   },
-  landingSectionTitleAttribute: {
-    id: 'hummingbird.LandingSection.container.titleAttribute',
-    description: 'Title of landing section container',
+  landingSectionTooltip: {
+    id: 'hummingbird.LandingSection.tocLinkTooltip.text',
+    description: 'Tooltip for landing section link to TOC',
     defaultMessage: 'view the table of contents',
   },
 });
@@ -39,7 +39,7 @@ export default class Article extends Component {
   static Header = injectIntl(({ pageContext: { node, ...props }, intl }) => (
     <Header
       article={node}
-      landingSectionTitleAttribute={intl.formatMessage(messages.landingSectionTitleAttribute)}
+      landingSectionTooltip={intl.formatMessage(messages.landingSectionTooltip)}
       {...props}
     />
   ));
