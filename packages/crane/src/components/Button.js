@@ -31,19 +31,20 @@ const getSize = ({ size }) => {
 };
 
 const buttonStyles = ({ disabled, intent, size, theme, type }) => {
+  const colors = { dark: theme.colorTextDark, light: theme.colorText };
   const color = getIntentColor({ intent, theme });
-  const typeCSS = getType({ color, theme, type });
+  const typeCSS = getType({ color, type });
   const sizeCSS = getSize({ size });
   const disabledCSS = !disabled
     ? null
     : css`
         background-color: ${theme.colorDisabled || '#DDDDDD'} !important;
-        color: ${getContrastColor({ backgroundColor: theme.colorDisabled || '#DDDDDD', theme })};
+        color: ${getContrastColor({ backgroundColor: theme.colorDisabled || '#DDDDDD', colors })};
         cursor: not-allowed !important;
       `;
   return css`
     background-color: ${color};
-    color: ${getContrastColor({ backgroundColor: color, theme })};
+    color: ${getContrastColor({ backgroundColor: color, colors })};
     text-decoration: none;
     background-image: none;
     font-size: 1rem;

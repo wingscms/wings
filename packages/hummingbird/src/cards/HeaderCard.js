@@ -10,7 +10,7 @@ import Intro from '../components/Intro';
 
 const Container = styled.div`
   ${wide};
-  background: ${({ theme }) => theme.colorPrimary};
+  background: ${({ theme }) => theme.colorChapterBackground};
   margin-top: 80px;
   margin-bottom: 80px;
   .mobiledoc-content > div:first-child & {
@@ -23,7 +23,7 @@ const Container = styled.div`
 `;
 
 const IntroText = styled(Intro)`
-  color: white;
+  color: ${({ theme }) => theme.colorChapterIntro};
 `;
 
 const Header = styled.div`
@@ -41,7 +41,7 @@ const Header = styled.div`
 `;
 
 const Title = styled.h2`
-  color: ${({ theme }) => theme.darkHeadingColor};
+  color: ${({ theme }) => theme.colorChapterItem};
   letter-spacing: 1.5px;
   font-size: 30px;
   line-height: 65px !important;
@@ -54,7 +54,7 @@ const Title = styled.h2`
 `;
 
 const Marker = styled.span`
-  color: ${({ theme }) => theme.colorText};
+  color: ${({ theme }) => theme.colorChapterItemNumber};
   opacity: 0.3;
   font-size: 80px;
   font-weight: bold;

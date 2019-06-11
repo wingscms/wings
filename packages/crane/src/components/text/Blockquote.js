@@ -29,7 +29,7 @@ const BlockquoteIcon = styled('span')`
   left: 50%;
   transform: translate(-50%, -50%);
   svg {
-    fill: ${({ theme }) => theme.iconColor};
+    fill: ${({ theme }) => theme.colorIcon};
     width: 48px;
     height: 48px;
   }

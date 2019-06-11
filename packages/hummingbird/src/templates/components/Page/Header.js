@@ -29,7 +29,7 @@ const TitleContainer = styled.div`
 
 const Title = styled.h1`
   letter-spacing: 1.5px;
-  color: ${({ theme }) => theme.headingColor};
+  color: ${({ theme }) => theme.colorText};
   display: inline-block;
   font-size: 32px;
   line-height: 1.2;

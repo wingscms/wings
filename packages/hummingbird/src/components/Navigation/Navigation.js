@@ -180,9 +180,9 @@ class Navigation extends Component {
                 active={visible}
                 activeColor={getContrastColor({
                   backgroundColor: theme.colorNavigationMenuBackground,
-                  theme,
+                  colors: { light: theme.colorNavigationIcon, dark: theme.colorNavigationIconDark },
                 })}
-                color={theme.colorNavigationComponents}
+                color={theme.colorNavigationIcon}
                 type="spin"
               />
             </MenuButton>
@@ -204,10 +204,7 @@ class Navigation extends Component {
           ) : null}
           {shareUrls ? (
             <ShareButtons
-              color={getContrastColor({
-                backgroundColor: theme.colorNavigationBackground,
-                theme,
-              })}
+              color={theme.colorNavigationIcon}
               email={shareUrls.email}
               emailIcon={emailIcon}
               facebook={shareUrls.facebook}
@@ -218,7 +215,14 @@ class Navigation extends Component {
               whatsappIcon={whatsappIcon}
             />
           ) : null}
-          {items ? <SlideMenu items={items} menuItemComp={MenuItem} InternalLink={Link} /> : null}
+          {items ? (
+            <SlideMenu
+              items={items}
+              menuItemComp={MenuItem}
+              InternalLink={Link}
+              backgroundColor={theme.colorNavigationMenuBackground}
+            />
+          ) : null}
         </Container>
       </Wrap>
     );

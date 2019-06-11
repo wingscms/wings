@@ -5,10 +5,9 @@ import Scroll from 'react-scroll-to-element';
 const ChapterList = styled.ul`
   display: block;
   max-width: 700px;
-  margin: 0 auto;
+  margin: 0 auto 3rem auto;
   line-height: 55px;
   padding: 100px 0;
-  background-color: ${({ theme }) => theme.colorPrimary};
   position: relative;
   &:before {
     position: absolute;
@@ -17,7 +16,7 @@ const ChapterList = styled.ul`
     width: 200vw;
     left: -100vw;
     top: 0;
-    background-color: ${({ theme }) => theme.appBackgroundColor};
+    background-color: ${({ theme }) => theme.colorChapterSelectBackground};
   }
   @media screen and (max-width: 800px) {
     padding: 20px 0 20px 0;
@@ -36,7 +35,7 @@ const ChapterItem = styled.li`
   position: relative;
   transition: all 0.3s linear;
   -webkit-transition: all 0.3s linear;
-  color: ${({ theme }) => theme.colorText};
+  color: ${({ theme }) => theme.colorChapterSelectItem};
   font-size: 42px;
   line-height: 55px;
   text-align: center;
@@ -44,7 +43,7 @@ const ChapterItem = styled.li`
   font-weight: ${({ theme }) => theme.typography.headerFontWeight || 'bold'};
   a {
     text-decoration: none;
-    color: ${({ theme }) => theme.colorText};
+    color: ${({ theme }) => theme.colorChapterSelectItem};
     position: relative;
     transition: all 0.1s linear;
     -webkit-transition: all 0.1s linear;
@@ -56,7 +55,7 @@ const ChapterItem = styled.li`
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    color: ${({ theme }) => theme.colorPrimary};
+    color: ${({ theme }) => theme.colorChapterSelectItemNumber};
     opacity: 0.3;
     font-size: 90px;
     transition: all 0.1s linear;
@@ -66,7 +65,7 @@ const ChapterItem = styled.li`
   &:active {
     &:before {
       font-size: 100px;
-      color: ${({ theme }) => theme.colorPrimary};
+      color: ${({ theme }) => theme.colorChapterSelectItemNumber};
       opacity: 1;
     }
   }

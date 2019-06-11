@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { getContrastColor } from '@wingscms/crane';
 
 export default createGlobalStyle`
   .twitter-tweet {
@@ -35,7 +34,7 @@ export default createGlobalStyle`
 }) => theme.colorPrimary} 100%);
     }
   }
-    color: ${({ theme }) => getContrastColor({ backgroundColor: theme.colorBackground, theme })};
+    color: ${({ theme }) => theme.colorText};
     padding-bottom: 40px;
     font-weight: ${({ theme }) => theme.fontWeightBody};
     > * {
@@ -89,7 +88,7 @@ export default createGlobalStyle`
     > h4,
     > h5,
     > h6 {
-      color: ${({ theme }) => theme.headingColor};
+      color: ${({ theme }) => theme.colorText};
       margin-bottom: 5px;
       line-height: 1.2;
       text-transform: none;

@@ -1,7 +1,7 @@
 import color from 'color';
 
-export default ({ backgroundColor, theme, threshold = 30 }) => {
+export default ({ backgroundColor, colors, threshold = 30 }) => {
   const lightness = color(backgroundColor).hsl().color[2];
-  const contrastColor = lightness < threshold ? theme.colorTextDark : theme.colorText;
+  const contrastColor = lightness < threshold ? colors.dark : colors.light;
   return contrastColor;
 };

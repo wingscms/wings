@@ -10,14 +10,10 @@ import Header from './Header';
 
 const ArticleWrapper = styled.article`
   margin: 0 auto;
-  margin-top: 2em;
   max-width: 800px;
   padding: 0 20px;
   min-height: 100vh;
   position: relative;
-  @media screen and (min-width: 800px) {
-    margin-top: 3em;
-  }
 `;
 
 export default class Article extends Component {

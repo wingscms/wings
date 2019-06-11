@@ -14,8 +14,8 @@ const StyledMenuItem = styled.li`
     color: ${({ theme }) =>
     getContrastColor({
       backgroundColor: theme.colorNavigationMenuBackground || '#ffffff',
-      theme,
-    })} !important;
+      colors: { light: theme.colorText, dark: theme.colorTextDark },
+    })};
   }
 `;
 

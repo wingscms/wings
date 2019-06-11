@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export default styled.h1`
   letter-spacing: 1.5px;
-  color: ${({ theme }) => theme.darkHeadingColor};
+  color: ${({ theme }) => theme.colorLandingSectionTitle};
   display: inline-block;
   font-size: 32px;
   line-height: 1.2;
@@ -17,11 +17,11 @@ export default styled.h1`
     max-width: 1000px;
   }
   ${({ theme }) =>
-    (theme.landingSectionTitleBackground
+    (theme.colorLandingSectionTitleBackground
       ? `
   line-height: 1.4;
   span {
-    background: ${theme.landingSectionTitleBackground};
+    background: ${theme.colorLandingSectionTitleBackground};
     line-height: 1.4;
     padding: 0 0.25em;
     box-decoration-break: clone;

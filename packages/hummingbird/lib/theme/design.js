@@ -5,7 +5,7 @@ export default ({
   // COLORS
   // Base
   colorPrimary = '#EF5B58',
-  colorSecondary = '#212121',
+  colorSecondary = '#8F3634',
   colorSuccess = '#0F9960',
   colorWarning = '#F29D49',
   colorDanger = '#DB3737',
@@ -14,49 +14,51 @@ export default ({
   colorBackgroundDark = '#212121',
   colorText = '#212121',
   colorTextDark = '#FFFFFF',
+  colorIcon,
+  colorIconDark = '#FFFFFF',
   colorLink,
   colorLinkDark,
   // Navigation
   colorNavigationBackground,
   colorNavigationMenuBackground,
-  colorNavigationComponents,
+  colorNavigationIcon = '#212121',
+  colorNavigationIconDark = '#FFFFFF',
+  colorNavigationLanguagePicker = '#FFFFFF',
+  colorNavigationLanguagePickerHover,
+  // Footer
+  colorFooterBackground,
+  colorFooterText,
+  // Landing Section
+  colorLandingSectionTitle = '#FFFFFF',
+  colorLandingSectionTitleBackground = 'transparent',
+  colorLandingSectionSubTitle = '#FFFFFF',
+  colorLandingSectionSubTitleBackground = 'transparent',
+  colorLandingSectionBackground,
+  // Article
+  colorChapterBackground,
+  colorChapterItem,
+  colorChapterItemNumber,
+  colorChapterIntro,
+  colorChapterSelectBackground,
+  colorChapterSelectItem,
+  colorChapterSelectItemNumber,
 
-  // images
-  logoUrl = 'https://files.wings.dev/1532472414726/wings4-2.png',
-  logoFooterUrl,
-  faviconUrl = 'https://files.wings.dev/1532472414726/wings4-2.png',
+  // IMAGES
+  imageLogoUrl = 'https://files.wings.dev/1532472414726/wings4-2.png',
+  imageLogoFooterUrl,
+  imageFaviconUrl = 'https://files.wings.dev/1532472414726/wings4-2.png',
 
-  // fonts
+  // FONTS
+  // Used to set the name of font families if the font is manually imported.
   customHeaderFontUrl = null,
   customBodyFontUrl = null,
 
-  // menus
-  navigationColor = '#ffffff',
-  languagePickerColor = '#ffffff',
-  languagePickerHoverColor,
-
-  // footer
+  // FOOTER
   footerTitle = null,
-  footerBackgroundColor,
   footerAddress = null,
   footerEmail = null,
   footerPhone = null,
-  footercolorLink,
 
-  // landing
-  landingSectionSubTitleColor,
-  landingSectionSubTitleBackground = null,
-  landingSectionTitleBackground = null,
-
-  // To be removed or replaced at some point.
-  appBackgroundColor = '#F8F8F8',
-  darkAppBackgroundColor = '#000000',
-  headingColor = '#000000',
-  darkHeadingColor = '#ffffff',
-  darkcolorText = '#f5f8fa',
-
-  iconColor,
-  iconColorHover = '#182026',
   dividerBlack = 'rgba(16, 22, 26, 0.15)',
 
   fontSizeFirstLetter = '3.5em',
@@ -85,48 +87,75 @@ export default ({
   colorTextDark,
   colorLink: colorLink || colorPrimary,
   colorLinkDark: colorLinkDark || colorLink,
+  colorIcon: colorIcon || colorPrimary,
+  colorIconDark,
   // Navigation
   colorNavigationBackground: colorNavigationBackground || colorPrimary,
-  colorNavigationMenuBackground: colorBackground || colorNavigationMenuBackground,
-  colorNavigationComponents:
-    colorNavigationComponents ||
+  colorNavigationMenuBackground: colorNavigationMenuBackground || colorBackground,
+  colorNavigationIcon: getContrastColor({
+    backgroundColor: colorNavigationBackground || colorPrimary,
+    colors: { light: colorNavigationIcon, dark: colorNavigationIconDark },
+    threshold: 30,
+  }),
+  colorNavigationIconDark,
+  // Footer
+  colorFooterBackground: colorFooterBackground || colorPrimary,
+  colorFooterText:
+    colorFooterText ||
     getContrastColor({
-      backgroundColor: colorNavigationBackground || colorPrimary,
-      theme: { colorText, colorTextDark },
+      backgroundColor: colorFooterBackground || colorPrimary,
+      colors: { light: colorText, dark: colorTextDark },
       threshold: 30,
     }),
+  colorNavigationLanguagePicker,
+  colorNavigationLanguagePickerHover: colorNavigationLanguagePickerHover || colorPrimary,
+  // Landing Section
+  colorLandingSectionTitle,
+  colorLandingSectionTitleBackground,
+  colorLandingSectionSubTitle,
+  colorLandingSectionSubTitleBackground,
+  colorLandingSectionBackground: colorPrimary || colorLandingSectionBackground,
+  // Article
+  colorChapterBackground: colorChapterBackground || colorPrimary,
+  colorChapterItem:
+    colorChapterItem ||
+    getContrastColor({
+      backgroundColor: colorChapterBackground || colorPrimary,
+      colors: { light: colorText, dark: colorTextDark },
+      threshold: 30,
+    }),
+  colorChapterItemNumber: colorChapterItemNumber || colorSecondary,
+  colorChapterIntro:
+    colorChapterIntro ||
+    getContrastColor({
+      backgroundColor: colorChapterBackground || colorPrimary,
+      colors: { light: colorText, dark: colorTextDark },
+      threshold: 30,
+    }),
+  colorChapterSelectBackground:
+    colorChapterSelectBackground || colorChapterBackground || colorPrimary,
+  colorChapterSelectItem:
+    colorChapterSelectItem ||
+    colorChapterItem ||
+    getContrastColor({
+      backgroundColor: colorChapterSelectBackground || colorChapterBackground || colorPrimary,
+      colors: { light: colorText, dark: colorTextDark },
+      threshold: 30,
+    }),
+  colorChapterSelectItemNumber:
+    colorChapterSelectItemNumber || colorChapterItemNumber || colorSecondary,
 
-  //
-  customHeaderFontUrl,
-  customBodyFontUrl,
+  // IMAGES
+  imageLogoUrl,
+  imageLogoFooterUrl: imageLogoUrl || imageLogoFooterUrl,
+  imageFaviconUrl,
 
-  logoUrl,
-  logoFooterUrl,
-  faviconUrl,
-
-  navigationColor,
-  languagePickerColor,
-  languagePickerHoverColor: languagePickerHoverColor || colorPrimary,
-
+  // FOOTER
   footerTitle,
-  footerBackgroundColor: footerBackgroundColor || colorPrimary,
   footerAddress,
   footerEmail,
   footerPhone,
-  footercolorLink: footercolorLink || colorSecondary,
 
-  landingSectionSubTitleColor: landingSectionSubTitleColor || colorPrimary,
-  landingSectionSubTitleBackground,
-  landingSectionTitleBackground,
-
-  appBackgroundColor,
-  darkAppBackgroundColor,
-  headingColor,
-  darkHeadingColor,
-  darkcolorText,
-
-  iconColor: iconColor || colorPrimary,
-  iconColorHover,
   dividerBlack,
 
   fontSizeFirstLetter,
@@ -140,4 +169,7 @@ export default ({
 
   lineHeightIntro,
   lineHeightFirstLetter,
+  //
+  customHeaderFontUrl,
+  customBodyFontUrl,
 });

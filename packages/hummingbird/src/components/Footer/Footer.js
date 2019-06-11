@@ -1,12 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import { usePluginOptions } from '../../ctx/PluginOptions';
 
 import Section from './Section';
 import FooterColumns from './FooterColumns';
 
 const Wrap = styled.div`
-  background: ${({ theme }) => theme.footerBackgroundColor};
+  background: ${({ theme }) => theme.colorFooterBackground};
   width: 100%;
   display: block;
   text-align: center;
@@ -18,7 +18,7 @@ const Wrap = styled.div`
 
 const Container = styled.div`
   max-width: 1200px;
-  background: ${({ theme }) => theme.footerBackgroundColor};
+  background: ${({ theme }) => theme.colorFooterBackground};
   align-items: flex-start;
   margin: 0 auto;
   display: flex;
@@ -63,7 +63,7 @@ const BolsterLink = styled.a`
   width: 100%;
   padding: 0 20px;
   text-align: left;
-  color: ${({ theme }) => theme.footercolorLink};
+  color: ${({ theme }) => theme.colorFooterText};
   text-decoration: none;
   font-size: 12px;
   background-image: none;
@@ -78,18 +78,18 @@ const Logo = styled.img`
   max-height: 80px;
 `;
 
-export default () => {
+const Footer = ({ theme }) => {
   const { footer } = usePluginOptions();
   return (
     <Wrap>
       <Container>
-        {footer.title || footer.logoUrl ? (
+        {footer.title || theme.imageLogoUrl ? (
           <CTASection>
             <div className="title">{footer.title}</div>
             <div>
               {footer.logoUrl && (
                 <a href={footer.logoLink || '/'}>
-                  <Logo src={footer.logoUrl} alt="logo" />
+                  <Logo src={theme.imageLogoUrl} alt="logo" />
                 </a>
               )}
             </div>
@@ -108,3 +108,5 @@ export default () => {
     </Wrap>
   );
 };
+
+export default withTheme(Footer);

@@ -77,10 +77,10 @@ const CTA = styled.div`
 
 const CTAButton = styled(AnchorButton)`
   font-size: 20px;
-  background-color: ${({ theme }) => theme.darkAppBackgroundColor};
+  background-color: ${({ theme }) => theme.colorBackgroundDark};
   background-image: none;
   border: 2px solid ${({ theme }) => theme.dividerBlack};
-  color: ${({ theme }) => theme.darkcolorText};
+  color: ${({ theme }) => theme.colorTextDark};
   font-family: ${({ theme }) => theme.typography.options.headerFontFamily.join(', ')};
   padding: 20px 40px;
   border-radius: 3px;
@@ -94,7 +94,7 @@ const CTAButton = styled(AnchorButton)`
   &:hover,
   &:active {
     background-color: ${({ theme }) => theme.iconColorHover};
-    color: ${({ theme }) => theme.darkcolorText};
+    color: ${({ theme }) => theme.colorTextDark};
   }
   @media screen and (max-width: 800px) {
     margin-right: auto;

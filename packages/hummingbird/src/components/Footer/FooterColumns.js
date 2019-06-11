@@ -17,7 +17,7 @@ const MailchimpForm = styled(Newsletter)`
   button {
     background-color: #000;
     border: none;
-    color: #fff;
+    color: ${({ theme }) => theme.colorFooterText};
     font-weight: bold;
     cursor: pointer;
     transition: 0.1s all linear;
@@ -70,11 +70,11 @@ export default ({ columns }) => {
           case 'social':
             return (
               <SocialMediaWrapper key={key}>
-                {row.profiles.map(({ platform, url, iconColor, backgroundColor }, j) =>
+                {row.profiles.map(({ platform, url, colorIcon, backgroundColor }, j) =>
                   socialMediaIcon(
                     platform,
                     url,
-                    iconColor,
+                    colorIcon,
                     backgroundColor,
                     `footer-social-icon-${j}`,
                   ),
