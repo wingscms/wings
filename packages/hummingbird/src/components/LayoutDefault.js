@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import { MenuContentWrapper as _MenuContentWrapper } from '@wingscms/crane';
 import DefaultFooter from './Footer';
 
 const LayoutContainer = styled.main`
+  background-color: ${({ theme }) => theme.colorBackground};
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -40,7 +41,8 @@ const MenuContentWrapper = styled(_MenuContentWrapper)`
     }
   }
 `;
-export default class Layout extends Component {
+
+class Layout extends Component {
   static defaultProps = {
     footer: DefaultFooter,
   };
@@ -57,3 +59,5 @@ export default class Layout extends Component {
     );
   }
 }
+
+export default withTheme(Layout);

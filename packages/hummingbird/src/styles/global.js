@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { getContrastColor } from '@wingscms/crane';
 
 export default createGlobalStyle`
   .twitter-tweet {
@@ -15,7 +16,7 @@ export default createGlobalStyle`
     p a,
     ol a,
     ul a {
-    color: #000000;
+    color: ${({ theme }) => theme.colorText};
     text-decoration: none;
     background-image: linear-gradient(
       120deg,
@@ -34,7 +35,7 @@ export default createGlobalStyle`
 }) => theme.colorPrimary} 100%);
     }
   }
-    color: ${({ theme }) => theme.colorText};
+    color: ${({ theme }) => getContrastColor({ backgroundColor: theme.colorBackground, theme })};
     padding-bottom: 40px;
     font-weight: ${({ theme }) => theme.fontWeightBody};
     > * {
