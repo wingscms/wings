@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Facebook, Twitter, Whatsapp, Email } from '../icons/social';
 
 const ShareContainer = styled.div`
   display: inline-block;
@@ -15,56 +16,63 @@ const ShareContainer = styled.div`
   }
 `;
 
-const ShareImage = styled.img`
+const ShareImage = styled.div`
   display: inline-block;
-  width: 40px;
-  height: 40px;
-  padding: 10px;
+  width: 22px;
+  height: 22px;
   margin: 0;
   margin-top: 40px;
+  margin-right: 15px;
   transform: translateY(-50%);
+  svg {
+    fill: ${({ color }) => color || '#000'};
+  }
   &:hover,
   &:active {
-    background-color: ${({ theme }) => theme.colorPrimary};
-  }
-  a:last-child & {
-    margin-right: 20px;
+    opacity: 0.8;
   }
 `;
 
-export default (props) => {
-  const {
-    email,
-    facebook,
-    twitter,
-    whatsapp,
-    emailIcon,
-    facebookIcon,
-    twitterIcon,
-    whatsappIcon,
-  } = props;
-  return (
-    <ShareContainer {...props}>
-      {facebook && (
-        <a href={facebook} target="_blank" rel="noopener noreferrer">
-          <ShareImage src={facebookIcon} alt="Deel op Facebook" />
-        </a>
-      )}
-      {twitter && (
-        <a href={twitter} target="_blank" rel="noopener noreferrer">
-          <ShareImage src={twitterIcon} alt="Deel op Twitter" />
-        </a>
-      )}
-      {whatsapp && (
-        <a href={whatsapp} target="_blank" rel="noopener noreferrer">
-          <ShareImage src={whatsappIcon} alt="Deel via Whatsapp" />
-        </a>
-      )}
-      {email && (
-        <a href={email}>
-          <ShareImage src={emailIcon} alt="Deel via e-mail" />
-        </a>
-      )}
-    </ShareContainer>
-  );
-};
+export default ({
+  color,
+  email,
+  facebook,
+  twitter,
+  whatsapp,
+  emailIcon,
+  facebookIcon,
+  twitterIcon,
+  whatsappIcon,
+  ...props
+}) => (
+  <ShareContainer {...props}>
+    {facebook && (
+      <a href={facebook} target="_blank" rel="noopener noreferrer">
+        <ShareImage color={color}>
+          <Facebook />
+        </ShareImage>
+      </a>
+    )}
+    {twitter && (
+      <a href={twitter} target="_blank" rel="noopener noreferrer">
+        <ShareImage color={color}>
+          <Twitter />
+        </ShareImage>
+      </a>
+    )}
+    {whatsapp && (
+      <a href={whatsapp} target="_blank" rel="noopener noreferrer">
+        <ShareImage color={color}>
+          <Whatsapp />
+        </ShareImage>
+      </a>
+    )}
+    {email && (
+      <a href={email}>
+        <ShareImage color={color}>
+          <Email />
+        </ShareImage>
+      </a>
+    )}
+  </ShareContainer>
+);

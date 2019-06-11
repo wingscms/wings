@@ -113,15 +113,6 @@ const LanguageIcon = styled.img`
   }
 `;
 
-const StyledShareButtons = styled(ShareButtons)`
-  img {
-    background-color: ${({ theme }) => theme.colorNavigationBackground};
-    &:hover {
-      background-color: ${({ theme }) => theme.languagePickerHoverColor};
-    }
-  }
-`;
-
 class Navigation extends Component {
   state = { visible: false };
 
@@ -212,7 +203,11 @@ class Navigation extends Component {
             </LanguagePickerWrap>
           ) : null}
           {shareUrls ? (
-            <StyledShareButtons
+            <ShareButtons
+              color={getContrastColor({
+                backgroundColor: theme.colorNavigationBackground,
+                theme,
+              })}
               email={shareUrls.email}
               emailIcon={emailIcon}
               facebook={shareUrls.facebook}
