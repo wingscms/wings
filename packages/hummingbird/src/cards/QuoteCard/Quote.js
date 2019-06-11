@@ -11,6 +11,7 @@ export default styled.figure`
   margin: 80px 0;
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.05);
   padding: 40px 0 20px 0;
+  background-color: ${({ theme }) => theme.colorBlockquoteBackground};
   a { 
       color: #000000;
       text-decoration: none;
@@ -34,7 +35,9 @@ export default styled.figure`
   &.pullquote-${FLOAT.NONE},
   &.pullquote-${FLOAT.LEFT},
   &.pullquote-${FLOAT.RIGHT} {
+    background-color: ${({ theme }) => theme.colorPullquoteBackground};
     margin: 40px 0;
+    padding: 20px;
     box-shadow: none;
     aside {
       font-family: ${({ theme }) => theme.typography.options.headerFontFamily.join(', ')};
@@ -46,7 +49,6 @@ export default styled.figure`
     }
   }
   &.pullquote-${FLOAT.NONE} {
-    padding: 0;
     figcaption {
       margin-top: 20px;
     }
@@ -60,23 +62,20 @@ export default styled.figure`
   &.pullquote-${FLOAT.LEFT},
   &.pullquote-${FLOAT.RIGHT} {
     clear: none;
-    padding: 0.75rem;
     text-align: left;
     @media screen and (max-width: 800px) {
       width: 100%;
       float: none;
     }
   }
-  aside,
-  blockquote {
-    color: ${({ theme }) => theme.colorPrimary};
-    padding: 0;
-  }
   aside {
+    color: ${({ theme }) => theme.colorPullquote};
+    padding: 0;
     font-weight: ${({ theme }) => theme.fontWeightPullquote};
   }
   blockquote {
-    color: ${({ theme }) => theme.colorText};
+    color: ${({ theme }) => theme.colorBlockquote};
+    background-color: ${({ theme }) => theme.colorBlockquoteBackground};
     padding: 0;
     font-weight: ${({ theme }) => theme.fontWeightBlockquote};
     text-align: left;

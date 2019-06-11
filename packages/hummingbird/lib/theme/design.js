@@ -42,6 +42,10 @@ export default ({
   colorChapterSelectBackground,
   colorChapterSelectItem,
   colorChapterSelectItemNumber,
+  colorBlockquote,
+  colorBlockquoteBackground,
+  colorPullquote,
+  colorPullquoteBackground,
 
   // IMAGES
   imageLogoUrl = 'https://files.wings.dev/1532472414726/wings4-2.png',
@@ -144,6 +148,10 @@ export default ({
     }),
   colorChapterSelectItemNumber:
     colorChapterSelectItemNumber || colorChapterItemNumber || colorSecondary,
+  colorBlockquote: colorBlockquote || colorText,
+  colorBlockquoteBackground: colorBlockquoteBackground || colorBackground,
+  colorPullquote: colorPullquote || colorPrimary,
+  colorPullquoteBackground: colorPullquoteBackground || colorBackground,
 
   // IMAGES
   imageLogoUrl,
