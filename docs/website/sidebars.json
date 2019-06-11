@@ -6,6 +6,7 @@
     "General": ["dev/general/getting-started", "dev/general/data-model"],
     "Publishing": ["dev/publishing/editor"],
     "API": ["dev/api/authentication"],
+    "Crane": ["dev/crane/utils"],
     "Hummingbird": ["dev/hummingbird/getting-started", "dev/hummingbird/themes", "dev/hummingbird/shadowing", "dev/hummingbird/deployment"]
   }
 }

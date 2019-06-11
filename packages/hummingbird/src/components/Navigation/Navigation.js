@@ -2,7 +2,14 @@
 
 import React, { Component } from 'react';
 import styled, { withTheme } from 'styled-components';
-import { Burger, LanguagePicker, ShareButtons, SlideMenu, toggleSlideMenu } from '@wingscms/crane';
+import {
+  Burger,
+  LanguagePicker,
+  ShareButtons,
+  SlideMenu,
+  toggleSlideMenu,
+  getContrastColor,
+} from '@wingscms/crane';
 import { Link, navigate } from 'gatsby';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 
@@ -19,7 +26,7 @@ import ChaptersToggle from './ChaptersToggle';
 import Logo from './Logo';
 
 const Wrap = styled.div`
-  background: ${({ theme }) => theme.navigationColor};
+  background: ${({ theme }) => theme.colorNavigationBackground};
   width: 100%;
   display: block;
   text-align: center;
@@ -108,7 +115,7 @@ const LanguageIcon = styled.img`
 
 const StyledShareButtons = styled(ShareButtons)`
   img {
-    background-color: ${({ theme }) => theme.navigationColor};
+    background-color: ${({ theme }) => theme.colorNavigationBackground};
     &:hover {
       background-color: ${({ theme }) => theme.languagePickerHoverColor};
     }
@@ -178,7 +185,15 @@ class Navigation extends Component {
           {children}
           {hideMenu ? null : (
             <MenuButton active={visible} onClick={this.toggleNav}>
-              <Burger active={visible} color="#000000" type="spin" />
+              <Burger
+                active={visible}
+                activeColor={getContrastColor({
+                  backgroundColor: theme.colorNavigationMenuBackground,
+                  theme,
+                })}
+                color={theme.colorNavigationComponents}
+                type="spin"
+              />
             </MenuButton>
           )}
           {translations.length > 0 ? (

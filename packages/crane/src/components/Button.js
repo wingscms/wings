@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { getIntentColor, getTextColor } from '../lib/utils';
+import { getIntentColor, getContrastColor } from '../lib/utils';
 
 const outline = ({ color }) =>
   css`
@@ -37,12 +37,13 @@ const buttonStyles = ({ disabled, intent, size, theme, type }) => {
   const disabledCSS = !disabled
     ? null
     : css`
-        background-color: grey !important;
+        background-color: ${theme.colorDisabled || '#DDDDDD'} !important;
+        color: ${getContrastColor({ backgroundColor: theme.colorDisabled || '#DDDDDD', theme })};
         cursor: not-allowed !important;
       `;
   return css`
     background-color: ${color};
-    color: ${getTextColor({ backgroundColor: color, theme })};
+    color: ${getContrastColor({ backgroundColor: color, theme })};
     text-decoration: none;
     background-image: none;
     font-size: 1rem;

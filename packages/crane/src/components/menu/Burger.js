@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
 
 const StyledBurger = styled.div`
@@ -87,6 +86,11 @@ const StyledBurger = styled.div`
           bottom: 0;
           transform: rotate(-90deg);
         }
+        &,
+        &::before,
+        &::after {
+          background-color: ${({ activeColor }) => activeColor};
+        }
       }
     }
   }
@@ -121,6 +125,11 @@ const StyledBurger = styled.div`
           bottom: 0;
           transform: rotate(-90deg);
           transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+        &,
+        &::before,
+        &::after {
+          background-color: ${({ activeColor }) => activeColor};
         }
       }
     }
@@ -158,40 +167,33 @@ const StyledBurger = styled.div`
           transition: bottom 0.1s ease-out,
             transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
         }
+        &,
+        &::before,
+        &::after {
+          background-color: ${({ activeColor }) => activeColor};
+        }
       }
     }
   }
 `;
 
-export default class Burger extends Component {
-  static propTypes = {
-    /** Whether to set the active state */
-    active: PropTypes.bool.isRequired,
-    /** Burger color */
-    color: PropTypes.string,
-    /** Burger animation type: boring, squeeze */
-    type: PropTypes.string,
-  };
-
-  static defaultProps = {
-    color: '#000000',
-    type: 'boring',
-  };
-
-  render() {
-    const { active, color, hoverColor, type, ...props } = this.props;
-    return (
-      <StyledBurger color={color} hoverColor={hoverColor}>
-        <button
-          className={`hamburger hamburger--${type} ${active ? 'is-active' : ''}`}
-          type="button"
-          {...props}
-        >
-          <span className="hamburger-box">
-            <span className="hamburger-inner" />
-          </span>
-        </button>
-      </StyledBurger>
-    );
-  }
-}
+export default ({
+  active,
+  activeColor = '#000000',
+  color = '#000000',
+  hoverColor,
+  type = 'boring',
+  ...props
+}) => (
+  <StyledBurger activeColor={activeColor} color={color} hoverColor={hoverColor}>
+    <button
+      className={`hamburger hamburger--${type} ${active ? 'is-active' : ''}`}
+      type="button"
+      {...props}
+    >
+      <span className="hamburger-box">
+        <span className="hamburger-inner" />
+      </span>
+    </button>
+  </StyledBurger>
+);

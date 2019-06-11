@@ -4,6 +4,8 @@ title: Themes
 
 ## Colors
 
+### Base Colors
+
 `colorPrimary`: Primary theme color. Default: <span style="background-color: #EF5B58">`#EF5B58`</span>
 
 `colorSecondary`: Secondary theme color. Default: <span style="background-color: #212121; color:#ffffff">`#212121`</span>
@@ -13,6 +15,8 @@ title: Themes
 `colorWarning`: Warning intent color. Default: <span style="background-color: #F29D49">`#F29D49`</span>
 
 `colorDanger`: Danger intent color. Default: <span style="background-color: #DB3737">`#DB3737`</span>
+
+`colorDisabled`: Disabled color. Default: <span style="background-color: #DDDDDD">`#DDDDDD`</span>
 
 `colorBackground`: Main background color. Default: <span style="background-color: #ffffff">`#FFFFFF`</span>
 
@@ -27,6 +31,12 @@ title: Themes
 `colorLink`: Link color. Default: <span style="background-color: #EF5B58">`colorPrimary`</span>
 
 `colorLinkDark`: Link color for dark mode. Default: <span style="background-color: #EF5B58">`colorLink`</span>
+
+### Navigation
+
+`colorNavigationBackground`: Navigation background color. Default: <span style="background-color: #EF5B58">`colorPrimary`</span>
+
+`colorNavigationComponents`: Navigation components color. Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
 
 ## Images
 

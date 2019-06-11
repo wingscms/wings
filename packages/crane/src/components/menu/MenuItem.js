@@ -3,12 +3,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { getContrastColor } from '../../lib/utils';
 
 const StyledMenuItem = styled.li`
   list-style: none;
   position: relative;
   padding: 0;
   margin: 0;
+  a {
+    color: ${({ theme }) =>
+    getContrastColor({
+      backgroundColor: theme.colorNavigationMenuBackground || '#ffffff',
+      theme,
+    })} !important;
+  }
 `;
 
 const StandardLink = ({ children, target, to }) => (

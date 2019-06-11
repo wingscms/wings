@@ -7,7 +7,7 @@ const Menu = styled.ul`
   display: block;
   position: absolute;
   padding-top: 80px;
-  background-color: ${({ theme }) => theme.menuBackgroundColor || '#fff'};
+  background-color: ${({ theme }) => theme.colorNavigationMenuBackground || '#fff'};
   left: ${props => (props.left ? '-300px' : '100%')};
   height: calc(100vh + 4px);
   overflow: scroll;

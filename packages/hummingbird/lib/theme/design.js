@@ -1,17 +1,25 @@
+import { getContrastColor } from '@wingscms/crane';
+
 // set defaults here:
 export default ({
-  // colors
-  colorPrimary = '#ef5b58',
+  // COLORS
+  // Base
+  colorPrimary = '#EF5B58',
   colorSecondary = '#212121',
   colorSuccess = '#0F9960',
   colorWarning = '#F29D49',
   colorDanger = '#DB3737',
-  colorBackground = '#ffffff',
+  colorDisabled = '#DDDDDD',
+  colorBackground = '#FFFFFF',
   colorBackgroundDark = '#212121',
   colorText = '#212121',
-  colorTextDark = '#ffffff',
+  colorTextDark = '#FFFFFF',
   colorLink,
   colorLinkDark,
+  // Navigation
+  colorNavigationBackground,
+  colorNavigationMenuBackground,
+  colorNavigationComponents,
 
   // images
   logoUrl = 'https://files.wings.dev/1532472414726/wings4-2.png',
@@ -63,19 +71,32 @@ export default ({
   lineHeightIntro = '1.5',
   lineHeightFirstLetter = '0.8',
 }) => ({
-  // use waterfall mapping here:
+  // COLORS
+  // Base
   colorPrimary,
   colorSecondary,
   colorSuccess,
   colorWarning,
   colorDanger,
+  colorDisabled,
   colorBackground,
   colorBackgroundDark,
   colorText,
   colorTextDark,
   colorLink: colorLink || colorPrimary,
   colorLinkDark: colorLinkDark || colorLink,
+  // Navigation
+  colorNavigationBackground: colorNavigationBackground || colorPrimary,
+  colorNavigationMenuBackground: colorBackground || colorNavigationMenuBackground,
+  colorNavigationComponents:
+    colorNavigationComponents ||
+    getContrastColor({
+      backgroundColor: colorNavigationBackground || colorPrimary,
+      theme: { colorText, colorTextDark },
+      threshold: 30,
+    }),
 
+  //
   customHeaderFontUrl,
   customBodyFontUrl,
 
