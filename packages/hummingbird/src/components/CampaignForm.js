@@ -95,7 +95,7 @@ const Button = styled(_Button)`
 
 const messages = defineMessages({
   defaultSubmit: {
-    id: 'hummingbird.CampaignForm.defaultSubmit.text',
+    id: 'hummingbird.CampaignForm.submit.text',
     description: 'Campaign form default submit button label',
     defaultMessage: 'Submit',
   },
@@ -115,32 +115,32 @@ const messages = defineMessages({
     defaultMessage: 'Sign',
   },
   [FIELDS.EMAIL]: {
-    id: 'hummingbird.CampaignForm.emailLabel.text',
+    id: 'hummingbird.CampaignForm.emailField.label',
     description: 'Campaign form email field label',
     defaultMessage: 'Email address',
   },
   [FIELDS.FIRSTNAME]: {
-    id: 'hummingbird.CampaignForm.firstNameLabel.text',
+    id: 'hummingbird.CampaignForm.firstNameField.label',
     description: 'Campaign form first name field label',
     defaultMessage: 'First name',
   },
   [FIELDS.LASTNAME]: {
-    id: 'hummingbird.CampaignForm.lastNameLabel.text',
+    id: 'hummingbird.CampaignForm.lastNameField.label',
     description: 'Campaign form last name field label',
     defaultMessage: 'Last name',
   },
   [FIELDS.NEWSLETTER]: {
-    id: 'hummingbird.CampaignForm.newsletterLabel.text',
+    id: 'hummingbird.CampaignForm.newsletterField.label',
     description: 'Campaign form newsletter checkbox label',
     defaultMessage: 'Stay up to date',
   },
   [FIELDS.PRIVACY]: {
-    id: 'hummingbird.CampaignForm.privacyConsentLabel.text',
+    id: 'hummingbird.CampaignForm.privacyConsentField.label',
     description: 'Campaign form privacy consent checkbox label',
     defaultMessage: 'Agree to our privacy policy',
   },
   [FIELDS.TERMS]: {
-    id: 'hummingbird.CampaignForm.termsLabel.text',
+    id: 'hummingbird.CampaignForm.termsField.label',
     description: 'Campaign form terms checkbox label',
     defaultMessage: 'Agree to our terms & conditions',
   },

@@ -23,12 +23,12 @@ const ArticleWrapper = styled.article`
 
 const messages = defineMessages({
   chaptersTitle: {
-    id: 'hummingbird.Chapters.title.text',
+    id: 'hummingbird.Article.chapters.title',
     description: 'Title for list of chapters',
     defaultMessage: 'Chapters',
   },
   landingSectionTooltip: {
-    id: 'hummingbird.LandingSection.tocLinkTooltip.text',
+    id: 'hummingbird.Article.skipToContent.tooltip',
     description: 'Tooltip for landing section link to TOC',
     defaultMessage: 'view the table of contents',
   },
