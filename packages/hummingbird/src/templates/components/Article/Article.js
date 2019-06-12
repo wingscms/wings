@@ -27,7 +27,7 @@ const messages = defineMessages({
     description: 'Title for list of chapters',
     defaultMessage: 'Chapters',
   },
-  landingSectionTooltip: {
+  skipToContent: {
     id: 'hummingbird.Article.skipToContent.tooltip',
     description: 'Tooltip for landing section link to TOC',
     defaultMessage: 'view the content',
@@ -39,7 +39,7 @@ export default class Article extends Component {
   static Header = injectIntl(({ pageContext: { node, ...props }, intl }) => (
     <Header
       article={node}
-      landingSectionTooltip={intl.formatMessage(messages.landingSectionTooltip)}
+      skipToContentTooltip={intl.formatMessage(messages.skipToContent)}
       {...props}
     />
   ));

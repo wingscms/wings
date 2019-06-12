@@ -1,6 +1,6 @@
 import React from 'react';
 import LandingSection from './LandingSection';
 
-export default ({ article, landingSectionTooltip }) => (
-  <LandingSection article={article} titleAttribute={landingSectionTooltip} />
+export default ({ article, skipToContentTooltip }) => (
+  <LandingSection article={article} titleAttribute={skipToContentTooltip} />
 );
