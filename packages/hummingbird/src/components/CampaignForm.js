@@ -5,6 +5,7 @@ import { SchemaForm } from '@wingscms/crane';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import _Button from './Button';
 import wings from '../data/wings';
+import { patchSchema } from '../../lib/utils';
 
 const PETITION_QUERY = `
   query ($id: String!) {
@@ -218,18 +219,11 @@ class CampaignForm extends Component {
 
   localizeSchema(schema) {
     const { intl } = this.props;
-    const _schema = { ...schema };
-    Object.values(FIELDS).forEach((x) => {
-      _schema.properties = {
-        ..._schema.properties,
-        [x]: {
-          ..._schema.properties[x],
-          title: intl.formatMessage(messages[x]),
-        },
-      };
-      return null;
-    });
-    return _schema;
+    const fieldDefs = Object.values(FIELDS).reduce(
+      (defs, field) => ({ ...defs, [field]: { title: intl.formatMessage(messages[field]) } }),
+      {},
+    );
+    return patchSchema(schema, fieldDefs);
   }
 
   processSchema = (s) => {
