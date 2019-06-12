@@ -30,7 +30,7 @@ const messages = defineMessages({
   landingSectionTooltip: {
     id: 'hummingbird.Article.skipToContent.tooltip',
     description: 'Tooltip for landing section link to TOC',
-    defaultMessage: 'view the table of contents',
+    defaultMessage: 'view the content',
   },
 });
 
