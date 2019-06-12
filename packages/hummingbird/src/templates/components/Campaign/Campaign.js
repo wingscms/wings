@@ -46,7 +46,7 @@ const BackgroundContainerTop = styled(BackgroundContainer)`
 `;
 
 const Wrapper = styled(Container)`
-  background-color: ${({ theme }) => theme.appBackgroundColor};
+  background-color: ${({ theme }) => theme.colorBackground};
 `;
 const CampaignContentWrapper = styled.div`
   position: relative;
@@ -55,7 +55,6 @@ const CampaignContentWrapper = styled.div`
   width: 100%;
   height: auto;
   min-height: 100vh;
-  background-color: #000;
   background-image: url(${props => props.backgroundImage || ''});
   background-position: center;
   background-size: cover;
@@ -71,7 +70,6 @@ const CampaignContent = styled.div`
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fff !important;
   border-radius: 4px;
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.05);
   text-align: center;
@@ -81,6 +79,7 @@ const CampaignContent = styled.div`
 `;
 
 const MainContainerOuter = styled(Container)`
+  background-color: transparent;
   margin-top: -300px;
   overflow: auto;
   margin-bottom: 40px;
@@ -90,6 +89,7 @@ const MainContainerOuter = styled(Container)`
 `;
 
 const MainContainerInner = styled(Container)`
+  background-color: transparent;
   max-width: 1160px;
   height: auto;
   display: flex;
@@ -106,7 +106,7 @@ const FormContainer = styled.div`
   width: 460px;
   min-height: 500px;
   background-color: ${({ theme }) => theme.colorPrimary};
-  color: ${({ theme }) => theme.darkHeadingColor};
+  color: ${({ theme }) => theme.colorText};
   vertical-align: top;
   border-radius: 4px;
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.05);
@@ -252,7 +252,6 @@ class Campaign extends Component {
 
   childProps = () => {
     const { children, ...props } = this.props;
-    debugger;
     return {
       ...props,
       ...this.props.childProps,

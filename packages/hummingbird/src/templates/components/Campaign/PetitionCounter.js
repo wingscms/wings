@@ -58,7 +58,6 @@ export default class PetitionCounter extends Component {
   render() {
     const { current, theme } = this.props;
     const { max, descriptionText } = this.props;
-    debugger;
     return (
       <Container>
         <TopContainer>

@@ -11,6 +11,7 @@ export default ({
   colorDanger = '#DB3737',
   colorDisabled = '#DDDDDD',
   colorBackground = '#FFFFFF',
+  colorBackgroundHighlight = '#fdeeee',
   colorBackgroundDark = '#212121',
   colorText = '#212121',
   colorTextDark = '#FFFFFF',
@@ -87,6 +88,7 @@ export default ({
   colorDisabled,
   colorBackground,
   colorBackgroundDark,
+  colorBackgroundHighlight,
   colorText,
   colorTextDark,
   colorLink: colorLink || colorPrimary,
@@ -155,7 +157,7 @@ export default ({
 
   // IMAGES
   imageLogoUrl,
-  imageLogoFooterUrl: imageLogoUrl || imageLogoFooterUrl,
+  imageLogoFooterUrl: imageLogoFooterUrl || imageLogoUrl,
   imageFaviconUrl,
 
   // FOOTER

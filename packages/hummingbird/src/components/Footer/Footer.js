@@ -85,11 +85,11 @@ const Footer = ({ theme }) => {
       <Container>
         {footer.title || theme.imageLogoUrl ? (
           <CTASection>
-            <div className="title">{footer.title}</div>
+            <div>{footer.title}</div>
             <div>
-              {footer.logoUrl && (
+              {theme.imageLogoFooterUrl && (
                 <a href={footer.logoLink || '/'}>
-                  <Logo src={theme.imageLogoUrl} alt="logo" />
+                  <Logo src={theme.imageLogoFooterUrl} alt="logo" />
                 </a>
               )}
             </div>
