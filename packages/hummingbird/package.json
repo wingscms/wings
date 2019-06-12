@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "test": "jest --watch"
+  },
   "name": "@wingscms/hummingbird",
   "version": "0.16.2",
   "dependencies": {
@@ -8,6 +11,7 @@
     "browser-locale": "^1.0.3",
     "classnames": "^2.2.6",
     "cloudinary-react": "^1.1.0",
+    "deepmerge": "^3.2.0",
     "filter-invalid-dom-props": "^2.0.0",
     "format-number": "^3.0.0",
     "gatsby": "^2",
@@ -45,5 +49,8 @@
     "styled-components": "^4.2.0",
     "typography": "^0.16.19",
     "widont": "^0.3.2"
+  },
+  "devDependencies": {
+    "babel-preset-gatsby": "^0.1.11"
   }
 }
