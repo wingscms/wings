@@ -105,8 +105,8 @@ const FormContainer = styled.div`
   display: inline-block;
   width: 460px;
   min-height: 500px;
-  background-color: ${({ theme }) => theme.colorPrimary};
-  color: ${({ theme }) => theme.colorText};
+  background-color: ${({ theme }) => theme.colorFormBackground};
+  color: ${({ theme }) => theme.colorFormText};
   vertical-align: top;
   border-radius: 4px;
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.05);
@@ -138,8 +138,8 @@ const Intro = styled.p`
 `;
 const CounterContainer = styled(FormContainerInner)`
   padding: 20px 40px;
-  background-color: #fff;
-  color: #000;
+  background-color: ${({ theme }) => theme.colorCounterBackground};
+  color: ${({ theme }) => theme.colorCounterText};
   border-radius: 4px 4px 0 0;
   @media screen and (max-width: 1000px) {
     max-width: 100%;

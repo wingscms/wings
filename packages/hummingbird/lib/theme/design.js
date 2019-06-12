@@ -47,6 +47,14 @@ export default ({
   colorBlockquoteBackground,
   colorPullquote,
   colorPullquoteBackground,
+  // Forms
+  colorFormBackground,
+  colorFormText,
+  // Campaigns
+  colorCounterBackground,
+  colorCounterText,
+  // Petitions
+  colorPetitionFormBackground,
 
   // IMAGES
   imageLogoUrl = 'https://files.wings.dev/1532472414726/wings4-2.png',
@@ -154,6 +162,26 @@ export default ({
   colorBlockquoteBackground: colorBlockquoteBackground || colorBackground,
   colorPullquote: colorPullquote || colorPrimary,
   colorPullquoteBackground: colorPullquoteBackground || colorBackground,
+  // Forms
+  colorFormBackground: colorFormBackground || colorPrimary,
+  colorFormText:
+    colorFormText ||
+    getContrastColor({
+      backgroundColor: colorFormBackground || colorPrimary,
+      colors: { light: colorText, dark: colorTextDark },
+      threshold: 30,
+    }),
+  // Campaigns
+  colorCounterBackground: colorCounterBackground || colorBackground,
+  colorCounterText:
+    colorCounterText ||
+    getContrastColor({
+      backgroundColor: colorCounterBackground || colorBackground,
+      colors: { light: colorText, dark: colorTextDark },
+      threshold: 30,
+    }),
+  // Petitions
+  colorPetitionFormBackground: colorPetitionFormBackground || colorFormBackground || colorPrimary,
 
   // IMAGES
   imageLogoUrl,
