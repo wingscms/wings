@@ -1,9 +1,4 @@
-const articleQuery = require('./queries/articleQuery');
-const pageQuery = require('./queries/pageQuery');
-const petitionQuery = require('./queries/petitionQuery');
-const eventQuery = require('./queries/eventQuery');
-const siteMetaQuery = require('./queries/siteMeta');
-const appQuery = require('./queries/appQuery');
+const query = require('./query');
 const { patchI18n, makeShareUrls } = require('../../utils');
 
 const {
