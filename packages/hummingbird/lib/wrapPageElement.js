@@ -19,6 +19,8 @@ const messages = {
   nl: messagesNl,
 };
 
+const DEFAULT_LOCALE = 'en';
+
 const generateTitle = (title, siteTitle, platform, platforms) =>
   (platforms[platform] && platforms[platform].title ? platforms[platform].title : title);
 
@@ -32,7 +34,7 @@ const PageWrapper = ({
   const {
     title,
     platforms = {},
-    locale: { id: localeId = 'en' },
+    locale: { id: localeId = DEFAULT_LOCALE },
     translations,
   } = node;
   const language = localeId.split('-')[0];
@@ -71,7 +73,7 @@ const PageWrapper = ({
   return (
     <React.Fragment>
       <Helmet title={generateTitle(title, siteTitle, 'all', platforms)}>
-        <html lang={localeId || 'en'} />
+        <html lang={localeId || DEFAULT_LOCALE} />
         {translations &&
           translations.map(trans => (
             <link key={trans.locale} rel="alternate" hrefLang={trans.locale} href={trans.path} />
