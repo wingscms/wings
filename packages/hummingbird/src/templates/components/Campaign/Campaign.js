@@ -105,7 +105,7 @@ const FormContainer = styled.div`
   display: inline-block;
   width: 460px;
   min-height: 500px;
-  background-color: ${({ theme }) => theme.colorFormBackground};
+  background-color: ${({ theme }) => theme.colorCampaignFormBackground};
   color: ${({ theme }) => theme.colorFormText};
   vertical-align: top;
   border-radius: 4px;
