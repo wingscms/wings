@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Scroll from 'react-scroll-to-element';
 import { navigate } from 'gatsby';
 import styled, { withTheme } from 'styled-components';
-import { languageList, LanguagePicker, toggleSlideMenu } from '@wingscms/crane';
+import { LanguagePicker, toggleSlideMenu } from '@wingscms/crane';
 
 import chaptersImage from '../../../img/chapters.svg';
 import shareImage from '../../../img/share.svg';
@@ -212,6 +212,7 @@ class CornerMenu extends Component {
     const {
       chapterMenu,
       chapters = [],
+      chaptersTitle,
       locale,
       shareMessage,
       translations = [],
@@ -242,7 +243,7 @@ class CornerMenu extends Component {
           windowExists && translations.length < 1 && (!chapterMenu || chapterMenu !== 'slide') ? (
             <Scroll type="id" element="chapter-list">
               <ChaptersLink>
-                <span>{locale ? languageList[locale].chaptersName : 'Chapters'}</span>
+                {chaptersTitle}
                 <ChapterImage src={chaptersImage} />
               </ChaptersLink>
             </Scroll>
@@ -260,7 +261,7 @@ class CornerMenu extends Component {
                 );
               }}
             >
-              <span>{locale ? languageList[locale].chaptersName : 'Chapters'}</span>
+              {chaptersTitle}
               <ChapterImage src={chaptersImage} slideMenu />
             </ChaptersLink>
           )

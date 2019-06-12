@@ -1,5 +1,6 @@
 import React, { Component, useState } from 'react';
 import styled from 'styled-components';
+import { FormattedMessage } from 'react-intl';
 import Content from '../../../components/Content';
 import CampaignForm from '../../../components/CampaignForm';
 import Container from '../../../components/Container';
@@ -206,11 +207,25 @@ export default class Campaign extends Component {
             <FormContainer id="campaign-form-container">
               {resourceType === 'node.petition' && (
                 <CounterContainer>
-                  <PetitionCounter
-                    current={signatureCount}
-                    max={signatureGoal}
-                    descriptionText="people signed this petition"
-                  />
+                  <FormattedMessage
+                    id="hummingbird.Campaign.counter.message"
+                    description="Description for petition counter component"
+                    defaultMessage="{signatureCount, plural,
+                      one {person has}
+                      other {people have}
+                  } signed this petition"
+                    values={{
+                      signatureCount,
+                    }}
+                  >
+                    {txt => (
+                      <PetitionCounter
+                        current={signatureCount}
+                        max={signatureGoal}
+                        descriptionText={txt}
+                      />
+                    )}
+                  </FormattedMessage>
                 </CounterContainer>
               )}
               <FormContainerInner>
@@ -231,7 +246,15 @@ export default class Campaign extends Component {
         {resourceType === 'node.event' && (
           <Campaign.Title style={{ marginBottom: '40px' }} {...props}>
             <EventDetails
-              title={<Campaign.Title>Info</Campaign.Title>}
+              title={
+                <Campaign.Title>
+                  <FormattedMessage
+                    id="hummingbird.Campaign.eventInfo.title"
+                    description="Title for Event metadata"
+                    defaultMessage="Info"
+                  />
+                </Campaign.Title>
+              }
               schedule={node.schedule}
               fee={node.fee}
               location={node.location}

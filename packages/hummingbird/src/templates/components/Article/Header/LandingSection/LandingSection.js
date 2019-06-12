@@ -85,7 +85,6 @@ const Arrow = styled.img`
     margin: 10px auto 40px auto;
   }
 `;
-
 export default class LandingSection extends Component {
   state = {
     scrollY: 0,
@@ -102,14 +101,14 @@ export default class LandingSection extends Component {
   updatePercentage = () => requestAnimationFrame(() => this.setState({ scrollY: window.scrollY }));
   render() {
     if (typeof window === 'undefined') return <div />;
-    const { article: { title, image = {} } = {} } = this.props;
+    const { article: { title, image = {} } = {}, titleAttribute } = this.props;
     const { scrollY } = this.state;
 
     const backgroundImage = (image && image.url) || '';
     return (
       <div>
         <Scroll type="id" element="article-start">
-          <Container id="landing-section" title="ga naar de inhoudsopgave">
+          <Container id="landing-section" title={titleAttribute}>
             <BackgroundImageContainerOuter
               style={{ marginTop: scrollY > 84 ? scrollY / 2 - 84 / 2 : 0 }}
             >

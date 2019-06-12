@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { defineMessages, injectIntl } from 'react-intl';
 import classNames from 'classnames';
 import Entry from '../Entry';
 import Content from '../../../components/Content';
@@ -20,9 +21,28 @@ const ArticleWrapper = styled.article`
   }
 `;
 
+const messages = defineMessages({
+  chaptersTitle: {
+    id: 'hummingbird.Article.chapters.title',
+    description: 'Title for list of chapters',
+    defaultMessage: 'Chapters',
+  },
+  skipToContent: {
+    id: 'hummingbird.Article.skipToContent.tooltip',
+    description: 'Tooltip for landing section link to TOC',
+    defaultMessage: 'view the content',
+  },
+});
+
 export default class Article extends Component {
   static ProgressBar = ProgressBar;
-  static Header = ({ pageContext: { node, ...props } }) => <Header article={node} {...props} />;
+  static Header = injectIntl(({ pageContext: { node, ...props }, intl }) => (
+    <Header
+      article={node}
+      skipToContentTooltip={intl.formatMessage(messages.skipToContent)}
+      {...props}
+    />
+  ));
 
   static Navigation = ({ pageContext: _props }) => {
     const {
@@ -43,12 +63,23 @@ export default class Article extends Component {
       />
     );
   };
-  static CornerMenu = ({
-    pageContext: {
-      node: { translations, locale },
-      headers,
-    },
-  }) => <CornerMenu chapters={headers} locale={locale} translations={translations} />;
+
+  static CornerMenu = injectIntl(
+    ({
+      pageContext: {
+        node: { translations, locale },
+        headers,
+      },
+      intl,
+    }) => (
+      <CornerMenu
+        chapters={headers}
+        locale={locale}
+        translations={translations}
+        chaptersTitle={intl.formatMessage(messages.chaptersTitle)}
+      />
+    ),
+  );
 
   static Main = ({
     pageContext: {

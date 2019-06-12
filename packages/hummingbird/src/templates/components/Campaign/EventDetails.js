@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FormattedMessage, FormattedDate, FormattedTime, FormattedNumber } from 'react-intl';
 
 const InfoContainer = styled.div``;
 
@@ -24,16 +25,6 @@ const MetaContent = styled.div`
     margin: 0;
   }
 `;
-
-const getCurrencySymbol = (currencyCode) => {
-  switch (currencyCode) {
-    case 'EUR':
-    default:
-      return '€';
-  }
-};
-
-const formatMinutes = m => (m < 10 ? `0${m}` : m);
 
 const Wrapper = styled.div`
   display: block;
@@ -61,27 +52,41 @@ export default ({ title, fee, location, schedule }) => {
       <InfoContainer>
         {schedule.start ? (
           <MetaContainer>
-            <MetaName>Start</MetaName>
+            <MetaName>
+              <FormattedMessage
+                id="hummingbird.Campaign.eventStart.label"
+                description="Label for Event Start date"
+                defaultMessage="Start"
+              />
+            </MetaName>
             <MetaContent>
-              {/* eslint-disable-next-line */}
-              {start.getDate()}-{start.getMonth() + 1}-{start.getFullYear()}{' '}
-              {start.getUTCHours() + 1}:{formatMinutes(start.getUTCMinutes())}
+              <FormattedDate value={start} /> <FormattedTime value={start} />
             </MetaContent>
           </MetaContainer>
         ) : null}
         {schedule.end ? (
           <MetaContainer>
-            <MetaName>End</MetaName>
+            <MetaName>
+              <FormattedMessage
+                id="hummingbird.Campaign.eventEnd.label"
+                description="Label for Event End date"
+                defaultMessage="End"
+              />
+            </MetaName>
             <MetaContent>
-              {/* eslint-disable-next-line */}
-              {end.getDate()}-{end.getMonth() + 1}-{end.getFullYear()} {end.getUTCHours() + 1}:
-              {formatMinutes(end.getUTCMinutes())}
+              <FormattedDate value={end} /> <FormattedTime value={end} />
             </MetaContent>
           </MetaContainer>
         ) : null}
         {location ? (
           <MetaContainer>
-            <MetaName>Location</MetaName>
+            <MetaName>
+              <FormattedMessage
+                id="hummingbird.Campaign.eventLocation.label"
+                description="Label for Event Location"
+                defaultMessage="Location"
+              />
+            </MetaName>
             <MetaContent>
               {location.name ? <p>{location.name}</p> : null}
               {location.street ? <p>{location.street}</p> : null}
@@ -93,10 +98,20 @@ export default ({ title, fee, location, schedule }) => {
         ) : null}
         {fee ? (
           <MetaContainer>
-            <MetaName>Price</MetaName>
+            <MetaName>
+              <FormattedMessage
+                id="hummingbird.Campaign.eventFee.label"
+                description="Label for Event Fee"
+                defaultMessage="Price"
+              />
+            </MetaName>
             <MetaContent>
-              {getCurrencySymbol(fee.currencyCode)}
-              {fee.amount}
+              <FormattedNumber
+                value={fee.amount}
+                currency={fee.currencyCode}
+                currencyDisplay="symbol"
+                style="currency" // eslint-disable-line react/style-prop-object
+              />
             </MetaContent>
           </MetaContainer>
         ) : null}
