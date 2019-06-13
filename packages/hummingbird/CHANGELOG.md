@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.18.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.17.1...@wingscms/hummingbird@0.18.0) (2019-06-13)
+
+
+### Features
+
+* **hummingbird:** delete labs ([#131](https://github.com/wingscms/wings/issues/131)) ([0bdb2fb](https://github.com/wingscms/wings/commit/0bdb2fb))
+
+
+
+
+
+## [0.17.1](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.17.0...@wingscms/hummingbird@0.17.1) (2019-06-13)
+
+
+### Bug Fixes
+
+* **hummingbird:** homepage template for page nodes only not campaigns ([#130](https://github.com/wingscms/wings/issues/130)) ([2ecb81c](https://github.com/wingscms/wings/commit/2ecb81c))
+
+
+
+
+
 # [0.17.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.16.2...@wingscms/hummingbird@0.17.0) (2019-06-12)
 
 

@@ -3,7 +3,7 @@
     "test": "jest --watch"
   },
   "name": "@wingscms/hummingbird",
-  "version": "0.17.0",
+  "version": "0.18.0",
   "dependencies": {
     "@wingscms/crane": "^0.8.2",
     "@wingscms/react": "^0.15.2",
