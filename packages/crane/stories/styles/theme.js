@@ -6,5 +6,5 @@ export default {
   colorDanger: '#DB3737',
   colorDisabled: '#DDDDDD',
   colorText: '#212121',
-  colorTextLight: '#ffffff',
+  colorTextDark: '#ffffff',
 };

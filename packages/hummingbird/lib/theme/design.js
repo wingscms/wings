@@ -29,13 +29,7 @@ export default ({
   // Footer
   colorFooterBackground,
   colorFooterText,
-  // Landing Section
-  colorLandingSectionTitle = '#FFFFFF',
-  colorLandingSectionTitleBackground = 'transparent',
-  colorLandingSectionSubTitle = '#FFFFFF',
-  colorLandingSectionSubTitleBackground = 'transparent',
-  colorLandingSectionBackground,
-  // Article
+  // Articles/pages
   colorChapterBackground,
   colorChapterItem,
   colorChapterItemNumber,
@@ -47,14 +41,20 @@ export default ({
   colorBlockquoteBackground,
   colorPullquote,
   colorPullquoteBackground,
+  // Landing Section
+  colorLandingSectionTitle = '#FFFFFF',
+  colorLandingSectionTitleBackground = 'transparent',
+  colorLandingSectionSubTitle = '#FFFFFF',
+  colorLandingSectionSubTitleBackground = 'transparent',
+  colorLandingSectionBackground,
   // Forms
   colorFormBackground,
   colorFormText,
   // Campaigns
-  colorCounterBackground,
-  colorCounterText,
   colorCampaignFormBackground,
   colorCampaignFormText,
+  colorCounterBackground,
+  colorCounterText,
 
   // IMAGES
   imageLogoUrl = 'https://files.wings.dev/1532472414726/wings4-2.png',
@@ -102,6 +102,8 @@ export default ({
     threshold: 30,
   }),
   colorNavigationIconDark,
+  colorNavigationLanguagePicker,
+  colorNavigationLanguagePickerHover: colorNavigationLanguagePickerHover || colorPrimary,
   // Footer
   colorFooterBackground: colorFooterBackground || colorPrimary,
   colorFooterText:
@@ -111,15 +113,7 @@ export default ({
       colors: { light: colorText, dark: colorTextDark },
       threshold: 30,
     }),
-  colorNavigationLanguagePicker,
-  colorNavigationLanguagePickerHover: colorNavigationLanguagePickerHover || colorPrimary,
-  // Landing Section
-  colorLandingSectionTitle,
-  colorLandingSectionTitleBackground,
-  colorLandingSectionSubTitle,
-  colorLandingSectionSubTitleBackground,
-  colorLandingSectionBackground: colorPrimary || colorLandingSectionBackground,
-  // Article
+  // Articles/Pages
   colorChapterBackground: colorChapterBackground || colorPrimary,
   colorChapterItem:
     colorChapterItem ||
@@ -152,6 +146,12 @@ export default ({
   colorBlockquoteBackground: colorBlockquoteBackground || colorBackground,
   colorPullquote: colorPullquote || colorPrimary,
   colorPullquoteBackground: colorPullquoteBackground || colorBackground,
+  // Landing Section
+  colorLandingSectionTitle,
+  colorLandingSectionTitleBackground,
+  colorLandingSectionSubTitle,
+  colorLandingSectionSubTitleBackground,
+  colorLandingSectionBackground: colorPrimary || colorLandingSectionBackground,
   // Forms
   colorFormBackground: colorFormBackground || colorPrimary,
   colorFormText:
@@ -162,20 +162,20 @@ export default ({
       threshold: 30,
     }),
   // Campaigns
-  colorCounterBackground: colorCounterBackground || colorBackground,
-  colorCounterText:
-    colorCounterText ||
-    getContrastColor({
-      backgroundColor: colorCounterBackground || colorBackground,
-      colors: { light: colorText, dark: colorTextDark },
-      threshold: 30,
-    }),
   colorCampaignFormBackground: colorCampaignFormBackground || colorFormBackground || colorPrimary,
   colorCampaignFormText:
     colorCampaignFormText ||
     colorFormText ||
     getContrastColor({
       backgroundColor: colorFormBackground || colorPrimary,
+      colors: { light: colorText, dark: colorTextDark },
+      threshold: 30,
+    }),
+  colorCounterBackground: colorCounterBackground || colorBackground,
+  colorCounterText:
+    colorCounterText ||
+    getContrastColor({
+      backgroundColor: colorCounterBackground || colorBackground,
       colors: { light: colorText, dark: colorTextDark },
       threshold: 30,
     }),
