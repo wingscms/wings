@@ -17,6 +17,7 @@ const WINGS_ADMIN_PATH = {
   page: '/entries',
   petition: '/petitions',
   event: '/events',
+  fundraiser: '/fundraisers',
 };
 
 const isValidSlug = slug => !!slug && /^[a-z0-9]+(?:-[a-z0-9]+)*?$/.exec(slug);
@@ -74,6 +75,12 @@ const resources = [
     field: 'events',
     template: '../../../src/templates/Campaign',
   },
+  {
+    resourceType: 'node.fundraiser',
+    prefix: '/fundraisers',
+    field: 'fundraisers',
+    template: '../../../src/templates/Campaign',
+  },
 ];
 
 module.exports = async ({ graphql, actions: { createPage } }) => {
@@ -108,7 +115,9 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
               : require.resolve(template),
           context,
         });
-        if (['petition', 'event'].indexOf(node.resourceType.split('.')[1]) < 0) return;
+        if (['petition', 'event', 'fundraiser'].indexOf(node.resourceType.split('.')[1]) < 0) {
+          return;
+        }
         createPage({
           path: `${path}/confirm`,
           component: require.resolve('../../../src/templates/CampaignConfirm'),

@@ -123,6 +123,18 @@ fragment CampaignFields on Wings_Campaign {
         }
       }
     }
+    fundraisers {
+      edges {
+        node {
+          ...NodeFields
+          ...CampaignFields
+          target {
+            amount
+            currencyCode
+          }
+        }
+      }
+    }
     currentApp {
       ... on Wings_WebApp {
         home {
