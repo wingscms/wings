@@ -61,28 +61,18 @@ export default ({
   imageLogoFooterUrl,
   imageFaviconUrl = 'https://files.wings.dev/1532472414726/wings4-2.png',
 
-  // FONTS
+  // FONTS AND TEXT
   // Used to set the name of font families if the font is manually imported.
-  customHeaderFontUrl = null,
-  customBodyFontUrl = null,
-
-  // FOOTER
-  footerTitle = null,
-  footerAddress = null,
-  footerEmail = null,
-  footerPhone = null,
-
-  dividerBlack = 'rgba(16, 22, 26, 0.15)',
-
+  fontCustomHeaderUrl = null,
+  fontCustomBodyUrl = null,
+  // Other fonts/text stuff
   fontSizeFirstLetter = '3.5em',
   fontSizeIntro = '1.333',
-
   fontWeightBody = '400',
   fontWeightIntro = '300',
   fontWeightFirstLetter = '700',
   fontWeightPullquote = '700',
   fontWeightBlockquote = '300',
-
   lineHeightIntro = '1.5',
   lineHeightFirstLetter = '0.8',
 }) => ({
@@ -195,26 +185,16 @@ export default ({
   imageLogoFooterUrl: imageLogoFooterUrl || imageLogoUrl,
   imageFaviconUrl,
 
-  // FOOTER
-  footerTitle,
-  footerAddress,
-  footerEmail,
-  footerPhone,
-
-  dividerBlack,
-
+  // FONTS AND TEXT
+  fontCustomHeaderUrl,
+  fontCustomBodyUrl,
   fontSizeFirstLetter,
   fontSizeIntro,
-
   fontWeightBody,
   fontWeightIntro,
   fontWeightFirstLetter,
   fontWeightPullquote,
   fontWeightBlockquote,
-
   lineHeightIntro,
   lineHeightFirstLetter,
-  //
-  customHeaderFontUrl,
-  customBodyFontUrl,
 });

@@ -107,7 +107,7 @@ const FormContainer = styled.div`
   width: 460px;
   min-height: 500px;
   background-color: ${({ theme }) => theme.colorCampaignFormBackground};
-  color: ${({ theme }) => theme.colorFormText};
+  color: ${({ theme }) => theme.colorCampaignFormText};
   vertical-align: top;
   border-radius: 4px;
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.05);
