@@ -9,6 +9,8 @@ import {
   CounterInfo,
   ImageStory,
   ImageInfo,
+  LoadingStory,
+  LoadingInfo,
 } from './components/core';
 import {
   BlockquoteStory,
@@ -76,7 +78,8 @@ storiesOf('Core', module)
   .addDecorator(withKnobs)
   .add('Button', withInfo(ButtonInfo)(ButtonStory))
   .add('Counter', withInfo(CounterInfo)(CounterStory))
-  .add('Image', withInfo(ImageInfo)(ImageStory));
+  .add('Image', withInfo(ImageInfo)(ImageStory))
+  .add('Loading', withInfo(LoadingInfo)(LoadingStory));
 
 const textStories = storiesOf('Text', module).addDecorator(withKnobs);
 textStories.add('Breakout', withInfo(BreakoutInfo)(BreakoutStory));

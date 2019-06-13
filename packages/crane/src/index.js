@@ -1,6 +1,7 @@
 // Form
 export { default as Button } from './components/Button';
 export { default as Counter } from './components/Counter';
+export { default as Loading } from './components/Loading';
 // export { TextInput } from './components/form';
 export { RadioInput } from './components/form';
 // export { CheckboxInput } from './components/form';

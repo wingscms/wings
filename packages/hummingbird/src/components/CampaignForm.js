@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { SchemaForm } from '@wingscms/crane';
+import styled, { withTheme } from 'styled-components';
+import { SchemaForm, Loading } from '@wingscms/crane';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import _Button from './Button';
 import wings from '../data/wings';
@@ -326,14 +326,18 @@ class CampaignForm extends Component {
 
   render() {
     const { fetching } = this.state;
+    const { theme } = this.props;
     const schema = this.getFormSchema();
     const loading = !schema || fetching;
     return loading ? (
-      <FormattedMessage
-        id="hummingbird.CampaignForm.loading.text"
-        description="Form loading message"
-        defaultMessage="loading"
-      />
+      <div>
+        <FormattedMessage
+          id="hummingbird.CampaignForm.loading.text"
+          description="Form loading message"
+          defaultMessage="loading"
+        />
+        <Loading intent="primary" theme={theme} />
+      </div>
     ) : (
       <SchemaForm
         id="campaign-form"
@@ -348,4 +352,4 @@ class CampaignForm extends Component {
   }
 }
 
-export default injectIntl(CampaignForm);
+export default injectIntl(withTheme(CampaignForm));
