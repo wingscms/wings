@@ -9,6 +9,10 @@ module.exports = `
           id
           slug
           content
+          locale {
+            id
+            name
+          }
           type {
             id
           }

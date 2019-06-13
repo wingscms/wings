@@ -9,6 +9,10 @@ module.exports = `{
           title
           intro
           description
+          locale {
+            id
+            name
+          }
           schedule {
             start
             end

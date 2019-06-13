@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.16.2...@wingscms/hummingbird@0.17.0) (2019-06-12)
+
+
+### Features
+
+* **hummingbird:** add microcopy translations and number format localizations ([#124](https://github.com/wingscms/wings/issues/124)) ([9889b1e](https://github.com/wingscms/wings/commit/9889b1e))
+
+
+
+
+
 ## [0.16.2](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.16.1...@wingscms/hummingbird@0.16.2) (2019-05-28)
 
 

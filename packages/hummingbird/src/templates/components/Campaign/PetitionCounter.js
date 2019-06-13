@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Counter } from '@wingscms/crane';
-import createFormatter from 'format-number';
+import { FormattedNumber } from 'react-intl';
 import CountUp from 'react-countup';
-
-const format = createFormatter({ integerSeparator: '.' });
 
 const Container = styled.div`
   display: block;
@@ -69,7 +67,9 @@ export default class PetitionCounter extends Component {
         {!max ? null : (
           <React.Fragment>
             <Counter intent="primary" current={current} max={max} theme={theme} />
-            <MaxText>{format(max)}</MaxText>
+            <MaxText>
+              <FormattedNumber value={max} />
+            </MaxText>
           </React.Fragment>
         )}
       </Container>

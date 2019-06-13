@@ -1,6 +1,9 @@
 {
+  "scripts": {
+    "test": "jest --watch"
+  },
   "name": "@wingscms/hummingbird",
-  "version": "0.16.2",
+  "version": "0.17.0",
   "dependencies": {
     "@wingscms/crane": "^0.8.2",
     "@wingscms/react": "^0.15.2",
@@ -8,6 +11,7 @@
     "browser-locale": "^1.0.3",
     "classnames": "^2.2.6",
     "cloudinary-react": "^1.1.0",
+    "deepmerge": "^3.2.0",
     "filter-invalid-dom-props": "^2.0.0",
     "format-number": "^3.0.0",
     "gatsby": "^2",
@@ -34,6 +38,7 @@
     "random-id": "0.0.2",
     "react-countup": "^4.1.3",
     "react-helmet": "^5.2.0",
+    "react-intl": "^2.9.0",
     "react-jsonschema-form": "^1.4.0",
     "react-reveal": "^1.2.2",
     "react-scroll-to-element": "^0.2.0",
@@ -44,5 +49,8 @@
     "styled-components": "^4.2.0",
     "typography": "^0.16.19",
     "widont": "^0.3.2"
+  },
+  "devDependencies": {
+    "babel-preset-gatsby": "^0.1.11"
   }
 }

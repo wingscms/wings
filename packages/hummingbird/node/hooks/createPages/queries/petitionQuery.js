@@ -9,6 +9,10 @@ module.exports = `
           id
           title
           slug
+          locale {
+            id
+            name
+          }
           image {
             id
             name

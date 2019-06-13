@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { SchemaForm } from '@wingscms/crane';
+import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import _Button from './Button';
 import wings from '../data/wings';
+import { patchSchema } from '../../lib/utils';
 
 const PETITION_QUERY = `
   query ($id: String!) {
@@ -65,6 +67,15 @@ const FUNDRAISER_MUTATION = `
   }
 `;
 
+const FIELDS = {
+  EMAIL: 'email',
+  FIRSTNAME: 'firstName',
+  LASTNAME: 'lastName',
+  NEWSLETTER: 'newsletter',
+  PRIVACY: 'privacyConsent',
+  TERMS: 'terms',
+};
+
 const Button = styled(_Button)`
   background-color: #000;
   color: #fff;
@@ -82,8 +93,61 @@ const Button = styled(_Button)`
   }
 `;
 
+const messages = defineMessages({
+  defaultSubmit: {
+    id: 'hummingbird.CampaignForm.submit.text',
+    description: 'Campaign form default submit button label',
+    defaultMessage: 'Submit',
+  },
+  eventSubmit: {
+    id: 'hummingbird.CampaignForm.eventSubmit.text',
+    description: 'Campaign form event submit button label',
+    defaultMessage: 'Attend',
+  },
+  fundraiserSubmit: {
+    id: 'hummingbird.CampaignForm.fundraiserSubmit.text',
+    description: 'Campaign form fundraiser submit button label',
+    defaultMessage: 'Donate',
+  },
+  petitionSubmit: {
+    id: 'hummingbird.CampaignForm.petitionSubmit.text',
+    description: 'Campaign form petition submit button label',
+    defaultMessage: 'Sign',
+  },
+  [FIELDS.EMAIL]: {
+    id: 'hummingbird.CampaignForm.emailField.label',
+    description: 'Campaign form email field label',
+    defaultMessage: 'Email address',
+  },
+  [FIELDS.FIRSTNAME]: {
+    id: 'hummingbird.CampaignForm.firstNameField.label',
+    description: 'Campaign form first name field label',
+    defaultMessage: 'First name',
+  },
+  [FIELDS.LASTNAME]: {
+    id: 'hummingbird.CampaignForm.lastNameField.label',
+    description: 'Campaign form last name field label',
+    defaultMessage: 'Last name',
+  },
+  [FIELDS.NEWSLETTER]: {
+    id: 'hummingbird.CampaignForm.newsletterField.label',
+    description: 'Campaign form newsletter checkbox label',
+    defaultMessage: 'Stay up to date',
+  },
+  [FIELDS.PRIVACY]: {
+    id: 'hummingbird.CampaignForm.privacyConsentField.label',
+    description: 'Campaign form privacy consent checkbox label',
+    defaultMessage: 'Agree to our privacy policy',
+  },
+  [FIELDS.TERMS]: {
+    id: 'hummingbird.CampaignForm.termsField.label',
+    description: 'Campaign form terms checkbox label',
+    defaultMessage: 'Agree to our terms & conditions',
+  },
+});
+
 // TODO: move to @wingscms/react (needs a provider for Wings client first)
-export default class CampaignForm extends Component {
+class CampaignForm extends Component {
   static propTypes = {
     id: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
@@ -153,6 +217,15 @@ export default class CampaignForm extends Component {
     return schema ? this.processSchema(schema) : schema;
   }
 
+  localizeSchema(schema) {
+    const { intl } = this.props;
+    const fieldDefs = Object.values(FIELDS).reduce(
+      (defs, field) => ({ ...defs, [field]: { title: intl.formatMessage(messages[field]) } }),
+      {},
+    );
+    return patchSchema(schema, fieldDefs);
+  }
+
   processSchema = (s) => {
     const { disabledFields } = this.props;
     const schema = { ...s, properties: { ...s.properties } };
@@ -160,7 +233,8 @@ export default class CampaignForm extends Component {
       delete schema.properties[field];
     });
     schema.required = schema.required.filter(f => disabledFields.indexOf(f) < 0);
-    return this.props.processSchema(schema);
+
+    return this.props.processSchema(this.localizeSchema(schema));
   };
 
   processSubmission = (sub) => {
@@ -173,16 +247,17 @@ export default class CampaignForm extends Component {
   };
 
   getSubmitText() {
-    if (this.props.submitText) return this.props.submitText;
-    switch (this.props.type) {
+    const { intl, type, submitText = '' } = this.props;
+    if (submitText) return submitText;
+    switch (type) {
       case 'event':
-        return 'Attend';
+        return intl.formatMessage(messages.eventSubmit);
       case 'petition':
-        return 'Sign';
+        return intl.formatMessage(messages.petitionSubmit);
       case 'fundraiser':
-        return 'Donate';
+        return intl.formatMessage(messages.fundraiserSubmit);
       default:
-        return 'Submit';
+        return intl.formatMessage(messages.defaultSubmit);
     }
   }
 
@@ -254,7 +329,11 @@ export default class CampaignForm extends Component {
     const schema = this.getFormSchema();
     const loading = !schema || fetching;
     return loading ? (
-      'loading'
+      <FormattedMessage
+        id="hummingbird.CampaignForm.loading.text"
+        description="Form loading message"
+        defaultMessage="loading"
+      />
     ) : (
       <SchemaForm
         id="campaign-form"
@@ -268,3 +347,5 @@ export default class CampaignForm extends Component {
     );
   }
 }
+
+export default injectIntl(CampaignForm);
