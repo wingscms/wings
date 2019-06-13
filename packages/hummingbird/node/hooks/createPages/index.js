@@ -110,7 +110,7 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
         createPage({
           path,
           component:
-            isHome && resourceType === 'node.entry.page'
+            isHome && node.resourceType === 'node.entry.page'
               ? require.resolve('../../../src/templates/PageHome')
               : require.resolve(template),
           context,
