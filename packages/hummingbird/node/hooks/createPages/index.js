@@ -54,43 +54,41 @@ const resources = [
   {
     resourceType: 'node.entry.article',
     prefix: '/articles',
-    query: articleQuery,
+    field: 'articles',
     template: '../../../src/templates/Article.js',
   },
   {
     resourceType: 'node.entry.page',
-    query: pageQuery,
+    field: 'pages',
     template: '../../../src/templates/Page',
   },
   {
     resourceType: 'node.petition',
     prefix: '/petitions',
-    query: petitionQuery,
+    field: 'petitions',
     template: '../../../src/templates/Campaign',
   },
   {
     resourceType: 'node.event',
     prefix: '/events',
-    query: eventQuery,
+    field: 'events',
     template: '../../../src/templates/Campaign',
   },
 ];
 
 module.exports = async ({ graphql, actions: { createPage } }) => {
   // QUERIES
-  const siteMetaRes = await graphql(siteMetaQuery);
-  const { siteMetadata: siteMeta } =
-    siteMetaRes.data && siteMetaRes.data.site && siteMetaRes.data.site;
-  const appRes = await graphql(appQuery);
-  const { home: { node: homeNode = {} } = {} } =
-    appRes.data && appRes.data.wings && appRes.data.wings.currentApp;
-  const { id: homeNodeId } = homeNode || {};
+
+  const {
+    data: { wings: { currentApp } = {}, wings = {}, site: { siteMetadata = {} } = {} } = {},
+  } = await graphql(query);
+
+  const homeNodeId =
+    (currentApp && currentApp.home && currentApp.home.node && currentApp.home.node.id) || null;
+
   await Promise.all(
-    resources.map(async ({ resourceType, prefix = '', query, template }) => {
-      const res = await graphql(query);
-      const edges =
-        (res.data && res.data.wings && res.data.wings.nodes && res.data.wings.nodes.edges) || [];
-      const nodes = processNodes(edges.map(({ node }) => node));
+    resources.map(async ({ resourceType, prefix = '', field, template }) => {
+      const nodes = processNodes(wings[field].edges.map(({ node }) => node));
       console.log(`[hummingbird] found ${nodes.length} of ${resourceType}`);
 
       // GENERATE ARTICLES
@@ -99,8 +97,8 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
         const path = isHome ? '/' : prefix + node.path;
         const context = {
           node,
-          siteMeta,
-          shareUrls: makeShareUrls(node.platforms, siteMeta.siteUrl + path),
+          siteMeta: siteMetadata,
+          shareUrls: makeShareUrls(node.platforms, siteMetadata.siteUrl + path),
         };
         createPage({
           path,
