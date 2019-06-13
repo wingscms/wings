@@ -104,9 +104,10 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
         };
         createPage({
           path,
-          component: isHome
-            ? require.resolve('../../../src/templates/PageHome')
-            : require.resolve(template),
+          component:
+            isHome && node.resourceType === 'node.entry.page'
+              ? require.resolve('../../../src/templates/PageHome')
+              : require.resolve(template),
           context,
         });
         if (['petition', 'event'].indexOf(node.resourceType.split('.')[1]) < 0) return;
