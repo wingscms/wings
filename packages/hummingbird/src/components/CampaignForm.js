@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { SchemaForm } from '@wingscms/crane';
+import { SchemaForm, Amount } from '@wingscms/crane';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import _Button from './Button';
 import wings from '../data/wings';
@@ -56,7 +56,7 @@ const FUNDRAISER_QUERY = `
 `;
 
 const FUNDRAISER_MUTATION = `
-  mutation Donate($id: String, $input: DonationInput!) {
+  mutation Donate($id: String, $input: DonateInput!) {
     donation: donate(id: $id, input: $input) {
       id
       order {
@@ -146,6 +146,11 @@ const messages = defineMessages({
   },
 });
 
+const getUrl = path =>
+  (typeof window !== 'undefined' &&
+    [window.location.origin, window.location.pathname.replace(/\/$/, ''), path].join('')) ||
+  '';
+
 // TODO: move to @wingscms/react (needs a provider for Wings client first)
 class CampaignForm extends Component {
   static propTypes = {
@@ -171,6 +176,7 @@ class CampaignForm extends Component {
     campaign: null,
     fetching: false,
     formSchema: null,
+    amount: 500,
   };
 
   componentDidMount() {
@@ -296,14 +302,16 @@ class CampaignForm extends Component {
         id: this.props.id,
         input: {
           data: JSON.stringify(formData),
-          ...(this.props.type === 'donation' && {
-            amount: amount * 100 || 1000,
+          ...(this.props.type === 'fundraiser' && {
+            amount,
           }),
           redirectUrl: this.props.redirectUrl, // default to current URL?
         },
       });
       if (res.donation && res.donation.id) {
         window.location.assign(res.donation.order.paymentUrl);
+      } else {
+        window.location.assign(getUrl('/confirm'));
       }
     } catch (err) {
       console.error(err);
@@ -325,7 +333,7 @@ class CampaignForm extends Component {
   };
 
   render() {
-    const { fetching } = this.state;
+    const { fetching, amount } = this.state;
     const schema = this.getFormSchema();
     const loading = !schema || fetching;
     return loading ? (
@@ -335,15 +343,33 @@ class CampaignForm extends Component {
         defaultMessage="loading"
       />
     ) : (
-      <SchemaForm
-        id="campaign-form"
-        autoValidate={false}
-        {...this.props.schemaFormProps}
-        schema={schema}
-        onSubmit={this.handleSubmit.bind(this)}
-      >
-        {this.props.children || <Button>{this.getSubmitText()}</Button>}
-      </SchemaForm>
+      <React.Fragment>
+        {this.props.type === 'fundraiser' ? (
+          <div style={{ marginBottom: '20px' }}>
+            <Amount
+              label="Amount"
+              required
+              id="amount"
+              value={amount / 100}
+              amounts={[5, 10, 20]}
+              onChange={(v) => {
+                this.setState({ amount: v * 100 });
+              }}
+            />
+          </div>
+        ) : null}
+        <SchemaForm
+          id="campaign-form"
+          autoValidate={false}
+          {...this.props.schemaFormProps}
+          schema={schema}
+          formData={this.state.formData}
+          onChange={({ formData }) => this.setState({ formData })}
+          onSubmit={this.handleSubmit.bind(this)}
+        >
+          {this.props.children || <Button>{this.getSubmitText()}</Button>}
+        </SchemaForm>
+      </React.Fragment>
     );
   }
 }
