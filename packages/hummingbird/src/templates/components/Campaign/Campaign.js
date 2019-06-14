@@ -83,13 +83,13 @@ const MainContainerOuter = styled(Container)`
   background-color: transparent;
   margin-top: -300px;
   overflow: auto;
-  margin-bottom: 40px;
   @media screen and (max-width: 1000px) {
     margin-bottom: 0;
   }
 `;
 
 const MainContainerInner = styled(Container)`
+  padding-bottom: 40px;
   background-color: transparent;
   max-width: 1160px;
   height: auto;
