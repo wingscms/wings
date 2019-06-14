@@ -78,20 +78,20 @@ export default class CampaignConfirmed extends Component {
           <FormattedMessage
             id="hummingbird.CampaignConfirmed.share.title"
             description="Title above campaign share buttons."
-            defaultMessage="Please share this petition with your friends and colleagues:"
+            defaultMessage="Please share this campaign with your friends and colleagues:"
             tagName={ShareTitle}
           />
           <ShareButton href={shareUrls.facebook} target="_blank" rel="noopener noreferrer">
-            <img src={facebookLogo} alt="Deel op Facebook" />
+            <img src={facebookLogo} alt="Share on Facebook" />
           </ShareButton>
           <ShareButton href={shareUrls.twitter} target="_blank" rel="noopener noreferrer">
-            <img src={twitterLogo} alt="Deel op Twitter" />
+            <img src={twitterLogo} alt="Share on Twitter" />
           </ShareButton>
           <ShareButton href={shareUrls.whatsapp} target="_blank" rel="noopener noreferrer">
-            <img src={whatsappLogo} alt="Deel op WhatsApp" />
+            <img src={whatsappLogo} alt="Share via WhatsApp" />
           </ShareButton>
           <ShareButton href={shareUrls.email}>
-            <img src={emailIcon} alt="Deel via e-mail" />
+            <img src={emailIcon} alt="Share via email" />
           </ShareButton>
         </ShareContainer>
       </Campaign.Content>
