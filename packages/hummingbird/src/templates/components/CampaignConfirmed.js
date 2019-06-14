@@ -58,7 +58,7 @@ const ShareTitle = styled.h2`
 
 const FundraiserText = ({ status }) => {
   switch (status) {
-    case 'success':
+    case 'complete':
       return (
         <React.Fragment>
           <FormattedMessage
