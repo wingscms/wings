@@ -51,7 +51,6 @@ export default (props) => {
     ...defaultWidgets,
     ...widgets,
   };
-
   return (
     <StyledForm
       ErrorList={() => null}

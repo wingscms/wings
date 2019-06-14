@@ -235,9 +235,6 @@ class Campaign extends Component {
                 <CampaignForm
                   type={resourceType.split('.')[1]}
                   id={node.id}
-                  onSubmit={() => {
-                    window.location.assign(getUrl('/confirm'));
-                  }}
                   redirectUrl={getUrl('/confirmed')}
                   {...formProps}
                   onLoad={handleCampaignLoad}
