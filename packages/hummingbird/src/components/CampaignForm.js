@@ -338,13 +338,14 @@ class CampaignForm extends Component {
     const schema = this.getFormSchema();
     const loading = !schema || fetching;
     return loading ? (
-      <div>
+      <div style={{ textAlign: 'center' }}>
         <FormattedMessage
           id="hummingbird.CampaignForm.loading.text"
           description="Form loading message"
           defaultMessage="loading"
         />
-        <Loading intent="primary" theme={theme} />
+        ...
+        <Loading theme={theme} />
       </div>
     ) : (
       <React.Fragment>
