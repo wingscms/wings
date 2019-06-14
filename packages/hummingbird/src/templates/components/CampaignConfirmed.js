@@ -62,13 +62,13 @@ const FundraiserText = ({ status }) => {
       return (
         <React.Fragment>
           <FormattedMessage
-            id="hummingbird.CampaignConfirmed.main.fundraiserSuccessTitle"
+            id="hummingbird.CampaignConfirmed.fundraiserMain.successTitle"
             description="Title of fundraiser payment success."
             defaultMessage="Hurray!"
             tagName={Campaign.Title}
           />
           <FormattedMessage
-            id="hummingbird.CampaignConfirmed.main.fundraiserSuccessText"
+            id="hummingbird.CampaignConfirmed.fundraiserMain.successText"
             description="Text of fundraiser payment success."
             defaultMessage="Thank you. The payment was successful"
             tagName={Text}
@@ -79,13 +79,13 @@ const FundraiserText = ({ status }) => {
       return (
         <React.Fragment>
           <FormattedMessage
-            id="hummingbird.CampaignConfirmed.main.fundraiserPendingTitle"
+            id="hummingbird.CampaignConfirmed.fundraiserMain.pendingTitle"
             description="Title of fundraiser payment pending."
             defaultMessage="Thanks for your contribution"
             tagName={Campaign.Title}
           />
           <FormattedMessage
-            id="hummingbird.CampaignConfirmed.main.fundraiserPendingText"
+            id="hummingbird.CampaignConfirmed.fundraiserMain.pendingText"
             description="Text of fundraiser payment pending."
             defaultMessage="Thanks for your contribution. Your payment is still processing. Please check with your bank to verify your payment."
             tagName={Text}
@@ -96,15 +96,15 @@ const FundraiserText = ({ status }) => {
       return (
         <React.Fragment>
           <FormattedMessage
-            id="hummingbird.CampaignConfirmed.main.fundraiserFailedTitle"
+            id="hummingbird.CampaignConfirmed.fundraiserMain.failedTitle"
             description="Title of fundraiser payment failure."
             defaultMessage="Oh no!"
             tagName={Campaign.Title}
           />
           <FormattedMessage
-            id="hummingbird.CampaignConfirmed.main.fundraiserFailedText"
+            id="hummingbird.CampaignConfirmed.fundraiserMain.failedText"
             description="Text of fundraiser payment failure."
-            defaultMessage="Thanks to you for your interest. It seems like something went wrong with the payment. Please check with your bank and try again."
+            defaultMessage="Thanks for your interest. It seems like something went wrong with the payment. Please check with your bank and try again."
             tagName={Text}
           />
         </React.Fragment>
