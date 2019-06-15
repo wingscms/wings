@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.20.1](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.20.0...@wingscms/hummingbird@0.20.1) (2019-06-14)
+
+
+### Bug Fixes
+
+* **hummingbird:** correct fundraiser status ([#137](https://github.com/wingscms/wings/issues/137)) ([4e8dd42](https://github.com/wingscms/wings/commit/4e8dd42))
+
+
+
+
+
+# [0.20.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.19.0...@wingscms/hummingbird@0.20.0) (2019-06-14)
+
+
+### Features
+
+* **hummingbird:** fundraiser payment confirmation page texts ([#136](https://github.com/wingscms/wings/issues/136)) ([1b3f9a3](https://github.com/wingscms/wings/commit/1b3f9a3))
+
+
+
+
+
 # [0.19.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.18.0...@wingscms/hummingbird@0.19.0) (2019-06-13)
 
 
