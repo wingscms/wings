@@ -12,6 +12,7 @@ import {
   CollectionCard,
   TestimonialCard,
   QACard,
+  CampaignCard,
 } from '../../cards';
 
 const provideTheme = theme => (card) => {
@@ -37,6 +38,7 @@ const CARDS = [
   CollectionCard,
   TestimonialCard,
   QACard,
+  CampaignCard,
 ];
 
 const Content = withTheme(({ theme, ...props }) => (

@@ -81,7 +81,7 @@ const CampaignContent = styled.div`
 
 const MainContainerOuter = styled(Container)`
   background-color: transparent;
-  margin-top: -300px;
+  margin-top: ${({ campaignCard }) => (campaignCard ? '0' : '-300px')};
   overflow: auto;
   @media screen and (max-width: 1000px) {
     margin-bottom: 0;
@@ -179,6 +179,7 @@ class Campaign extends Component {
       },
       formProps = {},
       theme = {},
+      campaignCard = false,
     } = props;
     const [signatureCount, setSignatureCount] = useState(0);
     const [signatureGoal, setSignatureGoal] = useState(0);
@@ -195,7 +196,7 @@ class Campaign extends Component {
 
     return (
       <React.Fragment>
-        <MainContainerOuter>
+        <MainContainerOuter campaignCard={campaignCard}>
           <MainContainerInner>
             <Campaign.Proposition>
               {title ? <Title>{title}</Title> : null}

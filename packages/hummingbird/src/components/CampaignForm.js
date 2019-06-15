@@ -356,7 +356,7 @@ class CampaignForm extends Component {
               required
               id="amount"
               value={amount / 100}
-              amounts={[5, 10, 25, 50]}
+              amounts={[5, 10, 25]}
               onChange={(v) => {
                 this.setState({ amount: v * 100 });
               }}
