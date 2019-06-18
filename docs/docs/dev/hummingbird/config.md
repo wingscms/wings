@@ -1,12 +1,12 @@
 ---
-title: Themes
+title: Configuration
 ---
 
 ## Colors
 
 ### Base Colors
 
-`colorPrimary`: Default: <span style="background-color: #EF5B58">#EF5B58</span>
+`colorPrimary`: Default: <span style="background-color: #417de8">#417de8</span>
 
 `colorSecondary`: Default: <span style="background-color: #8F3634; color: #FFFFFF">#8F3634</span>
 
@@ -28,13 +28,13 @@ title: Themes
 
 `colorTextDisabled`: Default: <span style="background-color: #555555">#555555</span>
 
-`colorLink`: Default: <span style="background-color: #EF5B58">colorPrimary</span>
+`colorLink`: Default: <span style="background-color: #417de8">colorPrimary</span>
 
-`colorLinkDark`: Default: <span style="background-color: #EF5B58">colorLink</span>
+`colorLinkDark`: Default: <span style="background-color: #417de8">colorLink</span>
 
 ### Navigation
 
-`colorNavigationBackground`: Default: <span style="background-color: #EF5B58">colorPrimary</span>
+`colorNavigationBackground`: Default: <span style="background-color: #417de8">colorPrimary</span>
 
 `colorNavigationMenuBackground`: Default: <span style="background-color: #FFFFFF">colorBackground</span>
 
@@ -44,17 +44,17 @@ title: Themes
 
 `colorNavigationLanguagePicker`: Default: <span style="background-color: #FFFFFF">#FFFFFF</span>
 
-`colorNavigationLanguagePickerHover`: Default: <span style="background-color: #EF5B58">colorPrimary</span>
+`colorNavigationLanguagePickerHover`: Default: <span style="background-color: #417de8">colorPrimary</span>
 
 ### Footer
 
-`colorFooterBackground`: Default: <span style="background-color: #EF5B58">colorPrimary</span>
+`colorFooterBackground`: Default: <span style="background-color: #417de8">colorPrimary</span>
 
 `colorFooterText`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
 
 ### Articles/Pages
 
-`colorChapterBackground`: Default: <span style="background-color: #EF5B58">colorPrimary</span>
+`colorChapterBackground`: Default: <span style="background-color: #417de8">colorPrimary</span>
 
 `colorChapterItem`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
 
@@ -62,7 +62,7 @@ title: Themes
 
 `colorChapterIntro`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
 
-`colorChapterSelectBackground`: Default: <span style="background-color: #EF5B58">colorChapterBackground</span>
+`colorChapterSelectBackground`: Default: <span style="background-color: #417de8">colorChapterBackground</span>
 
 `colorChapterSelectItem`: Default: colorChapterItem
 
@@ -72,7 +72,7 @@ title: Themes
 
 `colorBlockquoteBackground`: Default: <span style="background-color: #ffffff">colorBackground</span>
 
-`colorPullquote`: Default: <span style="background-color: #EF5B58">colorPrimary</span>
+`colorPullquote`: Default: <span style="background-color: #417de8">colorPrimary</span>
 
 `colorPullquoteBackground`: Default: <span style="background-color: #ffffff">colorBackground</span>
 
@@ -86,21 +86,21 @@ title: Themes
 
 `colorLandingSectionSubTitleBackground`: Default: <span style="background-color: transparent">transparent</span>
 
-`colorLandingSectionBackground`: Default: <span style="background-color: #EF5B58">colorPrimary</span>
+`colorLandingSectionBackground`: Default: <span style="background-color: #417de8">colorPrimary</span>
 
 ### Forms
 
-`colorFormBackground`: Default: <span style="background-color: #EF5B58">colorPrimary</span>
+`colorFormBackground`: Default: <span style="background-color: #417de8">colorPrimary</span>
 
 `colorFormText`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
 
 ### Campaigns
 
-`colorCampaignFormBackground`: Default: <span style="background-color: #EF5B58">colorFormBackground</span>
+`colorCampaignFormBackground`: Default: <span style="background-color: #417de8">colorFormBackground</span>
 
 `colorCampaignFormText`: Default: colorFormText
 
-`colorCounterBackground`: Default: <span style="background-color: #EF5B58">colorPrimary</span>
+`colorCounterBackground`: Default: <span style="background-color: #417de8">colorPrimary</span>
 
 `colorCounterText`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
 

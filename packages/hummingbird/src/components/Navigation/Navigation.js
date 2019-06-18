@@ -25,6 +25,8 @@ import ChaptersToggle from './ChaptersToggle';
 
 import Logo from './Logo';
 
+const _MenuItem = ({ theme }) => <MenuItem backgroundColor={theme.colorNavigationBackground} />;
+
 const Wrap = styled.div`
   background: ${({ theme }) => theme.colorNavigationBackground};
   width: 100%;
@@ -163,8 +165,8 @@ class Navigation extends Component {
                 </div>
               )}
               items={[]}
-              menuItemComp={MenuItem}
-              InternalLink={MenuItem}
+              menuItemComp={_MenuItem}
+              InternalLink={_MenuItem}
               left
               className="chapters"
             />
@@ -218,7 +220,7 @@ class Navigation extends Component {
           {items ? (
             <SlideMenu
               items={items}
-              menuItemComp={MenuItem}
+              menuItemComp={_MenuItem}
               InternalLink={Link}
               backgroundColor={theme.colorNavigationMenuBackground}
             />

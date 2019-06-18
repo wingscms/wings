@@ -32,7 +32,7 @@ const getSize = ({ size }) => {
 
 const buttonStyles = ({ disabled, intent, size, theme, type }) => {
   const colors = { dark: theme.colorTextDark, light: theme.colorText };
-  const color = getIntentColor({ intent, theme });
+  const color = getIntentColor({ intent, theme, defaultColor: '#dddddd' });
   const typeCSS = getType({ color, type });
   const sizeCSS = getSize({ size });
   const disabledCSS = !disabled

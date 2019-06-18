@@ -7,6 +7,6 @@
     "Publishing": ["dev/publishing/editor"],
     "API": ["dev/api/authentication"],
     "Crane": ["dev/crane/utils"],
-    "Hummingbird": ["dev/hummingbird/getting-started", "dev/hummingbird/themes", "dev/hummingbird/shadowing", "dev/hummingbird/deployment"]
+    "Hummingbird": ["dev/hummingbird/getting-started", "dev/hummingbird/config", "dev/hummingbird/shadowing", "dev/hummingbird/deployment"]
   }
 }

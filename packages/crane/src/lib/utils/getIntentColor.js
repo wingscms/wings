@@ -1,21 +1,16 @@
-export default ({ intent, theme }) => {
-  let color;
+export default ({ intent, theme, defaultColor = '#dddddd' }) => {
   switch (intent) {
     case 'success':
-      color = theme.colorSuccess;
-      break;
+      return theme.colorSuccess;
     case 'warning':
-      color = theme.colorWarning;
-      break;
+      return theme.colorWarning;
     case 'danger':
-      color = theme.colorDanger;
-      break;
+      return theme.colorDanger;
+    case 'secondary':
+      return theme.colorSecondary;
     case 'primary':
-      color = theme.colorPrimary;
-      break;
-    case 'none':
+      return theme.colorPrimary;
     default:
-      color = theme.colorSecondary;
+      return defaultColor;
   }
-  return color;
 };

@@ -4,7 +4,7 @@ import { getContrastColor } from '@wingscms/crane';
 export default ({
   // COLORS
   // Base
-  colorPrimary = '#EF5B58',
+  colorPrimary = '#417de8',
   colorSecondary = '#8F3634',
   colorSuccess = '#0F9960',
   colorWarning = '#F29D49',
