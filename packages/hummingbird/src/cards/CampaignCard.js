@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled, { withTheme } from 'styled-components';
 import { createCard } from '@wingscms/react';
-import { Campaign } from '@wingscms/hummingbird';
+import CampaignMain from '../components/CampaignMain';
 
 import wide from '../styles/wide';
 
@@ -13,10 +13,14 @@ const Container = styled.div`
 
 class CampaignCardView extends Component {
   render() {
-    const { campaign } = this.props;
+    const { id, resourceType } = this.props;
+    if (!id || !resourceType) {
+      console.warn('[hummingbird] CampaignCard does not reference an existing campaign');
+      return null;
+    }
     return (
       <Container>
-        <Campaign.Main pageContext={{ ...campaign }} campaignCard {...this.props} />
+        <CampaignMain id={id} resourceType={resourceType} {...this.props} campaignCard />
       </Container>
     );
   }
