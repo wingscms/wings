@@ -5,7 +5,7 @@ export default ({
   // COLORS
   // Base
   colorPrimary = '#417de8',
-  colorSecondary = '#8F3634',
+  colorSecondary = '#274b8b',
   colorSuccess = '#0F9960',
   colorWarning = '#F29D49',
   colorDanger = '#DB3737',
