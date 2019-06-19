@@ -63,6 +63,7 @@ fragment NodeFields on Wings_Node {
 fragment CampaignFields on Wings_Campaign {
   intro
   description
+  submissionSchema
 }
 
 {

@@ -1,14 +1,10 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import styled, { withTheme } from 'styled-components';
-import { FormattedMessage } from 'react-intl';
-import Content from '../../../components/Content';
-import CampaignForm from '../../../components/CampaignForm';
+
+import CampaignMain from '../../../components/Campaign';
 import Container from '../../../components/Container';
-import PetitionCounter from './PetitionCounter';
-import EventDetails from './EventDetails';
 import LayoutDefault from '../../../components/LayoutDefault';
 import Navigation from '../../../components/Navigation';
-import Proposition from './Proposition';
 
 const BackgroundContainer = styled(Container)`
   background-image: url(${props => props.backgroundImage});
@@ -79,76 +75,7 @@ const CampaignContent = styled.div`
   }
 `;
 
-const MainContainerOuter = styled(Container)`
-  background-color: transparent;
-  margin-top: -300px;
-  overflow: auto;
-  @media screen and (max-width: 1000px) {
-    margin-bottom: 0;
-  }
-`;
-
-const MainContainerInner = styled(Container)`
-  padding-bottom: 40px;
-  background-color: transparent;
-  max-width: 1160px;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  margin: 0 auto;
-  @media screen and (max-width: 1000px) {
-    flex-direction: column;
-    padding: 10px;
-  }
-`;
-
-const FormContainer = styled.div`
-  display: inline-block;
-  width: 460px;
-  min-height: 500px;
-  background-color: ${({ theme }) => theme.campaignFormBackgroundColor};
-  color: ${({ theme }) => theme.campaignFormTextColor};
-  vertical-align: top;
-  border-radius: 4px;
-  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.05);
-  align-self: flex-start;
-  @media screen and (max-width: 1000px) {
-    width: 100%;
-  }
-`;
-
-const FormContainerInner = styled.div`
-  padding: 40px;
-  display: block;
-  @media screen and (max-width: 1000px) {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-`;
-
-const Title = styled.h1`
-  font-size: 3em;
-  @media screen and (max-width: 800px) {
-    font-size: 2em;
-  }
-`;
-
-const Intro = styled.p`
-  font-size: 1.2em;
-`;
-const CounterContainer = styled(FormContainerInner)`
-  padding: 20px 40px;
-  background-color: ${({ theme }) => theme.counterBackgroundColor};
-  color: ${({ theme }) => theme.counterTextColor};
-  border-radius: 4px 4px 0 0;
-  @media screen and (max-width: 1000px) {
-    max-width: 100%;
-  }
-`;
-
 class Campaign extends Component {
-  static Proposition = Proposition;
   static Navigation = ({ pageContext: { shareUrls, node = {} } = {} }) => (
     <Navigation shareUrls={shareUrls} items={node.menu && node.menu.items} />
   );
@@ -158,13 +85,6 @@ class Campaign extends Component {
     </BackgroundContainerTop>
   );
 
-  static Title = styled.h1`
-    font-size: 2em;
-    @media screen and (max-width: 800px) {
-      font-size: 2em;
-    }
-  `;
-
   static Content = ({ pageContext: { node }, children }) => (
     <CampaignContentWrapper backgroundImage={node && node.image && node.image.url}>
       <CampaignContent>{children}</CampaignContent>
@@ -173,96 +93,9 @@ class Campaign extends Component {
 
   static Main = (props) => {
     const {
-      pageContext: {
-        node: { resourceType, title, intro },
-        node,
-      },
-      formProps = {},
-      theme = {},
+      pageContext: { node },
     } = props;
-    const [signatureCount, setSignatureCount] = useState(0);
-    const [signatureGoal, setSignatureGoal] = useState(0);
-    const handleCampaignLoad = (campaign) => {
-      if (!(resourceType === 'node.petition')) return;
-      setSignatureCount(campaign.signatureCount);
-      setSignatureGoal(campaign.signatureGoal);
-      if (formProps.onLoad) formProps.onLoad(campaign);
-    };
-    const getUrl = path =>
-      (typeof window !== 'undefined' &&
-        [window.location.origin, window.location.pathname.replace(/\/$/, ''), path].join('')) ||
-      '';
-
-    return (
-      <React.Fragment>
-        <MainContainerOuter>
-          <MainContainerInner>
-            <Campaign.Proposition>
-              {title ? <Title>{title}</Title> : null}
-              {intro ? <Intro fullWidth>{intro}</Intro> : null}
-              <Content
-                content={node.description}
-                className="mobiledoc-content"
-                id="campaign-content"
-              />
-            </Campaign.Proposition>
-            <FormContainer id="campaign-form-container">
-              {resourceType === 'node.petition' && (
-                <CounterContainer>
-                  <FormattedMessage
-                    id="hummingbird.Campaign.counter.message"
-                    description="Description for petition counter component"
-                    defaultMessage="{signatureCount, plural,
-                      one {person has}
-                      other {people have}
-                  } signed this petition"
-                    values={{
-                      signatureCount,
-                    }}
-                  >
-                    {txt => (
-                      <PetitionCounter
-                        current={signatureCount}
-                        max={signatureGoal}
-                        descriptionText={txt}
-                        theme={theme}
-                      />
-                    )}
-                  </FormattedMessage>
-                </CounterContainer>
-              )}
-              <FormContainerInner>
-                <CampaignForm
-                  type={resourceType.split('.')[1]}
-                  id={node.id}
-                  redirectUrl={getUrl('/confirmed')}
-                  {...formProps}
-                  onLoad={handleCampaignLoad}
-                />
-              </FormContainerInner>
-            </FormContainer>
-          </MainContainerInner>
-        </MainContainerOuter>
-        {resourceType === 'node.event' && (
-          <Campaign.Title style={{ marginBottom: '40px' }} {...props}>
-            <EventDetails
-              title={
-                <Campaign.Title>
-                  <FormattedMessage
-                    id="hummingbird.Campaign.eventInfo.title"
-                    description="Title for Event metadata"
-                    defaultMessage="Info"
-                  />
-                </Campaign.Title>
-              }
-              schedule={node.schedule}
-              fee={node.fee}
-              location={node.location}
-            />
-          </Campaign.Title>
-        )}
-      </React.Fragment>
-    );
+    return <CampaignMain id={node.id} resourceType={node.resourceType} node={node} {...props} />;
   };
 
   static defaultProps = {
