@@ -8,7 +8,7 @@ title: Configuration
 
 `colorPrimary`: Default: <span style="background-color: #417de8">#417de8</span>
 
-`colorSecondary`: Default: <span style="background-color: #8F3634; color: #FFFFFF">#8F3634</span>
+`colorSecondary`: Default: <span style="background-color: #274b8b; color: #FFFFFF">#274b8b</span>
 
 `colorSuccess`: Default: <span style="background-color: #0F9960">#0F9960</span>
 
@@ -58,7 +58,7 @@ title: Configuration
 
 `colorChapterItem`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
 
-`colorChapterItemNumber`: Default: <span style="background-color: #8F3634; color: #FFFFFF">colorSecondary</span>
+`colorChapterItemNumber`: Default: <span style="background-color: #274b8b; color: #FFFFFF">colorSecondary</span>
 
 `colorChapterIntro`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
 
