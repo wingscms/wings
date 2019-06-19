@@ -25,7 +25,9 @@ import ChaptersToggle from './ChaptersToggle';
 
 import Logo from './Logo';
 
-const _MenuItem = ({ theme }) => <MenuItem backgroundColor={theme.navigationBackgroundColor} />;
+const _MenuItem = withTheme(({ theme }) => (
+  <MenuItem backgroundColor={theme.navigationBackgroundColor} />
+));
 
 const Wrap = styled.div`
   background: ${({ theme }) => theme.navigationBackgroundColor};
