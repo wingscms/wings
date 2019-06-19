@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { Facebook, Globe, Instagram, Linkedin, Twitter } from '../img/svg/social';
 
 const Title = styled.h3`
-  color: ${({ theme }) => theme.headingColor};
+  color: ${({ theme }) => theme.textColor};
   font-size: 40px;
   line-height: 42px;
   font-weight: bold;
@@ -19,7 +19,7 @@ const Title = styled.h3`
 const OrganisationContainer = styled.div`
   display: block;
   padding: 20px;
-  background-color: white;
+  background-color: ${({ theme }) => theme.backgroundColorHighlight};
   position: relative;
   margin-bottom: 30px;
   height: auto;
@@ -67,7 +67,7 @@ const OrganisationDescription = styled.p`
 const PersonContainer = styled.div`
   display: block;
   padding: 20px;
-  background-color: white;
+  background-color: ${({ theme }) => theme.backgroundColorHighlight};
   position: relative;
   margin-bottom: 30px;
   height: auto;

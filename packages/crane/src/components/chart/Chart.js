@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ChartJS from 'chart.js';
-import randomString from './../../util/randomString';
+import randomString from '../../lib/utils/randomString';
 
 export default class Chart extends Component {
   constructor(props) {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { TextInput, CheckboxInput } from '../form';
-import { insertLink } from '../../util';
+import { insertLink } from '../../lib/utils';
 
 export default class SignupForm extends Component {
   static propTypes = {

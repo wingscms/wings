@@ -1,7 +1,17 @@
 import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs/react';
 import { withInfo } from '@storybook/addon-info';
-import { CounterStory, CounterInfo, ExpandableStory, ExpandableInfo } from './atoms';
+import { ExpandableStory, ExpandableInfo } from './components/atoms';
+import {
+  ButtonStory,
+  ButtonInfo,
+  CounterStory,
+  CounterInfo,
+  ImageStory,
+  ImageInfo,
+  LoadingStory,
+  LoadingInfo,
+} from './components/core';
 import {
   BlockquoteStory,
   BlockquoteInfo,
@@ -11,7 +21,7 @@ import {
   OrderedListInfo,
   BreakoutStory,
   BreakoutInfo,
-} from './text';
+} from './components/text';
 import {
   AmountInfo,
   AmountStory,
@@ -43,7 +53,7 @@ import {
   TextInputInfo,
   URLInputStory,
   URLInputInfo,
-} from './forms';
+} from './components/forms';
 import {
   ComplexCardStory,
   ComplexCardInfo,
@@ -51,10 +61,9 @@ import {
   EmptyCardStory,
   SimpleCardInfo,
   SimpleCardStory,
-} from './cards';
-import { HighlightedQuoteStory, HighlightedQuoteInfo } from './highlightedContent';
-import { GalleryStory, GalleryInfo } from './galleries';
-import { ImageStory, ImageInfo } from './images';
+} from './components/cards';
+import { HighlightedQuoteStory, HighlightedQuoteInfo } from './components/highlightedContent';
+import { GalleryStory, GalleryInfo } from './components/galleries';
 import {
   BurgerStory,
   BurgerInfo,
@@ -62,8 +71,15 @@ import {
   LanguagePickerInfo,
   MenuItemStory,
   MenuItemInfo,
-} from './navigation';
-import { SignupStory, SignupInfo, NewsletterStory, NewsletterInfo } from './signup';
+} from './components/navigation';
+import { SignupStory, SignupInfo, NewsletterStory, NewsletterInfo } from './components/signup';
+
+storiesOf('Core', module)
+  .addDecorator(withKnobs)
+  .add('Button', withInfo(ButtonInfo)(ButtonStory))
+  .add('Counter', withInfo(CounterInfo)(CounterStory))
+  .add('Image', withInfo(ImageInfo)(ImageStory))
+  .add('Loading', withInfo(LoadingInfo)(LoadingStory));
 
 const textStories = storiesOf('Text', module).addDecorator(withKnobs);
 textStories.add('Breakout', withInfo(BreakoutInfo)(BreakoutStory));
@@ -105,7 +121,6 @@ cardStories.add('Node Complex', withInfo(ComplexCardInfo)(ComplexCardStory));
 cardStories.add('Node Simple', withInfo(SimpleCardInfo)(SimpleCardStory));
 
 const imageStories = storiesOf('Images and Galleries', module).addDecorator(withKnobs);
-imageStories.add('Image', withInfo(ImageInfo)(ImageStory));
 imageStories.add('Gallery', withInfo(GalleryInfo)(GalleryStory));
 
 const navigationStories = storiesOf('Navigation', module).addDecorator(withKnobs);
@@ -114,7 +129,7 @@ navigationStories.add('MenuItem', withInfo(MenuItemInfo)(MenuItemStory));
 navigationStories.add('Language Picker', withInfo(LanguagePickerInfo)(LanguagePickerStory));
 
 const atomStories = storiesOf('Uncategorised', module).addDecorator(withKnobs);
-atomStories.add('Counter', withInfo(CounterInfo)(CounterStory));
+
 atomStories.add('Expandable', withInfo(ExpandableInfo)(ExpandableStory));
 
 const signupStories = storiesOf('Signup', module).addDecorator(withKnobs);

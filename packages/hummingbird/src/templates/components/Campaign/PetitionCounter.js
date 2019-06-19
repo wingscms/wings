@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { Counter } from '@wingscms/crane';
 import { FormattedNumber } from 'react-intl';
 import CountUp from 'react-countup';
 
@@ -48,39 +49,12 @@ const MaxText = styled.div`
   margin-top: 10px;
 `;
 
-const StyledCounter = styled.div`
-  width: 100%;
-  height: 12px;
-  border-radius: 7.5px;
-  background-color: ${({ theme }) => theme.appBackgroundColor};
-  margin-top: 10px;
-`;
-
-const StyledCounterInner = styled(StyledCounter)`
-  width: ${props => `${props.width || 0}%`};
-  margin-top: 0;
-  background-color: ${({ theme }) => theme.primaryColor};
-  transition: all 1.5s ease-in-out;
-  .green & {
-    background-color: ${({ theme }) => theme.secondaryColor};
-  }
-`;
-
-const Counter = ({ current, max }) => {
-  const width = current >= max ? 100 : (100 / max) * current;
-  return (
-    <StyledCounter>
-      <StyledCounterInner width={width} />
-    </StyledCounter>
-  );
-};
-
 export default class PetitionCounter extends Component {
   static defaultProps = {
     current: 0,
   };
   render() {
-    const { current } = this.props;
+    const { current, theme } = this.props;
     const { max, descriptionText } = this.props;
     return (
       <Container>
@@ -92,7 +66,7 @@ export default class PetitionCounter extends Component {
         </TopContainer>
         {!max ? null : (
           <React.Fragment>
-            <Counter current={current} max={max} />
+            <Counter intent="primary" current={current} max={max} theme={theme} />
             <MaxText>
               <FormattedNumber value={max} />
             </MaxText>

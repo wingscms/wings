@@ -17,7 +17,7 @@ const MailchimpForm = styled(Newsletter)`
   button {
     background-color: #000;
     border: none;
-    color: #fff;
+    color: ${({ theme }) => theme.footerTextColor};
     font-weight: bold;
     cursor: pointer;
     transition: 0.1s all linear;

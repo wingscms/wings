@@ -7,7 +7,7 @@ const Menu = styled.ul`
   display: block;
   position: absolute;
   padding-top: 80px;
-  background-color: ${({ theme }) => theme.menuBackgroundColor || '#fff'};
+  background-color: ${({ backgroundColor }) => backgroundColor || '#fff'};
   left: ${props => (props.left ? '-300px' : '100%')};
   height: calc(100vh + 4px);
   overflow: scroll;
@@ -40,6 +40,7 @@ export default function SlideMenu({
   customCompBottom,
   customCompTop,
   visible,
+  backgroundColor,
   items = [],
   menuItemComp,
   InternalLink,
@@ -50,7 +51,11 @@ export default function SlideMenu({
   const CustomCompTop = customCompTop || <div />;
   const CustomCompBottom = customCompBottom || <div />;
   return (
-    <Menu className={classNames(className || '', { visible }, 'slide-menu')} left={left}>
+    <Menu
+      backgroundColor={backgroundColor}
+      className={classNames(className || '', { visible }, 'slide-menu')}
+      left={left}
+    >
       {customCompTop ? <CustomCompTop /> : null}
       {items.map(item => (
         <Item

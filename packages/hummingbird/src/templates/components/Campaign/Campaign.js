@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 import Content from '../../../components/Content';
 import CampaignForm from '../../../components/CampaignForm';
@@ -47,7 +47,7 @@ const BackgroundContainerTop = styled(BackgroundContainer)`
 `;
 
 const Wrapper = styled(Container)`
-  background-color: ${({ theme }) => theme.appBackgroundColor};
+  background-color: ${({ theme }) => theme.backgroundColor};
 `;
 const CampaignContentWrapper = styled.div`
   position: relative;
@@ -56,7 +56,6 @@ const CampaignContentWrapper = styled.div`
   width: 100%;
   height: auto;
   min-height: 100vh;
-  background-color: #000;
   background-image: url(${props => props.backgroundImage || ''});
   background-position: center;
   background-size: cover;
@@ -72,7 +71,6 @@ const CampaignContent = styled.div`
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fff !important;
   border-radius: 4px;
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.05);
   text-align: center;
@@ -82,15 +80,17 @@ const CampaignContent = styled.div`
 `;
 
 const MainContainerOuter = styled(Container)`
+  background-color: transparent;
   margin-top: -300px;
   overflow: auto;
-  margin-bottom: 40px;
   @media screen and (max-width: 1000px) {
     margin-bottom: 0;
   }
 `;
 
 const MainContainerInner = styled(Container)`
+  padding-bottom: 40px;
+  background-color: transparent;
   max-width: 1160px;
   height: auto;
   display: flex;
@@ -106,8 +106,8 @@ const FormContainer = styled.div`
   display: inline-block;
   width: 460px;
   min-height: 500px;
-  background-color: ${({ theme }) => theme.primaryColor};
-  color: ${({ theme }) => theme.darkHeadingColor};
+  background-color: ${({ theme }) => theme.campaignFormBackgroundColor};
+  color: ${({ theme }) => theme.campaignFormTextColor};
   vertical-align: top;
   border-radius: 4px;
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.05);
@@ -139,14 +139,15 @@ const Intro = styled.p`
 `;
 const CounterContainer = styled(FormContainerInner)`
   padding: 20px 40px;
-  background-color: #fff;
-  color: #000;
+  background-color: ${({ theme }) => theme.counterBackgroundColor};
+  color: ${({ theme }) => theme.counterTextColor};
   border-radius: 4px 4px 0 0;
   @media screen and (max-width: 1000px) {
     max-width: 100%;
   }
 `;
-export default class Campaign extends Component {
+
+class Campaign extends Component {
   static Proposition = Proposition;
   static Navigation = ({ pageContext: { shareUrls, node = {} } = {} }) => (
     <Navigation shareUrls={shareUrls} items={node.menu && node.menu.items} />
@@ -177,6 +178,7 @@ export default class Campaign extends Component {
         node,
       },
       formProps = {},
+      theme = {},
     } = props;
     const [signatureCount, setSignatureCount] = useState(0);
     const [signatureGoal, setSignatureGoal] = useState(0);
@@ -223,6 +225,7 @@ export default class Campaign extends Component {
                         current={signatureCount}
                         max={signatureGoal}
                         descriptionText={txt}
+                        theme={theme}
                       />
                     )}
                   </FormattedMessage>
@@ -289,3 +292,5 @@ export default class Campaign extends Component {
     );
   }
 }
+
+export default withTheme(Campaign);

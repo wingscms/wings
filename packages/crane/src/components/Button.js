@@ -1,98 +1,74 @@
 import styled, { css } from 'styled-components';
+import { getIntentColor, getContrastColor } from '../lib/utils';
 
-const ghost = css`
-  border: 2px solid ${({ theme }) => theme.secondaryColor};
-  background-color: transparent;
-  color: ${({ theme }) => theme.secondaryColor};
-  &:hover {
-    background-color: ${({ theme }) => theme.secondaryColor};
-    opacity: 1;
+const outline = ({ color }) =>
+  css`
+    border: 2px solid ${color};
+    background-color: transparent;
+    color: ${color};
+    padding: 12px 36px;
+  `;
+
+const getType = ({ color, type }) => {
+  switch (type) {
+    case 'outline':
+      return outline({ color });
+    default:
+      return '';
   }
-`;
+};
 
-const reverse = css`
-  background-color: ${({ theme }) => theme.secondaryColor};
-  color: ${({ theme }) => theme.primaryColor};
-  &:hover {
-    background-color: ${({ theme }) => theme.secondaryColor};
+const getSize = ({ size }) => {
+  switch (size) {
+    case 'small':
+      return css`
+        font-size: 14px;
+        padding: 10px 20px;
+      `;
+    default:
+      return '';
   }
-`;
+};
 
-const small = css`
-  font-size: 16px;
-  padding: 10px 20px;
-`;
+const buttonStyles = ({ disabled, intent, size, theme, type }) => {
+  const colors = { dark: theme.textColorDark, light: theme.textColor };
+  const color = getIntentColor({ intent, theme, defaultColor: '#dddddd' });
+  const typeCSS = getType({ color, type });
+  const sizeCSS = getSize({ size });
+  const disabledCSS = !disabled
+    ? null
+    : css`
+        background-color: ${theme.disabledColor || '#DDDDDD'} !important;
+        color: ${getContrastColor({ backgroundColor: theme.disabledColor || '#DDDDDD', colors })};
+        cursor: not-allowed !important;
+      `;
+  return css`
+    background-color: ${color};
+    color: ${getContrastColor({ backgroundColor: color, colors })};
+    text-decoration: none;
+    background-image: none;
+    font-size: 1rem;
+    padding: 16px 40px;
+    border: 0;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.15s ease-in-out;
+    &:hover,
+    &:active {
+      opacity: 0.8;
+      background-image: none;
+      text-decoration: none;
+    }
+    &:active {
+      transform: translateY(1px);
+    }
+    ${typeCSS}
+    ${sizeCSS}
+    ${disabledCSS}
+  `;
+};
 
 export default styled.button`
-  text-decoration: none;
-  background-image: none;
-  background-color: ${({ theme }) => theme.primaryColor};
-  color: ${({ theme }) => theme.secondaryColor};
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 1.25;
-  padding: 16px 40px;
-  border-radius: 3px;
-  border: 0;
-  cursor: pointer;
-  display: block;
-  position: relative;
-  transition: all 0.15s linear;
-  text-align: center;
-  margin-right: auto;
-  &:after {
-    transition: all 0.15s linear;
-    height: 3px;
-    width: 0%;
-    content: '';
-    position: absolute;
-    background-color: ${({ theme }) => theme.primaryColor};
-    bottom: 0;
-    left: 0;
-    border-radius: 5px;
-  }
-  &:hover {
-    opacity: 0.8;
-    background-image: none;
-    text-decoration: none;
-  }
-  &:active {
-    background-color: ${({ theme }) => theme.primaryColor};
-    &:after {
-      width: 100%;
-    }
-  }
-  &:active {
-    top: 1px;
-  }
-  @media screen and (min-width: 800px) {
-    margin-right: 0;
-    display: inline-block;
-    width: auto;
-  }
-  ${({ buttonType, type }) => {
-    switch (buttonType || type) {
-      case 'ghost':
-        return ghost;
-      case 'reverse':
-        return reverse;
-      default:
-        return '';
-    }
-  }};
-  ${({ size }) => {
-    switch (size) {
-      case 'small':
-        return small;
-      default:
-        return '';
-    }
-  }};
-  ${({ disabled }) =>
-    (!disabled
-      ? null
-      : css`
-          background-color: grey !important;
-          pointer-events: none !important;
-        `)};
+  ${({ disabled, intent, size, theme = {}, type }) =>
+    buttonStyles({ disabled, intent, size, theme, type })}
 `;

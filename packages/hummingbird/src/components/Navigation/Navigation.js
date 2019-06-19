@@ -2,7 +2,14 @@
 
 import React, { Component } from 'react';
 import styled, { withTheme } from 'styled-components';
-import { Burger, LanguagePicker, ShareButtons, SlideMenu, toggleSlideMenu } from '@wingscms/crane';
+import {
+  Burger,
+  LanguagePicker,
+  ShareButtons,
+  SlideMenu,
+  toggleSlideMenu,
+  getContrastColor,
+} from '@wingscms/crane';
 import { Link, navigate } from 'gatsby';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 
@@ -18,8 +25,10 @@ import ChaptersToggle from './ChaptersToggle';
 
 import Logo from './Logo';
 
+const _MenuItem = ({ theme }) => <MenuItem backgroundColor={theme.navigationBackgroundColor} />;
+
 const Wrap = styled.div`
-  background: ${({ theme }) => theme.navigationColor};
+  background: ${({ theme }) => theme.navigationBackgroundColor};
   width: 100%;
   display: block;
   text-align: center;
@@ -106,15 +115,6 @@ const LanguageIcon = styled.img`
   }
 `;
 
-const StyledShareButtons = styled(ShareButtons)`
-  img {
-    background-color: ${({ theme }) => theme.navigationColor};
-    &:hover {
-      background-color: ${({ theme }) => theme.languagePickerHoverColor};
-    }
-  }
-`;
-
 class Navigation extends Component {
   state = { visible: false };
 
@@ -165,8 +165,8 @@ class Navigation extends Component {
                 </div>
               )}
               items={[]}
-              menuItemComp={MenuItem}
-              InternalLink={MenuItem}
+              menuItemComp={_MenuItem}
+              InternalLink={_MenuItem}
               left
               className="chapters"
             />
@@ -178,7 +178,15 @@ class Navigation extends Component {
           {children}
           {hideMenu ? null : (
             <MenuButton active={visible} onClick={this.toggleNav}>
-              <Burger active={visible} color="#000000" type="spin" />
+              <Burger
+                active={visible}
+                activeColor={getContrastColor({
+                  backgroundColor: theme.navigationMenuBackgroundColor,
+                  colors: { light: theme.navigationIconColor, dark: theme.navigationIconColorDark },
+                })}
+                color={theme.navigationIconColor}
+                type="spin"
+              />
             </MenuButton>
           )}
           {translations.length > 0 ? (
@@ -197,7 +205,8 @@ class Navigation extends Component {
             </LanguagePickerWrap>
           ) : null}
           {shareUrls ? (
-            <StyledShareButtons
+            <ShareButtons
+              color={theme.navigationIconColor}
               email={shareUrls.email}
               emailIcon={emailIcon}
               facebook={shareUrls.facebook}
@@ -208,7 +217,14 @@ class Navigation extends Component {
               whatsappIcon={whatsappIcon}
             />
           ) : null}
-          {items ? <SlideMenu items={items} menuItemComp={MenuItem} InternalLink={Link} /> : null}
+          {items ? (
+            <SlideMenu
+              items={items}
+              menuItemComp={_MenuItem}
+              InternalLink={Link}
+              backgroundColor={theme.navigationMenuBackgroundColor}
+            />
+          ) : null}
         </Container>
       </Wrap>
     );

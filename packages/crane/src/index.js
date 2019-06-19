@@ -1,5 +1,7 @@
 // Form
 export { default as Button } from './components/Button';
+export { default as Counter } from './components/Counter';
+export { default as Loading } from './components/Loading';
 // export { TextInput } from './components/form';
 export { RadioInput } from './components/form';
 // export { CheckboxInput } from './components/form';
@@ -62,4 +64,4 @@ export { Signup, SignupForm, Newsletter, NewsletterForm, MailchimpForm } from '.
 export { default as languageList } from './data/languageList';
 
 // Utils
-export { createSvgIcon } from './util';
+export { createSvgIcon, getContrastColor } from './lib/utils';

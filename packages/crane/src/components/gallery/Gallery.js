@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import GalleryImage from './GalleryImage';
 import Dots from './Dots';
 import { ChevronRight, ChevronLeft, Pause, Play } from '../icons';
-import { randomString } from '../../util';
+import { randomString } from '../../lib/utils';
 
 const ContainerOuter = styled.div`
   width: 100%;

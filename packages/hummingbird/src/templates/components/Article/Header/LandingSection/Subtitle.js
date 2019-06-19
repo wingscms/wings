@@ -13,11 +13,11 @@ export default styled('p')`
     font-size: 30px;
   }
   ${({ theme }) =>
-    (theme.landingSectionSubTitleBackground
+    (theme.landingSectionSubTitleBackgroundColor
       ? `
   line-height: 1.4;
   span {
-    background: ${theme.landingSectionSubTitleBackground};
+    background: ${theme.landingSectionSubTitleBackgroundColor};
     line-height: 1.4;
     padding: 0 0.25em;
     box-decoration-break: clone;

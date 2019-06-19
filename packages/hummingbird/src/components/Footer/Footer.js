@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 import { usePluginOptions } from '../../ctx/PluginOptions';
 
@@ -64,7 +64,7 @@ const BolsterLink = styled.a`
   width: 100%;
   padding: 0 20px;
   text-align: left;
-  color: ${({ theme }) => theme.footerLinkColor};
+  color: ${({ theme }) => theme.footerTextColor};
   text-decoration: none;
   font-size: 12px;
   background-image: none;
@@ -93,18 +93,18 @@ const LoveEmoji = () => (
   </FormattedMessage>
 );
 
-export default () => {
+const Footer = ({ theme }) => {
   const { footer } = usePluginOptions();
   return (
     <Wrap>
       <Container>
-        {footer.title || footer.logoUrl ? (
+        {footer.title || theme.logoImageUrl ? (
           <CTASection>
-            <div className="title">{footer.title}</div>
+            <div>{footer.title}</div>
             <div>
-              {footer.logoUrl && (
+              {theme.logoFooterImageUrl && (
                 <a href={footer.logoLink || '/'}>
-                  <Logo src={footer.logoUrl} alt="logo" />
+                  <Logo src={theme.logoFooterImageUrl} alt="logo" />
                 </a>
               )}
             </div>
@@ -132,3 +132,5 @@ export default () => {
     </Wrap>
   );
 };
+
+export default withTheme(Footer);

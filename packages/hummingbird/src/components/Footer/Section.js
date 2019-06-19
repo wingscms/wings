@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export default styled.div`
   padding: 20px 20px 0;
-  color: ${({ theme }) => theme.darkTextColor};
+  color: ${({ theme }) => theme.footerTextColor};
   text-align: left;
   font-size: 16px;
   line-height: 1.5;
@@ -15,11 +15,12 @@ export default styled.div`
     margin-top: 1.5em;
   }
   a.footerLink {
-    color: ${({ theme }) => theme.footerLinkColor};
+    color: ${({ theme }) => theme.footerTextColor};
     text-decoration: none;
     background-image: none;
     &:hover {
-      color: ${({ theme }) => theme.footerLinkColor};
+      color: ${({ theme }) => theme.footerTextColor};
+      text-decoration: underline;
     }
   }
   @media screen and (min-width: 800px) {

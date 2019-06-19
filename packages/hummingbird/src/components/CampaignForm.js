@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { SchemaForm, Amount } from '@wingscms/crane';
+import styled, { withTheme } from 'styled-components';
+import { SchemaForm, Amount, Loading } from '@wingscms/crane';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import _Button from './Button';
 import wings from '../data/wings';
@@ -334,14 +334,19 @@ class CampaignForm extends Component {
 
   render() {
     const { fetching, amount } = this.state;
+    const { theme } = this.props;
     const schema = this.getFormSchema();
     const loading = !schema || fetching;
     return loading ? (
-      <FormattedMessage
-        id="hummingbird.CampaignForm.loading.text"
-        description="Form loading message"
-        defaultMessage="loading"
-      />
+      <div style={{ textAlign: 'center' }}>
+        <FormattedMessage
+          id="hummingbird.CampaignForm.loading.text"
+          description="Form loading message"
+          defaultMessage="loading"
+        />
+        ...
+        <Loading theme={theme} />
+      </div>
     ) : (
       <React.Fragment>
         {this.props.type === 'fundraiser' ? (
@@ -374,4 +379,4 @@ class CampaignForm extends Component {
   }
 }
 
-export default injectIntl(CampaignForm);
+export default injectIntl(withTheme(CampaignForm));

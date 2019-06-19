@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import NewsletterForm from './NewsletterForm';
 import { ConfirmationBox } from '../form';
 import { Envelope } from '../icons';
-import { insertLink, randomString } from '../../util';
+import { insertLink, randomString } from '../../lib/utils';
 
 const Warning = styled.p`
   margin-top: 20px;

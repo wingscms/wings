@@ -7,8 +7,9 @@ import Content from '../../../components/Content';
 import Header from './Header';
 
 const Title = styled.h1`
-  margin: 0 auto 80px auto;
+  margin: 2em auto 80px auto;
   text-align: center;
+  color: ${({ theme }) => theme.textColor};
   &.hidden {
     position: absolute;
     opacity: 0;

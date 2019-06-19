@@ -78,7 +78,7 @@ const PageWrapper = ({
           translations.map(trans => (
             <link key={trans.locale} rel="alternate" hrefLang={trans.locale} href={trans.path} />
           ))}
-        <link rel="icon" type="image/ico" sizes="16x16" href={theme.faviconUrl} />
+        <link rel="icon" type="image/ico" sizes="16x16" href={theme.faviconImageUrl} />
         {platforms.all && platforms.all.description ? (
           <meta name="description" content={platforms.all.description} />
         ) : null}

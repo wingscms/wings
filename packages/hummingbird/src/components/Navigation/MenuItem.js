@@ -1,4 +1,4 @@
-import { MenuItem } from '@wingscms/crane';
+import { MenuItem, getContrastColor } from '@wingscms/crane';
 import styled from 'styled-components';
 
 export default styled(MenuItem)`
@@ -14,7 +14,11 @@ export default styled(MenuItem)`
   padding: 0;
   cursor: pointer;
   a {
-    color: #333;
+    color: ${({ theme }) =>
+    getContrastColor({
+      backgroundColor: theme.navigationMenuBackgroundColor || '#ffffff',
+      colors: { light: theme.textColor, dark: theme.textColorDark },
+    })};
     text-decoration: none;
     background-image: linear-gradient(
       120deg,

@@ -15,7 +15,7 @@ export default createGlobalStyle`
     p a,
     ol a,
     ul a {
-    color: #000000;
+    color: ${({ theme }) => theme.textColor};
     text-decoration: none;
     background-image: linear-gradient(
       120deg,
@@ -36,7 +36,7 @@ export default createGlobalStyle`
   }
     color: ${({ theme }) => theme.textColor};
     padding-bottom: 40px;
-    font-weight: ${({ theme }) => theme.fontWeightBody};
+    font-weight: ${({ theme }) => theme.bodyFontWeight};
     > * {
       margin-bottom: 0;
       margin-top: 0;
@@ -60,12 +60,12 @@ export default createGlobalStyle`
     .drop-cap & > p:first-child {
       margin-top: 2em;
       &::first-letter {
-        font-weight: ${({ theme }) => theme.fontWeightFirstLetter}!important;
+        font-weight: ${({ theme }) => theme.firstLetterFontWeight}!important;
         color: ${({ theme }) => theme.primaryColor};
         float: left;
-        line-height: ${({ theme }) => theme.lineHeightFirstLetter};
+        line-height: ${({ theme }) => theme.firstLetterLineHeight};
         margin: 0.075em 0.1em -0.1em 0;
-        font-size: ${({ theme }) => theme.fontSizeFirstLetter};
+        font-size: ${({ theme }) => theme.dropcapFontSize};
         font-family: ${({ theme }) => theme.headingFont};
       }
     }
@@ -88,7 +88,7 @@ export default createGlobalStyle`
     > h4,
     > h5,
     > h6 {
-      color: ${({ theme }) => theme.headingColor};
+      color: ${({ theme }) => theme.textColor};
       margin-bottom: 5px;
       line-height: 1.2;
       text-transform: none;
@@ -99,12 +99,12 @@ export default createGlobalStyle`
     .drop-cap & div.headerWrapper + p {
       position: relative;
       &::first-letter {
-        font-weight: ${({ theme }) => theme.fontWeightFirstLetter}!important;
+        font-weight: ${({ theme }) => theme.firstLetterFontWeight}!important;
         color: ${({ theme }) => theme.primaryColor};
         float: left;
-        line-height: ${({ theme }) => theme.lineHeightFirstLetter};
+        line-height: ${({ theme }) => theme.firstLetterLineHeight};
         margin: 0.075em 0.1em -0.2em 0;
-        font-size: ${({ theme }) => theme.fontSizeFirstLetter};
+        font-size: ${({ theme }) => theme.dropcapFontSize};
         font-family: ${({ theme }) => theme.headingFont};
       }
     }
