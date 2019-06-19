@@ -22,7 +22,7 @@ const BackgroundContainer = styled(Container)`
     max-width: 1160px;
     width: 100%;
     margin: 0 auto;
-    background-color: ${({ theme }) => theme.colorPrimary};
+    background-color: ${({ theme }) => theme.primaryColor};
     border-radius: 4px;
   }
   @media screen and (max-width: 800px) {
@@ -47,7 +47,7 @@ const BackgroundContainerTop = styled(BackgroundContainer)`
 `;
 
 const Wrapper = styled(Container)`
-  background-color: ${({ theme }) => theme.colorBackground};
+  background-color: ${({ theme }) => theme.backgroundColor};
 `;
 const CampaignContentWrapper = styled.div`
   position: relative;
@@ -106,8 +106,8 @@ const FormContainer = styled.div`
   display: inline-block;
   width: 460px;
   min-height: 500px;
-  background-color: ${({ theme }) => theme.colorCampaignFormBackground};
-  color: ${({ theme }) => theme.colorCampaignFormText};
+  background-color: ${({ theme }) => theme.campaignFormBackgroundColor};
+  color: ${({ theme }) => theme.campaignFormTextColor};
   vertical-align: top;
   border-radius: 4px;
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.05);
@@ -139,8 +139,8 @@ const Intro = styled.p`
 `;
 const CounterContainer = styled(FormContainerInner)`
   padding: 20px 40px;
-  background-color: ${({ theme }) => theme.colorCounterBackground};
-  color: ${({ theme }) => theme.colorCounterText};
+  background-color: ${({ theme }) => theme.counterBackgroundColor};
+  color: ${({ theme }) => theme.counterTextColor};
   border-radius: 4px 4px 0 0;
   @media screen and (max-width: 1000px) {
     max-width: 100%;

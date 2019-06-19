@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export default styled('p')`
-  color: ${({ theme }) => theme.colorLandingSectionSubTitle};
+  color: ${({ theme }) => theme.landingSectionSubTitleColor};
   font-family: ${({ theme }) => theme.typography.options.headerFontFamily.join(', ')};
   font-weight: ${({ theme }) => theme.typography.headerFontWeight};
   text-transform: uppercase;
@@ -13,11 +13,11 @@ export default styled('p')`
     font-size: 30px;
   }
   ${({ theme }) =>
-    (theme.colorLandingSectionSubTitleBackground
+    (theme.landingSectionSubTitleBackgroundColor
       ? `
   line-height: 1.4;
   span {
-    background: ${theme.colorLandingSectionSubTitleBackground};
+    background: ${theme.landingSectionSubTitleBackgroundColor};
     line-height: 1.4;
     padding: 0 0.25em;
     box-decoration-break: clone;

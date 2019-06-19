@@ -4,197 +4,197 @@ import { getContrastColor } from '@wingscms/crane';
 export default ({
   // COLORS
   // Base
-  colorPrimary = '#417de8',
-  colorSecondary = '#274b8b',
-  colorSuccess = '#0F9960',
-  colorWarning = '#F29D49',
-  colorDanger = '#DB3737',
-  colorDisabled = '#DDDDDD',
-  colorBackground = '#FFFFFF',
-  colorBackgroundHighlight = '#fdeeee',
-  colorBackgroundDark = '#212121',
-  colorText = '#212121',
-  colorTextDark = '#FFFFFF',
-  colorIcon,
-  colorIconDark = '#FFFFFF',
-  colorLink,
-  colorLinkDark,
+  primaryColor = '#417de8',
+  secondaryColor = '#274b8b',
+  successColor = '#0F9960',
+  warningColor = '#F29D49',
+  dangerColor = '#DB3737',
+  disabledColor = '#DDDDDD',
+  backgroundColor = '#FFFFFF',
+  backgroundColorHighlight = '#fdeeee',
+  backgroundColorDark = '#212121',
+  textColor = '#212121',
+  textColorDark = '#FFFFFF',
+  iconColor,
+  iconColorDark = '#FFFFFF',
+  linkColor,
+  linkColorDark,
   // Navigation
-  colorNavigationBackground,
-  colorNavigationMenuBackground,
-  colorNavigationIcon = '#212121',
-  colorNavigationIconDark = '#FFFFFF',
-  colorNavigationLanguagePicker = '#FFFFFF',
-  colorNavigationLanguagePickerHover,
+  navigationBackgroundColor,
+  navigationMenuBackgroundColor,
+  navigationIconColor = '#212121',
+  navigationIconColorDark = '#FFFFFF',
+  navigationIconLanguagePickerColor = '#FFFFFF',
+  navigationIconLanguagePickerColorHover,
   // Footer
-  colorFooterBackground,
-  colorFooterText,
+  footerBackgroundColor,
+  footerTextColor,
   // Articles/pages
-  colorChapterBackground,
-  colorChapterItem,
-  colorChapterItemNumber,
-  colorChapterIntro,
-  colorChapterSelectBackground,
-  colorChapterSelectItem,
-  colorChapterSelectItemNumber,
-  colorBlockquote,
-  colorBlockquoteBackground,
-  colorPullquote,
-  colorPullquoteBackground,
+  chapterBackgroundColor,
+  chapterItemColor,
+  chapterItemNumberColor,
+  chapterIntroColor,
+  chapterSelectBackgroundColor,
+  chapterSelectItemColor,
+  chapterSelectItemNumberColor,
+  blockquoteColor,
+  blockquoteBackgroundColor,
+  pullquoteColor,
+  pullquoteBackgroundColor,
   // Landing Section
-  colorLandingSectionTitle = '#FFFFFF',
-  colorLandingSectionTitleBackground = 'transparent',
-  colorLandingSectionSubTitle = '#FFFFFF',
-  colorLandingSectionSubTitleBackground = 'transparent',
-  colorLandingSectionBackground,
+  landingSectionTitleColor = '#FFFFFF',
+  landingSectionTitleBackgroundColor = 'transparent',
+  landingSectionSubTitleColor = '#FFFFFF',
+  landingSectionSubTitleBackgroundColor = 'transparent',
+  landingSectionBackgroundColor,
   // Forms
-  colorFormBackground,
-  colorFormText,
+  formBackgroundColor,
+  formTextColor,
   // Campaigns
-  colorCampaignFormBackground,
-  colorCampaignFormText,
-  colorCounterBackground,
-  colorCounterText,
+  campaignFormBackgroundColor,
+  campaignFormTextColor,
+  counterBackgroundColor,
+  counterTextColor,
 
   // IMAGES
-  imageLogoUrl = 'https://files.wings.dev/1532472414726/wings4-2.png',
-  imageLogoFooterUrl,
-  imageFaviconUrl = 'https://files.wings.dev/1532472414726/wings4-2.png',
+  logoImageUrl = 'https://files.wings.dev/1532472414726/wings4-2.png',
+  logoFooterImageUrl,
+  faviconImageUrl = 'https://files.wings.dev/1532472414726/wings4-2.png',
 
   // FONTS AND TEXT
   // Used to set the name of font families if the font is manually imported.
-  fontCustomHeaderUrl = null,
-  fontCustomBodyUrl = null,
+  customHeaderFontUrl = null,
+  customBodyFontUrl = null,
   // Other fonts/text stuff
-  fontSizeFirstLetter = '3.5em',
-  fontSizeIntro = '1.333',
-  fontWeightBody = '400',
-  fontWeightIntro = '300',
-  fontWeightFirstLetter = '700',
-  fontWeightPullquote = '700',
-  fontWeightBlockquote = '300',
-  lineHeightIntro = '1.5',
-  lineHeightFirstLetter = '0.8',
+  firstLetterFontSize = '3.5em',
+  introFontSize = '1.333',
+  bodyFontWeight = '400',
+  introFontWeight = '300',
+  firstLetterFontWeight = '700',
+  pullquoteFontWeight = '700',
+  blockquoteFontWeight = '300',
+  introLineHeight = '1.5',
+  firstLetterLineHeight = '0.8',
 }) => ({
   // COLORS
   // Base
-  colorPrimary,
-  colorSecondary,
-  colorSuccess,
-  colorWarning,
-  colorDanger,
-  colorDisabled,
-  colorBackground,
-  colorBackgroundDark,
-  colorBackgroundHighlight,
-  colorText,
-  colorTextDark,
-  colorLink: colorLink || colorPrimary,
-  colorLinkDark: colorLinkDark || colorLink,
-  colorIcon: colorIcon || colorPrimary,
-  colorIconDark,
+  primaryColor,
+  secondaryColor,
+  successColor,
+  warningColor,
+  dangerColor,
+  disabledColor,
+  backgroundColor,
+  backgroundColorDark,
+  backgroundColorHighlight,
+  textColor,
+  textColorDark,
+  linkColor: linkColor || primaryColor,
+  linkColorDark: linkColorDark || linkColor,
+  iconColor: iconColor || primaryColor,
+  iconColorDark,
   // Navigation
-  colorNavigationBackground: colorNavigationBackground || colorPrimary,
-  colorNavigationMenuBackground: colorNavigationMenuBackground || colorBackground,
-  colorNavigationIcon: getContrastColor({
-    backgroundColor: colorNavigationBackground || colorPrimary,
-    colors: { light: colorNavigationIcon, dark: colorNavigationIconDark },
+  navigationBackgroundColor: navigationBackgroundColor || primaryColor,
+  navigationMenuBackgroundColor: navigationMenuBackgroundColor || backgroundColor,
+  navigationIconColor: getContrastColor({
+    backgroundColor: navigationBackgroundColor || primaryColor,
+    colors: { light: navigationIconColor, dark: navigationIconColorDark },
     threshold: 30,
   }),
-  colorNavigationIconDark,
-  colorNavigationLanguagePicker,
-  colorNavigationLanguagePickerHover: colorNavigationLanguagePickerHover || colorPrimary,
+  navigationIconColorDark,
+  navigationIconLanguagePickerColor,
+  navigationIconLanguagePickerColorHover: navigationIconLanguagePickerColorHover || primaryColor,
   // Footer
-  colorFooterBackground: colorFooterBackground || colorPrimary,
-  colorFooterText:
-    colorFooterText ||
+  footerBackgroundColor: footerBackgroundColor || primaryColor,
+  footerTextColor:
+    footerTextColor ||
     getContrastColor({
-      backgroundColor: colorFooterBackground || colorPrimary,
-      colors: { light: colorText, dark: colorTextDark },
+      backgroundColor: footerBackgroundColor || primaryColor,
+      colors: { light: textColor, dark: textColorDark },
       threshold: 30,
     }),
   // Articles/Pages
-  colorChapterBackground: colorChapterBackground || colorPrimary,
-  colorChapterItem:
-    colorChapterItem ||
+  chapterBackgroundColor: chapterBackgroundColor || primaryColor,
+  chapterItemColor:
+    chapterItemColor ||
     getContrastColor({
-      backgroundColor: colorChapterBackground || colorPrimary,
-      colors: { light: colorText, dark: colorTextDark },
+      backgroundColor: chapterBackgroundColor || primaryColor,
+      colors: { light: textColor, dark: textColorDark },
       threshold: 30,
     }),
-  colorChapterItemNumber: colorChapterItemNumber || colorSecondary,
-  colorChapterIntro:
-    colorChapterIntro ||
+  chapterItemNumberColor: chapterItemNumberColor || secondaryColor,
+  chapterIntroColor:
+    chapterIntroColor ||
     getContrastColor({
-      backgroundColor: colorChapterBackground || colorPrimary,
-      colors: { light: colorText, dark: colorTextDark },
+      backgroundColor: chapterBackgroundColor || primaryColor,
+      colors: { light: textColor, dark: textColorDark },
       threshold: 30,
     }),
-  colorChapterSelectBackground:
-    colorChapterSelectBackground || colorChapterBackground || colorPrimary,
-  colorChapterSelectItem:
-    colorChapterSelectItem ||
-    colorChapterItem ||
+  chapterSelectBackgroundColor:
+    chapterSelectBackgroundColor || chapterBackgroundColor || primaryColor,
+  chapterSelectItemColor:
+    chapterSelectItemColor ||
+    chapterItemColor ||
     getContrastColor({
-      backgroundColor: colorChapterSelectBackground || colorChapterBackground || colorPrimary,
-      colors: { light: colorText, dark: colorTextDark },
+      backgroundColor: chapterSelectBackgroundColor || chapterBackgroundColor || primaryColor,
+      colors: { light: textColor, dark: textColorDark },
       threshold: 30,
     }),
-  colorChapterSelectItemNumber:
-    colorChapterSelectItemNumber || colorChapterItemNumber || colorSecondary,
-  colorBlockquote: colorBlockquote || colorText,
-  colorBlockquoteBackground: colorBlockquoteBackground || colorBackground,
-  colorPullquote: colorPullquote || colorPrimary,
-  colorPullquoteBackground: colorPullquoteBackground || colorBackground,
+  chapterSelectItemNumberColor:
+    chapterSelectItemNumberColor || chapterItemNumberColor || secondaryColor,
+  blockquoteColor: blockquoteColor || textColor,
+  blockquoteBackgroundColor: blockquoteBackgroundColor || backgroundColor,
+  pullquoteColor: pullquoteColor || primaryColor,
+  pullquoteBackgroundColor: pullquoteBackgroundColor || backgroundColor,
   // Landing Section
-  colorLandingSectionTitle,
-  colorLandingSectionTitleBackground,
-  colorLandingSectionSubTitle,
-  colorLandingSectionSubTitleBackground,
-  colorLandingSectionBackground: colorPrimary || colorLandingSectionBackground,
+  landingSectionTitleColor,
+  landingSectionTitleBackgroundColor,
+  landingSectionSubTitleColor,
+  landingSectionSubTitleBackgroundColor,
+  landingSectionBackgroundColor: primaryColor || landingSectionBackgroundColor,
   // Forms
-  colorFormBackground: colorFormBackground || colorPrimary,
-  colorFormText:
-    colorFormText ||
+  formBackgroundColor: formBackgroundColor || primaryColor,
+  formTextColor:
+    formTextColor ||
     getContrastColor({
-      backgroundColor: colorFormBackground || colorPrimary,
-      colors: { light: colorText, dark: colorTextDark },
+      backgroundColor: formBackgroundColor || primaryColor,
+      colors: { light: textColor, dark: textColorDark },
       threshold: 30,
     }),
   // Campaigns
-  colorCampaignFormBackground: colorCampaignFormBackground || colorFormBackground || colorPrimary,
-  colorCampaignFormText:
-    colorCampaignFormText ||
-    colorFormText ||
+  campaignFormBackgroundColor: campaignFormBackgroundColor || formBackgroundColor || primaryColor,
+  campaignFormTextColor:
+    campaignFormTextColor ||
+    formTextColor ||
     getContrastColor({
-      backgroundColor: colorFormBackground || colorPrimary,
-      colors: { light: colorText, dark: colorTextDark },
+      backgroundColor: formBackgroundColor || primaryColor,
+      colors: { light: textColor, dark: textColorDark },
       threshold: 30,
     }),
-  colorCounterBackground: colorCounterBackground || colorBackground,
-  colorCounterText:
-    colorCounterText ||
+  counterBackgroundColor: counterBackgroundColor || backgroundColor,
+  counterTextColor:
+    counterTextColor ||
     getContrastColor({
-      backgroundColor: colorCounterBackground || colorBackground,
-      colors: { light: colorText, dark: colorTextDark },
+      backgroundColor: counterBackgroundColor || backgroundColor,
+      colors: { light: textColor, dark: textColorDark },
       threshold: 30,
     }),
 
   // IMAGES
-  imageLogoUrl,
-  imageLogoFooterUrl: imageLogoFooterUrl || imageLogoUrl,
-  imageFaviconUrl,
+  logoImageUrl,
+  logoFooterImageUrl: logoFooterImageUrl || logoImageUrl,
+  faviconImageUrl,
 
   // FONTS AND TEXT
-  fontCustomHeaderUrl,
-  fontCustomBodyUrl,
-  fontSizeFirstLetter,
-  fontSizeIntro,
-  fontWeightBody,
-  fontWeightIntro,
-  fontWeightFirstLetter,
-  fontWeightPullquote,
-  fontWeightBlockquote,
-  lineHeightIntro,
-  lineHeightFirstLetter,
+  customHeaderFontUrl,
+  customBodyFontUrl,
+  firstLetterFontSize,
+  introFontSize,
+  bodyFontWeight,
+  introFontWeight,
+  firstLetterFontWeight,
+  pullquoteFontWeight,
+  blockquoteFontWeight,
+  introLineHeight,
+  firstLetterLineHeight,
 });

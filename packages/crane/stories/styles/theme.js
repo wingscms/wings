@@ -1,10 +1,10 @@
 export default {
-  colorPrimary: '#417de8',
-  colorSecondary: '#274b8b',
-  colorSuccess: '#0F9960',
-  colorWarning: '#F29D49',
-  colorDanger: '#DB3737',
-  colorDisabled: '#DDDDDD',
-  colorText: '#212121',
-  colorTextDark: '#ffffff',
+  primaryColor: '#417de8',
+  secondaryColor: '#274b8b',
+  successColor: '#0F9960',
+  warningColor: '#F29D49',
+  dangerColor: '#DB3737',
+  disabledColor: '#DDDDDD',
+  textColor: '#212121',
+  textColorDark: '#ffffff',
 };

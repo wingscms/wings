@@ -13,8 +13,8 @@ const StyledMenuItem = styled.li`
   a {
     color: ${({ theme }) =>
     getContrastColor({
-      backgroundColor: theme.colorNavigationMenuBackground || '#ffffff',
-      colors: { light: theme.colorText, dark: theme.colorTextDark },
+      backgroundColor: theme.navigationMenuBackgroundColor || '#ffffff',
+      colors: { light: theme.textColor, dark: theme.textColorDark },
     })};
   }
 `;

@@ -4,7 +4,7 @@ import { MenuContentWrapper as _MenuContentWrapper } from '@wingscms/crane';
 import DefaultFooter from './Footer';
 
 const LayoutContainer = styled.main`
-  background-color: ${({ theme }) => theme.colorBackground};
+  background-color: ${({ theme }) => theme.backgroundColor};
   width: 100%;
   position: relative;
   overflow: hidden;

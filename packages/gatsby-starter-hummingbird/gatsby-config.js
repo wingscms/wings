@@ -18,7 +18,7 @@ module.exports = {
         blockRobots: process.env.BLOCK_ROBOTS || process.env.GATSBY_ENV !== 'production',
         basicAuth: process.env.BASIC_AUTH,
         design: {
-          imageLogoUrl:
+          logoImageUrl:
             'https://s3-eu-central-1.amazonaws.com/jaaps-screenshots/hummingbird-black-footer.png',
           ...getDesign(),
         },

@@ -6,132 +6,132 @@ title: Configuration
 
 ### Base Colors
 
-`colorPrimary`: Default: <span style="background-color: #417de8">#417de8</span>
+`primaryColor`: Default: <span style="background-color: #417de8">#417de8</span>
 
-`colorSecondary`: Default: <span style="background-color: #274b8b; color: #FFFFFF">#274b8b</span>
+`secondaryColor`: Default: <span style="background-color: #274b8b; color: #FFFFFF">#274b8b</span>
 
-`colorSuccess`: Default: <span style="background-color: #0F9960">#0F9960</span>
+`successColor`: Default: <span style="background-color: #0F9960">#0F9960</span>
 
-`colorWarning`: Default: <span style="background-color: #F29D49">#F29D49</span>
+`warningColor`: Default: <span style="background-color: #F29D49">#F29D49</span>
 
-`colorDanger`: Default: <span style="background-color: #DB3737">#DB3737</span>
+`dangerColor`: Default: <span style="background-color: #DB3737">#DB3737</span>
 
-`colorDisabled`: Default: <span style="background-color: #DDDDDD">#DDDDDD</span>
+`disabledColor`: Default: <span style="background-color: #DDDDDD">#DDDDDD</span>
 
-`colorBackground`: Default: <span style="background-color: #FFFFFF">#FFFFFF</span>
+`backgroundColor`: Default: <span style="background-color: #FFFFFF">#FFFFFF</span>
 
-`colorBackgroundDark`: Default: <span style="background-color: #212121; color: #fff">#212121</span>
+`backgroundColorDark`: Default: <span style="background-color: #212121; color: #fff">#212121</span>
 
-`colorText`: Default: <span style="background-color: #212121; color: #ffffff">#212121</span>
+`textColor`: Default: <span style="background-color: #212121; color: #ffffff">#212121</span>
 
-`colorTextDark`: Default: <span style="background-color: #ffffff">#FFFFFF</span>
+`textColorDark`: Default: <span style="background-color: #ffffff">#FFFFFF</span>
 
-`colorTextDisabled`: Default: <span style="background-color: #555555">#555555</span>
+`textColorDisabled`: Default: <span style="background-color: #555555">#555555</span>
 
-`colorLink`: Default: <span style="background-color: #417de8">colorPrimary</span>
+`linkColor`: Default: <span style="background-color: #417de8">primaryColor</span>
 
-`colorLinkDark`: Default: <span style="background-color: #417de8">colorLink</span>
+`linkColorDark`: Default: <span style="background-color: #417de8">linkColor</span>
 
 ### Navigation
 
-`colorNavigationBackground`: Default: <span style="background-color: #417de8">colorPrimary</span>
+`navigationBackgroundColor`: Default: <span style="background-color: #417de8">primaryColor</span>
 
-`colorNavigationMenuBackground`: Default: <span style="background-color: #FFFFFF">colorBackground</span>
+`navigationMenuBackgroundColor`: Default: <span style="background-color: #FFFFFF">backgroundColor</span>
 
-`colorNavigationIcon`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options) (<span style="background-color: #212121; color: #FFFFFF">#212121</span> for light backgrounds and <span style="background-color: #FFFFFF">#FFFFFF</span> for dark backgrounds)
+`navigationIconColor`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options) (<span style="background-color: #212121; color: #FFFFFF">#212121</span> for light backgrounds and <span style="background-color: #FFFFFF">#FFFFFF</span> for dark backgrounds)
 
-`colorNavigationIconDark`: Default: <span style="background-color: #FFFFFF">#FFFFFF</span>
+`navigationIconColorDark`: Default: <span style="background-color: #FFFFFF">#FFFFFF</span>
 
-`colorNavigationLanguagePicker`: Default: <span style="background-color: #FFFFFF">#FFFFFF</span>
+`navigationIconLanguagePickerColor`: Default: <span style="background-color: #FFFFFF">#FFFFFF</span>
 
-`colorNavigationLanguagePickerHover`: Default: <span style="background-color: #417de8">colorPrimary</span>
+`navigationIconLanguagePickerColorHover`: Default: <span style="background-color: #417de8">primaryColor</span>
 
 ### Footer
 
-`colorFooterBackground`: Default: <span style="background-color: #417de8">colorPrimary</span>
+`footerBackgroundColor`: Default: <span style="background-color: #417de8">primaryColor</span>
 
-`colorFooterText`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
+`footerTextColor`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
 
 ### Articles/Pages
 
-`colorChapterBackground`: Default: <span style="background-color: #417de8">colorPrimary</span>
+`chapterBackgroundColor`: Default: <span style="background-color: #417de8">primaryColor</span>
 
-`colorChapterItem`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
+`chapterItemColor`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
 
-`colorChapterItemNumber`: Default: <span style="background-color: #274b8b; color: #FFFFFF">colorSecondary</span>
+`chapterItemNumberColor`: Default: <span style="background-color: #274b8b; color: #FFFFFF">secondaryColor</span>
 
 `colorChapterIntro`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
 
-`colorChapterSelectBackground`: Default: <span style="background-color: #417de8">colorChapterBackground</span>
+`chapterSelectBackgroundColor`: Default: <span style="background-color: #417de8">chapterBackgroundColor</span>
 
-`colorChapterSelectItem`: Default: colorChapterItem
+`chapterSelectItemColor`: Default: chapterItemColor
 
-`colorChapterSelectItemNumber`: Default: colorChapterItemNumber
+`chapterSelectItemNumberColor`: Default: chapterItemNumberColor
 
-`colorBlockquote`: Default: <span style="background-color: #212121; color: #ffffff">colorText</span>
+`blockquoteColor`: Default: <span style="background-color: #212121; color: #ffffff">textColor</span>
 
-`colorBlockquoteBackground`: Default: <span style="background-color: #ffffff">colorBackground</span>
+`blockquoteBackgroundColor`: Default: <span style="background-color: #ffffff">backgroundColor</span>
 
-`colorPullquote`: Default: <span style="background-color: #417de8">colorPrimary</span>
+`pullquoteColor`: Default: <span style="background-color: #417de8">primaryColor</span>
 
-`colorPullquoteBackground`: Default: <span style="background-color: #ffffff">colorBackground</span>
+`pullquoteBackgroundColor`: Default: <span style="background-color: #ffffff">backgroundColor</span>
 
 ### Landing Section
 
-`colorLandingSectionTitle`: Default: <span style="background-color: #FFFFFF">#FFFFFF</span>
+`landingSectionTitleColor`: Default: <span style="background-color: #FFFFFF">#FFFFFF</span>
 
-`colorLandingSectionTitleBackground` Default: <span style="background-color: transparent">transparent</span>
+`landingSectionTitleBackgroundColor` Default: <span style="background-color: transparent">transparent</span>
 
-`colorLandingSectionSubTitle`: Default: <span style="background-color: #FFFFFF">#FFFFFF</span>
+`landingSectionSubTitleColor`: Default: <span style="background-color: #FFFFFF">#FFFFFF</span>
 
-`colorLandingSectionSubTitleBackground`: Default: <span style="background-color: transparent">transparent</span>
+`landingSectionSubTitleBackgroundColor`: Default: <span style="background-color: transparent">transparent</span>
 
-`colorLandingSectionBackground`: Default: <span style="background-color: #417de8">colorPrimary</span>
+`landingSectionBackgroundColor`: Default: <span style="background-color: #417de8">primaryColor</span>
 
 ### Forms
 
-`colorFormBackground`: Default: <span style="background-color: #417de8">colorPrimary</span>
+`formBackgroundColor`: Default: <span style="background-color: #417de8">primaryColor</span>
 
-`colorFormText`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
+`formTextColor`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
 
 ### Campaigns
 
-`colorCampaignFormBackground`: Default: <span style="background-color: #417de8">colorFormBackground</span>
+`campaignFormBackgroundColor`: Default: <span style="background-color: #417de8">formBackgroundColor</span>
 
-`colorCampaignFormText`: Default: colorFormText
+`campaignFormTextColor`: Default: formTextColor
 
-`colorCounterBackground`: Default: <span style="background-color: #417de8">colorPrimary</span>
+`counterBackgroundColor`: Default: <span style="background-color: #417de8">primaryColor</span>
 
-`colorCounterText`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
+`counterTextColor`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
 
 ## Images
 
-`imageLogoUrl` Default: https://files.wings.dev/1532472414726/wings4-2.png
+`logoImageUrl` Default: https://files.wings.dev/1532472414726/wings4-2.png
 
-`imageLogoFooterUrl`: Default: imageLogoUrl
+`logoFooterImageUrl`: Default: logoImageUrl
 
-`imageFaviconUrl`: Default: https://files.wings.dev/1532472414726/wings4-2.png
+`faviconImageUrl`: Default: https://files.wings.dev/1532472414726/wings4-2.png
 
 ## Fonts/Text
 
-`fontCustomHeaderUrl`: Default: null
+`customHeaderFontUrl`: Default: null
 
-`fontCustomBodyUrl`: Default: null
+`customBodyFontUrl`: Default: null
 
-`fontSizeFirstLetter`: Default: 3.5em
+`firstLetterFontSize`: Default: 3.5em
 
-`fontSizeIntro`: Default: 1.333
+`introFontSize`: Default: 1.333
 
-`fontWeightBody`: Default: 400
+`bodyFontWeight`: Default: 400
 
-`fontWeightIntro`: Default: 300
+`introFontWeight`: Default: 300
 
-`fontWeightFirstLetter`: Default: 700
+`firstLetterFontWeight`: Default: 700
 
-`fontWeightPullquote`: Default: 700
+`pullquoteFontWeight`: Default: 700
 
-`fontWeightBlockquote`: Default: 300
+`blockquoteFontWeight`: Default: 300
 
-`lineHeightIntro`: Default: 1.5
+`introLineHeight`: Default: 1.5
 
-`lineHeightFirstLetter`: Default: 0.8
+`firstLetterLineHeight`: Default: 0.8

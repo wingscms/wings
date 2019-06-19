@@ -11,14 +11,14 @@ export default styled.figure`
   margin: 80px 0;
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.05);
   padding: 40px 0 20px 0;
-  background-color: ${({ theme }) => theme.colorBlockquoteBackground};
+  background-color: ${({ theme }) => theme.blockquoteBackgroundColor};
   a { 
       color: #000000;
       text-decoration: none;
       background-image: linear-gradient(
         120deg,
-        ${({ theme }) => theme.colorPrimary} 0%,
-        ${({ theme }) => theme.colorPrimary} 100%
+        ${({ theme }) => theme.primaryColor} 0%,
+        ${({ theme }) => theme.primaryColor} 100%
       );
       background-repeat: no-repeat;
       background-size: 100% 2px;
@@ -27,15 +27,15 @@ export default styled.figure`
       &:hover,
       &:focus {
         background-size: 100% 4px;
-        background-image: linear-gradient(120deg, ${({ theme }) => theme.colorPrimary} 0%, ${({
+        background-image: linear-gradient(120deg, ${({ theme }) => theme.primaryColor} 0%, ${({
   theme,
-}) => theme.colorPrimary} 100%);
+}) => theme.primaryColor} 100%);
       }
     }
   &.pullquote-${FLOAT.NONE},
   &.pullquote-${FLOAT.LEFT},
   &.pullquote-${FLOAT.RIGHT} {
-    background-color: ${({ theme }) => theme.colorPullquoteBackground};
+    background-color: ${({ theme }) => theme.pullquoteBackgroundColor};
     margin: 40px 0;
     padding: 20px;
     box-shadow: none;
@@ -69,15 +69,15 @@ export default styled.figure`
     }
   }
   aside {
-    color: ${({ theme }) => theme.colorPullquote};
+    color: ${({ theme }) => theme.pullquoteColor};
     padding: 0;
-    font-weight: ${({ theme }) => theme.fontWeightPullquote};
+    font-weight: ${({ theme }) => theme.pullquoteFontWeight};
   }
   blockquote {
-    color: ${({ theme }) => theme.colorBlockquote};
-    background-color: ${({ theme }) => theme.colorBlockquoteBackground};
+    color: ${({ theme }) => theme.blockquoteColor};
+    background-color: ${({ theme }) => theme.blockquoteBackgroundColor};
     padding: 0;
-    font-weight: ${({ theme }) => theme.fontWeightBlockquote};
+    font-weight: ${({ theme }) => theme.blockquoteFontWeight};
     text-align: left;
     position: relative;
     &:after {
@@ -94,7 +94,7 @@ export default styled.figure`
   }
   figcaption {
     margin-top: 1rem;
-    color: ${({ theme }) => theme.colorText};
+    color: ${({ theme }) => theme.textColor};
     &:before {
       content: '— ';
     }
