@@ -118,7 +118,7 @@ title: Configuration
 
 `customBodyFontUrl`: Default: null
 
-`firstLetterFontSize`: Default: 3.5em
+`dropcapFontSize`: Default: 3.5em
 
 `introFontSize`: Default: 1.333
 

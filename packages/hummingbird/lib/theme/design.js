@@ -66,7 +66,7 @@ export default ({
   customHeaderFontUrl = null,
   customBodyFontUrl = null,
   // Other fonts/text stuff
-  firstLetterFontSize = '3.5em',
+  dropcapFontSize = '3.5em',
   introFontSize = '1.333',
   bodyFontWeight = '400',
   introFontWeight = '300',
@@ -188,7 +188,7 @@ export default ({
   // FONTS AND TEXT
   customHeaderFontUrl,
   customBodyFontUrl,
-  firstLetterFontSize,
+  dropcapFontSize,
   introFontSize,
   bodyFontWeight,
   introFontWeight,

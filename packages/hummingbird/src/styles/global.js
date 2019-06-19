@@ -65,7 +65,7 @@ export default createGlobalStyle`
         float: left;
         line-height: ${({ theme }) => theme.firstLetterLineHeight};
         margin: 0.075em 0.1em -0.1em 0;
-        font-size: ${({ theme }) => theme.firstLetterFontSize};
+        font-size: ${({ theme }) => theme.dropcapFontSize};
         font-family: ${({ theme }) => theme.headingFont};
       }
     }
@@ -104,7 +104,7 @@ export default createGlobalStyle`
         float: left;
         line-height: ${({ theme }) => theme.firstLetterLineHeight};
         margin: 0.075em 0.1em -0.2em 0;
-        font-size: ${({ theme }) => theme.firstLetterFontSize};
+        font-size: ${({ theme }) => theme.dropcapFontSize};
         font-family: ${({ theme }) => theme.headingFont};
       }
     }
