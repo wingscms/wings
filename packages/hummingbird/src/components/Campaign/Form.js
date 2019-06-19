@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import styled, { withTheme } from 'styled-components';
 import { SchemaForm, Amount, Loading } from '@wingscms/crane';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
-import _Button from './Button';
-import wings from '../data/wings';
-import { patchSchema, parseJSON } from '../../lib/utils';
+import _Button from '../Button';
+import wings from '../../data/wings';
+import { patchSchema, parseJSON } from '../../../lib/utils';
 
 const PETITION_QUERY = `
   query ($id: String!) {

@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 
-import Container from './Container';
-import Content from './Content';
-import CampaignForm from './CampaignForm';
+import Container from '../Container';
+import Content from '../Content';
+import CampaignForm from './Form';
 import PetitionCounter from './PetitionCounter';
 import EventDetails from './EventDetails';
 import Proposition from './Proposition';
