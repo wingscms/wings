@@ -33,7 +33,7 @@ const CTA = styled.div`
       max-width: 30%;
       flex-basis: auto;
       font-size: 32px;
-      color: ${({ theme }) => theme.darkHeadingColor};
+      color: ${({ theme }) => theme.textColorDark};
       text-transform: uppercase;
       text-align: center;
       margin: 0;
@@ -44,7 +44,7 @@ const CTA = styled.div`
       min-width: 45%;
       max-width: 45%;
       flex-basis: auto;
-      color: ${({ theme }) => theme.darktextColor};
+      color: ${({ theme }) => theme.textColorDark};
       text-align: left;
       margin: 0;
       padding: 0 10px;
