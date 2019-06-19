@@ -1,15 +1,12 @@
 const query = require('./query');
 const { patchI18n, makeShareUrls } = require('../../utils');
+const routing = require('../../../services/routing');
 
-const {
-  GATSBY__TEMP_I18N_ENABLED: i18nEnabled,
-  GATSBY__TEMP_I18N_DEFAULT_LOCALE: defaultLocale = 'en',
-  GATSBY_WINGS_PROJECT: projectId,
-} = process.env;
+const { GATSBY_WINGS_PROJECT: projectId } = process.env;
 
-const ensureNodeFields = node => ({
+const ensureNodeFields = (node, { homeNodeId }) => ({
   ...node,
-  path: `/${node.slug.split('/')[0]}`,
+  isHome: node.id === homeNodeId,
 });
 
 const WINGS_ADMIN_PATH = {
@@ -44,17 +41,16 @@ const verifySlugs = (nodes) => {
   }
 };
 
-const processNodes = (_nodes) => {
+const processNodes = (_nodes, { homeNodeId, primaryLocale }) => {
   verifySlugs(_nodes);
-  let nodes = _nodes.map(node => ensureNodeFields(node));
-  if (i18nEnabled) nodes = patchI18n(nodes, defaultLocale);
+  let nodes = _nodes.map(node => ensureNodeFields(node, { homeNodeId }));
+  nodes = patchI18n(nodes, { primaryLocale });
   return nodes;
 };
 
 const resources = [
   {
     resourceType: 'node.entry.article',
-    prefix: '/articles',
     field: 'articles',
     template: '../../../src/templates/Article.js',
   },
@@ -65,19 +61,16 @@ const resources = [
   },
   {
     resourceType: 'node.petition',
-    prefix: '/petitions',
     field: 'petitions',
     template: '../../../src/templates/Campaign',
   },
   {
     resourceType: 'node.event',
-    prefix: '/events',
     field: 'events',
     template: '../../../src/templates/Campaign',
   },
   {
     resourceType: 'node.fundraiser',
-    prefix: '/fundraisers',
     field: 'fundraisers',
     template: '../../../src/templates/Campaign',
   },
@@ -87,21 +80,33 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
   // QUERIES
 
   const {
-    data: { wings: { currentApp } = {}, wings = {}, site: { siteMetadata = {} } = {} } = {},
+    data: {
+      wings: { currentApp, currentProject } = {},
+      wings = {},
+      site: { siteMetadata = {} } = {},
+    } = {},
   } = await graphql(query);
 
   const homeNodeId =
     (currentApp && currentApp.home && currentApp.home.node && currentApp.home.node.id) || null;
 
+  const primaryLocale =
+    currentProject &&
+    currentProject.settings &&
+    currentProject.settings.i18n.locales.find(l => l.primary).locale.id;
+
   await Promise.all(
-    resources.map(async ({ resourceType, prefix = '', field, template }) => {
-      const nodes = processNodes(wings[field].edges.map(({ node }) => node));
+    resources.map(async ({ resourceType, field, template }) => {
+      const nodes = processNodes(wings[field].edges.map(({ node }) => node), {
+        homeNodeId,
+        primaryLocale,
+      });
       console.log(`[hummingbird] found ${nodes.length} of ${resourceType}`);
 
       // GENERATE ARTICLES
       nodes.forEach((node) => {
-        const isHome = node.id === homeNodeId;
-        const path = isHome ? '/' : prefix + node.path;
+        const { isHome } = node;
+        const path = routing.getPath(node);
         const context = {
           node,
           siteMeta: siteMetadata,

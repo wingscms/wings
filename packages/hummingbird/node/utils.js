@@ -1,9 +1,7 @@
 const filterByLocale = (locale, node) => !!(locale === node.locale);
 
-const isTranslation = ({ slug, locale }) => node => locale !== node.locale && slug === node.slug;
-
-const constructPath = (locale, defaultLocale, node) =>
-  (locale === defaultLocale ? node.path : `/${locale}/${node.slug}`);
+const isTranslation = ({ slug, locale }) => node =>
+  locale.id !== node.locale.id && slug === node.slug;
 
 const makeShareUrls = (platforms, url) => {
   const { all, facebook, twitter } = platforms;
@@ -22,13 +20,14 @@ const makeShareUrls = (platforms, url) => {
   return res;
 };
 
-const patchI18n = (nodes, { defaultLocale = 'en' } = {}) =>
+const patchI18n = (nodes, { primaryLocale } = {}) =>
   nodes.reduce((_patched, _node, i) => {
-    const { meta: { locale = defaultLocale } = {} } = _node;
     const node = {
       ..._node,
-      locale,
-      path: constructPath(locale, defaultLocale, _node),
+      locale: {
+        ..._node.locale,
+        primary: _node.locale.id === primaryLocale,
+      },
       translations: [],
     };
     const patched = _patched.concat([node]);
@@ -38,14 +37,9 @@ const patchI18n = (nodes, { defaultLocale = 'en' } = {}) =>
     // we're done, reconcile translations
     return patched.map((_p) => {
       const p = { ..._p };
-      patched
-        .filter(isTranslation({ slug: p.slug, locale: p.locale }))
-        .forEach(({ translations, ...translation }) => {
-          p.translations = [
-            ...p.translations,
-            { locale: translation.locale, path: translation.path },
-          ];
-        });
+      patched.filter(isTranslation(p)).forEach(({ translations, ...translation }) => {
+        p.translations = [...p.translations, translation];
+      });
       return p;
     });
   }, []);

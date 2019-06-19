@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
+import routing from '../../../services/routing';
 
 import Container from '../Container';
 import Content from '../Content';
@@ -133,10 +134,7 @@ export default ({
     setSignatureGoal(campaign.signatureGoal);
     if (formProps.onLoad) formProps.onLoad(campaign);
   };
-  const getUrl = path =>
-    (typeof window !== 'undefined' &&
-      [window.location.origin, window.location.pathname.replace(/\/$/, ''), path].join('')) ||
-    '';
+  debugger;
   const { intro, title } = node;
   return (
     <React.Fragment>
@@ -181,7 +179,7 @@ export default ({
                 type={resourceType.split('.')[1]}
                 id={id}
                 node={node}
-                redirectUrl={getUrl('/confirmed')}
+                redirectUrl={`${routing.getPath(node)}/confirmed`}
                 {...formProps}
                 onLoad={handleCampaignLoad}
                 nodeFragment={NodeFragment}

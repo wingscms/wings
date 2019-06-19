@@ -145,6 +145,19 @@ fragment CampaignFields on Wings_Campaign {
         }
       }
     }
+    currentProject {
+      settings {
+        i18n {
+          locales {
+            locale {
+              id
+              name
+            }
+            primary
+          }
+        }
+      }
+    }
   }
   site {
     siteMetadata {
