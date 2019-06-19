@@ -9,7 +9,7 @@ const Insight = styled.div`
   font-size: 30px;
   font-family: ${({ theme }) => theme.typography.options.headerFontFamily.join(', ')};
   line-height: 1.2;
-  color: ${({ theme }) => theme.darkHeadingColor};
+  color: ${({ theme }) => theme.textColorDark};
   text-align: center;
   margin-top: 40px;
   margin-bottom: 40px;
@@ -21,7 +21,7 @@ const Insight = styled.div`
     margin-bottom: 80px;
   }
   .inner {
-    background: ${({ theme }) => theme.colorPrimary};
+    background: ${({ theme }) => theme.primaryColor};
     margin: 0 auto;
     max-width: 1160px;
   }

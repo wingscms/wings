@@ -10,7 +10,7 @@ import Intro from '../components/Intro';
 
 const Container = styled.div`
   ${wide};
-  background: ${({ theme }) => theme.colorChapterBackground};
+  background: ${({ theme }) => theme.chapterBackgroundColor};
   margin-top: 80px;
   margin-bottom: 80px;
   .mobiledoc-content > div:first-child & {
@@ -41,7 +41,7 @@ const Header = styled.div`
 `;
 
 const Title = styled.h2`
-  color: ${({ theme }) => theme.colorChapterItem};
+  color: ${({ theme }) => theme.chapterItemColor};
   letter-spacing: 1.5px;
   font-size: 30px;
   line-height: 65px !important;
@@ -54,7 +54,7 @@ const Title = styled.h2`
 `;
 
 const Marker = styled.span`
-  color: ${({ theme }) => theme.colorChapterItemNumber};
+  color: ${({ theme }) => theme.chapterItemNumberColor};
   opacity: 0.3;
   font-size: 80px;
   font-weight: bold;

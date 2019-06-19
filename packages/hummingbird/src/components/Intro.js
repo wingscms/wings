@@ -8,15 +8,15 @@ export default styled.div`
   transform: translateX(-50%);
   margin-left: 50%;
   padding: 0 20px;
-  line-height: ${({ theme }) => theme.lineHeightIntro};
+  line-height: ${({ theme }) => theme.introLineHeight};
   text-align: left;
-  font-weight: ${({ theme }) => theme.fontWeightIntro};
-  font-size: ${({ theme }) => theme.fontSizeIntro * 16}px;
+  font-weight: ${({ theme }) => theme.introFontWeight};
+  font-size: ${({ theme }) => theme.introFontSize * 16}px;
   @media screen and (min-width: 600px) {
-    font-size: ${({ theme }) => theme.fontSizeIntro * 18}px;
+    font-size: ${({ theme }) => theme.introFontSize * 18}px;
   }
   @media screen and (min-width: 800px) {
-    font-size: ${({ theme }) => theme.fontSizeIntro * 23}px;
+    font-size: ${({ theme }) => theme.introFontSize * 23}px;
   }
 
   ${({ fullWidth }) =>

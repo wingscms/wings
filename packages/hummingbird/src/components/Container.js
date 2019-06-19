@@ -5,5 +5,5 @@ export default styled.div`
   width: 100%;
   height: auto;
   position: relative;
-  background-color: ${({ theme }) => theme.colorBackground || 'transparent'};
+  background-color: ${({ theme }) => theme.backgroundColor || 'transparent'};
 `;

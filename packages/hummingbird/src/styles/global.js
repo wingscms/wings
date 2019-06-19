@@ -15,12 +15,12 @@ export default createGlobalStyle`
     p a,
     ol a,
     ul a {
-    color: ${({ theme }) => theme.colorText};
+    color: ${({ theme }) => theme.textColor};
     text-decoration: none;
     background-image: linear-gradient(
       120deg,
-      ${({ theme }) => theme.colorPrimary} 0%,
-      ${({ theme }) => theme.colorPrimary} 100%
+      ${({ theme }) => theme.primaryColor} 0%,
+      ${({ theme }) => theme.primaryColor} 100%
     );
     background-repeat: no-repeat;
     background-size: 100% 2px;
@@ -29,14 +29,14 @@ export default createGlobalStyle`
     &:hover,
     &:focus {
       background-size: 100% 4px;
-      background-image: linear-gradient(120deg, ${({ theme }) => theme.colorPrimary} 0%, ${({
+      background-image: linear-gradient(120deg, ${({ theme }) => theme.primaryColor} 0%, ${({
   theme,
-}) => theme.colorPrimary} 100%);
+}) => theme.primaryColor} 100%);
     }
   }
-    color: ${({ theme }) => theme.colorText};
+    color: ${({ theme }) => theme.textColor};
     padding-bottom: 40px;
-    font-weight: ${({ theme }) => theme.fontWeightBody};
+    font-weight: ${({ theme }) => theme.bodyFontWeight};
     > * {
       margin-bottom: 0;
       margin-top: 0;
@@ -60,12 +60,12 @@ export default createGlobalStyle`
     .drop-cap & > p:first-child {
       margin-top: 2em;
       &::first-letter {
-        font-weight: ${({ theme }) => theme.fontWeightFirstLetter}!important;
-        color: ${({ theme }) => theme.colorPrimary};
+        font-weight: ${({ theme }) => theme.firstLetterFontWeight}!important;
+        color: ${({ theme }) => theme.primaryColor};
         float: left;
-        line-height: ${({ theme }) => theme.lineHeightFirstLetter};
+        line-height: ${({ theme }) => theme.firstLetterLineHeight};
         margin: 0.075em 0.1em -0.1em 0;
-        font-size: ${({ theme }) => theme.fontSizeFirstLetter};
+        font-size: ${({ theme }) => theme.dropcapFontSize};
         font-family: ${({ theme }) => theme.headingFont};
       }
     }
@@ -77,7 +77,7 @@ export default createGlobalStyle`
     }
 
     > blockquote {
-      border-left: 2px solid ${({ theme }) => theme.colorPrimary};
+      border-left: 2px solid ${({ theme }) => theme.primaryColor};
       margin: 0;
       padding: 0 0 0 1rem;
       color: #000;
@@ -88,7 +88,7 @@ export default createGlobalStyle`
     > h4,
     > h5,
     > h6 {
-      color: ${({ theme }) => theme.colorText};
+      color: ${({ theme }) => theme.textColor};
       margin-bottom: 5px;
       line-height: 1.2;
       text-transform: none;
@@ -99,12 +99,12 @@ export default createGlobalStyle`
     .drop-cap & div.headerWrapper + p {
       position: relative;
       &::first-letter {
-        font-weight: ${({ theme }) => theme.fontWeightFirstLetter}!important;
-        color: ${({ theme }) => theme.colorPrimary};
+        font-weight: ${({ theme }) => theme.firstLetterFontWeight}!important;
+        color: ${({ theme }) => theme.primaryColor};
         float: left;
-        line-height: ${({ theme }) => theme.lineHeightFirstLetter};
+        line-height: ${({ theme }) => theme.firstLetterLineHeight};
         margin: 0.075em 0.1em -0.2em 0;
-        font-size: ${({ theme }) => theme.fontSizeFirstLetter};
+        font-size: ${({ theme }) => theme.dropcapFontSize};
         font-family: ${({ theme }) => theme.headingFont};
       }
     }

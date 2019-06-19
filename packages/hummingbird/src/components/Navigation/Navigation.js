@@ -25,8 +25,10 @@ import ChaptersToggle from './ChaptersToggle';
 
 import Logo from './Logo';
 
+const _MenuItem = ({ theme }) => <MenuItem backgroundColor={theme.navigationBackgroundColor} />;
+
 const Wrap = styled.div`
-  background: ${({ theme }) => theme.colorNavigationBackground};
+  background: ${({ theme }) => theme.navigationBackgroundColor};
   width: 100%;
   display: block;
   text-align: center;
@@ -163,8 +165,8 @@ class Navigation extends Component {
                 </div>
               )}
               items={[]}
-              menuItemComp={MenuItem}
-              InternalLink={MenuItem}
+              menuItemComp={_MenuItem}
+              InternalLink={_MenuItem}
               left
               className="chapters"
             />
@@ -179,10 +181,10 @@ class Navigation extends Component {
               <Burger
                 active={visible}
                 activeColor={getContrastColor({
-                  backgroundColor: theme.colorNavigationMenuBackground,
-                  colors: { light: theme.colorNavigationIcon, dark: theme.colorNavigationIconDark },
+                  backgroundColor: theme.navigationMenuBackgroundColor,
+                  colors: { light: theme.navigationIconColor, dark: theme.navigationIconColorDark },
                 })}
-                color={theme.colorNavigationIcon}
+                color={theme.navigationIconColor}
                 type="spin"
               />
             </MenuButton>
@@ -204,7 +206,7 @@ class Navigation extends Component {
           ) : null}
           {shareUrls ? (
             <ShareButtons
-              color={theme.colorNavigationIcon}
+              color={theme.navigationIconColor}
               email={shareUrls.email}
               emailIcon={emailIcon}
               facebook={shareUrls.facebook}
@@ -218,9 +220,9 @@ class Navigation extends Component {
           {items ? (
             <SlideMenu
               items={items}
-              menuItemComp={MenuItem}
+              menuItemComp={_MenuItem}
               InternalLink={Link}
-              backgroundColor={theme.colorNavigationMenuBackground}
+              backgroundColor={theme.navigationMenuBackgroundColor}
             />
           ) : null}
         </Container>

@@ -16,14 +16,14 @@ export default styled(MenuItem)`
   a {
     color: ${({ theme }) =>
     getContrastColor({
-      backgroundColor: theme.colorNavigationMenuBackground || '#ffffff',
-      colors: { light: theme.colorText, dark: theme.colorTextDark },
+      backgroundColor: theme.navigationMenuBackgroundColor || '#ffffff',
+      colors: { light: theme.textColor, dark: theme.textColorDark },
     })};
     text-decoration: none;
     background-image: linear-gradient(
       120deg,
-      ${({ theme }) => theme.colorPrimary} 0%,
-      ${({ theme }) => theme.colorPrimary} 100%
+      ${({ theme }) => theme.primaryColor} 0%,
+      ${({ theme }) => theme.primaryColor} 100%
     ) !important;
     font-family: ${({ theme }) => theme.typography.options.headerFontFamily.join(', ')};
     background-repeat: no-repeat;
@@ -40,7 +40,7 @@ export default styled(MenuItem)`
   }
   &.special {
     a {
-      color: ${({ theme }) => theme.colorPrimary};
+      color: ${({ theme }) => theme.primaryColor};
     }
   }
   &.current {

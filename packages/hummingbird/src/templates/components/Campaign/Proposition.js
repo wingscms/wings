@@ -50,7 +50,7 @@ const ToggleButton = styled.div`
   transition: all 0.1s linear;
   cursor: pointer;
   &:hover {
-    color: ${({ theme }) => theme.colorPrimary};
+    color: ${({ theme }) => theme.primaryColor};
   }
   &::before {
     content: '';

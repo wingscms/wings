@@ -24,6 +24,7 @@ export const ButtonStory = () => (
         {
           none: 'none',
           primary: 'primary',
+          secondary: 'secondary',
           success: 'success',
           warning: 'warning',
           danger: 'danger',

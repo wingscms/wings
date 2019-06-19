@@ -19,7 +19,7 @@ const BackgroundContainer = styled(Container)`
     max-width: 1160px;
     width: 100%;
     margin: 0 auto;
-    background-color: ${({ theme }) => theme.colorPrimary};
+    background-color: ${({ theme }) => theme.primaryColor};
     border-radius: 4px;
   }
   @media screen and (max-width: 800px) {
@@ -44,7 +44,7 @@ const BackgroundContainerTop = styled(BackgroundContainer)`
 `;
 
 const Wrapper = styled(Container)`
-  background-color: ${({ theme }) => theme.colorBackground};
+  background-color: ${({ theme }) => theme.backgroundColor};
 `;
 const CampaignContentWrapper = styled.div`
   position: relative;

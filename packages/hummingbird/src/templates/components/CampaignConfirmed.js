@@ -21,7 +21,7 @@ const ShareButton = styled.a`
   vertical-align: middle;
   height: 40px;
   width: 40px;
-  background-color: ${({ theme }) => theme.colorPrimary};
+  background-color: ${({ theme }) => theme.primaryColor};
   border-radius: 4px;
   position: relative;
   margin: 0 5px;

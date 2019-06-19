@@ -7,7 +7,7 @@ import Section from './Section';
 import FooterColumns from './FooterColumns';
 
 const Wrap = styled.div`
-  background: ${({ theme }) => theme.colorFooterBackground};
+  background: ${({ theme }) => theme.footerBackgroundColor};
   width: 100%;
   display: block;
   text-align: center;
@@ -19,7 +19,7 @@ const Wrap = styled.div`
 
 const Container = styled.div`
   max-width: 1200px;
-  background: ${({ theme }) => theme.colorFooterBackground};
+  background: ${({ theme }) => theme.footerBackgroundColor};
   align-items: flex-start;
   margin: 0 auto;
   display: flex;
@@ -64,7 +64,7 @@ const BolsterLink = styled.a`
   width: 100%;
   padding: 0 20px;
   text-align: left;
-  color: ${({ theme }) => theme.colorFooterText};
+  color: ${({ theme }) => theme.footerTextColor};
   text-decoration: none;
   font-size: 12px;
   background-image: none;
@@ -98,13 +98,13 @@ const Footer = ({ theme }) => {
   return (
     <Wrap>
       <Container>
-        {footer.title || theme.imageLogoUrl ? (
+        {footer.title || theme.logoImageUrl ? (
           <CTASection>
             <div>{footer.title}</div>
             <div>
-              {theme.imageLogoFooterUrl && (
+              {theme.logoFooterImageUrl && (
                 <a href={footer.logoLink || '/'}>
-                  <Logo src={theme.imageLogoFooterUrl} alt="logo" />
+                  <Logo src={theme.logoFooterImageUrl} alt="logo" />
                 </a>
               )}
             </div>

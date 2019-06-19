@@ -8,7 +8,7 @@ const ShareContainer = styled.div`
   height: 100%;
   > p {
     font-size: 15px;
-    color: ${({ theme }) => theme.colorPrimary};
+    color: ${({ theme }) => theme.primaryColor};
     margin: 0 10px 0 0;
   }
   @media screen and (max-width: 800px) {

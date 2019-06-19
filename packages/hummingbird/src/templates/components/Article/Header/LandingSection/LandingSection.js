@@ -11,7 +11,7 @@ const Container = styled.header`
   cursor: pointer;
   width: 100vw;
   height: calc(100vh - 84px);
-  background-color: ${({ theme }) => theme.colorLandingSectionBackground};
+  background-color: ${({ theme }) => theme.landingSectionBackgroundColor};
   position: relative;
   overflow: hidden;
   transition: 0.2s all ease-in-out;

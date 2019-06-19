@@ -17,4 +17,4 @@ const Logo = styled.img`
   }
 `;
 
-export default withTheme(({ theme, ...props }) => <Logo src={theme.imageLogoUrl} {...props} />);
+export default withTheme(({ theme, ...props }) => <Logo src={theme.logoImageUrl} {...props} />);

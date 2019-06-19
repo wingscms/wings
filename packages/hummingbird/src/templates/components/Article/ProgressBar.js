@@ -12,7 +12,7 @@ const ProgressBarRoot = styled.div`
   z-index: 20;
   .inner {
     height: 100%;
-    background-color: ${({ theme }) => theme.colorPrimary};
+    background-color: ${({ theme }) => theme.primaryColor};
     transition: width 0.1s ease-out;
   }
 `;

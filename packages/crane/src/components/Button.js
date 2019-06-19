@@ -31,15 +31,15 @@ const getSize = ({ size }) => {
 };
 
 const buttonStyles = ({ disabled, intent, size, theme, type }) => {
-  const colors = { dark: theme.colorTextDark, light: theme.colorText };
-  const color = getIntentColor({ intent, theme });
+  const colors = { dark: theme.textColorDark, light: theme.textColor };
+  const color = getIntentColor({ intent, theme, defaultColor: '#dddddd' });
   const typeCSS = getType({ color, type });
   const sizeCSS = getSize({ size });
   const disabledCSS = !disabled
     ? null
     : css`
-        background-color: ${theme.colorDisabled || '#DDDDDD'} !important;
-        color: ${getContrastColor({ backgroundColor: theme.colorDisabled || '#DDDDDD', colors })};
+        background-color: ${theme.disabledColor || '#DDDDDD'} !important;
+        color: ${getContrastColor({ backgroundColor: theme.disabledColor || '#DDDDDD', colors })};
         cursor: not-allowed !important;
       `;
   return css`
