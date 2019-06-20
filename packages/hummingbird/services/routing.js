@@ -5,6 +5,12 @@ module.exports = {
     );
     return [''].concat(parts).join('/') || '/';
   },
+  getCampaignConfirmPath(node) {
+    return `${this.getPath(node)}/confirm`;
+  },
+  getCampaignConfirmedPath(node) {
+    return `${this.getPath(node)}/confirmed`;
+  },
   getLocalePrefix(node) {
     return node.locale.primary ? '' : node.locale.id;
   },

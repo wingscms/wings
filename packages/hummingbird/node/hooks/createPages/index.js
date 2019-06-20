@@ -124,12 +124,12 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
           return;
         }
         createPage({
-          path: `${path}/confirm`,
+          path: routing.getCampaignConfirmPath(node),
           component: require.resolve('../../../src/templates/CampaignConfirm'),
           context,
         });
         createPage({
-          path: `${path}/confirmed`,
+          path: routing.getCampaignConfirmedPath(node),
           component: require.resolve('../../../src/templates/CampaignConfirmed'),
           context,
         });

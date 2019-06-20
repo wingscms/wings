@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled, { withTheme } from 'styled-components';
 import { createCard } from '@wingscms/react';
-import Campaign from '../components/Campaign';
+import _Campaign from '../components/Campaign';
 
 import wide from '../styles/wide';
 
@@ -9,6 +9,10 @@ const Container = styled.div`
   ${wide};
   margin-top: 80px;
   margin-bottom: 80px;
+`;
+
+const Campaign = styled(_Campaign)`
+  margin-top: 0;
 `;
 
 class CampaignCardView extends Component {
@@ -20,7 +24,7 @@ class CampaignCardView extends Component {
     }
     return (
       <Container>
-        <Campaign id={id} resourceType={resourceType} {...this.props} campaignCard />
+        <Campaign id={id} resourceType={resourceType} {...this.props} />
       </Container>
     );
   }

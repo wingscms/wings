@@ -49,7 +49,6 @@ const CampaignFragment = `
 
 const MainContainerOuter = styled(Container)`
   background-color: transparent;
-  margin-top: ${({ campaignCard }) => (campaignCard ? '0' : '-300px')};
   overflow: auto;
   @media screen and (max-width: 1000px) {
     margin-bottom: 0;
@@ -115,15 +114,7 @@ const CounterContainer = styled(FormContainerInner)`
   }
 `;
 
-export default ({
-  id,
-  resourceType,
-  node: _node = {},
-  formProps = {},
-  theme = {},
-  campaignCard = false,
-  ...props
-}) => {
+export default ({ id, resourceType, node: _node = {}, formProps = {}, theme = {}, ...props }) => {
   const [signatureCount, setSignatureCount] = useState(0);
   const [signatureGoal, setSignatureGoal] = useState(0);
   const [node, setNode] = useState(_node);
@@ -134,11 +125,10 @@ export default ({
     setSignatureGoal(campaign.signatureGoal);
     if (formProps.onLoad) formProps.onLoad(campaign);
   };
-  debugger;
   const { intro, title } = node;
   return (
     <React.Fragment>
-      <MainContainerOuter campaignCard={campaignCard}>
+      <MainContainerOuter {...props}>
         <MainContainerInner>
           <Proposition>
             {title ? <Title>{title}</Title> : null}
@@ -179,7 +169,7 @@ export default ({
                 type={resourceType.split('.')[1]}
                 id={id}
                 node={node}
-                redirectUrl={node.locale && `${routing.getPath(node)}/confirmed`}
+                redirectUrl={node.locale && `${routing.getCampaignConfirmedPath(node)}`}
                 {...formProps}
                 onLoad={handleCampaignLoad}
                 nodeFragment={NodeFragment}
@@ -190,7 +180,7 @@ export default ({
         </MainContainerInner>
       </MainContainerOuter>
       {resourceType === 'node.event' && (
-        <Title style={{ marginBottom: '40px' }} {...props}>
+        <Title style={{ marginBottom: '40px' }}>
           <EventDetails
             title={
               <Title>
