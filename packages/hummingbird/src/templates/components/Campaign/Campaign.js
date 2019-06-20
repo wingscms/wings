@@ -61,6 +61,7 @@ const CampaignContentWrapper = styled.div`
   }
 `;
 const CampaignContent = styled.div`
+  background-color: ${({ theme }) => theme.backgroundColor};
   display: block;
   position: relative;
   width: calc(100% - 20px);
