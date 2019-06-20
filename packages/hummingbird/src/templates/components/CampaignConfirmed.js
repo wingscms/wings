@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
+import { getContrastColor } from '@wingscms/crane';
 import qs from 'qs';
 import Campaign from './Campaign';
 import { Facebook, Twitter, Whatsapp, Globe } from '../../img/svg/social';
@@ -23,15 +24,29 @@ const ShareButton = styled.a`
   position: relative;
   margin: 0 5px;
   transition: all 0.2s linear;
-  &:hover {
-    background-color: ${({ theme }) => theme.secondaryColor};
-  }
   svg {
     display: block;
     height: 26px;
     margin: 12px auto;
-    fill: ${({ theme }) => theme.backgroundColor};
+    fill: ${({ theme }) =>
+    getContrastColor({
+      backgroundColor: theme.primaryColor,
+      colors: { light: theme.textColor, dark: theme.textColorDark },
+      threshold: 30,
+    })};
   }
+  &:hover {
+    background-color: ${({ theme }) => theme.secondaryColor};
+    svg {
+      fill: ${({ theme }) =>
+    getContrastColor({
+      backgroundColor: theme.secondaryColor,
+      colors: { light: theme.textColor, dark: theme.textColorDark },
+      threshold: 30,
+    })};
+    }
+  }
+
   @media screen and (min-width: 800px) {
     height: 50px;
     width: 50px;
