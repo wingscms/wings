@@ -3,10 +3,7 @@ import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 import qs from 'qs';
 import Campaign from './Campaign';
-import facebookLogo from '../../img/facebook.svg';
-import twitterLogo from '../../img/twitter.svg';
-import whatsappLogo from '../../img/whatsapp.svg';
-import emailIcon from '../../img/email.svg';
+import { Facebook, Twitter, Whatsapp, Globe } from '../../img/svg/social';
 
 const ShareContainer = styled.div`
   padding-top: 20px;
@@ -25,14 +22,15 @@ const ShareButton = styled.a`
   border-radius: 4px;
   position: relative;
   margin: 0 5px;
-  transition: all 0.1s linear;
+  transition: all 0.2s linear;
   &:hover {
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.secondaryColor};
   }
-  img {
+  svg {
     display: block;
-    height: 20px;
-    margin: 10px auto;
+    height: 26px;
+    margin: 12px auto;
+    fill: ${({ theme }) => theme.backgroundColor};
   }
   @media screen and (min-width: 800px) {
     height: 50px;
@@ -149,16 +147,16 @@ export default class CampaignConfirmed extends Component {
             tagName={ShareTitle}
           />
           <ShareButton href={shareUrls.facebook} target="_blank" rel="noopener noreferrer">
-            <img src={facebookLogo} alt="Share on Facebook" />
+            <Facebook />
           </ShareButton>
           <ShareButton href={shareUrls.twitter} target="_blank" rel="noopener noreferrer">
-            <img src={twitterLogo} alt="Share on Twitter" />
+            <Twitter />
           </ShareButton>
           <ShareButton href={shareUrls.whatsapp} target="_blank" rel="noopener noreferrer">
-            <img src={whatsappLogo} alt="Share via WhatsApp" />
+            <Whatsapp />
           </ShareButton>
           <ShareButton href={shareUrls.email}>
-            <img src={emailIcon} alt="Share via email" />
+            <Globe />
           </ShareButton>
         </ShareContainer>
       </Campaign.Content>
