@@ -179,7 +179,7 @@ export default ({
                 type={resourceType.split('.')[1]}
                 id={id}
                 node={node}
-                redirectUrl={`${routing.getPath(node)}/confirmed`}
+                redirectUrl={node.locale && `${routing.getPath(node)}/confirmed`}
                 {...formProps}
                 onLoad={handleCampaignLoad}
                 nodeFragment={NodeFragment}
