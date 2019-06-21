@@ -19,6 +19,7 @@ const NodeFragment = `
     locale {
       id
       name
+      primary
     }
     image {
       id
@@ -114,6 +115,9 @@ const CounterContainer = styled(FormContainerInner)`
   }
 `;
 
+const getUrl = path =>
+  (typeof window !== 'undefined' && [window.location.origin, path].join('')) || '';
+
 export default ({ id, resourceType, node: _node = {}, formProps = {}, theme = {}, ...props }) => {
   const [signatureCount, setSignatureCount] = useState(0);
   const [signatureGoal, setSignatureGoal] = useState(0);
@@ -169,7 +173,7 @@ export default ({ id, resourceType, node: _node = {}, formProps = {}, theme = {}
                 type={resourceType.split('.')[1]}
                 id={id}
                 node={node}
-                redirectUrl={node.locale && `${routing.getCampaignConfirmedPath(node)}`}
+                redirectUrl={getUrl(routing.getCampaignConfirmedPath(node))}
                 {...formProps}
                 onLoad={handleCampaignLoad}
                 nodeFragment={NodeFragment}

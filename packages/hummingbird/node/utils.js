@@ -20,14 +20,10 @@ const makeShareUrls = (platforms, url) => {
   return res;
 };
 
-const patchI18n = (nodes, { primaryLocale } = {}) =>
+const patchI18n = nodes =>
   nodes.reduce((_patched, _node, i) => {
     const node = {
       ..._node,
-      locale: {
-        ..._node.locale,
-        primary: _node.locale.id === primaryLocale,
-      },
       translations: [],
     };
     const patched = _patched.concat([node]);

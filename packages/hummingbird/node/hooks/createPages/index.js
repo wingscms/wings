@@ -41,10 +41,10 @@ const verifySlugs = (nodes) => {
   }
 };
 
-const processNodes = (_nodes, { homeNodeId, primaryLocale }) => {
+const processNodes = (_nodes, { homeNodeId }) => {
   verifySlugs(_nodes);
   let nodes = _nodes.map(node => ensureNodeFields(node, { homeNodeId }));
-  nodes = patchI18n(nodes, { primaryLocale });
+  nodes = patchI18n(nodes);
   return nodes;
 };
 
@@ -80,26 +80,16 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
   // QUERIES
 
   const {
-    data: {
-      wings: { currentApp, currentProject } = {},
-      wings = {},
-      site: { siteMetadata = {} } = {},
-    } = {},
+    data: { wings: { currentApp } = {}, wings = {}, site: { siteMetadata = {} } = {} } = {},
   } = await graphql(query);
 
   const homeNodeId =
     (currentApp && currentApp.home && currentApp.home.node && currentApp.home.node.id) || null;
 
-  const primaryLocale =
-    currentProject &&
-    currentProject.settings &&
-    currentProject.settings.i18n.locales.find(l => l.primary).locale.id;
-
   await Promise.all(
     resources.map(async ({ resourceType, field, template }) => {
       const nodes = processNodes(wings[field].edges.map(({ node }) => node), {
         homeNodeId,
-        primaryLocale,
       });
       console.log(`[hummingbird] found ${nodes.length} of ${resourceType}`);
 
@@ -123,11 +113,6 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
         if (['petition', 'event', 'fundraiser'].indexOf(node.resourceType.split('.')[1]) < 0) {
           return;
         }
-        createPage({
-          path: routing.getCampaignConfirmPath(node),
-          component: require.resolve('../../../src/templates/CampaignConfirm'),
-          context,
-        });
         createPage({
           path: routing.getCampaignConfirmedPath(node),
           component: require.resolve('../../../src/templates/CampaignConfirmed'),

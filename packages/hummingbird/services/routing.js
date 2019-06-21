@@ -1,17 +1,17 @@
 module.exports = {
   getPath(node) {
+    if (!node.id) return null;
     const parts = [this.getLocalePrefix(node), this.getPrefix(node), this.getSlug(node)].filter(
       p => !!p,
     );
     return [''].concat(parts).join('/') || '/';
   },
-  getCampaignConfirmPath(node) {
-    return `${this.getPath(node)}/confirm`;
-  },
   getCampaignConfirmedPath(node) {
+    if (!node.id) return null;
     return `${this.getPath(node)}/confirmed`;
   },
   getLocalePrefix(node) {
+    debugger;
     return node.locale.primary ? '' : node.locale.id;
   },
   getSlug(node) {

@@ -7,6 +7,7 @@ fragment NodeFields on Wings_Node {
   locale {
     id
     name
+    primary
   }
   image {
     id
@@ -141,19 +142,6 @@ fragment CampaignFields on Wings_Campaign {
         home {
           node {
             id
-          }
-        }
-      }
-    }
-    currentProject {
-      settings {
-        i18n {
-          locales {
-            locale {
-              id
-              name
-            }
-            primary
           }
         }
       }

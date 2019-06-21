@@ -153,11 +153,6 @@ const messages = defineMessages({
   },
 });
 
-const getUrl = path =>
-  (typeof window !== 'undefined' &&
-    [window.location.origin, window.location.pathname.replace(/\/$/, ''), path].join('')) ||
-  '';
-
 // TODO: move to @wingscms/react (needs a provider for Wings client first)
 class CampaignForm extends Component {
   static propTypes = {
@@ -198,6 +193,7 @@ class CampaignForm extends Component {
     fetching: false,
     formSchema: null,
     amount: 500,
+    stage: 'form',
   };
 
   componentDidMount() {
@@ -343,7 +339,7 @@ class CampaignForm extends Component {
       if (res.donation && res.donation.id) {
         window.location.assign(res.donation.order.paymentUrl);
       } else {
-        window.location.assign(getUrl('/confirm'));
+        this.setState({ stage: 'confirm' });
       }
     } catch (err) {
       console.error(err);
@@ -365,14 +361,15 @@ class CampaignForm extends Component {
   };
 
   render() {
-    const { amount } = this.state;
     const { theme } = this.props;
+    const { amount, stage } = this.state;
     const schema = this.getFormSchema();
     const loading = !schema;
+    debugger;
     return loading ? (
       <div style={{ textAlign: 'center' }}>
         <FormattedMessage
-          id="hummingbird.CampaignForm.loading.text"
+          id="hummingbird.Campaign.loading.text"
           description="Form loading message"
           defaultMessage="loading"
         />
@@ -395,17 +392,35 @@ class CampaignForm extends Component {
             />
           </div>
         ) : null}
-        <SchemaForm
-          id="campaign-form"
-          autoValidate={false}
-          {...this.props.schemaFormProps}
-          schema={schema}
-          formData={this.state.formData}
-          onChange={({ formData }) => this.setState({ formData })}
-          onSubmit={this.handleSubmit.bind(this)}
-        >
-          {this.props.children || <Button>{this.getSubmitText()}</Button>}
-        </SchemaForm>
+        {!(stage === 'form') ? null : (
+          <SchemaForm
+            id="campaign-form"
+            autoValidate={false}
+            {...this.props.schemaFormProps}
+            schema={schema}
+            formData={this.state.formData}
+            onChange={({ formData }) => this.setState({ formData })}
+            onSubmit={this.handleSubmit.bind(this)}
+          >
+            {this.props.children || <Button>{this.getSubmitText()}</Button>}
+          </SchemaForm>
+        )}
+        {!(stage === 'confirm') ? null : (
+          <div>
+            <FormattedMessage
+              id="hummingbird.Campaign.confirm.title"
+              description="Title of campaign confirmation."
+              defaultMessage="We’re almost there!"
+              tagName="h1"
+            />
+            <FormattedMessage
+              id="hummingbird.Campaign.confirm.text"
+              description="Body of campaign confirmation."
+              defaultMessage="We have sent you an email with a confirmation link to make sure all signatures are genuine. If you follow that link, your signature will count. Thanks!"
+              tagName="p"
+            />
+          </div>
+        )}
       </React.Fragment>
     );
   }
