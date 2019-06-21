@@ -36,6 +36,17 @@ const EVENT_QUERY = `
       id
       title
       submissionSchema
+      schedule {
+        start
+        end
+      }
+      location {
+        name
+        street
+        city
+        zip
+        country
+      }
       ...NodeFields
       ...CampaignFields
     }
