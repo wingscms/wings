@@ -107,6 +107,6 @@ class HeaderView extends Component {
 }
 
 export default createCard({
-  name: 'HeaderCard',
+  name: 'ChapterCard',
   renderWith: withTheme(HeaderView),
 });
