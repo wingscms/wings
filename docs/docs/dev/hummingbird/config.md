@@ -2,6 +2,10 @@
 title: Configuration
 ---
 
+## Miscellaneous Options 
+
+`contrastLuminanceThreshold`: Default: `50`
+
 ## Colors
 
 ### Base Colors

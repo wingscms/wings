@@ -54,11 +54,10 @@ export default createGlobalStyle`
         }
       }
     }
-    > p:first-child {
-      margin-top: 2em;
+    .Mobiledoc > p:first-child {
+      margin-top: 80px;
     }
-    .drop-cap & > p:first-child {
-      margin-top: 2em;
+    &.drop-cap > .Mobiledoc > p:first-child {
       &::first-letter {
         font-weight: ${({ theme }) => theme.firstLetterFontWeight}!important;
         color: ${({ theme }) => theme.primaryColor};
@@ -96,7 +95,7 @@ export default createGlobalStyle`
         margin-bottom: 0;
       }
     }
-    .drop-cap & div.headerWrapper + p {
+    &.drop-cap > .Mobiledoc > div.headerContainer + p {
       position: relative;
       &::first-letter {
         font-weight: ${({ theme }) => theme.firstLetterFontWeight}!important;

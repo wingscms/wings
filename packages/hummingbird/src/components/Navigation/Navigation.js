@@ -25,8 +25,8 @@ import ChaptersToggle from './ChaptersToggle';
 
 import Logo from './Logo';
 
-const _MenuItem = withTheme(({ theme }) => (
-  <MenuItem backgroundColor={theme.navigationBackgroundColor} />
+const _MenuItem = withTheme(({ theme, ...props }) => (
+  <MenuItem backgroundColor={theme.navigationBackgroundColor} {...props} />
 ));
 
 const Wrap = styled.div`
@@ -56,7 +56,7 @@ const Container = styled.div`
 const MenuButton = styled.div`
   position: absolute;
   right: ${({ active }) => (active ? '-300px' : '0')};
-  top: 5px;
+  top: 8px;
   z-index: 3000;
   @media screen and (max-width: 1250px) {
     position: relative;
@@ -185,6 +185,7 @@ class Navigation extends Component {
                 activeColor={getContrastColor({
                   backgroundColor: theme.navigationMenuBackgroundColor,
                   colors: { light: theme.navigationIconColor, dark: theme.navigationIconColorDark },
+                  threshold: theme.contrastLuminanceThreshold,
                 })}
                 color={theme.navigationIconColor}
                 type="spin"

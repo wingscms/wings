@@ -15,6 +15,7 @@ const StyledMenuItem = styled.li`
     getContrastColor({
       backgroundColor: theme.navigationMenuBackgroundColor || '#ffffff',
       colors: { light: theme.textColor, dark: theme.textColorDark },
+      threshold: theme.contrastLuminanceThreshold,
     })};
   }
 `;

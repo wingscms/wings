@@ -52,8 +52,7 @@ const CTASection = styled(Section)`
   line-height: 1.2;
 
   .title {
-    font-size: 24px;
-    margin: 12px 0;
+    margin-bottom: 20px;
   }
 `;
 
@@ -100,7 +99,7 @@ const Footer = ({ theme }) => {
       <Container>
         {footer.title || theme.logoImageUrl ? (
           <CTASection>
-            <div>{footer.title}</div>
+            <div className="title">{footer.title}</div>
             <div>
               {theme.logoFooterImageUrl && (
                 <a href={footer.logoLink || '/'}>

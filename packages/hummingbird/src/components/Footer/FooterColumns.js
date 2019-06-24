@@ -39,7 +39,7 @@ const SocialMediaWrapper = styled.div`
   > div {
     width: 50px;
     height: 50px;
-    padding: 10px;
+    padding: 0 10px 10px 10px;
   }
 `;
 
@@ -47,7 +47,7 @@ export default ({ columns }) => {
   if (!columns) return null;
   return columns.map((column, k) => (
     <Section key={`footer-column-${k}`}>
-      {column.title && <span className="title">{column.title}</span>}
+      {column.title && <div className="title">{column.title}</div>}
       {column.rows.map((row, i) => {
         const key = `footer-row-${i}`;
         switch (row.type) {

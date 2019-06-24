@@ -18,15 +18,13 @@ module.exports = {
         blockRobots: process.env.BLOCK_ROBOTS || process.env.GATSBY_ENV !== 'production',
         basicAuth: process.env.BASIC_AUTH,
         design: {
-          logoImageUrl:
-            'https://s3-eu-central-1.amazonaws.com/jaaps-screenshots/hummingbird-black-footer.png',
           ...getDesign(),
         },
         typography: {
           ...getTypographyConfig(),
         },
         footer: {
-          title: 'Hummingbird',
+          title: 'Wings',
           logoLink: 'https://wings.dev',
           columns: [
             {

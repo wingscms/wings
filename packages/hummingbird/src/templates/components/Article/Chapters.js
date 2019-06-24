@@ -5,7 +5,7 @@ import Scroll from 'react-scroll-to-element';
 const ChapterList = styled.ul`
   display: block;
   max-width: 700px;
-  margin: 0 auto 3rem auto;
+  margin: 0 auto 80px auto;
   line-height: 55px;
   padding: 100px 0;
   position: relative;

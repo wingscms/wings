@@ -24,6 +24,7 @@ const Container = styled.div`
 
 const IntroText = styled(Intro)`
   color: ${({ theme }) => theme.colorChapterIntro};
+  margin-bottom: 0;
 `;
 
 const Header = styled.div`

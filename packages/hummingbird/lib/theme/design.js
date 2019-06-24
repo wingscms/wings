@@ -2,6 +2,9 @@ import { getContrastColor } from '@wingscms/crane';
 
 // set defaults here:
 export default ({
+  // MISC OPTIONS
+  contrastLuminanceThreshold = 50,
+
   // COLORS
   // Base
   primaryColor = '#417de8',
@@ -11,7 +14,7 @@ export default ({
   dangerColor = '#DB3737',
   disabledColor = '#DDDDDD',
   backgroundColor = '#FFFFFF',
-  backgroundColorHighlight = '#fdeeee',
+  backgroundColorHighlight = '#ECF2FC',
   backgroundColorDark = '#212121',
   textColor = '#212121',
   textColorDark = '#FFFFFF',
@@ -57,9 +60,9 @@ export default ({
   counterTextColor,
 
   // IMAGES
-  logoImageUrl = 'https://files.wings.dev/1532472414726/wings4-2.png',
+  logoImageUrl = 'https://files.wings.dev/9o2DZgVGxJT7x8Q8L5EP/1559551574036/wingslogo.svg',
   logoFooterImageUrl,
-  faviconImageUrl = 'https://files.wings.dev/1532472414726/wings4-2.png',
+  faviconImageUrl = 'https://files.wings.dev/9o2DZgVGxJT7x8Q8L5EP/1559551574036/wingslogo.svg',
 
   // FONTS AND TEXT
   // Used to set the name of font families if the font is manually imported.
@@ -76,6 +79,8 @@ export default ({
   introLineHeight = '1.5',
   firstLetterLineHeight = '0.8',
 }) => ({
+  // MISC OPTIONS
+  contrastLuminanceThreshold,
   // COLORS
   // Base
   primaryColor,
@@ -99,7 +104,7 @@ export default ({
   navigationIconColor: getContrastColor({
     backgroundColor: navigationBackgroundColor || primaryColor,
     colors: { light: navigationIconColor, dark: navigationIconColorDark },
-    threshold: 30,
+    threshold: contrastLuminanceThreshold,
   }),
   navigationIconColorDark,
   navigationIconLanguagePickerColor,
@@ -111,7 +116,7 @@ export default ({
     getContrastColor({
       backgroundColor: footerBackgroundColor || primaryColor,
       colors: { light: textColor, dark: textColorDark },
-      threshold: 30,
+      threshold: contrastLuminanceThreshold,
     }),
   // Articles/Pages
   chapterBackgroundColor: chapterBackgroundColor || primaryColor,
@@ -120,7 +125,7 @@ export default ({
     getContrastColor({
       backgroundColor: chapterBackgroundColor || primaryColor,
       colors: { light: textColor, dark: textColorDark },
-      threshold: 30,
+      threshold: contrastLuminanceThreshold,
     }),
   chapterItemNumberColor: chapterItemNumberColor || secondaryColor,
   chapterIntroColor:
@@ -128,7 +133,7 @@ export default ({
     getContrastColor({
       backgroundColor: chapterBackgroundColor || primaryColor,
       colors: { light: textColor, dark: textColorDark },
-      threshold: 30,
+      threshold: contrastLuminanceThreshold,
     }),
   chapterSelectBackgroundColor:
     chapterSelectBackgroundColor || chapterBackgroundColor || primaryColor,
@@ -138,7 +143,7 @@ export default ({
     getContrastColor({
       backgroundColor: chapterSelectBackgroundColor || chapterBackgroundColor || primaryColor,
       colors: { light: textColor, dark: textColorDark },
-      threshold: 30,
+      threshold: contrastLuminanceThreshold,
     }),
   chapterSelectItemNumberColor:
     chapterSelectItemNumberColor || chapterItemNumberColor || secondaryColor,
@@ -159,7 +164,7 @@ export default ({
     getContrastColor({
       backgroundColor: formBackgroundColor || primaryColor,
       colors: { light: textColor, dark: textColorDark },
-      threshold: 30,
+      threshold: contrastLuminanceThreshold,
     }),
   // Campaigns
   campaignFormBackgroundColor: campaignFormBackgroundColor || formBackgroundColor || primaryColor,
@@ -169,7 +174,7 @@ export default ({
     getContrastColor({
       backgroundColor: formBackgroundColor || primaryColor,
       colors: { light: textColor, dark: textColorDark },
-      threshold: 30,
+      threshold: contrastLuminanceThreshold,
     }),
   counterBackgroundColor: counterBackgroundColor || backgroundColor,
   counterTextColor:
@@ -177,7 +182,7 @@ export default ({
     getContrastColor({
       backgroundColor: counterBackgroundColor || backgroundColor,
       colors: { light: textColor, dark: textColorDark },
-      threshold: 30,
+      threshold: contrastLuminanceThreshold,
     }),
 
   // IMAGES
