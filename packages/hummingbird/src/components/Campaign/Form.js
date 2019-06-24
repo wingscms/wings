@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import styled, { withTheme } from 'styled-components';
 import { SchemaForm, Amount, Loading } from '@wingscms/crane';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
-import _Button from './Button';
-import wings from '../data/wings';
-import { patchSchema } from '../../lib/utils';
+import _Button from '../Button';
+import wings from '../../data/wings';
+import { patchSchema, parseJSON } from '../../../lib/utils';
 
 const PETITION_QUERY = `
   query ($id: String!) {
@@ -15,8 +15,11 @@ const PETITION_QUERY = `
       submissionSchema
       signatureCount
       signatureGoal
+      ...NodeFields
+      ...CampaignFields
     }
   }
+
 `;
 
 const PETITION_MUTATION = `
@@ -33,6 +36,19 @@ const EVENT_QUERY = `
       id
       title
       submissionSchema
+      schedule {
+        start
+        end
+      }
+      location {
+        name
+        street
+        city
+        zip
+        country
+      }
+      ...NodeFields
+      ...CampaignFields
     }
   }
 `;
@@ -51,6 +67,8 @@ const FUNDRAISER_QUERY = `
       id
       title
       submissionSchema
+      ...NodeFields
+      ...CampaignFields
     }
   }
 `;
@@ -146,22 +164,20 @@ const messages = defineMessages({
   },
 });
 
-const getUrl = path =>
-  (typeof window !== 'undefined' &&
-    [window.location.origin, window.location.pathname.replace(/\/$/, ''), path].join('')) ||
-  '';
-
 // TODO: move to @wingscms/react (needs a provider for Wings client first)
 class CampaignForm extends Component {
   static propTypes = {
     id: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(['petition', 'event', 'fundraiser']).isRequired,
     onSubmit: PropTypes.func,
     processSchema: PropTypes.func,
     processSubmission: PropTypes.func,
     onLoad: PropTypes.func,
     disabledFields: PropTypes.array,
     schemaFormProps: PropTypes.object,
+    nodeFragment: PropTypes.string,
+    campaignFragment: PropTypes.string,
+    node: PropTypes.shape({ submissionSchema: PropTypes.string }),
   };
   static defaultProps = {
     onSubmit: null,
@@ -170,6 +186,17 @@ class CampaignForm extends Component {
     onLoad: v => console.log('onLoad', v),
     disabledFields: [],
     schemaFormProps: {},
+    nodeFragment: `
+      fragment NodeFields on Node {
+        id
+      }
+    `,
+    campaignFragment: `  
+      fragment CampaignFields on Campaign {
+        id
+      }
+    `,
+    node: {},
   };
 
   state = {
@@ -177,6 +204,7 @@ class CampaignForm extends Component {
     fetching: false,
     formSchema: null,
     amount: 500,
+    stage: 'form',
   };
 
   componentDidMount() {
@@ -219,7 +247,10 @@ class CampaignForm extends Component {
   };
 
   getFormSchema() {
-    const schema = this.props.formSchema || this.state.formSchema;
+    const schema =
+      this.props.formSchema ||
+      parseJSON(this.props.node.submissionSchema, { defaultValue: null }) ||
+      this.state.formSchema;
     return schema ? this.processSchema(schema) : schema;
   }
 
@@ -267,13 +298,21 @@ class CampaignForm extends Component {
     }
   }
 
+  fragment() {
+    return [this.props.nodeFragment, this.props.campaignFragment].join('\n');
+  }
+
   maybeFetch() {
-    if (this.getFormSchema() || !this.query() || this.state.fetching) return;
+    if (this.props.formSchema || this.state.formSchema || this.state.fetching) {
+      return;
+    }
     this.setState({ fetching: true }, async () => {
       let campaign;
       let formSchema;
       try {
-        const { campaign: c } = await wings.query(this.query(), { id: this.props.id });
+        const { campaign: c } = await wings.query(this.query() + this.fragment(), {
+          id: this.props.id,
+        });
         campaign = c;
         formSchema = JSON.parse(c.submissionSchema);
       } catch {
@@ -311,7 +350,7 @@ class CampaignForm extends Component {
       if (res.donation && res.donation.id) {
         window.location.assign(res.donation.order.paymentUrl);
       } else {
-        window.location.assign(getUrl('/confirm'));
+        this.setState({ stage: 'confirm' });
       }
     } catch (err) {
       console.error(err);
@@ -333,14 +372,14 @@ class CampaignForm extends Component {
   };
 
   render() {
-    const { fetching, amount } = this.state;
     const { theme } = this.props;
+    const { amount, stage } = this.state;
     const schema = this.getFormSchema();
-    const loading = !schema || fetching;
+    const loading = !schema;
     return loading ? (
       <div style={{ textAlign: 'center' }}>
         <FormattedMessage
-          id="hummingbird.CampaignForm.loading.text"
+          id="hummingbird.Campaign.loading.text"
           description="Form loading message"
           defaultMessage="loading"
         />
@@ -356,24 +395,42 @@ class CampaignForm extends Component {
               required
               id="amount"
               value={amount / 100}
-              amounts={[5, 10, 25, 50]}
+              amounts={[5, 10, 25]}
               onChange={(v) => {
                 this.setState({ amount: v * 100 });
               }}
             />
           </div>
         ) : null}
-        <SchemaForm
-          id="campaign-form"
-          autoValidate={false}
-          {...this.props.schemaFormProps}
-          schema={schema}
-          formData={this.state.formData}
-          onChange={({ formData }) => this.setState({ formData })}
-          onSubmit={this.handleSubmit.bind(this)}
-        >
-          {this.props.children || <Button>{this.getSubmitText()}</Button>}
-        </SchemaForm>
+        {!(stage === 'form') ? null : (
+          <SchemaForm
+            id="campaign-form"
+            autoValidate={false}
+            {...this.props.schemaFormProps}
+            schema={schema}
+            formData={this.state.formData}
+            onChange={({ formData }) => this.setState({ formData })}
+            onSubmit={this.handleSubmit.bind(this)}
+          >
+            {this.props.children || <Button>{this.getSubmitText()}</Button>}
+          </SchemaForm>
+        )}
+        {!(stage === 'confirm') ? null : (
+          <div>
+            <FormattedMessage
+              id="hummingbird.Campaign.confirm.title"
+              description="Title of campaign confirmation."
+              defaultMessage="We’re almost there!"
+              tagName="h1"
+            />
+            <FormattedMessage
+              id="hummingbird.Campaign.confirm.text"
+              description="Body of campaign confirmation."
+              defaultMessage="We have sent you an email with a confirmation link to make sure all signatures are genuine. If you follow that link, your signature will count. Thanks!"
+              tagName="p"
+            />
+          </div>
+        )}
       </React.Fragment>
     );
   }

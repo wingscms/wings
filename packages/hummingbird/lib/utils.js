@@ -7,7 +7,7 @@ export const parseJSON = (
   let result;
 
   try {
-    result = value ? JSON.parse(value) : {};
+    result = value ? JSON.parse(value) : defaultValue;
   } catch (e) {
     console.log(errorMessage);
     result = defaultValue;

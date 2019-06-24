@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 
-import arrowDown from '../../../img/arrowdown.png';
-import arrowUp from '../../../img/arrowup.png';
+import arrowDown from '../../img/arrowdown.png';
+import arrowUp from '../../img/arrowup.png';
 
 const windowExists = typeof window !== 'undefined';
 

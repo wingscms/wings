@@ -8,3 +8,4 @@ export { default as CTACard } from './CTACard';
 export { default as DataCard } from './DataCard';
 export { default as CollectionCard } from './CollectionCard';
 export { default as QACard } from './QACard';
+export { default as CampaignCard } from './CampaignCard';
