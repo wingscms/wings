@@ -14,7 +14,7 @@ export default ({
   dangerColor = '#DB3737',
   disabledColor = '#DDDDDD',
   backgroundColor = '#FFFFFF',
-  backgroundColorHighlight = '#fdeeee',
+  backgroundColorHighlight = '#ECF2FC',
   backgroundColorDark = '#212121',
   textColor = '#212121',
   textColorDark = '#FFFFFF',
