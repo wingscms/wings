@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { createCard } from '@wingscms/react';
+import { getContrastColor } from '@wingscms/crane';
 import Content from '../components/Content';
 
 const Title = styled.h3`
@@ -20,6 +21,9 @@ const TextWrapper = styled.div`
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 20px;
+  p {
+    margin-bottom: 0;
+  }
   @media screen and (max-width: 800px) {
     width: 100%;
   }
@@ -27,7 +31,13 @@ const TextWrapper = styled.div`
 
 const Question = styled(TextWrapper)`
   margin-left: auto;
-  background-color: ${({ theme }) => theme.appBackgroundColor};
+  background-color: ${({ theme }) => theme.primaryColor};
+  color: ${({ theme }) =>
+    getContrastColor({
+      backgroundColor: theme.primaryColor || '#ffffff',
+      colors: { light: theme.textColor, dark: theme.textColorDark },
+      threshold: theme.contrastLuminanceThreshold,
+    })};
 `;
 
 const Answer = styled(TextWrapper)`

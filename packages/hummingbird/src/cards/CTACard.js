@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { createCard } from '@wingscms/react';
+import { getContrastColor } from '@wingscms/crane';
 import AnchorButton from '../components/AnchorButton';
 
 import wide from '../styles/wide';
@@ -33,7 +34,12 @@ const CTA = styled.div`
       max-width: 30%;
       flex-basis: auto;
       font-size: 32px;
-      color: ${({ theme }) => theme.textColorDark};
+      color: ${({ theme }) =>
+    getContrastColor({
+      backgroundColor: theme.primaryColor || '#ffffff',
+      colors: { light: theme.textColor, dark: theme.textColorDark },
+      threshold: theme.contrastLuminanceThreshold,
+    })};
       text-transform: uppercase;
       text-align: center;
       margin: 0;
@@ -44,7 +50,12 @@ const CTA = styled.div`
       min-width: 45%;
       max-width: 45%;
       flex-basis: auto;
-      color: ${({ theme }) => theme.textColorDark};
+      color: ${({ theme }) =>
+    getContrastColor({
+      backgroundColor: theme.primaryColor || '#ffffff',
+      colors: { light: theme.textColor, dark: theme.textColorDark },
+      threshold: theme.contrastLuminanceThreshold,
+    })};
       text-align: left;
       margin: 0;
       padding: 0 10px;
@@ -79,7 +90,6 @@ const CTAButton = styled(AnchorButton)`
   font-size: 20px;
   background-color: ${({ theme }) => theme.backgroundColorDark};
   background-image: none;
-  border: 2px solid ${({ theme }) => theme.dividerBlack};
   color: ${({ theme }) => theme.textColorDark};
   font-family: ${({ theme }) => theme.typography.options.headerFontFamily.join(', ')};
   padding: 20px 40px;
@@ -94,7 +104,6 @@ const CTAButton = styled(AnchorButton)`
   &:hover,
   &:active {
     background-color: ${({ theme }) => theme.iconColorHover};
-    color: ${({ theme }) => theme.textColorDark};
   }
   @media screen and (max-width: 800px) {
     margin-right: auto;
