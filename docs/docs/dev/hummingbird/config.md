@@ -112,7 +112,7 @@ title: Configuration
 
 `logoImageUrl` Default: https://files.wings.dev/1532472414726/wings4-2.png
 
-`logoFooterImageUrl`: Default: logoImageUrl
+`logoFooterImageUrl`: Default: `null`
 
 `faviconImageUrl`: Default: https://files.wings.dev/1532472414726/wings4-2.png
 
