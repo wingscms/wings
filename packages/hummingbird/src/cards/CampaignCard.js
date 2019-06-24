@@ -24,7 +24,7 @@ class CampaignCardView extends Component {
     }
     return (
       <Container>
-        <Campaign id={id} resourceType={resourceType} {...this.props} />
+        <Campaign id={id} resourceType={resourceType} {...this.props} style={{ marginTop: '0' }} />
       </Container>
     );
   }

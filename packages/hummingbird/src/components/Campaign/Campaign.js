@@ -50,6 +50,7 @@ const CampaignFragment = `
 
 const MainContainerOuter = styled(Container)`
   background-color: transparent;
+  margin-top: -300px;
   overflow: auto;
   @media screen and (max-width: 1000px) {
     margin-bottom: 0;
