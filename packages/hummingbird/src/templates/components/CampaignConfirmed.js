@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
+import { getContrastColor } from '@wingscms/crane';
 import qs from 'qs';
 import Campaign from './Campaign';
-import facebookLogo from '../../img/facebook.svg';
-import twitterLogo from '../../img/twitter.svg';
-import whatsappLogo from '../../img/whatsapp.svg';
-import emailIcon from '../../img/email.svg';
+import { Facebook, Twitter, Whatsapp, Globe } from '../../img/svg/social';
 
 const ShareContainer = styled.div`
   padding-top: 20px;
@@ -14,6 +12,13 @@ const ShareContainer = styled.div`
   display: block;
   text-align: center;
   width: 100%;
+`;
+
+const Title = styled.h1`
+  font-size: 3em;
+  @media screen and (max-width: 800px) {
+    font-size: 2em;
+  }
 `;
 
 const ShareButton = styled.a`
@@ -25,15 +30,30 @@ const ShareButton = styled.a`
   border-radius: 4px;
   position: relative;
   margin: 0 5px;
-  transition: all 0.1s linear;
-  &:hover {
-    background-color: #fff;
-  }
-  img {
+  transition: all 0.2s linear;
+  svg {
     display: block;
-    height: 20px;
-    margin: 10px auto;
+    height: 26px;
+    margin: 12px auto;
+    fill: ${({ theme }) =>
+    getContrastColor({
+      backgroundColor: theme.primaryColor,
+      colors: { light: theme.textColor, dark: theme.textColorDark },
+      threshold: 30,
+    })};
   }
+  &:hover {
+    background-color: ${({ theme }) => theme.secondaryColor};
+    svg {
+      fill: ${({ theme }) =>
+    getContrastColor({
+      backgroundColor: theme.secondaryColor,
+      colors: { light: theme.textColor, dark: theme.textColorDark },
+      threshold: 30,
+    })};
+    }
+  }
+
   @media screen and (min-width: 800px) {
     height: 50px;
     width: 50px;
@@ -65,7 +85,7 @@ const FundraiserText = ({ status }) => {
             id="hummingbird.CampaignConfirmed.fundraiserMain.successTitle"
             description="Title of fundraiser payment success."
             defaultMessage="Hurray!"
-            tagName={Campaign.Title}
+            tagName={Title}
           />
           <FormattedMessage
             id="hummingbird.CampaignConfirmed.fundraiserMain.successText"
@@ -82,7 +102,7 @@ const FundraiserText = ({ status }) => {
             id="hummingbird.CampaignConfirmed.fundraiserMain.pendingTitle"
             description="Title of fundraiser payment pending."
             defaultMessage="Thanks for your contribution"
-            tagName={Campaign.Title}
+            tagName={Title}
           />
           <FormattedMessage
             id="hummingbird.CampaignConfirmed.fundraiserMain.pendingText"
@@ -99,7 +119,7 @@ const FundraiserText = ({ status }) => {
             id="hummingbird.CampaignConfirmed.fundraiserMain.failedTitle"
             description="Title of fundraiser payment failure."
             defaultMessage="Oh no!"
-            tagName={Campaign.Title}
+            tagName={Title}
           />
           <FormattedMessage
             id="hummingbird.CampaignConfirmed.fundraiserMain.failedText"
@@ -131,7 +151,7 @@ export default class CampaignConfirmed extends Component {
               id="hummingbird.CampaignConfirmed.main.title"
               description="Title of campaign submission success."
               defaultMessage="Hurray!"
-              tagName={Campaign.Title}
+              tagName={Title}
             />
             <FormattedMessage
               id="hummingbird.CampaignConfirmed.main.text"
@@ -149,16 +169,16 @@ export default class CampaignConfirmed extends Component {
             tagName={ShareTitle}
           />
           <ShareButton href={shareUrls.facebook} target="_blank" rel="noopener noreferrer">
-            <img src={facebookLogo} alt="Share on Facebook" />
+            <Facebook />
           </ShareButton>
           <ShareButton href={shareUrls.twitter} target="_blank" rel="noopener noreferrer">
-            <img src={twitterLogo} alt="Share on Twitter" />
+            <Twitter />
           </ShareButton>
           <ShareButton href={shareUrls.whatsapp} target="_blank" rel="noopener noreferrer">
-            <img src={whatsappLogo} alt="Share via WhatsApp" />
+            <Whatsapp />
           </ShareButton>
           <ShareButton href={shareUrls.email}>
-            <img src={emailIcon} alt="Share via email" />
+            <Globe />
           </ShareButton>
         </ShareContainer>
       </Campaign.Content>
