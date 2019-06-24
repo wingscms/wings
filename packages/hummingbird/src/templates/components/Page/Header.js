@@ -45,7 +45,7 @@ const Title = styled.h1`
   }
   @media screen and (min-width: 960px) {
     width: 920px;
-    margin: 0 -100px 50px;
+    margin: 0 -100px 0 0;
   }
 `;
 
