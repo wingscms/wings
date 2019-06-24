@@ -8,11 +8,8 @@ export default styled.div`
   line-height: 1.5;
   .title {
     font-size: 20px;
-    font-weight: bolder;
-    margin-bottom: 8px;
-  }
-  > * + .title {
-    margin-top: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
   }
   a.footerLink {
     color: ${({ theme }) => theme.footerTextColor};

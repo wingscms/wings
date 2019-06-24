@@ -56,7 +56,7 @@ const Container = styled.div`
 const MenuButton = styled.div`
   position: absolute;
   right: ${({ active }) => (active ? '-300px' : '0')};
-  top: 5px;
+  top: 8px;
   z-index: 3000;
   @media screen and (max-width: 1250px) {
     position: relative;

@@ -60,9 +60,9 @@ export default ({
   counterTextColor,
 
   // IMAGES
-  logoImageUrl = 'https://files.wings.dev/1532472414726/wings4-2.png',
+  logoImageUrl = 'https://files.wings.dev/9o2DZgVGxJT7x8Q8L5EP/1559551574036/wingslogo.svg',
   logoFooterImageUrl,
-  faviconImageUrl = 'https://files.wings.dev/1532472414726/wings4-2.png',
+  faviconImageUrl = 'https://files.wings.dev/9o2DZgVGxJT7x8Q8L5EP/1559551574036/wingslogo.svg',
 
   // FONTS AND TEXT
   // Used to set the name of font families if the font is manually imported.
