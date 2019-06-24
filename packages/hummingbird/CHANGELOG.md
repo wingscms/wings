@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.22.1](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.22.0...@wingscms/hummingbird@0.22.1) (2019-06-24)
+
+
+### Bug Fixes
+
+* small styling fixes ([#144](https://github.com/wingscms/wings/issues/144)) ([98b0443](https://github.com/wingscms/wings/commit/98b0443))
+
+
+
+
+
 # [0.22.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.21.0...@wingscms/hummingbird@0.22.0) (2019-06-24)
 
 
