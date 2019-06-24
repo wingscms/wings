@@ -185,6 +185,7 @@ class Navigation extends Component {
                 activeColor={getContrastColor({
                   backgroundColor: theme.navigationMenuBackgroundColor,
                   colors: { light: theme.navigationIconColor, dark: theme.navigationIconColorDark },
+                  threshold: theme.contrastLuminanceThreshold,
                 })}
                 color={theme.navigationIconColor}
                 type="spin"

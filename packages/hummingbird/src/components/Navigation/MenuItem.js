@@ -18,6 +18,7 @@ export default styled(MenuItem)`
     getContrastColor({
       backgroundColor: theme.navigationMenuBackgroundColor || '#ffffff',
       colors: { light: theme.textColor, dark: theme.textColorDark },
+      threshold: theme.contrastLuminanceThreshold,
     })};
     text-decoration: none;
     background-image: linear-gradient(
