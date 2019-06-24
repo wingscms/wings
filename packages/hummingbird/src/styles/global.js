@@ -54,11 +54,10 @@ export default createGlobalStyle`
         }
       }
     }
-    > p:first-child {
-      margin-top: 2em;
+    .Mobiledoc > p:first-child {
+      margin-top: 80px;
     }
     &.drop-cap > .Mobiledoc > p:first-child {
-      margin-top: 2em;
       &::first-letter {
         font-weight: ${({ theme }) => theme.firstLetterFontWeight}!important;
         color: ${({ theme }) => theme.primaryColor};
