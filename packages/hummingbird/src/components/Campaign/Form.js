@@ -376,7 +376,6 @@ class CampaignForm extends Component {
     const { amount, stage } = this.state;
     const schema = this.getFormSchema();
     const loading = !schema;
-    debugger;
     return loading ? (
       <div style={{ textAlign: 'center' }}>
         <FormattedMessage

@@ -11,7 +11,6 @@ module.exports = {
     return `${this.getPath(node)}/confirmed`;
   },
   getLocalePrefix(node) {
-    debugger;
     return node.locale.primary ? '' : node.locale.id;
   },
   getSlug(node) {
