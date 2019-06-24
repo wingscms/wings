@@ -14,6 +14,13 @@ const ShareContainer = styled.div`
   width: 100%;
 `;
 
+const Title = styled.h1`
+  font-size: 3em;
+  @media screen and (max-width: 800px) {
+    font-size: 2em;
+  }
+`;
+
 const ShareButton = styled.a`
   display: inline-block;
   vertical-align: middle;
@@ -78,7 +85,7 @@ const FundraiserText = ({ status }) => {
             id="hummingbird.CampaignConfirmed.fundraiserMain.successTitle"
             description="Title of fundraiser payment success."
             defaultMessage="Hurray!"
-            tagName={Campaign.Title}
+            tagName={Title}
           />
           <FormattedMessage
             id="hummingbird.CampaignConfirmed.fundraiserMain.successText"
@@ -95,7 +102,7 @@ const FundraiserText = ({ status }) => {
             id="hummingbird.CampaignConfirmed.fundraiserMain.pendingTitle"
             description="Title of fundraiser payment pending."
             defaultMessage="Thanks for your contribution"
-            tagName={Campaign.Title}
+            tagName={Title}
           />
           <FormattedMessage
             id="hummingbird.CampaignConfirmed.fundraiserMain.pendingText"
@@ -112,7 +119,7 @@ const FundraiserText = ({ status }) => {
             id="hummingbird.CampaignConfirmed.fundraiserMain.failedTitle"
             description="Title of fundraiser payment failure."
             defaultMessage="Oh no!"
-            tagName={Campaign.Title}
+            tagName={Title}
           />
           <FormattedMessage
             id="hummingbird.CampaignConfirmed.fundraiserMain.failedText"
@@ -144,7 +151,7 @@ export default class CampaignConfirmed extends Component {
               id="hummingbird.CampaignConfirmed.main.title"
               description="Title of campaign submission success."
               defaultMessage="Hurray!"
-              tagName={Campaign.Title}
+              tagName={Title}
             />
             <FormattedMessage
               id="hummingbird.CampaignConfirmed.main.text"
