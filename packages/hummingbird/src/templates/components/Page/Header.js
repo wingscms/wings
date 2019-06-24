@@ -5,10 +5,10 @@ import styled from 'styled-components';
 import widont from 'widont';
 
 const ImageContainer = styled.figure`
-  margin: 0;
+  margin: 20px 0 0 0;
   width: 100%;
   @media screen and (min-width: 720px) {
-    margin: 0 0 0 50%;
+    margin: 80px 0 0 50%;
     max-width: 1200px;
     width: 100vw;
     transform: translateX(-50%);
