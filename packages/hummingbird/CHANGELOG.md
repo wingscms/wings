@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.21.0...@wingscms/hummingbird@0.22.0) (2019-06-24)
+
+
+### Features
+
+* CampaignCard view update and routing service ([#141](https://github.com/wingscms/wings/issues/141)) ([3208cb5](https://github.com/wingscms/wings/commit/3208cb5))
+
+
+
+
+
 # [0.21.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.20.1...@wingscms/hummingbird@0.21.0) (2019-06-19)
 
 
