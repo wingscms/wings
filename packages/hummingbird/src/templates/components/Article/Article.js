@@ -83,12 +83,13 @@ export default class Article extends Component {
     },
     headers = [],
     onHeadersChange,
+    dropcap = true,
   }) => (
     <main>
       <ArticleWrapper className={classNames('article')}>
         <div id="article-start">{headers.length ? <Chapters chapters={headers} /> : null}</div>
         <Content
-          className="mobiledoc-content"
+          className={classNames('mobiledoc-content', { 'drop-cap': dropcap })}
           id="entry-content"
           content={content}
           onLoad={({ headers: h }) => onHeadersChange(h)}

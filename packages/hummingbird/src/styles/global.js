@@ -57,7 +57,7 @@ export default createGlobalStyle`
     > p:first-child {
       margin-top: 2em;
     }
-    .drop-cap & > p:first-child {
+    &.drop-cap > .Mobiledoc > p:first-child {
       margin-top: 2em;
       &::first-letter {
         font-weight: ${({ theme }) => theme.firstLetterFontWeight}!important;
@@ -96,7 +96,7 @@ export default createGlobalStyle`
         margin-bottom: 0;
       }
     }
-    .drop-cap & div.headerWrapper + p {
+    &.drop-cap > .Mobiledoc > div.headerContainer + p {
       position: relative;
       &::first-letter {
         font-weight: ${({ theme }) => theme.firstLetterFontWeight}!important;
