@@ -101,9 +101,9 @@ const Footer = ({ theme }) => {
           <CTASection>
             <div className="title">{footer.title}</div>
             <div>
-              {theme.logoFooterImageUrl && (
+              {theme.footerLogoImageUrl && (
                 <a href={footer.logoLink || '/'}>
-                  <Logo src={theme.logoFooterImageUrl} alt="logo" />
+                  <Logo src={theme.footerLogoImageUrl} alt="logo" />
                 </a>
               )}
             </div>
