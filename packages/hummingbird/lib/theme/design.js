@@ -47,8 +47,8 @@ export default ({
   // Landing Section
   landingSectionTitleColor = '#FFFFFF',
   landingSectionTitleBackgroundColor = 'transparent',
-  landingSectionSubTitleColor = '#FFFFFF',
-  landingSectionSubTitleBackgroundColor = 'transparent',
+  landingSectionSubtitleColor = '#FFFFFF',
+  landingSectionSubtitleBackgroundColor = 'transparent',
   landingSectionBackgroundColor,
   // Forms
   formBackgroundColor,
@@ -154,8 +154,8 @@ export default ({
   // Landing Section
   landingSectionTitleColor,
   landingSectionTitleBackgroundColor,
-  landingSectionSubTitleColor,
-  landingSectionSubTitleBackgroundColor,
+  landingSectionSubtitleColor,
+  landingSectionSubtitleBackgroundColor,
   landingSectionBackgroundColor: primaryColor || landingSectionBackgroundColor,
   // Forms
   formBackgroundColor: formBackgroundColor || primaryColor,
