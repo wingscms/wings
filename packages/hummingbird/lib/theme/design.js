@@ -47,8 +47,8 @@ export default ({
   // Landing Section
   landingSectionTitleColor = '#FFFFFF',
   landingSectionTitleBackgroundColor = 'transparent',
-  landingSectionSubTitleColor = '#FFFFFF',
-  landingSectionSubTitleBackgroundColor = 'transparent',
+  landingSectionSubtitleColor = '#FFFFFF',
+  landingSectionSubtitleBackgroundColor = 'transparent',
   landingSectionBackgroundColor,
   // Forms
   formBackgroundColor,
@@ -61,7 +61,7 @@ export default ({
 
   // IMAGES
   logoImageUrl = 'https://files.wings.dev/9o2DZgVGxJT7x8Q8L5EP/1559551574036/wingslogo.svg',
-  logoFooterImageUrl,
+  footerLogoImageUrl,
   faviconImageUrl = 'https://files.wings.dev/9o2DZgVGxJT7x8Q8L5EP/1559551574036/wingslogo.svg',
 
   // FONTS AND TEXT
@@ -154,8 +154,8 @@ export default ({
   // Landing Section
   landingSectionTitleColor,
   landingSectionTitleBackgroundColor,
-  landingSectionSubTitleColor,
-  landingSectionSubTitleBackgroundColor,
+  landingSectionSubtitleColor,
+  landingSectionSubtitleBackgroundColor,
   landingSectionBackgroundColor: primaryColor || landingSectionBackgroundColor,
   // Forms
   formBackgroundColor: formBackgroundColor || primaryColor,
@@ -187,7 +187,7 @@ export default ({
 
   // IMAGES
   logoImageUrl,
-  logoFooterImageUrl: logoFooterImageUrl || logoImageUrl,
+  footerLogoImageUrl,
   faviconImageUrl,
 
   // FONTS AND TEXT

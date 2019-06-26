@@ -86,9 +86,9 @@ title: Configuration
 
 `landingSectionTitleBackgroundColor` Default: <span style="background-color: transparent">transparent</span>
 
-`landingSectionSubTitleColor`: Default: <span style="background-color: #FFFFFF">#FFFFFF</span>
+`landingSectionSubtitleColor`: Default: <span style="background-color: #FFFFFF">#FFFFFF</span>
 
-`landingSectionSubTitleBackgroundColor`: Default: <span style="background-color: transparent">transparent</span>
+`landingSectionSubtitleBackgroundColor`: Default: <span style="background-color: transparent">transparent</span>
 
 `landingSectionBackgroundColor`: Default: <span style="background-color: #417de8">primaryColor</span>
 
@@ -112,7 +112,7 @@ title: Configuration
 
 `logoImageUrl` Default: https://files.wings.dev/1532472414726/wings4-2.png
 
-`logoFooterImageUrl`: Default: logoImageUrl
+`footerLogoImageUrl`
 
 `faviconImageUrl`: Default: https://files.wings.dev/1532472414726/wings4-2.png
 

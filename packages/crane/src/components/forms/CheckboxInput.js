@@ -12,6 +12,7 @@ const StyledLabel = styled.label`
   user-select: none;
   height: 20px;
   padding-left: 30px;
+  display: inline-table;
   &:after {
     position: absolute;
     width: 20px;
