@@ -17,6 +17,7 @@ const Campaign = styled(_Campaign)`
 
 const Wrapper = styled.div`
   ${wide}
+  margin-bottom: 32px;
   ${({ imageUrl }) =>
     (imageUrl
       ? css`
