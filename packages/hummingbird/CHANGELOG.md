@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.24.1](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.24.0...@wingscms/hummingbird@0.24.1) (2019-06-26)
+
+
+### Bug Fixes
+
+* campaign card layout ([#167](https://github.com/wingscms/wings/issues/167)) ([64164f5](https://github.com/wingscms/wings/commit/64164f5))
+
+
+
+
+
 # [0.24.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.23.0...@wingscms/hummingbird@0.24.0) (2019-06-26)
 
 
