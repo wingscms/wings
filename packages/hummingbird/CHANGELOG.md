@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.24.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.23.0...@wingscms/hummingbird@0.24.0) (2019-06-26)
+
+
+### Bug Fixes
+
+* only localize fields in schema ([1d4632a](https://github.com/wingscms/wings/commit/1d4632a))
+
+
+### Features
+
+* allow global formProps override ([b099774](https://github.com/wingscms/wings/commit/b099774))
+
+
+
+
+
 # [0.23.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.22.1...@wingscms/hummingbird@0.23.0) (2019-06-26)
 
 
