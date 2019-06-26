@@ -15,7 +15,7 @@ const Campaign = styled(_Campaign)`
   margin-top: 0;
 `;
 
-const Wrapper = styled.div`
+const Image = styled.div`
   ${wide}
 
   ${({ imageUrl }) =>
@@ -48,7 +48,7 @@ class CampaignCardView extends Component {
         style={{ marginTop: '0' }}
         wrapElement={(element, campaign) => (
           <div>
-            <Wrapper imageUrl={campaign && campaign.image && campaign.image.url} />
+            <Image imageUrl={campaign && campaign.image && campaign.image.url} />
             <Container>{element}</Container>
           </div>
         )}
