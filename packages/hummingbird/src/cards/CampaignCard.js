@@ -42,13 +42,11 @@ class CampaignCardView extends Component {
         resourceType={resourceType}
         {...this.props}
         style={{ marginTop: '0' }}
-        wrapElement={(element, campaign) =>
-          console.log(element, campaign) || (
-            <Wrapper imageUrl={campaign.image && campaign.image.url}>
-              <Container>{element}</Container>
-            </Wrapper>
-          )
-        }
+        wrapElement={(element, campaign) => (
+          <Wrapper imageUrl={campaign.image && campaign.image.url}>
+            <Container>{element}</Container>
+          </Wrapper>
+        )}
       />
     );
   }
