@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 import routing from '../../../services/routing';
+import { usePluginOptions } from '../../ctx/PluginOptions';
 
 import Container from '../Container';
 import Content from '../Content';
@@ -123,11 +124,13 @@ export default ({
   id,
   resourceType,
   node: _node = {},
-  formProps = {},
+  formProps: formPropsProp = {},
   theme = {},
   wrapElement = e => e,
   ...props
 }) => {
+  const { campaigns: { formProps: formPropsFromOptions = {} } = {} } = usePluginOptions();
+  const formProps = { ...formPropsFromOptions, ...formPropsProp };
   const [signatureCount, setSignatureCount] = useState(0);
   const [signatureGoal, setSignatureGoal] = useState(0);
   const [node, setNode] = useState(_node);
