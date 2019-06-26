@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.23.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.22.1...@wingscms/hummingbird@0.23.0) (2019-06-26)
+
+
+### Bug Fixes
+
+* change petition counter min-height ([#153](https://github.com/wingscms/wings/issues/153)) ([9cbfd71](https://github.com/wingscms/wings/commit/9cbfd71))
+
+
+### Features
+
+* styling fixes ([#165](https://github.com/wingscms/wings/issues/165)) ([f9cf703](https://github.com/wingscms/wings/commit/f9cf703))
+
+
+
+
+
 ## [0.22.1](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.22.0...@wingscms/hummingbird@0.22.1) (2019-06-24)
 
 
