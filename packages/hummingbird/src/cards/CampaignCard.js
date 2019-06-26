@@ -17,14 +17,17 @@ const Campaign = styled(_Campaign)`
 
 const Wrapper = styled.div`
   ${wide}
-  margin-bottom: 32px;
+
   ${({ imageUrl }) =>
     (imageUrl
       ? css`
           background-image: url(${imageUrl});
           background-size: 100% auto;
           background-repeat: no-repeat;
-          height: auto;
+          height: 100vh;
+          min-height: 200px;
+          max-height: 700px;
+          margin-bottom: -20%;
           padding-top: 80px;
         `
       : null)}
@@ -44,9 +47,10 @@ class CampaignCardView extends Component {
         {...this.props}
         style={{ marginTop: '0' }}
         wrapElement={(element, campaign) => (
-          <Wrapper imageUrl={campaign.image && campaign.image.url}>
+          <div>
+            <Wrapper imageUrl={campaign && campaign.image && campaign.image.url} />
             <Container>{element}</Container>
-          </Wrapper>
+          </div>
         )}
       />
     );
