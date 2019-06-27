@@ -61,7 +61,7 @@ export default ({
 
   // IMAGES
   logoImageUrl = 'https://files.wings.dev/9o2DZgVGxJT7x8Q8L5EP/1559551574036/wingslogo.svg',
-  footerLogoImageUrl,
+  footerLogoImageUrl = null,
   faviconImageUrl = 'https://files.wings.dev/9o2DZgVGxJT7x8Q8L5EP/1559551574036/wingslogo.svg',
 
   // FONTS AND TEXT

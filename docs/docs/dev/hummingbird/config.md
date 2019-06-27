@@ -2,13 +2,17 @@
 title: Configuration
 ---
 
-## Miscellaneous Options 
+## Design
+
+Can be used in the `design` option in Hummingbird's `gatsby-config` or using the environment variable `GATSBY_APP_THEME`:
+
+### Miscellaneous Options 
 
 `contrastLuminanceThreshold`: Default: `50`
 
-## Colors
+### Colors
 
-### Base Colors
+#### Base Colors
 
 `primaryColor`: Default: <span style="background-color: #417de8">#417de8</span>
 
@@ -36,7 +40,7 @@ title: Configuration
 
 `linkColorDark`: Default: <span style="background-color: #417de8">linkColor</span>
 
-### Navigation
+#### Navigation
 
 `navigationBackgroundColor`: Default: <span style="background-color: #417de8">primaryColor</span>
 
@@ -50,13 +54,13 @@ title: Configuration
 
 `navigationIconLanguagePickerColorHover`: Default: <span style="background-color: #417de8">primaryColor</span>
 
-### Footer
+#### Footer
 
 `footerBackgroundColor`: Default: <span style="background-color: #417de8">primaryColor</span>
 
 `footerTextColor`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
 
-### Articles/Pages
+#### Articles/Pages
 
 `chapterBackgroundColor`: Default: <span style="background-color: #417de8">primaryColor</span>
 
@@ -80,7 +84,7 @@ title: Configuration
 
 `pullquoteBackgroundColor`: Default: <span style="background-color: #ffffff">backgroundColor</span>
 
-### Landing Section
+#### Landing Section
 
 `landingSectionTitleColor`: Default: <span style="background-color: #FFFFFF">#FFFFFF</span>
 
@@ -92,13 +96,13 @@ title: Configuration
 
 `landingSectionBackgroundColor`: Default: <span style="background-color: #417de8">primaryColor</span>
 
-### Forms
+#### Forms
 
 `formBackgroundColor`: Default: <span style="background-color: #417de8">primaryColor</span>
 
 `formTextColor`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
 
-### Campaigns
+#### Campaigns
 
 `campaignFormBackgroundColor`: Default: <span style="background-color: #417de8">formBackgroundColor</span>
 
@@ -108,15 +112,15 @@ title: Configuration
 
 `counterTextColor`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
 
-## Images
+### Images
 
-`logoImageUrl` Default: https://files.wings.dev/1532472414726/wings4-2.png
+`logoImageUrl`: Default: https://files.wings.dev/9o2DZgVGxJT7x8Q8L5EP/1559551574036/wingslogo.svg
 
-`footerLogoImageUrl`
+`footerLogoImageUrl` Default: null
 
-`faviconImageUrl`: Default: https://files.wings.dev/1532472414726/wings4-2.png
+`faviconImageUrl`: Default: https://files.wings.dev/9o2DZgVGxJT7x8Q8L5EP/1559551574036/wingslogo.svg
 
-## Fonts/Text
+### Fonts/Text
 
 `customHeaderFontUrl`: Default: null
 
@@ -139,3 +143,54 @@ title: Configuration
 `introLineHeight`: Default: 1.5
 
 `firstLetterLineHeight`: Default: 0.8
+
+## Footer
+
+Can be used in the `footer` option in Hummingbird's `gatsby-config` or using the environment variable `GATSBY_FOOTER_CONFIG`:
+
+`title`: Default: null
+
+`logoLink`: Default: `https://wings.dev`
+
+`columns`: Default: `[]`. The content of the footer can be constructed using any number of columns, which is an array of column objects. A column is made up of an array of rows (which have a `type` and other `options`). To see the row options look at switch statement here: [https://github.com/wingscms/wings/blob/master/packages/hummingbird/src/components/Footer/FooterColumns.js#L53](https://github.com/wingscms/wings/blob/master/packages/hummingbird/src/components/Footer/FooterColumns.js#L53)
+
+Here is an example of a columns array:
+
+```
+[
+  {
+    title: 'Contact',
+    rows: [
+      {
+        type: 'text',
+        content: 'Voorhaven 31, 3025HC Rotterdam, Netherlands',
+      },
+      {
+        type: 'link',
+        url: 'mailto:info@wings.dev',
+        content: 'info@wings.dev',
+      },
+    ],
+  },
+  {
+    title: 'Social',
+    rows: [
+      {
+        type: 'social',
+        profiles: [
+          {
+            platform: 'twitter',
+            url: 'https://twitter.com/wingscms',
+          },
+        ],
+      },
+    ],
+  },
+]
+```
+
+## Typography
+
+Can be used in the `typography` option in Hummingbird's `gatsby-config` or using the environment variable `GATSBY_TYPOGRAPHY_CONFIG`:
+
+See: [https://kyleamathews.github.io/typography.js/](https://kyleamathews.github.io/typography.js/)
