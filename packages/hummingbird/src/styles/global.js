@@ -54,7 +54,7 @@ export default createGlobalStyle`
         }
       }
     }
-    .Mobiledoc > p:first-child {
+    & > .Mobiledoc > p:first-child {
       margin-top: 80px;
     }
     &.drop-cap > .Mobiledoc > p:first-child {
