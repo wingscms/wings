@@ -7,7 +7,6 @@ import wide from '../styles/wide';
 
 const Container = styled.div`
   ${wide};
-  margin-top: 80px;
   margin-bottom: 80px;
 `;
 
@@ -24,11 +23,17 @@ const Image = styled.div`
           background-image: url(${imageUrl});
           background-size: 100% auto;
           background-repeat: no-repeat;
-          height: 100vh;
-          min-height: 200px;
+          min-height: 500px;
           max-height: 700px;
-          margin-bottom: -30%;
+          margin-bottom: -20%;
           padding-top: 80px;
+          @media screen and (max-width: 800px) {
+            min-height: 0;
+            margin-bottom: 0;
+            max-height: 0;
+            height: auto;
+            padding-top: 50%;
+          }
         `
       : null)}
 `;
