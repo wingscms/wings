@@ -4,7 +4,7 @@ title: Configuration
 
 ## Design
 
-Can be used in the `design` option in Hummingbird's `gatsby-config` or using the environment variable `GATSBY_APP_THEME`:
+Can be used in the `design` option in Hummingbird's `gatsby-config`:
 
 ### Miscellaneous Options 
 
@@ -146,13 +146,29 @@ Can be used in the `design` option in Hummingbird's `gatsby-config` or using the
 
 ## Footer
 
-Can be used in the `footer` option in Hummingbird's `gatsby-config` or using the environment variable `GATSBY_FOOTER_CONFIG`:
+Can be used in the `footer` option in Hummingbird's `gatsby-config`:
+
+### General
 
 `title`: Default: null
 
 `logoLink`: Default: `https://wings.dev`
 
-`columns`: Default: `[]`. The content of the footer can be constructed using any number of columns, which is an array of column objects. A column is made up of an array of rows (which have a `type` and other `options`). To see the row options look at switch statement here: [https://github.com/wingscms/wings/blob/master/packages/hummingbird/src/components/Footer/FooterColumns.js#L53](https://github.com/wingscms/wings/blob/master/packages/hummingbird/src/components/Footer/FooterColumns.js#L53)
+### `columns`
+
+Default: `[]`.
+
+The content of the footer can be constructed using any number of columns, which is an array of column objects. A column is made up of an array of rows (which have a `type` and other `options`). The different column types are:
+
+`text`: Options: `content`.
+
+`link`: Options: `content`, `url`.
+
+`button`: Options: `content`, `url`.
+
+`social`: Options: `profiles` (An array of objects with the options `platform`, `url`, `iconColor`, `backgroundColor`. Possible platforms are: `facebook`, `github`, `googleplus`, `instagram`, `linkedin`, `pinterest`, `reddit`, `rss`, `skype`, `spotify`, `twitch`, `twitter`, `vimeo`, `whatsapp`, `youtube`).
+
+`mailchimp`: Options: `action`, `buttonLabel`, `confirmationText`.
 
 Here is an example of a columns array:
 
@@ -191,6 +207,6 @@ Here is an example of a columns array:
 
 ## Typography
 
-Can be used in the `typography` option in Hummingbird's `gatsby-config` or using the environment variable `GATSBY_TYPOGRAPHY_CONFIG`:
+Can be used in the `typography` option in Hummingbird's `gatsby-config`:
 
 See: [https://kyleamathews.github.io/typography.js/](https://kyleamathews.github.io/typography.js/)
