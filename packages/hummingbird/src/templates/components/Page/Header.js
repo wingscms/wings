@@ -8,7 +8,7 @@ const ImageContainer = styled.figure`
   margin: 20px 0 0 0;
   width: 100%;
   @media screen and (min-width: 720px) {
-    margin: 80px 0 0 50%;
+    margin: 0 0 0 50%;
     max-width: 1200px;
     width: 100vw;
     transform: translateX(-50%);
@@ -45,7 +45,7 @@ const Title = styled.h1`
   @media screen and (min-width: 800px) {
     font-size: 60px;
     line-height: 70px;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
   }
   @media screen and (min-width: 960px) {
     width: 920px;

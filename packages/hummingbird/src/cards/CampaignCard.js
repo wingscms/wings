@@ -26,6 +26,7 @@ const Image = styled.div`
           min-height: 500px;
           max-height: 700px;
           margin-bottom: -20%;
+          margin-top: 80px;
           padding-top: 80px;
           @media screen and (max-width: 800px) {
             min-height: 0;
