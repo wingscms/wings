@@ -8,6 +8,9 @@ import wide from '../styles/wide';
 const Container = styled.div`
   ${wide};
   margin-bottom: 80px;
+  @media screen and (max-width: 800px) {
+    margin-bottom: 40px;
+  }
 `;
 
 const Campaign = styled(_Campaign)`
@@ -29,6 +32,7 @@ const Image = styled.div`
           margin-top: 80px;
           padding-top: 80px;
           @media screen and (max-width: 800px) {
+            margin-top: 40px;
             min-height: 0;
             margin-bottom: 0;
             max-height: 0;

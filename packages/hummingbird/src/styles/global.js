@@ -116,5 +116,10 @@ export default createGlobalStyle`
         margin-top: 0;
       }
     }
+    @media screen and (max-width: 800px) {
+      .Mobiledoc > p:first-child {
+        margin-top: 40px;
+      }
+    }
   }
 `;

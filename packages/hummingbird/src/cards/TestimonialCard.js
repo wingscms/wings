@@ -9,12 +9,10 @@ import wide from '../styles/wide';
 const Testimonial = styled.section`
   ${wide};
   background-color: #f8f8f8;
-  padding: 2rem 0;
-  @media screen and (min-width: 600px) {
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-    padding: 2rem 0;
-  }
+  padding: 40px 0;
+  margin-bottom: 80px;
+  margin-top: 80px;
+  padding: 80px 0;
   @media screen and (min-width: 1080px) {
     margin-bottom: 4rem;
     margin-top: 4rem;
@@ -30,6 +28,11 @@ const Testimonial = styled.section`
     @media screen and (min-width: 1080px) {
       margin-bottom: 3rem;
     }
+  }
+  @media screen and (max-width: 800px) {
+    margin-bottom: 40px;
+    margin-top: 40px;
+    padding-bottom: 0;
   }
 `;
 

@@ -32,6 +32,10 @@ export default styled.figure`
 }) => theme.primaryColor} 100%);
       }
     }
+  @media screen and (max-width: 800px) {
+      margin-top: 40px;
+      margin-bottom: 40px;
+  }
   &.pullquote-${FLOAT.NONE},
   &.pullquote-${FLOAT.LEFT},
   &.pullquote-${FLOAT.RIGHT} {
