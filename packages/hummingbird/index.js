@@ -2,6 +2,7 @@
 export { default as Button } from './src/components/Button';
 export { default as Content } from './src/components/Content/Content';
 export { default as LayoutDefault } from './src/components/LayoutDefault';
+export { CustomDataCard as DataCard } from './src/cards/DataCard';
 
 // templates
 export { default as Article } from './src/templates/components/Article';
