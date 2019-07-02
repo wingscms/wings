@@ -25,6 +25,10 @@ const TitleContainer = styled.div`
   padding: 20px 0 0;
   position: relative;
   text-align: center;
+  margin-top: 30px;
+  @media screen and (min-width: 800px) {
+    margin-top: 50px;
+  }
 `;
 
 const Title = styled.h1`
@@ -34,7 +38,7 @@ const Title = styled.h1`
   font-size: 32px;
   line-height: 1.2;
   text-align: center;
-  margin: 0 auto 20px;
+  margin: 0 auto 10px;
   max-width: 90%;
   position: relative;
   z-index: 2;
@@ -45,7 +49,6 @@ const Title = styled.h1`
   }
   @media screen and (min-width: 960px) {
     width: 920px;
-    margin: 0 -100px 0 0;
   }
 `;
 

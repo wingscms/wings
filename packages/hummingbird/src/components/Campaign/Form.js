@@ -256,7 +256,10 @@ class CampaignForm extends Component {
 
   localizeSchema(schema) {
     const { intl } = this.props;
-    const fieldDefs = Object.values(FIELDS).reduce(
+    const fields = Object.values(FIELDS).filter(
+      f => Object.keys(schema.properties).indexOf(f) > -1,
+    );
+    const fieldDefs = fields.reduce(
       (defs, field) => ({ ...defs, [field]: { title: intl.formatMessage(messages[field]) } }),
       {},
     );

@@ -30,11 +30,7 @@ const ContentWrapper = styled.div`
 export default class Page extends Component {
   static Navigation = Entry.Navigation;
   static Header = Entry.Header;
-  static Header = ({ pageContext: { node } }) => (
-    <ContentWrapper>
-      <Header article={node} />
-    </ContentWrapper>
-  );
+  static Header = ({ pageContext: { node } }) => <Header article={node} />;
   static Navigation = ({
     pageContext: {
       node: { translations, platforms, menu, locale },

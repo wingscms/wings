@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 import routing from '../../../services/routing';
+import { usePluginOptions } from '../../ctx/PluginOptions';
 
 import Container from '../Container';
 import Content from '../Content';
@@ -119,7 +120,17 @@ const CounterContainer = styled(FormContainerInner)`
 const getUrl = path =>
   (typeof window !== 'undefined' && [window.location.origin, path].join('')) || '';
 
-export default ({ id, resourceType, node: _node = {}, formProps = {}, theme = {}, ...props }) => {
+export default ({
+  id,
+  resourceType,
+  node: _node = {},
+  formProps: formPropsProp = {},
+  theme = {},
+  wrapElement = e => e,
+  ...props
+}) => {
+  const { campaigns: { formProps: formPropsFromOptions = {} } = {} } = usePluginOptions();
+  const formProps = { ...formPropsFromOptions, ...formPropsProp };
   const [signatureCount, setSignatureCount] = useState(0);
   const [signatureGoal, setSignatureGoal] = useState(0);
   const [node, setNode] = useState(_node);
@@ -131,7 +142,7 @@ export default ({ id, resourceType, node: _node = {}, formProps = {}, theme = {}
     if (formProps.onLoad) formProps.onLoad(campaign);
   };
   const { intro, title } = node;
-  return (
+  const element = (
     <React.Fragment>
       <MainContainerOuter {...props}>
         <MainContainerInner>
@@ -204,4 +215,5 @@ export default ({ id, resourceType, node: _node = {}, formProps = {}, theme = {}
       )}
     </React.Fragment>
   );
+  return wrapElement(element, node);
 };

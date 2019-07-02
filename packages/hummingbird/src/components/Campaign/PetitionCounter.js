@@ -16,6 +16,7 @@ const TopContainer = styled.div`
   align-items: flex-start;
   flex-direction: row;
   align-items: center;
+  min-height: 80px;
 `;
 
 const CurrentText = styled.div`
