@@ -57,20 +57,28 @@ const CTASection = styled(Section)`
 `;
 
 const BolsterLink = styled.a`
-  display: inline-block;
+  display: block;
   margin: 0 auto 0 auto;
   max-width: 1200px;
   width: 100%;
   padding: 0 20px;
-  text-align: left;
+  text-align: center;
   color: ${({ theme }) => theme.footerTextColor};
   text-decoration: none;
   font-size: 12px;
   background-image: none;
   @media screen and (max-width: 800px) {
     text-align: left;
-    margin: 40px 0 0 0;
     padding: 0 20px;
+  }
+`;
+
+const BolsterLinkContainer = styled.div`
+  display: block;
+  min-width: 100%;
+  margin-top: 80px;
+  @media screen and (max-width: 800px) {
+    margin-top: 40px;
   }
 `;
 
@@ -110,23 +118,25 @@ const Footer = ({ theme }) => {
           </CTASection>
         ) : null}
         <FooterColumns columns={footer.columns} />
-        <BolsterLink href="https://wings.dev">
-          <FormattedMessage
-            id="hummingbird.Footer.poweredBy.message"
-            description="Powered by Wings message"
-            defaultMessage="Powered by Wings"
-          />
-        </BolsterLink>
-        <BolsterLink href="https://bureaubolster.nl">
-          <FormattedMessage
-            id="hummingbird.Footer.madeBy.message"
-            description="Made by Bolster message"
-            defaultMessage="Made with {love} at Bolster"
-            values={{
-              love: <LoveEmoji />,
-            }}
-          />
-        </BolsterLink>
+        <BolsterLinkContainer>
+          <BolsterLink href="https://wings.dev">
+            <FormattedMessage
+              id="hummingbird.Footer.poweredBy.message"
+              description="Powered by Wings message"
+              defaultMessage="Powered by Wings"
+            />
+          </BolsterLink>
+          <BolsterLink href="https://bolster.digital">
+            <FormattedMessage
+              id="hummingbird.Footer.madeBy.message"
+              description="Made by Bolster message"
+              defaultMessage="Made with {love} at Bolster"
+              values={{
+                love: <LoveEmoji />,
+              }}
+            />
+          </BolsterLink>
+        </BolsterLinkContainer>
       </Container>
     </Wrap>
   );

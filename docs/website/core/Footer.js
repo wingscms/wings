@@ -32,7 +32,7 @@ class Footer extends React.Component {
             <a href="https://wings.dev" target="_blank" rel="noreferrer noopener">
               Wings
             </a>
-            <a href="https://www.bureaubolster.nl">Bureau Bolster</a>
+            <a href="https://bolster.digital">Bureau Bolster</a>
             <a href="https://twitter.com/bureaubolster" target="_blank" rel="noreferrer noopener">
               Bureau Bolster (Twitter)
             </a>
