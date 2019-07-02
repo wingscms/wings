@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.24.3](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.24.2...@wingscms/hummingbird@0.24.3) (2019-07-01)
+
+
+### Bug Fixes
+
+* differentiate between mobiledoc variants for styling ([#171](https://github.com/wingscms/wings/issues/171)) ([d0a3503](https://github.com/wingscms/wings/commit/d0a3503))
+
+
+
+
+
+## [0.24.2](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.24.1...@wingscms/hummingbird@0.24.2) (2019-06-27)
+
+
+### Bug Fixes
+
+* campaign card spacing ([#168](https://github.com/wingscms/wings/issues/168)) ([ab98ec0](https://github.com/wingscms/wings/commit/ab98ec0))
+
+
+
+
+
 ## [0.24.1](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.24.0...@wingscms/hummingbird@0.24.1) (2019-06-26)
 
 
