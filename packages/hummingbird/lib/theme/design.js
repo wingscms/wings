@@ -66,8 +66,8 @@ export default ({
 
   // FONTS AND TEXT
   // Used to set the name of font families if the font is manually imported.
-  customHeaderFontUrl,
-  customBodyFontUrl,
+  customHeaderFontUrl = null,
+  customBodyFontUrl = null,
   // Other fonts/text stuff
   dropcapFontSize = '3.5em',
   introFontSize = '1.333',

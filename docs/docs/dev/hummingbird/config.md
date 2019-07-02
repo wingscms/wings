@@ -120,9 +120,9 @@ title: Configuration
 
 ## Fonts/Text
 
-`customHeaderFontUrl`
+`customHeaderFontUrl`: Default: null
 
-`customBodyFontUrl`
+`customBodyFontUrl`: Default: null
 
 `dropcapFontSize`: Default: 3.5em
 
