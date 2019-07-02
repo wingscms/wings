@@ -210,3 +210,55 @@ Here is an example of a columns array:
 Can be used in the `typography` option in Hummingbird's `gatsby-config`:
 
 See: [https://kyleamathews.github.io/typography.js/](https://kyleamathews.github.io/typography.js/)
+
+## Example
+
+Here is a full example of a Hummingbird `gatsby-config`:
+
+```
+module.exports = {
+  siteMetadata: {
+    siteUrl: process.env.SITE_URL || process.env.URL || 'http://localhost:4000',
+  },
+  __experimentalThemes: [
+    {
+      resolve: '@wingscms/hummingbird',
+      options: {
+        wings: {
+          project: process.env.GATSBY_WINGS_PROJECT,
+          appKey: process.env.GATSBY_WINGS_APP_KEY,
+          endpoint: process.env.GATSBY_WINGS_ENDPOINT,
+        },
+        blockRobots: process.env.BLOCK_ROBOTS || process.env.GATSBY_ENV !== 'production',
+        basicAuth: process.env.BASIC_AUTH,
+        design: {
+          primaryColor: 'red',
+        },
+        typography: {
+          baseFontSize: 16,
+        },
+        footer: {
+          title: 'Wings',
+          logoLink: 'https://wings.dev',
+          columns: [
+            {
+              title: 'Contact',
+              rows: [
+                {
+                  type: 'text',
+                  content: ['Address', 'City', 'Postcode'].join('<br/>'),
+                },
+                {
+                  type: 'link',
+                  url: 'mailto:info@example.com',
+                  content: 'info@example.com',
+                },
+              ],
+            }
+          ],
+        },
+      },
+    },
+  ],
+};
+```
