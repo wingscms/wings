@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.24.5](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.24.4...@wingscms/hummingbird@0.24.5) (2019-07-02)
+
+
+### Bug Fixes
+
+* fix footer 'made by' text alignment ([#173](https://github.com/wingscms/wings/issues/173)) ([fdb3548](https://github.com/wingscms/wings/commit/fdb3548))
+
+
+
+
+
 ## [0.24.4](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.24.3...@wingscms/hummingbird@0.24.4) (2019-07-02)
 
 
