@@ -66,13 +66,6 @@ const Marker = styled.span`
   }
 `;
 
-const addParentClasses = () => {
-  const headerDivs = document.getElementsByClassName('headerContainer');
-  for (let i = 0; i < headerDivs.length; i += 1) {
-    headerDivs[i].parentElement.classList.add('headerWrapper');
-  }
-};
-
 class HeaderView extends Component {
   static propTypes = {
     title: PropTypes.node,
@@ -84,9 +77,6 @@ class HeaderView extends Component {
     intro: '',
     marker: '',
   };
-  componentDidMount() {
-    addParentClasses();
-  }
   render() {
     const { title, intro, marker, ...props } = this.props;
     return (
