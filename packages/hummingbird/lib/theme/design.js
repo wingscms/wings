@@ -14,7 +14,7 @@ export default ({
   dangerColor = '#DB3737',
   disabledColor = '#DDDDDD',
   backgroundColor = '#FFFFFF',
-  backgroundColorHighlight = '#ECF2FC',
+  elementBackgroundColor = '#ECF2FC',
   backgroundColorDark = '#212121',
   textColor = '#212121',
   textColorDark = '#FFFFFF',
@@ -66,8 +66,8 @@ export default ({
 
   // FONTS AND TEXT
   // Used to set the name of font families if the font is manually imported.
-  customHeaderFontUrl = null,
-  customBodyFontUrl = null,
+  customHeaderFontUrl,
+  customBodyFontUrl,
   // Other fonts/text stuff
   dropcapFontSize = '3.5em',
   introFontSize = '1.333',
@@ -91,7 +91,7 @@ export default ({
   disabledColor,
   backgroundColor,
   backgroundColorDark,
-  backgroundColorHighlight,
+  elementBackgroundColor,
   textColor,
   textColorDark,
   linkColor: linkColor || primaryColor,
