@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.24.4](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.24.3...@wingscms/hummingbird@0.24.4) (2019-07-02)
+
+
+### Bug Fixes
+
+* elementBackgroundColor ([#149](https://github.com/wingscms/wings/issues/149)) ([7df415c](https://github.com/wingscms/wings/commit/7df415c))
+
+
+
+
+
 ## [0.24.3](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.24.2...@wingscms/hummingbird@0.24.3) (2019-07-01)
 
 
