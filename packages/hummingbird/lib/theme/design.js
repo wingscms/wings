@@ -61,13 +61,13 @@ export default ({
 
   // IMAGES
   logoImageUrl = 'https://files.wings.dev/9o2DZgVGxJT7x8Q8L5EP/1559551574036/wingslogo.svg',
-  footerLogoImageUrl = null,
+  footerLogoImageUrl,
   faviconImageUrl = 'https://files.wings.dev/9o2DZgVGxJT7x8Q8L5EP/1559551574036/wingslogo.svg',
 
   // FONTS AND TEXT
   // Used to set the name of font families if the font is manually imported.
-  customHeaderFontUrl = null,
-  customBodyFontUrl = null,
+  customHeaderFontUrl,
+  customBodyFontUrl,
   // Other fonts/text stuff
   dropcapFontSize = '3.5em',
   introFontSize = '1.333',

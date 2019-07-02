@@ -116,15 +116,15 @@ Can be used in the `design` option in Hummingbird's `gatsby-config`:
 
 `logoImageUrl`: Default: https://files.wings.dev/9o2DZgVGxJT7x8Q8L5EP/1559551574036/wingslogo.svg
 
-`footerLogoImageUrl` Default: null
+`footerLogoImageUrl`
 
 `faviconImageUrl`: Default: https://files.wings.dev/9o2DZgVGxJT7x8Q8L5EP/1559551574036/wingslogo.svg
 
 ### Fonts/Text
 
-`customHeaderFontUrl`: Default: null
+`customHeaderFontUrl`
 
-`customBodyFontUrl`: Default: null
+`customBodyFontUrl`
 
 `dropcapFontSize`: Default: 3.5em
 
@@ -150,7 +150,7 @@ Can be used in the `footer` option in Hummingbird's `gatsby-config`:
 
 ### General
 
-`title`: Default: null
+`title`
 
 `logoLink`: Default: `https://wings.dev`
 
