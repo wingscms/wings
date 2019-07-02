@@ -235,7 +235,7 @@ module.exports = {
           primaryColor: 'red',
         },
         typography: {
-          baseFontSize: 16,
+          baseFontSize: 14,
         },
         footer: {
           title: 'Wings',
