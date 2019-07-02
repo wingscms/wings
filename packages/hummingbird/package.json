@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest"
   },
   "name": "@wingscms/hummingbird",
   "version": "0.24.3",
