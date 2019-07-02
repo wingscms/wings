@@ -2,13 +2,17 @@
 title: Configuration
 ---
 
-## Miscellaneous Options 
+## Design
+
+Can be used in the `design` option in Hummingbird's `gatsby-config`:
+
+### Miscellaneous Options 
 
 `contrastLuminanceThreshold`: Default: `50`
 
-## Colors
+### Colors
 
-### Base Colors
+#### Base Colors
 
 `primaryColor`: Default: <span style="background-color: #417de8">#417de8</span>
 
@@ -38,7 +42,7 @@ title: Configuration
 
 `linkColorDark`: Default: <span style="background-color: #417de8">linkColor</span>
 
-### Navigation
+#### Navigation
 
 `navigationBackgroundColor`: Default: <span style="background-color: #417de8">primaryColor</span>
 
@@ -52,13 +56,13 @@ title: Configuration
 
 `navigationIconLanguagePickerColorHover`: Default: <span style="background-color: #417de8">primaryColor</span>
 
-### Footer
+#### Footer
 
 `footerBackgroundColor`: Default: <span style="background-color: #417de8">primaryColor</span>
 
 `footerTextColor`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
 
-### Articles/Pages
+#### Articles/Pages
 
 `chapterBackgroundColor`: Default: <span style="background-color: #417de8">primaryColor</span>
 
@@ -82,7 +86,7 @@ title: Configuration
 
 `pullquoteBackgroundColor`: Default: <span style="background-color: #ffffff">backgroundColor</span>
 
-### Landing Section
+#### Landing Section
 
 `landingSectionTitleColor`: Default: <span style="background-color: #FFFFFF">#FFFFFF</span>
 
@@ -94,13 +98,13 @@ title: Configuration
 
 `landingSectionBackgroundColor`: Default: <span style="background-color: #417de8">primaryColor</span>
 
-### Forms
+#### Forms
 
 `formBackgroundColor`: Default: <span style="background-color: #417de8">primaryColor</span>
 
 `formTextColor`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
 
-### Campaigns
+#### Campaigns
 
 `campaignFormBackgroundColor`: Default: <span style="background-color: #417de8">formBackgroundColor</span>
 
@@ -110,19 +114,19 @@ title: Configuration
 
 `counterTextColor`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
 
-## Images
+### Images
 
-`logoImageUrl` Default: https://files.wings.dev/1532472414726/wings4-2.png
+`logoImageUrl`: Default: https://files.wings.dev/9o2DZgVGxJT7x8Q8L5EP/1559551574036/wingslogo.svg
 
 `footerLogoImageUrl`
 
-`faviconImageUrl`: Default: https://files.wings.dev/1532472414726/wings4-2.png
+`faviconImageUrl`: Default: https://files.wings.dev/9o2DZgVGxJT7x8Q8L5EP/1559551574036/wingslogo.svg
 
-## Fonts/Text
+### Fonts/Text
 
-`customHeaderFontUrl`: Default: null
+`customHeaderFontUrl`
 
-`customBodyFontUrl`: Default: null
+`customBodyFontUrl`
 
 `dropcapFontSize`: Default: 3.5em
 
@@ -141,3 +145,122 @@ title: Configuration
 `introLineHeight`: Default: 1.5
 
 `firstLetterLineHeight`: Default: 0.8
+
+## Footer
+
+Can be used in the `footer` option in Hummingbird's `gatsby-config`:
+
+### General
+
+`title`
+
+`logoLink`: Default: `https://wings.dev`
+
+### `columns`
+
+Default: `[]`.
+
+The content of the footer can be constructed using any number of columns, which is an array of column objects. A column is made up of an array of rows (which have a `type` and other `options`). The different column types are:
+
+`text`: Options: `content`.
+
+`link`: Options: `content`, `url`.
+
+`button`: Options: `content`, `url`.
+
+`social`: Options: `profiles` (An array of objects with the options `platform`, `url`, `iconColor`, `backgroundColor`. Possible platforms are: `facebook`, `github`, `googleplus`, `instagram`, `linkedin`, `pinterest`, `reddit`, `rss`, `skype`, `spotify`, `twitch`, `twitter`, `vimeo`, `whatsapp`, `youtube`).
+
+`mailchimp`: Options: `action`, `buttonLabel`, `confirmationText`.
+
+Here is an example of a columns array:
+
+```
+[
+  {
+    title: 'Contact',
+    rows: [
+      {
+        type: 'text',
+        content: 'Voorhaven 31, 3025HC Rotterdam, Netherlands',
+      },
+      {
+        type: 'link',
+        url: 'mailto:info@wings.dev',
+        content: 'info@wings.dev',
+      },
+    ],
+  },
+  {
+    title: 'Social',
+    rows: [
+      {
+        type: 'social',
+        profiles: [
+          {
+            platform: 'twitter',
+            url: 'https://twitter.com/wingscms',
+          },
+        ],
+      },
+    ],
+  },
+]
+```
+
+## Typography
+
+Can be used in the `typography` option in Hummingbird's `gatsby-config`:
+
+See: [https://kyleamathews.github.io/typography.js/](https://kyleamathews.github.io/typography.js/)
+
+## Example
+
+Here is a full example of a Hummingbird `gatsby-config`:
+
+```
+module.exports = {
+  siteMetadata: {
+    siteUrl: process.env.SITE_URL || process.env.URL || 'http://localhost:4000',
+  },
+  __experimentalThemes: [
+    {
+      resolve: '@wingscms/hummingbird',
+      options: {
+        wings: {
+          project: process.env.GATSBY_WINGS_PROJECT,
+          appKey: process.env.GATSBY_WINGS_APP_KEY,
+          endpoint: process.env.GATSBY_WINGS_ENDPOINT,
+        },
+        blockRobots: process.env.BLOCK_ROBOTS || process.env.GATSBY_ENV !== 'production',
+        basicAuth: process.env.BASIC_AUTH,
+        design: {
+          primaryColor: 'red',
+        },
+        typography: {
+          baseFontSize: 14,
+        },
+        footer: {
+          title: 'Wings',
+          logoLink: 'https://wings.dev',
+          columns: [
+            {
+              title: 'Contact',
+              rows: [
+                {
+                  type: 'text',
+                  content: ['Address', 'City', 'Postcode'].join('<br/>'),
+                },
+                {
+                  type: 'link',
+                  url: 'mailto:info@example.com',
+                  content: 'info@example.com',
+                },
+              ],
+            }
+          ],
+        },
+      },
+    },
+  ],
+};
+```
