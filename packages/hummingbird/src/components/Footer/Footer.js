@@ -126,7 +126,7 @@ const Footer = ({ theme }) => {
               defaultMessage="Powered by Wings"
             />
           </BolsterLink>
-          <BolsterLink href="https://bureaubolster.nl">
+          <BolsterLink href="https://bolster.digital">
             <FormattedMessage
               id="hummingbird.Footer.madeBy.message"
               description="Made by Bolster message"
