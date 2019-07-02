@@ -10,6 +10,3 @@ Read the docs: https://docs.wings.dev
 - @wingscms/proxy
 - @wingscms/react
 - @wingscms/sdk
-
----
-[![pullreminders](https://pullreminders.com/badge.svg)](https://pullreminders.com?ref=badge)
