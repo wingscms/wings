@@ -54,10 +54,10 @@ class QACardView extends Component {
         {content.map(x => (
           <div key={`qacard-${x._id}`}>
             <Question>
-              <Content content={x.question} />
+              <Content content={x.question} mini />
             </Question>
             <Answer>
-              <Content content={x.answer} />
+              <Content content={x.answer} mini />
             </Answer>
           </div>
         ))}
