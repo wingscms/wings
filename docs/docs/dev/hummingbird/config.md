@@ -26,7 +26,7 @@ title: Configuration
 
 `backgroundColorDark`: Default: <span style="background-color: #212121; color: #fff">#212121</span>
 
-`backgroundHighlightColor`: Default: <span style="background-color: #ECF2FC">#ECF2FC</span>
+`elementBackgroundColor`: Default: <span style="background-color: #ECF2FC">#ECF2FC</span>
 
 `textColor`: Default: <span style="background-color: #212121; color: #ffffff">#212121</span>
 

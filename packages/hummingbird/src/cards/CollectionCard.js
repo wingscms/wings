@@ -19,7 +19,7 @@ const Title = styled.h3`
 const OrganisationContainer = styled.div`
   display: block;
   padding: 20px;
-  background-color: ${({ theme }) => theme.backgroundHighlightColor};
+  background-color: ${({ theme }) => theme.elementBackgroundColor};
   position: relative;
   margin-bottom: 30px;
   height: auto;
@@ -67,7 +67,7 @@ const OrganisationDescription = styled.p`
 const PersonContainer = styled.div`
   display: block;
   padding: 20px;
-  background-color: ${({ theme }) => theme.backgroundHighlightColor};
+  background-color: ${({ theme }) => theme.elementBackgroundColor};
   position: relative;
   margin-bottom: 30px;
   height: auto;
