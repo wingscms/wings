@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.25.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.24.5...@wingscms/hummingbird@0.25.0) (2019-07-03)
+
+
+### Features
+
+* expose routing service ([#197](https://github.com/wingscms/wings/issues/197)) ([475b5f5](https://github.com/wingscms/wings/commit/475b5f5))
+
+
+
+
+
 ## [0.24.5](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.24.4...@wingscms/hummingbird@0.24.5) (2019-07-02)
 
 
