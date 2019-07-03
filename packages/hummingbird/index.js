@@ -7,3 +7,6 @@ export { default as LayoutDefault } from './src/components/LayoutDefault';
 export { default as Article } from './src/templates/components/Article';
 export { default as Page } from './src/templates/components/Page';
 export { default as Campaign } from './src/templates/components/Campaign';
+
+// services
+export { default as routing } from './services/routing';
