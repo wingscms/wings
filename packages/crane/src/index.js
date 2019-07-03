@@ -40,19 +40,12 @@ export { Breakout } from './components/text';
 // Share
 export { ShareButtons } from './components/share';
 
-// Chart
-export { default as Chart } from './components/chart/Chart';
-
 // Cards
 export { ComplexCard } from './components/cards';
 export { SimpleCard } from './components/cards';
 
 // Gallery
 export { default as Gallery } from './components/gallery';
-
-// Video
-export { default as Video } from './components/video/Video';
-export { default as CloudinaryVideoProvider } from './components/video/CloudinaryVideoProvider';
 
 // Layout
 export { default as FlexGrid } from './layout/FlexGrid';
