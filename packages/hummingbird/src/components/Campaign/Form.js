@@ -363,6 +363,11 @@ class CampaignForm extends Component {
   handleSubmit = async ({ formData: fd }, event) => {
     try {
       const formData = this.processSubmission(fd);
+      if (this.props.submit) {
+        this.props.submit(formData, event);
+        this.setState({ stage: 'confirm' });
+        return;
+      }
       if (this.props.onSubmit) {
         await this.submit(formData);
         this.props.onSubmit(formData, event);
