@@ -26,6 +26,10 @@ const Figure = styled.figure`
     width: 100%;
     height: 100%;
   }
+  @media screen and (max-width: 800px) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
 `;
 
 const getMatches = (target, re) =>

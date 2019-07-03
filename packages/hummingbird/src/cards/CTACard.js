@@ -63,6 +63,8 @@ const CTA = styled.div`
     }
   }
   @media screen and (max-width: 800px) {
+    margin-top: 40px;
+    margin-bottom: 40px;
     .inner {
       padding: 10px;
       flex-direction: column;
