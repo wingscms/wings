@@ -98,14 +98,14 @@ const FormContainerInner = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 3em;
+  font-size: 3rem;
   @media screen and (max-width: 800px) {
-    font-size: 2em;
+    font-size: 2rem;
   }
 `;
 
 const Intro = styled.p`
-  font-size: 1.2em;
+  font-size: 1.2rem;
 `;
 const CounterContainer = styled(FormContainerInner)`
   padding: 20px 40px;

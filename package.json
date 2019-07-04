@@ -5,7 +5,8 @@
     "test": "lerna run test",
     "lint": "eslint .",
     "changelog": "lerna-changelog",
-    "prettier": "prettier-eslint --write \"**/*.js\""
+    "prettier": "prettier-eslint --write \"**/*.js\"",
+    "publish": "yarn && lerna publish"
   },
   "workspaces": {
     "packages": [
