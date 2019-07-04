@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.27.0"></a>
+# [0.27.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.26.1...@wingscms/hummingbird@0.27.0) (2019-07-04)
+
+
+### Features
+
+* **hummingbird:** expose Campaign component ([#203](https://github.com/wingscms/wings/issues/203)) ([a872880](https://github.com/wingscms/wings/commit/a872880))
+
+
+
+
 <a name="0.26.1"></a>
 ## [0.26.1](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.26.0...@wingscms/hummingbird@0.26.1) (2019-07-04)
 
