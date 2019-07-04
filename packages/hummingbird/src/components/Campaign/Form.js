@@ -440,13 +440,13 @@ class CampaignForm extends Component {
         {!(stage === 'error') ? null : (
           <div>
             <FormattedMessage
-              id="hummingbird.Campaign.confirm.errorTitle"
+              id="hummingbird.Campaign.error.title"
               description="Title of campaign error."
               defaultMessage="Oops!"
               tagName="h1"
             />
             <FormattedMessage
-              id="hummingbird.Campaign.confirm.errorText"
+              id="hummingbird.Campaign.error.text"
               description="Body of campaign error."
               defaultMessage="Something went wrong with the submitting the form. Try again or report the issue to us."
               tagName="p"
