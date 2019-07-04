@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://github.com/wingscms/wings/compare/@wingscms/crane@0.12.0...@wingscms/crane@0.13.0) (2019-07-03)
+
+
+### Features
+
+* **crane:** remove cloudinary video and chart.js ([#201](https://github.com/wingscms/wings/issues/201)) ([7c80eca](https://github.com/wingscms/wings/commit/7c80eca))
+
+
+
+
+
 # [0.12.0](https://github.com/wingscms/wings/compare/@wingscms/crane@0.11.1...@wingscms/crane@0.12.0) (2019-06-26)
 
 
