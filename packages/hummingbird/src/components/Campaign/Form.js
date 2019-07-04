@@ -364,13 +364,16 @@ class CampaignForm extends Component {
     try {
       const formData = this.processSubmission(fd);
       if (this.props.onSubmit) {
-        await this.submit(formData);
-        this.props.onSubmit(formData, event);
+        const onSubmitRes = await this.props.onSubmit(formData, event);
+        if (onSubmitRes) {
+          await this.submit(formData);
+        }
         return;
       }
       await this.submit(formData);
     } catch (err) {
       console.error(err);
+      this.setState({ stage: 'error' });
     }
   };
 
@@ -430,6 +433,22 @@ class CampaignForm extends Component {
               id="hummingbird.Campaign.confirm.text"
               description="Body of campaign confirmation."
               defaultMessage="We have sent you an email with a confirmation link to make sure all signatures are genuine. If you follow that link, your signature will count. Thanks!"
+              tagName="p"
+            />
+          </div>
+        )}
+        {!(stage === 'error') ? null : (
+          <div>
+            <FormattedMessage
+              id="hummingbird.Campaign.error.title"
+              description="Title of campaign error."
+              defaultMessage="Oops!"
+              tagName="h1"
+            />
+            <FormattedMessage
+              id="hummingbird.Campaign.error.text"
+              description="Body of campaign error."
+              defaultMessage="Something went wrong with the submitting the form. Try again or report the issue to us."
               tagName="p"
             />
           </div>
