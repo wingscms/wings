@@ -30,7 +30,7 @@ const messages = defineMessages({
   },
 });
 
-export default class Article extends Component {
+export default class ArticleTemplate extends Component {
   static ProgressBar = ProgressBar;
   static Header = injectIntl(({ pageContext: { node, ...props }, intl }) => (
     <Header
@@ -100,11 +100,11 @@ export default class Article extends Component {
 
   static defaultProps = {
     children: [
-      <Article.ProgressBar />,
-      <Article.Navigation />,
-      <Article.CornerMenu />,
-      <Article.Header />,
-      <Article.Main />,
+      <ArticleTemplate.ProgressBar />,
+      <ArticleTemplate.Navigation />,
+      <ArticleTemplate.CornerMenu />,
+      <ArticleTemplate.Header />,
+      <ArticleTemplate.Main />,
     ],
   };
 

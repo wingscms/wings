@@ -27,7 +27,7 @@ const ContentWrapper = styled.div`
   }
 `;
 
-export default class Page extends Component {
+export default class PageTemplate extends Component {
   static Navigation = Entry.Navigation;
   static Header = Entry.Header;
   static Header = ({ pageContext: { node } }) => <Header article={node} />;
@@ -59,7 +59,7 @@ export default class Page extends Component {
   );
 
   static defaultProps = {
-    children: [<Page.Navigation />, <Page.Header />, <Page.Main />],
+    children: [<PageTemplate.Navigation />, <PageTemplate.Header />, <PageTemplate.Main />],
   };
 
   render() {
