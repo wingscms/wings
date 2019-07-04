@@ -5,7 +5,7 @@ import routing from '../../../services/routing';
 import { usePluginOptions } from '../../ctx/PluginOptions';
 
 import Container from '../Container';
-import Content from '../Content';
+import Content from '../Content/Content';
 import CampaignForm from './Form';
 import PetitionCounter from './PetitionCounter';
 import EventDetails from './EventDetails';
