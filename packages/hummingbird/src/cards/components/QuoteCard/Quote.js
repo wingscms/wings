@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { FLOAT } from './enums';
-import { ALIGNLEFT, ALIGNRIGHT } from '../../styles/floats';
+import { ALIGNLEFT, ALIGNRIGHT } from '../../../styles/floats';
 
-import { quote } from '../../img/icons';
+import { quote } from '../../../img/icons';
 
 export default styled.figure`
   clear: both;
