@@ -1,4 +1,4 @@
 import React from 'react';
-import { Page } from '@wingscms/hummingbird';
+import { PageTemplate } from '@wingscms/hummingbird';
 
-export default props => <Page {...props} />;
+export default props => <PageTemplate {...props} />;

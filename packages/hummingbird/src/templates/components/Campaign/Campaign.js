@@ -76,7 +76,7 @@ const CampaignContent = styled.div`
   }
 `;
 
-class Campaign extends Component {
+class CampaignTemplate extends Component {
   static Navigation = ({ pageContext: { shareUrls, node = {} } = {} }) => (
     <Navigation shareUrls={shareUrls} items={node.menu && node.menu.items} />
   );
@@ -100,7 +100,11 @@ class Campaign extends Component {
   };
 
   static defaultProps = {
-    children: [<Campaign.Navigation />, <Campaign.Header />, <Campaign.Main />],
+    children: [
+      <CampaignTemplate.Navigation />,
+      <CampaignTemplate.Header />,
+      <CampaignTemplate.Main />,
+    ],
     layout: LayoutDefault,
   };
 
@@ -127,4 +131,4 @@ class Campaign extends Component {
   }
 }
 
-export default withTheme(Campaign);
+export default withTheme(CampaignTemplate);

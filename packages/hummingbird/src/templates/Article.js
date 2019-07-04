@@ -1,4 +1,4 @@
 import React from 'react';
-import { Article } from '@wingscms/hummingbird';
+import { ArticleTemplate } from '@wingscms/hummingbird';
 
-export default props => <Article {...props} />;
+export default props => <ArticleTemplate {...props} />;
