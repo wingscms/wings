@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.26.0"></a>
+# [0.26.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.25.3...@wingscms/hummingbird@0.26.0) (2019-07-04)
+
+
+### Features
+
+* **hummingbird:** allow campaign onSubmit to block normal submit flow ([#202](https://github.com/wingscms/wings/issues/202)) ([bc9df88](https://github.com/wingscms/wings/commit/bc9df88))
+
+
+
+
 <a name="0.25.3"></a>
 ## [0.25.3](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.25.2...@wingscms/hummingbird@0.25.3) (2019-07-04)
 
