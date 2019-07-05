@@ -166,6 +166,10 @@ const messages = defineMessages({
 
 // TODO: move to @wingscms/react (needs a provider for Wings client first)
 class CampaignForm extends Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
   static propTypes = {
     id: PropTypes.string.isRequired,
     type: PropTypes.oneOf(['petition', 'event', 'fundraiser']).isRequired,
@@ -251,7 +255,7 @@ class CampaignForm extends Component {
       this.props.formSchema ||
       parseJSON(this.props.node.submissionSchema, { defaultValue: null }) ||
       this.state.formSchema;
-    return schema ? this.processSchema(schema) : schema;
+    return schema ? this.processSchema(schema, this.props.node) : schema;
   }
 
   localizeSchema(schema) {
@@ -260,13 +264,16 @@ class CampaignForm extends Component {
       f => Object.keys(schema.properties).indexOf(f) > -1,
     );
     const fieldDefs = fields.reduce(
-      (defs, field) => ({ ...defs, [field]: { title: intl.formatMessage(messages[field]) } }),
+      (defs, field) => ({
+        ...defs,
+        [field]: { title: intl.formatMessage(messages[field]) },
+      }),
       {},
     );
     return patchSchema(schema, fieldDefs);
   }
 
-  processSchema = (s) => {
+  processSchema = (s, node) => {
     const { disabledFields } = this.props;
     const schema = { ...s, properties: { ...s.properties } };
     disabledFields.forEach((field) => {
@@ -274,7 +281,7 @@ class CampaignForm extends Component {
     });
     schema.required = schema.required.filter(f => disabledFields.indexOf(f) < 0);
 
-    return this.props.processSchema(this.localizeSchema(schema));
+    return this.props.processSchema(this.localizeSchema(schema), node);
   };
 
   processSubmission = (sub) => {
@@ -360,11 +367,11 @@ class CampaignForm extends Component {
     }
   }
 
-  handleSubmit = async ({ formData: fd }, event) => {
+  handleSubmit = async ({ formData: fd }, event, node) => {
     try {
       const formData = this.processSubmission(fd);
       if (this.props.onSubmit) {
-        const onSubmitRes = await this.props.onSubmit(formData, event);
+        const onSubmitRes = await this.props.onSubmit(formData, event, node);
         if (onSubmitRes) {
           await this.submit(formData);
         }
@@ -414,9 +421,10 @@ class CampaignForm extends Component {
             autoValidate={false}
             {...this.props.schemaFormProps}
             schema={schema}
+            node={this.props.node}
             formData={this.state.formData}
             onChange={({ formData }) => this.setState({ formData })}
-            onSubmit={this.handleSubmit.bind(this)}
+            onSubmit={(formData, event) => this.handleSubmit(formData, event, this.props.node)}
           >
             {this.props.children || <Button>{this.getSubmitText()}</Button>}
           </SchemaForm>
