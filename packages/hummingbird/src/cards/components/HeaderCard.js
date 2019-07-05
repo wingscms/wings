@@ -23,7 +23,7 @@ const Container = styled.div`
 `;
 
 const IntroText = styled(Intro)`
-  color: ${({ theme }) => theme.colorChapterIntro};
+  color: ${({ theme }) => theme.chapterIntroColor};
   margin-bottom: 0;
 `;
 
