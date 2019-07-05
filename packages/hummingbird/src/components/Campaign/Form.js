@@ -254,13 +254,16 @@ class CampaignForm extends Component {
     return schema ? this.processSchema(schema) : schema;
   }
 
-  localizeSchema(schema) {
+  _localizeSchema(schema) {
     const { intl } = this.props;
     const fields = Object.values(FIELDS).filter(
       f => Object.keys(schema.properties).indexOf(f) > -1,
     );
     const fieldDefs = fields.reduce(
-      (defs, field) => ({ ...defs, [field]: { title: intl.formatMessage(messages[field]) } }),
+      (defs, field) => ({
+        ...defs,
+        [field]: { title: intl.formatMessage(messages[field]) },
+      }),
       {},
     );
     return patchSchema(schema, fieldDefs);
@@ -274,7 +277,7 @@ class CampaignForm extends Component {
     });
     schema.required = schema.required.filter(f => disabledFields.indexOf(f) < 0);
 
-    return this.props.processSchema(this.localizeSchema(schema));
+    return this.props.processSchema(this._localizeSchema(schema), this._getHookContext());
   };
 
   processSubmission = (sub) => {
@@ -283,7 +286,7 @@ class CampaignForm extends Component {
     disabledFields.forEach((field) => {
       submission[field] = true;
     });
-    return this.props.processSubmission(submission);
+    return this.props.processSubmission(submission, this._getHookContext());
   };
 
   getSubmitText() {
@@ -360,11 +363,16 @@ class CampaignForm extends Component {
     }
   }
 
+  _getHookContext = () => ({ node: this.state.campaign || this.props.node });
+
   handleSubmit = async ({ formData: fd }, event) => {
     try {
       const formData = this.processSubmission(fd);
       if (this.props.onSubmit) {
-        const onSubmitRes = await this.props.onSubmit(formData, event);
+        const onSubmitRes = await this.props.onSubmit(formData, {
+          event,
+          ...this._getHookContext(),
+        });
         if (onSubmitRes) {
           await this.submit(formData);
         }
