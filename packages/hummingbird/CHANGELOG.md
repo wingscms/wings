@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.29.3"></a>
+## [0.29.3](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.29.2...@wingscms/hummingbird@0.29.3) (2019-07-05)
+
+
+### Bug Fixes
+
+* build if no footer config present ([#210](https://github.com/wingscms/wings/issues/210)) ([959c6ec](https://github.com/wingscms/wings/commit/959c6ec))
+
+
+
+
 <a name="0.29.2"></a>
 ## [0.29.2](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.29.1...@wingscms/hummingbird@0.29.2) (2019-07-05)
 
