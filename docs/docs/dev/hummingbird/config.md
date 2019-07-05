@@ -70,7 +70,7 @@ Can be used in the `design` option in Hummingbird's `gatsby-config`:
 
 `chapterItemNumberColor`: Default: <span style="background-color: #274b8b; color: #FFFFFF">secondaryColor</span>
 
-`colorChapterIntro`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
+`chapterIntroColor`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
 
 `chapterSelectBackgroundColor`: Default: <span style="background-color: #417de8">chapterBackgroundColor</span>
 
