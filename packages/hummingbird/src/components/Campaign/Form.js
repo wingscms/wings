@@ -255,10 +255,10 @@ class CampaignForm extends Component {
       this.props.formSchema ||
       parseJSON(this.props.node.submissionSchema, { defaultValue: null }) ||
       this.state.formSchema;
-    return schema ? this.processSchema(schema, this.props.node) : schema;
+    return schema ? this.processSchema(schema) : schema;
   }
 
-  localizeSchema(schema) {
+  _localizeSchema(schema) {
     const { intl } = this.props;
     const fields = Object.values(FIELDS).filter(
       f => Object.keys(schema.properties).indexOf(f) > -1,
@@ -273,7 +273,7 @@ class CampaignForm extends Component {
     return patchSchema(schema, fieldDefs);
   }
 
-  processSchema = (s, node) => {
+  processSchema = (s) => {
     const { disabledFields } = this.props;
     const schema = { ...s, properties: { ...s.properties } };
     disabledFields.forEach((field) => {
@@ -281,7 +281,7 @@ class CampaignForm extends Component {
     });
     schema.required = schema.required.filter(f => disabledFields.indexOf(f) < 0);
 
-    return this.props.processSchema(this.localizeSchema(schema), node);
+    return this.props.processSchema(this._localizeSchema(schema), this._getHookContext());
   };
 
   processSubmission = (sub) => {
@@ -290,7 +290,7 @@ class CampaignForm extends Component {
     disabledFields.forEach((field) => {
       submission[field] = true;
     });
-    return this.props.processSubmission(submission);
+    return this.props.processSubmission(submission, this._getHookContext());
   };
 
   getSubmitText() {
@@ -367,11 +367,16 @@ class CampaignForm extends Component {
     }
   }
 
-  handleSubmit = async ({ formData: fd }, event, node) => {
+  _getHookContext = () => ({ node: this.state.campaign || this.props.node });
+
+  handleSubmit = async ({ formData: fd }, event) => {
     try {
       const formData = this.processSubmission(fd);
       if (this.props.onSubmit) {
-        const onSubmitRes = await this.props.onSubmit(formData, event, node);
+        const onSubmitRes = await this.props.onSubmit(formData, {
+          event,
+          ...this._getHookContext(),
+        });
         if (onSubmitRes) {
           await this.submit(formData);
         }
@@ -424,7 +429,7 @@ class CampaignForm extends Component {
             node={this.props.node}
             formData={this.state.formData}
             onChange={({ formData }) => this.setState({ formData })}
-            onSubmit={(formData, event) => this.handleSubmit(formData, event, this.props.node)}
+            onSubmit={this.handleSubmit}
           >
             {this.props.children || <Button>{this.getSubmitText()}</Button>}
           </SchemaForm>
