@@ -166,10 +166,6 @@ const messages = defineMessages({
 
 // TODO: move to @wingscms/react (needs a provider for Wings client first)
 class CampaignForm extends Component {
-  constructor(props) {
-    super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
   static propTypes = {
     id: PropTypes.string.isRequired,
     type: PropTypes.oneOf(['petition', 'event', 'fundraiser']).isRequired,
@@ -426,10 +422,9 @@ class CampaignForm extends Component {
             autoValidate={false}
             {...this.props.schemaFormProps}
             schema={schema}
-            node={this.props.node}
             formData={this.state.formData}
             onChange={({ formData }) => this.setState({ formData })}
-            onSubmit={this.handleSubmit}
+            onSubmit={this.handleSubmit.bind(this)}
           >
             {this.props.children || <Button>{this.getSubmitText()}</Button>}
           </SchemaForm>
