@@ -126,7 +126,11 @@ Can be used in the `design` option in Hummingbird's `gatsby-config`:
 
 `largeSpacing`: Default: `mediumSpacing * 2`
 
-`extraLargeSpacing`: Default: `mediumSpacing * 4` 
+`extraLargeSpacing`: Default: `mediumSpacing * 4`
+
+### Shadows
+
+`defaultShadow`: Default: `0 0 40px 0 rgba(0, 0, 0, 0.05)`
 
 ### Images
 

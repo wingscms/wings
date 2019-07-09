@@ -9,7 +9,7 @@ export default styled.figure`
   width: 100%;
   text-align: center;
   margin: 80px 0;
-  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: ${({ theme }) => theme.defaultShadow};
   padding: 40px 0 20px 0;
   background-color: ${({ theme }) => theme.blockquoteBackgroundColor};
   a { 

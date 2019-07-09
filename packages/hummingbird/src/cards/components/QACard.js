@@ -38,11 +38,12 @@ const Question = styled(TextWrapper)`
       colors: { light: theme.textColor, dark: theme.textColorDark },
       threshold: theme.contrastLuminanceThreshold,
     })};
+  box-shadow: ${({ theme }) => theme.defaultShadow};
 `;
 
 const Answer = styled(TextWrapper)`
   margin-right: auto;
-  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: ${({ theme }) => theme.defaultShadow};
 `;
 
 class QACardView extends Component {

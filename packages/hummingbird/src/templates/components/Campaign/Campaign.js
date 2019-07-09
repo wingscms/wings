@@ -69,7 +69,7 @@ const CampaignContent = styled.div`
   margin: 0 auto;
   padding: 20px;
   border-radius: 4px;
-  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: ${({ theme }) => theme.defaultShadow};
   text-align: center;
   @media screen and (min-width: 800px) {
     padding: 40px;

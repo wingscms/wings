@@ -13,7 +13,7 @@ const ChaptersToggleContainer = styled.div`
   height: 100vh;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  box-shadow: ${({ theme }) => theme.defaultShadow};
   &:after {
     content: '${({ locale }) => (locale ? languageList[locale].chaptersName : 'Chapters')}';
     position: absolute;

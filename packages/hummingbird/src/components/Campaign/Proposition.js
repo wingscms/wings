@@ -23,7 +23,7 @@ const PropositionContainer = styled.div`
   background-color: #fff;
   vertical-align: top;
   border-radius: 4px 0 0 4px;
-  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: ${({ theme }) => theme.defaultShadow};
   max-height: ${props => (!props.show && props.height ? `${props.height - 80}px` : 'none')};
   @media screen and (max-width: 1000px) {
     width: 100% !important;
