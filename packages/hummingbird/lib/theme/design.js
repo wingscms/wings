@@ -76,9 +76,9 @@ export default ({
   faviconImageUrl = 'https://files.wings.dev/9o2DZgVGxJT7x8Q8L5EP/1559551574036/wingslogo.svg',
 
   // FONTS AND TEXT
-  // Used to set the name of font families if the font is manually imported.
   customHeaderFontUrl,
   customBodyFontUrl,
+  headerFontFamily,
   // Other fonts/text stuff
   dropcapFontSize = '3.5em',
   introFontSize = '1.333',
@@ -219,6 +219,7 @@ export default ({
   // FONTS AND TEXT
   customHeaderFontUrl,
   customBodyFontUrl,
+  headerFontFamily,
   dropcapFontSize,
   introFontSize,
   bodyFontWeight,

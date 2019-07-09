@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import includes from 'lodash.includes';
 import mrr from '@dailybeast/mobiledoc-react-renderer';
-import { allCards } from '../';
+import { allCards } from '../cards';
 import { slugify } from '../lib/utils';
 
 const Renderer = mrr;

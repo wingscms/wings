@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import classNames from 'classnames';
+import { Content } from '@wingscms/react';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import Entry from '../Entry';
-import Content from '../../../components/Content';
+
 import Header from './Header';
 
 const Title = styled.h1`

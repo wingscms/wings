@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { ThemeProvider } from 'styled-components';
-import createCard from '../../createCard';
+import { createCard } from '@wingscms/react';
 import propTypes from './propTypes';
 import BlockquoteView from './BlockquoteView';
 import PullquoteView from './PullquoteView';
@@ -22,11 +21,7 @@ class QuoteCardView extends Component {
 
   render() {
     const Comp = this.getComponent();
-    return (
-      <ThemeProvider theme={{}}>
-        <Comp {...this.props} />
-      </ThemeProvider>
-    );
+    return <Comp {...this.props} />;
   }
 }
 

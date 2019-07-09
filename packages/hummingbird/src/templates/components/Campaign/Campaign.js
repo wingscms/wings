@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled, { withTheme } from 'styled-components';
+import { Campaign as CampaignMain } from '@wingscms/react';
 
-import CampaignMain from '../../../components/Campaign';
 import Container from '../../../components/Container';
 import LayoutDefault from '../../../components/LayoutDefault';
 import Navigation from '../../../components/Navigation';

@@ -58,3 +58,9 @@ export { default as languageList } from './data/languageList';
 
 // Utils
 export { createSvgIcon, getContrastColor, separateUnit } from './lib/utils';
+
+// Styles
+export { ALIGNLEFT, ALIGNRIGHT, wide } from './styles';
+
+// Icons
+export { default as Icons } from './img/svg/social';

@@ -1,9 +1,22 @@
-import { ImageCard, QuoteCard } from './cards';
+export { default as Campaign } from './components/Campaign';
 
-export const allCards = [ImageCard, QuoteCard];
-export { ImageCard, QuoteCard };
+export {
+  allCards,
+  ImageCard,
+  InsightCard,
+  QuoteCard,
+  TestimonialCard,
+  EmbedCard,
+  HeaderCard,
+  CTACard,
+  DataCard,
+  CollectionCard,
+  QACard,
+  CampaignCard,
+} from './components/cards';
+
 export { default as createCard } from './createCard';
-export { default as Content } from './components/Content';
+export { Content } from './components/Content';
 export { slugify } from './lib/utils';
 
 export const getNodeMetaTags = (node) => {
