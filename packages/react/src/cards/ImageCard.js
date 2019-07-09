@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Fade from 'react-reveal/Fade';
 import { createCard } from '@wingscms/react';
 import { wide, ALIGNLEFT, ALIGNRIGHT } from '@wingscms/crane';
-import { enumerate } from '../../lib/utils';
+import { enumerate } from '../lib/utils';
 
 const SIZE = enumerate('MEDIUM', 'LARGE', 'EXTRALARGE');
 const FLOAT = enumerate('NONE', 'LEFT', 'RIGHT');

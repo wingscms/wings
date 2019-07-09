@@ -1,1 +1,1 @@
-export { EmbedCard as default } from '@wingscms/hummingbird';
+export { EmbedCard as default } from '@wingscms/react';

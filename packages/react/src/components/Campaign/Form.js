@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled, { withTheme } from 'styled-components';
-import { SchemaForm, Amount, Loading, Button as _Button } from '@wingscms/crane';
+import { SchemaForm, Amount, Loading, Button as _Button, parseJSON } from '@wingscms/crane';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
-import wings from '../../data/wings';
-import { patchSchema, parseJSON } from '../../../lib/utils';
+import deepmerge from 'deepmerge';
+
+export const patchSchema = (schema, fieldDefinitions) =>
+  deepmerge(schema, { properties: fieldDefinitions });
 
 const PETITION_QUERY = `
   query ($id: String!) {
@@ -308,19 +310,19 @@ class CampaignForm extends Component {
   }
 
   maybeFetch() {
-    if (this.props.formSchema || this.state.formSchema || this.state.fetching) {
+    if (this.state.formSchema || this.props.formSchema || this.state.fetching) {
       return;
     }
     this.setState({ fetching: true }, async () => {
       let campaign;
       let formSchema;
       try {
-        const { campaign: c } = await wings.query(this.query() + this.fragment(), {
+        const { campaign: c } = await this.props.wings.query(this.query() + this.fragment(), {
           id: this.props.id,
         });
         campaign = c;
         formSchema = JSON.parse(c.submissionSchema);
-      } catch {
+      } catch (err) {
         console.error(
           "Couldn't fetch submission schema for campaign",
           this.props.type,
@@ -342,7 +344,7 @@ class CampaignForm extends Component {
   async submit(formData) {
     const { amount } = this.state;
     try {
-      const res = await wings.query(this.mutation(), {
+      const res = await this.props.wings.query(this.mutation(), {
         id: this.props.id,
         input: {
           data: JSON.stringify(formData),

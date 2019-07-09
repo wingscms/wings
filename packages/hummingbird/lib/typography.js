@@ -1,10 +1,9 @@
 // NOTE: DO NOT IMPORT THIS DIRECTLY
 
 import Typography from 'typography';
-import { parseJSON } from './utils';
+import { parseJSON } from '@wingscms/crane';
 
 const defaults = {
-  headerWeight: 'bold',
   baseFontSize: '19px',
   baseLineHeight: 1.6,
   headerFontFamily: ['Poppins', 'Arial', 'sans-serif'],

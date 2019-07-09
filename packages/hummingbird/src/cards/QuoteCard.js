@@ -1,1 +1,1 @@
-export { QuoteCard as default } from '@wingscms/hummingbird';
+export { QuoteCard as default } from '@wingscms/react';

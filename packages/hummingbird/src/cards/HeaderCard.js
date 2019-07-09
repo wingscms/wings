@@ -1,1 +1,1 @@
-export { HeaderCard as default } from '@wingscms/hummingbird';
+export { HeaderCard as default } from '@wingscms/react';

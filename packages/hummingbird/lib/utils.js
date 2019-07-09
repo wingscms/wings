@@ -1,20 +1,3 @@
-import deepmerge from 'deepmerge';
-
-export const parseJSON = (
-  value,
-  { defaultValue = {}, errorMessage = "Couldn't parse JSON" } = {},
-) => {
-  let result;
-
-  try {
-    result = value ? JSON.parse(value) : defaultValue;
-  } catch (e) {
-    console.log(errorMessage);
-    result = defaultValue;
-  }
-  return result;
-};
-
 export const parseBool = str => (str === 'false' ? false : str === '0' ? false : !!str);
 
 export const dataToObject = data =>
@@ -27,6 +10,3 @@ export const enumerate = (...args) => {
   });
   return obj;
 };
-
-export const patchSchema = (schema, fieldDefinitions) =>
-  deepmerge(schema, { properties: fieldDefinitions });

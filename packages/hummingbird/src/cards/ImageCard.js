@@ -1,1 +1,1 @@
-export { ImageCard as default } from '@wingscms/hummingbird';
+export { ImageCard as default } from '@wingscms/react';

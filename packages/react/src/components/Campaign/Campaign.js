@@ -2,12 +2,19 @@ import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 
-import Container from '../Container';
-import Content from '../Content/StyledContent';
+import Content from '../Content';
 import CampaignForm from './Form';
 import PetitionCounter from './PetitionCounter';
 import EventDetails from './EventDetails';
 import Proposition from './Proposition';
+
+const Container = styled.div`
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  background-color: ${({ theme }) => theme.backgroundColor || 'transparent'};
+`;
 
 const NodeFragment = `
   fragment NodeFields on Node {
@@ -115,17 +122,15 @@ const CounterContainer = styled(FormContainerInner)`
   }
 `;
 
-const getUrl = path =>
-  (typeof window !== 'undefined' && [window.location.origin, path].join('')) || '';
-
 export default ({
   id,
   resourceType,
   node: _node = {},
-  formProps,
+  formProps = {},
   theme = {},
   wrapElement = e => e,
   redirectUrlForNode = () => null,
+  wings = {},
   ...props
 }) => {
   const [signatureCount, setSignatureCount] = useState(0);
@@ -187,6 +192,7 @@ export default ({
                 onLoad={handleCampaignLoad}
                 nodeFragment={NodeFragment}
                 campaignFragment={CampaignFragment}
+                wings={wings}
               />
             </FormContainerInner>
           </FormContainer>

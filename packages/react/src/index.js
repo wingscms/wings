@@ -1,22 +1,4 @@
-export { default as Campaign } from './components/Campaign';
-
-export {
-  allCards,
-  ImageCard,
-  InsightCard,
-  QuoteCard,
-  TestimonialCard,
-  EmbedCard,
-  HeaderCard,
-  CTACard,
-  DataCard,
-  CollectionCard,
-  QACard,
-  CampaignCard,
-} from './components/cards';
-
 export { default as createCard } from './createCard';
-export { Content } from './components/Content';
 export { slugify } from './lib/utils';
 
 export const getNodeMetaTags = (node) => {
@@ -40,3 +22,21 @@ export const getNodeMetaTags = (node) => {
     ],
   };
 };
+
+export { default as Content } from './components/Content';
+export { default as Campaign } from './components/Campaign/Campaign';
+
+export {
+  allCards,
+  ImageCard,
+  InsightCard,
+  QuoteCard,
+  TestimonialCard,
+  EmbedCard,
+  HeaderCard,
+  CTACard,
+  DataCard,
+  CollectionCard,
+  QACard,
+  CampaignCard,
+} from './cards';

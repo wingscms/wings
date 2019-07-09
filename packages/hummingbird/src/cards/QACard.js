@@ -1,1 +1,1 @@
-export { QACard as default } from '@wingscms/hummingbird';
+export { QACard as default } from '@wingscms/react';

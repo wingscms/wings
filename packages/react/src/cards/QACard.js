@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { createCard } from '@wingscms/react';
 import { getContrastColor } from '@wingscms/crane';
-import Content from '../../components/Content/Content';
+import Content from '../components/Content';
 
 const Title = styled.h3`
   font-size: 40px;

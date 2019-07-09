@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import DOMContent from '../DOMContent';
-import ReactContent from '../ReactContent';
+import DOMContent from './DOMContent';
+import ReactContent from './ReactContent';
 
 const _Content = ({ _useExperimentalReactRenderer: useReact, ...props }) =>
   (useReact ? <ReactContent {...props} /> : <DOMContent {...props} />);

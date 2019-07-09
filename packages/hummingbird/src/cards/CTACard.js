@@ -1,1 +1,1 @@
-export { CTACard as default } from '@wingscms/hummingbird';
+export { CTACard as default } from '@wingscms/react';

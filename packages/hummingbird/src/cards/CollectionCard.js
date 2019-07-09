@@ -1,1 +1,1 @@
-export { CollectionCard as default } from '@wingscms/hummingbird';
+export { CollectionCard as default } from '@wingscms/react';

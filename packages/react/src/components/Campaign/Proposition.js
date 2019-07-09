@@ -2,16 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 
-import arrowDown from '../../img/arrowdown.png';
-import arrowUp from '../../img/arrowup.png';
-
 const windowExists = typeof window !== 'undefined';
-
-const Arrow = styled.img`
-  height: 14px;
-  margin-bottom: 0;
-  margin-left: 10px;
-`;
 
 const PropositionContainer = styled.div`
   display: inline-block;
@@ -103,7 +94,6 @@ export default class Proposition extends Component {
                 description="Collapse proposition button text"
                 defaultMessage="Collapse"
               />
-              <Arrow src={arrowUp} />
             </React.Fragment>
           ) : (
             <React.Fragment>
@@ -112,7 +102,6 @@ export default class Proposition extends Component {
                 description="Expand proposition button text"
                 defaultMessage="Read more"
               />
-              <Arrow src={arrowDown} />
             </React.Fragment>
           )}
         </ToggleButton>

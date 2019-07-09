@@ -1,1 +1,1 @@
-export { InsightCard as default } from '@wingscms/hummingbird';
+export { InsightCard as default } from '@wingscms/react';

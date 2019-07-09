@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled, { withTheme, css } from 'styled-components';
 import { createCard } from '@wingscms/react';
 import { wide } from '@wingscms/crane';
-import _Campaign from '../../components/Campaign';
+import _Campaign from '../components/Campaign/Campaign';
 
 const Container = styled.div`
   ${wide};
