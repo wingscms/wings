@@ -55,7 +55,7 @@ const WContent = styled(_WContent)`
     }
   }
   & > div > p:first-child {
-    margin-top: ${({ mini }) => (mini ? '0' : '80px')};
+    margin-top: ${({ mini, theme }) => (mini ? '0' : theme.largeSpacing)};
   }
   &.drop-cap > div > p:first-child {
     &::first-letter {

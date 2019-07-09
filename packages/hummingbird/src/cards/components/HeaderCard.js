@@ -11,14 +11,14 @@ import Intro from '../../components/Intro';
 const Container = styled.div`
   ${wide};
   background: ${({ theme }) => theme.chapterBackgroundColor};
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: ${({ theme }) => theme.largeSpacing};
+  margin-bottom: ${({ theme }) => theme.largeSpacing};
   &:first-child {
     margin-top: 0 !important;
   }
   @media screen and (max-width: 800px) {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: ${({ theme }) => theme.mediumSpacing};
+    margin-bottom: ${({ theme }) => theme.mediumSpacing};
   }
 `;
 
@@ -30,14 +30,14 @@ const IntroText = styled(Intro)`
 const Header = styled.div`
   max-width: 1140px;
   margin: 0 auto;
-  padding: 80px 10px;
+  padding: ${({ theme }) => theme.largeSpacing} 10px;
   text-align: center;
   margin: 0 auto;
   * {
     text-align: center;
   }
   @media screen and (max-width: 800px) {
-    padding: 40px 10px;
+    padding: ${({ theme }) => theme.mediumSpacing} 10px;
   }
 `;
 

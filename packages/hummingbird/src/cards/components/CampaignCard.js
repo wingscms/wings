@@ -7,9 +7,9 @@ import wide from '../../styles/wide';
 
 const Container = styled.div`
   ${wide};
-  margin-bottom: 80px;
+  margin-bottom: ${({ theme }) => theme.largeSpacing};
   @media screen and (max-width: 800px) {
-    margin-bottom: 40px;
+    margin-bottom: ${({ theme }) => theme.mediumSpacing};
   }
 `;
 
@@ -29,10 +29,10 @@ const Image = styled.div`
           min-height: 500px;
           max-height: 700px;
           margin-bottom: -20%;
-          margin-top: 80px;
+          margin-top: ${({ theme }) => theme.largeSpacing};
           padding-top: 80px;
           @media screen and (max-width: 800px) {
-            margin-top: 40px;
+            margin-top: ${({ theme }) => theme.mediumSpacing};
             min-height: 0;
             margin-bottom: 0;
             max-height: 0;

@@ -1,4 +1,4 @@
-import { getContrastColor } from '@wingscms/crane';
+import { getContrastColor, separateUnit } from '@wingscms/crane';
 
 // set defaults here:
 export default ({
@@ -58,6 +58,13 @@ export default ({
   campaignFormTextColor,
   counterBackgroundColor,
   counterTextColor,
+
+  // SPACING
+  extraLargeSpacing,
+  largeSpacing,
+  mediumSpacing = '40px',
+  smallSpacing,
+  extraSmallSpacing,
 
   // IMAGES
   logoImageUrl = 'https://files.wings.dev/9o2DZgVGxJT7x8Q8L5EP/1559551574036/wingslogo.svg',
@@ -184,6 +191,17 @@ export default ({
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
     }),
+
+  // SPACING
+  mediumSpacing,
+  largeSpacing:
+    largeSpacing || `${separateUnit(mediumSpacing)[0] * 2}${separateUnit(mediumSpacing)[1]}`,
+  extraLargeSpacing:
+    extraLargeSpacing || `${separateUnit(mediumSpacing)[0] * 4}${separateUnit(mediumSpacing)[1]}`,
+  smallSpacing:
+    smallSpacing || `${separateUnit(mediumSpacing)[0] / 2}${separateUnit(mediumSpacing)[1]}`,
+  extraSmallSpacing:
+    extraSmallSpacing || `${separateUnit(mediumSpacing)[0] / 4}${separateUnit(mediumSpacing)[1]}`,
 
   // IMAGES
   logoImageUrl,

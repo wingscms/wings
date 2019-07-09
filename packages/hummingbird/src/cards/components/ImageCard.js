@@ -35,9 +35,10 @@ const defaultProps = {
 };
 
 const Image = styled.figure`
-  margin: 40px 0;
+  margin: ${({ theme }) => theme.mediumSpacing} 0;
   @media screen and (min-width: 800px) {
-    margin: 80px 0;
+    margin-top: ${({ theme }) => theme.largeSpacing};
+    margin-bottom: ${({ theme }) => theme.largeSpacing};
   }
   img {
     display: block;

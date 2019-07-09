@@ -17,14 +17,14 @@ const Insight = styled.div`
       threshold: theme.contrastLuminanceThreshold,
     })};
   text-align: center;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: ${({ theme }) => theme.mediumSpacing};
+  margin-bottom: ${({ theme }) => theme.mediumSpacing};
   ${wide};
   width: 100vw;
   @media screen and (min-width: 800px) {
     font-size: 60px;
-    margin-top: 80px;
-    margin-bottom: 80px;
+    margin-top: ${({ theme }) => theme.largeSpacing};
+    margin-bottom: ${({ theme }) => theme.largeSpacing};
   }
   .inner {
     background: ${({ theme }) => theme.primaryColor};
@@ -35,10 +35,10 @@ const Insight = styled.div`
     display: block;
     max-width: 760px;
     height: 100%;
-    padding: 40px 10px;
+    padding: ${({ theme }) => theme.mediumSpacing} 10px;
     margin: 0 auto;
     @media screen and (min-width: 800px) {
-      padding: 80px 0;
+      padding: ${({ theme }) => theme.largeSpacing} 0;
     }
   }
 `;

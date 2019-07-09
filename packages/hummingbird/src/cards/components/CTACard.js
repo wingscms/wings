@@ -7,8 +7,9 @@ import AnchorButton from '../../components/AnchorButton';
 import wide from '../../styles/wide';
 
 const CTA = styled.div`
-  margin: 80px 0;
   ${wide};
+  margin-top: ${({ theme }) => theme.largeSpacing};
+  margin-bottom: ${({ theme }) => theme.largeSpacing};
   width: 100vw;
   text-align: center;
   .inner {
@@ -63,8 +64,8 @@ const CTA = styled.div`
     }
   }
   @media screen and (max-width: 800px) {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: ${({ theme }) => theme.mediumSpacing};
+    margin-bottom: ${({ theme }) => theme.mediumSpacing};
     .inner {
       padding: 10px;
       flex-direction: column;

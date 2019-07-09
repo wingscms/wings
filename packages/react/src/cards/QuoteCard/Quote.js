@@ -8,13 +8,13 @@ export default styled.figure`
   clear: both;
   width: 100%;
   text-align: center;
-  margin: 80px 0;
+  margin: ${({ theme }) => theme.largeSpacing} 0;
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.05);
-  padding: 40px 0 20px 0;
+  padding: ${({ theme }) => theme.mediumSpacing} 0 ${({ theme }) => theme.smallSpacing} 0;
   &.pullquote-${FLOAT.NONE},
   &.pullquote-${FLOAT.LEFT},
   &.pullquote-${FLOAT.RIGHT} {
-    margin: 40px 0;
+    margin: ${({ theme }) => theme.mediumSpacing} 0;
     box-shadow: none;
     aside {
       font-family: initial;

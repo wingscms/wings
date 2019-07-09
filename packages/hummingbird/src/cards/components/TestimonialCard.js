@@ -9,15 +9,9 @@ import wide from '../../styles/wide';
 const Testimonial = styled.section`
   ${wide};
   background-color: #f8f8f8;
-  padding: 40px 0;
-  margin-bottom: 80px;
-  margin-top: 80px;
-  padding: 80px 0;
-  @media screen and (min-width: 1080px) {
-    margin-bottom: 4rem;
-    margin-top: 4rem;
-    padding: 4rem 0;
-  }
+  margin-top: ${({ theme }) => theme.largeSpacing};
+  margin-bottom: ${({ theme }) => theme.largeSpacing};
+  padding: ${({ theme }) => theme.largeSpacing} 0;
   header {
     padding: 0 20px;
     text-align: center;
@@ -30,8 +24,9 @@ const Testimonial = styled.section`
     }
   }
   @media screen and (max-width: 800px) {
-    margin-bottom: 40px;
-    margin-top: 40px;
+    margin-top: ${({ theme }) => theme.mediumSpacing};
+    margin-bottom: ${({ theme }) => theme.mediumSpacing};
+    padding: ${({ theme }) => theme.mediumSpacing} 0;
     padding-bottom: 0;
   }
 `;

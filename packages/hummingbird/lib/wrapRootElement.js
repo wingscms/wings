@@ -8,6 +8,7 @@ import GlobalStyles from '../src/styles/global';
 
 export default ({ element }, pluginOptions) => {
   const { design, typography } = pluginOptions;
+  console.log(createTheme({ design, typography }));
   return (
     <ThemeProvider theme={createTheme({ design, typography })}>
       <PluginOptionsProvider value={pluginOptions}>

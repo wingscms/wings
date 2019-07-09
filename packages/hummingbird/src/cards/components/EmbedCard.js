@@ -9,8 +9,8 @@ const Figure = styled.figure`
   max-width: 1160px;
   margin-left: 50%;
   transform: translateX(-50%);
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: ${({ theme }) => theme.largeSpacing};
+  margin-bottom: ${({ theme }) => theme.largeSpacing};
   .video-wrapper {
     max-width: 1160px;
     width: 100%;
@@ -27,8 +27,8 @@ const Figure = styled.figure`
     height: 100%;
   }
   @media screen and (max-width: 800px) {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: ${({ theme }) => theme.mediumSpacing};
+    margin-bottom: ${({ theme }) => theme.mediumSpacing};
   }
 `;
 
