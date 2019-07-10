@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const { getDesign, getTypographyConfig, getFooterConfig } = require('./node/utils');
 
-const typographyConfig = getTypographyConfig() || {};
+const typographyConfig = getTypographyConfig();
 
 module.exports = {
   siteMetadata: {
@@ -20,9 +20,12 @@ module.exports = {
         blockRobots: process.env.BLOCK_ROBOTS || process.env.GATSBY_ENV !== 'production',
         basicAuth: process.env.BASIC_AUTH,
         design: {
-          headerFontFamily: typographyConfig.options
-            ? typographyConfig.options.headerFontFamily.join(', ')
-            : null,
+          ...(typographyConfig && {
+            headerFontFamily:
+              typographyConfig.options &&
+              typographyConfig.options.headerFontFamily &&
+              typographyConfig.options.headerFontFamily.join(', '),
+          }),
           ...getDesign(),
         },
         typography: {

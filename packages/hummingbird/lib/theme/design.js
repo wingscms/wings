@@ -78,7 +78,7 @@ export default ({
   // FONTS AND TEXT
   customHeaderFontUrl,
   customBodyFontUrl,
-  headerFontFamily,
+  headerFontFamily = 'Poppins',
   // Other fonts/text stuff
   dropcapFontSize = '3.5em',
   introFontSize = '1.333',
