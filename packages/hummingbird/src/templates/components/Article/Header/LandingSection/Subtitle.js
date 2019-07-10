@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export default styled('p')`
   color: ${({ theme }) => theme.landingSectionSubtitleColor};
-  font-family: ${({ theme }) => theme.typography.options.headerFontFamily.join(', ')};
+  font-family: ${({ theme }) => theme.headerFontFamily};
   font-weight: ${({ theme }) => theme.typography.headerFontWeight};
   text-transform: uppercase;
   font-size: 21px;

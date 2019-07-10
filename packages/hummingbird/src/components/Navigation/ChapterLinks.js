@@ -22,7 +22,7 @@ const ChapterItem = styled.div`
     text-decoration: none;
     background-image: ${({ theme }) =>
     `linear-gradient(120deg, ${theme.primaryColor} 0%, ${theme.primaryColor} 100%)`} !important;
-    font-family: ${({ theme }) => theme.typography.options.headerFontFamily.join(', ')};
+    font-family: ${({ theme }) => theme.headerFontFamily};
     background-repeat: no-repeat;
     background-size: 0% 4px;
     background-position: 0% 90%;

@@ -8,7 +8,7 @@ import _CTACard from './CTACard';
 import _DataCard from './DataCard';
 import _CollectionCard from './CollectionCard';
 import _QACard from './QACard';
-import _CampaignCard from './CampaignCard';
+import _CampaignCard, { CampaignCardView as _CampaignCardView } from './CampaignCard';
 
 export const ImageCard = _ImageCard;
 export const InsightCard = _InsightCard;
@@ -21,6 +21,8 @@ export const DataCard = _DataCard;
 export const CollectionCard = _CollectionCard;
 export const QACard = _QACard;
 export const CampaignCard = _CampaignCard;
+
+export const CampaignCardView = _CampaignCardView;
 
 export const cards = {
   ImageCard: _ImageCard,

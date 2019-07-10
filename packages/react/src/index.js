@@ -41,4 +41,5 @@ export {
   CollectionCard,
   QACard,
   CampaignCard,
+  CampaignCardView,
 } from './cards';

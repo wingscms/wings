@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { defineMessages, injectIntl } from 'react-intl';
 import classNames from 'classnames';
-import { Content } from '@wingscms/react';
+import Content from '../../../components/Content';
 import Entry from '../Entry';
 import Chapters from './Chapters';
 import CornerMenu from './CornerMenu';

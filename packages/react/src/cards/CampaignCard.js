@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled, { withTheme, css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { createCard } from '@wingscms/react';
 import { wide } from '@wingscms/crane';
 import Campaign from '../components/Campaign/Campaign';
@@ -38,7 +38,7 @@ const Image = styled.div`
       : null)}
 `;
 
-class CampaignCardView extends Component {
+export class CampaignCardView extends Component {
   render() {
     const { id, resourceType } = this.props;
     if (!id || !resourceType) {
@@ -64,5 +64,5 @@ class CampaignCardView extends Component {
 
 export default createCard({
   name: 'CampaignCard',
-  renderWith: withTheme(CampaignCardView),
+  renderWith: CampaignCardView,
 });

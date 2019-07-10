@@ -26,7 +26,7 @@ export default styled(MenuItem)`
       ${({ theme }) => theme.primaryColor} 0%,
       ${({ theme }) => theme.primaryColor} 100%
     ) !important;
-    font-family: ${({ theme }) => theme.typography.options.headerFontFamily.join(', ')};
+    font-family: ${({ theme }) => theme.headerFontFamily};
     background-repeat: no-repeat;
     background-size: 0% 4px;
     background-position: 0% 100%;

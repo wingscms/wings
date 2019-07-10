@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import classNames from 'classnames';
-import { Content } from '@wingscms/react';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
+import Content from '../../../components/Content';
+
 import Entry from '../Entry';
 
 import Header from './Header';
