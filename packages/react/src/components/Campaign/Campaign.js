@@ -130,7 +130,6 @@ export default ({
   theme = {},
   wrapElement = e => e,
   redirectUrlForNode = () => null,
-  wings = {},
   ...props
 }) => {
   const [signatureCount, setSignatureCount] = useState(0);
@@ -192,7 +191,6 @@ export default ({
                 onLoad={handleCampaignLoad}
                 nodeFragment={NodeFragment}
                 campaignFragment={CampaignFragment}
-                wings={wings}
               />
             </FormContainerInner>
           </FormContainer>

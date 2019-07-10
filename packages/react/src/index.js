@@ -1,6 +1,8 @@
 export { default as createCard } from './createCard';
 export { slugify } from './lib/utils';
 
+export { default as WingsProvider, useWings, withWings } from './ctx/Wings';
+
 export const getNodeMetaTags = (node) => {
   const { all, facebook, twitter } = node.platforms;
 

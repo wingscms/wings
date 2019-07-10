@@ -4,6 +4,7 @@ import styled, { withTheme } from 'styled-components';
 import { SchemaForm, Amount, Loading, Button as _Button, parseJSON } from '@wingscms/crane';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import deepmerge from 'deepmerge';
+import { withWings } from '../../ctx/Wings';
 
 export const patchSchema = (schema, fieldDefinitions) =>
   deepmerge(schema, { properties: fieldDefinitions });
@@ -165,7 +166,6 @@ const messages = defineMessages({
   },
 });
 
-// TODO: move to @wingscms/react (needs a provider for Wings client first)
 class CampaignForm extends Component {
   static propTypes = {
     id: PropTypes.string.isRequired,
@@ -322,7 +322,7 @@ class CampaignForm extends Component {
         });
         campaign = c;
         formSchema = JSON.parse(c.submissionSchema);
-      } catch (err) {
+      } catch (e) {
         console.error(
           "Couldn't fetch submission schema for campaign",
           this.props.type,
@@ -467,4 +467,4 @@ class CampaignForm extends Component {
   }
 }
 
-export default injectIntl(withTheme(CampaignForm));
+export default injectIntl(withTheme(withWings(CampaignForm)));

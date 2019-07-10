@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled, { withTheme, css } from 'styled-components';
 import { createCard } from '@wingscms/react';
 import { wide } from '@wingscms/crane';
-import _Campaign from '../components/Campaign/Campaign';
+import Campaign from '../components/Campaign/Campaign';
 
 const Container = styled.div`
   ${wide};
@@ -10,10 +10,6 @@ const Container = styled.div`
   @media screen and (max-width: 800px) {
     margin-bottom: ${({ theme }) => theme.mediumSpacing};
   }
-`;
-
-const Campaign = styled(_Campaign)`
-  margin-top: 0;
 `;
 
 const Image = styled.div`

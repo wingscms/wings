@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled, { withTheme } from 'styled-components';
 import { Campaign as CampaignMain } from '@wingscms/react';
-import wings from '../../../data/wings';
 
 import Container from '../../../components/Container';
 import LayoutDefault from '../../../components/LayoutDefault';
@@ -104,7 +103,7 @@ class CampaignTemplate extends Component {
     children: [
       <CampaignTemplate.Navigation />,
       <CampaignTemplate.Header />,
-      <CampaignTemplate.Main wings={wings} />,
+      <CampaignTemplate.Main />,
     ],
     layout: LayoutDefault,
   };
