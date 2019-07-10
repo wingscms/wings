@@ -6,7 +6,10 @@ export default props => (
   <Content
     {...props}
     cardProps={{
-      CampaignCard: { redirectUrlForNode: node => routing.getCampaignConfirmedUrl(node) },
+      CampaignCard: {
+        redirectUrlForNode: node => routing.getCampaignConfirmedUrl(node),
+        formProps: { copy: {} },
+      },
     }}
   />
 );

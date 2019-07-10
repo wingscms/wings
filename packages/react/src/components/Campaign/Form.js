@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 import { SchemaForm, Amount, Loading, Button as _Button, parseJSON } from '@wingscms/crane';
-import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import deepmerge from 'deepmerge';
 import { withWings } from '../../ctx/Wings';
 
-export const patchSchema = (schema, fieldDefinitions) =>
+const patchSchema = (schema, fieldDefinitions) =>
   deepmerge(schema, { properties: fieldDefinitions });
 
 const PETITION_QUERY = `
@@ -86,16 +85,6 @@ const FUNDRAISER_MUTATION = `
     }
   }
 `;
-
-const FIELDS = {
-  EMAIL: 'email',
-  FIRSTNAME: 'firstName',
-  LASTNAME: 'lastName',
-  NEWSLETTER: 'newsletter',
-  PRIVACY: 'privacyConsent',
-  TERMS: 'terms',
-};
-
 const Button = styled(_Button)`
   background-color: #000;
   color: #fff;
@@ -113,58 +102,43 @@ const Button = styled(_Button)`
   }
 `;
 
-const messages = defineMessages({
-  defaultSubmit: {
-    id: 'hummingbird.CampaignForm.submit.text',
-    description: 'Campaign form default submit button label',
-    defaultMessage: 'Submit',
-  },
-  eventSubmit: {
-    id: 'hummingbird.CampaignForm.eventSubmit.text',
-    description: 'Campaign form event submit button label',
-    defaultMessage: 'Attend',
-  },
-  fundraiserSubmit: {
-    id: 'hummingbird.CampaignForm.fundraiserSubmit.text',
-    description: 'Campaign form fundraiser submit button label',
-    defaultMessage: 'Donate',
-  },
-  petitionSubmit: {
-    id: 'hummingbird.CampaignForm.petitionSubmit.text',
-    description: 'Campaign form petition submit button label',
-    defaultMessage: 'Sign',
-  },
-  [FIELDS.EMAIL]: {
-    id: 'hummingbird.CampaignForm.emailField.label',
-    description: 'Campaign form email field label',
-    defaultMessage: 'Email address',
-  },
-  [FIELDS.FIRSTNAME]: {
-    id: 'hummingbird.CampaignForm.firstNameField.label',
-    description: 'Campaign form first name field label',
-    defaultMessage: 'First name',
-  },
-  [FIELDS.LASTNAME]: {
-    id: 'hummingbird.CampaignForm.lastNameField.label',
-    description: 'Campaign form last name field label',
-    defaultMessage: 'Last name',
-  },
-  [FIELDS.NEWSLETTER]: {
-    id: 'hummingbird.CampaignForm.newsletterField.label',
-    description: 'Campaign form newsletter checkbox label',
-    defaultMessage: 'Stay up to date',
-  },
-  [FIELDS.PRIVACY]: {
-    id: 'hummingbird.CampaignForm.privacyConsentField.label',
-    description: 'Campaign form privacy consent checkbox label',
-    defaultMessage: 'Agree to our privacy policy',
-  },
-  [FIELDS.TERMS]: {
-    id: 'hummingbird.CampaignForm.termsField.label',
-    description: 'Campaign form terms checkbox label',
-    defaultMessage: 'Agree to our terms & conditions',
-  },
-});
+const FIELDS = {
+  EMAIL: 'email',
+  FIRSTNAME: 'firstName',
+  LASTNAME: 'lastName',
+  NEWSLETTER: 'newsletter',
+  PRIVACY: 'privacyConsent',
+  TERMS: 'terms',
+};
+
+const FIELD_COPY_MAPPING = {
+  [FIELDS.EMAIL]: 'emailFieldLabel',
+  [FIELDS.FIRSTNAME]: 'firstNameFieldLabel',
+  [FIELDS.LASTNAME]: 'lastNameFieldLabel',
+  [FIELDS.NEWSLETTER]: 'newsletterFieldLabel',
+  [FIELDS.PRIVACY]: 'privacyConsentFieldLabel',
+  [FIELDS.TERMS]: 'termsFieldLabel',
+};
+
+const DEFAULT_COPY = {
+  submitText: 'Submit',
+  eventSubmitText: 'Attend',
+  fundraiserSubmitText: 'Donate',
+  petitionSubmitText: 'Sign',
+  emailFieldLabel: 'Email address',
+  firstNameFieldLabel: 'First name',
+  lastNameFieldLabel: 'Last name',
+  newsletterFieldLabel: 'Stay up to date',
+  termsFieldLabel: 'Agree to our terms & conditions',
+  privacyConsentFieldLabel: 'Agree to our privacy policy',
+  campaignConfirmTitle: 'We’re almost there!',
+  campaignConfirmText:
+    'We have sent you an email with a confirmation link to make sure all signatures are genuine. If you follow that link, your signature will count. Thanks!',
+  campaignLoadingText: 'loading',
+  campaignErrorTitle: 'Oops!',
+  campaignErrorText:
+    'Something went wrong with the submitting the form. Try again or report the issue to us.',
+};
 
 class CampaignForm extends Component {
   static propTypes = {
@@ -179,6 +153,7 @@ class CampaignForm extends Component {
     nodeFragment: PropTypes.string,
     campaignFragment: PropTypes.string,
     node: PropTypes.shape({ submissionSchema: PropTypes.string }),
+    copy: PropTypes.object,
   };
   static defaultProps = {
     onSubmit: null,
@@ -198,6 +173,7 @@ class CampaignForm extends Component {
       }
     `,
     node: {},
+    copy: {},
   };
 
   state = {
@@ -207,6 +183,10 @@ class CampaignForm extends Component {
     amount: 500,
     stage: 'form',
   };
+
+  getCopy() {
+    return { ...DEFAULT_COPY, ...this.props.copy };
+  }
 
   componentDidMount() {
     this.maybeFetch();
@@ -255,15 +235,15 @@ class CampaignForm extends Component {
     return schema ? this.processSchema(schema) : schema;
   }
 
-  _localizeSchema(schema) {
-    const { intl } = this.props;
+  _overrideSchemaCopy(schema) {
     const fields = Object.values(FIELDS).filter(
       f => Object.keys(schema.properties).indexOf(f) > -1,
     );
+    const copy = this.getCopy();
     const fieldDefs = fields.reduce(
       (defs, field) => ({
         ...defs,
-        [field]: { title: intl.formatMessage(messages[field]) },
+        [field]: { title: copy[FIELD_COPY_MAPPING[field]] },
       }),
       {},
     );
@@ -278,7 +258,7 @@ class CampaignForm extends Component {
     });
     schema.required = schema.required.filter(f => disabledFields.indexOf(f) < 0);
 
-    return this.props.processSchema(this._localizeSchema(schema), this._getHookContext());
+    return this.props.processSchema(this._overrideSchemaCopy(schema), this._getHookContext());
   };
 
   processSubmission = (sub) => {
@@ -291,17 +271,18 @@ class CampaignForm extends Component {
   };
 
   getSubmitText() {
-    const { intl, type, submitText = '' } = this.props;
+    const { type, submitText = '' } = this.props;
+    const { eventSubmit, petitionSubmit, fundraiserSubmit, defaultSubmit } = this.getCopy();
     if (submitText) return submitText;
     switch (type) {
       case 'event':
-        return intl.formatMessage(messages.eventSubmit);
+        return eventSubmit;
       case 'petition':
-        return intl.formatMessage(messages.petitionSubmit);
+        return petitionSubmit;
       case 'fundraiser':
-        return intl.formatMessage(messages.fundraiserSubmit);
+        return fundraiserSubmit;
       default:
-        return intl.formatMessage(messages.defaultSubmit);
+        return defaultSubmit;
     }
   }
 
@@ -387,19 +368,20 @@ class CampaignForm extends Component {
   };
 
   render() {
-    const { theme } = this.props;
     const { amount, stage } = this.state;
     const schema = this.getFormSchema();
     const loading = !schema;
+    const {
+      campaignConfirmText,
+      campaignConfirmTitle,
+      campaignLoadingText,
+      campaignErrorTitle,
+      campaignErrorText,
+    } = this.getCopy();
     return loading ? (
       <div style={{ textAlign: 'center' }}>
-        <FormattedMessage
-          id="hummingbird.Campaign.loading.text"
-          description="Form loading message"
-          defaultMessage="loading"
-        />
-        ...
-        <Loading theme={theme} />
+        {campaignLoadingText}
+        <Loading />
       </div>
     ) : (
       <React.Fragment>
@@ -432,34 +414,14 @@ class CampaignForm extends Component {
         )}
         {!(stage === 'confirm') ? null : (
           <div>
-            <FormattedMessage
-              id="hummingbird.Campaign.confirm.title"
-              description="Title of campaign confirmation."
-              defaultMessage="We’re almost there!"
-              tagName="h1"
-            />
-            <FormattedMessage
-              id="hummingbird.Campaign.confirm.text"
-              description="Body of campaign confirmation."
-              defaultMessage="We have sent you an email with a confirmation link to make sure all signatures are genuine. If you follow that link, your signature will count. Thanks!"
-              tagName="p"
-            />
+            <h1>{campaignConfirmTitle}</h1>
+            <p>{campaignConfirmText}</p>
           </div>
         )}
         {!(stage === 'error') ? null : (
           <div>
-            <FormattedMessage
-              id="hummingbird.Campaign.error.title"
-              description="Title of campaign error."
-              defaultMessage="Oops!"
-              tagName="h1"
-            />
-            <FormattedMessage
-              id="hummingbird.Campaign.error.text"
-              description="Body of campaign error."
-              defaultMessage="Something went wrong with the submitting the form. Try again or report the issue to us."
-              tagName="p"
-            />
+            <h1>{campaignErrorTitle}</h1>
+            <p>{campaignErrorText}</p>
           </div>
         )}
       </React.Fragment>
@@ -467,4 +429,4 @@ class CampaignForm extends Component {
   }
 }
 
-export default injectIntl(withTheme(withWings(CampaignForm)));
+export default withWings(CampaignForm);
