@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { defineMessages, injectIntl } from 'react-intl';
 import classNames from 'classnames';
-import Content from '../../../components/Content';
+import Content from '../../../internal/Content';
 import Entry from '../Entry';
 import Chapters from './Chapters';
 import CornerMenu from './CornerMenu';
