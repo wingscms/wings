@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Counter } from '@wingscms/crane';
-import { FormattedNumber } from 'react-intl';
 import CountUp from 'react-countup';
 
 const Container = styled.div`
@@ -42,7 +41,7 @@ const DescriptionText = styled.div`
   display: block;
 `;
 
-const MaxText = styled.div`
+const GoalText = styled.div`
   text-align: right;
   font-weight: 800;
   font-family: 'Open Sans', Arial, sans-serif;
@@ -55,8 +54,7 @@ export default class PetitionCounter extends Component {
     current: 0,
   };
   render() {
-    const { current, theme } = this.props;
-    const { max, descriptionText } = this.props;
+    const { current, theme, goal, goalText, descriptionText } = this.props;
     return (
       <Container>
         <TopContainer>
@@ -65,12 +63,10 @@ export default class PetitionCounter extends Component {
           </CurrentText>
           <DescriptionText>{descriptionText}</DescriptionText>
         </TopContainer>
-        {!max ? null : (
+        {!goal ? null : (
           <React.Fragment>
-            <Counter intent="primary" current={current} max={max} theme={theme} />
-            <MaxText>
-              <FormattedNumber value={max} />
-            </MaxText>
+            <Counter intent="primary" current={current} max={goal} theme={theme} />
+            <GoalText>{goalText}</GoalText>
           </React.Fragment>
         )}
       </Container>

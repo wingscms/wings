@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { FormattedMessage } from 'react-intl';
 
 const windowExists = typeof window !== 'undefined';
 
@@ -82,27 +81,18 @@ export default class Proposition extends Component {
 
   render() {
     const { height, show } = this.state;
-    const { children } = this.props;
+    const {
+      children,
+      copy: { descriptionCollapse, descriptionExpand },
+    } = this.props;
     return (
       <PropositionContainer height={height} show={show}>
         {children}
         <ToggleButton onClick={this.toggleProposition}>
           {show ? (
-            <React.Fragment>
-              <FormattedMessage
-                id="hummingbird.Campaign.description.collapse"
-                description="Collapse proposition button text"
-                defaultMessage="Collapse"
-              />
-            </React.Fragment>
+            <React.Fragment>{descriptionCollapse}</React.Fragment>
           ) : (
-            <React.Fragment>
-              <FormattedMessage
-                id="hummingbird.Campaign.description.expand"
-                description="Expand proposition button text"
-                defaultMessage="Read more"
-              />
-            </React.Fragment>
+            <React.Fragment>{descriptionExpand}</React.Fragment>
           )}
         </ToggleButton>
       </PropositionContainer>

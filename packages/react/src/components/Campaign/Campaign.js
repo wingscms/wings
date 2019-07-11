@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 
 import Content from '../Content';
@@ -122,6 +121,17 @@ const CounterContainer = styled(FormContainerInner)`
   }
 `;
 
+const DEFAULT_COPY = {
+  descriptionCollapse: 'Collapse proposition button text',
+  descriptionExpand: 'Expand proposition button text',
+  eventInfoTitle: 'Title for Event metadata',
+  eventStartLabel: 'Label for Event Start date',
+  eventEndLabel: 'Label for Event End date',
+  eventLocationLabel: 'Label for Event Location',
+  eventFeeLabel: 'Label for Event Fee',
+  counterMessage: 'other people signed this petition',
+};
+
 export default ({
   id,
   resourceType,
@@ -130,6 +140,7 @@ export default ({
   theme = {},
   wrapElement = e => e,
   redirectUrlForNode = () => null,
+  copy = {},
   ...props
 }) => {
   const [signatureCount, setSignatureCount] = useState(0);
@@ -142,12 +153,29 @@ export default ({
     setSignatureGoal(campaign.signatureGoal);
     if (formProps.onLoad) formProps.onLoad(campaign);
   };
+  const getCopy = () => ({ ...DEFAULT_COPY, ...copy });
+  const {
+    descriptionCollapse,
+    descriptionExpand,
+    eventInfoTitle,
+    eventStartLabel,
+    eventEndLabel,
+    eventLocationLabel,
+    eventFeeLabel,
+    counterMessage,
+    eventStartTime,
+    eventEndTime,
+    eventFee,
+    petitionCounterGoalText,
+  } = getCopy();
+
   const { intro, title } = node;
+  console.log(props);
   const element = (
     <React.Fragment>
       <MainContainerOuter {...props}>
         <MainContainerInner>
-          <Proposition>
+          <Proposition copy={{ descriptionCollapse, descriptionExpand }}>
             {title ? <Title>{title}</Title> : null}
             {intro ? <Intro fullWidth>{intro}</Intro> : null}
             <Content
@@ -159,26 +187,13 @@ export default ({
           <FormContainer id="campaign-form-container">
             {resourceType === 'node.petition' && (
               <CounterContainer>
-                <FormattedMessage
-                  id="hummingbird.Campaign.counter.message"
-                  description="Description for petition counter component"
-                  defaultMessage="{signatureCount, plural,
-                    one {person has}
-                    other {people have}
-                } signed this petition"
-                  values={{
-                    signatureCount,
-                  }}
-                >
-                  {txt => (
-                    <PetitionCounter
-                      current={signatureCount}
-                      max={signatureGoal}
-                      descriptionText={txt}
-                      theme={theme}
-                    />
-                  )}
-                </FormattedMessage>
+                <PetitionCounter
+                  current={signatureCount}
+                  goal={signatureGoal}
+                  descriptionText={counterMessage}
+                  theme={theme}
+                  goalText={petitionCounterGoalText}
+                />
               </CounterContainer>
             )}
             <FormContainerInner>
@@ -196,21 +211,20 @@ export default ({
           </FormContainer>
         </MainContainerInner>
       </MainContainerOuter>
-      {resourceType === 'node.event' && (
+      {resourceType === 'node.event' && (node.schedule || node.fee || node.location) && (
         <Title style={{ marginBottom: '40px' }}>
           <EventDetails
-            title={
-              <Title>
-                <FormattedMessage
-                  id="hummingbird.Campaign.eventInfo.title"
-                  description="Title for Event metadata"
-                  defaultMessage="Info"
-                />
-              </Title>
-            }
-            schedule={node.schedule}
-            fee={node.fee}
+            title={<Title>{eventInfoTitle}</Title>}
             location={node.location}
+            {...{
+              eventStartLabel,
+              eventEndLabel,
+              eventLocationLabel,
+              eventFeeLabel,
+              eventStartTime,
+              eventEndTime,
+              eventFee,
+            }}
           />
         </Title>
       )}

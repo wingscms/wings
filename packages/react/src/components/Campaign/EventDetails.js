@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FormattedMessage, FormattedDate, FormattedTime, FormattedNumber } from 'react-intl';
 
 const InfoContainer = styled.div``;
 
@@ -42,80 +41,50 @@ const Wrapper = styled.div`
   }
 `;
 
-export default ({ title, fee, location, schedule }) => {
-  const start = new Date(schedule.start);
-  const end = new Date(schedule.end);
-
-  return (
-    <Wrapper>
-      {title}
-      <InfoContainer>
-        {schedule.start ? (
-          <MetaContainer>
-            <MetaName>
-              <FormattedMessage
-                id="hummingbird.Campaign.eventStart.label"
-                description="Label for Event Start date"
-                defaultMessage="Start"
-              />
-            </MetaName>
-            <MetaContent>
-              <FormattedDate value={start} /> <FormattedTime value={start} />
-            </MetaContent>
-          </MetaContainer>
-        ) : null}
-        {schedule.end ? (
-          <MetaContainer>
-            <MetaName>
-              <FormattedMessage
-                id="hummingbird.Campaign.eventEnd.label"
-                description="Label for Event End date"
-                defaultMessage="End"
-              />
-            </MetaName>
-            <MetaContent>
-              <FormattedDate value={end} /> <FormattedTime value={end} />
-            </MetaContent>
-          </MetaContainer>
-        ) : null}
-        {location ? (
-          <MetaContainer>
-            <MetaName>
-              <FormattedMessage
-                id="hummingbird.Campaign.eventLocation.label"
-                description="Label for Event Location"
-                defaultMessage="Location"
-              />
-            </MetaName>
-            <MetaContent>
-              {location.name ? <p>{location.name}</p> : null}
-              {location.street ? <p>{location.street}</p> : null}
-              {location.city ? <p>{location.city}</p> : null}
-              {location.zip ? <p>{location.zip}</p> : null}
-              {location.country ? <p>{location.country}</p> : null}
-            </MetaContent>
-          </MetaContainer>
-        ) : null}
-        {fee ? (
-          <MetaContainer>
-            <MetaName>
-              <FormattedMessage
-                id="hummingbird.Campaign.eventFee.label"
-                description="Label for Event Fee"
-                defaultMessage="Price"
-              />
-            </MetaName>
-            <MetaContent>
-              <FormattedNumber
-                value={fee.amount}
-                currency={fee.currencyCode}
-                currencyDisplay="symbol"
-                style="currency" // eslint-disable-line react/style-prop-object
-              />
-            </MetaContent>
-          </MetaContainer>
-        ) : null}
-      </InfoContainer>
-    </Wrapper>
-  );
-};
+export default ({
+  title,
+  location,
+  eventStartLabel,
+  eventEndLabel,
+  eventLocationLabel,
+  eventFeeLabel,
+  eventStartTime,
+  eventEndTime,
+  eventFee,
+}) => (
+  <Wrapper>
+    {title}
+    <InfoContainer>
+      {eventStartTime ? (
+        <MetaContainer>
+          <MetaName>{eventStartLabel}</MetaName>
+          <MetaContent>{eventStartTime}</MetaContent>
+        </MetaContainer>
+      ) : null}
+      {eventEndTime ? (
+        <MetaContainer>
+          <MetaName>{eventEndLabel}</MetaName>
+          <MetaContent>{eventEndTime}</MetaContent>
+        </MetaContainer>
+      ) : null}
+      {location ? (
+        <MetaContainer>
+          <MetaName>{eventLocationLabel}</MetaName>
+          <MetaContent>
+            {location.name ? <p>{location.name}</p> : null}
+            {location.street ? <p>{location.street}</p> : null}
+            {location.city ? <p>{location.city}</p> : null}
+            {location.zip ? <p>{location.zip}</p> : null}
+            {location.country ? <p>{location.country}</p> : null}
+          </MetaContent>
+        </MetaContainer>
+      ) : null}
+      {eventFee ? (
+        <MetaContainer>
+          <MetaName>{eventFeeLabel}</MetaName>
+          <MetaContent>{eventFee}</MetaContent>
+        </MetaContainer>
+      ) : null}
+    </InfoContainer>
+  </Wrapper>
+);

@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { defineMessages } from 'react-intl';
 import routing from '../../services/routing';
 
-const messages = defineMessages({
+const formMessages = defineMessages({
   submitText: {
     id: 'hummingbird.CampaignForm.submit.text',
     description: 'Text for submit button',
@@ -81,12 +82,107 @@ const messages = defineMessages({
   },
 });
 
-export default intl => ({
-  redirectUrlForNode: node => routing.getCampaignConfirmedUrl(node),
-  formProps: {
-    copy: Object.keys(messages).reduce(
-      (c, m) => ({ ...c, [m]: intl.formatMessage(messages[m]) }),
-      {},
-    ),
+const campaignMessages = defineMessages({
+  descriptionCollapse: {
+    id: 'hummingbird.Campaign.description.collapse',
+    description: 'Collapse proposition button text',
+    defaultMessage: 'Collapse',
+  },
+  descriptionExpand: {
+    id: 'hummingbird.Campaign.description.expand',
+    description: 'Expand proposition button text',
+    defaultMessage: 'Read more',
+  },
+  eventInfoTitle: {
+    id: 'hummingbird.Campaign.eventInfo.title',
+    description: 'Title for Event metadata',
+    defaultMessage: 'Info',
+  },
+  eventStartLabel: {
+    id: 'hummingbird.Campaign.eventStart.label',
+    description: 'Label for Event Start date',
+    defaultMessage: 'Start',
+  },
+  eventEndLabel: {
+    id: 'hummingbird.Campaign.eventEnd.label',
+    description: 'Label for Event End date',
+    defaultMessage: 'End',
+  },
+  eventLocationLabel: {
+    id: 'hummingbird.Campaign.eventLocation.label',
+    description: 'Label for Event Location',
+    defaultMessage: 'Location',
+  },
+  eventFeeLabel: {
+    id: 'hummingbird.Campaign.eventFee.label',
+    description: 'Label for Event Fee',
+    defaultMessage: 'Price',
   },
 });
+
+const dynamicCampaignMessages = (node) => {
+  if (!node) return [];
+  return [
+    {
+      key: 'counterMessage',
+      message: {
+        id: 'hummingbird.Campaign.counter.message',
+        description: 'Description for petition counter component',
+        defaultMessage: `{signatureCount, plural,
+                  one {person has}
+                  other {people have}
+              } signed this petition`,
+      },
+      values: { signatureCount: node.signatureCount },
+    },
+  ];
+};
+
+const formatMessages = ({ staticMessages = [], dynamicMessages = [], intl }) => {
+  const _staticMessages = Object.keys(staticMessages).map(m => ({
+    key: m,
+    message: staticMessages[m],
+    values: {},
+  }));
+  const messages = _staticMessages.concat(dynamicMessages);
+  return messages.reduce(
+    (c, message) => ({ ...c, [message.key]: intl.formatMessage(message.message, message.values) }),
+    {},
+  );
+};
+
+export default (intl) => {
+  const [node, setNode] = useState(null);
+  const schedule = node && node.schedule;
+  const scheduleStart = schedule && schedule.start ? new Date(schedule.start) : null;
+  const scheduleEnding = schedule && schedule.end ? new Date(schedule.end) : null;
+  const { fee, signatureGoal } = node || {};
+  return {
+    redirectUrlForNode: n => routing.getCampaignConfirmedUrl(n),
+    copy: {
+      ...formatMessages({
+        staticMessages: campaignMessages,
+        dynamicMessages: dynamicCampaignMessages(node),
+        intl,
+      }),
+      eventStartTime: scheduleStart
+        ? `${intl.formatDate(scheduleStart)} ${intl.formatTime(scheduleStart)}`
+        : null,
+      eventEndTime: scheduleEnding
+        ? `${intl.formatDate(scheduleEnding)} ${intl.formatTime(scheduleEnding)}`
+        : null,
+      eventFee: fee
+        ? intl.formatNumber(fee, {
+          style: 'currency',
+          currency: fee.currencyCode,
+          currencyDisplay: 'symbol',
+        })
+        : null,
+      petitionCounterGoalText: signatureGoal ? intl.formatNumber(signatureGoal) : null,
+    },
+    formProps: {
+      copy: formatMessages({ staticMessages: formMessages, intl }),
+      onLoad: n => setNode(n),
+    },
+  };
+};
