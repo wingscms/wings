@@ -91,7 +91,7 @@ const CTAButton = styled(Button)`
   background-color: ${({ theme }) => theme.backgroundColorDark};
   background-image: none;
   color: ${({ theme }) => theme.textColorDark};
-  font-family: ${({ theme }) => theme.typography.options.headerFontFamily.join(', ')};
+  font-family: ${({ theme }) => theme.headerFontFamily};
   padding: 20px 40px;
   border-radius: 3px;
   display: block;

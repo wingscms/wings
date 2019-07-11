@@ -62,7 +62,7 @@ const Marker = styled.span`
   font-size: 80px;
   font-weight: bold;
   line-height: 55px;
-  font-family: ${({ theme }) => theme.typography.options.headerFontFamily.join(', ')};
+  font-family: ${({ theme }) => theme.headerFontFamily};
   @media screen and (min-width: 800px) {
     font-size: 110px;
   }

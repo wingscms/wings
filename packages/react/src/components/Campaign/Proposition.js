@@ -28,7 +28,7 @@ const ToggleButton = styled.div`
   font-size: 24px;
   line-height: 28px;
   padding: 20px 0;
-  font-family: ${({ theme }) => theme.typography.options.headerFontFamily.join(', ')};
+  font-family: ${({ theme }) => theme.headerFontFamily};
   font-weight: bold;
   bottom: 0;
   left: 0;
@@ -82,11 +82,7 @@ export default class Proposition extends Component {
       <PropositionContainer height={height} show={show}>
         {children}
         <ToggleButton onClick={this.toggleProposition}>
-          {show ? (
-            <React.Fragment>{descriptionCollapse}</React.Fragment>
-          ) : (
-            <React.Fragment>{descriptionExpand}</React.Fragment>
-          )}
+          {show ? descriptionCollapse : descriptionExpand}
         </ToggleButton>
       </PropositionContainer>
     );

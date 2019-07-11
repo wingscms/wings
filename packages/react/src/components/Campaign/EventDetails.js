@@ -8,7 +8,7 @@ const MetaContainer = styled.div`
 `;
 
 const MetaName = styled.div`
-  font-family: ${({ theme }) => theme.typography.options.headerFontFamily.join(', ')};
+  font-family: ${({ theme }) => theme.headerFontFamily};
   display: inline-block;
   width: 50%;
   font-size: 18px;

@@ -6,7 +6,7 @@ import createCard from '../createCard';
 
 const Insight = styled.div`
   font-size: 30px;
-  font-family: ${({ theme }) => theme.typography.options.headerFontFamily.join(', ')};
+  font-family: ${({ theme }) => theme.headerFontFamily};
   line-height: 1.2;
   color: ${({ theme }) =>
     getContrastColor({
