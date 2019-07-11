@@ -1,10 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 import { compose, setPropTypes, setStatic } from 'recompose';
 import propTypes, { defaultProps } from './propTypes';
 import Quote from './Quote';
 
-const Blockquote = styled(Quote)``;
+const Blockquote = Quote;
 
 export default compose(
   setPropTypes(propTypes),
