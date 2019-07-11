@@ -1,4 +1,4 @@
-import { getContrastColor } from '@wingscms/crane';
+import { getContrastColor, separateUnit } from '@wingscms/crane';
 
 // set defaults here:
 export default ({
@@ -59,15 +59,26 @@ export default ({
   counterBackgroundColor,
   counterTextColor,
 
+  // SPACING
+  // General
+  extraLargeSpacing,
+  largeSpacing,
+  mediumSpacing = '40px',
+  smallSpacing,
+  extraSmallSpacing,
+
+  // SHADOWS
+  defaultShadow = '0 0 40px 0 rgba(0, 0, 0, 0.05)',
+
   // IMAGES
   logoImageUrl = 'https://files.wings.dev/9o2DZgVGxJT7x8Q8L5EP/1559551574036/wingslogo.svg',
   footerLogoImageUrl,
   faviconImageUrl = 'https://files.wings.dev/9o2DZgVGxJT7x8Q8L5EP/1559551574036/wingslogo.svg',
 
   // FONTS AND TEXT
-  // Used to set the name of font families if the font is manually imported.
   customHeaderFontUrl,
   customBodyFontUrl,
+  headerFontFamily = 'Poppins',
   // Other fonts/text stuff
   dropcapFontSize = '3.5em',
   introFontSize = '1.333',
@@ -185,6 +196,21 @@ export default ({
       threshold: contrastLuminanceThreshold,
     }),
 
+  // SPACING
+  // General
+  mediumSpacing,
+  largeSpacing:
+    largeSpacing || `${separateUnit(mediumSpacing)[0] * 2}${separateUnit(mediumSpacing)[1]}`,
+  extraLargeSpacing:
+    extraLargeSpacing || `${separateUnit(mediumSpacing)[0] * 4}${separateUnit(mediumSpacing)[1]}`,
+  smallSpacing:
+    smallSpacing || `${separateUnit(mediumSpacing)[0] / 2}${separateUnit(mediumSpacing)[1]}`,
+  extraSmallSpacing:
+    extraSmallSpacing || `${separateUnit(mediumSpacing)[0] / 4}${separateUnit(mediumSpacing)[1]}`,
+
+  // SHADOWS
+  defaultShadow,
+
   // IMAGES
   logoImageUrl,
   footerLogoImageUrl,
@@ -193,6 +219,7 @@ export default ({
   // FONTS AND TEXT
   customHeaderFontUrl,
   customBodyFontUrl,
+  headerFontFamily,
   dropcapFontSize,
   introFontSize,
   bodyFontWeight,

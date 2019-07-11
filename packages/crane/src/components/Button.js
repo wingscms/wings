@@ -57,6 +57,9 @@ const buttonStyles = ({ disabled, intent, size, theme, type }) => {
     cursor: pointer;
     position: relative;
     transition: all 0.15s ease-in-out;
+    font-family: ${theme.headerFontFamily};
+    font-weight: bold;
+    border-radius: 4px;
     &:hover,
     &:active {
       opacity: 0.8;

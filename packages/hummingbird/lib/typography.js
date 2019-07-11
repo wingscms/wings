@@ -4,7 +4,6 @@ import Typography from 'typography';
 import { parseJSON } from './utils';
 
 const defaults = {
-  headerWeight: 'bold',
   baseFontSize: '19px',
   baseLineHeight: 1.6,
   headerFontFamily: ['Poppins', 'Arial', 'sans-serif'],

@@ -2,8 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import includes from 'lodash.includes';
 import mrr from '@dailybeast/mobiledoc-react-renderer';
-import { allCards } from '../';
+import { allCards, cards } from '../cards';
 import { slugify } from '../lib/utils';
+
+const cardProps = Object.keys(cards).reduce(
+  (types, card) => ({ ...types, [card]: PropTypes.object }),
+  {},
+);
 
 const Renderer = mrr;
 
@@ -16,7 +21,7 @@ const mergeCards = (base, overrides) => {
 
 const convertCard = ({ View, ...card }) => ({
   ...card,
-  render: ({ payload }) => <View {...payload} />,
+  render: ({ payload, ...props }) => <View {...payload} {...props} />,
 });
 
 export default class Content extends Component {
@@ -25,6 +30,7 @@ export default class Content extends Component {
     cards: PropTypes.array,
     unknownCardHandler: PropTypes.func,
     onLoad: PropTypes.func,
+    cardProps: PropTypes.shape(cardProps),
   };
 
   static defaultProps = {
@@ -33,17 +39,28 @@ export default class Content extends Component {
     unknownCardHandler: ({ env: { name } }) =>
       console.error(`Unknown card type ${name} encountered.`),
     onLoad: null,
+    cardProps: {},
   };
 
   constructor(props) {
     super(props);
-    const cards = mergeCards(allCards, this.props.cards).map(convertCard);
+    const _cards = mergeCards(allCards, this.props.cards)
+      .map(convertCard)
+      .map(this.injectCardProps);
 
     this.renderer = new Renderer({
-      cards,
+      cards: _cards,
       unknownCardHandler: this.props.unknownCardHandler,
     });
   }
+
+  injectCardProps = (card) => {
+    const cardRender = card.render;
+    return {
+      ...card,
+      render: ({ payload }) => cardRender({ payload, ...this.props.cardProps[card.name] }),
+    };
+  };
 
   componentDidMount() {
     const { content } = this.props;
@@ -65,7 +82,7 @@ export default class Content extends Component {
   };
 
   render() {
-    const { content, cards, unknownCardHandler, onLoad, ...props } = this.props;
+    const { content, cards: _cards, unknownCardHandler, onLoad, ...props } = this.props;
     return <div {...props}>{!content ? null : this.renderer.render(JSON.parse(content))}</div>;
   }
 }

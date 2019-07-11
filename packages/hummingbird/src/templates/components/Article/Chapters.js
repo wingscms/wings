@@ -39,7 +39,7 @@ const ChapterItem = styled.li`
   font-size: 42px;
   line-height: 55px;
   text-align: center;
-  font-family: ${({ theme }) => theme.typography.options.headerFontFamily.join(', ')};
+  font-family: ${({ theme }) => theme.headerFontFamily};
   font-weight: ${({ theme }) => theme.typography.headerFontWeight || 'bold'};
   a {
     text-decoration: none;

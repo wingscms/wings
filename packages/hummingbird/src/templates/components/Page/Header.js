@@ -45,7 +45,7 @@ const Title = styled.h1`
   @media screen and (min-width: 800px) {
     font-size: 60px;
     line-height: 70px;
-    margin-bottom: 80px;
+    margin-bottom: ${({ theme }) => theme.largeSpacing};
   }
   @media screen and (min-width: 960px) {
     width: 920px;

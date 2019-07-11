@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
-import { getContrastColor } from '@wingscms/crane';
+import { getContrastColor, Icons } from '@wingscms/crane';
 import qs from 'qs';
 import Campaign from './Campaign';
-import { Facebook, Twitter, Whatsapp, Globe } from '../../img/svg/social';
+
+const { Facebook, Twitter, Whatsapp, Globe } = Icons;
 
 const ShareContainer = styled.div`
   padding-top: 20px;
