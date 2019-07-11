@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-const windowExists = typeof window !== 'undefined';
-
 const PropositionContainer = styled.div`
   display: inline-block;
   position: relative;
@@ -72,9 +70,7 @@ export default class Proposition extends Component {
   };
 
   componentDidMount() {
-    if (windowExists) {
-      updateHeight(this);
-    }
+    updateHeight(this);
   }
 
   toggleProposition = () => this.setState(({ show }) => ({ show: !show }));

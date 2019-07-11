@@ -170,7 +170,6 @@ export default ({
   } = getCopy();
 
   const { intro, title } = node;
-  console.log(props);
   const element = (
     <React.Fragment>
       <MainContainerOuter {...props}>
