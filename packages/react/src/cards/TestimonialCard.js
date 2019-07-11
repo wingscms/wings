@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import qs from 'qs';
 import classNames from 'classnames';
 import { StickyContainer, Sticky } from 'react-sticky';
-import { createCard, Content } from '@wingscms/react';
+
 import styled from 'styled-components';
 import { wide } from '@wingscms/crane';
+import Content from '../components/Content';
+import createCard from '../createCard';
 
 const Testimonial = styled.section`
   ${wide};

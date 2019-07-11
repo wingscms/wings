@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { createCard } from '@wingscms/react';
 import { Button, getContrastColor, wide } from '@wingscms/crane';
+import createCard from '../createCard';
 
 const CTA = styled.div`
   ${wide};
@@ -121,7 +121,9 @@ class CTACardView extends Component {
           <h2>{title}</h2>
           <p>{text}</p>
           <div>
-            <CTAButton as="a" href={actionUrl}>{actionText}</CTAButton>
+            <CTAButton as="a" href={actionUrl}>
+              {actionText}
+            </CTAButton>
           </div>
         </div>
       </CTA>

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { createCard } from '@wingscms/react';
 import styled from 'styled-components';
 import { wide } from '@wingscms/crane';
+import createCard from '../createCard';
 
 const Figure = styled.figure`
   ${wide};

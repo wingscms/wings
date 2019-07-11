@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { createCard } from '@wingscms/react';
 import { getContrastColor } from '@wingscms/crane';
+import createCard from '../createCard';
 import Content from '../components/Content';
 
 const Title = styled.h3`

@@ -4,8 +4,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled, { withTheme } from 'styled-components';
 import Fade from 'react-reveal/Fade';
-import { createCard, slugify } from '@wingscms/react';
+
 import { wide } from '@wingscms/crane';
+import { slugify } from '../lib/utils';
+import createCard from '../createCard';
 import Intro from '../../src/components/Intro';
 
 const Container = styled.div`

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
-import { createCard } from '@wingscms/react';
 import { wide } from '@wingscms/crane';
 import Campaign from '../components/Campaign/Campaign';
+import createCard from '../createCard';
 
 const Container = styled.div`
   ${wide};

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { createCard } from '@wingscms/react';
 import { getContrastColor, wide } from '@wingscms/crane';
-
+import createCard from '../createCard';
 
 const Insight = styled.div`
   font-size: 30px;
