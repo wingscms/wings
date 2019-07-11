@@ -1,7 +1,7 @@
 {
   "name": "@wingscms/crane",
   "version": "0.14.0",
-  "description": "",
+  "description": "Component library for Wings projects",
   "main": "build/index.js",
   "scripts": {
     "start": "npm run build -- --watch",
