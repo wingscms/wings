@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { SchemaForm, Amount, Loading, Button as _Button, parseJSON } from '@wingscms/crane';
+import { SchemaForm, Amount, Loading, Button as _Button } from '@wingscms/crane';
 import deepmerge from 'deepmerge';
 import { withWings } from '../../ctx/Wings';
 
@@ -230,7 +230,7 @@ class CampaignForm extends Component {
   getFormSchema() {
     const schema =
       this.props.formSchema ||
-      parseJSON(this.props.node.submissionSchema, { defaultValue: null }) ||
+      (this.props.node.submissionSchema && JSON.parse(this.props.node.submissionSchema)) ||
       this.state.formSchema;
     return schema ? this.processSchema(schema) : schema;
   }

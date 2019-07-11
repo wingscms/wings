@@ -57,7 +57,7 @@ export { Signup, SignupForm, Newsletter, NewsletterForm, MailchimpForm } from '.
 export { default as languageList } from './data/languageList';
 
 // Utils
-export { createSvgIcon, getContrastColor, parseJSON, separateUnit } from './lib/utils';
+export { createSvgIcon, getContrastColor, separateUnit } from './lib/utils';
 
 // Styles
 export { ALIGNLEFT, ALIGNRIGHT, wide } from './styles';

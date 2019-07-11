@@ -1,7 +1,7 @@
 // NOTE: DO NOT IMPORT THIS DIRECTLY
 
 import Typography from 'typography';
-import { parseJSON } from '@wingscms/crane';
+import { parseJSON } from './utils';
 
 const defaults = {
   baseFontSize: '19px',
