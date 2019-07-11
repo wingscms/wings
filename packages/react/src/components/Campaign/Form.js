@@ -272,17 +272,22 @@ class CampaignForm extends Component {
 
   getSubmitText() {
     const { type, submitText = '' } = this.props;
-    const { eventSubmit, petitionSubmit, fundraiserSubmit, defaultSubmit } = this.getCopy();
+    const {
+      eventSubmitText,
+      petitionSubmitText,
+      fundraiserSubmitText,
+      defaultSubmitText,
+    } = this.getCopy();
     if (submitText) return submitText;
     switch (type) {
       case 'event':
-        return eventSubmit;
+        return eventSubmitText;
       case 'petition':
-        return petitionSubmit;
+        return petitionSubmitText;
       case 'fundraiser':
-        return fundraiserSubmit;
+        return fundraiserSubmitText;
       default:
-        return defaultSubmit;
+        return defaultSubmitText;
     }
   }
 
