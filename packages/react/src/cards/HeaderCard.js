@@ -8,7 +8,7 @@ import Fade from 'react-reveal/Fade';
 import { wide } from '@wingscms/crane';
 import { slugify } from '../lib/utils';
 import createCard from '../createCard';
-import Intro from '../../src/components/Intro';
+import Intro from '../components/Intro';
 
 const Container = styled.div`
   ${wide};
