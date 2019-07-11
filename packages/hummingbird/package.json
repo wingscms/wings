@@ -3,10 +3,10 @@
     "test": "jest"
   },
   "name": "@wingscms/hummingbird",
-  "version": "0.30.3",
+  "version": "0.30.4",
   "dependencies": {
     "@wingscms/crane": "^0.14.2",
-    "@wingscms/react": "^0.16.3",
+    "@wingscms/react": "^0.16.4",
     "@wingscms/sdk": "^0.3.7",
     "browser-locale": "^1.0.3",
     "classnames": "^2.2.6",
@@ -53,5 +53,5 @@
   "devDependencies": {
     "babel-preset-gatsby": "^0.1.11"
   },
-  "gitHead": "43fafcf5fe488c6dd436110f388219024aebef20"
+  "gitHead": "2051165cacab59ebf43dc82a64fa444ffa72a7b8"
 }

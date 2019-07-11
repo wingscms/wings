@@ -3,16 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.16.3](https://github.com/wingscms/wings/compare/@wingscms/react@0.16.2...@wingscms/react@0.16.3) (2019-07-11)
-
-
-### Bug Fixes
-
-* **react:** add npmignore to react ([9225c0a](https://github.com/wingscms/wings/commit/9225c0a))
+<a name="0.16.4"></a>
+## [0.16.4](https://github.com/wingscms/wings/compare/@wingscms/react@0.16.3...@wingscms/react@0.16.4) (2019-07-11)
 
 
 
 
+**Note:** Version bump only for package @wingscms/react
 
 <a name="0.16.2"></a>
 ## [0.16.2](https://github.com/wingscms/wings/compare/@wingscms/react@0.16.1...@wingscms/react@0.16.2) (2019-07-11)
