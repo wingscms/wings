@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.14.0"></a>
+# [0.14.0](https://github.com/wingscms/wings/compare/@wingscms/crane@0.13.0...@wingscms/crane@0.14.0) (2019-07-11)
+
+
+### Features
+
+* **hummingbird/crane/react:** big refactor and introduction of new APIs ([#212](https://github.com/wingscms/wings/issues/212)) ([4fce054](https://github.com/wingscms/wings/commit/4fce054))
+
+
+
+
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
 # [0.13.0](https://github.com/wingscms/wings/compare/@wingscms/crane@0.12.0...@wingscms/crane@0.13.0) (2019-07-03)
 
 
