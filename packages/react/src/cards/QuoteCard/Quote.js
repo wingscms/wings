@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { ALIGNLEFT, ALIGNRIGHT } from '@wingscms/crane';
 import { FLOAT } from './enums';
 
-import { quote } from '../../../../hummingbird/src/img/icons';
+import { quote } from '../../img/icons';
 
 export default styled.figure`
   clear: both;
@@ -44,7 +44,7 @@ export default styled.figure`
     padding: 20px;
     box-shadow: none;
     aside {
-      font-family: ${({ theme }) => theme.typography.options.headerFontFamily.join(', ')};
+      font-family: ${({ theme }) => theme.headerFontFamily};
       font-size: 24px;
       line-height: 1.2;
       @media screen and (min-width: 800px) {
