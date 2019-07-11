@@ -174,7 +174,7 @@ export default ({
     <React.Fragment>
       <MainContainerOuter {...props}>
         <MainContainerInner>
-          <Proposition copy={{ descriptionCollapse, descriptionExpand }}>
+          <Proposition {...{ descriptionCollapse, descriptionExpand }}>
             {title ? <Title>{title}</Title> : null}
             {intro ? <Intro fullWidth>{intro}</Intro> : null}
             <Content

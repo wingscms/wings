@@ -77,10 +77,7 @@ export default class Proposition extends Component {
 
   render() {
     const { height, show } = this.state;
-    const {
-      children,
-      copy: { descriptionCollapse, descriptionExpand },
-    } = this.props;
+    const { children, descriptionCollapse, descriptionExpand } = this.props;
     return (
       <PropositionContainer height={height} show={show}>
         {children}
