@@ -3,13 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.30.1](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.30.0...@wingscms/hummingbird@0.30.1) (2019-07-11)
+<a name="0.30.2"></a>
+## [0.30.2](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.30.1...@wingscms/hummingbird@0.30.2) (2019-07-11)
+
+
+
 
 **Note:** Version bump only for package @wingscms/hummingbird
-
-
-
-
 
 <a name="0.30.0"></a>
 # [0.30.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.29.3...@wingscms/hummingbird@0.30.0) (2019-07-11)
