@@ -1,7 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const InfoContainer = styled.div``;
+const InfoContainer = styled.div`
+  padding: 20px;
+  @media screen and (max-width: 800px) {
+    padding: 10px;
+  }
+`;
 
 const MetaContainer = styled.div`
   margin: 10px 0;
@@ -14,6 +19,8 @@ const MetaName = styled.div`
   font-size: 18px;
   font-weight: bold;
   vertical-align: top;
+
+  text-align: left;
 `;
 
 const MetaContent = styled.div`
@@ -25,6 +32,8 @@ const MetaContent = styled.div`
   p {
     margin: 0;
   }
+
+  text-align: left;
 `;
 
 const Wrapper = styled.div`
