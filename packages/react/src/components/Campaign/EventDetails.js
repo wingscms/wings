@@ -1,7 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const InfoContainer = styled.div``;
+const InfoContainer = styled.div`
+  padding: 20px;
+  @media screen and (max-width: 800px) {
+    padding: 10px;
+  }
+`;
 
 const MetaContainer = styled.div`
   margin: 10px 0;
@@ -12,16 +17,26 @@ const MetaName = styled.div`
   display: inline-block;
   width: 50%;
   font-size: 18px;
-  font-weight: 800;
+  font-weight: bold;
   vertical-align: top;
+  text-align: left;
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 const MetaContent = styled.div`
   display: inline-block;
   width: 50%;
   font-size: 18px;
+  font-weight: normal;
+  vertical-align: top;
   p {
     margin: 0;
+  }
+  text-align: left;
+  @media screen and (max-width: 800px) {
+    width: 100%;
   }
 `;
 
@@ -30,14 +45,15 @@ const Wrapper = styled.div`
   position: relative;
   width: calc(100% - 20px);
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto ${({ theme }) => theme.largeSpacing} auto;
   padding: 20px;
   background-color: #fff !important;
   border-radius: 4px;
   box-shadow: ${({ theme }) => theme.defaultShadow};
   text-align: center;
-  @media screen and (min-width: 800px) {
+  @media screen and (max-width: 800px) {
     padding: 40px;
+    margin: ${({ theme }) => theme.mediumSpacing} auto ${({ theme }) => theme.mediumSpacing} auto;
   }
 `;
 
