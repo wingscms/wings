@@ -48,6 +48,10 @@ const EVENT_QUERY = `
         zip
         country
       }
+      fee {
+        amount
+        currencyCode
+      }
       ...NodeFields
       ...CampaignFields
     }

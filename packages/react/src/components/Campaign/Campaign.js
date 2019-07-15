@@ -57,13 +57,13 @@ const MainContainerOuter = styled(Container)`
   background-color: transparent;
   margin-top: -300px;
   overflow: auto;
-  @media screen and (max-width: 1000px) {
-    margin-bottom: 0;
+  margin-bottom: ${({ theme }) => theme.largeSpacing};
+  @media screen and (max-width: 800px) {
+    margin-bottom: ${({ theme }) => theme.mediumSpacing};
   }
 `;
 
 const MainContainerInner = styled(Container)`
-  padding-bottom: 40px;
   background-color: transparent;
   max-width: 1160px;
   height: auto;
@@ -72,7 +72,7 @@ const MainContainerInner = styled(Container)`
   margin: 0 auto;
   @media screen and (max-width: 1000px) {
     flex-direction: column;
-    padding: 10px;
+    padding: 0 10px;
   }
 `;
 
@@ -148,10 +148,11 @@ export default ({
   const [node, setNode] = useState(_node);
   const handleCampaignLoad = (campaign) => {
     setNode(campaign);
-    if (!(resourceType === 'node.petition')) return;
-    setSignatureCount(campaign.signatureCount);
-    setSignatureGoal(campaign.signatureGoal);
     if (formProps.onLoad) formProps.onLoad(campaign);
+    if (resourceType === 'node.petition') {
+      setSignatureCount(campaign.signatureCount);
+      setSignatureGoal(campaign.signatureGoal);
+    }
   };
   const getCopy = () => ({ ...DEFAULT_COPY, ...copy });
   const {
@@ -168,7 +169,6 @@ export default ({
     eventFee,
     petitionCounterGoalText,
   } = getCopy();
-
   const { intro, title } = node;
   const element = (
     <React.Fragment>
@@ -211,21 +211,19 @@ export default ({
         </MainContainerInner>
       </MainContainerOuter>
       {resourceType === 'node.event' && (node.schedule || node.fee || node.location) && (
-        <Title style={{ marginBottom: '40px' }}>
-          <EventDetails
-            title={<Title>{eventInfoTitle}</Title>}
-            location={node.location}
-            {...{
-              eventStartLabel,
-              eventEndLabel,
-              eventLocationLabel,
-              eventFeeLabel,
-              eventStartTime,
-              eventEndTime,
-              eventFee,
-            }}
-          />
-        </Title>
+        <EventDetails
+          title={<Title>{eventInfoTitle}</Title>}
+          location={node.location}
+          {...{
+            eventStartLabel,
+            eventEndLabel,
+            eventLocationLabel,
+            eventFeeLabel,
+            eventStartTime,
+            eventEndTime,
+            eventFee,
+          }}
+        />
       )}
     </React.Fragment>
   );
