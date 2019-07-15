@@ -19,8 +19,10 @@ const MetaName = styled.div`
   font-size: 18px;
   font-weight: bold;
   vertical-align: top;
-
   text-align: left;
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 const MetaContent = styled.div`
@@ -32,8 +34,10 @@ const MetaContent = styled.div`
   p {
     margin: 0;
   }
-
   text-align: left;
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 const Wrapper = styled.div`
