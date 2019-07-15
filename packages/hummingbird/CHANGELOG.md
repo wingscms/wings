@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.30.6](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.30.5...@wingscms/hummingbird@0.30.6) (2019-07-15)
+
+
+### Bug Fixes
+
+* fix campaign onLoad for all campaign types & styling update ([#215](https://github.com/wingscms/wings/issues/215)) ([bab7be4](https://github.com/wingscms/wings/commit/bab7be4))
+* fix header title/image margins ([#214](https://github.com/wingscms/wings/issues/214)) ([bb09e9f](https://github.com/wingscms/wings/commit/bb09e9f))
+
+
+
+
+
 ## [0.30.5](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.30.4...@wingscms/hummingbird@0.30.5) (2019-07-11)
 
 **Note:** Version bump only for package @wingscms/hummingbird
