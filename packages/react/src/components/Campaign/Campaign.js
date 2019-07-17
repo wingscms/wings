@@ -134,7 +134,6 @@ const DEFAULT_COPY = {
 
 export default ({
   id,
-  hideCounter,
   resourceType,
   node: _node = {},
   formProps = {},
@@ -185,7 +184,7 @@ export default ({
             />
           </Proposition>
           <FormContainer id="campaign-form-container">
-            {resourceType === 'node.petition' && !hideCounter && (
+            {typeof signatureCount === 'number' && (
               <CounterContainer>
                 <PetitionCounter
                   current={signatureCount}
