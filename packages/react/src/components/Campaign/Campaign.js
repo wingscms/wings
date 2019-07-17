@@ -184,7 +184,7 @@ export default ({
             />
           </Proposition>
           <FormContainer id="campaign-form-container">
-            {resourceType === 'node.petition' && (
+            {typeof signatureCount === 'number' && (
               <CounterContainer>
                 <PetitionCounter
                   current={signatureCount}
