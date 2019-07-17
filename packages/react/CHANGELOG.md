@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.7](https://github.com/wingscms/wings/compare/@wingscms/react@0.16.6...@wingscms/react@0.16.7) (2019-07-17)
+
+
+### Bug Fixes
+
+* hide petition counter when no count is available ([#216](https://github.com/wingscms/wings/issues/216)) ([713973f](https://github.com/wingscms/wings/commit/713973f))
+
+
+
+
+
 ## [0.16.6](https://github.com/wingscms/wings/compare/@wingscms/react@0.16.5...@wingscms/react@0.16.6) (2019-07-15)
 
 
