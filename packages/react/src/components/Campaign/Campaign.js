@@ -109,7 +109,18 @@ const Title = styled.h1`
 `;
 
 const Intro = styled.p`
-  font-size: 1.2rem;
+  font-size: 1.4em;
+  font-weight: bold;
+  @media screen and (max-width: 800px) {
+    font-size: 1.2em;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 1em;
+  }
+  ~ div > div > p:first-child {
+    /* remove top-margin from first <p/> in the proposition Content */
+    margin-top: 0;
+  }
 `;
 const CounterContainer = styled(FormContainerInner)`
   padding: 20px 40px;
