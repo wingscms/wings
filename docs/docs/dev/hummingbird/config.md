@@ -86,6 +86,8 @@ Can be used in the `design` option in Hummingbird's `gatsby-config`:
 
 `pullquoteBackgroundColor`: Default: <span style="background-color: #ffffff">backgroundColor</span>
 
+`testimonialBackgroundColor`: Default: <span style="background-color: #ECF2FC">elementBackgroundColor</span>
+
 #### Landing Section
 
 `landingSectionTitleColor`: Default: <span style="background-color: #FFFFFF">#FFFFFF</span>
