@@ -109,7 +109,14 @@ const Title = styled.h1`
 `;
 
 const Intro = styled.p`
-  font-size: 1.2rem;
+  font-size: 1.4em;
+  font-weight: bold;
+  @media screen and (max-width: 800px) {
+    font-size: 1.2em;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 1em;
+  }
 `;
 const CounterContainer = styled(FormContainerInner)`
   padding: 20px 40px;
@@ -181,6 +188,7 @@ export default ({
               content={node.description}
               className="mobiledoc-content"
               id="campaign-content"
+              mini
             />
           </Proposition>
           <FormContainer id="campaign-form-container">
