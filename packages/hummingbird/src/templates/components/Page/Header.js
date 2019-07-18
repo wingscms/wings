@@ -22,12 +22,12 @@ const ImageContainer = styled.figure`
 `;
 
 const TitleContainer = styled.div`
-  padding: 20px 0 0;
+  padding: 0;
   position: relative;
   text-align: center;
-  margin-top: 30px;
+  margin-top: ${({ theme }) => theme.mediumSpacing};
   @media screen and (min-width: 800px) {
-    margin-top: 50px;
+    margin-top: ${({ theme }) => theme.largeSpacing};
   }
 `;
 
@@ -44,7 +44,6 @@ const Title = styled.h1`
   z-index: 2;
   @media screen and (min-width: 800px) {
     font-size: 60px;
-    line-height: 70px;
   }
   @media screen and (min-width: 960px) {
     width: 920px;

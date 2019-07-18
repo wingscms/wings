@@ -60,6 +60,9 @@ const WContent = styled(_Content)`
   }
   & > div > p:first-child {
     margin-top: ${({ mini, theme }) => (mini ? '0' : theme.largeSpacing)};
+    @media screen and (max-width: 800px) {
+      margin-top: ${({ mini, theme }) => (mini ? '0' : theme.mediumSpacing)};
+    }
   }
   &.drop-cap > div > p:first-child {
     &::first-letter {
