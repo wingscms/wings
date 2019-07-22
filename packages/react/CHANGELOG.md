@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.9](https://github.com/wingscms/wings/compare/@wingscms/react@0.16.8...@wingscms/react@0.16.9) (2019-07-22)
+
+
+### Bug Fixes
+
+* fix campaign intro styling ([#221](https://github.com/wingscms/wings/issues/221)) ([0b86359](https://github.com/wingscms/wings/commit/0b86359))
+
+
+
+
+
 ## [0.16.8](https://github.com/wingscms/wings/compare/@wingscms/react@0.16.7...@wingscms/react@0.16.8) (2019-07-17)
 
 
