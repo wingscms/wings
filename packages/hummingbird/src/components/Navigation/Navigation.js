@@ -12,6 +12,7 @@ import {
 } from '@wingscms/crane';
 import { Link, navigate } from 'gatsby';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
+import routing from '../../../services/routing';
 
 import facebookIcon from '../../img/facebook.svg';
 import twitterIcon from '../../img/twitter.svg';
@@ -198,11 +199,14 @@ class Navigation extends Component {
               <LanguagePicker
                 backgroundColor={theme.languagePickerColor}
                 backgroundColorHover={theme.languagePickerHoverColor}
-                translations={translations}
-                current={locale}
-                onClickHandler={(e, trans) => {
-                  e.preventDefault();
-                  navigate(trans.path);
+                translations={translations.map(t => ({
+                  name: t.locale.name,
+                  locale: t.locale.id,
+                  node: t,
+                }))}
+                current={locale.name}
+                onTranslationClick={({ node }) => {
+                  navigate(routing.getPath(node));
                 }}
               />
             </LanguagePickerWrap>

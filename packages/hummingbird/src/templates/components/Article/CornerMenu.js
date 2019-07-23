@@ -4,6 +4,7 @@ import Scroll from 'react-scroll-to-element';
 import { navigate } from 'gatsby';
 import styled, { withTheme } from 'styled-components';
 import { LanguagePicker, toggleSlideMenu } from '@wingscms/crane';
+import routing from '../../../../services/routing';
 
 import chaptersImage from '../../../img/chapters.svg';
 import shareImage from '../../../img/share.svg';
@@ -226,16 +227,18 @@ class CornerMenu extends Component {
         {translations.length > 0 ? (
           <LanguagePickerWrap>
             <LanguageIcon src={languageIcon} />
-            CornerMenu
             <LanguagePicker
               showAbove
               backgroundColor={theme.languagePickerColor}
               backgroundColorHover={theme.languagePickerHoverColor}
-              translations={translations}
-              current={locale}
-              onClickHandler={(e, trans) => {
-                e.preventDefault();
-                navigate(trans.path);
+              translations={translations.map(t => ({
+                name: t.locale.name,
+                locale: t.locale.id,
+                node: t,
+              }))}
+              current={locale.name}
+              onTranslationClick={({ node }) => {
+                navigate(routing.getPath(node));
               }}
             />
           </LanguagePickerWrap>

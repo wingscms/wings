@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import languageList from '../../data/languageList';
 
 const Wrapper = styled.div`
   position: relative;
@@ -63,8 +62,8 @@ export default class LanguagePicker extends Component {
     current: PropTypes.string,
     /** Array of languages */
     translations: PropTypes.array,
-    /** onClickHander. Receives event, translation object, translations, languageList */
-    onClickHandler: PropTypes.func,
+    /** onTranslationClick. Receives event, translation object */
+    onTranslationClick: PropTypes.func,
     /** Background color for the items */
     backgroundColor: PropTypes.string,
     /** Hover background color for the items */
@@ -75,7 +74,7 @@ export default class LanguagePicker extends Component {
   static defaultProps = {
     current: 'en',
     translations: [],
-    onClickHandler: () => {},
+    onTranslationClick: () => {},
     backgroundColor: '#fff',
     backgroundColorHover: '#4856c9',
     showAbove: false,
@@ -86,31 +85,34 @@ export default class LanguagePicker extends Component {
       backgroundColor,
       backgroundColorHover,
       current,
-      onClickHandler,
+      onTranslationClick,
       showAbove,
       translations,
     } = this.props;
+    debugger;
     return (
       <Wrapper>
-        <Current backgroundColor={backgroundColor}>
-          {languageList[current] ? languageList[current].nativeName : null}
-        </Current>
+        <Current backgroundColor={backgroundColor}>{current || null}</Current>
         <Translations
           className="translations"
           showAbove={showAbove}
           backgroundColor={backgroundColor}
         >
-          {translations
-            .sort((a, b) => (a.locale < b.locale ? -1 : 1))
-            .map(trans => (
-              <Translation
-                key={trans.locale}
-                backgroundColorHover={backgroundColorHover}
-                onClick={e => onClickHandler(e, trans, translations, languageList)}
-              >
-                {languageList[trans.locale] ? languageList[trans.locale].nativeName : null}
-              </Translation>
-            ))}
+          {translations.map(
+            trans =>
+              console.log(trans) || (
+                <Translation
+                  key={trans.locale}
+                  backgroundColorHover={backgroundColorHover}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onTranslationClick(trans, { event: e });
+                  }}
+                >
+                  {trans.name}
+                </Translation>
+              ),
+          )}
         </Translations>
       </Wrapper>
     );
