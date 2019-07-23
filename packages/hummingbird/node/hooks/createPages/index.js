@@ -26,8 +26,11 @@ const verifySlugs = (nodes) => {
   const processedSlugs = [];
   const invalidNodes = [];
   nodes.forEach((node) => {
-    if (!isValidSlug(node.slug) || contains(processedSlugs, node.slug)) invalidNodes.push(node);
-    processedSlugs.push(node.slug);
+    const slugWithLocale = [node.slug, node.locale.id].join('|');
+    if (!isValidSlug(node.slug) || contains(processedSlugs, slugWithLocale)) {
+      invalidNodes.push(node);
+    }
+    processedSlugs.push(slugWithLocale);
   });
   if (invalidNodes.length) {
     invalidNodes.forEach((node) => {
