@@ -1,5 +1,5 @@
 import React from 'react';
-import { createSvgIcon } from '@wingscms/crane';
+import { createSvgIcon } from '../../../lib/utils';
 
 export default createSvgIcon(
   <React.Fragment>
