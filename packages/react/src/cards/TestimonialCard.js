@@ -10,19 +10,16 @@ import createCard from '../createCard';
 
 const Testimonial = styled.section`
   ${wide};
-  background-color: #f8f8f8;
+  background-color: ${({ theme }) => theme.testimonialBackgroundColor};
   margin-top: ${({ theme }) => theme.largeSpacing};
   margin-bottom: ${({ theme }) => theme.largeSpacing};
   padding: ${({ theme }) => theme.largeSpacing} 0;
   header {
     padding: 0 20px;
     text-align: center;
-    margin-bottom: 1rem;
-    @media screen and (min-width: 600px) {
-      margin-bottom: 2rem;
-    }
-    @media screen and (min-width: 1080px) {
-      margin-bottom: 3rem;
+    margin-bottom: ${({ theme }) => theme.largeSpacing};
+    @media screen and (max-width: 800px) {
+      margin-bottom: ${({ theme }) => theme.mediumSpacing};
     }
   }
   @media screen and (max-width: 800px) {
@@ -47,60 +44,43 @@ const Wrap = styled(StickyContainer)`
   }
 `;
 
-const Title = styled.h2`
+const Title = styled.h1`
   color: ${({ theme }) => (theme.brand ? theme.brand : theme.primaryColor)};
-  font-size: 2rem;
   line-height: 1;
-  font-family: 'Schmalfette', sans-serif;
-  text-transform: uppercase;
-  margin: 0;
+  font-family: ${({ theme }) => theme.headerFontFamily};
   position: relative;
   z-index: 1;
-  @media screen and (min-width: 600px) {
-    font-size: 6rem;
-  }
+  font-size: 32px;
   @media screen and (min-width: 800px) {
-    font-size: 6rem;
-  }
-  @media screen and (min-width: 1080px) {
-    font-size: 10rem;
-  }
-  @media screen and (min-width: 1720px) {
-    font-size: 10rem;
-    line-height: 10rem;
+    font-size: 60px;
+    line-height: 70px;
   }
 `;
 
 const Intro = styled.p`
-  font-size: 1.5rem;
-  line-height: 1.2;
-  color: #000;
-  max-width: 420px;
+  font-size: 1.2em;
+  font-weight: bold;
+  @media screen and (max-width: 800px) {
+    font-size: 1.2em;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 1em;
+  }
+  max-width: 760px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
-  @media screen and (min-width: 600px) {
-  }
-  @media screen and (min-width: 800px) {
-    font-size: 1rem;
-  }
-  @media screen and (min-width: 1080px) {
-    font-size: 1.5rem;
-    max-width: 760px;
-  }
-  @media screen and (min-width: 1720px) {
-    font-size: 1.5rem;
-    max-width: 1120px;
-  }
 `;
 
 const Image = styled.figure`
-  max-width: 740px;
+  max-width: 760px;
+  transition: 0.2s all ease-in-out;
   @media screen and (min-width: 1280px) {
     max-width: 760px;
     &.sticky {
       position: fixed;
       top: 0;
+      margin-top: ${({ theme }) => theme.mediumSpacing};
       width: calc(47% - 20px);
       padding: 0;
     }
@@ -124,9 +104,7 @@ const Image = styled.figure`
 `;
 
 const ImageWrap = styled.div`
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 1rem;
+  margin: ${({ theme }) => theme.mediumSpacing} ${({ theme }) => theme.smallSpacing};
   max-width: 740px;
   @media screen and (min-width: 600px) {
     margin-bottom: 2rem;
@@ -208,7 +186,7 @@ class TestimonialCard extends Component {
             </ImageWrap>
           )}
           <ContentWrap>
-            <Content content={content} className="mobiledoc-content" />
+            <Content content={content} className="mobiledoc-content" mini />
           </ContentWrap>
         </Wrap>
       </Testimonial>
