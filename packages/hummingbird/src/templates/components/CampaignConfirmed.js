@@ -40,7 +40,7 @@ const ShareButton = styled.a`
     getContrastColor({
       backgroundColor: theme.primaryColor,
       colors: { light: theme.textColor, dark: theme.textColorDark },
-      threshold: 30,
+      threshold: theme.contrastLuminanceThreshold,
     })};
   }
   &:hover {
@@ -50,7 +50,7 @@ const ShareButton = styled.a`
     getContrastColor({
       backgroundColor: theme.secondaryColor,
       colors: { light: theme.textColor, dark: theme.textColorDark },
-      threshold: 30,
+      threshold: theme.contrastLuminanceThreshold,
     })};
     }
   }
