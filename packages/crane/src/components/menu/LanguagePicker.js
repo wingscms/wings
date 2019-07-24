@@ -89,7 +89,6 @@ export default class LanguagePicker extends Component {
       showAbove,
       translations,
     } = this.props;
-    debugger;
     return (
       <Wrapper>
         <Current backgroundColor={backgroundColor}>{current || null}</Current>

@@ -7,6 +7,7 @@ import Linkedin from './linkedin';
 import Pinterest from './pinterest';
 import Reddit from './reddit';
 import Rss from './rss';
+import Share from './share';
 import Skype from './skype';
 import Spotify from './spotify';
 import Twitch from './twitch';
@@ -25,6 +26,7 @@ export default {
   Pinterest,
   Reddit,
   Rss,
+  Share,
   Skype,
   Spotify,
   Twitch,

@@ -3,14 +3,10 @@ import React, { Component } from 'react';
 import Scroll from 'react-scroll-to-element';
 import { navigate } from 'gatsby';
 import styled, { withTheme } from 'styled-components';
-import { LanguagePicker, toggleSlideMenu } from '@wingscms/crane';
+import { LanguagePicker, toggleSlideMenu, Icons } from '@wingscms/crane';
 import routing from '../../../../services/routing';
 
 import chaptersImage from '../../../img/chapters.svg';
-import shareImage from '../../../img/share.svg';
-import facebookImage from '../../../img/facebook.svg';
-import twitterImage from '../../../img/twitter.svg';
-import whatsappImage from '../../../img/whatsapp.svg';
 import languageIcon from '../../../img/language.svg';
 
 const Container = styled.div`
@@ -72,28 +68,23 @@ const ChapterImage = styled.img`
   }
 `;
 
-const ShareImage = styled.img`
-  margin-bottom: 14px;
-  margin-top: 20px;
-  margin-left: 20px;
-  &.facebook {
-    margin-left: 25px;
-  }
-`;
-
 const ShareLink = styled.a`
   width: 65px;
   height: 65px;
+  padding: 20px;
   background-color: ${({ theme }) => theme.primaryColor};
   display: block;
   position: relative;
   transition: all 0.15s linear;
   cursor: pointer;
+  svg {
+    fill: ${({ theme }) => theme.navigationIconColor};
+  }
   &:hover {
     background-color: ${({ theme }) => theme.secondaryColor};
     &:last-of-type {
       &:after {
-        border-color: ${({ theme }) => theme.primaryColor} transparent transparent transparent;
+        border-color: ${({ theme }) => theme.secondaryColor} transparent transparent transparent;
       }
     }
   }
@@ -130,7 +121,6 @@ const ShareOpen = styled.div`
     background-color: transparent;
     display: none;
     cursor: default;
-    padding-bottom: 30px;
     height: 225px;
   }
   &:hover,
@@ -139,6 +129,13 @@ const ShareOpen = styled.div`
     .linkWrapper {
       display: block;
     }
+  }
+`;
+
+const ShareIconWrapper = styled.div`
+  padding: 20px 20px 10px 20px;
+  svg {
+    fill: ${({ theme }) => theme.navigationIconColor};
   }
 `;
 
@@ -277,7 +274,7 @@ class CornerMenu extends Component {
                 href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
                 target="_blank"
               >
-                <ShareImage src={facebookImage} className="facebook" />
+                <Icons.Facebook />
               </ShareLink>
               <ShareLink
                 href={`https://twitter.com/intent/tweet?url=${url}${
@@ -285,7 +282,7 @@ class CornerMenu extends Component {
                 }`}
                 target="_blank"
               >
-                <ShareImage src={twitterImage} />
+                <Icons.Twitter />
               </ShareLink>
               <ShareLink
                 href={`whatsapp://send?text=${
@@ -293,10 +290,12 @@ class CornerMenu extends Component {
                 }${url}`}
                 target="_blank"
               >
-                <ShareImage src={whatsappImage} />
+                <Icons.Whatsapp />
               </ShareLink>
             </div>
-            <ShareImage src={shareImage} />
+            <ShareIconWrapper>
+              <Icons.Share />
+            </ShareIconWrapper>
           </ShareOpenInner>
         </ShareOpen>
       </Container>
