@@ -1,27 +1,38 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 
-const PropositionContainer = styled.div`
+const Container = styled.div`
   display: inline-block;
   position: relative;
   width: calc(100% - 460px);
-  padding: 40px 40px 80px 40px;
+  padding: 40px 40px ${({ containerInnerHeight }) => (containerInnerHeight > 600 ? '80px' : '40px')}
+    40px;
   margin: 40px 0;
   overflow: hidden;
   background-color: #fff;
   vertical-align: top;
   border-radius: 4px 0 0 4px;
   box-shadow: ${({ theme }) => theme.defaultShadow};
-  max-height: ${props => (!props.show && props.height ? `${props.height - 80}px` : 'none')};
+  max-height: ${({ show, height, containerInnerHeight }) =>
+    (!show && height ? `${height - 80}px` : `${containerInnerHeight + 200}px`)};
+  transition: max-height 0.15s linear;
   @media screen and (max-width: 1000px) {
     width: 100% !important;
     margin: 10px 0;
-    padding: 20px;
+    padding: 20px 20px
+      ${({ containerInnerHeight }) => (containerInnerHeight > 600 ? '80px' : '20px')} 20px;
+    max-height: ${({ show, containerInnerHeight }) =>
+    (!show ? '600px' : `${containerInnerHeight + 200}px`)};
   }
 `;
 
+const ContainerInner = styled.div`
+  width: 100%;
+  height: auto;
+`;
+
 const ToggleButton = styled.div`
-  display: block;
+  display: ${({ showToggle }) => (showToggle ? 'block' : 'none')};
   position: absolute;
   width: 100%;
   text-align: center;
@@ -35,7 +46,6 @@ const ToggleButton = styled.div`
   border-radius: 4px;
   z-index: 10;
   background-color: #fff;
-  transition: all 0.1s linear;
   cursor: pointer;
   &:hover {
     color: ${({ theme }) => theme.primaryColor};
@@ -51,40 +61,62 @@ const ToggleButton = styled.div`
     transform: translateY(-100%);
     background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0) 50%);
   }
+  @media screen and (max-width: 1000px) {
+    display: ${({ containerInnerHeight }) => (containerInnerHeight > 600 ? 'block' : 'none')};
+  }
 `;
 
-function updateHeight(comp) {
-  const campaignFormContainer = window.document.getElementById('campaign-form-container');
-  const campaignForm = window.document.getElementById('campaign-form');
-  if (campaignForm) {
-    comp.setState({ height: campaignFormContainer.offsetHeight });
-  } else {
-    setTimeout(() => updateHeight(comp), 100);
-  }
-}
-
-export default class Proposition extends Component {
-  state = {
-    height: '',
-    show: false,
+export default ({
+  campaignContainerRef,
+  formContainerRef,
+  campaign,
+  children,
+  descriptionCollapse,
+  descriptionExpand,
+}) => {
+  const containerInnerRef = useRef(null);
+  const [height, setHeight] = useState(0);
+  const [show, setShow] = useState(false);
+  const [showToggle, setShowToggle] = useState(true);
+  const containerInnerHeight =
+    containerInnerRef && containerInnerRef.current && containerInnerRef.current.offsetHeight;
+  const toggleShow = () => {
+    if (show) {
+      campaignContainerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setShow(false);
+    } else {
+      setShow(true);
+    }
   };
 
-  componentDidMount() {
-    updateHeight(this);
-  }
+  const updateHeight = () => {
+    const { offsetHeight } = formContainerRef.current;
+    setHeight(offsetHeight);
+    if (formContainerRef.current.offsetHeight > containerInnerRef.current.offsetHeight) {
+      setShowToggle(false);
+    } else {
+      setShowToggle(true);
+    }
+  };
 
-  toggleProposition = () => this.setState(({ show }) => ({ show: !show }));
+  useEffect(() => {
+    window.addEventListener('resize', updateHeight);
+    return () => {
+      window.removeEventListener('resize', updateHeight);
+    };
+  }, []);
+  useEffect(updateHeight, [campaign]);
 
-  render() {
-    const { height, show } = this.state;
-    const { children, descriptionCollapse, descriptionExpand } = this.props;
-    return (
-      <PropositionContainer height={height} show={show}>
-        {children}
-        <ToggleButton onClick={this.toggleProposition}>
-          {show ? descriptionCollapse : descriptionExpand}
-        </ToggleButton>
-      </PropositionContainer>
-    );
-  }
-}
+  return (
+    <Container height={height} show={show} containerInnerHeight={containerInnerHeight}>
+      <ContainerInner ref={containerInnerRef}>{children}</ContainerInner>
+      <ToggleButton
+        onClick={toggleShow}
+        showToggle={showToggle}
+        containerInnerHeight={containerInnerHeight}
+      >
+        {show ? descriptionCollapse : descriptionExpand}
+      </ToggleButton>
+    </Container>
+  );
+};
