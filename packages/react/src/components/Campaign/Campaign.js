@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 
 import Content from '../Content';
@@ -150,6 +150,8 @@ export default ({
   copy = {},
   ...props
 }) => {
+  const campaignContainerRef = useRef(null);
+  const formContainerRef = useRef(null);
   const [signatureCount, setSignatureCount] = useState(0);
   const [signatureGoal, setSignatureGoal] = useState(0);
   const [node, setNode] = useState(_node);
@@ -179,9 +181,14 @@ export default ({
   const { intro, title } = node;
   const element = (
     <React.Fragment>
-      <MainContainerOuter {...props}>
+      <MainContainerOuter {...props} ref={campaignContainerRef}>
         <MainContainerInner>
-          <Proposition {...{ descriptionCollapse, descriptionExpand }}>
+          <Proposition
+            {...{ descriptionCollapse, descriptionExpand }}
+            formContainerRef={formContainerRef}
+            campaignContainerRef={campaignContainerRef}
+            campaign={node}
+          >
             {title ? <Title>{title}</Title> : null}
             {intro ? <Intro fullWidth>{intro}</Intro> : null}
             <Content
@@ -191,7 +198,7 @@ export default ({
               mini
             />
           </Proposition>
-          <FormContainer id="campaign-form-container">
+          <FormContainer id="campaign-form-container" ref={formContainerRef}>
             {typeof signatureCount === 'number' && (
               <CounterContainer>
                 <PetitionCounter

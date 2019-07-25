@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.1](https://github.com/wingscms/wings/compare/@wingscms/react@0.17.0...@wingscms/react@0.17.1) (2019-07-25)
+
+
+### Bug Fixes
+
+* fix campaign card image width ([#229](https://github.com/wingscms/wings/issues/229)) ([fef80d1](https://github.com/wingscms/wings/commit/fef80d1))
+
+
+
+
+
+# [0.17.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.16.9...@wingscms/react@0.17.0) (2019-07-24)
+
+
+### Features
+
+* Add testimonial background theme option and fix some testimonial styling issues ([#223](https://github.com/wingscms/wings/issues/223)) ([318abfc](https://github.com/wingscms/wings/commit/318abfc))
+
+
+
+
+
 ## [0.16.9](https://github.com/wingscms/wings/compare/@wingscms/react@0.16.8...@wingscms/react@0.16.9) (2019-07-22)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.3](https://github.com/wingscms/wings/compare/@wingscms/crane@0.14.2...@wingscms/crane@0.14.3) (2019-07-24)
+
+
+### Bug Fixes
+
+* update social media icons and use correct email svg ([#228](https://github.com/wingscms/wings/issues/228)) ([785dc1e](https://github.com/wingscms/wings/commit/785dc1e))
+
+
+
+
+
 <a name="0.14.2"></a>
 ## [0.14.2](https://github.com/wingscms/wings/compare/@wingscms/crane@0.14.1...@wingscms/crane@0.14.2) (2019-07-11)
 
