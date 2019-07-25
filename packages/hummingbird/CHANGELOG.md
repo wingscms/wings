@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.1](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.31.0...@wingscms/hummingbird@0.31.1) (2019-07-25)
+
+**Note:** Version bump only for package @wingscms/hummingbird
+
+
+
+
+
+# [0.31.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.30.9...@wingscms/hummingbird@0.31.0) (2019-07-24)
+
+
+### Bug Fixes
+
+* update social media icons and use correct email svg ([#228](https://github.com/wingscms/wings/issues/228)) ([785dc1e](https://github.com/wingscms/wings/commit/785dc1e))
+* use theme contrast threshold for campaign confirmed page svgs ([#227](https://github.com/wingscms/wings/issues/227)) ([50f5201](https://github.com/wingscms/wings/commit/50f5201))
+
+
+### Features
+
+* Add testimonial background theme option and fix some testimonial styling issues ([#223](https://github.com/wingscms/wings/issues/223)) ([318abfc](https://github.com/wingscms/wings/commit/318abfc))
+
+
+
+
+
+## [0.30.9](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.30.8...@wingscms/hummingbird@0.30.9) (2019-07-22)
+
+
+### Bug Fixes
+
+* check for slug/locale uniqueness ([#224](https://github.com/wingscms/wings/issues/224)) ([e13838d](https://github.com/wingscms/wings/commit/e13838d))
+
+
+
+
+
 ## [0.30.8](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.30.7...@wingscms/hummingbird@0.30.8) (2019-07-17)
 
 **Note:** Version bump only for package @wingscms/hummingbird

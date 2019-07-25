@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Facebook, Twitter, Whatsapp, Email } from '../icons/social';
+import Icons from '../../img/svg/social';
 
 const ShareContainer = styled.div`
   display: inline-block;
@@ -33,44 +33,33 @@ const ShareImage = styled.div`
   }
 `;
 
-export default ({
-  color,
-  email,
-  facebook,
-  twitter,
-  whatsapp,
-  emailIcon,
-  facebookIcon,
-  twitterIcon,
-  whatsappIcon,
-  ...props
-}) => (
+export default ({ color, email, facebook, twitter, whatsapp, ...props }) => (
   <ShareContainer {...props}>
     {facebook && (
       <a href={facebook} target="_blank" rel="noopener noreferrer">
         <ShareImage color={color}>
-          <Facebook />
+          <Icons.Facebook />
         </ShareImage>
       </a>
     )}
     {twitter && (
       <a href={twitter} target="_blank" rel="noopener noreferrer">
         <ShareImage color={color}>
-          <Twitter />
+          <Icons.Twitter />
         </ShareImage>
       </a>
     )}
     {whatsapp && (
       <a href={whatsapp} target="_blank" rel="noopener noreferrer">
         <ShareImage color={color}>
-          <Whatsapp />
+          <Icons.Whatsapp />
         </ShareImage>
       </a>
     )}
     {email && (
       <a href={email}>
         <ShareImage color={color}>
-          <Email />
+          <Icons.Email />
         </ShareImage>
       </a>
     )}

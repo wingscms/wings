@@ -32,7 +32,7 @@ export default ({
   // Footer
   footerBackgroundColor,
   footerTextColor,
-  // Articles/pages
+  // Articles/Pages
   chapterBackgroundColor,
   chapterItemColor,
   chapterItemNumberColor,
@@ -44,6 +44,7 @@ export default ({
   blockquoteBackgroundColor,
   pullquoteColor,
   pullquoteBackgroundColor,
+  testimonialBackgroundColor,
   // Landing Section
   landingSectionTitleColor = '#FFFFFF',
   landingSectionTitleBackgroundColor = 'transparent',
@@ -162,6 +163,7 @@ export default ({
   blockquoteBackgroundColor: blockquoteBackgroundColor || backgroundColor,
   pullquoteColor: pullquoteColor || primaryColor,
   pullquoteBackgroundColor: pullquoteBackgroundColor || backgroundColor,
+  testimonialBackgroundColor: testimonialBackgroundColor || elementBackgroundColor,
   // Landing Section
   landingSectionTitleColor,
   landingSectionTitleBackgroundColor,
