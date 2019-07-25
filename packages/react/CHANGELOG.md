@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.1](https://github.com/wingscms/wings/compare/@wingscms/react@0.17.0...@wingscms/react@0.17.1) (2019-07-25)
+
+
+### Bug Fixes
+
+* fix campaign card image width ([#229](https://github.com/wingscms/wings/issues/229)) ([fef80d1](https://github.com/wingscms/wings/commit/fef80d1))
+
+
+
+
+
 # [0.17.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.16.9...@wingscms/react@0.17.0) (2019-07-24)
 
 
