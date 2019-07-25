@@ -101,6 +101,9 @@ export default ({
 
   useEffect(() => {
     window.addEventListener('resize', updateHeight);
+    return () => {
+      window.removeEventListener('resize', updateHeight);
+    };
   }, []);
   useEffect(updateHeight, [campaign]);
 
