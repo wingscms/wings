@@ -220,6 +220,7 @@ export default ({
                 onLoad={handleCampaignLoad}
                 nodeFragment={NodeFragment}
                 campaignFragment={CampaignFragment}
+                formContainerRef={formContainerRef}
               />
             </FormContainerInner>
           </FormContainer>

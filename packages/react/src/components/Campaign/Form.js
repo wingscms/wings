@@ -333,6 +333,7 @@ class CampaignForm extends Component {
 
   async submit(formData) {
     const { amount } = this.state;
+    const { formContainerRef } = this.props;
     try {
       const res = await this.props.wings.query(this.mutation(), {
         id: this.props.id,
@@ -349,6 +350,7 @@ class CampaignForm extends Component {
       } else {
         this.setState({ stage: 'confirm' });
       }
+      formContainerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } catch (err) {
       console.error(err);
     }
