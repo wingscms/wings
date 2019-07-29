@@ -109,11 +109,7 @@ const Title = styled.h1`
 `;
 
 const Intro = styled.p`
-  font-size: 1.4em;
-  font-weight: bold;
-  @media screen and (max-width: 800px) {
-    font-size: 1.2em;
-  }
+  font-size: 1.2em;
   @media screen and (max-width: 600px) {
     font-size: 1em;
   }
