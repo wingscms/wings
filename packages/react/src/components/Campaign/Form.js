@@ -145,6 +145,10 @@ const DEFAULT_COPY = {
 };
 
 class CampaignForm extends Component {
+  constructor(props) {
+    super(props);
+    this.confirmedContainerRef = React.createRef();
+  }
   static propTypes = {
     id: PropTypes.string.isRequired,
     type: PropTypes.oneOf(['petition', 'event', 'fundraiser']).isRequired,
@@ -333,7 +337,7 @@ class CampaignForm extends Component {
 
   async submit(formData) {
     const { amount } = this.state;
-    const { formContainerRef } = this.props;
+
     try {
       const res = await this.props.wings.query(this.mutation(), {
         id: this.props.id,
@@ -350,7 +354,7 @@ class CampaignForm extends Component {
       } else {
         this.setState({ stage: 'confirm' });
       }
-      formContainerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      this.confirmedContainerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } catch (err) {
       console.error(err);
     }
@@ -424,7 +428,7 @@ class CampaignForm extends Component {
           </SchemaForm>
         )}
         {!(stage === 'confirm') ? null : (
-          <div>
+          <div ref={this.confirmedContainerRef}>
             <h1>{campaignConfirmTitle}</h1>
             <p>{campaignConfirmText}</p>
           </div>
