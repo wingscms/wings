@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.2](https://github.com/wingscms/wings/compare/@wingscms/react@0.17.1...@wingscms/react@0.17.2) (2019-07-29)
+
+
+### Bug Fixes
+
+* campaign proposition show/hide behaviour ([#230](https://github.com/wingscms/wings/issues/230)) ([907e46b](https://github.com/wingscms/wings/commit/907e46b))
+* reduce campaign intro size ([#232](https://github.com/wingscms/wings/issues/232)) ([bde7310](https://github.com/wingscms/wings/commit/bde7310))
+* update campaign UX of big forms: scroll to confirm message ([#231](https://github.com/wingscms/wings/issues/231)) ([c0b2c0b](https://github.com/wingscms/wings/commit/c0b2c0b))
+
+
+
+
+
 ## [0.17.1](https://github.com/wingscms/wings/compare/@wingscms/react@0.17.0...@wingscms/react@0.17.1) (2019-07-25)
 
 
