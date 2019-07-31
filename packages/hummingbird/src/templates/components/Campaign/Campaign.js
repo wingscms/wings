@@ -124,7 +124,7 @@ class CampaignTemplate extends Component {
   render() {
     const { layout: Layout } = this.props;
     return (
-      <Layout>
+      <Layout nodeProps={this.props}>
         <Wrapper>{this.children()}</Wrapper>
       </Layout>
     );

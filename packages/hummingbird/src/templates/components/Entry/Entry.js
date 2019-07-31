@@ -24,6 +24,6 @@ export default class Entry extends Component {
 
   render() {
     const { layout: Layout } = this.props;
-    return <Layout>{this.children()}</Layout>;
+    return <Layout nodeProps={this.props}>{this.children()}</Layout>;
   }
 }
