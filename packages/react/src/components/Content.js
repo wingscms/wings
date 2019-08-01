@@ -59,7 +59,10 @@ const WContent = styled(_Content)`
     }
   }
   & > div > p:first-child {
-    margin-top: ${({ mini, theme }) => (mini ? '0' : theme.largeSpacing)};
+    margin-top: ${({ mini, theme }) => (mini ? '0' : theme.mediumSpacing)};
+    @media screen and (min-width: 800px) {
+      margin-top: ${({ mini, theme }) => (mini ? '0' : theme.largeSpacing)};
+    }
   }
   &.drop-cap > div > p:first-child {
     &::first-letter {
