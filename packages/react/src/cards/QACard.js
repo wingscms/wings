@@ -4,6 +4,13 @@ import { getContrastColor, Icons } from '@wingscms/crane';
 import createCard from '../createCard';
 import Content from '../components/Content';
 
+const Container = styled.div`
+  margin: ${({ theme }) => theme.mediumSpacing} 0;
+  @media screen and (min-width: 800px) {
+    margin: ${({ theme }) => theme.largeSpacing} 0;
+  }
+`;
+
 const Title = styled.h3`
   font-size: 40px;
   font-weight: 800;
@@ -101,14 +108,14 @@ class QACardView extends Component {
   render() {
     const { content, title } = this.props;
     return (
-      <div>
+      <Container>
         {title ? <Title>{title}</Title> : null}
         <QAWrapper>
           {content.map(x => (
             <Question question={x.question} answer={x.answer} key={`qacard-${x._id}`} />
           ))}
         </QAWrapper>
-      </div>
+      </Container>
     );
   }
 }
