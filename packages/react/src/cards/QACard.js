@@ -52,6 +52,7 @@ const QuestionTextWrapper = styled.div`
   transition: all 0.2s ease-in-out;
   padding-right: 60px;
   p {
+    font-weight: bold;
     transition: all 0.2s ease-in-out;
   }
   &:hover {
