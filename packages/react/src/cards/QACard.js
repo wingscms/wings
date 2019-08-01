@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
 import styled from 'styled-components';
-import { getContrastColor } from '@wingscms/crane';
+import { getContrastColor, Icons } from '@wingscms/crane';
 import createCard from '../createCard';
 import Content from '../components/Content';
 
@@ -28,15 +28,22 @@ const TextWrapper = styled.div`
 
 const QAWrapper = styled.div`
   display: block;
-  margin-bottom: ${({ theme }) => theme.smallSpacing};
-  border-radius: 4px;
   box-shadow: ${({ theme }) => theme.defaultShadow};
 `;
 
 const QuestionWrapper = styled.div`
+  border-bottom: 1px solid ${({ theme }) => theme.elementBackgroundColor};
+  &:last-child {
+    border-bottom: none;
+  }
+`;
+
+const QuestionTextWrapper = styled.div`
   cursor: pointer;
+  position: relative;
   user-select: none;
   transition: all 0.2s ease-in-out;
+  padding-right: 60px;
   p {
     transition: all 0.2s ease-in-out;
   }
@@ -53,25 +60,40 @@ const QuestionWrapper = styled.div`
   }
 `;
 
-const AnswerWrapper = styled.div`
+const AnswerTextWrapper = styled.div`
   display: ${({ show }) => (show ? 'block' : 'none')};
+`;
+
+const Icon = styled.div`
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  width: 20px;
+  height: auto;
+  transform: translateY(-50%);
+  fill: ${({ theme }) => theme.primaryColor};
+  svg {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 const Question = ({ question, answer }) => {
   const [show, setShow] = useState(false);
   return (
-    <QAWrapper>
-      <QuestionWrapper onClick={() => setShow(!show)}>
+    <QuestionWrapper>
+      <QuestionTextWrapper onClick={() => setShow(!show)} show={show}>
+        <Icon>{show ? <Icons.ChevronUp /> : <Icons.ChevronDown />}</Icon>
         <TextWrapper>
           <Content content={question} mini />
         </TextWrapper>
-      </QuestionWrapper>
-      <AnswerWrapper show={show}>
+      </QuestionTextWrapper>
+      <AnswerTextWrapper show={show}>
         <TextWrapper>
           <Content content={answer} mini />
         </TextWrapper>
-      </AnswerWrapper>
-    </QAWrapper>
+      </AnswerTextWrapper>
+    </QuestionWrapper>
   );
 };
 
@@ -81,9 +103,11 @@ class QACardView extends Component {
     return (
       <div>
         {title ? <Title>{title}</Title> : null}
-        {content.map(x => (
-          <Question question={x.question} answer={x.answer} key={`qacard-${x._id}`} />
-        ))}
+        <QAWrapper>
+          {content.map(x => (
+            <Question question={x.question} answer={x.answer} key={`qacard-${x._id}`} />
+          ))}
+        </QAWrapper>
       </div>
     );
   }
