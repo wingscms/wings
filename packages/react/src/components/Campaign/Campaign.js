@@ -195,7 +195,7 @@ export default ({
             />
           </Proposition>
           <FormContainer id="campaign-form-container" ref={formContainerRef}>
-            {typeof signatureCount === 'number' && (
+            {typeof signatureCount === 'number' && node.resourceType === 'node.petition' && (
               <CounterContainer>
                 <PetitionCounter
                   current={signatureCount}
