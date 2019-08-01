@@ -4,11 +4,16 @@ import createCard from '../createCard';
 import Content from '../components/Content';
 
 const HighlightedTextWrapper = styled.div`
-  padding: ${({ theme }) => theme.mediumSpacing};
+  margin: ${({ theme }) => theme.mediumSpacing} 0;
+  padding: ${({ theme }) => theme.smallSpacing};
   box-shadow: ${({ theme }) => theme.defaultShadow};
   background-color: ${({ theme }) => theme.elementBackgroundColor};
   p:last-child {
     margin-bottom: 0;
+  }
+  @media screen and (min-width: 800px) {
+    margin: ${({ theme }) => theme.largeSpacing} 0;
+    padding: ${({ theme }) => theme.mediumSpacing};
   }
 `;
 class HighlightedTextCardView extends Component {
