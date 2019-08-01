@@ -166,10 +166,10 @@ export default (intl) => {
         intl,
       }),
       eventStartTime: scheduleStart
-        ? `${intl.formatDate(scheduleStart)} ${intl.formatTime(scheduleStart)}`
+        ? `${intl.formatDate(scheduleStart)}` // ${intl.formatTime(scheduleStart)}
         : null,
       eventEndTime: scheduleEnding
-        ? `${intl.formatDate(scheduleEnding)} ${intl.formatTime(scheduleEnding)}`
+        ? `${intl.formatDate(scheduleEnding)}` // ${intl.formatTime(scheduleEnding)}
         : null,
       eventFee: fee
         ? intl.formatNumber(fee.amount / 100, {

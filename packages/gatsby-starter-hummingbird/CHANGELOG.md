@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.14](https://github.com/wingscms/wings/compare/@wingscms/gatsby-starter-hummingbird@0.2.13...@wingscms/gatsby-starter-hummingbird@0.2.14) (2019-08-01)
+
+**Note:** Version bump only for package @wingscms/gatsby-starter-hummingbird
+
+
+
+
+
+## [0.2.13](https://github.com/wingscms/wings/compare/@wingscms/gatsby-starter-hummingbird@0.2.12...@wingscms/gatsby-starter-hummingbird@0.2.13) (2019-08-01)
+
+**Note:** Version bump only for package @wingscms/gatsby-starter-hummingbird
+
+
+
+
+
 ## [0.2.12](https://github.com/wingscms/wings/compare/@wingscms/gatsby-starter-hummingbird@0.2.11...@wingscms/gatsby-starter-hummingbird@0.2.12) (2019-07-29)
 
 **Note:** Version bump only for package @wingscms/gatsby-starter-hummingbird
