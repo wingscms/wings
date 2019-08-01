@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import styled from 'styled-components';
 import { getContrastColor } from '@wingscms/crane';
 import createCard from '../createCard';
@@ -17,9 +17,6 @@ const Title = styled.h3`
 
 const TextWrapper = styled.div`
   display: block;
-  width: 70%;
-  margin-top: 20px;
-  margin-bottom: 20px;
   padding: 20px;
   p {
     margin-bottom: 0;
@@ -29,38 +26,63 @@ const TextWrapper = styled.div`
   }
 `;
 
-const Question = styled(TextWrapper)`
-  margin-left: auto;
-  background-color: ${({ theme }) => theme.primaryColor};
-  color: ${({ theme }) =>
-    getContrastColor({
-      backgroundColor: theme.primaryColor || '#ffffff',
-      colors: { light: theme.textColor, dark: theme.textColorDark },
-      threshold: theme.contrastLuminanceThreshold,
-    })};
+const QAWrapper = styled.div`
+  display: block;
+  margin-bottom: ${({ theme }) => theme.smallSpacing};
+  border-radius: 4px;
   box-shadow: ${({ theme }) => theme.defaultShadow};
 `;
 
-const Answer = styled(TextWrapper)`
-  margin-right: auto;
-  box-shadow: ${({ theme }) => theme.defaultShadow};
+const QuestionWrapper = styled.div`
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+  p {
+    transition: all 0.2s ease-in-out;
+  }
+  &:hover {
+    background-color: ${({ theme }) => theme.elementBackgroundColor};
+    p {
+      color: ${({ theme }) =>
+    getContrastColor({
+      backgroundColor: theme.elementBackgroundColor,
+      colors: { light: theme.textColor, dark: theme.textColorDark },
+      threshold: theme.contrastLuminanceThreshold,
+    })};
+    }
+  }
 `;
+
+const AnswerWrapper = styled.div`
+  display: ${({ show }) => (show ? 'block' : 'none')};
+`;
+
+const Question = ({ question, answer }) => {
+  const [show, setShow] = useState(false);
+  return (
+    <QAWrapper>
+      <QuestionWrapper onClick={() => setShow(!show)}>
+        <TextWrapper>
+          <Content content={question} mini />
+        </TextWrapper>
+      </QuestionWrapper>
+      <AnswerWrapper show={show}>
+        <TextWrapper>
+          <Content content={answer} mini />
+        </TextWrapper>
+      </AnswerWrapper>
+    </QAWrapper>
+  );
+};
 
 class QACardView extends Component {
   render() {
     const { content, title } = this.props;
     return (
       <div>
-        <Title>{title}</Title>
+        {title ? <Title>{title}</Title> : null}
         {content.map(x => (
-          <div key={`qacard-${x._id}`}>
-            <Question>
-              <Content content={x.question} mini />
-            </Question>
-            <Answer>
-              <Content content={x.answer} mini />
-            </Answer>
-          </div>
+          <Question question={x.question} answer={x.answer} key={`qacard-${x._id}`} />
         ))}
       </div>
     );
