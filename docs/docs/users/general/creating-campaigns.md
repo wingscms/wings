@@ -68,11 +68,27 @@ On the 'Signatures' or 'Attendees' or 'Donations' tab, you may see a list of con
 At Settings, you can configure an optional connection with a Mailchimp List. It requires that you add a Mailchimp Api Key on the general settings page. If you provide a valid API key, you will find a list of Mailchimp lists. Upon selecting a Mailchimp list, you will be able to map campaign fields to Mailchimp list fields. 
 
 ![](https://bureaubolster.s3-eu-west-1.amazonaws.com/IMG_1102.jpeg)
+be the default settings for social media as well; if you want to have Facebook / Twitter / WhatsApp have different values, you can set these as well - but this is optional. 
 
-## Platforms
-Here, you can set a title, meta description and meta image for Google and social media. 
+## Event settings
+Events have a couple of additional settings, pertaining to the event date and the location details which are displayed on the frontend as well.
 
-![](https://s3-eu-west-1.amazonaws.com/bureaubolster/Wings_2019-03-25_11-52-17.png)
+## Configuring the confirmation emails
+All campaigns only record a user's information after they have clicked a confirmation link in the email that is sent by Wings. Note: all campaigns of a certain campaign type get the same email. In other words: petition signers will receive the same petition confirmation email regardless of the petition being signed.
 
-The general 'search engines' Title / Desciptions / image will be the default settings for social media as well; if you want to have Facebook / Twitter / WhatsApp have different values, you can set these as well - but this is optional. 
+![](https://bureaubolster.s3-eu-west-1.amazonaws.com/IMG_1108.jpeg)
+
+1. Visit Settings -> Emails to configure the emails.
+2. Set the 'From' name.
+3. Choose which campaign type you want to configure the emails for.
+4. Write an email subject line.
+5. Here, you can drag content blocks from the right to the left, in order to add them to your email.
+
+![](https://bureaubolster.s3-eu-west-1.amazonaws.com/IMG_1110.jpeg)
+
+1. When you click on a content field, you can edit it. 
+2. On the right side, you will find various ways to edit the layout and design of your content field.
+3. If you click inside a text field, you will find a layout toolbar. The 'Personalize' is important: it lets you add the dynamic placeholders for First Name, Last Name and the confirmation link: `{{firstName}}`, `{{lastName}}` and `{{confirmationLink}}` respectively. These placeholder will be transformed into the signer's first and last name and a unique confirmation link that, when clicked, will take the user to the 'Confirmed' landing page and will make sure their submission is valid. 
+
+
 
