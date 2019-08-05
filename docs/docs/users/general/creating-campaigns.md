@@ -2,6 +2,8 @@
 id: creating-campaigns
 title: Creating and managing campaigns
 ---
+
+## About campaigns
 Campaigns is where Wings really shines: they allow you to to create meaningful and effective ways that allow users to contribute to your cause by attending events, signing a petition or making a donation. A quick overview:
 
 - Events are geared towards getting people to visit an event. 
@@ -26,9 +28,11 @@ Campaigns can be shown on the frontend in two ways:
 ## Editing a campaign
 When you create a new campaign or edit an existing one, you will find yourself on the campaign edit screen as shown below.
 
+### Main campaign settings
+
 ![The editing screen of a petition](https://bureaubolster.s3-eu-west-1.amazonaws.com/IMG_1090.jpeg)
 
-1. The **General** is the tab page that is visible by default, and which is shown in the screenshot above. This is where you edit most of the (editorial) content of the campaign.
+1. **General** is the tab page that is visible by default, and which is shown in the screenshot above. This is where you edit most of the (editorial) content of the campaign.
 2. **Platforms** is the tab page where you  edit meta data which allows you to configure how Google and social media platforms index and display your page.
 3. **Meta** is a tab page which may be used to configure additional project-specific settings. The web developer responsible for your web project may ask you to use this.
 4. **Apps**: In specific use cases, this tab page is where you configure custom settings pertaining to how (a) web application(s) displays the campaign content. 
@@ -42,7 +46,28 @@ When you create a new campaign or edit an existing one, you will find yourself o
 12. (Petititons only Signatures is where you will find confirmed signatures, which can also be downloaded as a .csv file.
 13. Settings is where you can configure additional settings, including Mailchimp integration.
 14. This is the introduction paragraph.
-15. This is where you edit the campaign page's content.
+15. This is where you edit the campaign's content.
+
+### Editing a campaign's fields
+All campaigns by default show fields for email address and first & last name (fundraiser campaigns have a couple more). However, you can add custom fields to any campaign as well.
+
+![](https://bureaubolster.s3-eu-west-1.amazonaws.com/IMG_1098.jpeg)
+
+1. Click the 'Fields' tab to configure the fields settings.
+2. Click 'Add' to add a field.
+3. Click this dropdown button to choose the field type. A 'text field' allows users to type custom text; a 'checkbox' lets them check a box, and a 'select field' lets users choose from a dropown list of multipe options that are defined by you, the editor.
+4. If you have chosen a 'select field', you can add the options which will be added to the dropdown list by clicking the indented 'add' button.
+5. You can move the position of fields upward and downward using these arrows. Additionally, you can remove fields.
+
+## Signatures / Attendees / Donations
+On the 'Signatures' or 'Attendees' or 'Donations' tab, you may see a list of confirmed petition signers, event attendees or fundraiser donations, and/or a 'Download' button which prompts the download of a generated .CSV file.
+
+![](https://bureaubolster.s3-eu-west-1.amazonaws.com/IMG_1100.jpeg)
+
+## Settings
+At Settings, you can configure an optional connection with a Mailchimp List. It requires that you add a Mailchimp Api Key on the general settings page. If you provide a valid API key, you will find a list of Mailchimp lists. Upon selecting a Mailchimp list, you will be able to map campaign fields to Mailchimp list fields. 
+
+![](https://bureaubolster.s3-eu-west-1.amazonaws.com/IMG_1102.jpeg)
 
 ## Platforms
 Here, you can set a title, meta description and meta image for Google and social media. 
@@ -50,4 +75,4 @@ Here, you can set a title, meta description and meta image for Google and social
 ![](https://s3-eu-west-1.amazonaws.com/bureaubolster/Wings_2019-03-25_11-52-17.png)
 
 The general 'search engines' Title / Desciptions / image will be the default settings for social media as well; if you want to have Facebook / Twitter / WhatsApp have different values, you can set these as well - but this is optional. 
-s
+
