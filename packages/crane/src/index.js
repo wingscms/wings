@@ -63,4 +63,4 @@ export { createSvgIcon, getContrastColor, separateUnit } from './lib/utils';
 export { ALIGNLEFT, ALIGNRIGHT, wide } from './styles';
 
 // Icons
-export { default as Icons } from './img/svg/social';
+export { default as Icons } from './img/svg/icons';
