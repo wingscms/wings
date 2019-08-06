@@ -178,7 +178,7 @@ class Navigation extends Component {
             <Logo />
           </Link>
           {children}
-          {hideMenu || !items ? null : (
+          {hideMenu || !items || !items.length ? null : (
             <MenuButton active={visible} onClick={this.toggleNav}>
               <Burger
                 active={visible}
