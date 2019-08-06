@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import createCard from '../createCard';
 import Content from '../components/Content';
 
-const HighlightedTextWrapper = styled.div`
+const TextWrapper = styled.div`
   margin: ${({ theme }) => theme.mediumSpacing} 0;
   padding: ${({ theme }) => theme.smallSpacing};
   box-shadow: ${({ theme }) => theme.defaultShadow};
@@ -16,18 +16,18 @@ const HighlightedTextWrapper = styled.div`
     padding: ${({ theme }) => theme.mediumSpacing};
   }
 `;
-class HighlightedTextCardView extends Component {
+class TextCardView extends Component {
   render() {
     const { content, ...props } = this.props;
     return (
-      <HighlightedTextWrapper {...props}>
+      <TextWrapper {...props}>
         <Content content={content} mini />
-      </HighlightedTextWrapper>
+      </TextWrapper>
     );
   }
 }
 
 export default createCard({
-  name: 'HighlightedTextCard',
-  renderWith: HighlightedTextCardView,
+  name: 'TextCard',
+  renderWith: TextCardView,
 });

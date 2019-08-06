@@ -8,7 +8,7 @@ import _CTACard from './CTACard';
 import _DataCard from './DataCard';
 import _CollectionCard from './CollectionCard';
 import _QACard from './QACard';
-import _HighlightedTextCard from './HighlightedTextCard';
+import _TextCard from './TextCard';
 import _CampaignCard, { CampaignCardView as _CampaignCardView } from './CampaignCard';
 
 export const ImageCard = _ImageCard;
@@ -21,7 +21,7 @@ export const CTACard = _CTACard;
 export const DataCard = _DataCard;
 export const CollectionCard = _CollectionCard;
 export const QACard = _QACard;
-export const HighlightedTextCard = _HighlightedTextCard;
+export const TextCard = _TextCard;
 export const CampaignCard = _CampaignCard;
 
 export const CampaignCardView = _CampaignCardView;
@@ -37,7 +37,7 @@ export const cards = {
   DataCard: _DataCard,
   CollectionCard: _CollectionCard,
   QACard: _QACard,
-  HighlightedTextCard: _HighlightedTextCard,
+  TextCard: _TextCard,
   CampaignCard: _CampaignCard,
 };
 
