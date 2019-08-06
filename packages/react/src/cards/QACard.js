@@ -22,7 +22,7 @@ const Title = styled.h3`
   }
 `;
 
-const TextWrapper = styled.div`
+const Text = styled.div`
   display: block;
   padding: 20px;
   p {
@@ -33,7 +33,7 @@ const TextWrapper = styled.div`
   }
 `;
 
-const QAWrapper = styled.div`
+const QA = styled.div`
   display: block;
   box-shadow: ${({ theme }) => theme.defaultShadow};
 `;
@@ -45,7 +45,7 @@ const QuestionWrapper = styled.div`
   }
 `;
 
-const QuestionTextWrapper = styled.div`
+const QuestionText = styled.div`
   cursor: pointer;
   position: relative;
   user-select: none;
@@ -68,7 +68,7 @@ const QuestionTextWrapper = styled.div`
   }
 `;
 
-const AnswerTextWrapper = styled.div`
+const AnswerText = styled.div`
   display: ${({ show }) => (show ? 'block' : 'none')};
 `;
 
@@ -90,17 +90,17 @@ const Question = ({ question, answer }) => {
   const [show, setShow] = useState(false);
   return (
     <QuestionWrapper>
-      <QuestionTextWrapper onClick={() => setShow(!show)} show={show}>
+      <QuestionText onClick={() => setShow(!show)} show={show}>
         <Icon>{show ? <Icons.ChevronUp /> : <Icons.ChevronDown />}</Icon>
-        <TextWrapper>
+        <Text>
           <Content content={question} mini />
-        </TextWrapper>
-      </QuestionTextWrapper>
-      <AnswerTextWrapper show={show}>
-        <TextWrapper>
+        </Text>
+      </QuestionText>
+      <AnswerText show={show}>
+        <Text>
           <Content content={answer} mini />
-        </TextWrapper>
-      </AnswerTextWrapper>
+        </Text>
+      </AnswerText>
     </QuestionWrapper>
   );
 };
@@ -111,11 +111,11 @@ class QACardView extends Component {
     return (
       <Container>
         {title ? <Title>{title}</Title> : null}
-        <QAWrapper>
+        <QA>
           {content.map(x => (
             <Question question={x.question} answer={x.answer} key={`qacard-${x._id}`} />
           ))}
-        </QAWrapper>
+        </QA>
       </Container>
     );
   }
