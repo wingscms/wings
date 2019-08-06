@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.18.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.17.4...@wingscms/react@0.18.0) (2019-08-06)
+
+
+### Bug Fixes
+
+* improve Q&A styling ([#238](https://github.com/wingscms/wings/issues/238)) ([97b867e](https://github.com/wingscms/wings/commit/97b867e))
+* spacing fixes ([#234](https://github.com/wingscms/wings/issues/234)) ([51994c0](https://github.com/wingscms/wings/commit/51994c0))
+
+
+### Features
+
+* add TextCard ([#239](https://github.com/wingscms/wings/issues/239)) ([5c563a7](https://github.com/wingscms/wings/commit/5c563a7))
+
+
+
+
+
 ## [0.17.4](https://github.com/wingscms/wings/compare/@wingscms/react@0.17.3...@wingscms/react@0.17.4) (2019-08-01)
 
 **Note:** Version bump only for package @wingscms/react

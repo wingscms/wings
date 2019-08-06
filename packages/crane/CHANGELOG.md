@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.5](https://github.com/wingscms/wings/compare/@wingscms/crane@0.14.4...@wingscms/crane@0.14.5) (2019-08-06)
+
+
+### Bug Fixes
+
+* improve Q&A styling ([#238](https://github.com/wingscms/wings/issues/238)) ([97b867e](https://github.com/wingscms/wings/commit/97b867e))
+
+
+
+
+
 ## [0.14.4](https://github.com/wingscms/wings/compare/@wingscms/crane@0.14.3...@wingscms/crane@0.14.4) (2019-08-01)
 
 

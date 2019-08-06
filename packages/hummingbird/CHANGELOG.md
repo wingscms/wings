@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.32.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.31.4...@wingscms/hummingbird@0.32.0) (2019-08-06)
+
+
+### Bug Fixes
+
+* spacing fixes ([#234](https://github.com/wingscms/wings/issues/234)) ([51994c0](https://github.com/wingscms/wings/commit/51994c0))
+
+
+### Features
+
+* export CampaignConfirmedTemplate ([#240](https://github.com/wingscms/wings/issues/240)) ([00a1bba](https://github.com/wingscms/wings/commit/00a1bba))
+
+
+
+
+
 ## [0.31.4](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.31.3...@wingscms/hummingbird@0.31.4) (2019-08-01)
 
 
