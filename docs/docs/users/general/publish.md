@@ -19,7 +19,7 @@ At Articles you can add and edit articles; at Pages, you can add and edit pages.
 
 1. General: this tab is open by default. It's where you write the content.
 2. Platforms: SEO and social media optimization settings are to be found here.
-3. Meta: this may be used to add metadata to do special things on the frontend. You will probably receive specific instructions from a website developer if you are to use this.
+3. Meta: Meta is used to attach arbitrary information to this 'node' (pages, articles and campaigns are all 'nodes'), which may be incorporated into the web application. You will probably receive specific instructions from a website developer if you are to use this.
 4. Apps: if you need to edit specific settings related to the frontend application, this is where you need to be. For example, you can set a main navigation menu that this page should show on the frontend, if it needs to be different from the one that is set as a default main menu.
 5. The title goes here.
 6. The slug goes here. These should contain only lowercase letters without spaces, but dashes (`-`) are allowed and recommended. For example, `hello-world` is a good slug when your title is `Hello, World!`. Pages will by default have your main website domain + their slug as their public url, for example `https://www.yourwebsite.com/hello-world`. Articles are typically placed in a directory called `articles`, for example `https://www.yourwebsite.com/articles/hello-world`.

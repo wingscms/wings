@@ -13,7 +13,7 @@ Campaigns is where Wings really shines: they allow you to to create meaningful a
 ## Campaigns on the frontend
 Campaigns can be shown on the frontend in two ways:
 
-1. Every campaign gets its own 'slug'  by which it is publicly accessible on the frontend, inside its respective campaign directory. For example, a petition with the slug `my-petition` will typically be found at `mywebsite.com/petitions/my-petition`. Events and fundraisers will be found in `/events/` and `/fundraisers/`, respectively.
+1. Every campaign gets its own 'slug'; most Wings web applications will make each campaign publicly accessible at this slug on the frontend, inside its respective campaign directory. For example, a petition with the slug `my-petition` will typically be found at `mywebsite.com/petitions/my-petition`. Events and fundraisers will be found in `/events/` and `/fundraisers/`, respectively.
 
 ![A demo petition at [demo.wings.dev/petitions/demo-petition](https://demo.wings.dev/petitions/demo-petition)](https://bureaubolster.s3-eu-west-1.amazonaws.com/IMG_1087.png)
 
@@ -39,7 +39,7 @@ When you create a new campaign or edit an existing one, you will find yourself o
 5. Publish / Save / Delete: this is where you publish a new campaign, save changes or delete one.
 6. This is where you add or edit campaign header image.
 7. The title of your campaign.
-8. The slug of your campaign. Please use online lowercase characters and dashes between words. The slug is the last part of the url of the page where your campaign will be found, although it will by default be placed in a campaign type's directory (`/petitions/`, `/fundraisers/` and `/events/`, respectively). The petition displayed above wil be found at /petitions/demo-petition`
+8. The slug of your campaign. Please use online lowercase characters and dashes between words. The slug is the last part of the url of the page where your campaign will be found, although it will by default be placed in a campaign type's directory (`/petitions/`, `/fundraisers/` and `/events/`, respectively). The petition displayed above wil be found at /petitions/demo-petition`.
 9. The language set for this campaign.
 10. The **info** tab is the tab visible by default. It is where you add an introduction paragraph (14) and the content for your campaign (15).
 11. **Fields** is where you add and configure additional fields, such as text, checkbox or dropdown select fields.
