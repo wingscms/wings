@@ -68,7 +68,6 @@ On the 'Signatures' or 'Attendees' or 'Donations' tab, you may see a list of con
 At Settings, you can configure an optional connection with a Mailchimp List. It requires that you add a Mailchimp Api Key on the general settings page. If you provide a valid API key, you will find a list of Mailchimp lists. Upon selecting a Mailchimp list, you will be able to map campaign fields to Mailchimp list fields. 
 
 ![](https://bureaubolster.s3-eu-west-1.amazonaws.com/IMG_1102.jpeg)
-be the default settings for social media as well; if you want to have Facebook / Twitter / WhatsApp have different values, you can set these as well - but this is optional. 
 
 ## Event settings
 Events have a couple of additional settings, pertaining to the event date and the location details which are displayed on the frontend as well.
