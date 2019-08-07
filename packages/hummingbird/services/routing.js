@@ -1,10 +1,16 @@
 module.exports = {
+  _getUrl(path) {
+    return (typeof window !== 'undefined' && [window.location.origin, path].join('')) || '';
+  },
   getPath(node) {
     if (!node.id) return null;
     const parts = [this.getLocalePrefix(node), this.getPrefix(node), this.getSlug(node)].filter(
       p => !!p,
     );
     return [''].concat(parts).join('/') || '/';
+  },
+  getCampaignConfirmedUrl(node) {
+    return this._getUrl(this.getCampaignConfirmedPath(node));
   },
   getCampaignConfirmedPath(node) {
     if (!node.id) return null;

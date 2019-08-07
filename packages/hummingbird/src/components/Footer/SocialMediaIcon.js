@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Icons } from '@wingscms/crane';
 
-import {
+const {
   Facebook,
   Github,
   Googleplus,
@@ -17,7 +18,7 @@ import {
   Vimeo,
   Whatsapp,
   Youtube,
-} from '../../img/svg/social';
+} = Icons;
 
 const Icon = styled.div`
   width: 100%;

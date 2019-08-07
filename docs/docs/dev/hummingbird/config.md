@@ -70,7 +70,7 @@ Can be used in the `design` option in Hummingbird's `gatsby-config`:
 
 `chapterItemNumberColor`: Default: <span style="background-color: #274b8b; color: #FFFFFF">secondaryColor</span>
 
-`colorChapterIntro`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
+`chapterIntroColor`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
 
 `chapterSelectBackgroundColor`: Default: <span style="background-color: #417de8">chapterBackgroundColor</span>
 
@@ -85,6 +85,8 @@ Can be used in the `design` option in Hummingbird's `gatsby-config`:
 `pullquoteColor`: Default: <span style="background-color: #417de8">primaryColor</span>
 
 `pullquoteBackgroundColor`: Default: <span style="background-color: #ffffff">backgroundColor</span>
+
+`testimonialBackgroundColor`: Default: <span style="background-color: #ECF2FC">elementBackgroundColor</span>
 
 #### Landing Section
 
@@ -113,6 +115,24 @@ Can be used in the `design` option in Hummingbird's `gatsby-config`:
 `counterBackgroundColor`: Default: <span style="background-color: #417de8">primaryColor</span>
 
 `counterTextColor`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
+
+### Spacing
+
+#### General
+
+`extraSmallSpacing`: Default: `mediumSpacing / 4`
+
+`smallSpacing`: Default: `mediumSpacing / 2`
+
+`mediumSpacing`: Default: `40px`
+
+`largeSpacing`: Default: `mediumSpacing * 2`
+
+`extraLargeSpacing`: Default: `mediumSpacing * 4`
+
+### Shadows
+
+`defaultShadow`: Default: `0 0 40px 0 rgba(0, 0, 0, 0.05)`
 
 ### Images
 

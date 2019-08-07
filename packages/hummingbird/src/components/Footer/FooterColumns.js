@@ -1,8 +1,7 @@
 import React from 'react';
-import { Newsletter } from '@wingscms/crane';
+import { Newsletter, Button } from '@wingscms/crane';
 import styled from 'styled-components';
 import Section from './Section';
-import AnchorButton from '../AnchorButton';
 import socialMediaIcon from './SocialMediaIcon';
 
 const MailchimpForm = styled(Newsletter)`
@@ -63,9 +62,9 @@ export default ({ columns }) => {
             );
           case 'button':
             return (
-              <AnchorButton key={key} href={row.url} size="small">
+              <Button key={key} href={row.url} size="small" as="a" role="button" intent="secondary">
                 {row.content}
-              </AnchorButton>
+              </Button>
             );
           case 'social':
             return (

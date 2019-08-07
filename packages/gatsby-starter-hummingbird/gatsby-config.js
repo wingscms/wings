@@ -2,6 +2,8 @@ require('dotenv').config();
 
 const { getDesign, getTypographyConfig, getFooterConfig } = require('./node/utils');
 
+const typographyConfig = getTypographyConfig();
+
 module.exports = {
   siteMetadata: {
     siteUrl: process.env.SITE_URL || process.env.URL || 'http://localhost:4000',
@@ -18,10 +20,16 @@ module.exports = {
         blockRobots: process.env.BLOCK_ROBOTS || process.env.GATSBY_ENV !== 'production',
         basicAuth: process.env.BASIC_AUTH,
         design: {
+          ...(typographyConfig && {
+            headerFontFamily:
+              typographyConfig.options &&
+              typographyConfig.options.headerFontFamily &&
+              typographyConfig.options.headerFontFamily.join(', '),
+          }),
           ...getDesign(),
         },
         typography: {
-          ...getTypographyConfig(),
+          ...typographyConfig,
         },
         footer: {
           title: 'Wings',

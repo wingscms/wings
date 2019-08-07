@@ -19,7 +19,8 @@ const Container = styled.div`
   right: 0;
   height: 65px;
   z-index: 20;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: ${({ theme }) => theme.primaryColor};
+  box-shadow: ${({ theme }) => theme.defaultShadow};
   &.hidden {
     display: none;
   }
@@ -39,7 +40,7 @@ const ChaptersLink = styled.a`
   position: relative;
   transition: 0.15s linear all;
   cursor: pointer;
-  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: ${({ theme }) => theme.defaultShadow};
   &.divider {
     border-right: 2px solid #000;
   }
@@ -82,13 +83,13 @@ const ShareImage = styled.img`
 const ShareLink = styled.a`
   width: 65px;
   height: 65px;
-  background-color: ${({ theme }) => theme.appBackgroundColor};
+  background-color: ${({ theme }) => theme.primaryColor};
   display: block;
   position: relative;
   transition: all 0.15s linear;
   cursor: pointer;
   &:hover {
-    background-color: ${({ theme }) => theme.primaryColor};
+    background-color: ${({ theme }) => theme.secondaryColor};
     &:last-of-type {
       &:after {
         border-color: ${({ theme }) => theme.primaryColor} transparent transparent transparent;
@@ -102,7 +103,7 @@ const ShareLink = styled.a`
       top: 100%;
       left: 50%;
       transition: all 0.15s linear;
-      border-color: ${({ theme }) => theme.appBackgroundColor} transparent transparent transparent;
+      border-color: ${({ theme }) => theme.primaryColor} transparent transparent transparent;
       transform: translateX(-50%);
       border-style: solid;
       border-width: 10px;
@@ -116,7 +117,7 @@ const ShareLink = styled.a`
 const ShareOpen = styled.div`
   height: 65px;
   width: 65px;
-  background-color: ${({ theme }) => theme.darkAppBackgroundColor};
+  background-color: ${({ theme }) => theme.primaryColor};
   display: inline;
   float: right;
   position: relative;
@@ -133,7 +134,7 @@ const ShareOpen = styled.div`
   }
   &:hover,
   &:active {
-    background-color: ${({ theme }) => theme.darkAppBackgroundColor};
+    background-color: ${({ theme }) => theme.primaryColor};
     .linkWrapper {
       display: block;
     }
