@@ -34,7 +34,7 @@ There are several pre-made content cards you can use, ranging from images to pul
 
 ### Inserting a content card
 
-![](https://bureaubolster.s3-eu-west-1.amazonaws.com/IMG_1118.jpeg)
+![](https://bolster-files.s3-eu-west-1.amazonaws.com/Schermafdruk-2019-08-12-16.21.50.png)
 
 1. Place your cursor on the spot where you would like to insert a card. 
 2. Click 'Card' in the toolbar.
@@ -45,6 +45,7 @@ There are several pre-made content cards you can use, ranging from images to pul
 A brief overview of the content cards is listed below. You can visit the [demo article with all elements](https://demo.wings.dev/articles/all-elements) to see what they look like by default.
 
 - Header: a chapter title and description, which typically is used to create an in-page navigation menu to skip to certain headers/chapters.
+- Text: this is a text element that is meant to stand out from regular text copy. On the frontend, it may be rendered as text with a contrasting background color.
 - Image: a single image, which has to be uploaded on the 'Media' page beforehand. It can be used with various layout types ('sizes').
 - Quote: either a blockquote or a pullquote. 
 - Campaign: an inserted petition, event or fundraiser campaign. 
