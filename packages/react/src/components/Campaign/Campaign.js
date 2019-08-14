@@ -159,7 +159,6 @@ export default ({
       setSignatureGoal(campaign.signatureGoal);
     }
   };
-  const getCopy = () => ({ ...DEFAULT_COPY, ...copy });
   const {
     descriptionCollapse,
     descriptionExpand,
@@ -173,7 +172,7 @@ export default ({
     eventEndTime,
     eventFee,
     petitionCounterGoalText,
-  } = getCopy();
+  } = { ...DEFAULT_COPY, ...copy };
   const { intro, title } = node;
   const element = (
     <React.Fragment>
