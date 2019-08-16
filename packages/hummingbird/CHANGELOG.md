@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.33.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.32.0...@wingscms/hummingbird@0.33.0) (2019-08-16)
+
+
+### Bug Fixes
+
+* **hummingbird:** add default privacy/terms urls for campaign form ([2562528](https://github.com/wingscms/wings/commit/2562528))
+* also default urls when url is empty ([b07a369](https://github.com/wingscms/wings/commit/b07a369))
+* url defaulting behavior ([75ba7cd](https://github.com/wingscms/wings/commit/75ba7cd))
+
+
+### Features
+
+* add support for privacy policy / terms urls in campaign form ([e568a7e](https://github.com/wingscms/wings/commit/e568a7e))
+
+
+
+
+
 # [0.32.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.31.4...@wingscms/hummingbird@0.32.0) (2019-08-06)
 
 

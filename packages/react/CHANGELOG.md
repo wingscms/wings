@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.18.0...@wingscms/react@0.19.0) (2019-08-16)
+
+
+### Features
+
+* add support for privacy policy / terms urls in campaign form ([e568a7e](https://github.com/wingscms/wings/commit/e568a7e))
+
+
+
+
+
 # [0.18.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.17.4...@wingscms/react@0.18.0) (2019-08-06)
 
 
