@@ -81,7 +81,7 @@ const dynamicFormMessages = (node) => {
         id: 'hummingbird.CampaignForm.termsField.label',
         description: 'Terms field label',
       },
-      values: { url: node.settings ? node.settings.legal.terms.url : '' },
+      values: { url: node.settings ? node.settings.legal.terms.url : '/terms' },
     },
     {
       key: 'privacyConsentFieldLabel',
@@ -89,7 +89,7 @@ const dynamicFormMessages = (node) => {
         id: 'hummingbird.CampaignForm.privacyConsentField.label',
         description: 'Privacy consent field label',
       },
-      values: { url: node.settings ? node.settings.legal.privacyPolicy.url : '' },
+      values: { url: node.settings ? node.settings.legal.privacyPolicy.url : '/privacy' },
     },
   ];
 };
