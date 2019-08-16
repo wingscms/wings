@@ -75,9 +75,11 @@ export default props => {
         onBlur={onBlur && (event => onBlur(id, event.target.checked))}
         onFocus={onFocus && (event => onFocus(id, event.target.checked))}
       />
-      <StyledLabel className={value ? 'checked' : ''} htmlFor={id}>
-        {label}
-      </StyledLabel>
+      <StyledLabel
+        className={value ? 'checked' : ''}
+        htmlFor={id}
+        dangerouslySetInnerHTML={{ __html: label }}
+      />
     </div>
   );
 };

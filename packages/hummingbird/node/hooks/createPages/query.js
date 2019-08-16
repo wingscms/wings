@@ -65,6 +65,16 @@ fragment CampaignFields on Wings_Campaign {
   intro
   description
   submissionSchema
+  settings {
+    legal {
+      terms {
+        url
+      }
+      privacyPolicy {
+        url
+      }
+    }
+  }
 }
 
 {

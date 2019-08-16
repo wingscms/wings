@@ -14,6 +14,16 @@ const PETITION_QUERY = `
       id
       title
       submissionSchema
+      settings {
+        legal {
+          terms {
+            url
+          }
+          privacyPolicy {
+            url
+          }
+        }
+      }
       signatureCount
       signatureGoal
       ...NodeFields
@@ -37,6 +47,16 @@ const EVENT_QUERY = `
       id
       title
       submissionSchema
+      settings {
+        legal {
+          terms {
+            url
+          }
+          privacyPolicy {
+            url
+          }
+        }
+      }
       schedule {
         start
         end
@@ -72,6 +92,16 @@ const FUNDRAISER_QUERY = `
       id
       title
       submissionSchema
+      settings {
+        legal {
+          terms {
+            url
+          }
+          privacyPolicy {
+            url
+          }
+        }
+      }
       ...NodeFields
       ...CampaignFields
     }
@@ -304,12 +334,18 @@ class CampaignForm extends Component {
   }
 
   maybeFetch() {
-    if (this.state.formSchema || this.props.formSchema || this.state.fetching) {
+    if (
+      this.state.failed ||
+      this.state.formSchema ||
+      this.props.formSchema ||
+      this.state.fetching
+    ) {
       return;
     }
     this.setState({ fetching: true }, async () => {
       let campaign;
       let formSchema;
+      let failed = false;
       try {
         const { campaign: c } = await this.props.wings.query(this.query() + this.fragment(), {
           id: this.props.id,
@@ -322,12 +358,14 @@ class CampaignForm extends Component {
           this.props.type,
           this.props.id,
         );
+        failed = true;
       } finally {
         this.setState(
           {
             fetching: false,
             formSchema,
             campaign,
+            failed,
           },
           this.maybeEmitOnLoad,
         );
