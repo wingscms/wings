@@ -125,6 +125,14 @@ fragment CampaignFields on Wings_Campaign {
         }
       }
     }
+    signups {
+      edges {
+        node {
+          ...NodeFields
+          ...CampaignFields
+        }
+      }
+    }
     petitions {
       edges {
         node {

@@ -27,6 +27,8 @@ module.exports = {
     switch (resourceType) {
       case 'node.entry.article':
         return 'articles';
+      case 'node.signup':
+        return 'signups';
       case 'node.petition':
         return 'petitions';
       case 'node.event':

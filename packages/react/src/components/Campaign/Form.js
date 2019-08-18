@@ -8,6 +8,36 @@ import { withWings } from '../../ctx/Wings';
 const patchSchema = (schema, fieldDefinitions) =>
   deepmerge(schema, { properties: fieldDefinitions });
 
+const SIGNUP_QUERY = `
+  query ($selector: SignupSelectorInput) {
+    campaign: signup(selector: $selector) {
+      id
+      title
+      submissionSchema
+      settings {
+        legal {
+          terms {
+            url
+          }
+          privacyPolicy {
+            url
+          }
+        }
+      }
+      ...NodeFields
+      ...CampaignFields
+    }
+  }
+`;
+
+const SIGNUP_MUTATION = `
+  mutation SubmitSignup($input: SubmitSignupInput!) {
+    submitSignup(input: $input) {
+      id
+    }
+  }
+`;
+
 const PETITION_QUERY = `
   query ($id: String!) {
     campaign: petition(id: $id) {
@@ -30,7 +60,6 @@ const PETITION_QUERY = `
       ...CampaignFields
     }
   }
-
 `;
 
 const PETITION_MUTATION = `
@@ -158,6 +187,7 @@ const DEFAULT_COPY = {
   submitText: 'Submit',
   eventSubmitText: 'Attend',
   fundraiserSubmitText: 'Donate',
+  signupSubmitText: 'Submit',
   petitionSubmitText: 'Sign',
   emailFieldLabel: 'Email address',
   firstNameFieldLabel: 'First name',
@@ -181,7 +211,7 @@ class CampaignForm extends Component {
   }
   static propTypes = {
     id: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(['petition', 'event', 'fundraiser']).isRequired,
+    type: PropTypes.oneOf(['signup', 'petition', 'event', 'fundraiser']).isRequired,
     onSubmit: PropTypes.func,
     processSchema: PropTypes.func,
     processSubmission: PropTypes.func,
@@ -241,6 +271,8 @@ class CampaignForm extends Component {
 
   query = () => {
     switch (this.props.type) {
+      case 'signup':
+        return SIGNUP_QUERY;
       case 'petition':
         return PETITION_QUERY;
       case 'event':
@@ -254,6 +286,8 @@ class CampaignForm extends Component {
 
   mutation = () => {
     switch (this.props.type) {
+      case 'signup':
+        return SIGNUP_MUTATION;
       case 'petition':
         return PETITION_MUTATION;
       case 'event':
@@ -311,6 +345,7 @@ class CampaignForm extends Component {
   getSubmitText() {
     const { type, submitText = '' } = this.props;
     const {
+      signupSubmitText,
       eventSubmitText,
       petitionSubmitText,
       fundraiserSubmitText,
@@ -318,6 +353,8 @@ class CampaignForm extends Component {
     } = this.getCopy();
     if (submitText) return submitText;
     switch (type) {
+      case 'signup':
+        return signupSubmitText;
       case 'event':
         return eventSubmitText;
       case 'petition':
@@ -380,6 +417,9 @@ class CampaignForm extends Component {
       const res = await this.props.wings.query(this.mutation(), {
         id: this.props.id,
         input: {
+          ...(this.props.type === 'signup' && {
+            id: this.props.id,
+          }),
           data: JSON.stringify(formData),
           ...(this.props.type === 'fundraiser' && {
             amount,
