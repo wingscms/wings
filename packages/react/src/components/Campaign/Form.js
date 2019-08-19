@@ -384,9 +384,20 @@ class CampaignForm extends Component {
       let formSchema;
       let failed = false;
       try {
-        const { campaign: c } = await this.props.wings.query(this.query() + this.fragment(), {
-          id: this.props.id,
-        });
+        const variables =
+          this.props.type === 'signup'
+            ? {
+              selector: {
+                id: this.props.id,
+              },
+            }
+            : {
+              id: this.props.id,
+            };
+        const { campaign: c } = await this.props.wings.query(
+          this.query() + this.fragment(),
+          variables,
+        );
         campaign = c;
         formSchema = JSON.parse(c.submissionSchema);
       } catch (e) {
