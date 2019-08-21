@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.34.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.33.0...@wingscms/hummingbird@0.34.0) (2019-08-21)
+
+
+### Features
+
+* add signup campaign support ([#244](https://github.com/wingscms/wings/issues/244)) ([2f47570](https://github.com/wingscms/wings/commit/2f47570))
+
+
+
+
+
 # [0.33.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.32.0...@wingscms/hummingbird@0.33.0) (2019-08-16)
 
 
