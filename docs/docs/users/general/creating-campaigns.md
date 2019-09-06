@@ -6,6 +6,7 @@ title: Creating and managing campaigns
 ## About campaigns
 Campaigns is where Wings really shines: they allow you to to create meaningful and effective ways that allow users to contribute to your cause by attending events, signing a petition or making a donation. A quick overview:
 
+- Signups are simple forms that let people 'sign up', for example to receive newsletter updates.
 - Events are geared towards getting people to visit an event. 
 - Petitions are aimed towards letting people sign a policy proposal, letter of support or some other kind of petition.
 - Fundraisers will allow users to make a monetary donation.
@@ -21,9 +22,10 @@ Campaigns can be shown on the frontend in two ways:
 
 ## The Campaigns Overview 
 1. Click 'Campaigns' in the Wings admin Main Menu to visit the Campaigns Overview page. 
-2. On the Campaigns Overview page, you will find a list of saved campaigns (click a campaign's title to visit its edit page) and 3) the option to create a new campaign page. Clicking the 'new' button will prompt you to choose a campaign type (Petition, Event or Fundraiser).
- 
-![](https://bureaubolster.s3-eu-west-1.amazonaws.com/Photo-2019-08-04-14-19.jpg)
+2. On the Campaigns Overview page, you will find a list of saved campaigns (click a campaign's title to visit its edit page) and 3) the option to create a new campaign page. Clicking the 'new' button will prompt you to choose a campaign type (Signup, Petition, Event or Fundraiser).
+
+![](https://bureaubolster.s3-eu-west-1.amazonaws.com/IMG_1137.jpeg)
+
 
 ## Editing a campaign
 When you create a new campaign or edit an existing one, you will find yourself on the campaign edit screen as shown below.
@@ -67,7 +69,14 @@ On the 'Signatures' or 'Attendees' or 'Donations' tab, you may see a list of con
 ## Settings
 At Settings, you can configure an optional connection with a Mailchimp List. It requires that you add a Mailchimp Api Key on the general settings page. If you provide a valid API key, you will find a list of Mailchimp lists. Upon selecting a Mailchimp list, you will be able to map campaign fields to Mailchimp list fields. 
 
-![](https://bureaubolster.s3-eu-west-1.amazonaws.com/IMG_1102.jpeg)
+![](https://bureaubolster.s3-eu-west-1.amazonaws.com/IMG_1141.jpeg)
+
+be the default settings for social media as well; if you want to have Facebook / Twitter / WhatsApp have different values, you can set these as well - but this is optional. 
+
+On the Legal tab, you can set the paths or urls for the links to the pages where a user can find the terms & conditions:
+
+![](https://bureaubolster.s3-eu-west-1.amazonaws.com/IMG_1142.jpeg)
+
 
 ## Event settings
 Events have a couple of additional settings, pertaining to the event date and the location details which are displayed on the frontend as well.
