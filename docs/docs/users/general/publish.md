@@ -36,6 +36,7 @@ There are several pre-made content cards you can use, ranging from images to pul
 
 ![](https://bureaubolster.s3-eu-west-1.amazonaws.com/IMG_1118.jpeg)
 
+
 1. Place your cursor on the spot where you would like to insert a card. 
 2. Click 'Card' in the toolbar.
 3. Choose the kind of content card you want to use.

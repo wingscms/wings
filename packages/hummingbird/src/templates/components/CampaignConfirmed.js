@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
-import { getContrastColor } from '@wingscms/crane';
+import { getContrastColor, Icons } from '@wingscms/crane';
 import qs from 'qs';
 import Campaign from './Campaign';
-import { Facebook, Twitter, Whatsapp, Globe } from '../../img/svg/social';
+
+const { Facebook, Twitter, Whatsapp, Email } = Icons;
 
 const ShareContainer = styled.div`
   padding-top: 20px;
@@ -31,15 +32,14 @@ const ShareButton = styled.a`
   position: relative;
   margin: 0 5px;
   transition: all 0.2s linear;
+  padding: 12px;
   svg {
     display: block;
-    height: 26px;
-    margin: 12px auto;
     fill: ${({ theme }) =>
     getContrastColor({
       backgroundColor: theme.primaryColor,
       colors: { light: theme.textColor, dark: theme.textColorDark },
-      threshold: 30,
+      threshold: theme.contrastLuminanceThreshold,
     })};
   }
   &:hover {
@@ -49,7 +49,7 @@ const ShareButton = styled.a`
     getContrastColor({
       backgroundColor: theme.secondaryColor,
       colors: { light: theme.textColor, dark: theme.textColorDark },
-      threshold: 30,
+      threshold: theme.contrastLuminanceThreshold,
     })};
     }
   }
@@ -178,7 +178,7 @@ export default class CampaignConfirmed extends Component {
             <Whatsapp />
           </ShareButton>
           <ShareButton href={shareUrls.email}>
-            <Globe />
+            <Email />
           </ShareButton>
         </ShareContainer>
       </Campaign.Content>

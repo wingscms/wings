@@ -5,10 +5,10 @@ import styled from 'styled-components';
 import widont from 'widont';
 
 const ImageContainer = styled.figure`
-  margin: 20px 0 0 0;
+  margin: ${({ theme }) => theme.mediumSpacing} 0 0 0;
   width: 100%;
-  @media screen and (min-width: 720px) {
-    margin: 0 0 0 50%;
+  @media screen and (min-width: 800px) {
+    margin: ${({ theme }) => theme.largeSpacing} 0 0 50%;
     max-width: 1200px;
     width: 100vw;
     transform: translateX(-50%);
@@ -22,12 +22,12 @@ const ImageContainer = styled.figure`
 `;
 
 const TitleContainer = styled.div`
-  padding: 20px 0 0;
+  padding: 0;
   position: relative;
   text-align: center;
-  margin-top: 30px;
+  margin-top: ${({ theme }) => theme.mediumSpacing};
   @media screen and (min-width: 800px) {
-    margin-top: 50px;
+    margin-top: ${({ theme }) => theme.largeSpacing};
   }
 `;
 
@@ -38,14 +38,13 @@ const Title = styled.h1`
   font-size: 32px;
   line-height: 1.2;
   text-align: center;
-  margin: 0 auto 10px;
+  margin: 0 auto 0 auto;
   max-width: 90%;
   position: relative;
   z-index: 2;
   @media screen and (min-width: 800px) {
     font-size: 60px;
     line-height: 70px;
-    margin-bottom: 80px;
   }
   @media screen and (min-width: 960px) {
     width: 920px;

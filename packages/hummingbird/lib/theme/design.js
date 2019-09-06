@@ -1,4 +1,4 @@
-import { getContrastColor } from '@wingscms/crane';
+import { getContrastColor, separateUnit } from '@wingscms/crane';
 
 // set defaults here:
 export default ({
@@ -32,7 +32,7 @@ export default ({
   // Footer
   footerBackgroundColor,
   footerTextColor,
-  // Articles/pages
+  // Articles/Pages
   chapterBackgroundColor,
   chapterItemColor,
   chapterItemNumberColor,
@@ -44,6 +44,7 @@ export default ({
   blockquoteBackgroundColor,
   pullquoteColor,
   pullquoteBackgroundColor,
+  testimonialBackgroundColor,
   // Landing Section
   landingSectionTitleColor = '#FFFFFF',
   landingSectionTitleBackgroundColor = 'transparent',
@@ -53,11 +54,26 @@ export default ({
   // Forms
   formBackgroundColor,
   formTextColor,
+  formLinkTextColor,
+  formLinkLineColor,
   // Campaigns
   campaignFormBackgroundColor,
   campaignFormTextColor,
+  campaignFormLinkTextColor,
+  campaignFormLinkLineColor,
   counterBackgroundColor,
   counterTextColor,
+
+  // SPACING
+  // General
+  extraLargeSpacing,
+  largeSpacing,
+  mediumSpacing = '40px',
+  smallSpacing,
+  extraSmallSpacing,
+
+  // SHADOWS
+  defaultShadow = '0 0 40px 0 rgba(0, 0, 0, 0.05)',
 
   // IMAGES
   logoImageUrl = 'https://files.wings.dev/9o2DZgVGxJT7x8Q8L5EP/1559551574036/wingslogo.svg',
@@ -65,9 +81,9 @@ export default ({
   faviconImageUrl = 'https://files.wings.dev/9o2DZgVGxJT7x8Q8L5EP/1559551574036/wingslogo.svg',
 
   // FONTS AND TEXT
-  // Used to set the name of font families if the font is manually imported.
   customHeaderFontUrl,
   customBodyFontUrl,
+  headerFontFamily = 'Poppins',
   // Other fonts/text stuff
   dropcapFontSize = '3.5em',
   introFontSize = '1.333',
@@ -151,6 +167,7 @@ export default ({
   blockquoteBackgroundColor: blockquoteBackgroundColor || backgroundColor,
   pullquoteColor: pullquoteColor || primaryColor,
   pullquoteBackgroundColor: pullquoteBackgroundColor || backgroundColor,
+  testimonialBackgroundColor: testimonialBackgroundColor || elementBackgroundColor,
   // Landing Section
   landingSectionTitleColor,
   landingSectionTitleBackgroundColor,
@@ -166,6 +183,15 @@ export default ({
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
     }),
+  formLinkTextColor:
+    formLinkTextColor ||
+    formTextColor ||
+    getContrastColor({
+      backgroundColor: formBackgroundColor || primaryColor,
+      colors: { light: textColor, dark: textColorDark },
+      threshold: contrastLuminanceThreshold,
+    }),
+  formLinkLineColor: secondaryColor || formLinkLineColor,
   // Campaigns
   campaignFormBackgroundColor: campaignFormBackgroundColor || formBackgroundColor || primaryColor,
   campaignFormTextColor:
@@ -176,6 +202,17 @@ export default ({
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
     }),
+  campaignFormLinkTextColor:
+    campaignFormLinkTextColor ||
+    formLinkTextColor ||
+    campaignFormTextColor ||
+    formTextColor ||
+    getContrastColor({
+      backgroundColor: formBackgroundColor || primaryColor,
+      colors: { light: textColor, dark: textColorDark },
+      threshold: contrastLuminanceThreshold,
+    }),
+  campaignFormLinkLineColor: campaignFormLinkLineColor || formLinkLineColor || secondaryColor,
   counterBackgroundColor: counterBackgroundColor || backgroundColor,
   counterTextColor:
     counterTextColor ||
@@ -185,6 +222,21 @@ export default ({
       threshold: contrastLuminanceThreshold,
     }),
 
+  // SPACING
+  // General
+  mediumSpacing,
+  largeSpacing:
+    largeSpacing || `${separateUnit(mediumSpacing)[0] * 2}${separateUnit(mediumSpacing)[1]}`,
+  extraLargeSpacing:
+    extraLargeSpacing || `${separateUnit(mediumSpacing)[0] * 4}${separateUnit(mediumSpacing)[1]}`,
+  smallSpacing:
+    smallSpacing || `${separateUnit(mediumSpacing)[0] / 2}${separateUnit(mediumSpacing)[1]}`,
+  extraSmallSpacing:
+    extraSmallSpacing || `${separateUnit(mediumSpacing)[0] / 4}${separateUnit(mediumSpacing)[1]}`,
+
+  // SHADOWS
+  defaultShadow,
+
   // IMAGES
   logoImageUrl,
   footerLogoImageUrl,
@@ -193,6 +245,7 @@ export default ({
   // FONTS AND TEXT
   customHeaderFontUrl,
   customBodyFontUrl,
+  headerFontFamily,
   dropcapFontSize,
   introFontSize,
   bodyFontWeight,

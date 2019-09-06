@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import classNames from 'classnames';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
+import Content from '../../../internal/Content';
+
 import Entry from '../Entry';
-import Content from '../../../components/Content';
+
 import Header from './Header';
 
 const Title = styled.h1`
-  margin: 2em auto 80px auto;
+  margin: ${({ theme }) => theme.largeSpacing} auto;
   text-align: center;
   color: ${({ theme }) => theme.textColor};
   &.hidden {

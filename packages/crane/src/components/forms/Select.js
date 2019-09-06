@@ -13,12 +13,33 @@ const StyledSelect = styled.select`
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  position: relative;
+  cursor: pointer;
   &:disabled {
     background-color: #eee;
     color: #555;
     cursor: not-allowed;
   }
   ${({ selectStyles }) => selectStyles || ''};
+`;
+
+const Wrapper = styled.div`
+  position: relative;
+  cursor: pointer;
+  &:after {
+    pointer-events: none;
+    position: absolute;
+    display: block;
+    content: '';
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid ${({ theme }) => theme.formBackgroundColor};
+  }
 `;
 
 export default props => {
@@ -41,7 +62,7 @@ export default props => {
   const { enumOptions = [], enumDisabled } = options;
   const emptyValue = multiple ? [] : '';
   return (
-    <div>
+    <Wrapper>
       {!schema && label ? (
         <label htmlFor={id}>
           {label}
@@ -99,6 +120,6 @@ export default props => {
           </Fragment>
         )}
       </StyledSelect>
-    </div>
+    </Wrapper>
   );
 };

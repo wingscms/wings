@@ -26,8 +26,11 @@ const verifySlugs = (nodes) => {
   const processedSlugs = [];
   const invalidNodes = [];
   nodes.forEach((node) => {
-    if (!isValidSlug(node.slug) || contains(processedSlugs, node.slug)) invalidNodes.push(node);
-    processedSlugs.push(node.slug);
+    const slugWithLocale = [node.slug, node.locale.id].join('|');
+    if (!isValidSlug(node.slug) || contains(processedSlugs, slugWithLocale)) {
+      invalidNodes.push(node);
+    }
+    processedSlugs.push(slugWithLocale);
   });
   if (invalidNodes.length) {
     invalidNodes.forEach((node) => {
@@ -58,6 +61,11 @@ const resources = [
     resourceType: 'node.entry.page',
     field: 'pages',
     template: '../../../src/templates/Page',
+  },
+  {
+    resourceType: 'node.signup',
+    field: 'signups',
+    template: '../../../src/templates/Campaign',
   },
   {
     resourceType: 'node.petition',
@@ -110,7 +118,9 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
               : require.resolve(template),
           context,
         });
-        if (['petition', 'event', 'fundraiser'].indexOf(node.resourceType.split('.')[1]) < 0) {
+        if (
+          ['signup', 'petition', 'event', 'fundraiser'].indexOf(node.resourceType.split('.')[1]) < 0
+        ) {
           return;
         }
         createPage({

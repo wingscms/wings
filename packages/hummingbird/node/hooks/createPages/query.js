@@ -65,6 +65,16 @@ fragment CampaignFields on Wings_Campaign {
   intro
   description
   submissionSchema
+  settings {
+    legal {
+      terms {
+        url
+      }
+      privacyPolicy {
+        url
+      }
+    }
+  }
 }
 
 {
@@ -112,6 +122,14 @@ fragment CampaignFields on Wings_Campaign {
             currencyCode
           }
           attendeeCount
+        }
+      }
+    }
+    signups {
+      edges {
+        node {
+          ...NodeFields
+          ...CampaignFields
         }
       }
     }

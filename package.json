@@ -1,12 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "start": "lerna run start --stream",
+    "start": "lerna run start --stream --parallel",
     "test": "lerna run test",
     "lint": "eslint .",
     "changelog": "lerna-changelog",
-    "prettier": "prettier-eslint --write \"**/*.js\"",
-    "publish": "yarn && lerna publish"
+    "prettier": "prettier-eslint --write \"**/*.js\""
   },
   "workspaces": {
     "packages": [

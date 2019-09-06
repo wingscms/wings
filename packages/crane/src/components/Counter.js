@@ -9,22 +9,21 @@ const StyledCounter = styled.div`
   height: ${({ height }) => `${height}px`};
   border-radius: 7.5px;
   background-color: transparent;
-  border: 1px solid ${({ color }) => color};
+  border: 1px solid ${({ intent, theme }) => getIntentColor({ intent, theme })};
 `;
 
 const StyledCounterInner = styled(StyledCounter)`
   width: ${props => `${props.width || 0}%`};
   height: ${({ height }) => `${height - 2}px` || '12px'};
   margin-top: 0;
-  background-color: ${({ color }) => color};
+  background-color: ${({ intent, theme }) => getIntentColor({ intent, theme })};
 `;
 
-export default ({ current, max, height = 12, theme, intent, ...props }) => {
+export default function Counter({ current, max, height = 12, intent, ...props }) {
   const width = current >= max ? 100 : (100 / max) * current;
-  const color = getIntentColor({ intent, theme });
   return (
-    <StyledCounter color={color} height={height} {...props}>
-      <StyledCounterInner color={color} height={height} width={width} />
+    <StyledCounter intent={intent} height={height} {...props}>
+      <StyledCounterInner intent={intent} height={height} width={width} />
     </StyledCounter>
   );
-};
+}

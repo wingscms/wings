@@ -101,7 +101,7 @@ const LoveEmoji = () => (
 );
 
 const Footer = ({ theme }) => {
-  const { footer } = usePluginOptions();
+  const { footer = {} } = usePluginOptions();
   return (
     <Wrap>
       <Container>
