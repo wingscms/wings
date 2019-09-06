@@ -86,6 +86,29 @@ const FormContainer = styled.div`
   border-radius: 4px;
   box-shadow: ${({ theme }) => theme.defaultShadow};
   align-self: flex-start;
+  a {
+    color: ${({ theme }) => theme.campaignFormLinkTextColor};
+    text-decoration: none;
+    background-image: linear-gradient(
+      120deg,
+      ${({ theme }) => theme.campaignFormLinkLineColor} 0%,
+      ${({ theme }) => theme.campaignFormLinkLineColor} 100%
+    );
+    padding-bottom: 2px;
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
+    background-position: 0% 100%;
+    transition: background-size 0.1s linear;
+    &:hover,
+    &:focus {
+      background-size: 100% 4px;
+      background-image: linear-gradient(
+        120deg,
+        ${({ theme }) => theme.campaignFormLinkLineColor} 0%,
+        ${({ theme }) => theme.campaignFormLinkLineColor} 100%
+      );
+    }
+  }
   @media screen and (max-width: 1000px) {
     width: 100%;
   }
