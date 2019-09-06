@@ -79,7 +79,7 @@ export default props => {
       <StyledLabel
         className={value ? 'checked' : ''}
         htmlFor={id}
-        dangerouslySetInnerHTML={{ __html: label }}
+        dangerouslySetInnerHTML={{ __html: `${label}${required ? '*' : ''}` }}
       />
     </div>
   );
