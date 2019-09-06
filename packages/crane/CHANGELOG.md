@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.1](https://github.com/wingscms/wings/compare/@wingscms/crane@0.15.0...@wingscms/crane@0.15.1) (2019-09-06)
+
+
+### Bug Fixes
+
+* add asterisk to checkbox labels when required ([#246](https://github.com/wingscms/wings/issues/246)) ([4660821](https://github.com/wingscms/wings/commit/4660821))
+
+
+
+
+
 # [0.15.0](https://github.com/wingscms/wings/compare/@wingscms/crane@0.14.5...@wingscms/crane@0.15.0) (2019-08-16)
 
 

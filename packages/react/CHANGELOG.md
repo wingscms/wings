@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.21.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.20.0...@wingscms/react@0.21.0) (2019-09-06)
+
+
+### Features
+
+* improve styling for [campaign] form links and theming options ([#247](https://github.com/wingscms/wings/issues/247)) ([985aa37](https://github.com/wingscms/wings/commit/985aa37))
+
+
+
+
+
 # [0.20.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.19.0...@wingscms/react@0.20.0) (2019-08-21)
 
 
