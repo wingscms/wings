@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.35.1](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.35.0...@wingscms/hummingbird@0.35.1) (2019-09-13)
+
+
+### Bug Fixes
+
+* fix priority and order of platforms tags (facebook > search/all) ([#249](https://github.com/wingscms/wings/issues/249)) ([ef1cb39](https://github.com/wingscms/wings/commit/ef1cb39))
+
+
+
+
+
 # [0.35.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.34.0...@wingscms/hummingbird@0.35.0) (2019-09-06)
 
 
