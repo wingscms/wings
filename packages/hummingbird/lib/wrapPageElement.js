@@ -83,32 +83,32 @@ const PageWrapper = ({
           <meta name="description" content={platforms.all.description} />
         ) : null}
         {platforms.facebook && platforms.facebook.title ? (
-          <React.Fragment>
-            <meta
-              property="og:title"
-              content={generateTitle(title, siteTitle, 'facebook', platforms)}
-            />
-            <meta
-              property="fb:title"
-              content={generateTitle(title, siteTitle, 'facebook', platforms)}
-            />
-          </React.Fragment>
+          <meta
+            property="og:title"
+            content={generateTitle(title, siteTitle, 'facebook', platforms)}
+          />
+        ) : null}
+        {platforms.facebook && platforms.facebook.title ? (
+          <meta
+            property="fb:title"
+            content={generateTitle(title, siteTitle, 'facebook', platforms)}
+          />
         ) : null}
         {platforms.facebook && platforms.facebook.description ? (
-          <React.Fragment>
-            <meta property="og:description" content={platforms.facebook.description} />
-            <meta property="fb:description" content={platforms.facebook.description} />
-          </React.Fragment>
+          <meta property="og:description" content={platforms.facebook.description} />
         ) : platforms.all && platforms.all.description ? (
           <meta property="og:description" content={platforms.all.description} />
         ) : null}
+        {platforms.facebook && platforms.facebook.description ? (
+          <meta property="fb:description" content={platforms.facebook.description} />
+        ) : null}
         {platforms.facebook && platforms.facebook.imageUrl ? (
-          <React.Fragment>
-            <meta property="og:image" content={platforms.facebook.imageUrl} />
-            <meta property="fb:image" content={platforms.facebook.imageUrl} />
-          </React.Fragment>
+          <meta property="og:image" content={platforms.facebook.imageUrl} />
         ) : platforms.all && platforms.all.imageUrl ? (
           <meta property="og:image" content={platforms.all.imageUrl} />
+        ) : null}
+        {platforms.facebook && platforms.facebook.imageUrl ? (
+          <meta property="fb:image" content={platforms.facebook.imageUrl} />
         ) : null}
         {platforms.twitter && platforms.twitter.title ? (
           <meta
