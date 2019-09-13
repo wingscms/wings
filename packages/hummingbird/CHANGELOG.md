@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.35.2](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.35.1...@wingscms/hummingbird@0.35.2) (2019-09-13)
+
+
+### Bug Fixes
+
+* fix nested tags in Helmet bug ([#250](https://github.com/wingscms/wings/issues/250)) ([bda81e4](https://github.com/wingscms/wings/commit/bda81e4))
+
+
+
+
+
 ## [0.35.1](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.35.0...@wingscms/hummingbird@0.35.1) (2019-09-13)
 
 
