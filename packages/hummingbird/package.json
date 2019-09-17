@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "createSchemas": "node -r esm ./lib/scripts/createSchemas.js",
+    "updateSchemas": "node -r esm ./lib/scripts/updateSchemas.js"
   },
   "name": "@wingscms/hummingbird",
   "version": "0.35.2",
@@ -12,6 +14,7 @@
     "classnames": "^2.2.6",
     "cloudinary-react": "^1.1.0",
     "deepmerge": "^3.2.0",
+    "esm": "^3.2.25",
     "filter-invalid-dom-props": "^2.0.0",
     "format-number": "^3.0.0",
     "gatsby": "^2",
