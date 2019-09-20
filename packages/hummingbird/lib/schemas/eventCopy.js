@@ -21,6 +21,11 @@ export default {
         title: 'Confirmed page share title:',
         default: '',
       },
+      eventSubmitText: {
+        type: 'string',
+        title: 'Submit text:',
+        default: '',
+      },
     },
   },
 };

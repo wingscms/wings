@@ -41,6 +41,11 @@ export default {
         title: 'Confirmed page share title:',
         default: '',
       },
+      fundraiserSubmitText: {
+        type: 'string',
+        title: 'Submit text:',
+        default: '',
+      },
     },
   },
 };

@@ -31,6 +31,16 @@ export default {
         title: 'Confirmed page share title:',
         default: '',
       },
+      emailFieldLabel: {
+        type: 'string',
+        title: 'Email field label',
+        default: '',
+      },
+      petitionSubmitText: {
+        type: 'string',
+        title: 'Submit text:',
+        default: '',
+      },
     },
   },
 };

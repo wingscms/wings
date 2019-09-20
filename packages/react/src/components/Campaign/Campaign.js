@@ -248,6 +248,7 @@ export default ({
                 node={node}
                 redirectUrl={redirectUrlForNode(node)}
                 {...formProps}
+                schemaCopy={schemaCopy}
                 onLoad={handleCampaignLoad}
                 nodeFragment={NodeFragment}
                 campaignFragment={CampaignFragment}

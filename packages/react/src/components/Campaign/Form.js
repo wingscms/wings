@@ -253,7 +253,7 @@ class CampaignForm extends Component {
   };
 
   getCopy() {
-    return { ...DEFAULT_COPY, ...this.props.copy };
+    return { ...DEFAULT_COPY, ...this.props.copy, ...this.props.schemaCopy };
   }
 
   componentDidMount() {
@@ -482,6 +482,7 @@ class CampaignForm extends Component {
       campaignErrorTitle,
       campaignErrorText,
     } = this.getCopy();
+    console.log(this.props);
     return loading ? (
       <div style={{ textAlign: 'center' }}>
         {campaignLoadingText}
