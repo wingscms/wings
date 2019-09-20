@@ -171,13 +171,13 @@ export default class CampaignConfirmed extends Component {
       eventcopy = {},
       fundraisercopy = {},
       signupcopy = {},
-    } = removeEmptyProperties(dataToObject(_data));
-    const copy = {
+    } = dataToObject(_data);
+    const copy = removeEmptyProperties({
       ...petitioncopy,
       ...eventcopy,
       ...fundraisercopy,
       ...signupcopy,
-    };
+    });
     return (
       <Campaign.Content {...props}>
         {resourceType === 'node.fundraiser' ? (

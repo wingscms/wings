@@ -185,9 +185,15 @@ export default ({
   };
 
   const { intro, title, data: _data } = node;
-  const data = dataToObject(_data);
-  const { petitioncopy: _petitionCopy = {} } = data;
-  const petitionCopy = removeEmptyProperties(_petitionCopy);
+  const { petitioncopy = {}, eventcopy = {}, fundraisercopy = {}, signupcopy = {} } = dataToObject(
+    _data,
+  );
+  const schemaCopy = removeEmptyProperties({
+    ...petitioncopy,
+    ...eventcopy,
+    ...fundraisercopy,
+    ...signupcopy,
+  });
 
   const {
     descriptionCollapse,
@@ -202,8 +208,7 @@ export default ({
     eventEndTime,
     eventFee,
     petitionCounterGoalText,
-  } = { ...DEFAULT_COPY, ...copy, ...petitionCopy };
-  console.log(petitionCopy);
+  } = { ...DEFAULT_COPY, ...copy, ...schemaCopy };
 
   const element = (
     <React.Fragment>
