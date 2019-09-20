@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 import { getContrastColor, Icons } from '@wingscms/crane';
 import qs from 'qs';
+import { dataToObject, removeEmptyProperties } from '../../../lib/utils';
 import Campaign from './Campaign';
 
 const { Facebook, Twitter, Whatsapp, Email } = Icons;
@@ -137,37 +138,51 @@ export default class CampaignConfirmed extends Component {
     const {
       pageContext: {
         shareUrls,
-        node: { resourceType },
+        node: { resourceType, data: _data = [] },
       },
       location,
     } = props;
+    const { petitioncopy = {} } = removeEmptyProperties(dataToObject(_data));
+    console.log(petitioncopy);
     return (
       <Campaign.Content {...props}>
         {resourceType === 'node.fundraiser' ? (
           <FundraiserText status={qs.parse(location.search.replace('?', '')).transaction_status} />
         ) : (
           <React.Fragment>
-            <FormattedMessage
-              id="hummingbird.CampaignConfirmed.main.title"
-              description="Title of campaign submission success."
-              defaultMessage="Hurray!"
-              tagName={Title}
-            />
-            <FormattedMessage
-              id="hummingbird.CampaignConfirmed.main.text"
-              description="Text of campaign submission success."
-              defaultMessage="Thanks to you, we are one step closer towards our goals."
-              tagName={Text}
-            />
+            {petitioncopy.confirmedTitle ? (
+              <Title>{petitioncopy.confirmedTitle}</Title>
+            ) : (
+              <FormattedMessage
+                id="hummingbird.CampaignConfirmed.main.title"
+                description="Title of campaign submission success."
+                defaultMessage="Hurray!"
+                tagName={Title}
+              />
+            )}
+            {petitioncopy.confirmedText ? (
+              <Text>{petitioncopy.confirmedText}</Text>
+            ) : (
+              <FormattedMessage
+                id="hummingbird.CampaignConfirmed.main.text"
+                description="Text of campaign submission success."
+                defaultMessage="Thanks to you, we are one step closer towards our goals."
+                tagName={Text}
+              />
+            )}
           </React.Fragment>
         )}
         <ShareContainer>
-          <FormattedMessage
-            id="hummingbird.CampaignConfirmed.share.title"
-            description="Title above campaign share buttons."
-            defaultMessage="Please share this campaign with your friends and colleagues:"
-            tagName={ShareTitle}
-          />
+          {petitioncopy.confirmedShareTitle ? (
+            <ShareTitle>{petitioncopy.confirmedShareTitle}</ShareTitle>
+          ) : (
+            <FormattedMessage
+              id="hummingbird.CampaignConfirmed.share.title"
+              description="Title above campaign share buttons."
+              defaultMessage="Please share this campaign with your friends and colleagues:"
+              tagName={ShareTitle}
+            />
+          )}
           <ShareButton href={shareUrls.facebook} target="_blank" rel="noopener noreferrer">
             <Facebook />
           </ShareButton>

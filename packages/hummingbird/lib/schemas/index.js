@@ -1,4 +1,4 @@
-import campaignCopy from './campaignCopy';
+import campaignCopy from './petitionCopy';
 
 let schemaOverrides = {};
 try {

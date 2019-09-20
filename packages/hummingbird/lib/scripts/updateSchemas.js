@@ -23,10 +23,16 @@ wings
   .then((current = { shemas: [] }) => {
     Object.keys(schemas).forEach((s) => {
       const { name, key, locations, definition } = schemas[s];
-      const id = current.schemas.length > 0 ? current.schemas.find(x => x.key === key) : null;
+      const { id } = current.schemas.length > 0 ? current.schemas.find(x => x.key === key) : {};
       if (id) {
         wings
-          .query(MUTATION, { id, name, key, locations, definition: JSON.stringify(definition) })
+          .query(MUTATION, {
+            id,
+            name,
+            key,
+            locations,
+            definition: JSON.stringify(definition, null, 2),
+          })
           .then(res => console.log(res))
           .catch(err => console.log(err.response.errors[0].message));
       } else {

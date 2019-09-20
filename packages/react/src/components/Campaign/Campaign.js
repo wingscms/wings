@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
+import { dataToObject, removeEmptyProperties } from '../../../lib/utils';
 
 import Content from '../Content';
 import CampaignForm from './Form';
@@ -182,6 +183,12 @@ export default ({
       setSignatureGoal(campaign.signatureGoal);
     }
   };
+
+  const { intro, title, data: _data } = node;
+  const data = dataToObject(_data);
+  const { petitioncopy: _petitionCopy = {} } = data;
+  const petitionCopy = removeEmptyProperties(_petitionCopy);
+
   const {
     descriptionCollapse,
     descriptionExpand,
@@ -195,8 +202,9 @@ export default ({
     eventEndTime,
     eventFee,
     petitionCounterGoalText,
-  } = { ...DEFAULT_COPY, ...copy };
-  const { intro, title } = node;
+  } = { ...DEFAULT_COPY, ...copy, ...petitionCopy };
+  console.log(petitionCopy);
+
   const element = (
     <React.Fragment>
       <MainContainerOuter {...props} ref={campaignContainerRef}>

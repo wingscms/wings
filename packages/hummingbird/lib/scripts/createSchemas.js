@@ -26,7 +26,12 @@ wings
       const { name, key, locations, definition } = schemas[s];
       if (!current.schemas.find(x => x.key === key)) {
         wings
-          .query(MUTATION, { name, key, locations, definition: JSON.stringify(definition) })
+          .query(MUTATION, {
+            name,
+            key,
+            locations,
+            definition: JSON.stringify(definition, null, 2),
+          })
           .then(res => console.log(res))
           .catch(err => console.log(err.response.errors[0].message));
       } else {
