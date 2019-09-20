@@ -23,11 +23,13 @@ export function parseJSON(value, { defaultValue = {}, errorMessage = "Couldn't p
   return result;
 }
 
-export const removeEmptyProperties = obj =>
-  Object.keys(obj).reduce((a, c) => {
+export const removeEmptyProperties = (obj) => {
+  if (!Object.keys(obj)) return {};
+  return Object.keys(obj).reduce((a, c) => {
     const newObj = { ...a, [c]: obj[c] };
     if (!newObj[c]) {
       delete newObj[c];
     }
     return newObj;
   }, {});
+};
