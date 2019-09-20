@@ -1,21 +1,11 @@
 export default {
-  name: 'Petition Copy',
-  key: 'petitioncopy',
-  locations: ['node.petition'],
+  name: 'Signup Copy',
+  key: 'signupcopy',
+  locations: ['node.signup'],
   definition: {
     type: 'object',
     title: '',
     properties: {
-      counterMessage: {
-        type: 'string',
-        title: 'Counter number text:',
-        default: '',
-      },
-      petitionCounterGoalText: {
-        type: 'string',
-        title: 'Counter goal text:',
-        default: '',
-      },
       confirmedTitle: {
         type: 'string',
         title: 'Confirmed page title:',

@@ -77,57 +77,81 @@ const ShareTitle = styled.h2`
   }
 `;
 
-const FundraiserText = ({ status }) => {
+const FundraiserText = ({ status, copy }) => {
   switch (status) {
     case 'complete':
       return (
         <React.Fragment>
-          <FormattedMessage
-            id="hummingbird.CampaignConfirmed.fundraiserMain.successTitle"
-            description="Title of fundraiser payment success."
-            defaultMessage="Hurray!"
-            tagName={Title}
-          />
-          <FormattedMessage
-            id="hummingbird.CampaignConfirmed.fundraiserMain.successText"
-            description="Text of fundraiser payment success."
-            defaultMessage="Thank you. The payment was successful"
-            tagName={Text}
-          />
+          {copy.confirmedSuccessTitle ? (
+            <Title>{copy.confirmedSuccessTitle}</Title>
+          ) : (
+            <FormattedMessage
+              id="hummingbird.CampaignConfirmed.fundraiserMain.successTitle"
+              description="Title of fundraiser payment success."
+              defaultMessage="Hurray!"
+              tagName={Title}
+            />
+          )}
+          {copy.confirmedSuccessText ? (
+            <Text>{copy.confirmedSuccessText}</Text>
+          ) : (
+            <FormattedMessage
+              id="hummingbird.CampaignConfirmed.fundraiserMain.successText"
+              description="Text of fundraiser payment success."
+              defaultMessage="Thank you. The payment was successful"
+              tagName={Text}
+            />
+          )}
         </React.Fragment>
       );
     case 'pending':
       return (
         <React.Fragment>
-          <FormattedMessage
-            id="hummingbird.CampaignConfirmed.fundraiserMain.pendingTitle"
-            description="Title of fundraiser payment pending."
-            defaultMessage="Thanks for your contribution"
-            tagName={Title}
-          />
-          <FormattedMessage
-            id="hummingbird.CampaignConfirmed.fundraiserMain.pendingText"
-            description="Text of fundraiser payment pending."
-            defaultMessage="Thanks for your contribution. Your payment is still processing. Please check with your bank to verify your payment."
-            tagName={Text}
-          />
+          {copy.confirmedPendingTitle ? (
+            <Title>{copy.confirmedPendingTitle}</Title>
+          ) : (
+            <FormattedMessage
+              id="hummingbird.CampaignConfirmed.fundraiserMain.pendingTitle"
+              description="Title of fundraiser payment pending."
+              defaultMessage="Thanks for your contribution"
+              tagName={Title}
+            />
+          )}
+          {copy.confirmedPendingText ? (
+            <Text>{copy.confirmedPendingText}</Text>
+          ) : (
+            <FormattedMessage
+              id="hummingbird.CampaignConfirmed.fundraiserMain.pendingText"
+              description="Text of fundraiser payment pending."
+              defaultMessage="Thanks for your contribution. Your payment is still processing. Please check with your bank to verify your payment."
+              tagName={Text}
+            />
+          )}
         </React.Fragment>
       );
     default:
       return (
         <React.Fragment>
-          <FormattedMessage
-            id="hummingbird.CampaignConfirmed.fundraiserMain.failedTitle"
-            description="Title of fundraiser payment failure."
-            defaultMessage="Oh no!"
-            tagName={Title}
-          />
-          <FormattedMessage
-            id="hummingbird.CampaignConfirmed.fundraiserMain.failedText"
-            description="Text of fundraiser payment failure."
-            defaultMessage="Thanks for your interest. It seems like something went wrong with the payment. Please check with your bank and try again."
-            tagName={Text}
-          />
+          {copy.confirmedFailedTitle ? (
+            <Title>{copy.confirmedFailedTitle}</Title>
+          ) : (
+            <FormattedMessage
+              id="hummingbird.CampaignConfirmed.fundraiserMain.failedTitle"
+              description="Title of fundraiser payment failure."
+              defaultMessage="Oh no!"
+              tagName={Title}
+            />
+          )}
+          {copy.confirmedFailedText ? (
+            <Text>{copy.confirmedFailedText}</Text>
+          ) : (
+            <FormattedMessage
+              id="hummingbird.CampaignConfirmed.fundraiserMain.failedText"
+              description="Text of fundraiser payment failure."
+              defaultMessage="Thanks for your interest. It seems like something went wrong with the payment. Please check with your bank and try again."
+              tagName={Text}
+            />
+          )}
         </React.Fragment>
       );
   }
@@ -142,16 +166,29 @@ export default class CampaignConfirmed extends Component {
       },
       location,
     } = props;
-    const { petitioncopy = {} } = removeEmptyProperties(dataToObject(_data));
-    console.log(petitioncopy);
+    const {
+      petitioncopy = {},
+      eventcopy = {},
+      fundraisercopy = {},
+      signupcopy = {},
+    } = removeEmptyProperties(dataToObject(_data));
+    const copy = {
+      ...petitioncopy,
+      ...eventcopy,
+      ...fundraisercopy,
+      ...signupcopy,
+    };
     return (
       <Campaign.Content {...props}>
         {resourceType === 'node.fundraiser' ? (
-          <FundraiserText status={qs.parse(location.search.replace('?', '')).transaction_status} />
+          <FundraiserText
+            status={qs.parse(location.search.replace('?', '')).transaction_status}
+            copy={copy}
+          />
         ) : (
           <React.Fragment>
-            {petitioncopy.confirmedTitle ? (
-              <Title>{petitioncopy.confirmedTitle}</Title>
+            {copy.confirmedTitle ? (
+              <Title>{copy.confirmedTitle}</Title>
             ) : (
               <FormattedMessage
                 id="hummingbird.CampaignConfirmed.main.title"
@@ -160,8 +197,8 @@ export default class CampaignConfirmed extends Component {
                 tagName={Title}
               />
             )}
-            {petitioncopy.confirmedText ? (
-              <Text>{petitioncopy.confirmedText}</Text>
+            {copy.confirmedText ? (
+              <Text>{copy.confirmedText}</Text>
             ) : (
               <FormattedMessage
                 id="hummingbird.CampaignConfirmed.main.text"
@@ -173,8 +210,8 @@ export default class CampaignConfirmed extends Component {
           </React.Fragment>
         )}
         <ShareContainer>
-          {petitioncopy.confirmedShareTitle ? (
-            <ShareTitle>{petitioncopy.confirmedShareTitle}</ShareTitle>
+          {copy.confirmedShareTitle ? (
+            <ShareTitle>{copy.confirmedShareTitle}</ShareTitle>
           ) : (
             <FormattedMessage
               id="hummingbird.CampaignConfirmed.share.title"

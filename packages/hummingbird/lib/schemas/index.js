@@ -1,4 +1,7 @@
-import campaignCopy from './petitionCopy';
+import petitionCopy from './petitionCopy';
+import eventCopy from './eventCopy';
+import fundraiserCopy from './fundraiserCopy';
+import signupCopy from './signupCopy';
 
 let schemaOverrides = {};
 try {
@@ -10,6 +13,9 @@ try {
 }
 
 export default {
-  campaignCopy,
+  petitionCopy,
+  eventCopy,
+  fundraiserCopy,
+  signupCopy,
   ...schemaOverrides,
 };
