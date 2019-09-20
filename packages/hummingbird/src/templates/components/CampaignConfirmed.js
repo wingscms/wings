@@ -166,12 +166,9 @@ export default class CampaignConfirmed extends Component {
       },
       location,
     } = props;
-    const {
-      petitioncopy = {},
-      eventcopy = {},
-      fundraisercopy = {},
-      signupcopy = {},
-    } = dataToObject(_data);
+    const { petitioncopy = {}, eventcopy = {}, fundraisercopy = {}, signupcopy = {} } = _data
+      ? dataToObject(_data)
+      : {};
     const copy = removeEmptyProperties({
       ...petitioncopy,
       ...eventcopy,

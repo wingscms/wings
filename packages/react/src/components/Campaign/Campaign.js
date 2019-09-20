@@ -185,9 +185,9 @@ export default ({
   };
 
   const { intro, title, data: _data } = node;
-  const { petitioncopy = {}, eventcopy = {}, fundraisercopy = {}, signupcopy = {} } = dataToObject(
-    _data,
-  );
+  const { petitioncopy = {}, eventcopy = {}, fundraisercopy = {}, signupcopy = {} } = _data
+    ? dataToObject(_data)
+    : {};
   const schemaCopy = removeEmptyProperties({
     ...petitioncopy,
     ...eventcopy,
