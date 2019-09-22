@@ -63,7 +63,9 @@ module.exports = ({
             host: null,
           },
           production: {
-            policy: [{ userAgent: '*', allow: '/' }],
+            policy: [
+              { userAgent: '*', allow: '/', disallow: ['/*/*/confirmed', '/*/*/confirmed/'] },
+            ],
           },
         },
       },
