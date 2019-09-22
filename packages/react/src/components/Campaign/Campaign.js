@@ -185,9 +185,14 @@ export default ({
   };
 
   const { intro, title, data: _data } = node;
-  const { petitioncopy = {}, eventcopy = {}, fundraisercopy = {}, signupcopy = {} } = _data
-    ? dataToObject(_data)
-    : {};
+  const {
+    petitioncopy = {},
+    petitionoptions = {},
+    eventcopy = {},
+    fundraisercopy = {},
+    signupcopy = {},
+  } = _data ? dataToObject(_data) : {};
+
   const schemaCopy = removeEmptyProperties({
     ...petitioncopy,
     ...eventcopy,
@@ -210,6 +215,8 @@ export default ({
     petitionCounterGoalText,
   } = { ...DEFAULT_COPY, ...copy, ...schemaCopy };
 
+  const { disableCounter } = petitionoptions;
+
   const element = (
     <React.Fragment>
       <MainContainerOuter {...props} ref={campaignContainerRef}>
@@ -230,17 +237,19 @@ export default ({
             />
           </Proposition>
           <FormContainer id="campaign-form-container" ref={formContainerRef}>
-            {typeof signatureCount === 'number' && node.resourceType === 'node.petition' && (
-              <CounterContainer>
-                <PetitionCounter
-                  current={signatureCount}
-                  goal={signatureGoal}
-                  descriptionText={counterMessage}
-                  theme={theme}
-                  goalText={petitionCounterGoalText}
-                />
-              </CounterContainer>
-            )}
+            {!disableCounter &&
+              typeof signatureCount === 'number' &&
+              node.resourceType === 'node.petition' && (
+                <CounterContainer>
+                  <PetitionCounter
+                    current={signatureCount}
+                    goal={signatureGoal}
+                    descriptionText={counterMessage}
+                    theme={theme}
+                    goalText={petitionCounterGoalText}
+                  />
+                </CounterContainer>
+              )}
             <FormContainerInner>
               <CampaignForm
                 type={resourceType.split('.')[1]}
