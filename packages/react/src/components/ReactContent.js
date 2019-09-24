@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import includes from 'lodash.includes';
-import mrr from '@dailybeast/mobiledoc-react-renderer';
+import Renderer03 from '@dailybeast/mobiledoc-react-renderer/dist/renderers/0-3';
+import Renderer from '@dailybeast/mobiledoc-react-renderer';
 import { allCards, cards } from '../cards';
 import { slugify } from '../lib/utils';
 
@@ -10,7 +11,15 @@ const cardProps = Object.keys(cards).reduce(
   {},
 );
 
-const Renderer = mrr;
+Renderer03.prototype.parseProps = function parseProps(attrss) {
+  if (attrss) {
+    return {
+      [attrss[0]]: attrss[1],
+      [attrss[2]]: attrss[3],
+    };
+  }
+  return null;
+};
 
 const mergeCards = (base, overrides) => {
   const names = overrides.map(({ name }) => name);
