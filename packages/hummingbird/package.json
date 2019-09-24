@@ -3,7 +3,7 @@
     "test": "jest"
   },
   "name": "@wingscms/hummingbird",
-  "version": "0.35.3",
+  "version": "0.36.0",
   "dependencies": {
     "@wingscms/crane": "^0.15.1",
     "@wingscms/react": "^0.22.0",

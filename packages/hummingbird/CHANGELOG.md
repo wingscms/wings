@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.36.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.35.3...@wingscms/hummingbird@0.36.0) (2019-09-24)
+
+
+### Features
+
+* add disallow rule for campaign confirmed pages in robots.txt ([#254](https://github.com/wingscms/wings/issues/254)) ([bc4831c](https://github.com/wingscms/wings/commit/bc4831c))
+* add event time ([#253](https://github.com/wingscms/wings/issues/253)) ([de11faa](https://github.com/wingscms/wings/commit/de11faa))
+
+
+
+
+
 ## [0.35.3](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.35.2...@wingscms/hummingbird@0.35.3) (2019-09-16)
 
 **Note:** Version bump only for package @wingscms/hummingbird
