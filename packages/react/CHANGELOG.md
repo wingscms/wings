@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.21.0...@wingscms/react@0.22.0) (2019-09-16)
+
+
+### Features
+
+* multiple attributes support for Mobiledoc React renderer ([9fb64ec](https://github.com/wingscms/wings/commit/9fb64ec))
+
+
+
+
+
 # [0.21.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.20.0...@wingscms/react@0.21.0) (2019-09-06)
 
 
