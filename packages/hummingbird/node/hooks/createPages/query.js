@@ -4,6 +4,13 @@ fragment NodeFields on Wings_Node {
   title
   resourceType
   slug
+  featured {
+    title
+    description
+    image {
+      url
+    }
+  }
   locale {
     id
     name
@@ -40,23 +47,33 @@ fragment NodeFields on Wings_Node {
   status
   nodeType
   platforms {
-    all {
+    search {
       title
       description
-      imageUrl
     }
     facebook {
       title
       description
-      imageUrl
+      image {
+        url
+      }
     }
     twitter {
       title
       description
-      imageUrl
+      image {
+        url
+      }
     }
     whatsapp {
       text
+    }
+    meta {
+      tag
+      attributes {
+        key
+        value
+      }
     }
   }
 }

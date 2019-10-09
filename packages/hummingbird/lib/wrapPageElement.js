@@ -79,49 +79,24 @@ const PageWrapper = ({
             <link key={trans.locale} rel="alternate" hrefLang={trans.locale} href={trans.path} />
           ))}
         <link rel="icon" type="image/ico" sizes="16x16" href={theme.faviconImageUrl} />
-        {platforms.all && platforms.all.description ? (
-          <meta name="description" content={platforms.all.description} />
-        ) : null}
-        {platforms.facebook && platforms.facebook.title ? (
-          <meta
-            property="og:title"
-            content={generateTitle(title, siteTitle, 'facebook', platforms)}
-          />
-        ) : null}
-        {platforms.facebook && platforms.facebook.title ? (
-          <meta
-            property="fb:title"
-            content={generateTitle(title, siteTitle, 'facebook', platforms)}
-          />
-        ) : null}
-        {platforms.facebook && platforms.facebook.description ? (
-          <meta property="og:description" content={platforms.facebook.description} />
-        ) : platforms.all && platforms.all.description ? (
-          <meta property="og:description" content={platforms.all.description} />
-        ) : null}
-        {platforms.facebook && platforms.facebook.description ? (
-          <meta property="fb:description" content={platforms.facebook.description} />
-        ) : null}
-        {platforms.facebook && platforms.facebook.imageUrl ? (
-          <meta property="og:image" content={platforms.facebook.imageUrl} />
-        ) : platforms.all && platforms.all.imageUrl ? (
-          <meta property="og:image" content={platforms.all.imageUrl} />
-        ) : null}
-        {platforms.facebook && platforms.facebook.imageUrl ? (
-          <meta property="fb:image" content={platforms.facebook.imageUrl} />
-        ) : null}
-        {platforms.twitter && platforms.twitter.title ? (
-          <meta
-            property="twitter:title"
-            content={generateTitle(title, siteTitle, 'twitter', platforms)}
-          />
-        ) : null}
-        {platforms.twitter && platforms.twitter.description ? (
-          <meta property="twitter:description" content={platforms.twitter.description} />
-        ) : null}
-        {platforms.twitter && platforms.twitter.imageUrl ? (
-          <meta property="twitter:image" content={platforms.twitter.imageUrl} />
-        ) : null}
+        <meta name="description" content={platforms.search.description} />
+        <meta
+          property="og:title"
+          content={generateTitle(title, siteTitle, 'facebook', platforms)}
+        />
+        <meta
+          property="fb:title"
+          content={generateTitle(title, siteTitle, 'facebook', platforms)}
+        />
+        <meta property="fb:description" content={platforms.facebook.description} />
+        <meta property="og:image" content={platforms.facebook.image.url} />
+        <meta property="fb:image" content={platforms.facebook.image.url} />
+        <meta
+          property="twitter:title"
+          content={generateTitle(title, siteTitle, 'twitter', platforms)}
+        />
+        <meta property="twitter:description" content={platforms.twitter.description} />
+        <meta property="twitter:image" content={platforms.twitter.image.url} />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <IntlProvider locale={localeId} messages={messages[language]}>
