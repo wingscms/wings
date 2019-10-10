@@ -4,6 +4,13 @@ fragment NodeFields on Wings_Node {
   title
   resourceType
   slug
+  featured {
+    title
+    description
+    image {
+      url
+    }
+  }
   locale {
     id
     name
@@ -40,23 +47,33 @@ fragment NodeFields on Wings_Node {
   status
   nodeType
   platforms {
-    all {
+    search {
       title
       description
-      imageUrl
     }
     facebook {
       title
       description
-      imageUrl
+      image {
+        url
+      }
     }
     twitter {
       title
       description
-      imageUrl
+      image {
+        url
+      }
     }
     whatsapp {
       text
+    }
+    meta {
+      tag
+      attributes {
+        key
+        value
+      }
     }
   }
 }
@@ -79,7 +96,7 @@ fragment CampaignFields on Wings_Campaign {
 
 {
   wings {
-    articles: entries(type: "article") {
+    articles: entries(selector: { typeId: { eq: "article" } }, first: 0) {
       edges {
         node {
           ...NodeFields
@@ -90,7 +107,7 @@ fragment CampaignFields on Wings_Campaign {
         }
       }
     }
-    pages: entries(type: "page") {
+    pages: entries(selector: { typeId: { eq: "page" } }, first: 0) {
       edges {
         node {
           ...NodeFields
@@ -101,7 +118,7 @@ fragment CampaignFields on Wings_Campaign {
         }
       }
     }
-    events {
+    events(first: 0) {
       edges {
         node {
           ...NodeFields
@@ -125,7 +142,7 @@ fragment CampaignFields on Wings_Campaign {
         }
       }
     }
-    signups {
+    signups(first: 0) {
       edges {
         node {
           ...NodeFields
@@ -133,7 +150,7 @@ fragment CampaignFields on Wings_Campaign {
         }
       }
     }
-    petitions {
+    petitions(first: 0) {
       edges {
         node {
           ...NodeFields
@@ -143,7 +160,7 @@ fragment CampaignFields on Wings_Campaign {
         }
       }
     }
-    fundraisers {
+    fundraisers(first: 0) {
       edges {
         node {
           ...NodeFields

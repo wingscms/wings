@@ -100,7 +100,6 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
         homeNodeId,
       });
       console.log(`[hummingbird] found ${nodes.length} of ${resourceType}`);
-
       // GENERATE ARTICLES
       nodes.forEach((node) => {
         const { isHome } = node;
