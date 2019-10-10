@@ -89,14 +89,23 @@ const PageWrapper = ({
           content={generateTitle(title, siteTitle, 'facebook', platforms)}
         />
         <meta property="fb:description" content={platforms.facebook.description} />
-        <meta property="og:image" content={platforms.facebook.image.url} />
-        <meta property="fb:image" content={platforms.facebook.image.url} />
+        <meta
+          property="og:image"
+          content={platforms.facebook.image && platforms.facebook.image.url}
+        />
+        <meta
+          property="fb:image"
+          content={platforms.facebook.image && platforms.facebook.image.url}
+        />
         <meta
           property="twitter:title"
           content={generateTitle(title, siteTitle, 'twitter', platforms)}
         />
         <meta property="twitter:description" content={platforms.twitter.description} />
-        <meta property="twitter:image" content={platforms.twitter.image.url} />
+        <meta
+          property="twitter:image"
+          content={platforms.twitter.image && platforms.twitter.image.url}
+        />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <IntlProvider locale={localeId} messages={messages[language]}>
