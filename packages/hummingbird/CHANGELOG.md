@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.37.1](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.37.0...@wingscms/hummingbird@0.37.1) (2019-10-11)
+
+
+### Bug Fixes
+
+* platforms image null check ([#258](https://github.com/wingscms/wings/issues/258)) ([dfd5207](https://github.com/wingscms/wings/commit/dfd5207))
+
+
+
+
+
 # [0.37.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.36.0...@wingscms/hummingbird@0.37.0) (2019-10-10)
 
 
