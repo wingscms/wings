@@ -33,14 +33,16 @@ const SIGNUP_QUERY = `
 const SIGNUP_MUTATION = `
   mutation SubmitSignup($input: SubmitSignupInput!) {
     submitSignup(input: $input) {
-      id
+      submission {
+        id
+      }
     }
   }
 `;
 
 const PETITION_QUERY = `
-  query ($id: String!) {
-    campaign: petition(id: $id) {
+  query ($selector: PetitionSelectorInput) {
+    campaign: petition(selector: $selector) {
       id
       title
       submissionSchema
@@ -63,16 +65,18 @@ const PETITION_QUERY = `
 `;
 
 const PETITION_MUTATION = `
-  mutation PetitionSignUp($id: String!, $input: SignPetitionInput!) {
-    signPetition(id: $id, input: $input) {
-      id
+  mutation SubmitPetition($input: SubmitPetitionInput!) {
+    submitPetition(input: $input) {
+      signature {
+        id
+      }
     }
   }
 `;
 
 const EVENT_QUERY = `
-  query ($id: String!) {
-    campaign: event(id: $id) {
+  query ($selector: EventSelectorInput) {
+    campaign: event(selector: $selector) {
       id
       title
       submissionSchema
@@ -108,16 +112,18 @@ const EVENT_QUERY = `
 `;
 
 const EVENT_MUTATION = `
-  mutation EventSignUp($id: String!, $input: EventSignUpInput!) {
-    signUpForEvent(id: $id, input: $input) {
-      id
+  mutation SubmitEvent($input: SubmitEventInput!) {
+    submitEvent(input: $input) {
+      attendee {
+        id
+      }
     }
   }
 `;
 
 const FUNDRAISER_QUERY = `
-  query ($id: String) {
-    campaign: fundraiser(id: $id) {
+  query ($selector: FundraiserSelectorInput) {
+    campaign: fundraiser(selector: $selector) {
       id
       title
       submissionSchema
@@ -138,12 +144,14 @@ const FUNDRAISER_QUERY = `
 `;
 
 const FUNDRAISER_MUTATION = `
-  mutation Donate($id: String, $input: DonateInput!) {
-    donation: donate(id: $id, input: $input) {
-      id
-      order {
+  mutation SubmitFundraiser($input: SubmitFundraiserInput!) {
+    submitFundraiser(input: $input) {
+      donation {
         id
-        paymentUrl
+        order {
+          id
+          paymentUrl
+        }
       }
     }
   }
@@ -384,20 +392,11 @@ class CampaignForm extends Component {
       let formSchema;
       let failed = false;
       try {
-        const variables =
-          this.props.type === 'signup'
-            ? {
-              selector: {
-                id: this.props.id,
-              },
-            }
-            : {
-              id: this.props.id,
-            };
-        const { campaign: c } = await this.props.wings.query(
-          this.query() + this.fragment(),
-          variables,
-        );
+        const { campaign: c } = await this.props.wings.query(this.query() + this.fragment(), {
+          selector: {
+            id: { eq: this.props.id },
+          },
+        });
         campaign = c;
         formSchema = JSON.parse(c.submissionSchema);
       } catch (e) {
@@ -426,11 +425,8 @@ class CampaignForm extends Component {
 
     try {
       const res = await this.props.wings.query(this.mutation(), {
-        id: this.props.id,
         input: {
-          ...(this.props.type === 'signup' && {
-            id: this.props.id,
-          }),
+          id: this.props.id,
           data: JSON.stringify(formData),
           ...(this.props.type === 'fundraiser' && {
             amount,
