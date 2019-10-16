@@ -6192,15 +6192,6 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-create-react-class@^15.6.2:
-  version "15.6.3"
-  resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.3.tgz#2d73237fb3f970ae6ebe011a9e66f46dbca80036"
-  integrity sha512-M+/3Q6E6DLO6Yx3OwrWjwHBnvfXXYA7W+dFjt/ZDBemHO1DDZhsalX/NUtnTYclN6GfnBDRh4qRHjcDHmlJBJg==
-  dependencies:
-    fbjs "^0.8.9"
-    loose-envify "^1.3.1"
-    object-assign "^4.1.1"
-
 create-react-context@<=0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/create-react-context/-/create-react-context-0.2.2.tgz#9836542f9aaa22868cd7d4a6f82667df38019dca"
@@ -8016,7 +8007,7 @@ fbjs-css-vars@^1.0.0:
   resolved "https://registry.yarnpkg.com/fbjs-css-vars/-/fbjs-css-vars-1.0.2.tgz#216551136ae02fe255932c3ec8775f18e2c078b8"
   integrity sha512-b2XGFAFdWZWg0phtAWLHCk836A1Xann+I+Dgd3Gk64MHKZO44FfoD1KxyvbSh0qZsIoXQGGlVztIY+oitJPpRQ==
 
-fbjs@^0.8.0, fbjs@^0.8.1, fbjs@^0.8.4, fbjs@^0.8.9:
+fbjs@^0.8.0, fbjs@^0.8.1, fbjs@^0.8.4:
   version "0.8.17"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.17.tgz#c4d598ead6949112653d6588b01a5cdcd9f90fdd"
   integrity sha1-xNWY6taUkRJlPWWIsBpc3Nn5D90=
@@ -14798,14 +14789,12 @@ react-mailchimp-subscribe@^2.1.0:
     prop-types "^15.5.10"
     to-querystring "^1.0.4"
 
-react-mobiledoc-editor@0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/react-mobiledoc-editor/-/react-mobiledoc-editor-0.3.1.tgz#c8d48bc276b419306a89e249bbc95bb804dfd306"
-  integrity sha512-rI2J8q7ZtNbyQNRr9/X07bpGn45bIt9nDyXR+55pebVtVe0WYmKnf5q5ueGepAp3qdYzgjmzMlRQVto5oQrBPQ==
+react-mobiledoc-editor@0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/react-mobiledoc-editor/-/react-mobiledoc-editor-0.8.0.tgz#792abebad4ce8b65e13de6d543f857965093a54d"
+  integrity sha512-GZEwANPuThCFPVR5lakvvFtN/g4wQxsj+U3I/gLgekbkSRhLoKv6RRdHIhamHyzWU9Gb4hggT7NoajLnAGVINw==
   dependencies:
-    classnames "^2.2.5"
-    create-react-class "^15.6.2"
-    prop-types "^15.6.0"
+    prop-types "^15.6.2"
 
 react-modal@^3.8.1:
   version "3.8.1"
