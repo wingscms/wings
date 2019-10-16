@@ -54,9 +54,13 @@ export default ({
   // Forms
   formBackgroundColor,
   formTextColor,
+  formLinkTextColor,
+  formLinkLineColor,
   // Campaigns
   campaignFormBackgroundColor,
   campaignFormTextColor,
+  campaignFormLinkTextColor,
+  campaignFormLinkLineColor,
   counterBackgroundColor,
   counterTextColor,
 
@@ -179,6 +183,15 @@ export default ({
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
     }),
+  formLinkTextColor:
+    formLinkTextColor ||
+    formTextColor ||
+    getContrastColor({
+      backgroundColor: formBackgroundColor || primaryColor,
+      colors: { light: textColor, dark: textColorDark },
+      threshold: contrastLuminanceThreshold,
+    }),
+  formLinkLineColor: secondaryColor || formLinkLineColor,
   // Campaigns
   campaignFormBackgroundColor: campaignFormBackgroundColor || formBackgroundColor || primaryColor,
   campaignFormTextColor:
@@ -189,6 +202,17 @@ export default ({
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
     }),
+  campaignFormLinkTextColor:
+    campaignFormLinkTextColor ||
+    formLinkTextColor ||
+    campaignFormTextColor ||
+    formTextColor ||
+    getContrastColor({
+      backgroundColor: formBackgroundColor || primaryColor,
+      colors: { light: textColor, dark: textColorDark },
+      threshold: contrastLuminanceThreshold,
+    }),
+  campaignFormLinkLineColor: campaignFormLinkLineColor || formLinkLineColor || secondaryColor,
   counterBackgroundColor: counterBackgroundColor || backgroundColor,
   counterTextColor:
     counterTextColor ||

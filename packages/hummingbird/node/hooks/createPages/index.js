@@ -63,6 +63,11 @@ const resources = [
     template: '../../../src/templates/Page',
   },
   {
+    resourceType: 'node.signup',
+    field: 'signups',
+    template: '../../../src/templates/Campaign',
+  },
+  {
     resourceType: 'node.petition',
     field: 'petitions',
     template: '../../../src/templates/Campaign',
@@ -95,7 +100,6 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
         homeNodeId,
       });
       console.log(`[hummingbird] found ${nodes.length} of ${resourceType}`);
-
       // GENERATE ARTICLES
       nodes.forEach((node) => {
         const { isHome } = node;
@@ -113,7 +117,9 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
               : require.resolve(template),
           context,
         });
-        if (['petition', 'event', 'fundraiser'].indexOf(node.resourceType.split('.')[1]) < 0) {
+        if (
+          ['signup', 'petition', 'event', 'fundraiser'].indexOf(node.resourceType.split('.')[1]) < 0
+        ) {
           return;
         }
         createPage({

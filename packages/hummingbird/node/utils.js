@@ -3,18 +3,15 @@ const filterByLocale = (locale, node) => !!(locale === node.locale);
 const isTranslation = ({ slug, locale }) => node =>
   locale.id !== node.locale.id && slug === node.slug;
 
-const makeShareUrls = (platforms, url) => {
-  const { all, facebook, twitter } = platforms;
+const makeShareUrls = ({ search, facebook, twitter }, url) => {
   const res = {
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
     twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(
       url,
-    )}&text=${encodeURIComponent(twitter.description || all.description)}`,
-    whatsapp: `whatsapp://send?text=${encodeURIComponent(
-      `${facebook.description || all.description} ${url}`,
-    )}`,
-    email: `mailto:?subject=${encodeURIComponent(all.title)}&body=${encodeURIComponent(
-      `${facebook.description || all.description} ${url}`,
+    )}&text=${encodeURIComponent(twitter.description)}`,
+    whatsapp: `whatsapp://send?text=${encodeURIComponent(`${facebook.description} ${url}`)}`,
+    email: `mailto:?subject=${encodeURIComponent(search.title)}&body=${encodeURIComponent(
+      `${facebook.description || search.description} ${url}`,
     )}`,
   };
   return res;

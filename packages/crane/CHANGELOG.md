@@ -3,6 +3,55 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.1](https://github.com/wingscms/wings/compare/@wingscms/crane@0.15.0...@wingscms/crane@0.15.1) (2019-09-06)
+
+
+### Bug Fixes
+
+* add asterisk to checkbox labels when required ([#246](https://github.com/wingscms/wings/issues/246)) ([4660821](https://github.com/wingscms/wings/commit/4660821))
+
+
+
+
+
+# [0.15.0](https://github.com/wingscms/wings/compare/@wingscms/crane@0.14.5...@wingscms/crane@0.15.0) (2019-08-16)
+
+
+### Bug Fixes
+
+* change font-size of checkbox label ([e0cc68a](https://github.com/wingscms/wings/commit/e0cc68a))
+
+
+### Features
+
+* add support for privacy policy / terms urls in campaign form ([e568a7e](https://github.com/wingscms/wings/commit/e568a7e))
+
+
+
+
+
+## [0.14.5](https://github.com/wingscms/wings/compare/@wingscms/crane@0.14.4...@wingscms/crane@0.14.5) (2019-08-06)
+
+
+### Bug Fixes
+
+* improve Q&A styling ([#238](https://github.com/wingscms/wings/issues/238)) ([97b867e](https://github.com/wingscms/wings/commit/97b867e))
+
+
+
+
+
+## [0.14.4](https://github.com/wingscms/wings/compare/@wingscms/crane@0.14.3...@wingscms/crane@0.14.4) (2019-08-01)
+
+
+### Bug Fixes
+
+* add arrow icon to form select field ([#236](https://github.com/wingscms/wings/issues/236)) ([73c8373](https://github.com/wingscms/wings/commit/73c8373))
+
+
+
+
+
 ## [0.14.3](https://github.com/wingscms/wings/compare/@wingscms/crane@0.14.2...@wingscms/crane@0.14.3) (2019-07-24)
 
 

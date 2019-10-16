@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Icons from '../../img/svg/social';
+import Icons from '../../img/svg/icons';
 
 const ShareContainer = styled.div`
   display: inline-block;

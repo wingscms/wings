@@ -1,4 +1,4 @@
 import React from 'react';
-import Template from './components/CampaignConfirmed';
+import { CamapaignConfirmedTemplate } from '@wingscms/hummingbird';
 
-export default props => <Template {...props} />;
+export default props => <CamapaignConfirmedTemplate {...props} />;
