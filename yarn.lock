@@ -12404,28 +12404,28 @@ mkdirp@0.5.1, mkdirp@0.5.x, mkdirp@^0.5, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0
   dependencies:
     minimist "0.0.8"
 
-mobiledoc-dom-renderer@0.6.5:
-  version "0.6.5"
-  resolved "https://registry.yarnpkg.com/mobiledoc-dom-renderer/-/mobiledoc-dom-renderer-0.6.5.tgz#56c0302c4f9c30840ab5b9b20dfe905aed1e437b"
-  integrity sha1-VsAwLE+cMIQKtbmyDf6QWu0eQ3s=
+mobiledoc-dom-renderer@0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/mobiledoc-dom-renderer/-/mobiledoc-dom-renderer-0.7.0.tgz#53ab5f14dd612b16f03513390e5cbcc2b89f6979"
+  integrity sha512-A+gT6D4Ru3DKY7ZYOBRORmwhRJ7rDj2vy75D2dWuZS5NgX0mCmGs0yN7qs48YlxvfCif8RFpYsaaPg6Kc3MdJg==
 
 mobiledoc-dom-renderer@^0.6.5:
   version "0.6.6"
   resolved "https://registry.yarnpkg.com/mobiledoc-dom-renderer/-/mobiledoc-dom-renderer-0.6.6.tgz#4161e7b74dbf82b15c637385ecc3135bc663d149"
   integrity sha512-zROTcb/LJyH9udDO1d3zludyP4cOaBdb6HtueP6yXWOxKy6hxr/mM6tgJTVOfYTRMThNytctOAuDG703dMMbdg==
 
-mobiledoc-kit@^0.10.20:
-  version "0.10.21"
-  resolved "https://registry.yarnpkg.com/mobiledoc-kit/-/mobiledoc-kit-0.10.21.tgz#71b165f7e61bcc242f99cb0e37209f853fcf86c2"
-  integrity sha1-cbFl9+YbzCQvmcsONyCfhT/PhsI=
+mobiledoc-kit@^0.12.0:
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/mobiledoc-kit/-/mobiledoc-kit-0.12.1.tgz#a0341deae172ed774c8205fcace72340e978c59b"
+  integrity sha512-2XaGbGlJ5/DGhOlFEys7zVylFhCYL4FbOkXOzLxrFXMDnhBuP3+4YAwNFaLKOUlZ0a+UL6m2S3I8MZwe37xRAg==
   dependencies:
-    mobiledoc-dom-renderer "0.6.5"
-    mobiledoc-text-renderer "0.3.2"
+    mobiledoc-dom-renderer "0.7.0"
+    mobiledoc-text-renderer "0.4.0"
 
-mobiledoc-text-renderer@0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/mobiledoc-text-renderer/-/mobiledoc-text-renderer-0.3.2.tgz#126a167a6cf8b6cd7e58c85feb18043603834580"
-  integrity sha1-EmoWemz4ts1+WMhf6xgENgODRYA=
+mobiledoc-text-renderer@0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/mobiledoc-text-renderer/-/mobiledoc-text-renderer-0.4.0.tgz#473fbe50aa6cde2c3b449752f3b984834dc824d2"
+  integrity sha512-+Tzfo0hhUFxS0n5FWZ0nf6WUrvnVmsxaIdq0CyeLYD1lk8oW2ml+6WLdeLlzKM5OYYi3PWV6NR9HCUG01cdvWQ==
 
 modify-values@^1.0.0:
   version "1.0.1"
