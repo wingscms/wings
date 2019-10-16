@@ -43,16 +43,6 @@ const formMessages = defineMessages({
     description: 'Newslettter field label',
     defaultMessage: 'Stay up to date',
   },
-  termsFieldLabel: {
-    id: 'hummingbird.CampaignForm.termsField.label',
-    description: 'Terms field label',
-    defaultMessage: 'Agree to our terms & conditions',
-  },
-  privacyConsentFieldLabel: {
-    id: 'hummingbird.CampaignForm.privacyConsentField.label',
-    description: 'Privacy consent field label',
-    defaultMessage: 'Agree to our privacy policy',
-  },
   campaignConfirmText: {
     id: 'hummingbird.Campaign.confirm.text',
     description: 'Campaign confirm step text',
@@ -81,6 +71,28 @@ const formMessages = defineMessages({
       'Something went wrong with submitting the form. Try again or report the issue to us.',
   },
 });
+
+const dynamicFormMessages = (node) => {
+  if (!node) return [];
+  return [
+    {
+      key: 'termsFieldLabel',
+      message: {
+        id: 'hummingbird.CampaignForm.termsField.label',
+        description: 'Terms field label',
+      },
+      values: { url: (node.settings ? node.settings.legal.terms.url : '') || '/terms' },
+    },
+    {
+      key: 'privacyConsentFieldLabel',
+      message: {
+        id: 'hummingbird.CampaignForm.privacyConsentField.label',
+        description: 'Privacy consent field label',
+      },
+      values: { url: (node.settings ? node.settings.legal.privacyPolicy.url : '') || '/privacy' },
+    },
+  ];
+};
 
 const campaignMessages = defineMessages({
   descriptionCollapse: {
@@ -181,7 +193,11 @@ export default (intl) => {
       petitionCounterGoalText: signatureGoal ? intl.formatNumber(signatureGoal) : null,
     },
     formProps: {
-      copy: formatMessages({ staticMessages: formMessages, intl }),
+      copy: formatMessages({
+        staticMessages: formMessages,
+        dynamicMessages: dynamicFormMessages(node),
+        intl,
+      }),
       onLoad: n => setNode(n),
     },
   };

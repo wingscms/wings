@@ -12,6 +12,7 @@ const StyledLabel = styled.label`
   user-select: none;
   height: 20px;
   padding-left: 30px;
+  font-size: 16px;
   display: inline-table;
   &:after {
     position: absolute;
@@ -75,9 +76,11 @@ export default props => {
         onBlur={onBlur && (event => onBlur(id, event.target.checked))}
         onFocus={onFocus && (event => onFocus(id, event.target.checked))}
       />
-      <StyledLabel className={value ? 'checked' : ''} htmlFor={id}>
-        {label}
-      </StyledLabel>
+      <StyledLabel
+        className={value ? 'checked' : ''}
+        htmlFor={id}
+        dangerouslySetInnerHTML={{ __html: `${label}${required ? '*' : ''}` }}
+      />
     </div>
   );
 };

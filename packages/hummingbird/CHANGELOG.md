@@ -3,6 +3,153 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.37.1](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.37.0...@wingscms/hummingbird@0.37.1) (2019-10-11)
+
+
+### Bug Fixes
+
+* platforms image null check ([#258](https://github.com/wingscms/wings/issues/258)) ([dfd5207](https://github.com/wingscms/wings/commit/dfd5207))
+
+
+
+
+
+# [0.37.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.36.0...@wingscms/hummingbird@0.37.0) (2019-10-10)
+
+
+### Features
+
+* update HB for API changes ([#257](https://github.com/wingscms/wings/issues/257)) ([ecb75d9](https://github.com/wingscms/wings/commit/ecb75d9))
+
+
+
+
+
+# [0.36.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.35.3...@wingscms/hummingbird@0.36.0) (2019-09-24)
+
+
+### Features
+
+* add disallow rule for campaign confirmed pages in robots.txt ([#254](https://github.com/wingscms/wings/issues/254)) ([bc4831c](https://github.com/wingscms/wings/commit/bc4831c))
+* add event time ([#253](https://github.com/wingscms/wings/issues/253)) ([de11faa](https://github.com/wingscms/wings/commit/de11faa))
+
+
+
+
+
+## [0.35.3](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.35.2...@wingscms/hummingbird@0.35.3) (2019-09-16)
+
+**Note:** Version bump only for package @wingscms/hummingbird
+
+
+
+
+
+## [0.35.2](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.35.1...@wingscms/hummingbird@0.35.2) (2019-09-13)
+
+
+### Bug Fixes
+
+* fix nested tags in Helmet bug ([#250](https://github.com/wingscms/wings/issues/250)) ([bda81e4](https://github.com/wingscms/wings/commit/bda81e4))
+
+
+
+
+
+## [0.35.1](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.35.0...@wingscms/hummingbird@0.35.1) (2019-09-13)
+
+
+### Bug Fixes
+
+* fix priority and order of platforms tags (facebook > search/all) ([#249](https://github.com/wingscms/wings/issues/249)) ([ef1cb39](https://github.com/wingscms/wings/commit/ef1cb39))
+
+
+
+
+
+# [0.35.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.34.0...@wingscms/hummingbird@0.35.0) (2019-09-06)
+
+
+### Features
+
+* improve styling for [campaign] form links and theming options ([#247](https://github.com/wingscms/wings/issues/247)) ([985aa37](https://github.com/wingscms/wings/commit/985aa37))
+
+
+
+
+
+# [0.34.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.33.0...@wingscms/hummingbird@0.34.0) (2019-08-21)
+
+
+### Features
+
+* add signup campaign support ([#244](https://github.com/wingscms/wings/issues/244)) ([2f47570](https://github.com/wingscms/wings/commit/2f47570))
+
+
+
+
+
+# [0.33.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.32.0...@wingscms/hummingbird@0.33.0) (2019-08-16)
+
+
+### Bug Fixes
+
+* **hummingbird:** add default privacy/terms urls for campaign form ([2562528](https://github.com/wingscms/wings/commit/2562528))
+* also default urls when url is empty ([b07a369](https://github.com/wingscms/wings/commit/b07a369))
+* url defaulting behavior ([75ba7cd](https://github.com/wingscms/wings/commit/75ba7cd))
+
+
+### Features
+
+* add support for privacy policy / terms urls in campaign form ([e568a7e](https://github.com/wingscms/wings/commit/e568a7e))
+
+
+
+
+
+# [0.32.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.31.4...@wingscms/hummingbird@0.32.0) (2019-08-06)
+
+
+### Bug Fixes
+
+* spacing fixes ([#234](https://github.com/wingscms/wings/issues/234)) ([51994c0](https://github.com/wingscms/wings/commit/51994c0))
+
+
+### Features
+
+* export CampaignConfirmedTemplate ([#240](https://github.com/wingscms/wings/issues/240)) ([00a1bba](https://github.com/wingscms/wings/commit/00a1bba))
+
+
+
+
+
+## [0.31.4](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.31.3...@wingscms/hummingbird@0.31.4) (2019-08-01)
+
+
+### Bug Fixes
+
+* temporarily hide time in event details ([#237](https://github.com/wingscms/wings/issues/237)) ([e312bf0](https://github.com/wingscms/wings/commit/e312bf0))
+
+
+
+
+
+## [0.31.3](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.31.2...@wingscms/hummingbird@0.31.3) (2019-08-01)
+
+**Note:** Version bump only for package @wingscms/hummingbird
+
+
+
+
+
+## [0.31.2](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.31.1...@wingscms/hummingbird@0.31.2) (2019-07-29)
+
+**Note:** Version bump only for package @wingscms/hummingbird
+
+
+
+
+
 ## [0.31.1](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.31.0...@wingscms/hummingbird@0.31.1) (2019-07-25)
 
 **Note:** Version bump only for package @wingscms/hummingbird
