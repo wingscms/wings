@@ -32,7 +32,7 @@
     "gatsby-source-graphql": "^2.0.17",
     "in-viewport": "^3.6.0",
     "node-fetch": "^1.7.3",
-    "polished": "^1.9.3",
+    "polished": "3.4.1",
     "qs": "^6.7.0",
     "radium": "^0.25.1",
     "random-id": "0.0.2",
