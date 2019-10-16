@@ -29,7 +29,7 @@
     "polished": "^1.9.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-feather": "^1.1.3",
+    "react-feather": "^2.0.0",
     "react-mailchimp-subscribe": "^2.1.0",
     "recompose": "^0.26.0"
   },
