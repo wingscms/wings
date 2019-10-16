@@ -7,6 +7,13 @@ workflow "Build, test, publish" {
   on = "push"
 }
 
+workflow "New workflow" {
+  resolves = [
+    "Test"
+  ]
+  on = "push"
+}
+
 action "Not Tag" {
   uses = "actions/bin/filter@3c0b4f0e63ea54ea5df2914b4fabf383368cd0da"
   args = "not tag"
