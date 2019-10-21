@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.37.2](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.37.1...@wingscms/hummingbird@0.37.2) (2019-10-16)
+
+
+### Bug Fixes
+
+* default to empty node ([7a7a38f](https://github.com/wingscms/wings/commit/7a7a38f0d0448f3ca9f52ec4e352c13b4d8c1340))
+* hide menu/burger when no menu items or no menu set ([#226](https://github.com/wingscms/wings/issues/226)) ([9b5f5d2](https://github.com/wingscms/wings/commit/9b5f5d224dccbe35a2feeada83ecd8d8b3158618))
+
+
+
+
+
 ## [0.37.1](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.37.0...@wingscms/hummingbird@0.37.1) (2019-10-11)
 
 

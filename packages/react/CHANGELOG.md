@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.23.1](https://github.com/wingscms/wings/compare/@wingscms/react@0.23.0...@wingscms/react@0.23.1) (2019-10-16)
+
+**Note:** Version bump only for package @wingscms/react
+
+
+
+
+
 # [0.23.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.22.0...@wingscms/react@0.23.0) (2019-10-10)
 
 
