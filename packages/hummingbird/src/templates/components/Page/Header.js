@@ -44,7 +44,6 @@ const Title = styled.h1`
   z-index: 2;
   @media screen and (min-width: 800px) {
     font-size: 60px;
-    line-height: 70px;
   }
   @media screen and (min-width: 960px) {
     width: 920px;
