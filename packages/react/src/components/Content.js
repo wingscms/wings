@@ -1,12 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
-import DOMContent from './DOMContent';
-import ReactContent from './ReactContent';
+import _Content from './ReactContent';
 
-const _Content = ({ _useExperimentalReactRenderer: useReact, ...props }) =>
-  (useReact ? <ReactContent {...props} /> : <DOMContent {...props} />);
-
-const WContent = styled(_Content)`
+export default styled(_Content)`
   font-size: 16px;
   @media screen and (min-width: 600px) {
     font-size: 18px;
@@ -124,7 +119,3 @@ const WContent = styled(_Content)`
     }
   }
 `;
-
-export default function Content({ ...props }) {
-  return <WContent _useExperimentalReactRenderer {...props} />;
-}

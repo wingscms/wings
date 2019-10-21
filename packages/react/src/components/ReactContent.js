@@ -53,21 +53,23 @@ export default class Content extends Component {
 
   constructor(props) {
     super(props);
-    const _cards = mergeCards(allCards, this.props.cards)
+    const { cards: cardsProp, unknownCardHandler } = props;
+    const _cards = mergeCards(allCards, cardsProp)
       .map(convertCard)
       .map(this.injectCardProps);
 
     this.renderer = new Renderer({
       cards: _cards,
-      unknownCardHandler: this.props.unknownCardHandler,
+      unknownCardHandler,
     });
   }
 
-  injectCardProps = (card) => {
+  injectCardProps = card => {
+    const { cardProps: cardPropsProp } = this.props;
     const cardRender = card.render;
     return {
       ...card,
-      render: ({ payload }) => cardRender({ payload, ...this.props.cardProps[card.name] }),
+      render: ({ payload }) => cardRender({ payload, ...cardPropsProp[card.name] }),
     };
   };
 
@@ -82,7 +84,7 @@ export default class Content extends Component {
     if (!onLoad) return;
 
     const doc = JSON.parse(content);
-    this.props.onLoad({
+    onLoad({
       headers: doc.cards
         .filter(c => c[0] === 'HeaderCard')
         .map(c => c[1])
