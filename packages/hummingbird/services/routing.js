@@ -14,6 +14,12 @@ module.exports = {
   },
   getCampaignConfirmedPath(node) {
     if (!node.id) return null;
+    if (node.isHome) {
+      return `${this.getPrefix({
+        resourceType: node.resourceType,
+        isHome: false,
+      })}/${node.slug}/confirmed`;
+    }
     return `${this.getPath(node)}/confirmed`;
   },
   getLocalePrefix(node) {
