@@ -71,6 +71,7 @@ export default class LanguagePicker extends Component {
     /** Whether to show the dropdown above or below */
     showAbove: PropTypes.bool,
   };
+
   static defaultProps = {
     current: 'en',
     translations: [],
@@ -97,21 +98,18 @@ export default class LanguagePicker extends Component {
           showAbove={showAbove}
           backgroundColor={backgroundColor}
         >
-          {translations.map(
-            trans =>
-              console.log(trans) || (
-                <Translation
-                  key={trans.locale}
-                  backgroundColorHover={backgroundColorHover}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    onTranslationClick(trans, { event: e });
-                  }}
-                >
-                  {trans.name}
-                </Translation>
-              ),
-          )}
+          {translations.map(trans => (
+            <Translation
+              key={trans.locale}
+              backgroundColorHover={backgroundColorHover}
+              onClick={e => {
+                e.preventDefault();
+                onTranslationClick(trans, { event: e });
+              }}
+            >
+              {trans.name}
+            </Translation>
+          ))}
         </Translations>
       </Wrapper>
     );
