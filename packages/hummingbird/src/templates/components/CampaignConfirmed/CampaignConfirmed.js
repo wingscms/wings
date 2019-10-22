@@ -6,7 +6,7 @@ import FundraiserText from './FundraiserText';
 import NonFundraiserText from './NonFundraiserText';
 import ShareButtons from './ShareButtons';
 
-const Content = (props) => {
+const Content = props => {
   const {
     pageContext: {
       node: { resourceType },
@@ -49,6 +49,7 @@ class Main extends Component {
 }
 
 export default class CampaignConfirmed extends Component {
+  static Navigation = Campaign.Navigation;
   static FundraiserText = FundraiserText;
   static NonFundraiserText = NonFundraiserText;
   static ShareButtons = ShareButtons;
@@ -56,7 +57,7 @@ export default class CampaignConfirmed extends Component {
   static Main = Main;
 
   static defaultProps = {
-    children: [<Campaign.Navigation />, <CampaignConfirmed.Main />],
+    children: [<CampaignConfirmed.Navigation />, <CampaignConfirmed.Main />],
   };
   render() {
     return <Campaign {...this.props} />;
