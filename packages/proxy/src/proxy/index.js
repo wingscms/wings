@@ -7,6 +7,8 @@ export default class Proxy {
     this.wings = wings;
     this.schemas = schemas;
     this.apolloOpts = apolloOpts;
+    this.handler = (...args) =>
+      this.bootstrap().then(() => this.lambdaHandler(...args));
   }
 
   async bootstrap() {
@@ -22,7 +24,9 @@ export default class Proxy {
         });
         this.server = new ApolloServer({
           schema,
-          context: this.context || (({ event, context }) => ({ handler: { event, context } })),
+          context:
+            this.context ||
+            (({ event, context }) => ({ handler: { event, context } })),
           ...this.apolloOpts,
         });
 
@@ -40,6 +44,4 @@ export default class Proxy {
     this.context = context;
     return this.handler;
   }
-
-  handler = (...args) => this.bootstrap().then(() => this.lambdaHandler(...args));
 }

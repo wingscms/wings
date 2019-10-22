@@ -8,35 +8,88 @@ import { withWings } from '../../ctx/Wings';
 const patchSchema = (schema, fieldDefinitions) =>
   deepmerge(schema, { properties: fieldDefinitions });
 
-const PETITION_QUERY = `
-  query ($id: String!) {
-    campaign: petition(id: $id) {
+const SIGNUP_QUERY = `
+  query ($selector: SignupSelectorInput) {
+    campaign: signup(selector: $selector) {
       id
       title
       submissionSchema
+      settings {
+        legal {
+          terms {
+            url
+          }
+          privacyPolicy {
+            url
+          }
+        }
+      }
+      ...NodeFields
+      ...CampaignFields
+    }
+  }
+`;
+
+const SIGNUP_MUTATION = `
+  mutation SubmitSignup($input: SubmitSignupInput!) {
+    submitSignup(input: $input) {
+      submission {
+        id
+      }
+    }
+  }
+`;
+
+const PETITION_QUERY = `
+  query ($selector: PetitionSelectorInput) {
+    campaign: petition(selector: $selector) {
+      id
+      title
+      submissionSchema
+      settings {
+        legal {
+          terms {
+            url
+          }
+          privacyPolicy {
+            url
+          }
+        }
+      }
       signatureCount
       signatureGoal
       ...NodeFields
       ...CampaignFields
     }
   }
-
 `;
 
 const PETITION_MUTATION = `
-  mutation PetitionSignUp($id: String!, $input: SignPetitionInput!) {
-    signPetition(id: $id, input: $input) {
-      id
+  mutation SubmitPetition($input: SubmitPetitionInput!) {
+    submitPetition(input: $input) {
+      signature {
+        id
+      }
     }
   }
 `;
 
 const EVENT_QUERY = `
-  query ($id: String!) {
-    campaign: event(id: $id) {
+  query ($selector: EventSelectorInput) {
+    campaign: event(selector: $selector) {
       id
       title
       submissionSchema
+      settings {
+        legal {
+          terms {
+            url
+          }
+          privacyPolicy {
+            url
+          }
+        }
+      }
       schedule {
         start
         end
@@ -59,19 +112,31 @@ const EVENT_QUERY = `
 `;
 
 const EVENT_MUTATION = `
-  mutation EventSignUp($id: String!, $input: EventSignUpInput!) {
-    signUpForEvent(id: $id, input: $input) {
-      id
+  mutation SubmitEvent($input: SubmitEventInput!) {
+    submitEvent(input: $input) {
+      attendee {
+        id
+      }
     }
   }
 `;
 
 const FUNDRAISER_QUERY = `
-  query ($id: String) {
-    campaign: fundraiser(id: $id) {
+  query ($selector: FundraiserSelectorInput) {
+    campaign: fundraiser(selector: $selector) {
       id
       title
       submissionSchema
+      settings {
+        legal {
+          terms {
+            url
+          }
+          privacyPolicy {
+            url
+          }
+        }
+      }
       ...NodeFields
       ...CampaignFields
     }
@@ -79,12 +144,14 @@ const FUNDRAISER_QUERY = `
 `;
 
 const FUNDRAISER_MUTATION = `
-  mutation Donate($id: String, $input: DonateInput!) {
-    donation: donate(id: $id, input: $input) {
-      id
-      order {
+  mutation SubmitFundraiser($input: SubmitFundraiserInput!) {
+    submitFundraiser(input: $input) {
+      donation {
         id
-        paymentUrl
+        order {
+          id
+          paymentUrl
+        }
       }
     }
   }
@@ -128,6 +195,7 @@ const DEFAULT_COPY = {
   submitText: 'Submit',
   eventSubmitText: 'Attend',
   fundraiserSubmitText: 'Donate',
+  signupSubmitText: 'Submit',
   petitionSubmitText: 'Sign',
   emailFieldLabel: 'Email address',
   firstNameFieldLabel: 'First name',
@@ -145,9 +213,13 @@ const DEFAULT_COPY = {
 };
 
 class CampaignForm extends Component {
+  constructor(props) {
+    super(props);
+    this.confirmedContainerRef = React.createRef();
+  }
   static propTypes = {
     id: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(['petition', 'event', 'fundraiser']).isRequired,
+    type: PropTypes.oneOf(['signup', 'petition', 'event', 'fundraiser']).isRequired,
     onSubmit: PropTypes.func,
     processSchema: PropTypes.func,
     processSubmission: PropTypes.func,
@@ -207,6 +279,8 @@ class CampaignForm extends Component {
 
   query = () => {
     switch (this.props.type) {
+      case 'signup':
+        return SIGNUP_QUERY;
       case 'petition':
         return PETITION_QUERY;
       case 'event':
@@ -220,6 +294,8 @@ class CampaignForm extends Component {
 
   mutation = () => {
     switch (this.props.type) {
+      case 'signup':
+        return SIGNUP_MUTATION;
       case 'petition':
         return PETITION_MUTATION;
       case 'event':
@@ -277,6 +353,7 @@ class CampaignForm extends Component {
   getSubmitText() {
     const { type, submitText = '' } = this.props;
     const {
+      signupSubmitText,
       eventSubmitText,
       petitionSubmitText,
       fundraiserSubmitText,
@@ -284,6 +361,8 @@ class CampaignForm extends Component {
     } = this.getCopy();
     if (submitText) return submitText;
     switch (type) {
+      case 'signup':
+        return signupSubmitText;
       case 'event':
         return eventSubmitText;
       case 'petition':
@@ -300,15 +379,23 @@ class CampaignForm extends Component {
   }
 
   maybeFetch() {
-    if (this.state.formSchema || this.props.formSchema || this.state.fetching) {
+    if (
+      this.state.failed ||
+      this.state.formSchema ||
+      this.props.formSchema ||
+      this.state.fetching
+    ) {
       return;
     }
     this.setState({ fetching: true }, async () => {
       let campaign;
       let formSchema;
+      let failed = false;
       try {
         const { campaign: c } = await this.props.wings.query(this.query() + this.fragment(), {
-          id: this.props.id,
+          selector: {
+            id: { eq: this.props.id },
+          },
         });
         campaign = c;
         formSchema = JSON.parse(c.submissionSchema);
@@ -318,12 +405,14 @@ class CampaignForm extends Component {
           this.props.type,
           this.props.id,
         );
+        failed = true;
       } finally {
         this.setState(
           {
             fetching: false,
             formSchema,
             campaign,
+            failed,
           },
           this.maybeEmitOnLoad,
         );
@@ -333,10 +422,11 @@ class CampaignForm extends Component {
 
   async submit(formData) {
     const { amount } = this.state;
+
     try {
       const res = await this.props.wings.query(this.mutation(), {
-        id: this.props.id,
         input: {
+          id: this.props.id,
           data: JSON.stringify(formData),
           ...(this.props.type === 'fundraiser' && {
             amount,
@@ -349,6 +439,7 @@ class CampaignForm extends Component {
       } else {
         this.setState({ stage: 'confirm' });
       }
+      this.confirmedContainerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } catch (err) {
       console.error(err);
     }
@@ -422,7 +513,7 @@ class CampaignForm extends Component {
           </SchemaForm>
         )}
         {!(stage === 'confirm') ? null : (
-          <div>
+          <div ref={this.confirmedContainerRef}>
             <h1>{campaignConfirmTitle}</h1>
             <p>{campaignConfirmText}</p>
           </div>

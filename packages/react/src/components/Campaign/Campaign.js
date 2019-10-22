@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 
 import Content from '../Content';
@@ -86,6 +86,29 @@ const FormContainer = styled.div`
   border-radius: 4px;
   box-shadow: ${({ theme }) => theme.defaultShadow};
   align-self: flex-start;
+  a {
+    color: ${({ theme }) => theme.campaignFormLinkTextColor};
+    text-decoration: none;
+    background-image: linear-gradient(
+      120deg,
+      ${({ theme }) => theme.campaignFormLinkLineColor} 0%,
+      ${({ theme }) => theme.campaignFormLinkLineColor} 100%
+    );
+    padding-bottom: 2px;
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
+    background-position: 0% 100%;
+    transition: background-size 0.1s linear;
+    &:hover,
+    &:focus {
+      background-size: 100% 4px;
+      background-image: linear-gradient(
+        120deg,
+        ${({ theme }) => theme.campaignFormLinkLineColor} 0%,
+        ${({ theme }) => theme.campaignFormLinkLineColor} 100%
+      );
+    }
+  }
   @media screen and (max-width: 1000px) {
     width: 100%;
   }
@@ -109,11 +132,7 @@ const Title = styled.h1`
 `;
 
 const Intro = styled.p`
-  font-size: 1.4em;
-  font-weight: bold;
-  @media screen and (max-width: 800px) {
-    font-size: 1.2em;
-  }
+  font-size: 1.2em;
   @media screen and (max-width: 600px) {
     font-size: 1em;
   }
@@ -150,6 +169,8 @@ export default ({
   copy = {},
   ...props
 }) => {
+  const campaignContainerRef = useRef(null);
+  const formContainerRef = useRef(null);
   const [signatureCount, setSignatureCount] = useState(0);
   const [signatureGoal, setSignatureGoal] = useState(0);
   const [node, setNode] = useState(_node);
@@ -161,7 +182,6 @@ export default ({
       setSignatureGoal(campaign.signatureGoal);
     }
   };
-  const getCopy = () => ({ ...DEFAULT_COPY, ...copy });
   const {
     descriptionCollapse,
     descriptionExpand,
@@ -175,13 +195,18 @@ export default ({
     eventEndTime,
     eventFee,
     petitionCounterGoalText,
-  } = getCopy();
+  } = { ...DEFAULT_COPY, ...copy };
   const { intro, title } = node;
   const element = (
     <React.Fragment>
-      <MainContainerOuter {...props}>
+      <MainContainerOuter {...props} ref={campaignContainerRef}>
         <MainContainerInner>
-          <Proposition {...{ descriptionCollapse, descriptionExpand }}>
+          <Proposition
+            {...{ descriptionCollapse, descriptionExpand }}
+            formContainerRef={formContainerRef}
+            campaignContainerRef={campaignContainerRef}
+            campaign={node}
+          >
             {title ? <Title>{title}</Title> : null}
             {intro ? <Intro fullWidth>{intro}</Intro> : null}
             <Content
@@ -191,8 +216,8 @@ export default ({
               mini
             />
           </Proposition>
-          <FormContainer id="campaign-form-container">
-            {typeof signatureCount === 'number' && (
+          <FormContainer id="campaign-form-container" ref={formContainerRef}>
+            {typeof signatureCount === 'number' && node.resourceType === 'node.petition' && (
               <CounterContainer>
                 <PetitionCounter
                   current={signatureCount}

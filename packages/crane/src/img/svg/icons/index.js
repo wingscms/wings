@@ -1,3 +1,6 @@
+import ChevronDown from './chevron-down';
+import ChevronUp from './chevron-up';
+import Email from './email';
 import Facebook from './facebook';
 import Github from './github';
 import Globe from './globe';
@@ -17,6 +20,9 @@ import Whatsapp from './whatsapp';
 import Youtube from './youtube';
 
 export default {
+  ChevronDown,
+  ChevronUp,
+  Email,
   Facebook,
   Github,
   Globe,

@@ -1,6 +1,6 @@
 {
   "users": {
-    "General": ["users/general/getting-started", "users/general/settings"]
+    "General": ["users/general/getting-started", "users/general/settings", "users/general/publish", "users/general/creating-campaigns"]
   },
   "developers": {
     "General": ["dev/general/getting-started", "dev/general/data-model"],

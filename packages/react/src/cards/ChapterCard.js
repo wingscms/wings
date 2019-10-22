@@ -1,5 +1,3 @@
-/* global document */
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled, { withTheme } from 'styled-components';
@@ -29,7 +27,7 @@ const IntroText = styled(Intro)`
   margin-bottom: 0;
 `;
 
-const Header = styled.div`
+const Chapter = styled.div`
   max-width: 1140px;
   margin: 0 auto;
   padding: ${({ theme }) => theme.largeSpacing} 10px;
@@ -68,22 +66,24 @@ const Marker = styled.span`
   }
 `;
 
-class HeaderView extends Component {
+class ChapterView extends Component {
   static propTypes = {
     title: PropTypes.node,
     intro: PropTypes.node,
     marker: PropTypes.node,
   };
+
   static defaultProps = {
     title: '',
     intro: '',
     marker: '',
   };
+
   render() {
     const { title, intro, marker, ...props } = this.props;
     return (
       <Container className="headerContainer" id={slugify(title)}>
-        <Header {...props}>
+        <Chapter {...props}>
           <Fade bottom distance="20px">
             <Marker>{marker}</Marker>
           </Fade>
@@ -93,13 +93,13 @@ class HeaderView extends Component {
           <Fade bottom distance="20px" delay={200}>
             <IntroText>{intro}</IntroText>
           </Fade>
-        </Header>
+        </Chapter>
       </Container>
     );
   }
 }
 
 export default createCard({
-  name: 'HeaderCard',
-  renderWith: withTheme(HeaderView),
+  name: 'ChapterCard',
+  renderWith: withTheme(ChapterView),
 });

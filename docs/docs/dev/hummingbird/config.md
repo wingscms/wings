@@ -86,6 +86,8 @@ Can be used in the `design` option in Hummingbird's `gatsby-config`:
 
 `pullquoteBackgroundColor`: Default: <span style="background-color: #ffffff">backgroundColor</span>
 
+`testimonialBackgroundColor`: Default: <span style="background-color: #ECF2FC">elementBackgroundColor</span>
+
 #### Landing Section
 
 `landingSectionTitleColor`: Default: <span style="background-color: #FFFFFF">#FFFFFF</span>
@@ -104,11 +106,19 @@ Can be used in the `design` option in Hummingbird's `gatsby-config`:
 
 `formTextColor`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options)
 
+`formLinkTextColor`: Default: formTextColor
+
+`formLinkLineColor`: Default: <span style="background-color: #274b8b; color: #FFFFFF">secondaryColor</span>
+
 #### Campaigns
 
 `campaignFormBackgroundColor`: Default: <span style="background-color: #417de8">formBackgroundColor</span>
 
 `campaignFormTextColor`: Default: formTextColor
+
+`campaignFormLinkTextColor`: Default: formLinkTexColor
+
+`campaignFormLinkLineColor`: Default: <span style="background-color: #274b8b; color: #FFFFFF">formLinkLineColor</span>
 
 `counterBackgroundColor`: Default: <span style="background-color: #417de8">primaryColor</span>
 
