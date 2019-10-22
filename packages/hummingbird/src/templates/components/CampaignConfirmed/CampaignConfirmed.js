@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import qs from 'qs';
 import Campaign from '../Campaign';
 
 import FundraiserText from './FundraiserText';
@@ -16,7 +15,7 @@ const Content = props => {
   return (
     <React.Fragment>
       {resourceType === 'node.fundraiser' ? (
-        <FundraiserText status={qs.parse(location.search.replace('?', '')).transaction_status} />
+        <FundraiserText location={location} />
       ) : (
         <NonFundraiserText />
       )}

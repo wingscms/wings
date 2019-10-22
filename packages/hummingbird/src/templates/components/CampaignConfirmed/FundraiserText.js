@@ -1,9 +1,11 @@
 import React from 'react';
+import qs from 'qs';
 import { FormattedMessage } from 'react-intl';
 import Title from './Title';
 import Text from './Text';
 
-export default ({ status }) => {
+export default ({ location }) => {
+  const status = qs.parse(location.search.replace('?', '')).transaction_status;
   switch (status) {
     case 'complete':
       return (
@@ -14,6 +16,7 @@ export default ({ status }) => {
             defaultMessage="Hurray!"
             tagName={Title}
           />
+          f
           <FormattedMessage
             id="hummingbird.CampaignConfirmed.fundraiserMain.successText"
             description="Text of fundraiser payment success."
