@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.23.3](https://github.com/wingscms/wings/compare/@wingscms/react@0.23.2...@wingscms/react@0.23.3) (2019-10-22)
+
+**Note:** Version bump only for package @wingscms/react
+
+
+
+
+
+## [0.23.2](https://github.com/wingscms/wings/compare/@wingscms/react@0.23.1...@wingscms/react@0.23.2) (2019-10-21)
+
+
+### Bug Fixes
+
+* homepage title size and margin fixes ([#222](https://github.com/wingscms/wings/issues/222)) ([74f8a5a](https://github.com/wingscms/wings/commit/74f8a5a01b3b27d9a346d0d375e4452101d23947))
+* remove mobiledoc DOMContent ([3530d6a](https://github.com/wingscms/wings/commit/3530d6adc8343c35cc7a07b7ffdfb189c7463b8e))
+
+
+
+
+
+## [0.23.1](https://github.com/wingscms/wings/compare/@wingscms/react@0.23.0...@wingscms/react@0.23.1) (2019-10-16)
+
+**Note:** Version bump only for package @wingscms/react
+
+
+
+
+
 # [0.23.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.22.0...@wingscms/react@0.23.0) (2019-10-10)
 
 

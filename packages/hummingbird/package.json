@@ -3,22 +3,23 @@
     "test": "jest"
   },
   "name": "@wingscms/hummingbird",
-  "version": "0.37.1",
+  "version": "0.37.4",
   "dependencies": {
-    "@wingscms/crane": "^0.15.1",
-    "@wingscms/react": "^0.23.0",
-    "@wingscms/sdk": "^0.3.7",
+    "@wingscms/crane": "^0.15.2",
+    "@wingscms/react": "^0.23.3",
+    "@wingscms/sdk": "^0.3.8",
+    "babel-preset-gatsby": "^0.2.20",
     "browser-locale": "^1.0.3",
     "classnames": "^2.2.6",
     "cloudinary-react": "^1.1.0",
-    "deepmerge": "^3.2.0",
+    "deepmerge": "^4.1.1",
     "filter-invalid-dom-props": "^2.0.0",
     "format-number": "^3.0.0",
     "gatsby": "^2",
     "gatsby-link": "^2.0.16",
     "gatsby-paginate": "^1.0.17",
     "gatsby-plugin-catch-links": "^2.0.13",
-    "gatsby-plugin-compile-es6-packages": "^1.1.0",
+    "gatsby-plugin-compile-es6-packages": "^2.1.0",
     "gatsby-plugin-netlify": "^2.0.13",
     "gatsby-plugin-nprogress": "^2.0.10",
     "gatsby-plugin-page-creator": "^2.0.12",
@@ -31,14 +32,11 @@
     "gatsby-source-filesystem": "^2.0.29",
     "gatsby-source-graphql": "^2.0.17",
     "in-viewport": "^3.6.0",
-    "node-fetch": "^1.7.3",
-    "polished": "^1.9.3",
+    "node-fetch": "^2.6.0",
     "qs": "^6.7.0",
-    "radium": "^0.25.1",
-    "random-id": "0.0.2",
     "react-countup": "^4.1.3",
     "react-helmet": "^5.2.0",
-    "react-intl": "^2.9.0",
+    "react-intl": "^3.3.2",
     "react-jsonschema-form": "^1.4.0",
     "react-reveal": "^1.2.2",
     "react-scroll-to-element": "^0.2.0",
@@ -51,7 +49,9 @@
     "widont": "^0.3.2"
   },
   "devDependencies": {
-    "babel-preset-gatsby": "^0.1.11"
+    "babel-eslint": "^10.0.1",
+    "babel-preset-gatsby": "^0.1.11",
+    "eslint-plugin-jsx-a11y": "^6.0.3"
   },
   "gitHead": "2051165cacab59ebf43dc82a64fa444ffa72a7b8"
 }

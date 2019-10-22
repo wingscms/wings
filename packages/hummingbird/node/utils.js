@@ -3,7 +3,7 @@ const filterByLocale = (locale, node) => !!(locale === node.locale);
 const isTranslation = ({ slug, locale }) => node =>
   locale.id !== node.locale.id && slug === node.slug;
 
-const makeShareUrls = ({ search, facebook, twitter }, url) => {
+const makeShareUrls = ({ search, facebook, twitter } = {}, url) => {
   const res = {
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
     twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(
