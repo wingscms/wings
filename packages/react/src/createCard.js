@@ -11,12 +11,14 @@ export default ({
 }) => {
   class MobiledocCard extends Component {
     static displayName = name;
+
     static propTypes = {
       isInEditor: PropTypes.bool.isRequired,
       isEditing: PropTypes.bool.isRequired,
       edit: PropTypes.func,
       payload: PropTypes.object,
     };
+
     static defaultProps = {
       payload: {},
       edit: () => {},
@@ -31,15 +33,19 @@ export default ({
 
   class Button extends Component {
     static displayName = `${name}Button`;
+
     static propTypes = {
       edit: PropTypes.bool,
     };
+
     static defaultProps = {
       edit: false,
     };
+
     static contextTypes = {
       editor: PropTypes.object,
     };
+
     render() {
       const { edit, ...props } = this.props;
       const { editor } = this.context;
