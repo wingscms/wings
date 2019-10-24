@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FormattedMessage } from 'react-intl';
 import { getContrastColor, Icons } from '@wingscms/crane';
+import { DefaultShareTitle } from './DefaultText';
 
 const { Facebook, Twitter, Whatsapp, Email } = Icons;
 
@@ -54,26 +54,16 @@ const ShareButton = styled.a`
   }
 `;
 
-const ShareTitle = styled.h2`
-  font-size: 24px;
-  margin-bottom: 0.4em;
-  @media screen and (min-width: 800px) {
-    font-size: 32px;
-  }
-`;
-
-export default (props) => {
+export default props => {
   const {
-    pageContext: { shareUrls },
+    pageContext: {
+      shareUrls,
+      node: { resourceType },
+    },
   } = props;
   return (
     <ShareContainer>
-      <FormattedMessage
-        id="hummingbird.CampaignConfirmed.share.title"
-        description="Title above campaign share buttons."
-        defaultMessage="Please share this campaign with your friends and colleagues:"
-        tagName={ShareTitle}
-      />
+      <DefaultShareTitle resourceType={resourceType} />
       <ShareButton href={shareUrls.facebook} target="_blank" rel="noopener noreferrer">
         <Facebook />
       </ShareButton>

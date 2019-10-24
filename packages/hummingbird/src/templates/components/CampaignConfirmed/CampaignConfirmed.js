@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Campaign from '../Campaign';
 
-import FundraiserText from './FundraiserText';
 import DefaultText from './DefaultText';
 import ShareButtons from './ShareButtons';
 
@@ -14,11 +13,7 @@ const Content = props => {
   } = props;
   return (
     <React.Fragment>
-      {resourceType === 'node.fundraiser' ? (
-        <FundraiserText location={location} />
-      ) : (
-        <DefaultText />
-      )}
+      <DefaultText resourceType={resourceType} location={location} />
       <ShareButtons {...props} />
     </React.Fragment>
   );
@@ -49,7 +44,6 @@ class Main extends Component {
 
 export default class CampaignConfirmed extends Component {
   static Navigation = Campaign.Navigation;
-  static FundraiserText = FundraiserText;
   static DefaultText = DefaultText;
   static ShareButtons = ShareButtons;
   static Content = Content;
