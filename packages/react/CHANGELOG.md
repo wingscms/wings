@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.23.4](https://github.com/wingscms/wings/compare/@wingscms/react@0.23.3...@wingscms/react@0.23.4) (2019-10-25)
+
+
+### Bug Fixes
+
+* export HeaderCard ([eb766cd](https://github.com/wingscms/wings/commit/eb766cd9a88bf51983c4d1a060b3c626e39731c3))
+* put back content styling ([#267](https://github.com/wingscms/wings/issues/267)) ([a80641a](https://github.com/wingscms/wings/commit/a80641a8cb17e0631c1733dbb7f3b5281d55c04a))
+
+
+
+
+
 ## [0.23.3](https://github.com/wingscms/wings/compare/@wingscms/react@0.23.2...@wingscms/react@0.23.3) (2019-10-22)
 
 **Note:** Version bump only for package @wingscms/react
