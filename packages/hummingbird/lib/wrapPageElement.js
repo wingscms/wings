@@ -17,9 +17,9 @@ const messages = {
 const DEFAULT_LOCALE = 'en';
 
 const generateTitle = (title, siteTitle, platform, platforms) =>
-  platforms[platform] && platforms[platform].title
+  (platforms[platform] && platforms[platform].title
     ? platforms[platform].title
-    : title;
+    : title);
 
 const PageWrapper = ({
   pageContext: {
@@ -43,9 +43,9 @@ const PageWrapper = ({
   const language = localeId.split('-')[0];
   useEffect(() => {
     if (
-      typeof window !== 'undefined' &&
-      translations &&
-      translations.length > 0
+      typeof window !== 'undefined'
+      && translations
+      && translations.length > 0
     ) {
       if (
         localStorage.getItem(
@@ -81,8 +81,8 @@ const PageWrapper = ({
     <>
       <Helmet title={generateTitle(title, siteTitle, 'all', platforms)}>
         <html lang={localeId || DEFAULT_LOCALE} />
-        {translations &&
-          translations.map(trans => (
+        {translations
+          && translations.map(trans => (
             <link
               key={trans.locale}
               rel="alternate"
@@ -100,6 +100,10 @@ const PageWrapper = ({
         <meta
           property="og:title"
           content={generateTitle(title, siteTitle, 'facebook', platforms)}
+        />
+        <meta
+          property="og:description"
+          content={platforms.facebook.description}
         />
         <meta
           property="fb:title"

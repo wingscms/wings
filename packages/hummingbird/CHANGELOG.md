@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.37.6](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.37.5...@wingscms/hummingbird@0.37.6) (2019-10-25)
+
+
+### Bug Fixes
+
+* add og:description tag ([#268](https://github.com/wingscms/wings/issues/268)) ([d1d9909](https://github.com/wingscms/wings/commit/d1d99096da1abd00e13293f68e7094fa46f64a02))
+
+
+
+
+
+## [0.37.5](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.37.4...@wingscms/hummingbird@0.37.5) (2019-10-25)
+
+**Note:** Version bump only for package @wingscms/hummingbird
+
+
+
+
+
 ## [0.37.4](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.37.3...@wingscms/hummingbird@0.37.4) (2019-10-22)
 
 **Note:** Version bump only for package @wingscms/hummingbird
