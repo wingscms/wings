@@ -205,13 +205,4 @@ export default styled(Content)`
       font-family: ${({ theme }) => theme.headingFont};
     }
   }
-  /* PETITION DESCRIPTION OVERRIDES */
-  &.petition-description {
-    > p:first-child,
-    > h1:first-child,
-    > h2:first-child,
-    > h3:first-child {
-      margin-top: 0;
-    }
-  }
 `;
