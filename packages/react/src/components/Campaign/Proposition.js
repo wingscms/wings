@@ -5,7 +5,9 @@ const Container = styled.div`
   display: inline-block;
   position: relative;
   width: calc(100% - 460px);
-  padding: 40px 40px ${({ containerInnerHeight }) => (containerInnerHeight > 600 ? '80px' : '40px')}
+  padding: 40px 40px
+    ${({ containerInnerHeight }) =>
+      containerInnerHeight > 600 ? '80px' : '40px'}
     40px;
   margin: 40px 0;
   overflow: hidden;
@@ -14,15 +16,17 @@ const Container = styled.div`
   border-radius: 4px 0 0 4px;
   box-shadow: ${({ theme }) => theme.defaultShadow};
   max-height: ${({ show, height, containerInnerHeight }) =>
-    (!show && height ? `${height - 80}px` : `${containerInnerHeight + 200}px`)};
+    !show && height ? `${height - 80}px` : `${containerInnerHeight + 200}px`};
   transition: max-height 0.15s linear;
   @media screen and (max-width: 1000px) {
     width: 100% !important;
     margin: 10px 0;
     padding: 20px 20px
-      ${({ containerInnerHeight }) => (containerInnerHeight > 600 ? '80px' : '20px')} 20px;
+      ${({ containerInnerHeight }) =>
+        containerInnerHeight > 600 ? '80px' : '20px'}
+      20px;
     max-height: ${({ show, containerInnerHeight }) =>
-    (!show ? '600px' : `${containerInnerHeight + 200}px`)};
+      !show ? '600px' : `${containerInnerHeight + 200}px`};
   }
 `;
 
@@ -40,6 +44,8 @@ const ToggleButton = styled.div`
   line-height: 28px;
   padding: 20px 0;
   font-family: ${({ theme }) => theme.headerFontFamily};
+  text-transform: ${({ theme }) =>
+    theme.uppercaseTitles ? 'uppercase' : 'none'};
   font-weight: bold;
   bottom: 0;
   left: 0;
@@ -59,10 +65,15 @@ const ToggleButton = styled.div`
     width: 100%;
     height: 100px;
     transform: translateY(-100%);
-    background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0) 50%);
+    background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0) 50%
+    );
   }
   @media screen and (max-width: 1000px) {
-    display: ${({ containerInnerHeight }) => (containerInnerHeight > 600 ? 'block' : 'none')};
+    display: ${({ containerInnerHeight }) =>
+      containerInnerHeight > 600 ? 'block' : 'none'};
   }
 `;
 
@@ -79,10 +90,15 @@ export default ({
   const [show, setShow] = useState(false);
   const [showToggle, setShowToggle] = useState(true);
   const containerInnerHeight =
-    containerInnerRef && containerInnerRef.current && containerInnerRef.current.offsetHeight;
+    containerInnerRef &&
+    containerInnerRef.current &&
+    containerInnerRef.current.offsetHeight;
   const toggleShow = () => {
     if (show) {
-      campaignContainerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      campaignContainerRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
       setShow(false);
     } else {
       setShow(true);
@@ -92,7 +108,10 @@ export default ({
   const updateHeight = () => {
     const { offsetHeight } = formContainerRef.current;
     setHeight(offsetHeight);
-    if (formContainerRef.current.offsetHeight > containerInnerRef.current.offsetHeight) {
+    if (
+      formContainerRef.current.offsetHeight >
+      containerInnerRef.current.offsetHeight
+    ) {
       setShowToggle(false);
     } else {
       setShowToggle(true);
@@ -108,7 +127,11 @@ export default ({
   useEffect(updateHeight, [campaign]);
 
   return (
-    <Container height={height} show={show} containerInnerHeight={containerInnerHeight}>
+    <Container
+      height={height}
+      show={show}
+      containerInnerHeight={containerInnerHeight}
+    >
       <ContainerInner ref={containerInnerRef}>{children}</ContainerInner>
       <ToggleButton
         onClick={toggleShow}

@@ -70,7 +70,8 @@ class Content extends Component {
     const cardRender = card.render;
     return {
       ...card,
-      render: ({ payload }) => cardRender({ payload, ...cardPropsProp[card.name] }),
+      render: ({ payload }) =>
+        cardRender({ payload, ...cardPropsProp[card.name] }),
     };
   };
 
@@ -94,8 +95,18 @@ class Content extends Component {
   };
 
   render() {
-    const { content, cards: _cards, unknownCardHandler, onLoad, ...props } = this.props;
-    return <div {...props}>{!content ? null : this.renderer.render(JSON.parse(content))}</div>;
+    const {
+      content,
+      cards: _cards,
+      unknownCardHandler,
+      onLoad,
+      ...props
+    } = this.props;
+    return (
+      <div {...props}>
+        {!content ? null : this.renderer.render(JSON.parse(content))}
+      </div>
+    );
   }
 }
 
@@ -168,29 +179,32 @@ export default styled(Content)`
       font-family: ${({ theme }) => theme.headingFont};
     }
   }
-  > ul,
-  > ol {
-    li {
-      margin: 0;
+  > div {
+    > ul,
+    > ol {
+      li {
+        margin: 0;
+      }
     }
-  }
-  > blockquote {
-    border-left: 2px solid ${({ theme }) => theme.primaryColor};
-    margin: 0;
-    padding: 0 0 0 1rem;
-    color: #000;
-  }
-  > h2,
-  > h3,
-  > h4,
-  > h5,
-  > h6 {
-    color: ${({ theme }) => theme.textColor};
-    margin-bottom: 5px;
-    line-height: 1.2;
-    text-transform: none;
-    @media screen and (min-width: 800px) {
-      margin-bottom: 0;
+    > blockquote {
+      border-left: 2px solid ${({ theme }) => theme.primaryColor};
+      margin: 0;
+      padding: 0 0 0 1rem;
+      color: #000;
+    }
+    > h2,
+    > h3,
+    > h4,
+    > h5,
+    > h6 {
+      color: ${({ theme }) => theme.textColor};
+      margin-bottom: ${({ theme }) => theme.extraSmallSpacing};
+      line-height: 1.2;
+      text-transform: ${({ theme }) =>
+        theme.uppercaseTitles ? 'uppercase' : 'none'};
+      @media screen and (min-width: 800px) {
+        margin-bottom: ${({ theme }) => theme.smallSpacing};
+      }
     }
   }
   &.drop-cap > div > div.headerContainer + p {

@@ -14,6 +14,8 @@ const MetaContainer = styled.div`
 
 const MetaName = styled.div`
   font-family: ${({ theme }) => theme.headerFontFamily};
+  text-transform: ${({ theme }) =>
+    theme.uppercaseTitles ? 'uppercase' : 'none'};
   display: inline-block;
   width: 50%;
   font-size: 18px;
@@ -53,7 +55,8 @@ const Wrapper = styled.div`
   text-align: center;
   @media screen and (max-width: 800px) {
     padding: 40px;
-    margin: ${({ theme }) => theme.mediumSpacing} auto ${({ theme }) => theme.mediumSpacing} auto;
+    margin: ${({ theme }) => theme.mediumSpacing} auto
+      ${({ theme }) => theme.mediumSpacing} auto;
   }
 `;
 

@@ -4,7 +4,7 @@ import { getContrastColor, separateUnit } from '@wingscms/crane';
 export default ({
   // MISC OPTIONS
   contrastLuminanceThreshold = 50,
-
+  uppercaseTitles = false,
   // COLORS
   // Base
   primaryColor = '#417de8',
@@ -97,6 +97,7 @@ export default ({
 }) => ({
   // MISC OPTIONS
   contrastLuminanceThreshold,
+  uppercaseTitles,
   // COLORS
   // Base
   primaryColor,
@@ -116,7 +117,8 @@ export default ({
   iconColorDark,
   // Navigation
   navigationBackgroundColor: navigationBackgroundColor || primaryColor,
-  navigationMenuBackgroundColor: navigationMenuBackgroundColor || backgroundColor,
+  navigationMenuBackgroundColor:
+    navigationMenuBackgroundColor || backgroundColor,
   navigationIconColor: getContrastColor({
     backgroundColor: navigationBackgroundColor || primaryColor,
     colors: { light: navigationIconColor, dark: navigationIconColorDark },
@@ -124,7 +126,8 @@ export default ({
   }),
   navigationIconColorDark,
   navigationIconLanguagePickerColor,
-  navigationIconLanguagePickerColorHover: navigationIconLanguagePickerColorHover || primaryColor,
+  navigationIconLanguagePickerColorHover:
+    navigationIconLanguagePickerColorHover || primaryColor,
   // Footer
   footerBackgroundColor: footerBackgroundColor || primaryColor,
   footerTextColor:
@@ -157,7 +160,8 @@ export default ({
     chapterSelectItemColor ||
     chapterItemColor ||
     getContrastColor({
-      backgroundColor: chapterSelectBackgroundColor || chapterBackgroundColor || primaryColor,
+      backgroundColor:
+        chapterSelectBackgroundColor || chapterBackgroundColor || primaryColor,
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
     }),
@@ -167,7 +171,8 @@ export default ({
   blockquoteBackgroundColor: blockquoteBackgroundColor || backgroundColor,
   pullquoteColor: pullquoteColor || primaryColor,
   pullquoteBackgroundColor: pullquoteBackgroundColor || backgroundColor,
-  testimonialBackgroundColor: testimonialBackgroundColor || elementBackgroundColor,
+  testimonialBackgroundColor:
+    testimonialBackgroundColor || elementBackgroundColor,
   // Landing Section
   landingSectionTitleColor,
   landingSectionTitleBackgroundColor,
@@ -193,7 +198,8 @@ export default ({
     }),
   formLinkLineColor: secondaryColor || formLinkLineColor,
   // Campaigns
-  campaignFormBackgroundColor: campaignFormBackgroundColor || formBackgroundColor || primaryColor,
+  campaignFormBackgroundColor:
+    campaignFormBackgroundColor || formBackgroundColor || primaryColor,
   campaignFormTextColor:
     campaignFormTextColor ||
     formTextColor ||
@@ -212,7 +218,8 @@ export default ({
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
     }),
-  campaignFormLinkLineColor: campaignFormLinkLineColor || formLinkLineColor || secondaryColor,
+  campaignFormLinkLineColor:
+    campaignFormLinkLineColor || formLinkLineColor || secondaryColor,
   counterBackgroundColor: counterBackgroundColor || backgroundColor,
   counterTextColor:
     counterTextColor ||
@@ -226,13 +233,17 @@ export default ({
   // General
   mediumSpacing,
   largeSpacing:
-    largeSpacing || `${separateUnit(mediumSpacing)[0] * 2}${separateUnit(mediumSpacing)[1]}`,
+    largeSpacing ||
+    `${separateUnit(mediumSpacing)[0] * 2}${separateUnit(mediumSpacing)[1]}`,
   extraLargeSpacing:
-    extraLargeSpacing || `${separateUnit(mediumSpacing)[0] * 4}${separateUnit(mediumSpacing)[1]}`,
+    extraLargeSpacing ||
+    `${separateUnit(mediumSpacing)[0] * 4}${separateUnit(mediumSpacing)[1]}`,
   smallSpacing:
-    smallSpacing || `${separateUnit(mediumSpacing)[0] / 2}${separateUnit(mediumSpacing)[1]}`,
+    smallSpacing ||
+    `${separateUnit(mediumSpacing)[0] / 2}${separateUnit(mediumSpacing)[1]}`,
   extraSmallSpacing:
-    extraSmallSpacing || `${separateUnit(mediumSpacing)[0] / 4}${separateUnit(mediumSpacing)[1]}`,
+    extraSmallSpacing ||
+    `${separateUnit(mediumSpacing)[0] / 4}${separateUnit(mediumSpacing)[1]}`,
 
   // SHADOWS
   defaultShadow,

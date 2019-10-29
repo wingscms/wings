@@ -46,6 +46,8 @@ const Wrap = styled(StickyContainer)`
 
 const Title = styled.h1`
   color: ${({ theme }) => (theme.brand ? theme.brand : theme.primaryColor)};
+  text-transform: ${({ theme }) =>
+    theme.uppercaseTitles ? 'uppercase' : 'none'};
   line-height: 1;
   font-family: ${({ theme }) => theme.headerFontFamily};
   position: relative;
@@ -104,7 +106,8 @@ const Image = styled.figure`
 `;
 
 const ImageWrap = styled.div`
-  margin: ${({ theme }) => theme.mediumSpacing} ${({ theme }) => theme.smallSpacing};
+  margin: ${({ theme }) => theme.mediumSpacing}
+    ${({ theme }) => theme.smallSpacing};
   max-width: 740px;
   @media screen and (min-width: 600px) {
     margin-bottom: 2rem;
@@ -157,6 +160,7 @@ class TestimonialCard extends Component {
     url: '',
     content: '',
   };
+
   render() {
     const { title, intro, content, url, ...props } = this.props;
     const sized = mediaUrl(url, { width: 760, height: 1280 });

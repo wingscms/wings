@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { SchemaForm, Amount, Loading, Button as _Button } from '@wingscms/crane';
+import {
+  SchemaForm,
+  Amount,
+  Loading,
+  Button as _Button,
+} from '@wingscms/crane';
 import deepmerge from 'deepmerge';
 import { withWings } from '../../ctx/Wings';
 
@@ -161,6 +166,8 @@ const Button = styled(_Button)`
   color: #fff;
   margin-top: 40px;
   width: auto;
+  text-transform: ${({ theme }) =>
+    theme.uppercaseTitles ? 'uppercase' : 'none'};
   &:after {
     display: none;
   }
@@ -217,9 +224,11 @@ class CampaignForm extends Component {
     super(props);
     this.confirmedContainerRef = React.createRef();
   }
+
   static propTypes = {
     id: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(['signup', 'petition', 'event', 'fundraiser']).isRequired,
+    type: PropTypes.oneOf(['signup', 'petition', 'event', 'fundraiser'])
+      .isRequired,
     onSubmit: PropTypes.func,
     processSchema: PropTypes.func,
     processSubmission: PropTypes.func,
@@ -231,6 +240,7 @@ class CampaignForm extends Component {
     node: PropTypes.shape({ submissionSchema: PropTypes.string }),
     copy: PropTypes.object,
   };
+
   static defaultProps = {
     onSubmit: null,
     processSchema: s => s,
@@ -310,7 +320,8 @@ class CampaignForm extends Component {
   getFormSchema() {
     const schema =
       this.props.formSchema ||
-      (this.props.node.submissionSchema && JSON.parse(this.props.node.submissionSchema)) ||
+      (this.props.node.submissionSchema &&
+        JSON.parse(this.props.node.submissionSchema)) ||
       this.state.formSchema;
     return schema ? this.processSchema(schema) : schema;
   }
@@ -330,21 +341,26 @@ class CampaignForm extends Component {
     return patchSchema(schema, fieldDefs);
   }
 
-  processSchema = (s) => {
+  processSchema = s => {
     const { disabledFields } = this.props;
     const schema = { ...s, properties: { ...s.properties } };
-    disabledFields.forEach((field) => {
+    disabledFields.forEach(field => {
       delete schema.properties[field];
     });
-    schema.required = schema.required.filter(f => disabledFields.indexOf(f) < 0);
+    schema.required = schema.required.filter(
+      f => disabledFields.indexOf(f) < 0,
+    );
 
-    return this.props.processSchema(this._overrideSchemaCopy(schema), this._getHookContext());
+    return this.props.processSchema(
+      this._overrideSchemaCopy(schema),
+      this._getHookContext(),
+    );
   };
 
-  processSubmission = (sub) => {
+  processSubmission = sub => {
     const { disabledFields } = this.props;
     const submission = { ...sub };
-    disabledFields.forEach((field) => {
+    disabledFields.forEach(field => {
       submission[field] = true;
     });
     return this.props.processSubmission(submission, this._getHookContext());
@@ -392,11 +408,14 @@ class CampaignForm extends Component {
       let formSchema;
       let failed = false;
       try {
-        const { campaign: c } = await this.props.wings.query(this.query() + this.fragment(), {
-          selector: {
-            id: { eq: this.props.id },
+        const { campaign: c } = await this.props.wings.query(
+          this.query() + this.fragment(),
+          {
+            selector: {
+              id: { eq: this.props.id },
+            },
           },
-        });
+        );
         campaign = c;
         formSchema = JSON.parse(c.submissionSchema);
       } catch (e) {
@@ -439,7 +458,10 @@ class CampaignForm extends Component {
       } else {
         this.setState({ stage: 'confirm' });
       }
-      this.confirmedContainerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      this.confirmedContainerRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
     } catch (err) {
       console.error(err);
     }
@@ -484,7 +506,7 @@ class CampaignForm extends Component {
         <Loading />
       </div>
     ) : (
-      <React.Fragment>
+      <>
         {this.props.type === 'fundraiser' ? (
           <div style={{ marginBottom: '20px' }}>
             <Amount
@@ -493,7 +515,7 @@ class CampaignForm extends Component {
               id="amount"
               value={amount / 100}
               amounts={[5, 10, 25]}
-              onChange={(v) => {
+              onChange={v => {
                 this.setState({ amount: v * 100 });
               }}
             />
@@ -524,7 +546,7 @@ class CampaignForm extends Component {
             <p>{campaignErrorText}</p>
           </div>
         )}
-      </React.Fragment>
+      </>
     );
   }
 }
