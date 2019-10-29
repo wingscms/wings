@@ -166,8 +166,7 @@ const Button = styled(_Button)`
   color: #fff;
   margin-top: 40px;
   width: auto;
-  text-transform: ${({ theme }) =>
-    theme.uppercaseTitles ? 'uppercase' : 'none'};
+  
   &:after {
     display: none;
   }

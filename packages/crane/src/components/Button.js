@@ -40,10 +40,10 @@ const buttonStyles = ({ disabled, intent, size, theme, type }) => {
     : css`
         background-color: ${theme.disabledColor || '#DDDDDD'} !important;
         color: ${getContrastColor({
-    backgroundColor: theme.disabledColor || '#DDDDDD',
-    colors,
-    threshold: theme.contrastLuminanceThreshold || 50,
-  })};
+          backgroundColor: theme.disabledColor || '#DDDDDD',
+          colors,
+          threshold: theme.contrastLuminanceThreshold || 50,
+        })};
         cursor: not-allowed !important;
       `;
   return css`
@@ -60,6 +60,7 @@ const buttonStyles = ({ disabled, intent, size, theme, type }) => {
     font-family: ${theme.headerFontFamily};
     font-weight: bold;
     border-radius: 4px;
+    text-transform: ${theme.uppercaseTitles ? 'uppercase' : 'none'};
     &:hover,
     &:active {
       opacity: 0.8;
