@@ -11,7 +11,7 @@ export default styled.div`
     font-weight: bold;
     margin-bottom: 20px;
     text-transform: ${({ theme }) =>
-      theme.uppercaseTitles ? 'uppercase' : 'none'};
+    (theme.uppercaseTitles ? 'uppercase' : 'none')};
   }
   a.footerLink {
     color: ${({ theme }) => theme.footerTextColor};

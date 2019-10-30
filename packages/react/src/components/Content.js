@@ -201,7 +201,7 @@ export default styled(Content)`
       margin-bottom: ${({ theme }) => theme.extraSmallSpacing};
       line-height: 1.2;
       text-transform: ${({ theme }) =>
-        theme.uppercaseTitles ? 'uppercase' : 'none'};
+    (theme.uppercaseTitles ? 'uppercase' : 'none')};
       @media screen and (min-width: 800px) {
         margin-bottom: ${({ theme }) => theme.smallSpacing};
       }

@@ -24,7 +24,7 @@ const Image = styled.div`
   margin-right: auto;
   position: relative;
   ${({ imageUrl }) =>
-    imageUrl
+    (imageUrl
       ? css`
           background-image: url(${imageUrl});
           background-size: 100% auto;
@@ -43,7 +43,7 @@ const Image = styled.div`
             padding-top: 50%;
           }
         `
-      : null}
+      : null)}
 `;
 
 export const CampaignCardView = ({ id, resourceType, ...props }) => {

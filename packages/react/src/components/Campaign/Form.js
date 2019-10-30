@@ -317,11 +317,10 @@ class CampaignForm extends Component {
   };
 
   getFormSchema() {
-    const schema =
-      this.props.formSchema ||
-      (this.props.node.submissionSchema &&
-        JSON.parse(this.props.node.submissionSchema)) ||
-      this.state.formSchema;
+    const schema =      this.props.formSchema
+      || (this.props.node.submissionSchema
+        && JSON.parse(this.props.node.submissionSchema))
+      || this.state.formSchema;
     return schema ? this.processSchema(schema) : schema;
   }
 
@@ -395,10 +394,10 @@ class CampaignForm extends Component {
 
   maybeFetch() {
     if (
-      this.state.failed ||
-      this.state.formSchema ||
-      this.props.formSchema ||
-      this.state.fetching
+      this.state.failed
+      || this.state.formSchema
+      || this.props.formSchema
+      || this.state.fetching
     ) {
       return;
     }

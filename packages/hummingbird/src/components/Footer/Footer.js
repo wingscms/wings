@@ -55,7 +55,7 @@ const CTASection = styled(Section)`
     font-weight: bold;
     margin-bottom: 20px;
     text-transform: ${({ theme }) =>
-      theme.uppercaseTitles ? 'uppercase' : 'none'};
+    (theme.uppercaseTitles ? 'uppercase' : 'none')};
   }
 `;
 

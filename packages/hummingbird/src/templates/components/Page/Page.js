@@ -13,7 +13,7 @@ const Title = styled.h1`
   text-align: center;
   color: ${({ theme }) => theme.textColor};
   text-transform: ${({ theme }) =>
-    theme.uppercaseTitles ? 'uppercase' : 'none'};
+    (theme.uppercaseTitles ? 'uppercase' : 'none')};
   font-size: 32px;
   line-height: 1.2;
   &.hidden {

@@ -40,10 +40,10 @@ const buttonStyles = ({ disabled, intent, size, theme, type }) => {
     : css`
         background-color: ${theme.disabledColor || '#DDDDDD'} !important;
         color: ${getContrastColor({
-          backgroundColor: theme.disabledColor || '#DDDDDD',
-          colors,
-          threshold: theme.contrastLuminanceThreshold || 50,
-        })};
+    backgroundColor: theme.disabledColor || '#DDDDDD',
+    colors,
+    threshold: theme.contrastLuminanceThreshold || 50,
+  })};
         cursor: not-allowed !important;
       `;
   return css`

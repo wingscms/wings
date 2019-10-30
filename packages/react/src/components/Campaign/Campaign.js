@@ -127,7 +127,7 @@ const FormContainerInner = styled.div`
 const Title = styled.h1`
   font-size: 3rem;
   text-transform: ${({ theme }) =>
-    theme.uppercaseTitles ? 'uppercase' : 'none'};
+    (theme.uppercaseTitles ? 'uppercase' : 'none')};
   @media screen and (max-width: 800px) {
     font-size: 2rem;
   }
@@ -219,8 +219,8 @@ export default ({
             />
           </Proposition>
           <FormContainer id="campaign-form-container" ref={formContainerRef}>
-            {typeof signatureCount === 'number' &&
-              node.resourceType === 'node.petition' && (
+            {typeof signatureCount === 'number'
+              && node.resourceType === 'node.petition' && (
                 <CounterContainer>
                   <PetitionCounter
                     current={signatureCount}
@@ -230,7 +230,7 @@ export default ({
                     goalText={petitionCounterGoalText}
                   />
                 </CounterContainer>
-              )}
+            )}
             <FormContainerInner>
               <CampaignForm
                 type={resourceType.split('.')[1]}
@@ -246,8 +246,8 @@ export default ({
           </FormContainer>
         </MainContainerInner>
       </MainContainerOuter>
-      {resourceType === 'node.event' &&
-        (node.schedule || node.fee || node.location) && (
+      {resourceType === 'node.event'
+        && (node.schedule || node.fee || node.location) && (
           <EventDetails
             title={<Title>{eventInfoTitle}</Title>}
             location={node.location}
@@ -261,7 +261,7 @@ export default ({
               eventFee,
             }}
           />
-        )}
+      )}
     </>
   );
   return wrapElement(element, node);

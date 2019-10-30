@@ -13,7 +13,7 @@ const Container = styled.div`
 
 const Title = styled.h3`
   text-transform: ${({ theme }) =>
-    theme.uppercaseTitles ? 'uppercase' : 'none'};
+    (theme.uppercaseTitles ? 'uppercase' : 'none')};
   font-size: 40px;
   font-weight: 800;
   line-height: 42px;
@@ -61,11 +61,11 @@ const QuestionText = styled.div`
     background-color: ${({ theme }) => theme.elementBackgroundColor};
     p {
       color: ${({ theme }) =>
-        getContrastColor({
-          backgroundColor: theme.elementBackgroundColor,
-          colors: { light: theme.textColor, dark: theme.textColorDark },
-          threshold: theme.contrastLuminanceThreshold,
-        })};
+    getContrastColor({
+      backgroundColor: theme.elementBackgroundColor,
+      colors: { light: theme.textColor, dark: theme.textColorDark },
+      threshold: theme.contrastLuminanceThreshold,
+    })};
     }
   }
 `;

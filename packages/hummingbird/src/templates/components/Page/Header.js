@@ -35,7 +35,7 @@ const Title = styled.h1`
   letter-spacing: 1.5px;
   color: ${({ theme }) => theme.textColor};
   text-transform: ${({ theme }) =>
-    theme.uppercaseTitles ? 'uppercase' : 'none'};
+    (theme.uppercaseTitles ? 'uppercase' : 'none')};
   display: inline-block;
   font-size: 32px;
   line-height: 1.2;

@@ -4,7 +4,7 @@ export default styled.h1`
   letter-spacing: 1.5px;
   color: ${({ theme }) => theme.landingSectionTitleColor};
   text-transform: ${({ theme }) =>
-    theme.uppercaseTitles ? 'uppercase' : 'none'};
+    (theme.uppercaseTitles ? 'uppercase' : 'none')};
   display: inline-block;
   font-size: 32px;
   line-height: 1.2;
@@ -19,7 +19,7 @@ export default styled.h1`
     max-width: 1000px;
   }
   ${({ theme }) =>
-    theme.landingSectionTitleBackgroundColor
+    (theme.landingSectionTitleBackgroundColor
       ? `
   line-height: 1.4;
   span {
@@ -29,5 +29,5 @@ export default styled.h1`
     box-decoration-break: clone;
   }
   `
-      : null};
+      : null)};
 `;

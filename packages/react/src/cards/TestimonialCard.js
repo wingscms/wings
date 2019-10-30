@@ -47,7 +47,7 @@ const Wrap = styled(StickyContainer)`
 const Title = styled.h1`
   color: ${({ theme }) => (theme.brand ? theme.brand : theme.primaryColor)};
   text-transform: ${({ theme }) =>
-    theme.uppercaseTitles ? 'uppercase' : 'none'};
+    (theme.uppercaseTitles ? 'uppercase' : 'none')};
   line-height: 1;
   font-family: ${({ theme }) => theme.headerFontFamily};
   position: relative;

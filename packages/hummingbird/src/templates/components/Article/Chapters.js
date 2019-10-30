@@ -42,7 +42,7 @@ const ChapterItem = styled.li`
   font-family: ${({ theme }) => theme.headerFontFamily};
   font-weight: ${({ theme }) => theme.typography.headerFontWeight || 'bold'};
   text-transform: ${({ theme }) =>
-    theme.uppercaseTitles ? 'uppercase' : 'none'};
+    (theme.uppercaseTitles ? 'uppercase' : 'none')};
   a {
     text-decoration: none;
     color: ${({ theme }) => theme.chapterSelectItemColor};

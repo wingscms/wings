@@ -44,7 +44,7 @@ const Chapter = styled.div`
 const Title = styled.h2`
   color: ${({ theme }) => theme.chapterItemColor};
   text-transform: ${({ theme }) =>
-    theme.uppercaseTitles ? 'uppercase' : 'none'};
+    (theme.uppercaseTitles ? 'uppercase' : 'none')};
   letter-spacing: 1.5px;
   font-size: 30px;
   line-height: 65px !important;
@@ -64,7 +64,7 @@ const Marker = styled.span`
   line-height: 55px;
   font-family: ${({ theme }) => theme.headerFontFamily};
   text-transform: ${({ theme }) =>
-    theme.uppercaseTitles ? 'uppercase' : 'none'};
+    (theme.uppercaseTitles ? 'uppercase' : 'none')};
   @media screen and (min-width: 800px) {
     font-size: 110px;
   }
