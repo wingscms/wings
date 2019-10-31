@@ -504,7 +504,7 @@ class CampaignForm extends Component {
         <Loading />
       </div>
     ) : (
-      <>
+      <React.Fragment>
         {this.props.type === 'fundraiser' ? (
           <div style={{ marginBottom: '20px' }}>
             <Amount
@@ -544,7 +544,7 @@ class CampaignForm extends Component {
             <p>{campaignErrorText}</p>
           </div>
         )}
-      </>
+      </React.Fragment>
     );
   }
 }
