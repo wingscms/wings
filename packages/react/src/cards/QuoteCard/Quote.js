@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ALIGNLEFT, ALIGNRIGHT } from '@wingscms/crane';
+import { ALIGNLEFT, ALIGNRIGHT, wide } from '@wingscms/crane';
 import { FLOAT } from './enums';
 
 import { quote } from '../../img/icons';
@@ -45,17 +45,16 @@ export default styled.figure`
     box-shadow: none;
     aside {
       font-family: ${({ theme }) => theme.headerFontFamily};
-      font-size: 24px;
+      font-size: 1.8em;
       line-height: 1.2;
-      @media screen and (min-width: 800px) {
-        font-size: 28px;
-      }
+    }
+    figcaption {
+      margin-top: 20px;
+      font-size: 0.8em;
     }
   }
   &.pullquote-${FLOAT.NONE} {
-    figcaption {
-      margin-top: 20px;
-    }
+    ${wide};
   }
   &.pullquote-${FLOAT.LEFT} {
     ${ALIGNLEFT};
