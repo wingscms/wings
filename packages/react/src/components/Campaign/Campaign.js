@@ -55,7 +55,6 @@ const CampaignFragment = `
 
 const MainContainerOuter = styled(Container)`
   background-color: transparent;
-  margin-top: -300px;
   overflow: auto;
   margin-bottom: ${({ theme }) => theme.largeSpacing};
   @media screen and (max-width: 800px) {
