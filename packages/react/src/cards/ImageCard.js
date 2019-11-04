@@ -51,32 +51,6 @@ const Image = styled.figure`
     padding: 10px;
     color: #4a4a4a;
   }
-  &.align-${FLOAT.LEFT} {
-    ${ALIGNLEFT};
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding-right: 20px;
-    @media screen and (min-width: 800px) {
-      margin-top: 20px;
-      margin-bottom: 20px;
-      figcaption {
-        padding: 10px 0;
-      }
-    }
-  }
-  &.align-${FLOAT.RIGHT} {
-    ${ALIGNRIGHT};
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding-left: 20px;
-    @media screen and (min-width: 800px) {
-      margin-top: 20px;
-      margin-bottom: 20px;
-      figcaption {
-        padding: 10px 0;
-      }
-    }
-  }
   &.size-${SIZE.MEDIUM} {
     max-width: 400px;
     margin-left: auto;
@@ -108,6 +82,22 @@ const Image = styled.figure`
       width: 100%;
       margin: 0 auto;
       @media screen and (min-width: 1600px) {
+        padding: 10px 0;
+      }
+    }
+  }
+  &.align-${FLOAT.LEFT} {
+    ${ALIGNLEFT};
+    @media screen and (min-width: 800px) {
+      figcaption {
+        padding: 10px 0;
+      }
+    }
+  }
+  &.align-${FLOAT.RIGHT} {
+    ${ALIGNRIGHT};
+    @media screen and (min-width: 800px) {
+      figcaption {
         padding: 10px 0;
       }
     }
