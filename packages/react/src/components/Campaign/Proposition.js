@@ -78,8 +78,7 @@ export default ({
   const [height, setHeight] = useState(0);
   const [show, setShow] = useState(false);
   const [showToggle, setShowToggle] = useState(true);
-  const containerInnerHeight =
-    containerInnerRef && containerInnerRef.current && containerInnerRef.current.offsetHeight;
+  const containerInnerHeight = containerInnerRef && containerInnerRef.current && containerInnerRef.current.offsetHeight;
   const toggleShow = () => {
     if (show) {
       campaignContainerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
