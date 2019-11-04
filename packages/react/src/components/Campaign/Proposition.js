@@ -92,7 +92,7 @@ export default ({
   const updateHeight = () => {
     const { offsetHeight } = formContainerRef.current;
     setHeight(offsetHeight);
-    if (formContainerRef.current.offsetHeight > containerInnerRef.current.offsetHeight) {
+    if (formContainerRef.current.offsetHeight > containerInnerRef.current.offsetHeight + 160) {
       setShowToggle(false);
     } else {
       setShowToggle(true);
