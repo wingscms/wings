@@ -5,15 +5,14 @@ import Content from '../components/Content';
 
 const TextWrapper = styled.div`
   margin: ${({ theme }) => theme.mediumSpacing} 0;
-  padding: ${({ theme }) => theme.smallSpacing};
+  padding: 30px;
   box-shadow: ${({ theme }) => theme.defaultShadow};
   background-color: ${({ theme }) => theme.elementBackgroundColor};
+  p {
+    font-size: 0.9em;
+  }
   p:last-child {
     margin-bottom: 0;
-  }
-  @media screen and (min-width: 800px) {
-    margin: ${({ theme }) => theme.largeSpacing} 0;
-    padding: ${({ theme }) => theme.mediumSpacing};
   }
 `;
 class TextCardView extends Component {

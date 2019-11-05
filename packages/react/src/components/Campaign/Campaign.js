@@ -55,7 +55,6 @@ const CampaignFragment = `
 
 const MainContainerOuter = styled(Container)`
   background-color: transparent;
-  margin-top: -300px;
   overflow: auto;
   margin-bottom: ${({ theme }) => theme.largeSpacing};
   @media screen and (max-width: 800px) {
@@ -126,6 +125,8 @@ const FormContainerInner = styled.div`
 
 const Title = styled.h1`
   font-size: 3rem;
+  text-transform: ${({ theme }) =>
+    (theme.uppercaseTitles ? 'uppercase' : 'none')};
   @media screen and (max-width: 800px) {
     font-size: 2rem;
   }
@@ -174,7 +175,7 @@ export default ({
   const [signatureCount, setSignatureCount] = useState(0);
   const [signatureGoal, setSignatureGoal] = useState(0);
   const [node, setNode] = useState(_node);
-  const handleCampaignLoad = (campaign) => {
+  const handleCampaignLoad = campaign => {
     setNode(campaign);
     if (formProps.onLoad) formProps.onLoad(campaign);
     if (resourceType === 'node.petition') {
@@ -217,16 +218,17 @@ export default ({
             />
           </Proposition>
           <FormContainer id="campaign-form-container" ref={formContainerRef}>
-            {typeof signatureCount === 'number' && node.resourceType === 'node.petition' && (
-              <CounterContainer>
-                <PetitionCounter
-                  current={signatureCount}
-                  goal={signatureGoal}
-                  descriptionText={counterMessage}
-                  theme={theme}
-                  goalText={petitionCounterGoalText}
-                />
-              </CounterContainer>
+            {typeof signatureCount === 'number'
+              && node.resourceType === 'node.petition' && (
+                <CounterContainer>
+                  <PetitionCounter
+                    current={signatureCount}
+                    goal={signatureGoal}
+                    descriptionText={counterMessage}
+                    theme={theme}
+                    goalText={petitionCounterGoalText}
+                  />
+                </CounterContainer>
             )}
             <FormContainerInner>
               <CampaignForm
@@ -243,20 +245,21 @@ export default ({
           </FormContainer>
         </MainContainerInner>
       </MainContainerOuter>
-      {resourceType === 'node.event' && (node.schedule || node.fee || node.location) && (
-        <EventDetails
-          title={<Title>{eventInfoTitle}</Title>}
-          location={node.location}
-          {...{
-            eventStartLabel,
-            eventEndLabel,
-            eventLocationLabel,
-            eventFeeLabel,
-            eventStartTime,
-            eventEndTime,
-            eventFee,
-          }}
-        />
+      {resourceType === 'node.event'
+        && (node.schedule || node.fee || node.location) && (
+          <EventDetails
+            title={<Title>{eventInfoTitle}</Title>}
+            location={node.location}
+            {...{
+              eventStartLabel,
+              eventEndLabel,
+              eventLocationLabel,
+              eventFeeLabel,
+              eventStartTime,
+              eventEndTime,
+              eventFee,
+            }}
+          />
       )}
     </React.Fragment>
   );

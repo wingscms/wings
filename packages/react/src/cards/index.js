@@ -11,12 +11,15 @@ import _QACard from './QACard';
 import _TextCard from './TextCard';
 import _CampaignCard, { CampaignCardView as _CampaignCardView } from './CampaignCard';
 
+const _HeaderCard = { ..._ChapterCard, name: 'HeaderCard' };
+
 export const ImageCard = _ImageCard;
 export const InsightCard = _InsightCard;
 export const QuoteCard = _QuoteCard;
 export const TestimonialCard = _TestimonialCard;
 export const EmbedCard = _EmbedCard;
 export const ChapterCard = _ChapterCard;
+export const HeaderCard = _HeaderCard;
 export const CTACard = _CTACard;
 export const DataCard = _DataCard;
 export const CollectionCard = _CollectionCard;
@@ -25,8 +28,6 @@ export const TextCard = _TextCard;
 export const CampaignCard = _CampaignCard;
 
 export const CampaignCardView = _CampaignCardView;
-
-const _HeaderCard = { ..._ChapterCard, name: 'HeaderCard' };
 
 export const cards = {
   ImageCard: _ImageCard,

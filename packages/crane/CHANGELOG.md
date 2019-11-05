@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0](https://github.com/wingscms/wings/compare/@wingscms/crane@0.15.2...@wingscms/crane@0.16.0) (2019-11-05)
+
+
+### Bug Fixes
+
+* improve floating image styles ([#284](https://github.com/wingscms/wings/issues/284)) ([8ab28b2](https://github.com/wingscms/wings/commit/8ab28b26260c1ebaf7640b05a75a12ffca3e8ac9))
+
+
+### Features
+
+* uppercase theme option ([#271](https://github.com/wingscms/wings/issues/271)) ([f015704](https://github.com/wingscms/wings/commit/f01570470dc0f9e4c1d95ae1f7a273182c4f29f8))
+
+
+
+
+
 ## [0.15.2](https://github.com/wingscms/wings/compare/@wingscms/crane@0.15.1...@wingscms/crane@0.15.2) (2019-10-16)
 
 **Note:** Version bump only for package @wingscms/crane
