@@ -12,6 +12,8 @@ const Title = styled.h1`
   margin: ${({ theme }) => theme.mediumSpacing} auto;
   text-align: center;
   color: ${({ theme }) => theme.textColor};
+  text-transform: ${({ theme }) =>
+    (theme.uppercaseTitles ? 'uppercase' : 'none')};
   font-size: 32px;
   line-height: 1.2;
   &.hidden {
@@ -37,8 +39,11 @@ const ContentWrapper = styled.div`
 
 export default class PageTemplate extends Component {
   static Navigation = Entry.Navigation;
+
   static Header = Entry.Header;
+
   static Header = ({ pageContext: { node } }) => <Header article={node} />;
+
   static Navigation = ({
     pageContext: {
       node: { translations, platforms, menu, locale },
@@ -54,20 +59,33 @@ export default class PageTemplate extends Component {
     />
   );
 
-  static Title = ({ pageContext: { node, hidden, className, children, ...props } }) => (
-    <Title {...filterInvalidDOMProps(props)} className={classNames(className, { hidden })}>
+  static Title = ({
+    pageContext: { node, hidden, className, children, ...props },
+  }) => (
+    <Title
+      {...filterInvalidDOMProps(props)}
+      className={classNames(className, { hidden })}
+    >
       {node.title || children}
     </Title>
   );
 
   static Main = ({ pageContext: { node } }) => (
     <ContentWrapper>
-      <Content className="mobiledoc-content" id="entry-content" content={node.content} />
+      <Content
+        className="mobiledoc-content"
+        id="entry-content"
+        content={node.content}
+      />
     </ContentWrapper>
   );
 
   static defaultProps = {
-    children: [<PageTemplate.Navigation />, <PageTemplate.Header />, <PageTemplate.Main />],
+    children: [
+      <PageTemplate.Navigation />,
+      <PageTemplate.Header />,
+      <PageTemplate.Main />,
+    ],
   };
 
   render() {
