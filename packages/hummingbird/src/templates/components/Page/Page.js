@@ -12,18 +12,22 @@ const Title = styled.h1`
   margin: ${({ theme }) => theme.mediumSpacing} auto;
   text-align: center;
   color: ${({ theme }) => theme.textColor};
+  font-size: 2rem;
   text-transform: ${({ theme }) =>
     (theme.uppercaseTitles ? 'uppercase' : 'none')};
-  font-size: 32px;
   line-height: 1.2;
+  max-width: 90%;
   &.hidden {
     position: absolute;
     opacity: 0;
     left: -99999999px;
   }
+  @media screen and (min-width: 600px) {
+    font-size: 2.5rem;
+  }
   @media screen and (min-width: 800px) {
     margin: ${({ theme }) => theme.largeSpacing} auto;
-    font-size: 60px;
+    font-size: 3rem;
   }
 `;
 
