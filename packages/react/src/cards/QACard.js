@@ -12,6 +12,8 @@ const Container = styled.div`
 `;
 
 const Title = styled.h3`
+  text-transform: ${({ theme }) =>
+    (theme.uppercaseTitles ? 'uppercase' : 'none')};
   font-size: 40px;
   font-weight: 800;
   line-height: 42px;
@@ -113,7 +115,11 @@ class QACardView extends Component {
         {title ? <Title>{title}</Title> : null}
         <QA>
           {content.map(x => (
-            <Question question={x.question} answer={x.answer} key={`qacard-${x._id}`} />
+            <Question
+              question={x.question}
+              answer={x.answer}
+              key={`qacard-${x._id}`}
+            />
           ))}
         </QA>
       </Container>

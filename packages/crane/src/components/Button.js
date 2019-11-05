@@ -60,6 +60,7 @@ const buttonStyles = ({ disabled, intent, size, theme, type }) => {
     font-family: ${theme.headerFontFamily};
     font-weight: bold;
     border-radius: 4px;
+    text-transform: ${theme.uppercaseTitles ? 'uppercase' : 'none'};
     &:hover,
     &:active {
       opacity: 0.8;
