@@ -10,7 +10,7 @@ export const ALIGNLEFT = css`
   }
   @media screen and (min-width: 1080px) {
     margin-right: 2rem;
-    margin-left: -10rem;
+    margin-left: -8rem;
     width: 50%;
   }
 `;
@@ -25,7 +25,7 @@ export const ALIGNRIGHT = css`
   }
   @media screen and (min-width: 1080px) {
     margin-left: 2rem;
-    margin-right: -10rem;
+    margin-right: -8rem;
     width: 50%;
   }
 `;
