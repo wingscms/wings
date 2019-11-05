@@ -14,10 +14,10 @@ export default ({ element }, pluginOptions) => {
     <WingsProvider client={wings}>
       <ThemeProvider theme={createTheme({ design, typography })}>
         <PluginOptionsProvider value={pluginOptions}>
-          <React.Fragment>
+          <>
             <GlobalStyles />
             {element}
-          </React.Fragment>
+          </>
         </PluginOptionsProvider>
       </ThemeProvider>
     </WingsProvider>

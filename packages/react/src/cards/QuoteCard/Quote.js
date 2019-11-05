@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ALIGNLEFT, ALIGNRIGHT } from '@wingscms/crane';
+import { ALIGNLEFT, ALIGNRIGHT, wide } from '@wingscms/crane';
 import { FLOAT } from './enums';
 
 import { quote } from '../../img/icons';
@@ -8,9 +8,9 @@ export default styled.figure`
   clear: both;
   width: 100%;
   text-align: center;
-  margin: 80px 0;
+  margin: ${({ theme }) => theme.mediumSpacing} 0;
   box-shadow: ${({ theme }) => theme.defaultShadow};
-  padding: 40px 0 20px 0;
+  padding: 30px;
   background-color: ${({ theme }) => theme.blockquoteBackgroundColor};
   a { 
       color: #000000;
@@ -45,17 +45,16 @@ export default styled.figure`
     box-shadow: none;
     aside {
       font-family: ${({ theme }) => theme.headerFontFamily};
-      font-size: 24px;
+      font-size: 1.8em;
       line-height: 1.2;
-      @media screen and (min-width: 800px) {
-        font-size: 28px;
-      }
+    }
+    figcaption {
+      margin-top: 20px;
+      font-size: 0.8em;
     }
   }
   &.pullquote-${FLOAT.NONE} {
-    figcaption {
-      margin-top: 20px;
-    }
+    ${wide};
   }
   &.pullquote-${FLOAT.LEFT} {
     ${ALIGNLEFT};
@@ -82,8 +81,11 @@ export default styled.figure`
     background-color: ${({ theme }) => theme.blockquoteBackgroundColor};
     padding: 0;
     font-weight: ${({ theme }) => theme.blockquoteFontWeight};
+    font-size: 0.9em;
+    font-style: italic;
     text-align: left;
     position: relative;
+    margin: 0;
     &:after {
       content: '';
       position: absolute;
@@ -93,7 +95,7 @@ export default styled.figure`
       background-repeat: no-repeat;
       left: 50%;
       transform: translateX(-50%);
-      top: -60px;
+      top: -50px;
     }
   }
   figcaption {

@@ -52,7 +52,10 @@ const CTASection = styled(Section)`
   line-height: 1.2;
 
   .title {
+    font-weight: bold;
     margin-bottom: 20px;
+    text-transform: ${({ theme }) =>
+    (theme.uppercaseTitles ? 'uppercase' : 'none')};
   }
 `;
 
@@ -107,7 +110,7 @@ const Footer = ({ theme }) => {
       <Container>
         {footer.title || theme.logoImageUrl ? (
           <CTASection>
-            <div className="title">{footer.title}</div>
+            <h2 className="title">{footer.title}</h2>
             <div>
               {theme.footerLogoImageUrl && (
                 <a href={footer.logoLink || '/'}>
