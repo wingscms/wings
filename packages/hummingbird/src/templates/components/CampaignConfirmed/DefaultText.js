@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-fragments */
 import React from 'react';
 import FundraiserText, { FundraiserShareTitle } from './FundraiserText';
 import EventText, { EventShareTitle } from './EventText';
@@ -22,7 +23,7 @@ export default ({ resourceType, location }) => {
   }
 };
 
-export const DefaultShareTitle = ({ resourceType }) => {
+export const ShareTitle = ({ resourceType }) => {
   switch (resourceType) {
     case 'node.fundraiser':
       return <FundraiserShareTitle />;

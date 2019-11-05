@@ -1,7 +1,8 @@
+/* eslint-disable react/jsx-fragments */
 import React, { Component } from 'react';
 import Campaign from '../Campaign';
 
-import DefaultText from './DefaultText';
+import Text from './DefaultText';
 import ShareButtons from './ShareButtons';
 
 const Content = props => {
@@ -13,7 +14,7 @@ const Content = props => {
   } = props;
   return (
     <React.Fragment>
-      <DefaultText resourceType={resourceType} location={location} />
+      <Text resourceType={resourceType} location={location} />
       <ShareButtons {...props} />
     </React.Fragment>
   );
@@ -44,9 +45,13 @@ class Main extends Component {
 
 export default class CampaignConfirmed extends Component {
   static Navigation = Campaign.Navigation;
-  static DefaultText = DefaultText;
+
+  static Text = Text;
+
   static ShareButtons = ShareButtons;
+
   static Content = Content;
+  
   static Main = Main;
 
   static defaultProps = {
