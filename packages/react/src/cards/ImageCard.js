@@ -46,10 +46,13 @@ const Image = styled.figure`
     width: 100%;
   }
   figcaption {
-    font-size: 14px;
+    font-size: 0.7em;
     line-height: 1.4;
     padding: 10px;
-    color: #4a4a4a;
+    color: #888;
+    text-align: center;
+    font-family: sans-serif;
+
   }
   &.align-${FLOAT.LEFT} {
     ${ALIGNLEFT};
@@ -61,6 +64,7 @@ const Image = styled.figure`
       margin-bottom: 20px;
       figcaption {
         padding: 10px 0;
+        text-align: initial;
       }
     }
   }
@@ -74,6 +78,7 @@ const Image = styled.figure`
       margin-bottom: 20px;
       figcaption {
         padding: 10px 0;
+        text-align: initial;
       }
     }
   }
