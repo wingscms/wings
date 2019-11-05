@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { getContrastColor, Icons } from '@wingscms/crane';
-import { DefaultShareTitle } from './DefaultText';
+import { ShareTitle } from './DefaultText';
 
 const { Facebook, Twitter, Whatsapp, Email } = Icons;
 
@@ -63,7 +63,7 @@ export default props => {
   } = props;
   return (
     <ShareContainer>
-      <DefaultShareTitle resourceType={resourceType} />
+      <ShareTitle resourceType={resourceType} />
       <ShareButton href={shareUrls.facebook} target="_blank" rel="noopener noreferrer">
         <Facebook />
       </ShareButton>
