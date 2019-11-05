@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.38.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.37.6...@wingscms/hummingbird@0.38.0) (2019-11-05)
+
+
+### Bug Fixes
+
+* fix title breakpoint font sizes and width ([#279](https://github.com/wingscms/wings/issues/279)) ([c0852b6](https://github.com/wingscms/wings/commit/c0852b6f238886458277409093d9f656f76bb0ba))
+* remove whitespace from campaign page when no image present ([#286](https://github.com/wingscms/wings/issues/286)) ([3d7f088](https://github.com/wingscms/wings/commit/3d7f088985511d6fe589cf224824333c192b88d3))
+
+
+### Features
+
+* add simplified header for articles with no header image ([#287](https://github.com/wingscms/wings/issues/287)) ([1fabbd8](https://github.com/wingscms/wings/commit/1fabbd88dee388c3c313a00de921dea156281ac2))
+* uppercase theme option ([#271](https://github.com/wingscms/wings/issues/271)) ([f015704](https://github.com/wingscms/wings/commit/f01570470dc0f9e4c1d95ae1f7a273182c4f29f8))
+
+
+
+
+
 ## [0.37.6](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.37.5...@wingscms/hummingbird@0.37.6) (2019-10-25)
 
 
