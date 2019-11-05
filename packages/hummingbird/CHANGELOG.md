@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.39.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.38.0...@wingscms/hummingbird@0.39.0) (2019-11-05)
+
+
+### Features
+
+* make Campaign confirmation page more flexible ([#255](https://github.com/wingscms/wings/issues/255)) ([3711108](https://github.com/wingscms/wings/commit/37111085902c5d860866c79f70e53cb04423555f))
+
+
+
+
+
 # [0.38.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.37.6...@wingscms/hummingbird@0.38.0) (2019-11-05)
 
 
