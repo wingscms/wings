@@ -89,9 +89,7 @@ export default ({
   const [height, setHeight] = useState(0);
   const [show, setShow] = useState(false);
   const [showToggle, setShowToggle] = useState(true);
-  const containerInnerHeight =    containerInnerRef
-    && containerInnerRef.current
-    && containerInnerRef.current.offsetHeight;
+  const containerInnerHeight = containerInnerRef && containerInnerRef.current && containerInnerRef.current.offsetHeight;
   const toggleShow = () => {
     if (show) {
       campaignContainerRef.current.scrollIntoView({
@@ -107,10 +105,7 @@ export default ({
   const updateHeight = () => {
     const { offsetHeight } = formContainerRef.current;
     setHeight(offsetHeight);
-    if (
-      formContainerRef.current.offsetHeight
-      > containerInnerRef.current.offsetHeight
-    ) {
+    if (formContainerRef.current.offsetHeight > containerInnerRef.current.offsetHeight + 160) {
       setShowToggle(false);
     } else {
       setShowToggle(true);
