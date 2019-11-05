@@ -54,7 +54,9 @@ export const CampaignCardView = ({ id, resourceType, ...props }) => {
     setImageMargin(offsetHeight / 5);
   });
   if (!id || !resourceType) {
-    console.warn('[hummingbird] CampaignCard does not reference an existing campaign');
+    console.warn(
+      '[hummingbird] CampaignCard does not reference an existing campaign',
+    );
     return null;
   }
   return (
