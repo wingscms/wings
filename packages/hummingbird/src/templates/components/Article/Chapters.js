@@ -41,6 +41,8 @@ const ChapterItem = styled.li`
   text-align: center;
   font-family: ${({ theme }) => theme.headerFontFamily};
   font-weight: ${({ theme }) => theme.typography.headerFontWeight || 'bold'};
+  text-transform: ${({ theme }) =>
+    (theme.uppercaseTitles ? 'uppercase' : 'none')};
   a {
     text-decoration: none;
     color: ${({ theme }) => theme.chapterSelectItemColor};
