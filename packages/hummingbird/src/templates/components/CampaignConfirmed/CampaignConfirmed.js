@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-fragments */
 import React, { Component } from 'react';
+import qs from 'qs';
 import Campaign from '../Campaign';
 
 import Text from './DefaultText';
@@ -12,9 +13,10 @@ const Content = props => {
     },
     location,
   } = props;
+  const { transaction_status: transactionStatus } = qs.parse(location.search.replace('?', ''));
   return (
     <React.Fragment>
-      <Text resourceType={resourceType} location={location} />
+      <Text resourceType={resourceType} transactionStatus={transactionStatus} />
       <ShareButtons {...props} />
     </React.Fragment>
   );
@@ -51,7 +53,7 @@ export default class CampaignConfirmed extends Component {
   static ShareButtons = ShareButtons;
 
   static Content = Content;
-  
+
   static Main = Main;
 
   static defaultProps = {

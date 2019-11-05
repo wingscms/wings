@@ -1,14 +1,12 @@
 /* eslint-disable react/jsx-fragments */
 import React from 'react';
-import qs from 'qs';
 import { FormattedMessage } from 'react-intl';
 import Title from './Title';
 import Text from './Text';
 import ShareTitle from './ShareTitle';
 
-export default ({ location }) => {
-  const status = qs.parse(location.search.replace('?', '')).transaction_status;
-  switch (status) {
+export default ({ transactionStatus }) => {
+  switch (transactionStatus) {
     case 'complete':
       return (
         <React.Fragment>
