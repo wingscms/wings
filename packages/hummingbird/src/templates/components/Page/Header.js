@@ -34,16 +34,21 @@ const TitleContainer = styled.div`
 const Title = styled.h1`
   letter-spacing: 1.5px;
   color: ${({ theme }) => theme.textColor};
+  text-transform: ${({ theme }) =>
+    (theme.uppercaseTitles ? 'uppercase' : 'none')};
   display: inline-block;
-  font-size: 32px;
+  font-size: 2rem;
   line-height: 1.2;
   text-align: center;
   margin: 0 auto 0 auto;
   max-width: 90%;
   position: relative;
   z-index: 2;
+  @media screen and (min-width: 600px) {
+    font-size: 2.5rem;
+  }
   @media screen and (min-width: 800px) {
-    font-size: 60px;
+    font-size: 3rem;
   }
   @media screen and (min-width: 960px) {
     width: 920px;

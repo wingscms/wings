@@ -4,7 +4,7 @@ import { getContrastColor, separateUnit } from '@wingscms/crane';
 export default ({
   // MISC OPTIONS
   contrastLuminanceThreshold = 50,
-
+  uppercaseTitles = false,
   // COLORS
   // Base
   primaryColor = '#417de8',
@@ -97,6 +97,7 @@ export default ({
 }) => ({
   // MISC OPTIONS
   contrastLuminanceThreshold,
+  uppercaseTitles,
   // COLORS
   // Base
   primaryColor,
@@ -116,7 +117,8 @@ export default ({
   iconColorDark,
   // Navigation
   navigationBackgroundColor: navigationBackgroundColor || primaryColor,
-  navigationMenuBackgroundColor: navigationMenuBackgroundColor || backgroundColor,
+  navigationMenuBackgroundColor:
+    navigationMenuBackgroundColor || backgroundColor,
   navigationIconColor: getContrastColor({
     backgroundColor: navigationBackgroundColor || primaryColor,
     colors: { light: navigationIconColor, dark: navigationIconColorDark },
@@ -124,12 +126,13 @@ export default ({
   }),
   navigationIconColorDark,
   navigationIconLanguagePickerColor,
-  navigationIconLanguagePickerColorHover: navigationIconLanguagePickerColorHover || primaryColor,
+  navigationIconLanguagePickerColorHover:
+    navigationIconLanguagePickerColorHover || primaryColor,
   // Footer
   footerBackgroundColor: footerBackgroundColor || primaryColor,
   footerTextColor:
-    footerTextColor ||
-    getContrastColor({
+    footerTextColor
+    || getContrastColor({
       backgroundColor: footerBackgroundColor || primaryColor,
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
@@ -137,16 +140,16 @@ export default ({
   // Articles/Pages
   chapterBackgroundColor: chapterBackgroundColor || primaryColor,
   chapterItemColor:
-    chapterItemColor ||
-    getContrastColor({
+    chapterItemColor
+    || getContrastColor({
       backgroundColor: chapterBackgroundColor || primaryColor,
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
     }),
   chapterItemNumberColor: chapterItemNumberColor || secondaryColor,
   chapterIntroColor:
-    chapterIntroColor ||
-    getContrastColor({
+    chapterIntroColor
+    || getContrastColor({
       backgroundColor: chapterBackgroundColor || primaryColor,
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
@@ -154,10 +157,11 @@ export default ({
   chapterSelectBackgroundColor:
     chapterSelectBackgroundColor || chapterBackgroundColor || primaryColor,
   chapterSelectItemColor:
-    chapterSelectItemColor ||
-    chapterItemColor ||
-    getContrastColor({
-      backgroundColor: chapterSelectBackgroundColor || chapterBackgroundColor || primaryColor,
+    chapterSelectItemColor
+    || chapterItemColor
+    || getContrastColor({
+      backgroundColor:
+        chapterSelectBackgroundColor || chapterBackgroundColor || primaryColor,
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
     }),
@@ -167,7 +171,8 @@ export default ({
   blockquoteBackgroundColor: blockquoteBackgroundColor || backgroundColor,
   pullquoteColor: pullquoteColor || primaryColor,
   pullquoteBackgroundColor: pullquoteBackgroundColor || backgroundColor,
-  testimonialBackgroundColor: testimonialBackgroundColor || elementBackgroundColor,
+  testimonialBackgroundColor:
+    testimonialBackgroundColor || elementBackgroundColor,
   // Landing Section
   landingSectionTitleColor,
   landingSectionTitleBackgroundColor,
@@ -177,46 +182,48 @@ export default ({
   // Forms
   formBackgroundColor: formBackgroundColor || primaryColor,
   formTextColor:
-    formTextColor ||
-    getContrastColor({
+    formTextColor
+    || getContrastColor({
       backgroundColor: formBackgroundColor || primaryColor,
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
     }),
   formLinkTextColor:
-    formLinkTextColor ||
-    formTextColor ||
-    getContrastColor({
+    formLinkTextColor
+    || formTextColor
+    || getContrastColor({
       backgroundColor: formBackgroundColor || primaryColor,
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
     }),
   formLinkLineColor: secondaryColor || formLinkLineColor,
   // Campaigns
-  campaignFormBackgroundColor: campaignFormBackgroundColor || formBackgroundColor || primaryColor,
+  campaignFormBackgroundColor:
+    campaignFormBackgroundColor || formBackgroundColor || primaryColor,
   campaignFormTextColor:
-    campaignFormTextColor ||
-    formTextColor ||
-    getContrastColor({
+    campaignFormTextColor
+    || formTextColor
+    || getContrastColor({
       backgroundColor: formBackgroundColor || primaryColor,
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
     }),
   campaignFormLinkTextColor:
-    campaignFormLinkTextColor ||
-    formLinkTextColor ||
-    campaignFormTextColor ||
-    formTextColor ||
-    getContrastColor({
+    campaignFormLinkTextColor
+    || formLinkTextColor
+    || campaignFormTextColor
+    || formTextColor
+    || getContrastColor({
       backgroundColor: formBackgroundColor || primaryColor,
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
     }),
-  campaignFormLinkLineColor: campaignFormLinkLineColor || formLinkLineColor || secondaryColor,
+  campaignFormLinkLineColor:
+    campaignFormLinkLineColor || formLinkLineColor || secondaryColor,
   counterBackgroundColor: counterBackgroundColor || backgroundColor,
   counterTextColor:
-    counterTextColor ||
-    getContrastColor({
+    counterTextColor
+    || getContrastColor({
       backgroundColor: counterBackgroundColor || backgroundColor,
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
@@ -226,13 +233,17 @@ export default ({
   // General
   mediumSpacing,
   largeSpacing:
-    largeSpacing || `${separateUnit(mediumSpacing)[0] * 2}${separateUnit(mediumSpacing)[1]}`,
+    largeSpacing
+    || `${separateUnit(mediumSpacing)[0] * 2}${separateUnit(mediumSpacing)[1]}`,
   extraLargeSpacing:
-    extraLargeSpacing || `${separateUnit(mediumSpacing)[0] * 4}${separateUnit(mediumSpacing)[1]}`,
+    extraLargeSpacing
+    || `${separateUnit(mediumSpacing)[0] * 4}${separateUnit(mediumSpacing)[1]}`,
   smallSpacing:
-    smallSpacing || `${separateUnit(mediumSpacing)[0] / 2}${separateUnit(mediumSpacing)[1]}`,
+    smallSpacing
+    || `${separateUnit(mediumSpacing)[0] / 2}${separateUnit(mediumSpacing)[1]}`,
   extraSmallSpacing:
-    extraSmallSpacing || `${separateUnit(mediumSpacing)[0] / 4}${separateUnit(mediumSpacing)[1]}`,
+    extraSmallSpacing
+    || `${separateUnit(mediumSpacing)[0] / 4}${separateUnit(mediumSpacing)[1]}`,
 
   // SHADOWS
   defaultShadow,
