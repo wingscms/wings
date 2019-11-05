@@ -4,7 +4,8 @@ export default styled('p')`
   color: ${({ theme }) => theme.landingSectionSubtitleColor};
   font-family: ${({ theme }) => theme.headerFontFamily};
   font-weight: ${({ theme }) => theme.typography.headerFontWeight};
-  text-transform: uppercase;
+  text-transform: ${({ theme }) =>
+    (theme.uppercaseTitles ? 'uppercase' : 'none')};
   font-size: 21px;
   margin: 1em auto 0;
   max-width: 95%;
