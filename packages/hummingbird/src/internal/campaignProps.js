@@ -3,8 +3,8 @@ import { defineMessages } from 'react-intl';
 import routing from '../../services/routing';
 
 const formMessages = defineMessages({
-  submitText: {
-    id: 'hummingbird.CampaignForm.submit.text',
+  signupSubmitText: {
+    id: 'hummingbird.CampaignForm.signupSubmit.text',
     description: 'Text for submit button',
     defaultMessage: 'Submit',
   },
@@ -72,7 +72,7 @@ const formMessages = defineMessages({
   },
 });
 
-const dynamicFormMessages = (node) => {
+const dynamicFormMessages = node => {
   if (!node) return [];
   return [
     {
@@ -81,7 +81,9 @@ const dynamicFormMessages = (node) => {
         id: 'hummingbird.CampaignForm.termsField.label',
         description: 'Terms field label',
       },
-      values: { url: (node.settings ? node.settings.legal.terms.url : '') || '/terms' },
+      values: {
+        url: (node.settings ? node.settings.legal.terms.url : '') || '/terms',
+      },
     },
     {
       key: 'privacyConsentFieldLabel',
@@ -89,7 +91,11 @@ const dynamicFormMessages = (node) => {
         id: 'hummingbird.CampaignForm.privacyConsentField.label',
         description: 'Privacy consent field label',
       },
-      values: { url: (node.settings ? node.settings.legal.privacyPolicy.url : '') || '/privacy' },
+      values: {
+        url:
+          (node.settings ? node.settings.legal.privacyPolicy.url : '')
+          || '/privacy',
+      },
     },
   ];
 };
@@ -132,7 +138,7 @@ const campaignMessages = defineMessages({
   },
 });
 
-const dynamicCampaignMessages = (node) => {
+const dynamicCampaignMessages = node => {
   if (!node) return [];
   return [
     {
@@ -150,7 +156,11 @@ const dynamicCampaignMessages = (node) => {
   ];
 };
 
-const formatMessages = ({ staticMessages = [], dynamicMessages = [], intl }) => {
+const formatMessages = ({
+  staticMessages = [],
+  dynamicMessages = [],
+  intl,
+}) => {
   const _staticMessages = Object.keys(staticMessages).map(m => ({
     key: m,
     message: staticMessages[m],
@@ -158,12 +168,15 @@ const formatMessages = ({ staticMessages = [], dynamicMessages = [], intl }) => 
   }));
   const messages = _staticMessages.concat(dynamicMessages);
   return messages.reduce(
-    (c, message) => ({ ...c, [message.key]: intl.formatMessage(message.message, message.values) }),
+    (c, message) => ({
+      ...c,
+      [message.key]: intl.formatMessage(message.message, message.values),
+    }),
     {},
   );
 };
 
-export default (intl) => {
+export default intl => {
   const [node, setNode] = useState(null);
   const schedule = node && node.schedule;
   const scheduleStart = schedule && schedule.start ? new Date(schedule.start) : null;
@@ -181,7 +194,9 @@ export default (intl) => {
         ? `${intl.formatDate(scheduleStart)} ${intl.formatTime(scheduleStart)}`
         : null,
       eventEndTime: scheduleEnding
-        ? `${intl.formatDate(scheduleEnding)} ${intl.formatTime(scheduleEnding)}`
+        ? `${intl.formatDate(scheduleEnding)} ${intl.formatTime(
+          scheduleEnding,
+        )}`
         : null,
       eventFee: fee
         ? intl.formatNumber(fee.amount / 100, {
@@ -190,7 +205,9 @@ export default (intl) => {
           currencyDisplay: 'symbol',
         })
         : null,
-      petitionCounterGoalText: signatureGoal ? intl.formatNumber(signatureGoal) : null,
+      petitionCounterGoalText: signatureGoal
+        ? intl.formatNumber(signatureGoal)
+        : null,
     },
     formProps: {
       copy: formatMessages({
