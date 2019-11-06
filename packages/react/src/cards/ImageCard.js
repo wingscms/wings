@@ -46,36 +46,13 @@ const Image = styled.figure`
     width: 100%;
   }
   figcaption {
-    font-size: 14px;
+    font-size: 0.7em;
     line-height: 1.4;
     padding: 10px;
-    color: #4a4a4a;
-  }
-  &.align-${FLOAT.LEFT} {
-    ${ALIGNLEFT};
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding-right: 20px;
-    @media screen and (min-width: 800px) {
-      margin-top: 20px;
-      margin-bottom: 20px;
-      figcaption {
-        padding: 10px 0;
-      }
-    }
-  }
-  &.align-${FLOAT.RIGHT} {
-    ${ALIGNRIGHT};
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding-left: 20px;
-    @media screen and (min-width: 800px) {
-      margin-top: 20px;
-      margin-bottom: 20px;
-      figcaption {
-        padding: 10px 0;
-      }
-    }
+    color: #888;
+    text-align: center;
+    font-family: sans-serif;
+
   }
   &.size-${SIZE.MEDIUM} {
     max-width: 400px;
@@ -108,6 +85,22 @@ const Image = styled.figure`
       width: 100%;
       margin: 0 auto;
       @media screen and (min-width: 1600px) {
+        padding: 10px 0;
+      }
+    }
+  }
+  &.align-${FLOAT.LEFT} {
+    ${ALIGNLEFT};
+    @media screen and (min-width: 800px) {
+      figcaption {
+        padding: 10px 0;
+      }
+    }
+  }
+  &.align-${FLOAT.RIGHT} {
+    ${ALIGNRIGHT};
+    @media screen and (min-width: 800px) {
+      figcaption {
         padding: 10px 0;
       }
     }

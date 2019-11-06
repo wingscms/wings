@@ -1,13 +1,13 @@
 {
   "private": true,
   "name": "@wingscms/gatsby-starter-hummingbird",
-  "version": "0.2.27",
+  "version": "0.2.31",
   "scripts": {
     "start": "gatsby clean && gatsby develop -p 4000",
     "build": "gatsby build"
   },
   "dependencies": {
-    "@wingscms/hummingbird": "^0.37.4",
+    "@wingscms/hummingbird": "^0.39.0",
     "core-js": "^3.3.2",
     "dotenv": "^8.2.0",
     "gatsby": "^2.3.16",

@@ -6,9 +6,27 @@
   "hummingbird.Campaign.confirm.title": "We zijn er bijna!",
   "hummingbird.Campaign.error.text": "Er is iets misgegaan met het verzenden van het formulier. Probeer het opnieuw of meld het probleem aan ons.",
   "hummingbird.Campaign.error.title": "Oops!",
-  "hummingbird.CampaignConfirmed.main.text": "Dankzij jou zijn we weer een stapje dichter bij ons doel!",
-  "hummingbird.CampaignConfirmed.share.title": "Deel de petitie met je vrienden en collega’s:",
-  "hummingbird.CampaignConfirmed.main.title": "Bedankt!",
+
+  "hummingbird.CampaignConfirmed.main.signupTitle": "Hoera!",
+  "hummingbird.CampaignConfirmed.main.signupText": "Dankzij jou zijn we een stap dichterbij onze doelen.",
+  "hummingbird.CampaignConfirmed.main.signupShareTitle": "Deel deze campagne met je vrienden en collega's:",
+  
+  "hummingbird.CampaignConfirmed.main.petitionTitle": "Hoera!",
+  "hummingbird.CampaignConfirmed.main.petitionText": "Dankzij jou zijn we een stap dichterbij onze doelen.",
+  "hummingbird.CampaignConfirmed.main.petitionShareTitle": "Deel deze petitie met je vrienden en collega's:",
+  
+  "hummingbird.CampaignConfirmed.main.eventTitle": "Hoera!",
+  "hummingbird.CampaignConfirmed.main.eventText": "Dankzij jou zijn we een stap dichterbij onze doelen.",
+  "hummingbird.CampaignConfirmed.main.eventShareTitle": "Deel dit evenement met je vrienden en collega's:",
+  
+  "hummingbird.CampaignConfirmed.main.fundraiserSuccessTitle": "Hoera!",
+  "hummingbird.CampaignConfirmed.main.fundraiserSuccessText": "Bedankt. We hebben je betaling ontvangen.",
+  "hummingbird.CampaignConfirmed.main.fundraiserPendingTitle": "Bedankt voor je bijdrage",
+  "hummingbird.CampaignConfirmed.main.fundraiserPendingText": "Bedankt voor je bijdrage. Je betaling is nog in behandeling. Controleer bij je bank of de betaling succesvol is afgerond.",
+  "hummingbird.CampaignConfirmed.main.fundraiserFailedTitle": "Oh nee!",
+  "hummingbird.CampaignConfirmed.main.fundraiserFailedText": "Bedankt voor je interesse. Er lijkt iets te zijn misgegaan met de betaling. Controleer bij je bank of alles in orde is en probeer het nog eens.",
+  "hummingbird.CampaignConfirmed.main.fundraiserShareTitle": "Deel deze fundraiser met je vrienden en collega's:",
+
   "hummingbird.CampaignForm.submit.text": "Verstuur",
   "hummingbird.CampaignForm.emailField.label": "E-mailadres",
   "hummingbird.CampaignForm.eventSubmit.text": "Neem deel",

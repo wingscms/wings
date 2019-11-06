@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.24.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.23.4...@wingscms/react@0.24.0) (2019-11-05)
+
+
+### Bug Fixes
+
+* blockquote and text card style improvements ([#278](https://github.com/wingscms/wings/issues/278)) ([fcf80d0](https://github.com/wingscms/wings/commit/fcf80d0e3fd7086804f3ad2785dccd3d31ddd63d))
+* improve floating image styles ([#284](https://github.com/wingscms/wings/issues/284)) ([8ab28b2](https://github.com/wingscms/wings/commit/8ab28b26260c1ebaf7640b05a75a12ffca3e8ac9))
+* improve image captions ([#283](https://github.com/wingscms/wings/issues/283)) ([89ec9bf](https://github.com/wingscms/wings/commit/89ec9bf4979b86d1ff499b35c444131b968fc2b4))
+* remove whitespace from campaign page when no image present ([#286](https://github.com/wingscms/wings/issues/286)) ([3d7f088](https://github.com/wingscms/wings/commit/3d7f088985511d6fe589cf224824333c192b88d3))
+* update pullquote styles ([#277](https://github.com/wingscms/wings/issues/277)) ([5901af0](https://github.com/wingscms/wings/commit/5901af0a835d49caa367da3f8ab4c9487176384a))
+
+
+### Features
+
+* uppercase theme option ([#271](https://github.com/wingscms/wings/issues/271)) ([f015704](https://github.com/wingscms/wings/commit/f01570470dc0f9e4c1d95ae1f7a273182c4f29f8))
+
+
+
+
+
+## [0.23.4](https://github.com/wingscms/wings/compare/@wingscms/react@0.23.3...@wingscms/react@0.23.4) (2019-10-25)
+
+
+### Bug Fixes
+
+* export HeaderCard ([eb766cd](https://github.com/wingscms/wings/commit/eb766cd9a88bf51983c4d1a060b3c626e39731c3))
+* put back content styling ([#267](https://github.com/wingscms/wings/issues/267)) ([a80641a](https://github.com/wingscms/wings/commit/a80641a8cb17e0631c1733dbb7f3b5281d55c04a))
+
+
+
+
+
 ## [0.23.3](https://github.com/wingscms/wings/compare/@wingscms/react@0.23.2...@wingscms/react@0.23.3) (2019-10-22)
 
 **Note:** Version bump only for package @wingscms/react

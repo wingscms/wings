@@ -11,34 +11,36 @@ const BackgroundContainer = styled(Container)`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 40px 20px;
-  min-height: 200px;
+  padding: ${props => (props.backgroundImage ? '40px 20px' : '0')};
+  min-height: ${props => (props.backgroundImage ? '200px' : '0')};
   > div {
-    padding: 20px 20px;
+    padding: ${props => (props.backgroundImage ? '20px' : '0')};
     max-width: 1160px;
     width: 100%;
     margin: 0 auto;
-    background-color: ${({ theme }) => theme.primaryColor};
+    background-color: ${({ theme, backgroundImage }) => (backgroundImage ? theme.primaryColor : 'transparent')};
     border-radius: 4px;
   }
   @media screen and (max-width: 800px) {
-    padding: 10px;
+    padding: ${props => (props.backgroundImage ? '10px' : '0')};
     width: 100%;
     max-width: 100%;
   }
 `;
 
 const BackgroundContainerTop = styled(BackgroundContainer)`
-  height: 100vh;
-  max-height: 700px;
+  background-color: ${({ theme, backgroundImage }) => (backgroundImage ? theme.primaryColor : 'transparent')};
+  height: ${props => (props.backgroundImage ? '100vh' : '40px')};
+  max-height: ${props => (props.backgroundImage ? '700px' : '40px')};
+  margin-bottom: ${props => (props.backgroundImage ? '-300px' : '40px')};
   @media screen and (max-width: 800px) {
-    height: 60vh;
+    height: ${props => (props.backgroundImage ? '60vh' : '40px')};
   }
   @media screen and (max-width: 800px) and (max-height: 720px) {
-    height: 60vh;
+    height: ${props => (props.backgroundImage ? '60vh' : '40px')};
   }
   @media screen and (max-width: 800px) and (max-height: 530px) {
-    height: 100vh;
+    height: ${props => (props.backgroundImage ? '100vh' : '40px')};
   }
 `;
 

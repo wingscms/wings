@@ -10,6 +10,8 @@ export default styled.div`
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 20px;
+    text-transform: ${({ theme }) =>
+    (theme.uppercaseTitles ? 'uppercase' : 'none')};
   }
   a.footerLink {
     color: ${({ theme }) => theme.footerTextColor};

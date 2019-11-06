@@ -3,6 +3,54 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.39.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.38.0...@wingscms/hummingbird@0.39.0) (2019-11-05)
+
+
+### Features
+
+* make Campaign confirmation page more flexible ([#255](https://github.com/wingscms/wings/issues/255)) ([3711108](https://github.com/wingscms/wings/commit/37111085902c5d860866c79f70e53cb04423555f))
+
+
+
+
+
+# [0.38.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.37.6...@wingscms/hummingbird@0.38.0) (2019-11-05)
+
+
+### Bug Fixes
+
+* fix title breakpoint font sizes and width ([#279](https://github.com/wingscms/wings/issues/279)) ([c0852b6](https://github.com/wingscms/wings/commit/c0852b6f238886458277409093d9f656f76bb0ba))
+* remove whitespace from campaign page when no image present ([#286](https://github.com/wingscms/wings/issues/286)) ([3d7f088](https://github.com/wingscms/wings/commit/3d7f088985511d6fe589cf224824333c192b88d3))
+
+
+### Features
+
+* add simplified header for articles with no header image ([#287](https://github.com/wingscms/wings/issues/287)) ([1fabbd8](https://github.com/wingscms/wings/commit/1fabbd88dee388c3c313a00de921dea156281ac2))
+* uppercase theme option ([#271](https://github.com/wingscms/wings/issues/271)) ([f015704](https://github.com/wingscms/wings/commit/f01570470dc0f9e4c1d95ae1f7a273182c4f29f8))
+
+
+
+
+
+## [0.37.6](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.37.5...@wingscms/hummingbird@0.37.6) (2019-10-25)
+
+
+### Bug Fixes
+
+* add og:description tag ([#268](https://github.com/wingscms/wings/issues/268)) ([d1d9909](https://github.com/wingscms/wings/commit/d1d99096da1abd00e13293f68e7094fa46f64a02))
+
+
+
+
+
+## [0.37.5](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.37.4...@wingscms/hummingbird@0.37.5) (2019-10-25)
+
+**Note:** Version bump only for package @wingscms/hummingbird
+
+
+
+
+
 ## [0.37.4](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.37.3...@wingscms/hummingbird@0.37.4) (2019-10-22)
 
 **Note:** Version bump only for package @wingscms/hummingbird
