@@ -147,6 +147,9 @@ const resources = [
   },
 ];
 
+const isCampaign = node =>
+  !(['signup', 'petition', 'event', 'fundraiser'].indexOf(node.resourceType.split('.')[1]) < 0);
+
 module.exports = async ({ graphql, actions: { createPage } }) => {
   // QUERIES
 
@@ -178,6 +181,13 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
             isHome && node.resourceType === 'node.entry.page'
               ? require.resolve('../../../src/templates/PageHome')
               : require.resolve(template),
+          context,
+        });
+        if (!isCampaign(node)) return;
+
+        createPage({
+          path: routing.getCampaignConfirmedPath(node),
+          component: require.resolve('../../../src/templates/CampaignConfirmed'),
           context,
         });
       });
