@@ -53,9 +53,6 @@ export { default as FlexGrid } from './layout/FlexGrid';
 // Signup
 export { Signup, SignupForm, Newsletter, NewsletterForm, MailchimpForm } from './components/signup';
 
-// Language
-export { default as languageList } from './data/languageList';
-
 // Utils
 export { createSvgIcon, getContrastColor, separateUnit } from './lib/utils';
 
@@ -64,3 +61,5 @@ export { ALIGNLEFT, ALIGNRIGHT, wide } from './styles';
 
 // Icons
 export { default as Icons } from './img/svg/icons';
+
+export { default as useTheme } from './hooks/useTheme';

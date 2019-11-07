@@ -179,6 +179,18 @@ fragment CampaignFields on Wings_Campaign {
             id
           }
         }
+        menu {
+          id
+          name
+          items {
+            text
+            url
+            items {
+              text
+              url
+            }
+          }
+        }
       }
     }
   }

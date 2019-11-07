@@ -33,7 +33,8 @@
     "react/jsx-props-no-spreading": 0,
     "max-classes-per-file": 0,
     "react/button-has-type": 0,
-    "react/jsx-fragments": 0
+    "react/jsx-fragments": 0,
+    "react/state-in-constructor": 0
   },
   "globals": {
     "graphql": true

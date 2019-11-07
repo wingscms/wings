@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import classNames from 'classnames';
-import { toggleSlideMenu, languageList } from '@wingscms/crane';
+import { toggleSlideMenu } from '@wingscms/crane';
 
 const ChaptersToggleContainer = styled.div`
   position: fixed;
@@ -14,8 +14,9 @@ const ChaptersToggleContainer = styled.div`
   transition: all 0.2s ease-in-out;
   cursor: pointer;
   box-shadow: ${({ theme }) => theme.defaultShadow};
+  font-family: ${({ theme }) => theme.headerFontFamily};
   &:after {
-    content: '${({ locale }) => (locale ? languageList[locale].chaptersName : 'Chapters')}';
+    content: '${({ title }) => title || 'Chapters'}';
     position: absolute;
     top: 50%;
     transform: translateX(-50%) translateY(-50%) rotate(-90deg);
@@ -62,13 +63,13 @@ export default class ChaptersToggle extends React.Component {
   };
 
   render() {
-    const { locale } = this.props;
+    const { title } = this.props;
     const { hidden } = this.state;
     return (
       <ChaptersToggleContainer
-        locale={locale}
+        title={title}
         className={classNames({ hidden })}
-        onClick={(e) => {
+        onClick={e => {
           e.preventDefault();
           toggleSlideMenu(
             document.getElementById('content-wrapper').classList.contains('chaptersOpen'),
