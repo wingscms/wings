@@ -27,7 +27,7 @@
   "hummingbird.CampaignConfirmed.main.fundraiserFailedText": "Bedankt voor je interesse. Er lijkt iets te zijn misgegaan met de betaling. Controleer bij je bank of alles in orde is en probeer het nog eens.",
   "hummingbird.CampaignConfirmed.main.fundraiserShareTitle": "Deel deze fundraiser met je vrienden en collega's:",
 
-  "hummingbird.CampaignForm.submit.text": "Verstuur",
+  "hummingbird.CampaignForm.signupSubmit.text": "Verstuur",
   "hummingbird.CampaignForm.emailField.label": "E-mailadres",
   "hummingbird.CampaignForm.eventSubmit.text": "Neem deel",
   "hummingbird.CampaignForm.firstNameField.label": "Voornaam",

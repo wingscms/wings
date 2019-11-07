@@ -28,7 +28,7 @@
   "hummingbird.CampaignConfirmed.main.fundraiserFailedText": "Thanks for your interest. It seems like something went wrong with the payment. Please check with your bank and try again.",
   "hummingbird.CampaignConfirmed.main.fundraiserShareTitle": "Please share this fundraiser with your friends and colleagues:",
   
-  "hummingbird.CampaignForm.submit.text": "Submit",
+  "hummingbird.CampaignForm.signupSubmit.text": "Submit",
   "hummingbird.CampaignForm.emailField.label": "Email address",
   "hummingbird.CampaignForm.eventSubmit.text": "Attend",
   "hummingbird.CampaignForm.firstNameField.label": "First name",

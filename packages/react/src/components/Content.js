@@ -52,14 +52,13 @@ class Content extends Component {
     cardProps: {},
   };
 
-  constructor(props) {
-    super(props);
-    const { cards: cardsProp, unknownCardHandler } = props;
+  createRenderer() {
+    const { cards: cardsProp, unknownCardHandler } = this.props;
     const _cards = mergeCards(allCards, cardsProp)
       .map(convertCard)
       .map(this.injectCardProps);
 
-    this.renderer = new Renderer({
+    return new Renderer({
       cards: _cards,
       unknownCardHandler,
     });
@@ -102,9 +101,10 @@ class Content extends Component {
       onLoad,
       ...props
     } = this.props;
+    const renderer = this.createRenderer();
     return (
       <div {...props}>
-        {!content ? null : this.renderer.render(JSON.parse(content))}
+        {!content ? null : renderer.render(JSON.parse(content))}
       </div>
     );
   }
