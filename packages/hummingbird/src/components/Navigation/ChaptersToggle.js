@@ -14,6 +14,7 @@ const ChaptersToggleContainer = styled.div`
   transition: all 0.2s ease-in-out;
   cursor: pointer;
   box-shadow: ${({ theme }) => theme.defaultShadow};
+  font-family: ${({ theme }) => theme.headerFontFamily};
   &:after {
     content: '${({ title }) => title || 'Chapters'}';
     position: absolute;
@@ -68,7 +69,7 @@ export default class ChaptersToggle extends React.Component {
       <ChaptersToggleContainer
         title={title}
         className={classNames({ hidden })}
-        onClick={(e) => {
+        onClick={e => {
           e.preventDefault();
           toggleSlideMenu(
             document.getElementById('content-wrapper').classList.contains('chaptersOpen'),

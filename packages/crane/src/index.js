@@ -61,3 +61,5 @@ export { ALIGNLEFT, ALIGNRIGHT, wide } from './styles';
 
 // Icons
 export { default as Icons } from './img/svg/icons';
+
+export { default as useTheme } from './hooks/useTheme';

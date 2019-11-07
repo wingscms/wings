@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const StyledBurger = styled.div`
   .hamburger {
-    padding: 15px 15px;
+    padding: 14px 14px;
     display: inline-block;
     cursor: pointer;
 

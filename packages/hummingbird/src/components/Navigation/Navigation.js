@@ -1,7 +1,6 @@
-/* global document */
-
-import React, { Component } from 'react';
-import styled, { withTheme } from 'styled-components';
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { useIntl } from 'react-intl';
 import {
   Burger,
   LanguagePicker,
@@ -9,6 +8,7 @@ import {
   SlideMenu,
   toggleSlideMenu,
   getContrastColor,
+  useTheme,
 } from '@wingscms/crane';
 import { Link, navigate } from 'gatsby';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
@@ -26,9 +26,10 @@ import ChaptersToggle from './ChaptersToggle';
 
 import Logo from './Logo';
 
-const _MenuItem = withTheme(({ theme, ...props }) => (
-  <MenuItem backgroundColor={theme.navigationBackgroundColor} {...props} />
-));
+const _MenuItem = props => {
+  const theme = useTheme();
+  return <MenuItem backgroundColor={theme.navigationBackgroundColor} {...props} />;
+};
 
 const Wrap = styled.div`
   background: ${({ theme }) => theme.navigationBackgroundColor};
@@ -79,7 +80,7 @@ const ChapterClose = styled(MenuButton)`
 
 const LanguagePickerWrap = styled.div`
   float: right;
-  margin: 30px 10px 0 0;
+  margin: 30px 10px -30px 0;
   width: 120px;
   height: 50px;
   z-index: 5;
@@ -100,6 +101,7 @@ const LanguagePickerWrap = styled.div`
     font-size: 18px;
     margin-top: 40px;
     width: 250px;
+    margin-bottom: -40px;
   }
 `;
 
@@ -118,124 +120,123 @@ const LanguageIcon = styled.img`
   }
 `;
 
-class Navigation extends Component {
-  state = { visible: false };
-
-  toggleNav = (e) => {
-    const { visible } = this.state;
+export default function Navigation({
+  chapterMenu,
+  chapters,
+  items,
+  translations = [],
+  locale,
+  hideMenu,
+  shareUrls,
+  children,
+  ...props
+}) {
+  const intl = useIntl();
+  const theme = useTheme();
+  const [visible, setVisible] = useState(false);
+  const toggleNav = e => {
     e.preventDefault();
     toggleSlideMenu(visible);
-    this.setState({ visible: !visible });
+    setVisible(!visible);
   };
 
-  render() {
-    const {
-      chapterMenu,
-      chapters,
-      items,
-      translations = [],
-      locale,
-      hideMenu,
-      shareUrls,
-      theme,
-      children,
-      ...props
-    } = this.props;
-    const { visible } = this.state;
-    return (
-      <Wrap {...filterInvalidDOMProps(props)}>
-        <Container className={visible ? 'visible' : ''}>
-          {chapterMenu && chapters ? (
-            <SlideMenu
-              customCompTop={() => (
-                <div>
-                  <ChapterClose
-                    onClick={(e) => {
-                      e.preventDefault();
-                      toggleSlideMenu(
-                        document
-                          .getElementById('content-wrapper')
-                          .classList.contains('chaptersOpen'),
-                        'content-wrapper',
-                        'chaptersOpen',
-                        false,
-                      );
-                    }}
-                  >
-                    <Burger active color="#000000" type="spin" />
-                  </ChapterClose>
-                  <ChapterLinks chapters={chapters} />
-                </div>
-              )}
-              items={[]}
-              menuItemComp={_MenuItem}
-              InternalLink={_MenuItem}
-              left
-              className="chapters"
-            />
-          ) : null}
-          {chapterMenu && chapters ? <ChaptersToggle locale={locale} /> : null}
-          <Link to="/">
-            <Logo />
-          </Link>
-          {children}
-          {hideMenu || !items || !items.length ? null : (
-            <MenuButton active={visible} onClick={this.toggleNav}>
-              <Burger
-                active={visible}
-                activeColor={getContrastColor({
-                  backgroundColor: theme.navigationMenuBackgroundColor,
-                  colors: { light: theme.navigationIconColor, dark: theme.navigationIconColorDark },
-                  threshold: theme.contrastLuminanceThreshold,
-                })}
-                color={theme.navigationIconColor}
-                type="spin"
-              />
-            </MenuButton>
-          )}
-          {translations.length > 0 ? (
-            <LanguagePickerWrap>
-              <LanguageIcon src={languageIcon} />
-              <LanguagePicker
-                backgroundColor={theme.languagePickerColor}
-                backgroundColorHover={theme.languagePickerHoverColor}
-                translations={translations.map(t => ({
-                  name: t.locale.name,
-                  locale: t.locale.id,
-                  node: t,
-                }))}
-                current={locale.name}
-                onTranslationClick={({ node }) => {
-                  navigate(routing.getPath(node));
-                }}
-              />
-            </LanguagePickerWrap>
-          ) : null}
-          {shareUrls ? (
-            <ShareButtons
+  return (
+    <Wrap {...filterInvalidDOMProps(props)}>
+      <Container className={visible ? 'visible' : ''}>
+        {chapterMenu && chapters ? (
+          <SlideMenu
+            customCompTop={() => (
+              <div>
+                <ChapterClose
+                  onClick={e => {
+                    e.preventDefault();
+                    toggleSlideMenu(
+                      document.getElementById('content-wrapper').classList.contains('chaptersOpen'),
+                      'content-wrapper',
+                      'chaptersOpen',
+                      false,
+                    );
+                  }}
+                >
+                  <Burger active color="#000000" type="spin" />
+                </ChapterClose>
+                <ChapterLinks chapters={chapters} />
+              </div>
+            )}
+            items={[]}
+            menuItemComp={_MenuItem}
+            InternalLink={_MenuItem}
+            left
+            className="chapters"
+          />
+        ) : null}
+        {chapterMenu && chapters ? (
+          <ChaptersToggle
+            title={intl.formatMessage({
+              id: 'hummingbird.Navigation.chapterMenu.title',
+              description: 'Title for chapter menu',
+              defaultMessage: 'Chapters',
+            })}
+          />
+        ) : null}
+        <Link to="/">
+          <Logo />
+        </Link>
+        {children}
+        {hideMenu || !items || !items.length ? null : (
+          <MenuButton active={visible} onClick={toggleNav}>
+            <Burger
+              active={visible}
+              activeColor={getContrastColor({
+                backgroundColor: theme.navigationMenuBackgroundColor,
+                colors: { light: theme.navigationIconColor, dark: theme.navigationIconColorDark },
+                threshold: theme.contrastLuminanceThreshold,
+              })}
               color={theme.navigationIconColor}
-              email={shareUrls.email}
-              emailIcon={emailIcon}
-              facebook={shareUrls.facebook}
-              facebookIcon={facebookIcon}
-              twitter={shareUrls.twitter}
-              twitterIcon={twitterIcon}
-              whatsapp={shareUrls.whatsapp}
-              whatsappIcon={whatsappIcon}
+              type="spin"
             />
-          ) : null}
-          {items ? (
-            <SlideMenu
-              items={items}
-              menuItemComp={_MenuItem}
-              InternalLink={Link}
-              backgroundColor={theme.navigationMenuBackgroundColor}
+          </MenuButton>
+        )}
+        {translations.length > 0 ? (
+          <LanguagePickerWrap>
+            <LanguageIcon src={languageIcon} />
+            <LanguagePicker
+              backgroundColor={theme.languagePickerColor}
+              backgroundColorHover={theme.languagePickerHoverColor}
+              translations={translations.map(t => ({
+                name: t.locale.name,
+                locale: t.locale.id,
+                node: t,
+              }))}
+              current={locale.name}
+              onTranslationClick={({ node }) => {
+                navigate(routing.getPath(node));
+              }}
             />
-          ) : null}
-        </Container>
-      </Wrap>
-    );
-  }
+          </LanguagePickerWrap>
+        ) : null}
+        {shareUrls ? (
+          <ShareButtons
+            color={theme.navigationIconColor}
+            email={shareUrls.email}
+            emailIcon={emailIcon}
+            facebook={shareUrls.facebook}
+            facebookIcon={facebookIcon}
+            twitter={shareUrls.twitter}
+            twitterIcon={twitterIcon}
+            whatsapp={shareUrls.whatsapp}
+            whatsappIcon={whatsappIcon}
+          />
+        ) : null}
+        {items ? (
+          <SlideMenu
+            items={items}
+            menuItemComp={_MenuItem}
+            InternalLink={Link}
+            backgroundColor={theme.navigationMenuBackgroundColor}
+          />
+        ) : null}
+      </Container>
+    </Wrap>
+  );
 }
-
-export default withTheme(Navigation);
