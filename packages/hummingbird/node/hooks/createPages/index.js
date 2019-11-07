@@ -2,6 +2,69 @@ const query = require('./query');
 const { patchI18n, makeShareUrls } = require('../../utils');
 const routing = require('../../../services/routing');
 
+const NODE_SKELETON = {
+  id: '',
+  title: '',
+  resourceType: '',
+  slug: '',
+  featured: {
+    title: '',
+    description: '',
+    image: {
+      url: '',
+    },
+  },
+  locale: {
+    id: '',
+    name: '',
+    primary: true,
+  },
+  image: {
+    id: '',
+    name: '',
+    caption: null,
+    alt: null,
+    key: '',
+    url: '',
+  },
+  meta: [],
+  data: [],
+  menu: {
+    id: '',
+    name: '',
+    items: [],
+  },
+  status: '',
+  nodeType: '',
+  platforms: {
+    search: {
+      title: '',
+      description: '',
+    },
+    facebook: {
+      title: '',
+      description: '',
+      image: {
+        url: '',
+      },
+    },
+    twitter: {
+      title: '',
+      description: '',
+      image: {
+        url: '',
+      },
+    },
+    whatsapp: {
+      text: null,
+    },
+    meta: [],
+  },
+  content: '',
+  isHome: false,
+  translations: [],
+};
+
 const { GATSBY_WINGS_PROJECT: projectId } = process.env;
 
 const ensureNodeFields = (node, { homeNodeId }) => ({
@@ -22,10 +85,10 @@ const contains = (arr, el) => arr.indexOf(el) > 0;
 const adminUrl = node =>
   `https://admin.wings.dev/${projectId}${WINGS_ADMIN_PATH[node.nodeType]}/${node.id}`;
 
-const verifySlugs = (nodes) => {
+const verifySlugs = nodes => {
   const processedSlugs = [];
   const invalidNodes = [];
-  nodes.forEach((node) => {
+  nodes.forEach(node => {
     const slugWithLocale = [node.slug, node.locale.id].join('|');
     if (!isValidSlug(node.slug) || contains(processedSlugs, slugWithLocale)) {
       invalidNodes.push(node);
@@ -33,7 +96,7 @@ const verifySlugs = (nodes) => {
     processedSlugs.push(slugWithLocale);
   });
   if (invalidNodes.length) {
-    invalidNodes.forEach((node) => {
+    invalidNodes.forEach(node => {
       console.error(
         `[hummingbird] invalid/duplicate slug (${node.slug}) for ${node.nodeType}: ${adminUrl(
           node,
@@ -91,8 +154,8 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
     data: { wings: { currentApp } = {}, wings = {}, site: { siteMetadata = {} } = {} } = {},
   } = await graphql(query);
 
-  const homeNodeId =
-    (currentApp && currentApp.home && currentApp.home.node && currentApp.home.node.id) || null;
+  const homeNode = currentApp && currentApp.home && currentApp.home.node;
+  const homeNodeId = (homeNode && homeNode.id) || null;
 
   await Promise.all(
     resources.map(async ({ resourceType, field, template }) => {
@@ -101,7 +164,7 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
       });
       console.log(`[hummingbird] found ${nodes.length} of ${resourceType}`);
       // GENERATE ARTICLES
-      nodes.forEach((node) => {
+      nodes.forEach(node => {
         const { isHome } = node;
         const path = routing.getPath(node);
         const context = {
@@ -117,17 +180,20 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
               : require.resolve(template),
           context,
         });
-        if (
-          ['signup', 'petition', 'event', 'fundraiser'].indexOf(node.resourceType.split('.')[1]) < 0
-        ) {
-          return;
-        }
-        createPage({
-          path: routing.getCampaignConfirmedPath(node),
-          component: require.resolve('../../../src/templates/CampaignConfirmed'),
-          context,
-        });
       });
     }),
   );
+  createPage({
+    path: '/404',
+    component: require.resolve('../../../src/templates/404'),
+    context: {
+      node: {
+        ...NODE_SKELETON,
+        menu: {
+          ...NODE_SKELETON.menu,
+          ...currentApp.menu,
+        },
+      },
+    },
+  });
 };
