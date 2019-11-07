@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.24.3](https://github.com/wingscms/wings/compare/@wingscms/react@0.24.2...@wingscms/react@0.24.3) (2019-11-07)
+
+
+### Bug Fixes
+
+* update campaign form for new fundraiser API ([98666c3](https://github.com/wingscms/wings/commit/98666c34f81943f5b8e467f93f755e5499cae552))
+
+
+
+
+
 ## [0.24.2](https://github.com/wingscms/wings/compare/@wingscms/react@0.24.1...@wingscms/react@0.24.2) (2019-11-07)
 
 **Note:** Version bump only for package @wingscms/react
