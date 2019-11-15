@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.39.4](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.39.3...@wingscms/hummingbird@0.39.4) (2019-11-15)
+
+
+### Bug Fixes
+
+* don't fail build on duplicate locale/slug ([4036287](https://github.com/wingscms/wings/commit/4036287664b6cb42e3f21e66d8cdf94bdfc0ca36))
+
+
+
+
+
 ## [0.39.3](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.39.2...@wingscms/hummingbird@0.39.3) (2019-11-07)
 
 
