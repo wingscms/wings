@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {
-  SchemaForm,
-  Amount,
-  Loading,
-  Button as _Button,
-} from '@wingscms/crane';
+import { SchemaForm, Amount, Loading, Button as _Button } from '@wingscms/crane';
 import deepmerge from 'deepmerge';
 import { withWings } from '../../ctx/Wings';
 
@@ -166,7 +161,7 @@ const Button = styled(_Button)`
   color: #fff;
   margin-top: 40px;
   width: auto;
-  
+
   &:after {
     display: none;
   }
@@ -226,8 +221,7 @@ class CampaignForm extends Component {
 
   static propTypes = {
     id: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(['signup', 'petition', 'event', 'fundraiser'])
-      .isRequired,
+    type: PropTypes.oneOf(['signup', 'petition', 'event', 'fundraiser']).isRequired,
     onSubmit: PropTypes.func,
     processSchema: PropTypes.func,
     processSubmission: PropTypes.func,
@@ -317,9 +311,8 @@ class CampaignForm extends Component {
   };
 
   getFormSchema() {
-    const schema =      this.props.formSchema
-      || (this.props.node.submissionSchema
-        && JSON.parse(this.props.node.submissionSchema))
+    const schema = this.props.formSchema
+      || (this.props.node.submissionSchema && JSON.parse(this.props.node.submissionSchema))
       || this.state.formSchema;
     return schema ? this.processSchema(schema) : schema;
   }
@@ -345,14 +338,9 @@ class CampaignForm extends Component {
     disabledFields.forEach(field => {
       delete schema.properties[field];
     });
-    schema.required = schema.required.filter(
-      f => disabledFields.indexOf(f) < 0,
-    );
+    schema.required = schema.required.filter(f => disabledFields.indexOf(f) < 0);
 
-    return this.props.processSchema(
-      this._overrideSchemaCopy(schema),
-      this._getHookContext(),
-    );
+    return this.props.processSchema(this._overrideSchemaCopy(schema), this._getHookContext());
   };
 
   processSubmission = sub => {
@@ -406,14 +394,11 @@ class CampaignForm extends Component {
       let formSchema;
       let failed = false;
       try {
-        const { campaign: c } = await this.props.wings.query(
-          this.query() + this.fragment(),
-          {
-            selector: {
-              id: { eq: this.props.id },
-            },
+        const { campaign: c } = await this.props.wings.query(this.query() + this.fragment(), {
+          selector: {
+            id: { eq: this.props.id },
           },
-        );
+        });
         campaign = c;
         formSchema = JSON.parse(c.submissionSchema);
       } catch (e) {
@@ -451,8 +436,12 @@ class CampaignForm extends Component {
           redirectUrl: this.props.redirectUrl, // default to current URL?
         },
       });
-      if (res.donation && res.donation.id) {
-        window.location.assign(res.donation.order.paymentUrl);
+      if (
+        res.submitFundraiser
+        && res.submitFundraiser.donation
+        && res.submitFundraiser.donation.id
+      ) {
+        window.location.assign(res.submitFundraiser.donation.order.paymentUrl);
       } else {
         this.setState({ stage: 'confirm' });
       }

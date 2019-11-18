@@ -87,11 +87,14 @@ const adminUrl = node =>
 
 const verifySlugs = nodes => {
   const processedSlugs = [];
+  const validNodes = [];
   const invalidNodes = [];
   nodes.forEach(node => {
     const slugWithLocale = [node.slug, node.locale.id].join('|');
     if (!isValidSlug(node.slug) || contains(processedSlugs, slugWithLocale)) {
       invalidNodes.push(node);
+    } else {
+      validNodes.push(node);
     }
     processedSlugs.push(slugWithLocale);
   });
@@ -103,13 +106,13 @@ const verifySlugs = nodes => {
         )}`,
       );
     });
-    process.exit(1);
   }
+  return validNodes;
 };
 
 const processNodes = (_nodes, { homeNodeId }) => {
-  verifySlugs(_nodes);
-  let nodes = _nodes.map(node => ensureNodeFields(node, { homeNodeId }));
+  const verified = verifySlugs(_nodes);
+  let nodes = verified.map(node => ensureNodeFields(node, { homeNodeId }));
   nodes = patchI18n(nodes);
   return nodes;
 };
@@ -147,6 +150,9 @@ const resources = [
   },
 ];
 
+const isCampaign = node =>
+  !(['signup', 'petition', 'event', 'fundraiser'].indexOf(node.resourceType.split('.')[1]) < 0);
+
 module.exports = async ({ graphql, actions: { createPage } }) => {
   // QUERIES
 
@@ -178,6 +184,13 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
             isHome && node.resourceType === 'node.entry.page'
               ? require.resolve('../../../src/templates/PageHome')
               : require.resolve(template),
+          context,
+        });
+        if (!isCampaign(node)) return;
+
+        createPage({
+          path: routing.getCampaignConfirmedPath(node),
+          component: require.resolve('../../../src/templates/CampaignConfirmed'),
           context,
         });
       });
