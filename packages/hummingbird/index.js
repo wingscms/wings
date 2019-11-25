@@ -11,3 +11,6 @@ export {
 
 // services
 export { default as routing } from './services/routing';
+
+// hooks
+export { default as useCampaignProps } from './src/hooks/campaignProps';

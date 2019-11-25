@@ -92,9 +92,7 @@ const dynamicFormMessages = node => {
         description: 'Privacy consent field label',
       },
       values: {
-        url:
-          (node.settings ? node.settings.legal.privacyPolicy.url : '')
-          || '/privacy',
+        url: (node.settings ? node.settings.legal.privacyPolicy.url : '') || '/privacy',
       },
     },
   ];
@@ -156,11 +154,7 @@ const dynamicCampaignMessages = node => {
   ];
 };
 
-const formatMessages = ({
-  staticMessages = [],
-  dynamicMessages = [],
-  intl,
-}) => {
+const formatMessages = ({ staticMessages = [], dynamicMessages = [], intl }) => {
   const _staticMessages = Object.keys(staticMessages).map(m => ({
     key: m,
     message: staticMessages[m],
@@ -194,9 +188,7 @@ export default intl => {
         ? `${intl.formatDate(scheduleStart)} ${intl.formatTime(scheduleStart)}`
         : null,
       eventEndTime: scheduleEnding
-        ? `${intl.formatDate(scheduleEnding)} ${intl.formatTime(
-          scheduleEnding,
-        )}`
+        ? `${intl.formatDate(scheduleEnding)} ${intl.formatTime(scheduleEnding)}`
         : null,
       eventFee: fee
         ? intl.formatNumber(fee.amount / 100, {
@@ -205,9 +197,7 @@ export default intl => {
           currencyDisplay: 'symbol',
         })
         : null,
-      petitionCounterGoalText: signatureGoal
-        ? intl.formatNumber(signatureGoal)
-        : null,
+      petitionCounterGoalText: signatureGoal ? intl.formatNumber(signatureGoal) : null,
     },
     formProps: {
       copy: formatMessages({
