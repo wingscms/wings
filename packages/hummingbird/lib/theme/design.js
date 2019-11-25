@@ -3,7 +3,7 @@ import { getContrastColor, separateUnit } from '@wingscms/crane';
 // set defaults here:
 export default ({
   // MISC OPTIONS
-  contrastLuminanceThreshold = 50,
+  contrastLuminanceThreshold = 60,
   uppercaseTitles = false,
   // COLORS
   // Base
