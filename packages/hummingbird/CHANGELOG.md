@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.40.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.39.4...@wingscms/hummingbird@0.40.0) (2019-11-25)
+
+
+### Bug Fixes
+
+* increase default luminance threshold in theme ([#291](https://github.com/wingscms/wings/issues/291)) ([61f8b36](https://github.com/wingscms/wings/commit/61f8b369c47db1dc7fcc9b31911ed7b957e81627))
+
+
+### Features
+
+* expose useCampaignProps hook ([#294](https://github.com/wingscms/wings/issues/294)) ([54217c7](https://github.com/wingscms/wings/commit/54217c7f6f1c67023c406f78bf86b69a0eb866a7))
+
+
+
+
+
 ## [0.39.4](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.39.3...@wingscms/hummingbird@0.39.4) (2019-11-15)
 
 
