@@ -10,6 +10,8 @@ Can be used in the `design` option in Hummingbird's `gatsby-config`:
 
 `contrastLuminanceThreshold`: Default: `50`
 
+`uppercaseTitles`: Default: `false`
+
 ### Colors
 
 #### Base Colors
