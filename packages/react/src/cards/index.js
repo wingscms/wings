@@ -10,6 +10,7 @@ import _CollectionCard from './CollectionCard';
 import _QACard from './QACard';
 import _TextCard from './TextCard';
 import _CampaignCard, { CampaignCardView as _CampaignCardView } from './CampaignCard';
+import _NodesCard from './NodesCard';
 
 const _HeaderCard = { ..._ChapterCard, name: 'HeaderCard' };
 
@@ -26,6 +27,7 @@ export const CollectionCard = _CollectionCard;
 export const QACard = _QACard;
 export const TextCard = _TextCard;
 export const CampaignCard = _CampaignCard;
+export const NodesCard = _NodesCard;
 
 export const CampaignCardView = _CampaignCardView;
 
@@ -45,6 +47,7 @@ export const cards = {
   QACard: _QACard,
   TextCard: _TextCard,
   CampaignCard: _CampaignCard,
+  NodesCard: _NodesCard,
 };
 
 export const allCards = Object.values(cards);
