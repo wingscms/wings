@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { navigate } from 'gatsby'
 import { wide, ComplexCard, FlexGrid, Loading, PaginationControls as _PaginationControls } from '@wingscms/crane';
@@ -33,6 +33,15 @@ const PaginationControls = styled(_PaginationControls)`
   justify-content: center;
 `;
 
+const scrollToTop = (el) => {
+  const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+  const yOffset = -80;
+  window.scrollTo({
+    top: yCoordinate + yOffset,
+    behavior: 'smooth',
+  });
+};
+
 const getNodeQueryParams = ({ nodes = [], resourceTypes = [], type, first, after }) => {
   switch (type) {
     case 'custom':
@@ -60,9 +69,9 @@ const getNodeQueryParams = ({ nodes = [], resourceTypes = [], type, first, after
 };
 
 const NodesCardView = ({ text, ...props }) => {
-  console.log(props);
   const { type, resourceTypes = [], nodes: _nodes } = props;
   const wings = useWings();
+  const nodesCardContainerRef = useRef(null);
   const [loading, setLoading] = useState(true);
   const [nodes, setNodes] = useState(true);
   const [pageInfo, setPageInfo] = useState({});
@@ -111,7 +120,7 @@ const NodesCardView = ({ text, ...props }) => {
   useEffect(() => fetchNodes({}), []);
   return (
     <Wide>
-      <Container>
+      <Container ref={nodesCardContainerRef}>
         {loading ? <Loading intent="primary" /> : (
           <FlexGrid
             divisions={4}
@@ -146,7 +155,16 @@ const NodesCardView = ({ text, ...props }) => {
               ))}
           </FlexGrid>
         )}
-        {(type === 'archive' && !loading) ? <PaginationControls {...pageInfo} currentPage={pageInfo.currentPage || 1} setCurrentPage={(after) => fetchNodes({ after })} /> : null}
+        {(type === 'archive' && !loading) ? (
+          <PaginationControls
+            {...pageInfo}
+            currentPage={pageInfo.currentPage || 1}
+            setCurrentPage={(after) => {
+              fetchNodes({ after });
+              scrollToTop(nodesCardContainerRef.current);
+            }}
+          />
+        ) : null}
       </Container>
     </Wide>
   );
