@@ -166,7 +166,7 @@ const NodesCardView = ({ text, ...props }) => {
   const [pageInfo, setPageInfo] = useState({});
   const [containerHeight, setContainerHeight] = useState(0);
 
-  const fetchNodes = async ({ first = 12, after = '0' }) => {
+  const fetchNodes = async ({ first = 4, after = '0' }) => {
     setContainerHeight(nodesCardContainerRef.current.offsetHeight);
     setLoading(true);
 
@@ -205,8 +205,8 @@ const NodesCardView = ({ text, ...props }) => {
             {nodes.map(node => <Item key={`${node.id}`} node={node} onClick={() => onNodeClick(node)} />)}
           </FlexGrid>
         )}
-        {(hasLoaded && loading) ? <Overlay><Loading intent="primary" /></Overlay> : null}
-        {(type === 'archive' && !loading) ? (
+        {(hasLoaded && loading) ? <Overlay onClick={e => e.preventDefault()}><Loading intent="primary" /></Overlay> : null}
+        {(type === 'archive' && hasLoaded) ? (
           <PaginationControls
             {...pageInfo}
             currentPage={pageInfo.currentPage || 1}

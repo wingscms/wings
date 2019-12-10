@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { default as _Button } from './Button';
+import _Button from './Button';
 
 const Button = styled(_Button)`
-  font-size: .6em;
-  padding: 5px 10px;
+  font-size: .8em;
+  padding: 10px 15px;
+  border-radius: 0;
 `;
 
 const ButtonGroup = styled.div`
@@ -12,9 +13,9 @@ margin-right: 4px;
   &:last-child {
     margin-right: 0;
   }
-`
+`;
 
-const getPageNumbers = ({ current, total, size: maxSize = 7 }) => {
+const getPageNumbers = ({ current, total, size: maxSize = 3 }) => {
   const size = total < maxSize ? total : maxSize;
   const margin = Math.floor(size / 2);
   const shift = !(total <= maxSize);
@@ -73,7 +74,13 @@ export default ({
           current: currentPage,
           total: totalPages,
         }).map(n => (
-          <Button intent={n === currentPage ? 'primary' : null} onClick={() => goToPage(n)}>
+          <Button
+            intent={n === currentPage ? 'primary' : null}
+            onClick={() => {
+              if (n === currentPage) return;
+              goToPage(n);
+            }}
+          >
             {n}
           </Button>
         ))}
