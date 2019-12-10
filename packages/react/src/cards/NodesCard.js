@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { navigate } from 'gatsby'
-import { wide, ComplexCard, FlexGrid, Loading } from '@wingscms/crane';
+import { wide, ComplexCard, FlexGrid, Loading, PaginationControls as _PaginationControls } from '@wingscms/crane';
 import { useWings } from '../ctx/Wings';
 import createCard from '../createCard';
 
@@ -26,7 +26,14 @@ const Container = styled.div`
   padding: 0 20px;
 `;
 
-const getNodeQueryParams = ({ nodes = [], resourceTypes = [], type, first = 12, after = '' }) => {
+const PaginationControls = styled(_PaginationControls)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`;
+
+const getNodeQueryParams = ({ nodes = [], resourceTypes = [], type, first, after }) => {
   switch (type) {
     case 'custom':
       return {
@@ -54,12 +61,13 @@ const getNodeQueryParams = ({ nodes = [], resourceTypes = [], type, first = 12, 
 
 const NodesCardView = ({ text, ...props }) => {
   console.log(props);
-  const { type, resourceTypes, nodes: _nodes } = props;
+  const { type, resourceTypes = [], nodes: _nodes } = props;
   const wings = useWings();
   const [loading, setLoading] = useState(true);
   const [nodes, setNodes] = useState(true);
+  const [pageInfo, setPageInfo] = useState({});
 
-  const fetchNodes = () => {
+  const fetchNodes = ({ first = 12, after = '0' }) => {
     setLoading(true);
     wings.query(`
       query NodesCardCustom($selector: NodeSelectorInput, $first: Int, $after: String) {
@@ -78,22 +86,29 @@ const NodesCardView = ({ text, ...props }) => {
               slug
             }
           }
-          
+          pageInfo {
+            hasPreviousPage
+            hasNextPage
+            startCursor
+            endCursor
+            currentPage
+            totalPages
+          }
         }
       }
     `, getNodeQueryParams({
       type,
       nodes: _nodes.map(node => node.id),
       resourceTypes,
-      // first,
-      // after: 0,
+      first,
+      after: `${after > 1 ? after - 1 : 0}`,
     })).then(res => {
       setNodes(res.nodes.edges.map(node => node.node));
+      setPageInfo(res.nodes.pageInfo);
       setLoading(false);
     });
   };
-  useEffect(() => fetchNodes(), []);
-  console.log(props);
+  useEffect(() => fetchNodes({}), []);
   return (
     <Wide>
       <Container>
@@ -131,6 +146,7 @@ const NodesCardView = ({ text, ...props }) => {
               ))}
           </FlexGrid>
         )}
+        {(type === 'archive' && !loading) ? <PaginationControls {...pageInfo} currentPage={pageInfo.currentPage || 1} setCurrentPage={(after) => fetchNodes({ after })} /> : null}
       </Container>
     </Wide>
   );
