@@ -16,8 +16,8 @@ const Wide = styled.div`
 `;
 
 const Container = styled.div`
-  margin-top:${({ theme }) => theme.largeSpacing};
-  margin-bottom:${({ theme }) => theme.largeSpacing};
+  margin-top: ${({ theme }) => theme.largeSpacing};
+  margin-bottom: ${({ theme }) => theme.largeSpacing};
   @media screen and (max-width: 800px) {
     margin-top: ${({ theme }) => theme.mediumSpacing};
     margin-bottom: ${({ theme }) => theme.mediumSpacing};
@@ -37,7 +37,7 @@ const Overlay = styled.div`
   top: 0;
   left: 0;
   pointer-events: none;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 0 20px 15px #fff;
   z-index: 10;
   width: 100%;
@@ -94,7 +94,7 @@ const NODE_FRAGMENT = `
   }
 `;
 
-const scrollToTop = (el) => {
+const scrollToTop = el => {
   const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
   const yOffset = -80;
   window.scrollTo({
@@ -125,25 +125,18 @@ const getNodeQueryParams = ({ items, selector, type, first, after }) => {
   }
 };
 
-const ItemDefault = ({ node, ...props }) => {
-  return (
-    <ComplexCard
-      {...props}
-      item={node}
-      title={node.featured && node.featured.title}
-      image={
-        node.featured
-        && node.featured.image
-        && node.featured.image.url
-      }
-      summary={node.featured && node.featured.description}
-      size="medium"
-      bottomBackground
-      shadow
-
-    />
-  );
-};
+const ItemDefault = ({ node, ...props }) => (
+  <ComplexCard
+    {...props}
+    item={node}
+    title={node.featured && node.featured.title}
+    image={node.featured && node.featured.image && node.featured.image.url}
+    summary={node.featured && node.featured.description}
+    size="medium"
+    bottomBackground
+    shadow
+  />
+);
 
 const NodesCardView = ({ text, ...props }) => {
   const {
@@ -166,18 +159,22 @@ const NodesCardView = ({ text, ...props }) => {
   const [containerHeight, setContainerHeight] = useState(0);
   const pageNumber = query[`nc${sectionKey}page`] || '1';
 
-
   const fetchNodes = async ({ first = 12, after = '0' } = {}) => {
     setContainerHeight(nodesCardContainerRef.current.offsetHeight);
     setLoading(true);
 
-    const res = await wings.query([QUERY, nodeFragment].join('\n'), getNodeQueryParams({
-      type,
-      items: items.map(item => item.nodeId),
-      selector,
-      first,
-      after,
-    })).catch(err => console.error(err));
+    const res = await wings
+      .query(
+        [QUERY, nodeFragment].join('\n'),
+        getNodeQueryParams({
+          type,
+          items: items.map(item => item.nodeId),
+          selector,
+          first,
+          after,
+        }),
+      )
+      .catch(err => console.error(err));
 
     setNodes(res.nodes.edges.map(node => node.node));
     setPageInfo(res.nodes.pageInfo);
@@ -191,7 +188,9 @@ const NodesCardView = ({ text, ...props }) => {
   return (
     <Wide>
       <Container ref={nodesCardContainerRef} style={{ minHeight: containerHeight }}>
-        {!hasLoaded ? <Loading intent="primary" /> : (
+        {!hasLoaded ? (
+          <Loading intent="primary" />
+        ) : (
           <FlexGrid
             divisions={4}
             margins={10}
@@ -203,15 +202,23 @@ const NodesCardView = ({ text, ...props }) => {
               width: 'calc(100% + 20px)',
             }}
           >
-            {nodes.map(node => <Item key={`${node.id}`} node={node} onClick={() => onNodeClick(node)} />)}
+            {nodes.map(node => (
+              <Item key={`${node.id}`} node={node} onClick={() => onNodeClick(node)} />
+            ))}
           </FlexGrid>
         )}
-        {(hasLoaded && loading) ? <Overlay onClick={e => e.preventDefault()}><Loading intent="primary" /></Overlay> : null}
-        {(type === 'archive' && hasLoaded) ? (
+        {hasLoaded && loading ? (
+          <Overlay onClick={e => e.preventDefault()}>
+            <Loading intent="primary" />
+          </Overlay>
+        ) : null}
+        {type === 'archive' && hasLoaded ? (
           <PaginationControls
-            {...pageInfo}
+            hasNextPage={pageInfo.hasNextPage}
+            hasPreviousPage={pageInfo.hasPreviousPage}
+            totalPages={pageInfo.totalPages}
             currentPage={pageInfo.currentPage || 1}
-            onPageChange={(page) => {
+            onPageChange={page => {
               setQuery({ [`nc${sectionKey}page`]: page });
               fetchNodes({ after: `${page > 1 ? page - 1 : 0}` });
               scrollToTop(nodesCardContainerRef.current);
