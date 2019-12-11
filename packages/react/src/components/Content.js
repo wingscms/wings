@@ -70,7 +70,7 @@ class Content extends Component {
     return {
       ...card,
       render: ({ payload }) =>
-        cardRender({ payload, ...cardPropsProp[card.name] }),
+        cardRender({ payload, sectionKey: payload.key, ...cardPropsProp[card.name] }),
     };
   };
 
@@ -99,14 +99,11 @@ class Content extends Component {
       cards: _cards,
       unknownCardHandler,
       onLoad,
+      cardProps: _,
       ...props
     } = this.props;
     const renderer = this.createRenderer();
-    return (
-      <div {...props}>
-        {!content ? null : renderer.render(JSON.parse(content))}
-      </div>
-    );
+    return <div {...props}>{!content ? null : renderer.render(JSON.parse(content))}</div>;
   }
 }
 
@@ -200,8 +197,7 @@ export default styled(Content)`
       color: ${({ theme }) => theme.textColor};
       margin-bottom: ${({ theme }) => theme.extraSmallSpacing};
       line-height: 1.2;
-      text-transform: ${({ theme }) =>
-    (theme.uppercaseTitles ? 'uppercase' : 'none')};
+      text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
       @media screen and (min-width: 800px) {
         margin-bottom: ${({ theme }) => theme.smallSpacing};
       }
