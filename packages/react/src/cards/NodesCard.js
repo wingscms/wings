@@ -183,7 +183,9 @@ const NodesCardView = ({ text, ...props }) => {
     setContainerHeight(0);
   };
 
-  useEffect(() => fetchNodes({ after: `${Number(pageNumber) - 1}` }), []);
+  useEffect(() => {
+    fetchNodes({ after: `${Number(pageNumber) - 1}` });
+  }, []);
 
   return (
     <Wide>
