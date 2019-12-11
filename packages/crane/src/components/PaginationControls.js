@@ -63,8 +63,9 @@ export default ({
         {getPageNumbers({
           current: currentPage,
           total: totalPages,
-        }).map(n => (
+        }).map((n, i) => (
           <Button
+            key={`pagination-page-${i}`}
             intent={n === currentPage ? 'primary' : null}
             onClick={() => {
               if (n === currentPage) return;
