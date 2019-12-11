@@ -7,6 +7,7 @@ import {
   Loading as _Loading,
   PaginationControls as _PaginationControls,
 } from '@wingscms/crane';
+import useQueryString from '../hooks/queryString';
 import { useWings } from '../ctx/Wings';
 import createCard from '../createCard';
 
@@ -102,13 +103,13 @@ const scrollToTop = (el) => {
   });
 };
 
-const getNodeQueryParams = ({ nodes = [], resourceTypes = [], type, first, after }) => {
+const getNodeQueryParams = ({ items, selector, type, first, after }) => {
   switch (type) {
-    case 'custom':
+    case 'selection':
       return {
         selector: {
           id: {
-            in: nodes,
+            in: items,
           },
         },
         first: 0,
@@ -117,11 +118,7 @@ const getNodeQueryParams = ({ nodes = [], resourceTypes = [], type, first, after
     default:
     case 'archive':
       return {
-        selector: {
-          resourceType: {
-            in: resourceTypes,
-          },
-        },
+        selector,
         first,
         after,
       };
@@ -154,9 +151,11 @@ const NodesCardView = ({ text, ...props }) => {
     onNodeClick,
     nodeFragment = NODE_FRAGMENT,
     type,
-    resourceTypes = [],
-    nodes: _nodes = [],
+    selector = {},
+    items = [],
+    sectionKey,
   } = props;
+  const { query = {}, setQuery } = useQueryString();
   const Item = itemComponent || ItemDefault;
   const wings = useWings();
   const nodesCardContainerRef = useRef(null);
@@ -165,15 +164,17 @@ const NodesCardView = ({ text, ...props }) => {
   const [nodes, setNodes] = useState(true);
   const [pageInfo, setPageInfo] = useState({});
   const [containerHeight, setContainerHeight] = useState(0);
+  const pageNumber = query[`nc${sectionKey}page`] || '1';
 
-  const fetchNodes = async ({ first = 4, after = '0' }) => {
+
+  const fetchNodes = async ({ first = 12, after = '0' } = {}) => {
     setContainerHeight(nodesCardContainerRef.current.offsetHeight);
     setLoading(true);
 
     const res = await wings.query([QUERY, nodeFragment].join('\n'), getNodeQueryParams({
       type,
-      nodes: _nodes.map(node => node.id),
-      resourceTypes,
+      items: items.map(item => item.nodeId),
+      selector,
       first,
       after,
     })).catch(err => console.error(err));
@@ -185,12 +186,12 @@ const NodesCardView = ({ text, ...props }) => {
     setContainerHeight(0);
   };
 
-  useEffect(() => fetchNodes({}), []);
+  useEffect(() => fetchNodes({ after: `${Number(pageNumber) - 1}` }), []);
 
   return (
     <Wide>
       <Container ref={nodesCardContainerRef} style={{ minHeight: containerHeight }}>
-        {!hasLoaded ? <_Loading intent="primary" /> : (
+        {!hasLoaded ? <Loading intent="primary" /> : (
           <FlexGrid
             divisions={4}
             margins={10}
@@ -210,8 +211,9 @@ const NodesCardView = ({ text, ...props }) => {
           <PaginationControls
             {...pageInfo}
             currentPage={pageInfo.currentPage || 1}
-            onPageChange={(pageNumber) => {
-              fetchNodes({ after: `${pageNumber > 1 ? pageNumber - 1 : 0}` });
+            onPageChange={(page) => {
+              setQuery({ [`nc${sectionKey}page`]: page });
+              fetchNodes({ after: `${page > 1 ? page - 1 : 0}` });
               scrollToTop(nodesCardContainerRef.current);
             }}
           />

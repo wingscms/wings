@@ -70,7 +70,7 @@ class Content extends Component {
     return {
       ...card,
       render: ({ payload }) =>
-        cardRender({ payload, ...cardPropsProp[card.name] }),
+        cardRender({ payload, sectionKey: payload.key, ...cardPropsProp[card.name] }),
     };
   };
 
