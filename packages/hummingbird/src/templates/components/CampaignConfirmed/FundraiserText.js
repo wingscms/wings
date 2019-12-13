@@ -24,6 +24,23 @@ export default ({ transactionStatus }) => {
           />
         </React.Fragment>
       );
+    case 'failed':
+      return (
+        <React.Fragment>
+          <FormattedMessage
+            id="hummingbird.CampaignConfirmed.main.fundraiserFailedTitle"
+            description="Title of fundraiser payment failure."
+            defaultMessage="Oh no!"
+            tagName={Title}
+          />
+          <FormattedMessage
+            id="hummingbird.CampaignConfirmed.main.fundraiserFailedText"
+            description="Text of fundraiser payment failure."
+            defaultMessage="Thanks for your interest. It seems like something went wrong with the payment. Please check with your bank and try again."
+            tagName={Text}
+          />
+        </React.Fragment>
+      );
     case 'pending':
       return (
         <React.Fragment>
@@ -44,18 +61,8 @@ export default ({ transactionStatus }) => {
     default:
       return (
         <React.Fragment>
-          <FormattedMessage
-            id="hummingbird.CampaignConfirmed.main.fundraiserFailedTitle"
-            description="Title of fundraiser payment failure."
-            defaultMessage="Oh no!"
-            tagName={Title}
-          />
-          <FormattedMessage
-            id="hummingbird.CampaignConfirmed.main.fundraiserFailedText"
-            description="Text of fundraiser payment failure."
-            defaultMessage="Thanks for your interest. It seems like something went wrong with the payment. Please check with your bank and try again."
-            tagName={Text}
-          />
+          <Title />
+          <Text />
         </React.Fragment>
       );
   }
