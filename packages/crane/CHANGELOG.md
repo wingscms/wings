@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://github.com/wingscms/wings/compare/@wingscms/crane@0.16.2...@wingscms/crane@0.17.0) (2019-12-16)
+
+
+### Features
+
+* nodes card ([#318](https://github.com/wingscms/wings/issues/318)) ([bc7114a](https://github.com/wingscms/wings/commit/bc7114af0551f66b894c97496f67568d47b8c4af))
+
+
+
+
+
 ## [0.16.2](https://github.com/wingscms/wings/compare/@wingscms/crane@0.16.1...@wingscms/crane@0.16.2) (2019-11-25)
 
 **Note:** Version bump only for package @wingscms/crane
