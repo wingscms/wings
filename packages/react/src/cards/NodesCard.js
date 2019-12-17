@@ -60,7 +60,7 @@ const PaginationControls = styled(_PaginationControls)`
 
 const QUERY = `
   query NodesCardCustom($selector: NodeSelectorInput, $first: Int, $after: String) {
-    nodes(selector: $selector, first: $first, after: $after) {
+    nodes(selector: $selector, orderBy: publishedAt_DESC, first: $first, after: $after) {
       edges {
         node {
           id
@@ -193,22 +193,22 @@ const NodesCardView = ({ text, ...props }) => {
         {!hasLoaded ? (
           <Loading intent="primary" />
         ) : (
-          <FlexGrid
-            divisions={4}
-            margins={10}
-            alignItems="stretch"
-            style={{
-              marginLeft: '-10px',
-              marginTop: '10px',
-              marginBottom: '10px',
-              width: 'calc(100% + 20px)',
-            }}
-          >
-            {nodes.map(node => (
-              <Item key={`${node.id}`} node={node} onClick={() => onNodeClick(node)} />
-            ))}
-          </FlexGrid>
-        )}
+            <FlexGrid
+              divisions={4}
+              margins={10}
+              alignItems="stretch"
+              style={{
+                marginLeft: '-10px',
+                marginTop: '10px',
+                marginBottom: '10px',
+                width: 'calc(100% + 20px)',
+              }}
+            >
+              {nodes.map(node => (
+                <Item key={`${node.id}`} node={node} onClick={() => onNodeClick(node)} />
+              ))}
+            </FlexGrid>
+          )}
         {hasLoaded && loading ? (
           <Overlay onClick={e => e.preventDefault()}>
             <Loading intent="primary" />
