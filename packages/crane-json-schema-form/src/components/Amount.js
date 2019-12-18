@@ -28,7 +28,7 @@ const AmountButton = styled.div`
   }
 `;
 
-export default (props) => {
+export default props => {
   if (!props.id) {
     console.log('No id for', props);
     throw new Error(`no id for props ${JSON.stringify(props)}`);

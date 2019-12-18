@@ -1,4 +1,4 @@
-export const asNumber = (value) => {
+export const asNumber = value => {
   if (value === '') {
     return undefined;
   }
@@ -18,7 +18,7 @@ export const asNumber = (value) => {
   return valid ? n : value;
 };
 
-export const getRange = (props) => {
+export const getRange = props => {
   const { min, max, step, schema } = props;
   const spec = {};
   if (schema) {
@@ -49,7 +49,7 @@ export const getValue = (event, multiple) => {
   return event.target.value;
 };
 
-export const guessType = (value) => {
+export const guessType = value => {
   if (Array.isArray(value)) {
     return 'array';
   } else if (typeof value === 'string') {

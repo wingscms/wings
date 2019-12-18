@@ -43,7 +43,7 @@ const defaultWidgets = {
   URLWidget: URLInput,
 };
 
-export default (props) => {
+export default props => {
   const { children } = props;
   let { widgets = {} } = props;
 
@@ -55,7 +55,7 @@ export default (props) => {
     <StyledForm
       ErrorList={() => null}
       transformErrors={errors =>
-        errors.map((error) => {
+        errors.map(error => {
           if (error.name === 'required') {
             error.message = 'this field is required'; // eslint-disable-line no-param-reassign
           } else {

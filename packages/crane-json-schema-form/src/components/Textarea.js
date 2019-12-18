@@ -8,7 +8,7 @@ const StyledTextarea = styled.textarea`
   font-size: inherit;
 `;
 
-export default (props) => {
+export default props => {
   const {
     id,
     options = {},

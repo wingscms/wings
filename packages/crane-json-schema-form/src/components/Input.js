@@ -18,11 +18,11 @@ const StyledInput = styled.input`
     min-height: 36px;
   }
   ${({ error }) =>
-    (!error
+    !error
       ? null
       : css`
           background-color: #ffcfcf;
-        `)};
+        `};
 `;
 
 function BaseInput(props) {

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { SchemaForm, Amount, Loading, Button as _Button } from '@wingscms/crane';
+import { Amount, Loading, Button as _Button } from '@wingscms/crane';
+import SchemaForm from '@wingscms/crane-json-schema-form';
 import deepmerge from 'deepmerge';
 import { withWings } from '../../ctx/Wings';
 
@@ -311,9 +312,10 @@ class CampaignForm extends Component {
   };
 
   getFormSchema() {
-    const schema = this.props.formSchema
-      || (this.props.node.submissionSchema && JSON.parse(this.props.node.submissionSchema))
-      || this.state.formSchema;
+    const schema =
+      this.props.formSchema ||
+      (this.props.node.submissionSchema && JSON.parse(this.props.node.submissionSchema)) ||
+      this.state.formSchema;
     return schema ? this.processSchema(schema) : schema;
   }
 
@@ -382,10 +384,10 @@ class CampaignForm extends Component {
 
   maybeFetch() {
     if (
-      this.state.failed
-      || this.state.formSchema
-      || this.props.formSchema
-      || this.state.fetching
+      this.state.failed ||
+      this.state.formSchema ||
+      this.props.formSchema ||
+      this.state.fetching
     ) {
       return;
     }
@@ -437,9 +439,9 @@ class CampaignForm extends Component {
         },
       });
       if (
-        res.submitFundraiser
-        && res.submitFundraiser.donation
-        && res.submitFundraiser.donation.id
+        res.submitFundraiser &&
+        res.submitFundraiser.donation &&
+        res.submitFundraiser.donation.id
       ) {
         window.location.assign(res.submitFundraiser.donation.order.paymentUrl);
       } else {

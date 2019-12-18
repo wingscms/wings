@@ -9,22 +9,6 @@ export { RadioInput } from './components/form';
 // export { Select } from './components/form';
 export { ConfirmationBox } from './components/form';
 
-export {
-  Amount,
-  CheckboxInput,
-  ColorInput,
-  DateInput,
-  EmailInput,
-  Input,
-  NumberInput,
-  PasswordInput,
-  RangeInput,
-  SchemaForm,
-  Select,
-  TextInput,
-  URLInput,
-} from './components/forms';
-
 // Menu
 export {
   Burger,
