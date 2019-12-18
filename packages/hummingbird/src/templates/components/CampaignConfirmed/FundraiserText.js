@@ -19,7 +19,7 @@ export default ({ transactionStatus }) => {
           <FormattedMessage
             id="hummingbird.CampaignConfirmed.main.fundraiserSuccessText"
             description="Text of fundraiser payment success."
-            defaultMessage="Thank you. The payment was successful"
+            defaultMessage="Thank you. The payment was successful."
             tagName={Text}
           />
         </React.Fragment>
@@ -61,8 +61,18 @@ export default ({ transactionStatus }) => {
     default:
       return (
         <React.Fragment>
-          <Title />
-          <Text />
+          <FormattedMessage
+            id="hummingbird.CampaignConfirmed.main.fundraiserDefaultTitle"
+            description="Title of default fundraiser title with no transaction status."
+            defaultMessage="Thank you!"
+            tagName={Title}
+          />
+          <FormattedMessage
+            id="hummingbird.CampaignConfirmed.main.fundraiserDefaultText"
+            description="Text of default fundraiser text with no transaction status."
+            defaultMessage="Thank you for your interest in this fundraiser."
+            tagName={Text}
+          />
         </React.Fragment>
       );
   }
