@@ -19,7 +19,24 @@ export default ({ transactionStatus }) => {
           <FormattedMessage
             id="hummingbird.CampaignConfirmed.main.fundraiserSuccessText"
             description="Text of fundraiser payment success."
-            defaultMessage="Thank you. The payment was successful"
+            defaultMessage="Thank you. The payment was successful."
+            tagName={Text}
+          />
+        </React.Fragment>
+      );
+    case 'failed':
+      return (
+        <React.Fragment>
+          <FormattedMessage
+            id="hummingbird.CampaignConfirmed.main.fundraiserFailedTitle"
+            description="Title of fundraiser payment failure."
+            defaultMessage="Oh no!"
+            tagName={Title}
+          />
+          <FormattedMessage
+            id="hummingbird.CampaignConfirmed.main.fundraiserFailedText"
+            description="Text of fundraiser payment failure."
+            defaultMessage="Thanks for your interest. It seems like something went wrong with the payment. Please check with your bank and try again."
             tagName={Text}
           />
         </React.Fragment>
@@ -45,15 +62,15 @@ export default ({ transactionStatus }) => {
       return (
         <React.Fragment>
           <FormattedMessage
-            id="hummingbird.CampaignConfirmed.main.fundraiserFailedTitle"
-            description="Title of fundraiser payment failure."
-            defaultMessage="Oh no!"
+            id="hummingbird.CampaignConfirmed.main.fundraiserDefaultTitle"
+            description="Title of default fundraiser title with no transaction status."
+            defaultMessage="Thank you!"
             tagName={Title}
           />
           <FormattedMessage
-            id="hummingbird.CampaignConfirmed.main.fundraiserFailedText"
-            description="Text of fundraiser payment failure."
-            defaultMessage="Thanks for your interest. It seems like something went wrong with the payment. Please check with your bank and try again."
+            id="hummingbird.CampaignConfirmed.main.fundraiserDefaultText"
+            description="Text of default fundraiser text with no transaction status."
+            defaultMessage="Thank you for your interest in this fundraiser."
             tagName={Text}
           />
         </React.Fragment>

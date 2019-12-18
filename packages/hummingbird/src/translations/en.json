@@ -20,8 +20,10 @@
   "hummingbird.CampaignConfirmed.main.eventText": "Thanks to you, we are one step closer towards our goals.",
   "hummingbird.CampaignConfirmed.main.eventShareTitle": "Please share this event with your friends and colleagues:",
 
+  "hummingbird.CampaignConfirmed.main.fundraiserDefaultTitle": "Thank you!",
+  "hummingbird.CampaignConfirmed.main.fundraiserDefaultText": "Thank you for your interest in this fundraiser.",
   "hummingbird.CampaignConfirmed.main.fundraiserSuccessTitle": "Hurray!",
-  "hummingbird.CampaignConfirmed.main.fundraiserSuccessText": "Thank you. The payment was successful",
+  "hummingbird.CampaignConfirmed.main.fundraiserSuccessText": "Thank you. The payment was successful.",
   "hummingbird.CampaignConfirmed.main.fundraiserPendingTitle": "Thanks for your contribution",
   "hummingbird.CampaignConfirmed.main.fundraiserPendingText": "Thanks for your contribution. Your payment is still processing. Please check with your bank to verify your payment.",
   "hummingbird.CampaignConfirmed.main.fundraiserFailedTitle": "Oh no!",
