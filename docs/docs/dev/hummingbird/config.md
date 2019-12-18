@@ -56,7 +56,7 @@ Can be used in the `design` option in Hummingbird's `gatsby-config`:
 
 `navigationLanguagePickerTextColor`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options) with `navigationLanguagePickerColor` as the background color.
 
-`navigationLanguagePickerTextColorHover`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options) with `navigationLanguagePickerHoverColor` as the background color.
+`navigationLanguagePickerTextHoverColor`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options) with `navigationLanguagePickerHoverColor` as the background color.
 
 `navigationLanguagePickerIconColor`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options) with `navigationLanguagePickerColor` as the background color.
 
