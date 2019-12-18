@@ -47,7 +47,7 @@ const Translation = styled(Item)`
   transition: all 0.1s ease-in-out;
   margin-left: 40px;
   &:hover {
-    background-color: ${({ theme }) => theme.navigationLanguagePickerColorHover};
+    background-color: ${({ theme }) => theme.navigationLanguagePickerHoverColor};
     color: #fff;
   }
 `;
@@ -82,7 +82,7 @@ const Icon = styled.div`
 export default ({
   current = 'en',
   translations = [],
-  onTranslationClick = () => { },
+  onTranslationClick = () => {},
   showAbove = false,
 }) => {
   const windowDimensions = useWindowDimensions();
@@ -92,10 +92,7 @@ export default ({
         <Globe />
       </Icon>
       <Current>{windowDimensions.width > 800 ? current.name : current.locale}</Current>
-      <Translations
-        className="translations"
-        showAbove={showAbove}
-      >
+      <Translations className="translations" showAbove={showAbove}>
         {translations.map(trans => (
           <Translation
             key={trans.locale}
@@ -110,4 +107,4 @@ export default ({
       </Translations>
     </Wrapper>
   );
-}
+};
