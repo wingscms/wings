@@ -219,7 +219,7 @@ class CornerMenu extends Component {
             <LanguagePicker
               showAbove
               backgroundColor={theme.languagePickerColor}
-              backgroundColorHover={theme.languagePickerHoverColor}
+              backgroundHoverColor={theme.languagePickerHoverColor}
               translations={translations.map(t => ({
                 name: t.locale.name,
                 locale: t.locale.id,
