@@ -7,14 +7,13 @@ import { LanguagePicker, toggleSlideMenu, Icons } from '@wingscms/crane';
 import routing from '../../../../services/routing';
 
 import chaptersImage from '../../../img/chapters.svg';
-import languageIcon from '../../../img/language.svg';
 
 const Container = styled.div`
   position: fixed;
   display: block;
   bottom: 0;
   right: 0;
-  height: 65px;
+  height: 50px;
   z-index: 20;
   background-color: ${({ theme }) => theme.primaryColor};
   box-shadow: ${({ theme }) => theme.defaultShadow};
@@ -25,7 +24,7 @@ const Container = styled.div`
 
 const ChaptersLink = styled.a`
   background-color: ${({ theme }) => theme.languagePickerColor};
-  height: 65px;
+  height: 50px;
   width: ${({ slideMenu }) => (slideMenu ? '65px' : '270px')};
   display: inline;
   font-weight: bold;
@@ -42,7 +41,7 @@ const ChaptersLink = styled.a`
     border-right: 2px solid #000;
   }
   span {
-    line-height: 65px;
+    line-height: 50px;
     vertical-align: middle;
     display: ${({ slideMenu }) => (slideMenu ? 'none' : 'initial')};
   }
@@ -69,9 +68,9 @@ const ChapterImage = styled.img`
 `;
 
 const ShareLink = styled.a`
-  width: 65px;
-  height: 65px;
-  padding: 20px;
+  width: 50px;
+  height: 50px;
+  padding: 15px;
   background-color: ${({ theme }) => theme.primaryColor};
   display: block;
   position: relative;
@@ -107,8 +106,8 @@ const ShareLink = styled.a`
 `;
 
 const ShareOpen = styled.div`
-  height: 65px;
-  width: 65px;
+  height: 50px;
+  width: 50px;
   background-color: ${({ theme }) => theme.primaryColor};
   display: inline;
   float: right;
@@ -116,12 +115,13 @@ const ShareOpen = styled.div`
   overflow: visible;
   transition: all 0.15s linear;
   cursor: pointer;
+  box-shadow: ${({ theme }) => theme.defaultShadow};
   .linkWrapper {
     width: 100%;
     background-color: transparent;
     display: none;
     cursor: default;
-    height: 225px;
+    height: 160px;
   }
   &:hover,
   &:active {
@@ -133,7 +133,7 @@ const ShareOpen = styled.div`
 `;
 
 const ShareIconWrapper = styled.div`
-  padding: 20px 20px 10px 20px;
+  padding: 17px 17px 7px 17px;
   svg {
     fill: ${({ theme }) => theme.navigationIconColor};
   }
@@ -150,7 +150,7 @@ const LanguagePickerWrap = styled.div`
   display: inline-block;
   margin: 0;
   width: 250px;
-  height: 65px;
+  height: 50px;
   z-index: 5;
   position: relative;
   border-bottom: 3px solid #eee;
@@ -162,18 +162,12 @@ const LanguagePickerWrap = styled.div`
           color: #000 !important;
         }
       }
-      height: 65px;
+      height: 50px;
     }
   }
-`;
-
-const LanguageIcon = styled.img`
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  left: 15px;
-  top: 22px;
-  z-index: 6;
+  svg {
+    margin-left: 12px;
+  }
 `;
 
 class CornerMenu extends Component {
@@ -223,7 +217,6 @@ class CornerMenu extends Component {
       <Container className={hidden ? 'hidden' : ''}>
         {translations.length > 0 ? (
           <LanguagePickerWrap>
-            <LanguageIcon src={languageIcon} />
             <LanguagePicker
               showAbove
               backgroundColor={theme.languagePickerColor}
@@ -233,7 +226,10 @@ class CornerMenu extends Component {
                 locale: t.locale.id,
                 node: t,
               }))}
-              current={locale.name}
+              current={{
+                locale: locale.id,
+                name: locale.name,
+              }}
               onTranslationClick={({ node }) => {
                 navigate(routing.getPath(node));
               }}
@@ -249,23 +245,23 @@ class CornerMenu extends Component {
               </ChaptersLink>
             </Scroll>
           ) : (
-            <ChaptersLink
-              className={translations.length > 0 ? 'divider' : ''}
-              slideMenu
-              onClick={(e) => {
-                e.preventDefault();
-                toggleSlideMenu(
-                  document.getElementById('content-wrapper').classList.contains('chaptersOpen'),
-                  'content-wrapper',
-                  'chaptersOpen',
-                  false,
-                );
-              }}
-            >
-              {chaptersTitle}
-              <ChapterImage src={chaptersImage} slideMenu />
-            </ChaptersLink>
-          )
+              <ChaptersLink
+                className={translations.length > 0 ? 'divider' : ''}
+                slideMenu
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleSlideMenu(
+                    document.getElementById('content-wrapper').classList.contains('chaptersOpen'),
+                    'content-wrapper',
+                    'chaptersOpen',
+                    false,
+                  );
+                }}
+              >
+                {chaptersTitle}
+                <ChapterImage src={chaptersImage} slideMenu />
+              </ChaptersLink>
+            )
         ) : null}
         <ShareOpen>
           <ShareOpenInner>
@@ -279,7 +275,7 @@ class CornerMenu extends Component {
               <ShareLink
                 href={`https://twitter.com/intent/tweet?url=${url}${
                   shareMessage ? `&status=${encodeURIComponent(shareMessage)}%20${url}` : ''
-                }`}
+                  }`}
                 target="_blank"
               >
                 <Icons.Twitter />
@@ -287,7 +283,7 @@ class CornerMenu extends Component {
               <ShareLink
                 href={`whatsapp://send?text=${
                   shareMessage ? `${encodeURIComponent(shareMessage)}: ` : ''
-                }${url}`}
+                  }${url}`}
                 target="_blank"
               >
                 <Icons.Whatsapp />

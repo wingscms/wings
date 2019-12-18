@@ -27,8 +27,9 @@ export default ({
   navigationMenuBackgroundColor,
   navigationIconColor = '#212121',
   navigationIconColorDark = '#FFFFFF',
-  navigationIconLanguagePickerColor = '#FFFFFF',
-  navigationIconLanguagePickerColorHover,
+  navigationLanguagePickerColor,
+  navigationLanguagePickerColorHover,
+  navigationLanguagePickerIconColor,
   // Footer
   footerBackgroundColor,
   footerTextColor,
@@ -125,9 +126,13 @@ export default ({
     threshold: contrastLuminanceThreshold,
   }),
   navigationIconColorDark,
-  navigationIconLanguagePickerColor,
-  navigationIconLanguagePickerColorHover:
-    navigationIconLanguagePickerColorHover || primaryColor,
+  navigationLanguagePickerColor: navigationLanguagePickerColor || '#ffffff',
+  navigationLanguagePickerColorHover: navigationLanguagePickerColorHover || primaryColor,
+  navigationLanguagePickerIconColor: navigationLanguagePickerIconColor || getContrastColor({
+    backgroundColor: navigationLanguagePickerColor || '#ffffff',
+    colors: { light: navigationIconColor, dark: navigationIconColorDark },
+    threshold: contrastLuminanceThreshold,
+  }),
   // Footer
   footerBackgroundColor: footerBackgroundColor || primaryColor,
   footerTextColor:
