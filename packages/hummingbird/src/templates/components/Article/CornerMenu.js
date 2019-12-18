@@ -1,4 +1,3 @@
-/* global window */
 import React, { Component } from 'react';
 import Scroll from 'react-scroll-to-element';
 import { navigate } from 'gatsby';
@@ -245,23 +244,23 @@ class CornerMenu extends Component {
               </ChaptersLink>
             </Scroll>
           ) : (
-              <ChaptersLink
-                className={translations.length > 0 ? 'divider' : ''}
-                slideMenu
-                onClick={(e) => {
-                  e.preventDefault();
-                  toggleSlideMenu(
-                    document.getElementById('content-wrapper').classList.contains('chaptersOpen'),
-                    'content-wrapper',
-                    'chaptersOpen',
-                    false,
-                  );
-                }}
-              >
-                {chaptersTitle}
-                <ChapterImage src={chaptersImage} slideMenu />
-              </ChaptersLink>
-            )
+            <ChaptersLink
+              className={translations.length > 0 ? 'divider' : ''}
+              slideMenu
+              onClick={e => {
+                e.preventDefault();
+                toggleSlideMenu(
+                  document.getElementById('content-wrapper').classList.contains('chaptersOpen'),
+                  'content-wrapper',
+                  'chaptersOpen',
+                  false,
+                );
+              }}
+            >
+              {chaptersTitle}
+              <ChapterImage src={chaptersImage} slideMenu />
+            </ChaptersLink>
+          )
         ) : null}
         <ShareOpen>
           <ShareOpenInner>
@@ -275,7 +274,7 @@ class CornerMenu extends Component {
               <ShareLink
                 href={`https://twitter.com/intent/tweet?url=${url}${
                   shareMessage ? `&status=${encodeURIComponent(shareMessage)}%20${url}` : ''
-                  }`}
+                }`}
                 target="_blank"
               >
                 <Icons.Twitter />
@@ -283,7 +282,7 @@ class CornerMenu extends Component {
               <ShareLink
                 href={`whatsapp://send?text=${
                   shareMessage ? `${encodeURIComponent(shareMessage)}: ` : ''
-                  }${url}`}
+                }${url}`}
                 target="_blank"
               >
                 <Icons.Whatsapp />
