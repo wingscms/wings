@@ -1,6 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
+import Icons from '../../img/svg/icons';
+
+const { Globe } = Icons;
 
 const Wrapper = styled.div`
   position: relative;
@@ -20,30 +23,36 @@ const Wrapper = styled.div`
 
 const Item = styled.div`
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 50px;
-  width: 100%;
+  width: calc(100% - 40px);
   background-color: transparent;
+  line-height: 50px;
+  background-color: ${({ theme }) => theme.navigationLanguagePickerColor};
+  text-align: left;
+  padding-left: 20px;
+  @media screen and (max-width: 800px) {
+    text-transform: uppercase;
+  }
 `;
 
 const Current = styled(Item)`
-  background-color: ${({ backgroundColor }) => backgroundColor};
+  background-color: ${({ theme }) => theme.navigationLanguagePickerColor};
   cursor: default;
+  display: inline-block;
+  vertical-align: middle;
 `;
 
 const Translation = styled(Item)`
   cursor: pointer;
   transition: all 0.1s ease-in-out;
+  margin-left: 40px;
   &:hover {
-    background-color: ${({ backgroundColorHover }) => backgroundColorHover};
+    background-color: ${({ theme }) => theme.navigationLanguagePickerHoverColor};
     color: #fff;
   }
 `;
 
 const Translations = styled.div`
-  background-color: ${({ backgroundColor }) => backgroundColor};
   width: 100%;
   position: absolute;
   top: ${({ showAbove }) => (showAbove ? '0' : '100%')};
@@ -56,62 +65,46 @@ const Translations = styled.div`
   max-height: 275px;
 `;
 
-export default class LanguagePicker extends Component {
-  static propTypes = {
-    /** String with current language */
-    current: PropTypes.string,
-    /** Array of languages */
-    translations: PropTypes.array,
-    /** onTranslationClick. Receives event, translation object */
-    onTranslationClick: PropTypes.func,
-    /** Background color for the items */
-    backgroundColor: PropTypes.string,
-    /** Hover background color for the items */
-    backgroundColorHover: PropTypes.string,
-    /** Whether to show the dropdown above or below */
-    showAbove: PropTypes.bool,
-  };
-
-  static defaultProps = {
-    current: 'en',
-    translations: [],
-    onTranslationClick: () => {},
-    backgroundColor: '#fff',
-    backgroundColorHover: '#4856c9',
-    showAbove: false,
-  };
-
-  render() {
-    const {
-      backgroundColor,
-      backgroundColorHover,
-      current,
-      onTranslationClick,
-      showAbove,
-      translations,
-    } = this.props;
-    return (
-      <Wrapper>
-        <Current backgroundColor={backgroundColor}>{current || null}</Current>
-        <Translations
-          className="translations"
-          showAbove={showAbove}
-          backgroundColor={backgroundColor}
-        >
-          {translations.map(trans => (
-            <Translation
-              key={trans.locale}
-              backgroundColorHover={backgroundColorHover}
-              onClick={e => {
-                e.preventDefault();
-                onTranslationClick(trans, { event: e });
-              }}
-            >
-              {trans.name}
-            </Translation>
-          ))}
-        </Translations>
-      </Wrapper>
-    );
+const Icon = styled.div`
+  background-color: ${({ theme }) => theme.navigationLanguagePickerColor};
+  display: inline-block;
+  vertical-align: middle;
+  width: 40px;
+  height: 100%;
+  svg {
+    fill: ${({ theme }) => theme.navigationLanguagePickerIconColor};
+    margin-top: 15px;
+    width: 20px;
+    margin-left: 2px;
   }
-}
+`;
+
+export default ({
+  current = 'en',
+  translations = [],
+  onTranslationClick = () => {},
+  showAbove = false,
+}) => {
+  const windowDimensions = useWindowDimensions();
+  return (
+    <Wrapper>
+      <Icon>
+        <Globe />
+      </Icon>
+      <Current>{windowDimensions.width > 800 ? current.name : current.locale}</Current>
+      <Translations className="translations" showAbove={showAbove}>
+        {translations.map(trans => (
+          <Translation
+            key={trans.locale}
+            onClick={e => {
+              e.preventDefault();
+              onTranslationClick(trans, { event: e });
+            }}
+          >
+            {windowDimensions.width > 800 ? trans.name : trans.locale}
+          </Translation>
+        ))}
+      </Translations>
+    </Wrapper>
+  );
+};
