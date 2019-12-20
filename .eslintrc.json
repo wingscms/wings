@@ -35,7 +35,8 @@
     "react/button-has-type": 0,
     "react/jsx-fragments": 0,
     "react/state-in-constructor": 0,
-    "react/destructuring-assignment": 0
+    "react/destructuring-assignment": 0,
+    "react/no-access-state-in-setstate": 0
   },
   "globals": {
     "graphql": true

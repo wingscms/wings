@@ -19,7 +19,7 @@ const ExpandableWrapper = styled.div`
     margin: 0 auto;
     text-align: center;
   }
-  ${(props) => {
+  ${props => {
     if (props.expandable) {
       if (!props.open) {
         return `
@@ -52,7 +52,7 @@ const Toggle = styled.div`
   cursor: pointer;
   &:hover,
   &:focus {
-    color: ${({ toggleColorHover }) => toggleColorHover};
+    color: ${({ toggleHoverColor }) => toggleHoverColor};
   }
   ${({ open, backgroundColor }) =>
     (!open
@@ -95,7 +95,7 @@ export default class Expandable extends Component {
     /** Open/close text color */
     toggleColor: PropTypes.string,
     /** Open/close text hover color */
-    toggleColorHover: PropTypes.string,
+    toggleHoverColor: PropTypes.string,
     /** Open/close text font family */
     toggleFontFamily: PropTypes.string,
   };
@@ -109,7 +109,7 @@ export default class Expandable extends Component {
     openText: 'More',
     shadow: true,
     toggleColor: '#000000',
-    toggleColorHover: '#4856C9',
+    toggleHoverColor: '#4856C9',
     toggleFontFamily: 'initial',
   };
 
@@ -128,7 +128,7 @@ export default class Expandable extends Component {
       openText,
       shadow,
       toggleColor,
-      toggleColorHover,
+      toggleHoverColor,
       toggleFontFamily,
     } = this.props;
     const { open } = this.state;
@@ -148,7 +148,7 @@ export default class Expandable extends Component {
             onClick={this.boundToggleHeight}
             open={open}
             toggleColor={toggleColor}
-            toggleColorHover={toggleColorHover}
+            toggleHoverColor={toggleHoverColor}
             toggleFontFamily={toggleFontFamily}
           >
             {open ? closeText : openText}

@@ -29,7 +29,7 @@ export const BreakoutStory = () => (
       borderRadius={text('border radius', '4')}
       shadow={boolean('shadow', true)}
       toggleColor={text('toggle text color', '#000000')}
-      toggleColorHover={text('toggle text hover color', '#4856C9')}
+      toggleHoverColor={text('toggle text hover color', '#4856C9')}
       toggleFontFamily={text('toggle font family', 'initial')}
     />
   </Wrapper>

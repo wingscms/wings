@@ -50,13 +50,20 @@ Can be used in the `design` option in Hummingbird's `gatsby-config`:
 
 `navigationMenuBackgroundColor`: Default: <span style="background-color: #FFFFFF">backgroundColor</span>
 
+`navigationLanguagePickerColor`: Default: <span style="background-color: #FFFFFF">#FFFFFF</span>
+
+`navigationLanguagePickerHoverColor`: Default: <span style="background-color: #417de8">primaryColor</span>
+
+`navigationLanguagePickerTextColor`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options) with `navigationLanguagePickerColor` as the background color.
+
+`navigationLanguagePickerTextHoverColor`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options) with `navigationLanguagePickerHoverColor` as the background color.
+
+`navigationLanguagePickerIconColor`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options) with `navigationLanguagePickerColor` as the background color.
+
 `navigationIconColor`: Default: calculated by [`getContrastColor()`](/docs/dev/crane/utils#getcontrastcolor-options) (<span style="background-color: #212121; color: #FFFFFF">#212121</span> for light backgrounds and <span style="background-color: #FFFFFF">#FFFFFF</span> for dark backgrounds)
 
 `navigationIconColorDark`: Default: <span style="background-color: #FFFFFF">#FFFFFF</span>
 
-`navigationIconLanguagePickerColor`: Default: <span style="background-color: #FFFFFF">#FFFFFF</span>
-
-`navigationIconLanguagePickerColorHover`: Default: <span style="background-color: #417de8">primaryColor</span>
 
 #### Footer
 

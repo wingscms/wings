@@ -51,7 +51,7 @@ export default class Breakout extends Component {
     /** Open/close text color */
     toggleColor: PropTypes.string,
     /** Open/close text hover color */
-    toggleColorHover: PropTypes.string,
+    toggleHoverColor: PropTypes.string,
     /** Open/close text font family */
     toggleFontFamily: PropTypes.string,
   };
@@ -66,7 +66,7 @@ export default class Breakout extends Component {
     shadow: true,
     title: '',
     toggleColor: '#000000',
-    toggleColorHover: '#4856C9',
+    toggleHoverColor: '#4856C9',
     toggleFontFamily: 'initial',
   };
 
@@ -83,7 +83,7 @@ export default class Breakout extends Component {
       expandable,
       height,
       toggleColor,
-      toggleColorHover,
+      toggleHoverColor,
       toggleFontFamily,
       borderRadius,
       backgroundColor,
@@ -97,7 +97,7 @@ export default class Breakout extends Component {
         open={open}
         height={height}
         toggleColor={toggleColor}
-        toggleColorHover={toggleColorHover}
+        toggleHoverColor={toggleHoverColor}
         toggleFontFamily={toggleFontFamily}
         borderRadius={borderRadius}
         backgroundColor={backgroundColor}

@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.42.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.41.0...@wingscms/hummingbird@0.42.0) (2019-12-20)
+
+
+### Features
+
+* add default fundraiser confirmation text ([#333](https://github.com/wingscms/wings/issues/333)) ([e5a6874](https://github.com/wingscms/wings/commit/e5a6874d9086bac2a5add020fefa365f074db7ed))
+* language picker and uppercase title propagation theming improvements ([#332](https://github.com/wingscms/wings/issues/332)) ([dcd824e](https://github.com/wingscms/wings/commit/dcd824e22c8be97063c8e1368fa9939b5d13404b)), closes [#313](https://github.com/wingscms/wings/issues/313)
+
+
+
+
+
+# [0.41.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.40.0...@wingscms/hummingbird@0.41.0) (2019-12-16)
+
+
+### Bug Fixes
+
+* render no message by default ([62a5f31](https://github.com/wingscms/wings/commit/62a5f31aaa17a5ffff6e371d57c5a85c1ec35a96))
+
+
+### Features
+
+* nodes card ([#318](https://github.com/wingscms/wings/issues/318)) ([bc7114a](https://github.com/wingscms/wings/commit/bc7114af0551f66b894c97496f67568d47b8c4af))
+
+
+
+
+
 # [0.40.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.39.4...@wingscms/hummingbird@0.40.0) (2019-11-25)
 
 
