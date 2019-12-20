@@ -18,7 +18,6 @@ import facebookIcon from '../../img/facebook.svg';
 import twitterIcon from '../../img/twitter.svg';
 import whatsappIcon from '../../img/whatsapp.svg';
 import emailIcon from '../../img/email.svg';
-import languageIcon from '../../img/language.svg';
 
 import MenuItem from './MenuItem';
 import ChapterLinks from './ChapterLinks';
@@ -105,21 +104,6 @@ const LanguagePickerWrap = styled.div`
   }
 `;
 
-const LanguageIcon = styled.img`
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 6;
-  @media screen and (min-width: 800px) {
-    width: 20px;
-    height: 20px;
-    left: 15px;
-  }
-`;
-
 export default function Navigation({
   chapterMenu,
   chapters,
@@ -199,16 +183,16 @@ export default function Navigation({
         )}
         {translations.length > 0 ? (
           <LanguagePickerWrap>
-            <LanguageIcon src={languageIcon} />
             <LanguagePicker
-              backgroundColor={theme.languagePickerColor}
-              backgroundColorHover={theme.languagePickerHoverColor}
               translations={translations.map(t => ({
                 name: t.locale.name,
                 locale: t.locale.id,
                 node: t,
               }))}
-              current={locale.name}
+              current={{
+                locale: locale.id,
+                name: locale.name,
+              }}
               onTranslationClick={({ node }) => {
                 navigate(routing.getPath(node));
               }}

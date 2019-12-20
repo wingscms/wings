@@ -103,7 +103,7 @@ const CTAButton = styled(Button)`
   transition: all 0.15s linear;
   &:hover,
   &:active {
-    background-color: ${({ theme }) => theme.iconColorHover};
+    background-color: ${({ theme }) => theme.iconHoverColor};
   }
   @media screen and (max-width: 800px) {
     margin-right: auto;
