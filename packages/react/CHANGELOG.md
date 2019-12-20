@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.26.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.25.0...@wingscms/react@0.26.0) (2019-12-20)
+
+
+### Features
+
+* language picker and uppercase title propagation theming improvements ([#332](https://github.com/wingscms/wings/issues/332)) ([dcd824e](https://github.com/wingscms/wings/commit/dcd824e22c8be97063c8e1368fa9939b5d13404b)), closes [#313](https://github.com/wingscms/wings/issues/313)
+
+
+
+
+
 # [0.25.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.24.4...@wingscms/react@0.25.0) (2019-12-16)
 
 
