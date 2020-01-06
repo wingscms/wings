@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 import Icons from '../../img/svg/icons';
 
@@ -82,7 +82,7 @@ const Icon = styled.div`
 export default ({
   current = 'en',
   translations = [],
-  onTranslationClick = () => {},
+  onTranslationClick = () => { },
   showAbove = false,
 }) => {
   const windowDimensions = useWindowDimensions();

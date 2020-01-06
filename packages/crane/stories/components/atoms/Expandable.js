@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '../lib/styled';
 import { boolean, text } from '@storybook/addon-knobs/react';
 import { Expandable } from '../../../src/components/atoms';
 

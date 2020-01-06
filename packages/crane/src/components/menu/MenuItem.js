@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 import { getContrastColor } from '../../lib/utils';
 
 const StyledMenuItem = styled.li`
@@ -85,7 +85,7 @@ export default class MenuItem extends Component {
         {...this.props}
         className={`${special ? 'special ' : ''}${current ? 'current ' : ''}${
           this.props.className
-        }`}
+          }`}
       >
         {external ? (
           <ExternalLink to={to} target={target}>
@@ -93,11 +93,11 @@ export default class MenuItem extends Component {
             {icon ? <img src={icon} alt="" /> : null}
           </ExternalLink>
         ) : (
-          <InternalLink to={to} target={target}>
-            {text}
-            {icon ? <img src={icon} alt="" /> : null}
-          </InternalLink>
-        )}
+            <InternalLink to={to} target={target}>
+              {text}
+              {icon ? <img src={icon} alt="" /> : null}
+            </InternalLink>
+          )}
         {children}
       </StyledMenuItem>
     );

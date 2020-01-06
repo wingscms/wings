@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 import GalleryImage from './GalleryImage';
 import Dots from './Dots';
 import { ChevronRight, ChevronLeft, Pause, Play } from '../icons';
@@ -160,8 +160,8 @@ export default class Gallery extends Component {
     const PlayPause = playing ? (
       <Pause className="pause" title="Pause" onClick={() => this.pause()} />
     ) : (
-      <Play className="play" title="Play" onClick={() => this.play()} />
-    );
+        <Play className="play" title="Play" onClick={() => this.play()} />
+      );
 
     return (
       <ContainerOuter className={fullWidth ? 'fullwidth' : ''}>

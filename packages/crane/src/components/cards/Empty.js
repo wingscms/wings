@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 import PropTypes from 'prop-types';
 import Container from './Container';
 

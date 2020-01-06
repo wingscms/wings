@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 
 const StyledOl = styled.ol`
   counter-reset: crane-list-counter;

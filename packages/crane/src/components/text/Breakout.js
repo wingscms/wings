@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 import { Expandable } from '../atoms';
 
 const Title = styled.h4`

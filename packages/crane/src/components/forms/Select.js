@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React, { Fragment } from 'react';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 import { getValue, processValue } from './formUtils';
 
 const StyledSelect = styled.select`
@@ -110,15 +110,15 @@ export default props => {
             })}
           </Fragment>
         ) : (
-          <Fragment>
-            {options.map((x, i) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <option key={i} value={x}>
-                {x}
-              </option>
-            ))}
-          </Fragment>
-        )}
+            <Fragment>
+              {options.map((x, i) => (
+                // eslint-disable-next-line react/no-array-index-key
+                <option key={i} value={x}>
+                  {x}
+                </option>
+              ))}
+            </Fragment>
+          )}
       </StyledSelect>
     </Wrapper>
   );

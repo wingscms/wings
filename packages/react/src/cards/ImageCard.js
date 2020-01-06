@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '../lib/styled';
 import { compose, setPropTypes, setStatic } from 'recompose';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';

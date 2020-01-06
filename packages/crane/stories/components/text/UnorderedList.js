@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '../lib/styled';
 import { number, select, text } from '@storybook/addon-knobs/react';
 import { UnorderedList } from '../../../src/components/text';
 import parrot from '../../img/parrot.gif';

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 import { SchemaForm, Amount, Loading, Button as _Button } from '@wingscms/crane';
 import deepmerge from 'deepmerge';
 import { withWings } from '../../ctx/Wings';
@@ -493,48 +493,48 @@ class CampaignForm extends Component {
         <Loading />
       </div>
     ) : (
-      <React.Fragment>
-        {this.props.type === 'fundraiser' ? (
-          <div style={{ marginBottom: '20px' }}>
-            <Amount
-              label="Amount"
-              required
-              id="amount"
-              value={amount / 100}
-              amounts={[5, 10, 25]}
-              onChange={v => {
-                this.setState({ amount: v * 100 });
-              }}
-            />
-          </div>
-        ) : null}
-        {!(stage === 'form') ? null : (
-          <SchemaForm
-            id="campaign-form"
-            autoValidate={false}
-            {...this.props.schemaFormProps}
-            schema={schema}
-            formData={this.state.formData}
-            onChange={({ formData }) => this.setState({ formData })}
-            onSubmit={this.handleSubmit.bind(this)}
-          >
-            {this.props.children || <Button>{this.getSubmitText()}</Button>}
-          </SchemaForm>
-        )}
-        {!(stage === 'confirm') ? null : (
-          <div ref={this.confirmedContainerRef}>
-            <h1>{campaignConfirmTitle}</h1>
-            <p>{campaignConfirmText}</p>
-          </div>
-        )}
-        {!(stage === 'error') ? null : (
-          <div>
-            <h1>{campaignErrorTitle}</h1>
-            <p>{campaignErrorText}</p>
-          </div>
-        )}
-      </React.Fragment>
-    );
+        <React.Fragment>
+          {this.props.type === 'fundraiser' ? (
+            <div style={{ marginBottom: '20px' }}>
+              <Amount
+                label="Amount"
+                required
+                id="amount"
+                value={amount / 100}
+                amounts={[5, 10, 25]}
+                onChange={v => {
+                  this.setState({ amount: v * 100 });
+                }}
+              />
+            </div>
+          ) : null}
+          {!(stage === 'form') ? null : (
+            <SchemaForm
+              id="campaign-form"
+              autoValidate={false}
+              {...this.props.schemaFormProps}
+              schema={schema}
+              formData={this.state.formData}
+              onChange={({ formData }) => this.setState({ formData })}
+              onSubmit={this.handleSubmit.bind(this)}
+            >
+              {this.props.children || <Button>{this.getSubmitText()}</Button>}
+            </SchemaForm>
+          )}
+          {!(stage === 'confirm') ? null : (
+            <div ref={this.confirmedContainerRef}>
+              <h1>{campaignConfirmTitle}</h1>
+              <p>{campaignConfirmText}</p>
+            </div>
+          )}
+          {!(stage === 'error') ? null : (
+            <div>
+              <h1>{campaignErrorTitle}</h1>
+              <p>{campaignErrorText}</p>
+            </div>
+          )}
+        </React.Fragment>
+      );
   }
 }
 

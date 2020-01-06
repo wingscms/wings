@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 
 const StyledUl = styled.ul`
   list-style-type: none;
@@ -11,15 +11,15 @@ const StyledUl = styled.ul`
     padding: ${({ itemPadding }) => itemPadding || 'initial'};
     position: relative;
     ${({
-    bulletCharacter,
-    bulletColor,
-    bulletImage,
-    bulletColorInner,
-    bulletLeft,
-    bulletSize,
-    bulletTop,
-    type,
-  }) => {
+  bulletCharacter,
+  bulletColor,
+  bulletImage,
+  bulletColorInner,
+  bulletLeft,
+  bulletSize,
+  bulletTop,
+  type,
+}) => {
     switch (type) {
       case 'chevron':
         return `

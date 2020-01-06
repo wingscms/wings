@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 
 const DotsContainer = styled.div`
   position: absolute;

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '../lib/styled';
 import ReactJson from 'react-json-view';
 import { text } from '@storybook/addon-knobs/react';
 import { SchemaForm } from '../../../src/components/forms';

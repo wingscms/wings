@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled, { withTheme } from 'styled-components';
+import styled from '../lib/styled';
 import Fade from 'react-reveal/Fade';
 
 import { wide } from '@wingscms/crane';
@@ -105,5 +105,5 @@ class ChapterView extends Component {
 
 export default createCard({
   name: 'ChapterCard',
-  renderWith: withTheme(ChapterView),
+  renderWith: ChapterView,
 });

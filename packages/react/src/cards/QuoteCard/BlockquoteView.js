@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-fragments */
 import React from 'react';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 import { compose, setPropTypes, setStatic } from 'recompose';
 import propTypes, { defaultProps } from './propTypes';
 import Quote from './Quote';
@@ -28,7 +28,7 @@ const Caption = styled.figcaption`
       background-size: 100% 4px;
       background-image: linear-gradient(120deg, ${({ theme }) => theme.primaryColor} 0%, ${({
   theme,
-      }) => theme.primaryColor} 100%);
+}) => theme.primaryColor} 100%);
     }
   }
 `

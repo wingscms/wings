@@ -1,7 +1,7 @@
 /* eslint-disable no-template-curly-in-string */
 
 import React from 'react';
-import styled from 'styled-components';
+import styled from '../lib/styled';
 import { text, boolean } from '@storybook/addon-knobs/react';
 import { MenuItem } from '../../../src/components/menu';
 
