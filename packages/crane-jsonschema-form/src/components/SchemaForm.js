@@ -28,7 +28,6 @@ const StyledForm = styled(Form)`
 `;
 
 const defaultWidgets = {
-  AmountWidget: Amount,
   CheckboxWidget: Checkbox,
   ColorWidget: ColorInput,
   DateWidget: DateInput,
@@ -43,19 +42,23 @@ const defaultWidgets = {
   URLWidget: URLInput,
 };
 
-export default ({ widgets = v => v, ...props }) => (
-  <StyledForm
-    ErrorList={() => null}
-    transformErrors={errors =>
-      errors.map(error => {
-        if (error.name === 'required') {
-          error.message = 'this field is required'; // eslint-disable-line no-param-reassign
-        } else {
-          error.message = ''; // eslint-disable-line no-param-reassign
-        }
-        return error;
-      })}
-    {...props}
-    widgets={widgets(defaultWidgets)}
-  />
-);
+export default function SchemaForm({ widgets = v => v, ...props }) {
+  return (
+    <StyledForm
+      ErrorList={() => null}
+      transformErrors={errors =>
+        errors.map(error => {
+          if (error.name === 'required') {
+            error.message = 'this field is required'; // eslint-disable-line no-param-reassign
+          } else {
+            error.message = ''; // eslint-disable-line no-param-reassign
+          }
+          return error;
+        })}
+      {...props}
+      widgets={widgets(defaultWidgets)}
+    />
+  );
+}
+
+SchemaForm._Amount = Amount;

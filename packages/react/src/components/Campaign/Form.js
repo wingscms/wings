@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Amount, Loading, Button as _Button } from '@wingscms/crane';
+import { Loading, Button as _Button } from '@wingscms/crane';
 import SchemaForm from '@wingscms/crane-jsonschema-form';
 import deepmerge from 'deepmerge';
 import styled from '../../lib/styled';
@@ -495,10 +495,10 @@ class CampaignForm extends Component {
         <Loading />
       </div>
     ) : (
-      <React.Fragment>
+      <>
         {this.props.type === 'fundraiser' ? (
           <div style={{ marginBottom: '20px' }}>
-            <Amount
+            <SchemaForm._Amount
               label="Amount"
               required
               id="amount"
@@ -535,7 +535,7 @@ class CampaignForm extends Component {
             <p>{campaignErrorText}</p>
           </div>
         )}
-      </React.Fragment>
+      </>
     );
   }
 }
