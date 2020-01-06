@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from '../../lib/styled';
+import styled from '../lib/styled';
 
 const StyledTextarea = styled.textarea`
   width: 100%;
@@ -8,7 +8,7 @@ const StyledTextarea = styled.textarea`
   font-size: inherit;
 `;
 
-export default (props) => {
+export default props => {
   const {
     id,
     options = {},

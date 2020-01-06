@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from '../../lib/styled';
 import Form from 'react-jsonschema-form';
+import styled from '../lib/styled';
 import Amount from './Amount';
 import Checkbox from './CheckboxInput';
 import ColorInput from './ColorInput';
@@ -28,7 +28,6 @@ const StyledForm = styled(Form)`
 `;
 
 const defaultWidgets = {
-  AmountWidget: Amount,
   CheckboxWidget: Checkbox,
   ColorWidget: ColorInput,
   DateWidget: DateInput,
@@ -43,31 +42,23 @@ const defaultWidgets = {
   URLWidget: URLInput,
 };
 
-export default (props) => {
-  const { children } = props;
-  let { widgets = {} } = props;
-
-  widgets = {
-    ...defaultWidgets,
-    ...widgets,
-  };
+export default function SchemaForm({ widgets = v => v, ...props }) {
   return (
     <StyledForm
       ErrorList={() => null}
       transformErrors={errors =>
-        errors.map((error) => {
+        errors.map(error => {
           if (error.name === 'required') {
             error.message = 'this field is required'; // eslint-disable-line no-param-reassign
           } else {
             error.message = ''; // eslint-disable-line no-param-reassign
           }
           return error;
-        })
-      }
+        })}
       {...props}
-      widgets={widgets}
-    >
-      {children}
-    </StyledForm>
+      widgets={widgets(defaultWidgets)}
+    />
   );
-};
+}
+
+SchemaForm._Amount = Amount;

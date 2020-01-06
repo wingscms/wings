@@ -1,0 +1,24 @@
+{
+  "name": "@wingscms/crane-jsonschema-form",
+  "version": "0.1.0",
+  "description": "JSON schema forms for Wings' Crane component library",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "rollup -c -w",
+    "build": "rollup -c",
+    "prepublish": "cross-env NODE_ENV=production npm run build"
+  },
+  "author": "Mark Jackson <markjackson@bureaubolster.nl>",
+  "devDependencies": {
+    "cross-env": "6.0.3",
+    "rollup": "^1.27.10"
+  },
+  "dependencies": {
+    "react-jsonschema-form": "1.8.1"
+  },
+  "peerDependencies": {
+    "react": "^16",
+    "react-dom": "^16",
+    "styled-components": "^3 || ^4"
+  }
+}

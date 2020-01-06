@@ -1,4 +1,4 @@
-export const asNumber = (value) => {
+export const asNumber = value => {
   if (value === '') {
     return undefined;
   }
@@ -18,7 +18,7 @@ export const asNumber = (value) => {
   return valid ? n : value;
 };
 
-export const getRange = (props) => {
+export const getRange = props => {
   const { min, max, step, schema } = props;
   const spec = {};
   if (schema) {
@@ -49,18 +49,18 @@ export const getValue = (event, multiple) => {
   return event.target.value;
 };
 
-export const guessType = (value) => {
+export const guessType = value => {
   if (Array.isArray(value)) {
     return 'array';
-  } else if (typeof value === 'string') {
+  } if (typeof value === 'string') {
     return 'string';
-  } else if (value == null) {
+  } if (value == null) {
     return 'null';
-  } else if (typeof value === 'boolean') {
+  } if (typeof value === 'boolean') {
     return 'boolean';
-  } else if (!Number.isNaN(value)) {
+  } if (!Number.isNaN(value)) {
     return 'number';
-  } else if (typeof value === 'object') {
+  } if (typeof value === 'object') {
     return 'object';
   }
   return 'string';
@@ -71,18 +71,18 @@ export const processValue = (schema, value) => {
   const nums = new Set(['number', 'integer']);
   if (value === '') {
     return undefined;
-  } else if (type === 'array' && items && nums.has(items.type)) {
+  } if (type === 'array' && items && nums.has(items.type)) {
     return value.map(asNumber);
-  } else if (type === 'boolean') {
+  } if (type === 'boolean') {
     return value === 'true';
-  } else if (type === 'number') {
+  } if (type === 'number') {
     return asNumber(value);
   }
 
   if (schema.enum) {
     if (schema.enum.every(x => guessType(x) === 'number')) {
       return asNumber(value);
-    } else if (schema.enum.every(x => guessType(x) === 'boolean')) {
+    } if (schema.enum.every(x => guessType(x) === 'boolean')) {
       return value === 'true';
     }
   }

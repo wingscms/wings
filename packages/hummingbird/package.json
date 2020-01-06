@@ -15,7 +15,7 @@
     "deepmerge": "4.1.1",
     "filter-invalid-dom-props": "2.0.0",
     "format-number": "3.0.0",
-    "gatsby": "2.16.3",
+    "gatsby": "^2.18.18",
     "gatsby-link": "2.2.22",
     "gatsby-paginate": "1.1.1",
     "gatsby-plugin-catch-links": "2.1.15",
