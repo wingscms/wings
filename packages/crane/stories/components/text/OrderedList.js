@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '../lib/styled';
 import { number, text } from '@storybook/addon-knobs/react';
 import { OrderedList } from '../../../src/components/text';
 

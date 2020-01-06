@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '../lib/styled';
 import { text, boolean, select } from '@storybook/addon-knobs/react';
 import { Blockquote } from '../../../src/components/text';
 

@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from 'react';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 
 const StyledInput = styled.input`
   position: absolute;
@@ -54,59 +54,59 @@ export default props => {
     <div className="field-radio-group" id={id}>
       {schema
         ? enumOptions.map((option, i) => {
-            const name = Math.random().toString();
-            const checked = option.value === value;
-            const itemDisabled = enumDisabled && enumDisabled.indexOf(option.value) !== -1;
-            const disabledCls = disabled || itemDisabled || readonly ? 'disabled' : '';
-            return (
-              <div key={i} className={`radio ${disabledCls}`} style={{ margin: '10px 0' }}>
-                <StyledInput
-                  id={name}
-                  type="radio"
-                  checked={checked}
-                  name={name}
-                  required={required}
-                  value={option.value}
-                  disabled={disabled || itemDisabled || readonly}
-                  onChange={_ => onChange(option.value)}
-                  onBlur={onBlur && (event => onBlur(id, event.target.value))}
-                  onFocus={onFocus && (event => onFocus(id, event.target.value))}
-                />
-                <StyledLabel htmlFor={name} className={`${checked ? 'checked ' : ''}`}>
-                  {option.label}
-                </StyledLabel>
-              </div>
-            );
-          })
+          const name = Math.random().toString();
+          const checked = option.value === value;
+          const itemDisabled = enumDisabled && enumDisabled.indexOf(option.value) !== -1;
+          const disabledCls = disabled || itemDisabled || readonly ? 'disabled' : '';
+          return (
+            <div key={i} className={`radio ${disabledCls}`} style={{ margin: '10px 0' }}>
+              <StyledInput
+                id={name}
+                type="radio"
+                checked={checked}
+                name={name}
+                required={required}
+                value={option.value}
+                disabled={disabled || itemDisabled || readonly}
+                onChange={_ => onChange(option.value)}
+                onBlur={onBlur && (event => onBlur(id, event.target.value))}
+                onFocus={onFocus && (event => onFocus(id, event.target.value))}
+              />
+              <StyledLabel htmlFor={name} className={`${checked ? 'checked ' : ''}`}>
+                {option.label}
+              </StyledLabel>
+            </div>
+          );
+        })
         : options.map((option, i) => {
-            const name = Math.random().toString();
-            const checked = option === value;
-            const itemDisabled = enumDisabled && enumDisabled.indexOf(option) !== -1;
-            const disabledCls = disabled || itemDisabled || readonly ? 'disabled' : '';
-            return (
-              <div
-                key={i}
-                className={`radio ${checked ? 'checked ' : ''}${disabledCls}`}
-                style={{ margin: '10px 0' }}
-              >
-                <StyledInput
-                  id={name}
-                  type="radio"
-                  checked={checked}
-                  name={name}
-                  required={required}
-                  value={option}
-                  disabled={disabled || itemDisabled || readonly}
-                  onChange={_ => onChange(option)}
-                  onBlur={onBlur && (event => onBlur(id, event.target.value))}
-                  onFocus={onFocus && (event => onFocus(id, event.target.value))}
-                />
-                <StyledLabel htmlFor={name} className={`${checked ? 'checked ' : ''}`}>
-                  {option}
-                </StyledLabel>
-              </div>
-            );
-          })}
+          const name = Math.random().toString();
+          const checked = option === value;
+          const itemDisabled = enumDisabled && enumDisabled.indexOf(option) !== -1;
+          const disabledCls = disabled || itemDisabled || readonly ? 'disabled' : '';
+          return (
+            <div
+              key={i}
+              className={`radio ${checked ? 'checked ' : ''}${disabledCls}`}
+              style={{ margin: '10px 0' }}
+            >
+              <StyledInput
+                id={name}
+                type="radio"
+                checked={checked}
+                name={name}
+                required={required}
+                value={option}
+                disabled={disabled || itemDisabled || readonly}
+                onChange={_ => onChange(option)}
+                onBlur={onBlur && (event => onBlur(id, event.target.value))}
+                onFocus={onFocus && (event => onFocus(id, event.target.value))}
+              />
+              <StyledLabel htmlFor={name} className={`${checked ? 'checked ' : ''}`}>
+                {option}
+              </StyledLabel>
+            </div>
+          );
+        })}
     </div>
   );
 };

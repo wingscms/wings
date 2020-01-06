@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '../lib/styled';
 
 // eslint-disable-next-line
 const calculatePercentage = n => 100 / n;

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '../lib/styled';
 import _Button from './Button';
 
 const Button = styled(_Button)`
@@ -20,7 +20,7 @@ const getPageNumbers = ({ current, total, size: maxSize = 3 }) => {
   const margin = Math.floor(size / 2);
   const shift = !(total <= maxSize);
   const first = (shift
-      && (total - current < margin ? total - margin * 2 : current > margin ? current - margin : 1))
+    && (total - current < margin ? total - margin * 2 : current > margin ? current - margin : 1))
     || 1;
   return new Array(size).fill(0).map((_, i) => first + i);
 };

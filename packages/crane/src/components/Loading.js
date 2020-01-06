@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from '../lib/styled';
 import { getIntentColor } from '../lib/utils';
 
 const getSize = ({ size }) => {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled from '../lib/styled';
 import PropTypes from 'prop-types';
 import includes from 'lodash.includes';
 import Renderer03 from '@dailybeast/mobiledoc-react-renderer/dist/renderers/0-3';

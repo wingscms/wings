@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '../lib/styled';
 import { number, select } from '@storybook/addon-knobs/react';
 import Counter from '../../../src/components/Counter';
 import theme from '../../styles/theme';

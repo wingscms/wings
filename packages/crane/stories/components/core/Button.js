@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '../lib/styled';
 import { text, select, boolean } from '@storybook/addon-knobs/react';
 import theme from '../../styles/theme';
 import Button from '../../../src/components/Button';

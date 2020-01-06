@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css } from '../lib/styled';
 import { wide } from '@wingscms/crane';
 import Campaign from '../components/Campaign/Campaign';
 import createCard from '../createCard';

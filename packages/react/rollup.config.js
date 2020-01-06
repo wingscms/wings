@@ -10,7 +10,7 @@ export default [
       file: pkg.main,
       format: 'cjs',
     },
-    external: ['react', 'react-dom'],
+    external: ['react', 'react-dom', 'styled-components'],
     plugins: [
       commonjs({
         include: '../../node_modules/**',

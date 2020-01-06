@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css } from '../lib/styled';
 
 export default css`
   width: 100vw;

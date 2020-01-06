@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '../lib/styled';
 import { boolean, text, object } from '@storybook/addon-knobs/react';
 import { Newsletter } from '../../../src/components/signup';
 

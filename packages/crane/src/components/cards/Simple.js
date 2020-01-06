@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 import PropTypes from 'prop-types';
 import Container from './Container';
 import Counter from '../Counter';
@@ -241,7 +241,7 @@ export default class SimpleCard extends Component {
     ctaText: '',
     image: '',
     location: {},
-    onClickHandler: () => {},
+    onClickHandler: () => { },
     publishDate: '',
     shadow: true,
     signatureCount: 0,

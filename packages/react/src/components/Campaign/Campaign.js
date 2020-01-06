@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 
 import Content from '../Content';
 import CampaignForm from './Form';
@@ -229,7 +229,7 @@ export default ({
                     goalText={petitionCounterGoalText}
                   />
                 </CounterContainer>
-            )}
+              )}
             <FormContainerInner>
               <CampaignForm
                 type={resourceType.split('.')[1]}
@@ -260,7 +260,7 @@ export default ({
               eventFee,
             }}
           />
-      )}
+        )}
     </React.Fragment>
   );
   return wrapElement(element, node);

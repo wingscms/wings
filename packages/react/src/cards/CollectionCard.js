@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { FlexGrid, Icons } from '@wingscms/crane';
-import styled from 'styled-components';
+import styled from '../lib/styled';
 import createCard from '../createCard';
 
 const { Facebook, Globe, Instagram, Linkedin, Twitter } = Icons;

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 
 const InfoContainer = styled.div`
   padding: 20px;
@@ -71,39 +71,39 @@ export default ({
   eventEndTime,
   eventFee,
 }) => (
-  <Wrapper>
-    {title}
-    <InfoContainer>
-      {eventStartTime ? (
-        <MetaContainer>
-          <MetaName>{eventStartLabel}</MetaName>
-          <MetaContent>{eventStartTime}</MetaContent>
-        </MetaContainer>
-      ) : null}
-      {eventEndTime ? (
-        <MetaContainer>
-          <MetaName>{eventEndLabel}</MetaName>
-          <MetaContent>{eventEndTime}</MetaContent>
-        </MetaContainer>
-      ) : null}
-      {location ? (
-        <MetaContainer>
-          <MetaName>{eventLocationLabel}</MetaName>
-          <MetaContent>
-            {location.name ? <p>{location.name}</p> : null}
-            {location.street ? <p>{location.street}</p> : null}
-            {location.city ? <p>{location.city}</p> : null}
-            {location.zip ? <p>{location.zip}</p> : null}
-            {location.country ? <p>{location.country}</p> : null}
-          </MetaContent>
-        </MetaContainer>
-      ) : null}
-      {eventFee ? (
-        <MetaContainer>
-          <MetaName>{eventFeeLabel}</MetaName>
-          <MetaContent>{eventFee}</MetaContent>
-        </MetaContainer>
-      ) : null}
-    </InfoContainer>
-  </Wrapper>
-);
+    <Wrapper>
+      {title}
+      <InfoContainer>
+        {eventStartTime ? (
+          <MetaContainer>
+            <MetaName>{eventStartLabel}</MetaName>
+            <MetaContent>{eventStartTime}</MetaContent>
+          </MetaContainer>
+        ) : null}
+        {eventEndTime ? (
+          <MetaContainer>
+            <MetaName>{eventEndLabel}</MetaName>
+            <MetaContent>{eventEndTime}</MetaContent>
+          </MetaContainer>
+        ) : null}
+        {location ? (
+          <MetaContainer>
+            <MetaName>{eventLocationLabel}</MetaName>
+            <MetaContent>
+              {location.name ? <p>{location.name}</p> : null}
+              {location.street ? <p>{location.street}</p> : null}
+              {location.city ? <p>{location.city}</p> : null}
+              {location.zip ? <p>{location.zip}</p> : null}
+              {location.country ? <p>{location.country}</p> : null}
+            </MetaContent>
+          </MetaContainer>
+        ) : null}
+        {eventFee ? (
+          <MetaContainer>
+            <MetaName>{eventFeeLabel}</MetaName>
+            <MetaContent>{eventFee}</MetaContent>
+          </MetaContainer>
+        ) : null}
+      </InfoContainer>
+    </Wrapper>
+  );
