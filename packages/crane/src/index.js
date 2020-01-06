@@ -36,7 +36,7 @@ export { default as Gallery } from './components/gallery';
 export { default as FlexGrid } from './layout/FlexGrid';
 
 // Signup
-export { Signup, SignupForm, Newsletter, NewsletterForm, MailchimpForm } from './components/signup';
+export { Signup, SignupForm, Newsletter, NewsletterForm } from './components/signup';
 
 // Utils
 export { createSvgIcon, getContrastColor, separateUnit } from './lib/utils';
