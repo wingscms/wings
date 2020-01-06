@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from '../../lib/styled';
 import Form from 'react-jsonschema-form';
+import styled from '../lib/styled';
 import Amount from './Amount';
 import Checkbox from './CheckboxInput';
 import ColorInput from './ColorInput';
@@ -62,8 +62,7 @@ export default props => {
             error.message = ''; // eslint-disable-line no-param-reassign
           }
           return error;
-        })
-      }
+        })}
       {...props}
       widgets={widgets}
     >

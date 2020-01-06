@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from 'react';
-import styled from '../../lib/styled';
+import styled from '../lib/styled';
 
 const StyledInput = styled.input`
   position: absolute;

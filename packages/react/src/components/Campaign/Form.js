@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Amount, Loading, Button as _Button } from '@wingscms/crane';
-import SchemaForm from '@wingscms/crane-json-schema-form';
+import SchemaForm from '@wingscms/crane-jsonschema-form';
 import deepmerge from 'deepmerge';
 import styled from '../../lib/styled';
 
@@ -313,10 +313,9 @@ class CampaignForm extends Component {
   };
 
   getFormSchema() {
-    const schema =
-      this.props.formSchema ||
-      (this.props.node.submissionSchema && JSON.parse(this.props.node.submissionSchema)) ||
-      this.state.formSchema;
+    const schema = this.props.formSchema
+      || (this.props.node.submissionSchema && JSON.parse(this.props.node.submissionSchema))
+      || this.state.formSchema;
     return schema ? this.processSchema(schema) : schema;
   }
 
@@ -385,10 +384,10 @@ class CampaignForm extends Component {
 
   maybeFetch() {
     if (
-      this.state.failed ||
-      this.state.formSchema ||
-      this.props.formSchema ||
-      this.state.fetching
+      this.state.failed
+      || this.state.formSchema
+      || this.props.formSchema
+      || this.state.fetching
     ) {
       return;
     }
@@ -440,9 +439,9 @@ class CampaignForm extends Component {
         },
       });
       if (
-        res.submitFundraiser &&
-        res.submitFundraiser.donation &&
-        res.submitFundraiser.donation.id
+        res.submitFundraiser
+        && res.submitFundraiser.donation
+        && res.submitFundraiser.donation.id
       ) {
         window.location.assign(res.submitFundraiser.donation.order.paymentUrl);
       } else {
@@ -496,48 +495,48 @@ class CampaignForm extends Component {
         <Loading />
       </div>
     ) : (
-        <React.Fragment>
-          {this.props.type === 'fundraiser' ? (
-            <div style={{ marginBottom: '20px' }}>
-              <Amount
-                label="Amount"
-                required
-                id="amount"
-                value={amount / 100}
-                amounts={[5, 10, 25]}
-                onChange={v => {
-                  this.setState({ amount: v * 100 });
-                }}
-              />
-            </div>
-          ) : null}
-          {!(stage === 'form') ? null : (
-            <SchemaForm
-              id="campaign-form"
-              autoValidate={false}
-              {...this.props.schemaFormProps}
-              schema={schema}
-              formData={this.state.formData}
-              onChange={({ formData }) => this.setState({ formData })}
-              onSubmit={this.handleSubmit.bind(this)}
-            >
-              {this.props.children || <Button>{this.getSubmitText()}</Button>}
-            </SchemaForm>
-          )}
-          {!(stage === 'confirm') ? null : (
-            <div ref={this.confirmedContainerRef}>
-              <h1>{campaignConfirmTitle}</h1>
-              <p>{campaignConfirmText}</p>
-            </div>
-          )}
-          {!(stage === 'error') ? null : (
-            <div>
-              <h1>{campaignErrorTitle}</h1>
-              <p>{campaignErrorText}</p>
-            </div>
-          )}
-        </React.Fragment>
-      );
+      <React.Fragment>
+        {this.props.type === 'fundraiser' ? (
+          <div style={{ marginBottom: '20px' }}>
+            <Amount
+              label="Amount"
+              required
+              id="amount"
+              value={amount / 100}
+              amounts={[5, 10, 25]}
+              onChange={v => {
+                this.setState({ amount: v * 100 });
+              }}
+            />
+          </div>
+        ) : null}
+        {!(stage === 'form') ? null : (
+          <SchemaForm
+            id="campaign-form"
+            autoValidate={false}
+            {...this.props.schemaFormProps}
+            schema={schema}
+            formData={this.state.formData}
+            onChange={({ formData }) => this.setState({ formData })}
+            onSubmit={this.handleSubmit.bind(this)}
+          >
+            {this.props.children || <Button>{this.getSubmitText()}</Button>}
+          </SchemaForm>
+        )}
+        {!(stage === 'confirm') ? null : (
+          <div ref={this.confirmedContainerRef}>
+            <h1>{campaignConfirmTitle}</h1>
+            <p>{campaignConfirmText}</p>
+          </div>
+        )}
+        {!(stage === 'error') ? null : (
+          <div>
+            <h1>{campaignErrorTitle}</h1>
+            <p>{campaignErrorText}</p>
+          </div>
+        )}
+      </React.Fragment>
+    );
   }
 }
 

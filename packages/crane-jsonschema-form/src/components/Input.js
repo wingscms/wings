@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-for */
 import React from 'react';
-import styled, { css } from '../../lib/styled';
+import styled, { css } from '../lib/styled';
 
 const StyledInput = styled.input`
   font-size: inherit;
@@ -18,11 +18,11 @@ const StyledInput = styled.input`
     min-height: 36px;
   }
   ${({ error }) =>
-    !error
+    (!error
       ? null
       : css`
           background-color: #ffcfcf;
-        `};
+        `)};
 `;
 
 function BaseInput(props) {
