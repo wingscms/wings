@@ -43,30 +43,19 @@ const defaultWidgets = {
   URLWidget: URLInput,
 };
 
-export default props => {
-  const { children } = props;
-  let { widgets = {} } = props;
-
-  widgets = {
-    ...defaultWidgets,
-    ...widgets,
-  };
-  return (
-    <StyledForm
-      ErrorList={() => null}
-      transformErrors={errors =>
-        errors.map(error => {
-          if (error.name === 'required') {
-            error.message = 'this field is required'; // eslint-disable-line no-param-reassign
-          } else {
-            error.message = ''; // eslint-disable-line no-param-reassign
-          }
-          return error;
-        })}
-      {...props}
-      widgets={widgets}
-    >
-      {children}
-    </StyledForm>
-  );
-};
+export default ({ widgets = v => v, ...props }) => (
+  <StyledForm
+    ErrorList={() => null}
+    transformErrors={errors =>
+      errors.map(error => {
+        if (error.name === 'required') {
+          error.message = 'this field is required'; // eslint-disable-line no-param-reassign
+        } else {
+          error.message = ''; // eslint-disable-line no-param-reassign
+        }
+        return error;
+      })}
+    {...props}
+    widgets={widgets(defaultWidgets)}
+  />
+);

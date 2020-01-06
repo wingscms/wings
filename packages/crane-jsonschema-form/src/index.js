@@ -1,15 +1,1 @@
-export {
-  SchemaForm as default,
-  Amount,
-  CheckboxInput,
-  ColorInput,
-  DateInput,
-  EmailInput,
-  Input,
-  NumberInput,
-  PasswordInput,
-  RangeInput,
-  Select,
-  TextInput,
-  URLInput,
-} from './components';
+export { SchemaForm as default } from './components';
