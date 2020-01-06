@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css } from '../lib/styled';
 
 export const quote = css`data:image/svg+xml;utf8,<svg width="47px" height="36px" viewBox="0 0 47 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Text-elements/Quote/Blockquote" transform="translate(-357.000000, 0.000000)" fill="${({
   theme,

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '../lib/styled';
 import { text, boolean } from '@storybook/addon-knobs/react';
 import { Breakout } from '../../../src/components/text';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 
 const StyledBurger = styled.div`
   .hamburger {
@@ -185,15 +185,15 @@ export default ({
   type = 'boring',
   ...props
 }) => (
-  <StyledBurger activeColor={activeColor} color={color} hoverColor={hoverColor}>
-    <button
-      className={`hamburger hamburger--${type} ${active ? 'is-active' : ''}`}
-      type="button"
-      {...props}
-    >
-      <span className="hamburger-box">
-        <span className="hamburger-inner" />
-      </span>
-    </button>
-  </StyledBurger>
-);
+    <StyledBurger activeColor={activeColor} color={color} hoverColor={hoverColor}>
+      <button
+        className={`hamburger hamburger--${type} ${active ? 'is-active' : ''}`}
+        type="button"
+        {...props}
+      >
+        <span className="hamburger-box">
+          <span className="hamburger-inner" />
+        </span>
+      </button>
+    </StyledBurger>
+  );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled from '../lib/styled';
 import { Button, getContrastColor, wide } from '@wingscms/crane';
 import createCard from '../createCard';
 

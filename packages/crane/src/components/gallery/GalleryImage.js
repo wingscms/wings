@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 
 const ImageContainer = styled.div`
   width: ${({ itemCount }) => (itemCount ? 100 / itemCount : '100')}%;

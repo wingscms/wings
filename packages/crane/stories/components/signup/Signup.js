@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '../lib/styled';
 import { select, text, object } from '@storybook/addon-knobs/react';
 import { Signup } from '../../../src/components/signup';
 

@@ -3,7 +3,7 @@ import qs from 'qs';
 import classNames from 'classnames';
 import { StickyContainer, Sticky } from 'react-sticky';
 
-import styled from 'styled-components';
+import styled from '../lib/styled';
 import { wide } from '@wingscms/crane';
 import Content from '../components/Content';
 import createCard from '../createCard';

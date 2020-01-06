@@ -1,7 +1,7 @@
 /* eslint-disable no-mixed-operators */
 
 import React from 'react';
-import styled from 'styled-components';
+import styled from '../lib/styled';
 import { getIntentColor } from '../lib/utils';
 
 const StyledCounter = styled.div`

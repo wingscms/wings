@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 import { Calendar, Check, Message, Pin, User } from '../icons';
 import Counter from '../Counter';
 import Container from './Container';
@@ -318,7 +318,7 @@ export default class ComplexCard extends Component {
     ctaText: '',
     image: '',
     location: {},
-    onClickHandler: () => {},
+    onClickHandler: () => { },
     publishDate: '',
     shadow: true,
     signatureCount: 0,

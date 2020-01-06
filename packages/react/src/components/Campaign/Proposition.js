@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 
 const Container = styled.div`
   display: inline-block;

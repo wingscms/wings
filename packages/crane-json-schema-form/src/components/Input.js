@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-for */
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css } from '../../lib/styled';
 
 const StyledInput = styled.input`
   font-size: inherit;

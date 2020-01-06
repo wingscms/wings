@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-for */
 import React from 'react';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 import NumberInput from './NumberInput';
 
 const InputRow = styled.div`
@@ -34,7 +34,7 @@ export default props => {
     throw new Error(`no id for props ${JSON.stringify(props)}`);
   }
   let { amounts = [] } = props;
-  const { id, value, label, onChange = () => {}, required, schema, prefix = '€ ' } = props;
+  const { id, value, label, onChange = () => { }, required, schema, prefix = '€ ' } = props;
   if (schema && schema.amounts) {
     // eslint-disable-next-line prefer-destructuring
     amounts = schema.amounts;

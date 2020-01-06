@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 import { Counter } from '@wingscms/crane';
 import CountUp from 'react-countup';
 

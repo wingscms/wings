@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '../lib/styled';
 import { text, select } from '@storybook/addon-knobs/react';
 import { HighlightedQuote } from '../../../src/components/text';
 

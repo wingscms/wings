@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 import Icons from '../../img/svg/icons';
 
 const ShareContainer = styled.div`

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 
 const ConfirmationBox = styled.div`
   background-color: #fff;

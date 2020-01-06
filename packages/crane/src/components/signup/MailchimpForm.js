@@ -1,6 +1,6 @@
 import React from 'react';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 import { TextInput, CheckboxInput } from '../form';
 import { Envelope } from '../icons';
 
@@ -51,34 +51,34 @@ export default (props) => {
           {status === 'success' ? (
             <p style={{ marginBottom: 0 }}>{confirmationText}</p>
           ) : (
-            <div>
-              <p>{intro}</p>
               <div>
-                <TextInput
-                  name="EMAIL"
-                  labelText={emailFieldLabel}
-                  placeholder={placeholderText}
-                  disabled={status === 'success'}
-                  type="email"
-                  // eslint-disable-next-line
-                  ref={node => {
-                    email = node;
-                    console.log(email);
-                  }}
-                  required
-                />
-                {privacyCheckbox ? (
-                  <CheckboxInput name="privacy" labelText={linkedPrivacyMessage} required />
-                ) : (
-                  <small>{linkedPrivacyMessage}</small>
-                )}
-                <button disabled={status === 'success'} type="submit">
-                  {buttonLabel}
-                </button>
-                {children}
+                <p>{intro}</p>
+                <div>
+                  <TextInput
+                    name="EMAIL"
+                    labelText={emailFieldLabel}
+                    placeholder={placeholderText}
+                    disabled={status === 'success'}
+                    type="email"
+                    // eslint-disable-next-line
+                    ref={node => {
+                      email = node;
+                      console.log(email);
+                    }}
+                    required
+                  />
+                  {privacyCheckbox ? (
+                    <CheckboxInput name="privacy" labelText={linkedPrivacyMessage} required />
+                  ) : (
+                      <small>{linkedPrivacyMessage}</small>
+                    )}
+                  <button disabled={status === 'success'} type="submit">
+                    {buttonLabel}
+                  </button>
+                  {children}
+                </div>
               </div>
-            </div>
-          )}
+            )}
         </form>
       )}
     />
