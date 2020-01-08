@@ -33,7 +33,7 @@
     "gatsby-source-graphql": "2.1.20",
     "in-viewport": "3.6.0",
     "node-fetch": "2.6.0",
-    "qs": "6.9.0",
+    "qs": "6.9.1",
     "react-countup": "4.2.2",
     "react-helmet": "5.2.1",
     "react-intl": "3.3.2",
