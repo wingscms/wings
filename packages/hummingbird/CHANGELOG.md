@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.43.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.42.0...@wingscms/hummingbird@0.43.0) (2020-01-08)
+
+
+### Features
+
+* add cornermenu icon theming option ([#343](https://github.com/wingscms/wings/issues/343)) ([dc29280](https://github.com/wingscms/wings/commit/dc29280f18b8e047d28a1ba3e41c3a8497873074))
+* create @wingscms/crane-json-shema-form package and update deps ([#335](https://github.com/wingscms/wings/issues/335)) ([efef7d8](https://github.com/wingscms/wings/commit/efef7d8ce4a7b7511b6f7ee545c8752ce7b4b9fc))
+
+
+
+
+
 # [0.42.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.41.0...@wingscms/hummingbird@0.42.0) (2019-12-20)
 
 
