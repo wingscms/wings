@@ -3,11 +3,11 @@
     "test": "jest"
   },
   "name": "@wingscms/hummingbird",
-  "version": "0.42.0",
+  "version": "0.43.0",
   "dependencies": {
-    "@wingscms/crane": "^0.18.0",
-    "@wingscms/react": "^0.26.0",
-    "@wingscms/sdk": "^0.3.9",
+    "@wingscms/crane": "^0.19.0",
+    "@wingscms/react": "^0.27.0",
+    "@wingscms/sdk": "^0.3.10",
     "babel-preset-gatsby": "0.2.20",
     "browser-locale": "1.0.3",
     "classnames": "2.2.6",
