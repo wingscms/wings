@@ -3,7 +3,7 @@ export { slugify } from './lib/utils';
 
 export { default as WingsProvider, useWings, withWings } from './ctx/Wings';
 
-export const getNodeMetaTags = (node) => {
+export const getNodeMetaTags = node => {
   const { all, facebook, twitter } = node.platforms;
 
   return {
@@ -30,17 +30,18 @@ export { default as Campaign } from './components/Campaign/Campaign';
 
 export {
   allCards,
-  ImageCard,
-  InsightCard,
-  QuoteCard,
-  TestimonialCard,
-  EmbedCard,
-  HeaderCard,
+  CampaignCard,
+  CampaignCardView,
+  CollectionCard,
   CTACard,
   DataCard,
-  CollectionCard,
+  EmbedCard,
+  HeaderCard,
+  ImageCard,
+  InsightCard,
+  NodesCard,
   QACard,
-  CampaignCard,
+  QuoteCard,
+  TestimonialCard,
   TextCard,
-  CampaignCardView,
 } from './cards';
