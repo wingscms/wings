@@ -64,6 +64,7 @@ Can be used in the `design` option in Hummingbird's `gatsby-config`:
 
 `navigationIconColorDark`: Default: <span style="background-color: #FFFFFF">#FFFFFF</span>
 
+`cornerMenuIconColor`: Default: <span style="background-color: #212121; color: #FFFFFF">`navigationIconColor`</span>
 
 #### Footer
 

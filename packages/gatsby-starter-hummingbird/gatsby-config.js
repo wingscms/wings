@@ -22,11 +22,12 @@ module.exports = {
         design: {
           ...(typographyConfig && {
             headerFontFamily:
-              typographyConfig.options &&
-              typographyConfig.options.headerFontFamily &&
-              typographyConfig.options.headerFontFamily.join(', '),
+              typographyConfig.options
+              && typographyConfig.options.headerFontFamily
+              && typographyConfig.options.headerFontFamily.join(', '),
           }),
           ...getDesign(),
+          cornerMenuIconColor: '#ffff00',
         },
         typography: {
           ...typographyConfig,
