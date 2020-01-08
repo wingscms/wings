@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.20.1](https://github.com/wingscms/wings/compare/@wingscms/crane@0.20.0...@wingscms/crane@0.20.1) (2020-01-08)
+
+
+### Bug Fixes
+
+* add babel runtime ([#345](https://github.com/wingscms/wings/issues/345)) ([12526c2](https://github.com/wingscms/wings/commit/12526c2f7501c689fdf472672d785f5a548f87dc))
+
+
+
+
+
 # [0.20.0](https://github.com/wingscms/wings/compare/@wingscms/crane@0.18.0...@wingscms/crane@0.20.0) (2020-01-08)
 
 

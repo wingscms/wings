@@ -1,6 +1,6 @@
 {
   "name": "@wingscms/react",
-  "version": "0.28.1",
+  "version": "0.28.2",
   "main": "build/index.js",
   "scripts": {
     "start": "rollup -c -w",
@@ -24,8 +24,8 @@
   "dependencies": {
     "@babel/runtime": "^7.7.7",
     "@dailybeast/mobiledoc-react-renderer": "^1.3.0",
-    "@wingscms/crane": "^0.20.0",
-    "@wingscms/crane-jsonschema-form": "^0.3.0",
+    "@wingscms/crane": "^0.20.1",
+    "@wingscms/crane-jsonschema-form": "^0.3.1",
     "classnames": "^2.2.6",
     "filter-invalid-dom-props": "^2.0.0",
     "lodash.includes": "^4.3.0",
