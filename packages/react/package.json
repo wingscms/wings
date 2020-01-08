@@ -1,6 +1,6 @@
 {
   "name": "@wingscms/react",
-  "version": "0.28.0",
+  "version": "0.28.1",
   "main": "build/index.js",
   "scripts": {
     "start": "rollup -c -w",

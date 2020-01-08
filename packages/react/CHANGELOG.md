@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.28.1](https://github.com/wingscms/wings/compare/@wingscms/react@0.28.0...@wingscms/react@0.28.1) (2020-01-08)
+
+
+### Bug Fixes
+
+* update deps ([#344](https://github.com/wingscms/wings/issues/344)) ([f34329c](https://github.com/wingscms/wings/commit/f34329c74affd91bea403b4c01af1d34055afec6))
+
+
+
+
+
 # [0.28.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.26.0...@wingscms/react@0.28.0) (2020-01-08)
 
 
