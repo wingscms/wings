@@ -23,6 +23,7 @@
     "styled-components": "4.4.0"
   },
   "dependencies": {
+    "@babel/runtime": "^7.7.7",
     "color": "^3.1.2",
     "recompose": "^0.30.0"
   },
