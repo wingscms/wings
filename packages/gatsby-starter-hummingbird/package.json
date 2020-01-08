@@ -8,13 +8,13 @@
   },
   "dependencies": {
     "@wingscms/hummingbird": "^0.43.0",
-    "core-js": "3.3.2",
+    "core-js": "3.6.2",
     "dotenv": "8.2.0",
     "gatsby": "^2.18.18",
     "react": "^16",
     "react-dom": "^16"
   },
   "devDependencies": {
-    "core-js": "2.6.10"
+    "core-js": "3.6.2"
   }
 }
