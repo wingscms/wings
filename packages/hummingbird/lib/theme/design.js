@@ -30,6 +30,7 @@ export default ({
   navigationLanguagePickerColor,
   navigationLanguagePickerHoverColor,
   navigationLanguagePickerIconColor,
+  cornerMenuIconColor,
   // Footer
   footerBackgroundColor,
   footerTextColor,
@@ -134,6 +135,7 @@ export default ({
       colors: { light: navigationIconColor, dark: navigationIconColorDark },
       threshold: contrastLuminanceThreshold,
     }),
+  cornerMenuIconColor: cornerMenuIconColor || navigationIconColor,
   // Footer
   footerBackgroundColor: footerBackgroundColor || primaryColor,
   footerTextColor:

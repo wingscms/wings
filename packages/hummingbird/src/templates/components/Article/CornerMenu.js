@@ -76,7 +76,7 @@ const ShareLink = styled.a`
   transition: all 0.15s linear;
   cursor: pointer;
   svg {
-    fill: ${({ theme }) => theme.navigationIconColor};
+    fill: ${({ theme }) => theme.cornerMenuIconColor};
   }
   &:hover {
     background-color: ${({ theme }) => theme.secondaryColor};
@@ -134,7 +134,7 @@ const ShareOpen = styled.div`
 const ShareIconWrapper = styled.div`
   padding: 17px 17px 7px 17px;
   svg {
-    fill: ${({ theme }) => theme.navigationIconColor};
+    fill: ${({ theme }) => theme.cornerMenuIconColor};
   }
 `;
 
