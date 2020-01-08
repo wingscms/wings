@@ -1,5 +1,5 @@
-import styled from '../../lib/styled';
 import { ALIGNLEFT, ALIGNRIGHT, wide } from '@wingscms/crane';
+import styled from '../../lib/styled';
 import { FLOAT } from './enums';
 
 import { quote } from '../../img/icons';
@@ -55,6 +55,11 @@ export default styled.figure`
   }
   &.pullquote-${FLOAT.NONE} {
     ${wide};
+    aside {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
   &.pullquote-${FLOAT.LEFT} {
     ${ALIGNLEFT};
