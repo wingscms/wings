@@ -48,7 +48,7 @@
     "jest": "24.9.0",
     "lerna": "3.18.1",
     "lerna-changelog": "0.8.2",
-    "lint-staged": "9.4.2",
+    "lint-staged": "9.5.0",
     "prettier": "1.18.2",
     "prettier-eslint-cli": "5.0.0",
     "rollup": "^1.27.10",
