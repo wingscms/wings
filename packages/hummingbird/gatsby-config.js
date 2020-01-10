@@ -1,5 +1,7 @@
 const path = require('path');
 
+const siteUrl = process.env.SITE_URL || process.env.URL || 'http://localhost:4000';
+
 module.exports = ({
   wings: { project: wingsProject, appKey: wingsAppKey, endpoint: wingsEndpoint },
   blockRobots,
@@ -7,7 +9,7 @@ module.exports = ({
 } = {}) => ({
   siteMetadata: {
     siteTitle: 'Wings',
-    siteUrl: process.env.SITE_URL || process.env.URL,
+    siteUrl,
   },
   plugins: [
     {
@@ -23,6 +25,12 @@ module.exports = ({
       },
     },
     'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-react-helmet-canonical-urls',
+      options: {
+        siteUrl,
+      },
+    },
     'gatsby-plugin-styled-components',
     'gatsby-plugin-remove-trailing-slashes',
     {
