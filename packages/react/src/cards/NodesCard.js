@@ -141,7 +141,8 @@ const ItemDefault = ({ node, ...props }) => (
 const NodesCardView = ({ text, ...props }) => {
   const {
     itemComponent,
-    onNodeClick,
+    wrapItemElement = e => e,
+    onNodeClick = () => {},
     nodeFragment = NODE_FRAGMENT,
     type,
     selector = {},
@@ -204,9 +205,21 @@ const NodesCardView = ({ text, ...props }) => {
               width: 'calc(100% + 20px)',
             }}
           >
-            {nodes.map(node => (
-              <Item key={`${node.id}`} node={node} onClick={() => onNodeClick(node)} />
-            ))}
+            {nodes.map(node => {
+              const itemElement = (
+                <Item
+                  node={node}
+                  onClick={e => {
+                    onNodeClick(node, { event: e });
+                  }}
+                />
+              );
+              return (
+                <React.Fragment key={`${node.id}`}>
+                  {wrapItemElement(itemElement, { node })}
+                </React.Fragment>
+              );
+            })}
           </FlexGrid>
         )}
         {hasLoaded && loading ? (
