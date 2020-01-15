@@ -6,6 +6,7 @@ module.exports = ({
   wings: { project: wingsProject, appKey: wingsAppKey, endpoint: wingsEndpoint },
   blockRobots,
   basicAuth,
+  webfontConfig = process.env.GATSBY_WEBFONT_CONFIG,
 } = {}) => ({
   siteMetadata: {
     siteTitle: 'Wings',
@@ -115,5 +116,13 @@ module.exports = ({
         },
       },
     },
+    ...(webfontConfig
+      ? [
+          {
+            resolve: 'gatsby-plugin-web-font-loader',
+            options: JSON.parse(webfontConfig),
+          },
+        ]
+      : []),
   ],
 });

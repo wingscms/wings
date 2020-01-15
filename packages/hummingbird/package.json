@@ -30,6 +30,7 @@
     "gatsby-plugin-sitemap": "2.2.19",
     "gatsby-plugin-styled-components": "3.1.11",
     "gatsby-plugin-typography": "2.3.14",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "2.1.33",
     "gatsby-source-graphql": "2.1.20",
     "in-viewport": "3.6.0",

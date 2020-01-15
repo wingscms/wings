@@ -162,10 +162,6 @@ Can be used in the `design` option in Hummingbird's `gatsby-config`:
 
 ### Fonts/Text
 
-`customHeaderFontUrl`
-
-`customBodyFontUrl`
-
 `dropcapFontSize`: Default: 3.5em
 
 `introFontSize`: Default: 1.333
@@ -250,6 +246,10 @@ Here is an example of a columns array:
 Can be used in the `typography` option in Hummingbird's `gatsby-config`:
 
 See: [https://kyleamathews.github.io/typography.js/](https://kyleamathews.github.io/typography.js/)
+
+## WebfontConfig
+
+Can be used in the `webfontConfig` option in Hummingbird's `gatsby-config`. Object passed to the options prop of [gatsby-plugin-web-font-loader](https://www.gatsbyjs.org/packages/gatsby-plugin-web-font-loader/). For more info on how to use see [https://www.gatsbyjs.org/packages/gatsby-plugin-web-font-loader/](https://www.gatsbyjs.org/packages/gatsby-plugin-web-font-loader/) and [https://github.com/typekit/webfontloader](https://github.com/typekit/webfontloader). Don't forget to specify the loaded fonts in the `design` and `typography` Hummingbird options where necessary (e.g. `headerFontFamily`).
 
 ## Example
 
