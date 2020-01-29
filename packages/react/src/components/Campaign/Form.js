@@ -139,6 +139,15 @@ const FUNDRAISER_QUERY = `
           }
         }
       }
+      amounts {
+        currencyCode
+        options {
+          amount {
+            amount
+            currencyCode
+          }
+        }
+      }
       ...NodeFields
       ...CampaignFields
     }
@@ -261,7 +270,7 @@ class CampaignForm extends Component {
     campaign: null,
     fetching: false,
     formSchema: null,
-    amount: 500,
+    amount: null,
     stage: 'form',
   };
 
@@ -313,9 +322,10 @@ class CampaignForm extends Component {
   };
 
   getFormSchema() {
-    const schema = this.props.formSchema
-      || (this.props.node.submissionSchema && JSON.parse(this.props.node.submissionSchema))
-      || this.state.formSchema;
+    const schema =
+      this.props.formSchema ||
+      (this.props.node.submissionSchema && JSON.parse(this.props.node.submissionSchema)) ||
+      this.state.formSchema;
     return schema ? this.processSchema(schema) : schema;
   }
 
@@ -384,10 +394,10 @@ class CampaignForm extends Component {
 
   maybeFetch() {
     if (
-      this.state.failed
-      || this.state.formSchema
-      || this.props.formSchema
-      || this.state.fetching
+      this.state.failed ||
+      this.state.formSchema ||
+      this.props.formSchema ||
+      this.state.fetching
     ) {
       return;
     }
@@ -403,6 +413,7 @@ class CampaignForm extends Component {
         });
         campaign = c;
         formSchema = JSON.parse(c.submissionSchema);
+        // console.log(campaign);
       } catch (e) {
         console.error(
           "Couldn't fetch submission schema for campaign",
@@ -414,6 +425,7 @@ class CampaignForm extends Component {
         this.setState(
           {
             fetching: false,
+            amount: campaign.amounts.options[0].amount.amount,
             formSchema,
             campaign,
             failed,
@@ -439,9 +451,9 @@ class CampaignForm extends Component {
         },
       });
       if (
-        res.submitFundraiser
-        && res.submitFundraiser.donation
-        && res.submitFundraiser.donation.id
+        res.submitFundraiser &&
+        res.submitFundraiser.donation &&
+        res.submitFundraiser.donation.id
       ) {
         window.location.assign(res.submitFundraiser.donation.order.paymentUrl);
       } else {
@@ -478,8 +490,47 @@ class CampaignForm extends Component {
     }
   };
 
+  getCurrencyCode(campaign) {
+    if (!campaign) return null;
+    if (!(this.props.type === 'fundraiser')) return null;
+    return campaign.amounts.currencyCode;
+  }
+
+  getCurrencySymbol(currencyCode) {
+    switch (currencyCode) {
+      case 'GBP':
+        return '£';
+      default:
+        return '€';
+    }
+  }
+
+  renderAmount() {
+    const { amount, campaign } = this.state;
+    const { node } = this.props;
+    const _campaign = campaign || node;
+    const amounts = _campaign.amounts.options.map(o => o.amount.amount / 100);
+    const currencyCode = this.getCurrencyCode(_campaign);
+    const symbol = this.getCurrencySymbol(currencyCode);
+    return (
+      <div style={{ marginBottom: '20px' }}>
+        <SchemaForm._Amount
+          label="Amount"
+          required
+          id="amount"
+          symbol={symbol}
+          value={amount / 100}
+          amounts={amounts}
+          onChange={v => {
+            this.setState({ amount: v * 100 });
+          }}
+        />
+      </div>
+    );
+  }
+
   render() {
-    const { amount, stage } = this.state;
+    const { stage } = this.state;
     const schema = this.getFormSchema();
     const loading = !schema;
     const {
@@ -489,6 +540,7 @@ class CampaignForm extends Component {
       campaignErrorTitle,
       campaignErrorText,
     } = this.getCopy();
+
     return loading ? (
       <div style={{ textAlign: 'center' }}>
         {campaignLoadingText}
@@ -496,20 +548,7 @@ class CampaignForm extends Component {
       </div>
     ) : (
       <>
-        {this.props.type === 'fundraiser' ? (
-          <div style={{ marginBottom: '20px' }}>
-            <SchemaForm._Amount
-              label="Amount"
-              required
-              id="amount"
-              value={amount / 100}
-              amounts={[5, 10, 25]}
-              onChange={v => {
-                this.setState({ amount: v * 100 });
-              }}
-            />
-          </div>
-        ) : null}
+        {this.props.type === 'fundraiser' ? this.renderAmount() : null}
         {!(stage === 'form') ? null : (
           <SchemaForm
             id="campaign-form"
