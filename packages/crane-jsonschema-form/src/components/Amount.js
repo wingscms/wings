@@ -34,7 +34,7 @@ export default props => {
     throw new Error(`no id for props ${JSON.stringify(props)}`);
   }
   let { amounts = [] } = props;
-  const { id, value, label, onChange = () => {}, required, schema, prefix = '€ ' } = props;
+  const { id, value, label, onChange = () => { }, required, schema, symbol = '€' } = props;
   if (schema && schema.amounts) {
     // eslint-disable-next-line prefer-destructuring
     amounts = schema.amounts;
@@ -50,7 +50,7 @@ export default props => {
       <InputRow amounts={amounts}>
         {amounts.map(x => (
           <AmountButton onClick={() => onChange(x)}>
-            {prefix}
+            {symbol}{' '}
             {x}
           </AmountButton>
         ))}

@@ -139,6 +139,15 @@ const FUNDRAISER_QUERY = `
           }
         }
       }
+      amounts {
+        currencyCode
+        options {
+          amount {
+            amount
+            currencyCode
+          }
+        }
+      }
       ...NodeFields
       ...CampaignFields
     }
@@ -261,7 +270,7 @@ class CampaignForm extends Component {
     campaign: null,
     fetching: false,
     formSchema: null,
-    amount: 500,
+    amount: null,
     stage: 'form',
   };
 
@@ -403,6 +412,7 @@ class CampaignForm extends Component {
         });
         campaign = c;
         formSchema = JSON.parse(c.submissionSchema);
+        // console.log(campaign);
       } catch (e) {
         console.error(
           "Couldn't fetch submission schema for campaign",
@@ -414,6 +424,7 @@ class CampaignForm extends Component {
         this.setState(
           {
             fetching: false,
+            amount: campaign.amounts.options[0].amount.amount,
             formSchema,
             campaign,
             failed,
@@ -478,8 +489,47 @@ class CampaignForm extends Component {
     }
   };
 
+  getCurrencyCode(campaign) {
+    if (!campaign) return null;
+    if (!(this.props.type === 'fundraiser')) return null;
+    return campaign.amounts.currencyCode;
+  }
+
+  getCurrencySymbol(currencyCode) {
+    switch (currencyCode) {
+      case 'GBP':
+        return '£';
+      default:
+        return '€';
+    }
+  }
+
+  renderAmount() {
+    const { amount, campaign } = this.state;
+    const { node } = this.props;
+    const _campaign = campaign || node;
+    const amounts = _campaign.amounts.options.map(o => o.amount.amount / 100);
+    const currencyCode = this.getCurrencyCode(_campaign);
+    const symbol = this.getCurrencySymbol(currencyCode);
+    return (
+      <div style={{ marginBottom: '20px' }}>
+        <SchemaForm._Amount
+          label="Amount"
+          required
+          id="amount"
+          symbol={symbol}
+          value={amount / 100}
+          amounts={amounts}
+          onChange={v => {
+            this.setState({ amount: v * 100 });
+          }}
+        />
+      </div>
+    )
+  }
+
   render() {
-    const { amount, stage } = this.state;
+    const { stage } = this.state;
     const schema = this.getFormSchema();
     const loading = !schema;
     const {
@@ -489,54 +539,42 @@ class CampaignForm extends Component {
       campaignErrorTitle,
       campaignErrorText,
     } = this.getCopy();
+
     return loading ? (
       <div style={{ textAlign: 'center' }}>
         {campaignLoadingText}
         <Loading />
       </div>
     ) : (
-      <>
-        {this.props.type === 'fundraiser' ? (
-          <div style={{ marginBottom: '20px' }}>
-            <SchemaForm._Amount
-              label="Amount"
-              required
-              id="amount"
-              value={amount / 100}
-              amounts={[5, 10, 25]}
-              onChange={v => {
-                this.setState({ amount: v * 100 });
-              }}
-            />
-          </div>
-        ) : null}
-        {!(stage === 'form') ? null : (
-          <SchemaForm
-            id="campaign-form"
-            autoValidate={false}
-            {...this.props.schemaFormProps}
-            schema={schema}
-            formData={this.state.formData}
-            onChange={({ formData }) => this.setState({ formData })}
-            onSubmit={this.handleSubmit.bind(this)}
-          >
-            {this.props.children || <Button>{this.getSubmitText()}</Button>}
-          </SchemaForm>
-        )}
-        {!(stage === 'confirm') ? null : (
-          <div ref={this.confirmedContainerRef}>
-            <h1>{campaignConfirmTitle}</h1>
-            <p>{campaignConfirmText}</p>
-          </div>
-        )}
-        {!(stage === 'error') ? null : (
-          <div>
-            <h1>{campaignErrorTitle}</h1>
-            <p>{campaignErrorText}</p>
-          </div>
-        )}
-      </>
-    );
+        <>
+          {this.props.type === 'fundraiser' ? this.renderAmount() : null}
+          {!(stage === 'form') ? null : (
+            <SchemaForm
+              id="campaign-form"
+              autoValidate={false}
+              {...this.props.schemaFormProps}
+              schema={schema}
+              formData={this.state.formData}
+              onChange={({ formData }) => this.setState({ formData })}
+              onSubmit={this.handleSubmit.bind(this)}
+            >
+              {this.props.children || <Button>{this.getSubmitText()}</Button>}
+            </SchemaForm>
+          )}
+          {!(stage === 'confirm') ? null : (
+            <div ref={this.confirmedContainerRef}>
+              <h1>{campaignConfirmTitle}</h1>
+              <p>{campaignConfirmText}</p>
+            </div>
+          )}
+          {!(stage === 'error') ? null : (
+            <div>
+              <h1>{campaignErrorTitle}</h1>
+              <p>{campaignErrorText}</p>
+            </div>
+          )}
+        </>
+      );
   }
 }
 
