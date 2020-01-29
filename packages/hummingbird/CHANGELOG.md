@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.44.3](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.44.2...@wingscms/hummingbird@0.44.3) (2020-01-29)
+
+
+### Bug Fixes
+
+* NodesCard navigation bug ([#346](https://github.com/wingscms/wings/issues/346)) ([27d13c5](https://github.com/wingscms/wings/commit/27d13c57b96ba8122ae30c78ae2507800bbeb3e8))
+
+
+
+
+
 ## [0.44.2](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.44.1...@wingscms/hummingbird@0.44.2) (2020-01-08)
 
 **Note:** Version bump only for package @wingscms/hummingbird
