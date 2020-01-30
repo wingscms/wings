@@ -148,6 +148,10 @@ const FUNDRAISER_QUERY = `
           }
         }
       }
+      paymentMethods {
+        id
+        title
+      }
       ...NodeFields
       ...CampaignFields
     }
@@ -215,6 +219,7 @@ const DEFAULT_COPY = {
   newsletterFieldLabel: 'Stay up to date',
   termsFieldLabel: 'Agree to our terms & conditions',
   privacyConsentFieldLabel: 'Agree to our privacy policy',
+  paymentMethodSelect: 'Pay with',
   campaignConfirmTitle: 'We’re almost there!',
   campaignConfirmText:
     'We have sent you an email with a confirmation link to make sure all signatures are genuine. If you follow that link, your signature will count. Thanks!',
@@ -271,6 +276,7 @@ class CampaignForm extends Component {
     fetching: false,
     formSchema: null,
     amount: null,
+    paymentMethod: null,
     stage: 'form',
   };
 
@@ -425,10 +431,13 @@ class CampaignForm extends Component {
         this.setState(
           {
             fetching: false,
-            amount: campaign.amounts.options[0].amount.amount,
             formSchema,
             campaign,
             failed,
+            ...(campaign.resourceType === 'node.fundraiser' && {
+              amount: campaign.amounts.options[0].amount.amount,
+              selectedPaymentMethod: campaign.paymentMethods[0].id,
+            }),
           },
           this.maybeEmitOnLoad,
         );
@@ -437,7 +446,7 @@ class CampaignForm extends Component {
   }
 
   async submit(formData) {
-    const { amount } = this.state;
+    const { amount, selectedPaymentMethod: paymentMethod } = this.state;
 
     try {
       const res = await this.props.wings.query(this.mutation(), {
@@ -446,6 +455,7 @@ class CampaignForm extends Component {
           data: JSON.stringify(formData),
           ...(this.props.type === 'fundraiser' && {
             amount,
+            paymentMethod,
           }),
           redirectUrl: this.props.redirectUrl, // default to current URL?
         },
@@ -505,12 +515,15 @@ class CampaignForm extends Component {
     }
   }
 
+  getCampaign() {
+    return this.state.campaign || this.props.node;
+  }
+
   renderAmount() {
-    const { amount, campaign } = this.state;
-    const { node } = this.props;
-    const _campaign = campaign || node;
-    const amounts = _campaign.amounts.options.map(o => o.amount.amount / 100);
-    const currencyCode = this.getCurrencyCode(_campaign);
+    const { amount } = this.state;
+    const campaign = this.getCampaign();
+    const amounts = campaign.amounts.options.map(o => o.amount.amount / 100);
+    const currencyCode = this.getCurrencyCode(campaign);
     const symbol = this.getCurrencySymbol(currencyCode);
     return (
       <div style={{ marginBottom: '20px' }}>
@@ -525,6 +538,35 @@ class CampaignForm extends Component {
             this.setState({ amount: v * 100 });
           }}
         />
+      </div>
+    );
+  }
+
+  handlePaymentMethodChange = e => {
+    this.setState({ selectedPaymentMethod: e.target.value });
+  };
+
+  renderPaymentMethodSelect() {
+    const fundraiser = this.getCampaign();
+    const { paymentMethods } = fundraiser;
+    return (
+      <div>
+        {paymentMethods.map(method => (
+          <div>
+            <label style={{ fontSize: '16px' }}>
+              <input
+                type="radio"
+                key={`payment-menthod-${method.id}`}
+                name="payment-method"
+                value={method.id}
+                checked={this.state.selectedPaymentMethod === method.id}
+                onChange={this.handlePaymentMethodChange}
+                style={{ marginRight: '20px' }}
+              />
+              {method.title}
+            </label>
+          </div>
+        ))}
       </div>
     );
   }
@@ -559,6 +601,7 @@ class CampaignForm extends Component {
             onChange={({ formData }) => this.setState({ formData })}
             onSubmit={this.handleSubmit.bind(this)}
           >
+            {this.props.type === 'fundraiser' ? this.renderPaymentMethodSelect() : null}
             {this.props.children || <Button>{this.getSubmitText()}</Button>}
           </SchemaForm>
         )}
