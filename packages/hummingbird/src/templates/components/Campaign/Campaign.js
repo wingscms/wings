@@ -18,7 +18,8 @@ const BackgroundContainer = styled(Container)`
     max-width: 1160px;
     width: 100%;
     margin: 0 auto;
-    background-color: ${({ theme, backgroundImage }) => (backgroundImage ? theme.primaryColor : 'transparent')};
+    background-color: ${({ theme, backgroundImage }) =>
+      backgroundImage ? theme.primaryColor : 'transparent'};
     border-radius: 4px;
   }
   @media screen and (max-width: 800px) {
@@ -29,7 +30,8 @@ const BackgroundContainer = styled(Container)`
 `;
 
 const BackgroundContainerTop = styled(BackgroundContainer)`
-  background-color: ${({ theme, backgroundImage }) => (backgroundImage ? theme.primaryColor : 'transparent')};
+  background-color: ${({ theme, backgroundImage }) =>
+    backgroundImage ? theme.primaryColor : 'transparent'};
   height: ${props => (props.backgroundImage ? '100vh' : '40px')};
   max-height: ${props => (props.backgroundImage ? '700px' : '40px')};
   margin-bottom: ${props => (props.backgroundImage ? '-300px' : '40px')};
@@ -94,7 +96,7 @@ class CampaignTemplate extends Component {
     </CampaignContentWrapper>
   );
 
-  static Main = (props) => {
+  static Main = props => {
     const {
       pageContext: { node },
     } = props;
@@ -124,9 +126,9 @@ class CampaignTemplate extends Component {
   };
 
   render() {
-    const { layout: Layout } = this.props;
+    const { layout: Layout, footer } = this.props;
     return (
-      <Layout>
+      <Layout footer={footer}>
         <Wrapper>{this.children()}</Wrapper>
       </Layout>
     );

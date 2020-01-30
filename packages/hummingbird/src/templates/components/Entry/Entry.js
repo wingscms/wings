@@ -23,7 +23,7 @@ export default class Entry extends Component {
     );
 
   render() {
-    const { layout: Layout } = this.props;
-    return <Layout>{this.children()}</Layout>;
+    const { layout: Layout, footer } = this.props;
+    return <Layout footer={footer}>{this.children()}</Layout>;
   }
 }
