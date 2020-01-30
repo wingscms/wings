@@ -219,7 +219,6 @@ const DEFAULT_COPY = {
   newsletterFieldLabel: 'Stay up to date',
   termsFieldLabel: 'Agree to our terms & conditions',
   privacyConsentFieldLabel: 'Agree to our privacy policy',
-  paymentMethodSelect: 'Pay with',
   campaignConfirmTitle: 'We’re almost there!',
   campaignConfirmText:
     'We have sent you an email with a confirmation link to make sure all signatures are genuine. If you follow that link, your signature will count. Thanks!',
