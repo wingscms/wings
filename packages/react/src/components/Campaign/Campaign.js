@@ -124,11 +124,10 @@ const FormContainerInner = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 3rem;
-  text-transform: ${({ theme }) =>
-    (theme.uppercaseTitles ? 'uppercase' : 'none')};
+  font-size: 2rem;
+  text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
   @media screen and (max-width: 800px) {
-    font-size: 2rem;
+    font-size: 1.3rem;
   }
 `;
 
