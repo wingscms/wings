@@ -200,7 +200,8 @@ const FIELDS = {
   ZIPCODE: 'zipcode',
   CITY: 'city',
   COUNTRY: 'country',
-  PHONE: 'phone'
+  PHONE: 'phone',
+  AMOUNT: 'amount',
 };
 
 const FIELD_COPY_MAPPING = {
@@ -215,6 +216,7 @@ const FIELD_COPY_MAPPING = {
   [FIELDS.CITY]: 'cityFieldLabel',
   [FIELDS.COUNTRY]: 'countryFieldLabel',
   [FIELDS.PHONE]: 'phoneFieldLabel',
+  [FIELDS.AMOUNT]: 'amountFieldLabel',
 };
 
 const DEFAULT_COPY = {
@@ -231,6 +233,7 @@ const DEFAULT_COPY = {
   cityFieldLabel: 'City',
   countryFieldLabel: 'Country',
   phoneFieldLabel: 'Phone number',
+  amountFieldLabel: 'Amount',
   newsletterFieldLabel: 'Stay up to date',
   termsFieldLabel: 'Agree to our terms & conditions',
   privacyConsentFieldLabel: 'Agree to our privacy policy',
@@ -539,10 +542,11 @@ class CampaignForm extends Component {
     const amounts = campaign.amounts.options.map(o => o.amount.amount / 100);
     const currencyCode = this.getCurrencyCode(campaign);
     const symbol = this.getCurrencySymbol(currencyCode);
+    const { amountFieldLabel } = this.getCopy();
     return (
       <div style={{ marginBottom: '20px' }}>
         <SchemaForm._Amount
-          label="Amount"
+          label={amountFieldLabel}
           required
           id="amount"
           symbol={symbol}

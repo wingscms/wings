@@ -39,6 +39,7 @@
   "hummingbird.CampaignForm.cityField.label": "Stad",
   "hummingbird.CampaignForm.countryField.label": "Land",
   "hummingbird.CampaignForm.phoneField.label": "Telefoonnummer",
+  "hummingbird.CampaignForm.amountField.label": "Bedrag",
   "hummingbird.Campaign.loading.text": "aan het laden",
   "hummingbird.CampaignForm.newsletterField.label": "Blijf op de hoogte",
   "hummingbird.CampaignForm.petitionSubmit.text": "Onderteken",

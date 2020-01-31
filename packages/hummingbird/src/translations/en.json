@@ -40,6 +40,7 @@
   "hummingbird.CampaignForm.cityField.label": "City",
   "hummingbird.CampaignForm.countryField.label": "Country",
   "hummingbird.CampaignForm.phoneField.label": "Phone number",
+  "hummingbird.CampaignForm.amountField.label": "Amount",
   "hummingbird.Campaign.loading.text": "loading",
   "hummingbird.CampaignForm.newsletterField.label": "Stay up to date",
   "hummingbird.CampaignForm.petitionSubmit.text": "Sign",

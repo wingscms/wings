@@ -63,6 +63,11 @@ const formMessages = defineMessages({
     description: 'Phone field label',
     defaultMessage: 'Phone number',
   },
+  amountFieldLabel: {
+    id: 'hummingbird.CampaignForm.amountField.label',
+    description: 'Amount field label',
+    defaultMessage: 'Amount',
+  },
   campaignConfirmText: {
     id: 'hummingbird.Campaign.confirm.text',
     description: 'Campaign confirm step text',
