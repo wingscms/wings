@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.45.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.44.3...@wingscms/hummingbird@0.45.0) (2020-01-30)
+
+
+### Features
+
+* **react/hummingbird:** Payment method selection ([#355](https://github.com/wingscms/wings/issues/355)) ([cc28936](https://github.com/wingscms/wings/commit/cc289361a36c72bd4ce529d3e7096e89e50dd58a))
+
+
+
+
+
+## [0.44.3](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.44.2...@wingscms/hummingbird@0.44.3) (2020-01-29)
+
+
+### Bug Fixes
+
+* NodesCard navigation bug ([#346](https://github.com/wingscms/wings/issues/346)) ([27d13c5](https://github.com/wingscms/wings/commit/27d13c57b96ba8122ae30c78ae2507800bbeb3e8))
+
+
+
+
+
 ## [0.44.2](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.44.1...@wingscms/hummingbird@0.44.2) (2020-01-08)
 
 **Note:** Version bump only for package @wingscms/hummingbird

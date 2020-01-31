@@ -169,6 +169,19 @@ fragment CampaignFields on Wings_Campaign {
             amount
             currencyCode
           }
+          amounts {
+            currencyCode
+            options {
+              amount {
+                amount
+                currencyCode
+              }
+            }
+          }
+          paymentMethods {
+            id
+            title
+          }
         }
       }
     }
