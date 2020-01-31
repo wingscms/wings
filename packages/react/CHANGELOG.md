@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.1](https://github.com/wingscms/wings/compare/@wingscms/react@0.29.0...@wingscms/react@0.29.1) (2020-01-31)
+
+
+### Bug Fixes
+
+* campaign title font size ([#356](https://github.com/wingscms/wings/issues/356)) ([790a973](https://github.com/wingscms/wings/commit/790a9733cc196a1648599d177937c28debcecd62))
+* **react/hummingbird:** Add translations for fundraiser fields ([#357](https://github.com/wingscms/wings/issues/357)) ([9c1d2e8](https://github.com/wingscms/wings/commit/9c1d2e87ee20088d7525e5c9e979aaf8c954407a))
+
+
+
+
+
 # [0.29.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.28.3...@wingscms/react@0.29.0) (2020-01-30)
 
 

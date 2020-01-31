@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.45.1](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.45.0...@wingscms/hummingbird@0.45.1) (2020-01-31)
+
+
+### Bug Fixes
+
+* **react/hummingbird:** Add translations for fundraiser fields ([#357](https://github.com/wingscms/wings/issues/357)) ([9c1d2e8](https://github.com/wingscms/wings/commit/9c1d2e87ee20088d7525e5c9e979aaf8c954407a))
+
+
+
+
+
 # [0.45.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.44.3...@wingscms/hummingbird@0.45.0) (2020-01-30)
 
 
