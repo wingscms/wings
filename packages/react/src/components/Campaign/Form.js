@@ -196,6 +196,11 @@ const FIELDS = {
   NEWSLETTER: 'newsletter',
   PRIVACY: 'privacyConsent',
   TERMS: 'terms',
+  ADDRESS: 'address',
+  ZIPCODE: 'zipcode',
+  CITY: 'city',
+  COUNTRY: 'country',
+  PHONE: 'phone'
 };
 
 const FIELD_COPY_MAPPING = {
@@ -205,6 +210,11 @@ const FIELD_COPY_MAPPING = {
   [FIELDS.NEWSLETTER]: 'newsletterFieldLabel',
   [FIELDS.PRIVACY]: 'privacyConsentFieldLabel',
   [FIELDS.TERMS]: 'termsFieldLabel',
+  [FIELDS.ADDRESS]: 'addressFieldLabel',
+  [FIELDS.ZIPCODE]: 'zipcodeFieldLabel',
+  [FIELDS.CITY]: 'cityFieldLabel',
+  [FIELDS.COUNTRY]: 'countryFieldLabel',
+  [FIELDS.PHONE]: 'phoneFieldLabel',
 };
 
 const DEFAULT_COPY = {
@@ -216,6 +226,11 @@ const DEFAULT_COPY = {
   emailFieldLabel: 'Email address',
   firstNameFieldLabel: 'First name',
   lastNameFieldLabel: 'Last name',
+  addressFieldLabel: 'Address',
+  zipcodeFieldLabel: 'Postcode',
+  cityFieldLabel: 'City',
+  countryFieldLabel: 'Country',
+  phoneFieldLabel: 'Phone number',
   newsletterFieldLabel: 'Stay up to date',
   termsFieldLabel: 'Agree to our terms & conditions',
   privacyConsentFieldLabel: 'Agree to our privacy policy',
@@ -588,36 +603,36 @@ class CampaignForm extends Component {
         <Loading />
       </div>
     ) : (
-      <>
-        {this.props.type === 'fundraiser' ? this.renderAmount() : null}
-        {!(stage === 'form') ? null : (
-          <SchemaForm
-            id="campaign-form"
-            autoValidate={false}
-            {...this.props.schemaFormProps}
-            schema={schema}
-            formData={this.state.formData}
-            onChange={({ formData }) => this.setState({ formData })}
-            onSubmit={this.handleSubmit.bind(this)}
-          >
-            {this.props.type === 'fundraiser' ? this.renderPaymentMethodSelect() : null}
-            {this.props.children || <Button>{this.getSubmitText()}</Button>}
-          </SchemaForm>
-        )}
-        {!(stage === 'confirm') ? null : (
-          <div ref={this.confirmedContainerRef}>
-            <h1>{campaignConfirmTitle}</h1>
-            <p>{campaignConfirmText}</p>
-          </div>
-        )}
-        {!(stage === 'error') ? null : (
-          <div>
-            <h1>{campaignErrorTitle}</h1>
-            <p>{campaignErrorText}</p>
-          </div>
-        )}
-      </>
-    );
+        <>
+          {this.props.type === 'fundraiser' ? this.renderAmount() : null}
+          {!(stage === 'form') ? null : (
+            <SchemaForm
+              id="campaign-form"
+              autoValidate={false}
+              {...this.props.schemaFormProps}
+              schema={schema}
+              formData={this.state.formData}
+              onChange={({ formData }) => this.setState({ formData })}
+              onSubmit={this.handleSubmit.bind(this)}
+            >
+              {this.props.type === 'fundraiser' ? this.renderPaymentMethodSelect() : null}
+              {this.props.children || <Button>{this.getSubmitText()}</Button>}
+            </SchemaForm>
+          )}
+          {!(stage === 'confirm') ? null : (
+            <div ref={this.confirmedContainerRef}>
+              <h1>{campaignConfirmTitle}</h1>
+              <p>{campaignConfirmText}</p>
+            </div>
+          )}
+          {!(stage === 'error') ? null : (
+            <div>
+              <h1>{campaignErrorTitle}</h1>
+              <p>{campaignErrorText}</p>
+            </div>
+          )}
+        </>
+      );
   }
 }
 

@@ -38,10 +38,30 @@ const formMessages = defineMessages({
     description: 'Last name field label',
     defaultMessage: 'Last name',
   },
-  newsletterFieldLabel: {
-    id: 'hummingbird.CampaignForm.newsletterField.label',
-    description: 'Newslettter field label',
-    defaultMessage: 'Stay up to date',
+  addressFieldLabel: {
+    id: 'hummingbird.CampaignForm.addressField.label',
+    description: 'Address field label',
+    defaultMessage: 'Address',
+  },
+  zipcodeFieldLabel: {
+    id: 'hummingbird.CampaignForm.zipcodeField.label',
+    description: 'Zipcode field label',
+    defaultMessage: 'Postcode',
+  },
+  cityFieldLabel: {
+    id: 'hummingbird.CampaignForm.cityField.label',
+    description: 'City field label',
+    defaultMessage: 'City',
+  },
+  countryFieldLabel: {
+    id: 'hummingbird.CampaignForm.countryField.label',
+    description: 'Country field label',
+    defaultMessage: 'Country',
+  },
+  phoneFieldLabel: {
+    id: 'hummingbird.CampaignForm.phoneField.label',
+    description: 'Phone field label',
+    defaultMessage: 'Phone number',
   },
   campaignConfirmText: {
     id: 'hummingbird.Campaign.confirm.text',
