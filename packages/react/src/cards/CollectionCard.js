@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
 
-import { FlexGrid, Icons } from '@wingscms/crane';
+import { FlexGrid, Icons, wide } from '@wingscms/crane';
 import styled from '../lib/styled';
 import createCard from '../createCard';
 
 const { Facebook, Globe, Instagram, Linkedin, Twitter } = Icons;
+
+const Wide = styled.div`
+  ${wide}
+`;
+
+const WideContentWrap = styled.div`
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 20px;
+`;
 
 const Title = styled.h3`
   color: ${({ theme }) => theme.textColor};
@@ -252,23 +262,27 @@ class CollectionCardView extends Component {
 
   renderPersonsCollection() {
     return (
-      <div>
+      <>
         {this.props.title ? <Title>{this.props.title}</Title> : null}
-        <StyledFlexGrid
-          divisions={3}
-          margins={10}
-          alignItems="stretch"
-          style={{ marginLeft: '-20px', width: 'calc(100% + 40px)' }}
-        >
-          {this.mapPersons()}
-        </StyledFlexGrid>
-      </div>
+        <Wide>
+          <WideContentWrap>
+            <StyledFlexGrid
+              divisions={4}
+              margins={10}
+              alignItems="stretch"
+              style={{ width: '100%' }}
+            >
+              {this.mapPersons()}
+            </StyledFlexGrid>
+          </WideContentWrap>
+        </Wide>
+      </>
     );
   }
 
   renderOrganisationsCollection() {
     return (
-      <div>
+      <>
         {this.props.title ? <Title>{this.props.title}</Title> : null}
         <StyledFlexGrid
           divisions={1}
@@ -278,12 +292,12 @@ class CollectionCardView extends Component {
         >
           {this.mapOrganisations()}
         </StyledFlexGrid>
-      </div>
+      </>
     );
   }
 
   render() {
-    return <div>{this.returnCollection()}</div>;
+    return this.returnCollection();
   }
 }
 
