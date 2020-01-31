@@ -38,6 +38,11 @@ const formMessages = defineMessages({
     description: 'Last name field label',
     defaultMessage: 'Last name',
   },
+  newsletterFieldLabel: {
+    id: 'hummingbird.CampaignForm.newsletterField.label',
+    description: 'Newslettter field label',
+    defaultMessage: 'Stay up to date',
+  },
   addressFieldLabel: {
     id: 'hummingbird.CampaignForm.addressField.label',
     description: 'Address field label',
