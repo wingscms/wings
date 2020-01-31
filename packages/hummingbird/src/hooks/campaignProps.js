@@ -43,6 +43,36 @@ const formMessages = defineMessages({
     description: 'Newslettter field label',
     defaultMessage: 'Stay up to date',
   },
+  addressFieldLabel: {
+    id: 'hummingbird.CampaignForm.addressField.label',
+    description: 'Address field label',
+    defaultMessage: 'Address',
+  },
+  zipcodeFieldLabel: {
+    id: 'hummingbird.CampaignForm.zipcodeField.label',
+    description: 'Zipcode field label',
+    defaultMessage: 'Postcode',
+  },
+  cityFieldLabel: {
+    id: 'hummingbird.CampaignForm.cityField.label',
+    description: 'City field label',
+    defaultMessage: 'City',
+  },
+  countryFieldLabel: {
+    id: 'hummingbird.CampaignForm.countryField.label',
+    description: 'Country field label',
+    defaultMessage: 'Country',
+  },
+  phoneFieldLabel: {
+    id: 'hummingbird.CampaignForm.phoneField.label',
+    description: 'Phone field label',
+    defaultMessage: 'Phone number',
+  },
+  amountFieldLabel: {
+    id: 'hummingbird.CampaignForm.amountField.label',
+    description: 'Amount field label',
+    defaultMessage: 'Amount',
+  },
   campaignConfirmText: {
     id: 'hummingbird.Campaign.confirm.text',
     description: 'Campaign confirm step text',
