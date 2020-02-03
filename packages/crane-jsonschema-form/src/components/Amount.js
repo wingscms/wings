@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-for */
 import React from 'react';
 import styled from '../lib/styled';
-import { removeLeadingZero } from '../lib/utils'
+import { removeLeadingZero } from '../lib/utils';
 import NumberInput from './NumberInput';
 
 const InputRow = styled.div`
@@ -40,10 +40,10 @@ export default props => {
     value,
     label,
     minAmount = 0,
-    onChange = () => { },
+    onChange = () => {},
     required,
     schema,
-    symbol = '€'
+    symbol = '€',
   } = props;
   if (schema && schema.amounts) {
     // eslint-disable-next-line prefer-destructuring
@@ -63,7 +63,11 @@ export default props => {
             {symbol} {x}
           </AmountButton>
         ))}
-        <NumberInput id={id} value={value > minAmount ? removeLeadingZero(value) : minAmount} onChange={onChange} />
+        <NumberInput
+          id={id}
+          value={value > minAmount ? removeLeadingZero(value) : minAmount}
+          onChange={onChange}
+        />
       </InputRow>
     </div>
   );
