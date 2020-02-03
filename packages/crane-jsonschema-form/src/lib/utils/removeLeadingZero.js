@@ -1,1 +1,1 @@
-export default num => console.log('amount') || String(num).replace(/^0+/, '');
+export default num => String(num).replace(/^0+/, '');
