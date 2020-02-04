@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-for */
 import React from 'react';
 import styled from '../lib/styled';
-import NumberInput from './NumberInput';
+import { default as _NumberInput } from './NumberInput';
 
 const InputRow = styled.div`
   display: flex;
@@ -11,6 +11,22 @@ const InputRow = styled.div`
     max-width: ${({ amounts }) => `${100 / (amounts.length + 1.5)}%`};
     min-width: ${({ amounts }) => `${100 / (amounts.length + 1.5)}%`};
   }
+`;
+
+const NumberInputSymbol = styled.div`
+  position: relative;
+  &:before {
+    color: #000;
+    content: '${({ symbol }) => symbol}';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+`;
+
+const NumberInput = styled(_NumberInput)`
+  padding-left: 28px;
 `;
 
 const AmountButton = styled.div`
@@ -34,7 +50,12 @@ export default props => {
     throw new Error(`no id for props ${JSON.stringify(props)}`);
   }
   let { amounts = [] } = props;
-  const { id, value, label, onChange = () => {}, required, schema, symbol = '€' } = props;
+  const { id, value, label, min = 0, onChange = () => {}, required, schema, symbol = '€' } = props;
+  amounts.concat([value]).forEach(a => {
+    if (typeof a !== 'number') {
+      throw new Error(`props value/amounts should only be numbers`);
+    }
+  });
   if (schema && schema.amounts) {
     // eslint-disable-next-line prefer-destructuring
     amounts = schema.amounts;
@@ -50,10 +71,16 @@ export default props => {
       <InputRow amounts={amounts}>
         {amounts.map(x => (
           <AmountButton onClick={() => onChange(x)}>
-            {symbol} {x}
+            {symbol} {x / 100}
           </AmountButton>
         ))}
-        <NumberInput id={id} value={value || 0} onChange={onChange} />
+        <NumberInputSymbol symbol={symbol}>
+          <NumberInput
+            id={id}
+            value={(value > min ? value : min) / 100}
+            onChange={v => onChange((v > min ? v : min) * 100)}
+          />
+        </NumberInputSymbol>
       </InputRow>
     </div>
   );
