@@ -35,16 +35,7 @@ export default props => {
     throw new Error(`no id for props ${JSON.stringify(props)}`);
   }
   let { amounts = [] } = props;
-  const {
-    id,
-    value,
-    label,
-    minAmount = 0,
-    onChange = () => {},
-    required,
-    schema,
-    symbol = '€',
-  } = props;
+  const { id, value, label, min = 0, onChange = () => {}, required, schema, symbol = '€' } = props;
   if (schema && schema.amounts) {
     // eslint-disable-next-line prefer-destructuring
     amounts = schema.amounts;
@@ -65,7 +56,7 @@ export default props => {
         ))}
         <NumberInput
           id={id}
-          value={value > minAmount ? removeLeadingZero(value) : minAmount}
+          value={value > min ? removeLeadingZero(value) : min}
           onChange={onChange}
         />
       </InputRow>
