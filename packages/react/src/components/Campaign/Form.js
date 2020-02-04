@@ -151,6 +151,9 @@ const FUNDRAISER_QUERY = `
       paymentMethods {
         id
         title
+        icons {
+          url
+        }
       }
       ...NodeFields
       ...CampaignFields
@@ -187,6 +190,13 @@ const Button = styled(_Button)`
   @media screen and (max-width: 800px) {
     font-size: 22px;
   }
+`;
+
+const PaymentMethodIcon = styled.img`
+  display: inline;
+  width: 50px;
+  vertical-align: middle;
+  margin: 0 5px;
 `;
 
 const FIELDS = {
@@ -570,10 +580,11 @@ class CampaignForm extends Component {
     return (
       <div>
         {paymentMethods.map(method => (
-          <div>
-            <label style={{ fontSize: '16px' }}>
+          <div style={{ marginTop: '10px' }}>
+            <label style={{ fontSize: '16px', verticalAlign: 'middle' }}>
               <input
                 type="radio"
+                id={`payment-menthod-${method.id.replace('_', '-')}`}
                 key={`payment-menthod-${method.id}`}
                 name="payment-method"
                 value={method.id}
@@ -581,7 +592,9 @@ class CampaignForm extends Component {
                 onChange={this.handlePaymentMethodChange}
                 style={{ marginRight: '20px' }}
               />
-              {method.title}
+              {method.icons.map(icon => (
+                <PaymentMethodIcon src={icon.url} alt={method.title} />
+              ))}
             </label>
           </div>
         ))}

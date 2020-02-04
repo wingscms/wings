@@ -181,6 +181,9 @@ fragment CampaignFields on Wings_Campaign {
           paymentMethods {
             id
             title
+            icons {
+              url
+            }
           }
         }
       }
