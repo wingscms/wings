@@ -18,11 +18,11 @@ const StyledInput = styled.input`
     min-height: 36px;
   }
   ${({ error }) =>
-    (!error
+    !error
       ? null
       : css`
           background-color: #ffcfcf;
-        `)};
+        `};
 `;
 
 function BaseInput(props) {
@@ -65,10 +65,29 @@ function BaseInput(props) {
     inputProps.step = schema.multipleOf;
   }
 
+  const getOnChangeValue = v => {
+    switch (inputProps.type) {
+      case 'number':
+        return v == null ? 0 : Number(v);
+      default:
+        return v == null ? '' : v;
+    }
+  };
+
   const _onChange = ({ target: { value: v } }) => {
     const emptyValue = options && options.emptyValue ? options.emptyValue : '';
-    props.onChange(v === '' ? emptyValue : v);
+    props.onChange(v === '' ? emptyValue : getOnChangeValue(v));
   };
+
+  const getInputValue = () => {
+    switch (inputProps.type) {
+      case 'number':
+        return value == null ? '0' : value.toString();
+      default:
+        return value == null ? '' : value;
+    }
+  };
+
   return (
     <div>
       {!schema && label ? (
@@ -82,7 +101,7 @@ function BaseInput(props) {
         className={`form-control ${props.className}`}
         readOnly={readonly}
         disabled={disabled}
-        value={value == null ? '' : value}
+        value={getInputValue()}
         theme={formContext.theme}
         inputStyles={formContext.inputStyles}
         error={rawErrors && rawErrors.length}

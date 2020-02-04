@@ -292,7 +292,7 @@ class CampaignForm extends Component {
     campaign: null,
     fetching: false,
     formSchema: null,
-    amount: null,
+    amount: 0,
     paymentMethod: null,
     stage: 'form',
   };
@@ -539,7 +539,7 @@ class CampaignForm extends Component {
   renderAmount() {
     const { amount } = this.state;
     const campaign = this.getCampaign();
-    const amounts = campaign.amounts.options.map(o => o.amount.amount / 100);
+    const amounts = campaign.amounts.options.map(o => o.amount.amount);
     const currencyCode = this.getCurrencyCode(campaign);
     const symbol = this.getCurrencySymbol(currencyCode);
     const { amountFieldLabel } = this.getCopy();
@@ -550,10 +550,10 @@ class CampaignForm extends Component {
           required
           id="amount"
           symbol={symbol}
-          value={amount / 100}
+          value={amount}
           amounts={amounts}
           onChange={v => {
-            this.setState({ amount: v * 100 });
+            this.setState({ amount: v });
           }}
         />
       </div>
@@ -607,36 +607,36 @@ class CampaignForm extends Component {
         <Loading />
       </div>
     ) : (
-        <>
-          {this.props.type === 'fundraiser' ? this.renderAmount() : null}
-          {!(stage === 'form') ? null : (
-            <SchemaForm
-              id="campaign-form"
-              autoValidate={false}
-              {...this.props.schemaFormProps}
-              schema={schema}
-              formData={this.state.formData}
-              onChange={({ formData }) => this.setState({ formData })}
-              onSubmit={this.handleSubmit.bind(this)}
-            >
-              {this.props.type === 'fundraiser' ? this.renderPaymentMethodSelect() : null}
-              {this.props.children || <Button>{this.getSubmitText()}</Button>}
-            </SchemaForm>
-          )}
-          {!(stage === 'confirm') ? null : (
-            <div ref={this.confirmedContainerRef}>
-              <h1>{campaignConfirmTitle}</h1>
-              <p>{campaignConfirmText}</p>
-            </div>
-          )}
-          {!(stage === 'error') ? null : (
-            <div>
-              <h1>{campaignErrorTitle}</h1>
-              <p>{campaignErrorText}</p>
-            </div>
-          )}
-        </>
-      );
+      <>
+        {this.props.type === 'fundraiser' ? this.renderAmount() : null}
+        {!(stage === 'form') ? null : (
+          <SchemaForm
+            id="campaign-form"
+            autoValidate={false}
+            {...this.props.schemaFormProps}
+            schema={schema}
+            formData={this.state.formData}
+            onChange={({ formData }) => this.setState({ formData })}
+            onSubmit={this.handleSubmit.bind(this)}
+          >
+            {this.props.type === 'fundraiser' ? this.renderPaymentMethodSelect() : null}
+            {this.props.children || <Button>{this.getSubmitText()}</Button>}
+          </SchemaForm>
+        )}
+        {!(stage === 'confirm') ? null : (
+          <div ref={this.confirmedContainerRef}>
+            <h1>{campaignConfirmTitle}</h1>
+            <p>{campaignConfirmText}</p>
+          </div>
+        )}
+        {!(stage === 'error') ? null : (
+          <div>
+            <h1>{campaignErrorTitle}</h1>
+            <p>{campaignErrorText}</p>
+          </div>
+        )}
+      </>
+    );
   }
 }
 
