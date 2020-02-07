@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Scroll from 'react-scroll-to-element';
 import { mediaUrl } from '@wingscms/sdk';
 import { getViewportDimensions } from '../../../../../../lib/utils';
-import { DEFAULT_VIEWPORT_WIDTH } from '../../../../../../lib/constants';
+import { DEFAULT_VIEWPORT_HEIGHT, DEFAULT_VIEWPORT_WIDTH } from '../../../../../../lib/constants';
 import widont from 'widont';
 import Title from './Title';
 
@@ -37,14 +37,19 @@ const BackgroundOverlay = styled.div`
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.3) 90%);
 `;
 
+const backgroundImage = props => {
+  const {
+    height = DEFAULT_VIEWPORT_HEIGHT,
+    width = DEFAULT_VIEWPORT_WIDTH,
+  } = getViewportDimensions();
+  return mediaUrl(props.backgroundImage, width > height ? { width } : { height });
+};
+
 const BackgroundImageContainer = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
-  background-image: url("${props =>
-    mediaUrl(props.backgroundImage, {
-      width: getViewportDimensions().width || DEFAULT_VIEWPORT_WIDTH,
-    })}");
+  background-image: url("${backgroundImage}");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: ${props => props.backgroundPosition};
