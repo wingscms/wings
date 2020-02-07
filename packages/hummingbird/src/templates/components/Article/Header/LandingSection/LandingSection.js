@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Scroll from 'react-scroll-to-element';
 import { mediaUrl } from '@wingscms/sdk';
 import { getViewportDimensions } from '../../../../../../lib/utils';
-import { DEFAULT_VIEWPORT_WIDTH } from '../../../../../../lib/utils';
+import { DEFAULT_VIEWPORT_WIDTH } from '../../../../../../lib/constants';
 import widont from 'widont';
 import Title from './Title';
 
