@@ -2,6 +2,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Scroll from 'react-scroll-to-element';
+import { mediaUrl } from '@wingscms/sdk';
+import { getViewportDimensions } from '../../../../../../lib/utils';
+import { DEFAULT_VIEWPORT_WIDTH } from '../../../../../../lib/utils';
 import widont from 'widont';
 import Title from './Title';
 
@@ -38,7 +41,10 @@ const BackgroundImageContainer = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
-  background-image: url("${props => props.backgroundImage}");
+  background-image: url("${props =>
+    mediaUrl(props.backgroundImage, {
+      width: getViewportDimensions().width || DEFAULT_VIEWPORT_WIDTH,
+    })}");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: ${props => props.backgroundPosition};
