@@ -135,8 +135,14 @@ fragment CampaignFields on Wings_Campaign {
             country
           }
           fee {
-            amount
-            currencyCode
+            amount {
+              amount
+              currency {
+                id
+                name
+                symbol
+              }
+            }
           }
           attendeeCount
         }
@@ -167,14 +173,21 @@ fragment CampaignFields on Wings_Campaign {
           ...CampaignFields
           target {
             amount
-            currencyCode
+            currency {
+              id
+              name
+              symbol
+            }
           }
           amounts {
-            currencyCode
             options {
               amount {
                 amount
-                currencyCode
+                currency {
+                  id
+                  name
+                  symbol
+                }
               }
             }
           }

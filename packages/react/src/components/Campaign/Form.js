@@ -104,8 +104,14 @@ const EVENT_QUERY = `
         country
       }
       fee {
-        amount
-        currencyCode
+        amount {
+          amount
+          currency {
+            id
+            name
+            symbol
+          }
+        }
       }
       ...NodeFields
       ...CampaignFields
@@ -139,12 +145,23 @@ const FUNDRAISER_QUERY = `
           }
         }
       }
+      target {
+        amount
+        currency {
+          id
+          name
+          symbol
+        }
+      }
       amounts {
-        currencyCode
         options {
           amount {
             amount
-            currencyCode
+            currency {
+              id
+              name
+              symbol
+            }
           }
         }
       }
