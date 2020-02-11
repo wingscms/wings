@@ -54,18 +54,20 @@ export default class PetitionCounter extends Component {
     current: 0,
   };
   render() {
-    const { current, theme, goal, goalText, descriptionText } = this.props;
+    const { current, goal, goalText, descriptionText, symbol } = this.props;
+    console.log(goal);
     return (
       <Container>
         <TopContainer>
           <CurrentText>
+            {symbol ? symbol : ''}
             <CountUp end={current} duration={1.5} />
           </CurrentText>
           <DescriptionText>{descriptionText}</DescriptionText>
         </TopContainer>
         {!goal ? null : (
           <React.Fragment>
-            <Counter intent="primary" current={current} max={goal} theme={theme} />
+            <Counter intent="primary" current={current} max={goal} />
             <GoalText>{goalText}</GoalText>
           </React.Fragment>
         )}

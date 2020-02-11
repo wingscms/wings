@@ -165,6 +165,14 @@ const FUNDRAISER_QUERY = `
           }
         }
       }
+      raised {
+        amount
+        currency {
+          id
+          name
+          symbol
+        }
+      }
       paymentMethods {
         id
         title

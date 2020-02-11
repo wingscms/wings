@@ -191,6 +191,14 @@ fragment CampaignFields on Wings_Campaign {
               }
             }
           }
+          raised {
+            amount
+            currency {
+              id
+              name
+              symbol
+            }
+          }
           paymentMethods {
             id
             title
