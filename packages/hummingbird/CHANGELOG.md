@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.46.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.45.1...@wingscms/hummingbird@0.46.0) (2020-02-11)
+
+
+### Bug Fixes
+
+* make article header image size viewport responsive ([#383](https://github.com/wingscms/wings/issues/383)) ([04a7784](https://github.com/wingscms/wings/commit/04a7784524dd37fc9bf0fc8d328e0143dd9124f5))
+
+
+### Features
+
+* add donation counter to fundraisers ([#387](https://github.com/wingscms/wings/issues/387)) ([a25c97b](https://github.com/wingscms/wings/commit/a25c97b8eef98390e90a1afeb9555d86c363ff43))
+* add payment method icons ([#373](https://github.com/wingscms/wings/issues/373)) ([8500310](https://github.com/wingscms/wings/commit/85003109350b0abaee4a3de711865a757b44df10))
+* update queries ([#385](https://github.com/wingscms/wings/issues/385)) ([b99bcb6](https://github.com/wingscms/wings/commit/b99bcb6386df51a38cc9a325142079cda540124f))
+
+
+
+
+
 ## [0.45.1](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.45.0...@wingscms/hummingbird@0.45.1) (2020-01-31)
 
 

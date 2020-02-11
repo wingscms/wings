@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.30.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.29.1...@wingscms/react@0.30.0) (2020-02-11)
+
+
+### Features
+
+* add donation counter to fundraisers ([#387](https://github.com/wingscms/wings/issues/387)) ([a25c97b](https://github.com/wingscms/wings/commit/a25c97b8eef98390e90a1afeb9555d86c363ff43))
+* add payment method icons ([#373](https://github.com/wingscms/wings/issues/373)) ([8500310](https://github.com/wingscms/wings/commit/85003109350b0abaee4a3de711865a757b44df10))
+* update queries ([#385](https://github.com/wingscms/wings/issues/385)) ([b99bcb6](https://github.com/wingscms/wings/commit/b99bcb6386df51a38cc9a325142079cda540124f))
+
+
+
+
+
 ## [0.29.1](https://github.com/wingscms/wings/compare/@wingscms/react@0.29.0...@wingscms/react@0.29.1) (2020-01-31)
 
 
