@@ -3,7 +3,7 @@ import styled from '../../lib/styled';
 
 import Content from '../Content';
 import CampaignForm from './Form';
-import PetitionCounter from './PetitionCounter';
+import Counter from './Counter';
 import EventDetails from './EventDetails';
 import Proposition from './Proposition';
 
@@ -171,8 +171,10 @@ export default ({
 }) => {
   const campaignContainerRef = useRef(null);
   const formContainerRef = useRef(null);
-  const [signatureCount, setSignatureCount] = useState(0);
+  const [signatureCount, setSignatureCount] = useState(null);
   const [signatureGoal, setSignatureGoal] = useState(0);
+  const [fundraiserRaised, setFundraiserRaised] = useState(null);
+  const [fundraiserTarget, setFundraiserTarget] = useState(0);
   const [node, setNode] = useState(_node);
   const handleCampaignLoad = campaign => {
     setNode(campaign);
@@ -180,6 +182,10 @@ export default ({
     if (resourceType === 'node.petition') {
       setSignatureCount(campaign.signatureCount);
       setSignatureGoal(campaign.signatureGoal);
+    }
+    if (resourceType === 'node.fundraiser') {
+      setFundraiserRaised(campaign.raised);
+      setFundraiserTarget(campaign.target);
     }
   };
   const {
@@ -190,11 +196,13 @@ export default ({
     eventEndLabel,
     eventLocationLabel,
     eventFeeLabel,
-    counterMessage,
     eventStartTime,
     eventEndTime,
     eventFee,
+    petitionCounterMessage,
     petitionCounterGoalText,
+    fundraiserTargetText,
+    fundraiserCounterMessage,
   } = { ...DEFAULT_COPY, ...copy };
   const { intro, title } = node;
   const element = (
@@ -217,15 +225,28 @@ export default ({
             />
           </Proposition>
           <FormContainer id="campaign-form-container" ref={formContainerRef}>
-            {typeof signatureCount === 'number'
-              && node.resourceType === 'node.petition' && (
+            {/* Petition counter */}
+            {typeof signatureCount === 'number' && node.resourceType === 'node.petition' && (
+              <CounterContainer>
+                <Counter
+                  current={signatureCount}
+                  goal={signatureGoal}
+                  descriptionText={petitionCounterMessage}
+                  goalText={petitionCounterGoalText}
+                />
+              </CounterContainer>
+            )}
+            {/* Fundraiser counter */}
+            {fundraiserRaised &&
+              typeof fundraiserRaised.amount === 'number' &&
+              node.resourceType === 'node.fundraiser' && (
                 <CounterContainer>
-                  <PetitionCounter
-                    current={signatureCount}
-                    goal={signatureGoal}
-                    descriptionText={counterMessage}
-                    theme={theme}
-                    goalText={petitionCounterGoalText}
+                  <Counter
+                    current={fundraiserRaised.amount / 100}
+                    goal={fundraiserTarget.amount / 100}
+                    descriptionText={fundraiserCounterMessage}
+                    goalText={fundraiserTargetText}
+                    symbol={fundraiserRaised.currency.symbol}
                   />
                 </CounterContainer>
               )}
@@ -244,22 +265,21 @@ export default ({
           </FormContainer>
         </MainContainerInner>
       </MainContainerOuter>
-      {resourceType === 'node.event'
-        && (node.schedule || node.fee || node.location) && (
-          <EventDetails
-            title={<Title>{eventInfoTitle}</Title>}
-            location={node.location}
-            {...{
-              eventStartLabel,
-              eventEndLabel,
-              eventLocationLabel,
-              eventFeeLabel,
-              eventStartTime,
-              eventEndTime,
-              eventFee,
-            }}
-          />
-        )}
+      {resourceType === 'node.event' && (node.schedule || node.fee || node.location) && (
+        <EventDetails
+          title={<Title>{eventInfoTitle}</Title>}
+          location={node.location}
+          {...{
+            eventStartLabel,
+            eventEndLabel,
+            eventLocationLabel,
+            eventFeeLabel,
+            eventStartTime,
+            eventEndTime,
+            eventFee,
+          }}
+        />
+      )}
     </React.Fragment>
   );
   return wrapElement(element, node);

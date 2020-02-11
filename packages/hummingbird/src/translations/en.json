@@ -1,6 +1,7 @@
 {
   "hummingbird.404.message.text": "Uh oh. We couldn't find what you were looking for.",
-  "hummingbird.Campaign.counter.message": "{signatureCount, plural, one {person has} other {people have}} signed this petition",
+  "hummingbird.Campaign.petitionCounter.message": "{signatureCount, plural, one {person has} other {people have}} signed this petition",
+  "hummingbird.Campaign.fundraiserCounter.message": "has been donated to this fundraiser",
   "hummingbird.Campaign.description.collapse": "Collapse",
   "hummingbird.Campaign.description.expand": "Read more",
   "hummingbird.Campaign.confirm.text": "We have sent you an email with a confirmation link to make sure all signatures are genuine. If you follow that link, your signature will count. Thanks!",

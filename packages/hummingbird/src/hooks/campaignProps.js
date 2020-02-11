@@ -164,15 +164,20 @@ const campaignMessages = defineMessages({
     description: 'Label for Event Fee',
     defaultMessage: 'Price',
   },
+  fundraiserCounterMessage: {
+    id: 'hummingbird.Campaign.fundraiserCounter.message',
+    description: 'Description for fundraiser counter component',
+    defaultMessage: 'has been donated to this fundraiser',
+  },
 });
 
 const dynamicCampaignMessages = node => {
   if (!node) return [];
   return [
     {
-      key: 'counterMessage',
+      key: 'petitionCounterMessage',
       message: {
-        id: 'hummingbird.Campaign.counter.message',
+        id: 'hummingbird.Campaign.petitionCounter.message',
         description: 'Description for petition counter component',
         defaultMessage: `{signatureCount, plural,
                   one {person has}
@@ -205,7 +210,7 @@ export default intl => {
   const schedule = node && node.schedule;
   const scheduleStart = schedule && schedule.start ? new Date(schedule.start) : null;
   const scheduleEnding = schedule && schedule.end ? new Date(schedule.end) : null;
-  const { fee, signatureGoal } = node || {};
+  const { fee, signatureGoal, target } = node || {};
   return {
     redirectUrlForNode: n => routing.getCampaignConfirmedUrl(n),
     copy: {
@@ -222,12 +227,15 @@ export default intl => {
         : null,
       eventFee: fee
         ? intl.formatNumber(fee.amount / 100, {
-          style: 'currency',
-          currency: fee.currencyCode,
-          currencyDisplay: 'symbol',
-        })
+            style: 'currency',
+            currency: fee.currencyCode,
+            currencyDisplay: 'symbol',
+          })
         : null,
       petitionCounterGoalText: signatureGoal ? intl.formatNumber(signatureGoal) : null,
+      fundraiserTargetText: target
+        ? `${target.currency.symbol}${intl.formatNumber(target.amount / 100)}`
+        : null,
     },
     formProps: {
       copy: formatMessages({
