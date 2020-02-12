@@ -1,6 +1,6 @@
 {
   "hummingbird.404.message.text": "Oh nein! Die Seite die Du Dir ansehen wolltest ist unauffindbar.",
-  "hummingbird.Campaign.counter.message": "{signatureCount, plural, one {Person hat} other {Leute haben}} die Petition unterzeichnet",
+  "hummingbird.Campaign.petitionCounter.message": "{signatureCount, plural, ein {Person hat} other {Leute haben}} die Petition unterzeichnet",
   "hummingbird.Campaign.description.collapse": "Schließen",
   "hummingbird.Campaign.description.expand": "Mehr anzeigen",
   "hummingbird.Campaign.confirm.text": "Wir haben Dir soeben eine Mail mit einem Bestätigungslink geschickt. Bitte klicke den Link um Deine Signatur offiziell zu machen. Vielen Dank!",
