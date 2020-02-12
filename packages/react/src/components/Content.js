@@ -89,7 +89,7 @@ class Content extends Component {
       headers: doc.cards
         .filter(c => ['HeaderCard', 'ChapterCard'].indexOf(c[0]) > -1)
         .map(c => c[1])
-        .map(({ title }) => ({ id: slugify(title), title })),
+        .map(({ title, ...chapter }) => ({ id: slugify(title), title, ...chapter })),
     });
   };
 

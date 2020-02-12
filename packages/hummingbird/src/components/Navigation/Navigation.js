@@ -123,45 +123,48 @@ export default function Navigation({
     toggleSlideMenu(visible);
     setVisible(!visible);
   };
-
+  const menuChapters = chapters.filter(c => c.displaySideMenu);
   return (
     <Wrap {...filterInvalidDOMProps(props)}>
       <Container className={visible ? 'visible' : ''}>
-        {chapterMenu && chapters ? (
-          <SlideMenu
-            customCompTop={() => (
-              <div>
-                <ChapterClose
-                  onClick={e => {
-                    e.preventDefault();
-                    toggleSlideMenu(
-                      document.getElementById('content-wrapper').classList.contains('chaptersOpen'),
-                      'content-wrapper',
-                      'chaptersOpen',
-                      false,
-                    );
-                  }}
-                >
-                  <Burger active color="#000000" type="spin" />
-                </ChapterClose>
-                <ChapterLinks chapters={chapters} />
-              </div>
-            )}
-            items={[]}
-            menuItemComp={_MenuItem}
-            InternalLink={_MenuItem}
-            left
-            className="chapters"
-          />
-        ) : null}
-        {chapterMenu && chapters ? (
-          <ChaptersToggle
-            title={intl.formatMessage({
-              id: 'hummingbird.Navigation.chapterMenu.title',
-              description: 'Title for chapter menu',
-              defaultMessage: 'Chapters',
-            })}
-          />
+        {menuChapters && menuChapters.length ? (
+          <>
+            <SlideMenu
+              left
+              customCompTop={() => (
+                <div>
+                  <ChapterClose
+                    onClick={e => {
+                      e.preventDefault();
+                      toggleSlideMenu(
+                        document
+                          .getElementById('content-wrapper')
+                          .classList.contains('chaptersOpen'),
+                        'content-wrapper',
+                        'chaptersOpen',
+                        false,
+                      );
+                    }}
+                  >
+                    <Burger active color="#000000" type="spin" />
+                  </ChapterClose>
+                  <ChapterLinks chapters={menuChapters} />
+                </div>
+              )}
+              items={[]}
+              menuItemComp={_MenuItem}
+              InternalLink={_MenuItem}
+              left
+              className="chapters"
+            />
+            <ChaptersToggle
+              title={intl.formatMessage({
+                id: 'hummingbird.Navigation.chapterMenu.title',
+                description: 'Title for chapter menu',
+                defaultMessage: 'Chapters',
+              })}
+            />
+          </>
         ) : null}
         <Link to="/">
           <Logo />

@@ -40,10 +40,9 @@ export default class ArticleTemplate extends Component {
     />
   ));
 
-  static Navigation = ({ pageContext: _props }) => {
+  static Navigation = ({ pageContext: _props, headers }) => {
     const {
       node: { translations, platforms, menu, locale },
-      headers,
       shareUrls,
       ...props
     } = _props;
@@ -84,19 +83,22 @@ export default class ArticleTemplate extends Component {
     headers = [],
     onHeadersChange,
     dropcap = true,
-  }) => (
-    <main>
-      <ArticleWrapper className={classNames('article')}>
-        <div id="article-start">{headers.length ? <Chapters chapters={headers} /> : null}</div>
-        <Content
-          className={classNames('mobiledoc-content', { 'drop-cap': dropcap })}
-          id="entry-content"
-          content={content}
-          onLoad={({ headers: h }) => onHeadersChange(h)}
-        />
-      </ArticleWrapper>
-    </main>
-  );
+  }) => {
+    const chapters = headers.filter(c => c.displayArticleTop);
+    return (
+      <main>
+        <ArticleWrapper className={classNames('article')}>
+          <div id="article-start">{chapters.length ? <Chapters chapters={chapters} /> : null}</div>
+          <Content
+            className={classNames('mobiledoc-content', { 'drop-cap': dropcap })}
+            id="entry-content"
+            content={content}
+            onLoad={({ headers: h }) => onHeadersChange(h)}
+          />
+        </ArticleWrapper>
+      </main>
+    );
+  };
 
   static defaultProps = {
     children: [
