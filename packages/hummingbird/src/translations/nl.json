@@ -1,6 +1,5 @@
 {
   "hummingbird.Campaign.petitionCounter.message": "{signatureCount, plural, one {persoon heeft} other {mensen hebben}} de petitie getekend",
-  "hummingbird.Campaign.fundraiserCounter.message": "has been donated to this fundraiser",
   "hummingbird.Campaign.description.collapse": "Inklappen",
   "hummingbird.Campaign.description.expand": "Uitklappen",
   "hummingbird.Campaign.confirm.text": "We hebben je net een mail gestuurd met een bevestigingslink. Wanneer je deze link volgt wordt je ondertekening geteld. Bedankt alvast!",
