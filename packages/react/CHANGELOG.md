@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.30.1](https://github.com/wingscms/wings/compare/@wingscms/react@0.30.0...@wingscms/react@0.30.1) (2020-02-13)
+
+
+### Bug Fixes
+
+* amount field currency symbol ([#394](https://github.com/wingscms/wings/issues/394)) ([0842d6f](https://github.com/wingscms/wings/commit/0842d6f1f626eface89236f2c3cda4d1d36a49b8))
+
+
+
+
+
 # [0.30.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.29.1...@wingscms/react@0.30.0) (2020-02-11)
 
 
