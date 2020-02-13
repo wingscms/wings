@@ -56,5 +56,6 @@
   "hummingbird.Footer.madeBy.emoji": "liefde",
   "hummingbird.Footer.madeBy.message": "Met {love} gemaakt door Bolster",
   "hummingbird.Footer.poweredBy.message": "Mogelijk dankzij Wings",
-  "hummingbird.Article.skipToContent.tooltip": "ga naar de inhoud"
+  "hummingbird.Article.skipToContent.tooltip": "ga naar de inhoud",
+  "hummingbird.Campaign.fundraiserCounter.message": "is al gedoneerd"
 }

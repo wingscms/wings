@@ -30,5 +30,21 @@
   "hummingbird.Footer.madeBy.emoji": "Liebe",
   "hummingbird.Footer.madeBy.message": "Mit {love} gemacht von Bolster",
   "hummingbird.Footer.poweredBy.message": "Möglich dank Wings",
-  "hummingbird.Article.skipToContent.tooltip": "gehe zum Inhalt"
+  "hummingbird.Article.skipToContent.tooltip": "gehe zum Inhalt",
+  "hummingbird.CampaignConfirmed.main.petitionTitle": "Hurra!",
+  "hummingbird.CampaignConfirmed.main.petitionText": "Dank Ihnen sind wir unseren Zielen einen Schritt näher gekommen.",
+  "hummingbird.CampaignConfirmed.main.petitionShareTitle": "Bitte teilen Sie diese Petition mit Ihren Freunden und Kollegen:",
+  "hummingbird.CampaignConfirmed.main.eventTitle": "Hurra!",
+  "hummingbird.CampaignConfirmed.main.eventText": "Wir freuen uns, Sie auf unserer Veranstaltung begrüßen zu dürfen.",
+  "hummingbird.CampaignConfirmed.main.eventShareTitle": "Bitte teilen Sie diese Veranstaltung mit Ihren Freunden und Kollegen:",
+  "hummingbird.CampaignConfirmed.main.fundraiserDefaultTitle": "Gelungen!",
+  "hummingbird.CampaignConfirmed.main.fundraiserDefaultText": "Vielen Dank für Ihre Spende.",
+  "hummingbird.CampaignConfirmed.main.fundraiserSuccessTitle": "Hurra!",
+  "hummingbird.CampaignConfirmed.main.fundraiserSuccessText": "Danke schön. Die Zahlung war erfolgreich.",
+  "hummingbird.CampaignConfirmed.main.fundraiserPendingTitle": "Vielen Dank für Ihre Spende.",
+  "hummingbird.CampaignConfirmed.main.fundraiserPendingText": "Ihre Zahlung wird verarbeitet.",
+  "hummingbird.CampaignConfirmed.main.fundraiserFailedTitle": "Oh nein!",
+  "hummingbird.CampaignConfirmed.main.fundraiserFailedText": "Ihre Zahlung wurde anscheinend abgebrochen. Bitte versuchen Sie es erneut.",
+  "hummingbird.CampaignConfirmed.main.fundraiserShareTitle": "Bitte teilen Sie diese Spendenaktion mit Ihren Freunden und Kollegen:",
+  "hummingbird.Campaign.fundraiserCounter.message": "wurde schon gespendet"
 }
