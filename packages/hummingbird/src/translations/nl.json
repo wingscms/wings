@@ -1,9 +1,9 @@
 {
   "hummingbird.404.message.text": "Oh nee! We konden de pagina niet vinden.",
   "hummingbird.Campaign.petitionCounter.message": "{signatureCount, plural, one {persoon heeft} other {mensen hebben}} de petitie getekend",
+  "hummingbird.Campaign.fundraiserCounter.message": "is al gedoneerd",
   "hummingbird.Campaign.description.collapse": "Inklappen",
   "hummingbird.Campaign.description.expand": "Uitklappen",
-  "hummingbird.Campaign.fundraiserCounter.message": "is al gedoneerd",
   "hummingbird.Campaign.confirm.text": "We hebben je net een mail gestuurd met een bevestigingslink. Wanneer je deze link volgt wordt je ondertekening geteld. Bedankt alvast!",
   "hummingbird.Campaign.confirm.title": "We zijn er bijna!",
   "hummingbird.Campaign.error.text": "Er is iets misgegaan met het verzenden van het formulier. Probeer het opnieuw of meld het probleem aan ons.",
