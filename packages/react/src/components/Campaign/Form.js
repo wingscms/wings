@@ -552,19 +552,9 @@ class CampaignForm extends Component {
     }
   };
 
-  getCurrencyCode(campaign) {
-    if (!campaign) return null;
-    if (!(this.props.type === 'fundraiser')) return null;
-    return campaign.amounts.currencyCode;
-  }
-
-  getCurrencySymbol(currencyCode) {
-    switch (currencyCode) {
-      case 'GBP':
-        return '£';
-      default:
-        return '€';
-    }
+  getCurrencySymbol(fundraiser) {
+    const amounts = fundraiser.amounts.options;
+    return amounts.length ? amounts[0].amount.currency.symbol : '';
   }
 
   getCampaign() {
@@ -575,8 +565,7 @@ class CampaignForm extends Component {
     const { amount } = this.state;
     const campaign = this.getCampaign();
     const amounts = campaign.amounts.options.map(o => o.amount.amount);
-    const currencyCode = this.getCurrencyCode(campaign);
-    const symbol = this.getCurrencySymbol(currencyCode);
+    const symbol = this.getCurrencySymbol(campaign);
     const { amountFieldLabel } = this.getCopy();
     return (
       <div style={{ marginBottom: '20px' }}>
