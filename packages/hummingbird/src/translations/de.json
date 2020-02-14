@@ -47,6 +47,5 @@
   "hummingbird.CampaignConfirmed.main.fundraiserFailedText": "Ihre Zahlung wurde anscheinend abgebrochen. Bitte versuchen Sie es erneut.",
   "hummingbird.CampaignConfirmed.main.fundraiserShareTitle": "Bitte teilen Sie diese Spendenaktion mit Ihren Freunden und Kollegen:",
   "hummingbird.Campaign.fundraiserCounter.message": "wurde schon gespendet",
-  "hummingbird.CampaignForm.amountField.label": "Betrag",
-
+  "hummingbird.CampaignForm.amountField.label": "Betrag"
 }
