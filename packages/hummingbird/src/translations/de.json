@@ -6,6 +6,7 @@
   "hummingbird.Campaign.confirm.text": "Wir haben Dir soeben eine Mail mit einem Bestätigungslink geschickt. Bitte klicke den Link um Deine Signatur offiziell zu machen. Vielen Dank!",
   "hummingbird.Campaign.confirm.title": "Beinahe geschafft!",
   "hummingbird.Campaign.error.text": "Beim Absenden des Formulars ist ein Fehler aufgetreten. Versuchen Sie es erneut oder melden Sie uns das Problem.",
+  "hummingbird.Campaign.error.buttonText": "Zurück",
   "hummingbird.Campaign.error.title": "Oops!",
   "hummingbird.CampaignConfirmed.main.text": "Dank Dir sind wir unserem Ziel wieder einen Schritt näher!",
   "hummingbird.CampaignConfirmed.main.title": "Hurra!",

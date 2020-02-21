@@ -6,6 +6,7 @@
   "hummingbird.Campaign.confirm.text": "We hebben je net een mail gestuurd met een bevestigingslink. Wanneer je deze link volgt wordt je ondertekening geteld. Bedankt alvast!",
   "hummingbird.Campaign.confirm.title": "We zijn er bijna!",
   "hummingbird.Campaign.error.text": "Er is iets misgegaan met het verzenden van het formulier. Probeer het opnieuw of meld het probleem aan ons.",
+  "hummingbird.Campaign.error.buttonText": "Probeer opnieuw",
   "hummingbird.Campaign.error.title": "Oops!",
 
   "hummingbird.CampaignConfirmed.main.signupTitle": "Hoera!",
