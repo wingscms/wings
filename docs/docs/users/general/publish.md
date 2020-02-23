@@ -27,6 +27,8 @@ At Articles you can add and edit articles; at Pages, you can add and edit pages.
 8. Here you will see a blinking cursor. Start typing away!
 9. This is the layout toolbar, which works similar to other CMS'es and word editing applications. You can use it to add headings, unordered lists (usually styled with bullets), ordered (numbered) lists, **strong**, `code` and [https://example.com](links).
 10. A 'card' is a special content block, which will be explained in the next section.
+11. Save, delete, publish or _depublish_ a node.
+12. Set the publication date of this node.
 
 ![](https://screens.wings.dev/Screen-Recording-2020-02-23-12-20-01-1582456809.gif)
 
