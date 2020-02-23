@@ -46,12 +46,12 @@ At the Commerce Settings page, you can set up payment integrations, starting wit
 ## Integrations
 On the Integrations page, you will be able to set up integrations with third party services such as Mailchimp. Create an API key in your Mailchimp account and enter it here
 
-![](https://screens.wings.dev/CleanShot-2020-02-23-at-17.53.57-1582476844.png)
+![](https://screens.wings.dev/CleanShot-2020-02-23-at-17.54.20-1582476872.png)
 
 ## Emails
 At the Emails settings page, you can configure the confirmation/notification emails that will be sent to anyone who submits a campaign form. There are two primary use cases.
 
-### Confirmation emails
+### 1. Confirmation emails
 
 You can include a button or text link with a confirmation link. If a user clicks this link, they will be sent to a 'confirmed' campaign page [such as this one](https://demo.wings.dev/petitions/demo-petition/confirmed). Additionally, their submission will be recorded as being 'confirmed'.
 
@@ -61,7 +61,7 @@ This confirmation flow is useful to verify that a user's submission contains a v
 
 Another advantage of this flow is that the 'confirmed' page contains call to action links that let a user share the campaign with their friends.
 
-### Notification or Thank You emails
+### 2. Notification or Thank You emails
 Alternatively, you can configure the email as a simple 'thank you' email with perhaps a followup call to action link.
 
 ## Schemas
