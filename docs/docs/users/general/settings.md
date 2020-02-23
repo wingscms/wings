@@ -61,6 +61,17 @@ This confirmation flow is useful to verify that a user's submission contains a v
 
 Another advantage of this flow is that the 'confirmed' page contains call to action links that let a user share the campaign with their friends.
 
+## Configuring the confirmation emails
+All campaigns only record a user's information after they have clicked a confirmation link in the email that is sent by Wings. Note: all campaigns of a certain campaign type get the same email. In other words: petition signers will receive the same petition confirmation email regardless of the petition being signed.
+
+![](https://bureaubolster.s3-eu-west-1.amazonaws.com/IMG_1108.jpeg)
+
+1. Visit Settings -> Emails to configure the emails.
+2. Set the 'From' name.
+3. Choose which campaign type you want to configure the emails for.
+4. Write an email subject line.
+5. Here, you can drag content blocks from the right to the left, in order to add them to your email.
+
 ### 2. Notification or Thank You emails
 Alternatively, you can configure the email as a simple 'thank you' email with perhaps a followup call to action link.
 
