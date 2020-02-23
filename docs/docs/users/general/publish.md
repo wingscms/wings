@@ -54,6 +54,8 @@ A 'chapter' card contains a title and description, which typically is used to cr
 ### Text 
 A 'text' card will display a block of highlighted text, which will usually have a different background color compared to regular page text.
 
+![](https://screens.wings.dev/CleanShot-2020-02-23-at-23.02.27-1582495359.png)
+
 ### Image
 The 'image' card allows you to display a single image. It can have various sizes, as well as an optional caption. **Note**: the image has to be uploaded beforehand in the 'Files' page. 
 
@@ -68,9 +70,11 @@ The **pullquote** has the additional option to choose whether it should 'float' 
 
 ![](https://screens.wings.dev/CleanShot-2020-02-23-at-14.48.17-1582465714.png) 
 
-![A blockquote card in the editor and its result, side by side](https://screens.wings.dev/CleanShot-2020-02-23-at-14.37.29-1582465101.png)
+And here is a **blockquote**:
 
-## Campaign
+![](https://screens.wings.dev/CleanShot-2020-02-23-at-14.37.29-1582465101.png)
+
+### Campaign
 The Campaign card is quite powerful: it allows you to display a Signup, Petition, Fundraiser or Event campaign anywhere on a Page or Article. Just place the card and pick the campaign you want to display:
 
 ![](https://screens.wings.dev/CleanShot-2020-02-23-at-14.55.30-1582466140.png)
