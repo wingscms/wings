@@ -330,6 +330,7 @@ class CampaignForm extends Component {
     amount: 0,
     paymentMethod: null,
     stage: 'form',
+    submitLoading: false,
   };
 
   getCopy() {
@@ -499,8 +500,8 @@ class CampaignForm extends Component {
 
   async submit(formData) {
     const { amount, selectedPaymentMethod: paymentMethod } = this.state;
-
     try {
+      this.setState({ submitLoading: true });
       const res = await this.props.wings.query(this.mutation(), {
         input: {
           id: this.props.id,
@@ -527,6 +528,8 @@ class CampaignForm extends Component {
       });
     } catch (err) {
       console.error(err);
+    } finally {
+      this.setState({ submitLoading: false });
     }
   }
 
@@ -617,7 +620,7 @@ class CampaignForm extends Component {
   }
 
   render() {
-    const { stage } = this.state;
+    const { stage, submitLoading } = this.state;
     const schema = this.getFormSchema();
     const loading = !schema;
     const {
@@ -647,7 +650,11 @@ class CampaignForm extends Component {
             onSubmit={this.handleSubmit.bind(this)}
           >
             {this.props.type === 'fundraiser' ? this.renderPaymentMethodSelect() : null}
-            {this.props.children || <Button>{this.getSubmitText()}</Button>}
+            {this.props.children || (
+              <Button loading={submitLoading} intent="primary">
+                {this.getSubmitText()}
+              </Button>
+            )}
           </SchemaForm>
         )}
         {!(stage === 'confirm') ? null : (

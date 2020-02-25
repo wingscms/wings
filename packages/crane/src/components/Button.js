@@ -1,5 +1,7 @@
+import React from 'react';
 import styled, { css } from '../lib/styled';
 import { getIntentColor, getContrastColor } from '../lib/utils';
+import Loading from './Loading';
 
 const outline = ({ color }) =>
   css`
@@ -40,10 +42,10 @@ const buttonStyles = ({ disabled, intent, size, theme, type }) => {
     : css`
         background-color: ${theme.disabledColor || '#DDDDDD'} !important;
         color: ${getContrastColor({
-      backgroundColor: theme.disabledColor || '#DDDDDD',
-      colors,
-      threshold: theme.contrastLuminanceThreshold || 50,
-    })};
+          backgroundColor: theme.disabledColor || '#DDDDDD',
+          colors,
+          threshold: theme.contrastLuminanceThreshold || 50,
+        })};
         cursor: not-allowed !important;
       `;
   return css`
@@ -76,7 +78,13 @@ const buttonStyles = ({ disabled, intent, size, theme, type }) => {
   `;
 };
 
-export default styled.button`
+const Button = styled.button`
   ${({ disabled, intent, size, theme = {}, type }) =>
     buttonStyles({ disabled, intent, size, theme, type })}
 `;
+
+export default ({ disabled, loading, children, ...props }) => (
+  <Button disabled={loading || disabled} {...props}>
+    {loading ? <Loading intent={props.intent} style={{ margin: 0 }} size="small" /> : children}
+  </Button>
+);
