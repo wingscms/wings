@@ -83,13 +83,13 @@ const BottomContent = styled.div`
   padding: 10px 20px 10px 20px;
   height: auto;
   top: 100%;
-  transform: translateY(-72px);
+  transform: translateY(-108px);
   transition: all 0.2s ease-in-out;
   text-shadow: ${({ bottomBackground }) =>
-    (bottomBackground ? 'none' : '0px 0px 5px rgba(0, 0, 0, 0.7);')};
+    bottomBackground ? 'none' : '0px 0px 5px rgba(0, 0, 0, 0.7);'};
   background-color: ${({ bottomBackground }) => (bottomBackground ? '#ffffff' : 'transparent')};
   box-shadow: ${({ bottomBackground }) =>
-    (bottomBackground ? '0 0 20px 0 rgba(0, 0, 0, 0.2)' : 'none')};
+    bottomBackground ? '0 0 20px 0 rgba(0, 0, 0, 0.2)' : 'none'};
   > .titleWrapper {
     width: 100%;
     display: flex;
@@ -97,7 +97,7 @@ const BottomContent = styled.div`
     align-items: center;
     overflow: hidden;
     position: relative;
-    min-height: 52px;
+    min-height: 86px;
     > h2 {
       user-select: none;
       color: ${({ bottomBackground }) => (bottomBackground ? '#000000' : '#ffffff')};
@@ -105,7 +105,7 @@ const BottomContent = styled.div`
       font-size: 20px;
       line-height: 26px;
       min-height: 0;
-      max-height: 52px;
+      max-height: 80px;
       margin: auto;
       overflow: hidden;
       padding: 0;
@@ -132,7 +132,7 @@ const BottomContent = styled.div`
         background: #ffffff;
         z-index: 10;
         ${({ bottomBackground }) =>
-    (bottomBackground ? 'display: block' : 'display: none;')} z-index: 10;
+          bottomBackground ? 'display: block' : 'display: none;'} z-index: 10;
       }
     }
   }
@@ -171,7 +171,7 @@ const BottomContent = styled.div`
 
 const TopContent = styled.div`
   text-shadow: ${({ topBackground }) =>
-    (topBackground ? 'none' : '0px 0px 5px rgba(0, 0, 0, 0.7);')};
+    topBackground ? 'none' : '0px 0px 5px rgba(0, 0, 0, 0.7);'};
   display: block;
   position: absolute;
   width: 100%;
@@ -318,7 +318,7 @@ export default class ComplexCard extends Component {
     ctaText: '',
     image: '',
     location: {},
-    onClickHandler: () => { },
+    onClickHandler: () => {},
     publishDate: '',
     shadow: true,
     signatureCount: 0,
