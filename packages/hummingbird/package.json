@@ -12,7 +12,6 @@
     "browser-locale": "1.0.3",
     "classnames": "2.2.6",
     "cloudinary-react": "1.2.1",
-    "deepmerge": "4.1.1",
     "filter-invalid-dom-props": "2.0.0",
     "format-number": "3.0.0",
     "gatsby": "2.18.18",
@@ -35,17 +34,13 @@
     "in-viewport": "3.6.0",
     "node-fetch": "2.6.0",
     "qs": "6.9.0",
-    "react-countup": "4.2.2",
     "react-helmet": "5.2.1",
     "react-intl": "3.3.2",
     "react-jsonschema-form": "1.8.0",
-    "react-reveal": "1.2.2",
     "react-scroll-to-element": "0.2.0",
-    "react-sticky": "6.0.3",
     "react-twitter-embed": "2.0.8",
     "react-typography": "0.16.19",
     "recompose": "0.30.0",
-    "styled-components": "4.4.0",
     "typography": "0.16.19",
     "widont": "0.3.3"
   },
@@ -53,6 +48,9 @@
     "babel-eslint": "10.0.3",
     "babel-preset-gatsby": "0.1.11",
     "eslint-plugin-jsx-a11y": "6.2.3"
+  },
+  "peerDependencies": {
+    "styled-components": "^4"
   },
   "gitHead": "2051165cacab59ebf43dc82a64fa444ffa72a7b8"
 }
