@@ -32,6 +32,7 @@
     "react-helmet": "5.2.1",
     "react-intl": "3.3.2",
     "react-scroll-to-element": "0.2.0",
+    "react-typography": "^0.16.19",
     "typography": "0.16.19",
     "widont": "0.3.3"
   },
