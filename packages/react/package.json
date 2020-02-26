@@ -32,6 +32,7 @@
     "lodash.includes": "^4.3.0",
     "mobiledoc-dom-renderer": "^0.7.0",
     "mobiledoc-kit": "^0.12.1",
+    "qs": "^6.9.1",
     "react-countup": "^4.3.3",
     "react-mobiledoc-editor": "^0.8.0",
     "react-reveal": "^1.2.2",

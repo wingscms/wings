@@ -2,6 +2,8 @@ import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
 import pkg from './package.json';
 
+const externals = [...Object.keys(pkg.dependencies), ...Object.keys(pkg.devDependencies)];
+
 export default [
   {
     input: 'src/index.js',
@@ -10,7 +12,7 @@ export default [
       file: pkg.main,
       format: 'cjs',
     },
-    external: [],
+    external: id => externals.some(dep => id.startsWith(dep)),
     plugins: [
       commonjs({
         include: '../../node_modules/**',
