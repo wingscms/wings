@@ -27,7 +27,7 @@ export default class Content extends Component {
   static defaultProps = {
     cards: [],
     onLoad: null,
-  }
+  };
 
   componentDidMount() {
     const { content } = this.props;
@@ -49,6 +49,11 @@ export default class Content extends Component {
   };
 
   render() {
-    return <MobiledocRenderer {...this.props} cards={mergeCards(allCards, this.props.cards).map(convertCard)} />
+    return (
+      <MobiledocRenderer
+        {...this.props}
+        cards={mergeCards(allCards, this.props.cards).map(convertCard)}
+      />
+    );
   }
 }
