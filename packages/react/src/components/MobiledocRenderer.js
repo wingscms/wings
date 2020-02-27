@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import styled from '../lib/styled';
 import PropTypes from 'prop-types';
 import Renderer03 from '@dailybeast/mobiledoc-react-renderer/dist/renderers/0-3';
 import Renderer from '@dailybeast/mobiledoc-react-renderer';
+import styled from '../lib/styled';
 
 Renderer03.prototype.parseProps = function parseProps(attrss) {
   if (attrss) {
@@ -26,7 +26,6 @@ class MobiledocRenderer extends Component {
     cards: [],
     unknownCardHandler: ({ env: { name } }) =>
       console.error(`Unknown card type ${name} encountered.`),
-    onLoad: null,
   };
 
   createRenderer() {
@@ -49,14 +48,7 @@ class MobiledocRenderer extends Component {
   };
 
   render() {
-    const {
-      content,
-      cards: _cards,
-      unknownCardHandler,
-      onLoad,
-      cardProps: _,
-      ...props
-    } = this.props;
+    const { content, cards: _cards, unknownCardHandler, cardProps: _, ...props } = this.props;
     const renderer = this.createRenderer();
     return <div {...props}>{!content ? null : renderer.render(JSON.parse(content))}</div>;
   }

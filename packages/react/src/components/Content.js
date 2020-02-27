@@ -48,11 +48,7 @@ export default class Content extends Component {
   };
 
   render() {
-    return (
-      <MobiledocRenderer
-        {...this.props}
-        cards={mergeCards(allCards, this.props.cards).map(convertCard)}
-      />
-    );
+    const { cards, onLoad, ...props } = this.props;
+    return <MobiledocRenderer {...props} cards={mergeCards(allCards, cards).map(convertCard)} />;
   }
 }
