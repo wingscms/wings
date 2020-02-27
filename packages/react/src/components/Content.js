@@ -19,7 +19,6 @@ const convertCard = ({ View, ...card }) => ({
 
 export default class Content extends Component {
   static propTypes = {
-    content: PropTypes.string,
     cards: PropTypes.array,
     onLoad: PropTypes.func,
   };
