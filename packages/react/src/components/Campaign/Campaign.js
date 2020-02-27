@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import styled from '../../lib/styled';
 
-import Content from '../Content';
+import Content from '../MobiledocRenderer';
 import CampaignForm from './Form';
 import Counter from './Counter';
 import EventDetails from './EventDetails';
