@@ -5,7 +5,7 @@ import { StickyContainer, Sticky } from 'react-sticky';
 
 import styled from '../lib/styled';
 import { wide } from '@wingscms/crane';
-import Content from '../components/Content';
+import Content from '../components/MobiledocRenderer';
 import createCard from '../createCard';
 
 const Testimonial = styled.section`
