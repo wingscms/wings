@@ -9,9 +9,9 @@
   "hummingbird.Campaign.error.text": "Beim Absenden des Formulars ist ein Fehler aufgetreten. Versuchen Sie es erneut oder melden Sie uns das Problem.",
   "hummingbird.Campaign.error.title": "Oops!",
   
-  "hummingbird.CampaignConfirmed.main.signupTitle": "",
-  "hummingbird.CampaignConfirmed.main.signupText": "",
-  "hummingbird.CampaignConfirmed.main.signupShareTitle": "",
+  "hummingbird.CampaignConfirmed.main.signupTitle": "Hurra!",
+  "hummingbird.CampaignConfirmed.main.signupText": "Dank Ihnen sind wir unseren Zielen einen Schritt näher gekommen.",
+  "hummingbird.CampaignConfirmed.main.signupShareTitle": "Bitte teilen Sie diese Kampagne mit Ihren Freunden und Kollegen:",
 
   "hummingbird.CampaignConfirmed.main.petitionTitle": "Hurra!",
   "hummingbird.CampaignConfirmed.main.petitionText": "Dank Ihnen sind wir unseren Zielen einen Schritt näher gekommen.",
