@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import styled from '../../lib/styled';
 
-import Content from '../Content';
+import Content from '../MobiledocRenderer';
 import CampaignForm from './Form';
 import Counter from './Counter';
 import EventDetails from './EventDetails';
@@ -163,7 +163,6 @@ export default ({
   resourceType,
   node: _node = {},
   formProps = {},
-  theme = {},
   wrapElement = e => e,
   redirectUrlForNode = () => null,
   copy = {},
@@ -217,14 +216,9 @@ export default ({
           >
             {title ? <Title>{title}</Title> : null}
             {intro ? <Intro fullWidth>{intro}</Intro> : null}
-            <Content
-              content={node.description}
-              className="mobiledoc-content"
-              id="campaign-content"
-              mini
-            />
+            <Content content={node.description} mini />
           </Proposition>
-          <FormContainer id="campaign-form-container" ref={formContainerRef}>
+          <FormContainer ref={formContainerRef}>
             {/* Petition counter */}
             {typeof signatureCount === 'number' && node.resourceType === 'node.petition' && (
               <CounterContainer>
@@ -237,9 +231,9 @@ export default ({
               </CounterContainer>
             )}
             {/* Fundraiser counter */}
-            {fundraiserRaised &&
-              typeof fundraiserRaised.amount === 'number' &&
-              node.resourceType === 'node.fundraiser' && (
+            {fundraiserRaised
+              && typeof fundraiserRaised.amount === 'number'
+              && node.resourceType === 'node.fundraiser' && (
                 <CounterContainer>
                   <Counter
                     current={fundraiserRaised.amount / 100}
@@ -249,7 +243,7 @@ export default ({
                     symbol={fundraiserRaised.currency.symbol}
                   />
                 </CounterContainer>
-              )}
+            )}
             <FormContainerInner>
               <CampaignForm
                 type={resourceType.split('.')[1]}
