@@ -177,7 +177,14 @@ const NodesCardView = ({ text, ...props }) => {
       )
       .catch(err => console.error(err));
 
-    setNodes(res.nodes.edges.map(node => node.node));
+    const itemIds = items.map(item => item.nodeId);
+    const _nodes = res.nodes.edges.map(node => node.node);
+
+    setNodes(
+      type === 'archive'
+        ? _nodes
+        : _nodes.sort((a, b) => itemIds.indexOf(a.id) - itemIds.indexOf(b.id)),
+    );
     setPageInfo(res.nodes.pageInfo);
     setHasLoaded(true);
     setLoading(false);
@@ -195,7 +202,7 @@ const NodesCardView = ({ text, ...props }) => {
           <Loading intent="primary" />
         ) : (
           <FlexGrid
-            divisions={4}
+            divisions={3}
             margins={10}
             alignItems="stretch"
             style={{
