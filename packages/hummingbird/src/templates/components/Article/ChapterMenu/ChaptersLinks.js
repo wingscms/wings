@@ -17,9 +17,10 @@ const ChapterItem = styled.div`
   margin: 0;
   padding: 10px;
   cursor: pointer;
-  a {
+  span {
     color: #333;
     text-decoration: none;
+    text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
     background-image: ${({ theme }) =>
     `linear-gradient(120deg, ${theme.primaryColor} 0%, ${theme.primaryColor} 100%)`} !important;
     font-family: ${({ theme }) => theme.headerFontFamily};
@@ -36,7 +37,7 @@ const ChapterItem = styled.div`
     }
   }
   &.special {
-    a {
+    span {
       color: ${({ theme }) => theme.primaryColor};
     }
   }
@@ -50,7 +51,7 @@ const ChapterItem = styled.div`
 
 export default ({ chapters }) => (
   <div>
-    {chapters.map((chapter, i) => (
+    {chapters.map(chapter => (
       // eslint-disable-next-line jsx-a11y/no-static-element-interactions
       <div
         key={`chapter-item-${chapter.id}`}
@@ -60,14 +61,11 @@ export default ({ chapters }) => (
             'content-wrapper',
             'chaptersOpen',
             false,
-          )
-        }
+          )}
       >
         <Scroll type="id" element={chapter.id}>
-          <ChapterItem index={i}>
-            <a href="">
-              {i + 1}. {chapter.title}
-            </a>
+          <ChapterItem>
+            <span>{chapter.title}</span>
           </ChapterItem>
         </Scroll>
       </div>

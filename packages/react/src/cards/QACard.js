@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react';
 import styled from '../lib/styled';
 import { getContrastColor, Icons } from '@wingscms/crane';
 import createCard from '../createCard';
-import Content from '../components/Content';
+import Content from '../components/MobiledocRenderer';
 
 const Container = styled.div`
   margin: ${({ theme }) => theme.mediumSpacing} 0;
@@ -12,8 +12,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.h3`
-  text-transform: ${({ theme }) =>
-    (theme.uppercaseTitles ? 'uppercase' : 'none')};
+  text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
   font-size: 40px;
   font-weight: 800;
   line-height: 42px;
@@ -61,11 +60,11 @@ const QuestionText = styled.div`
     background-color: ${({ theme }) => theme.elementBackgroundColor};
     p {
       color: ${({ theme }) =>
-    getContrastColor({
-      backgroundColor: theme.elementBackgroundColor,
-      colors: { light: theme.textColor, dark: theme.textColorDark },
-      threshold: theme.contrastLuminanceThreshold,
-    })};
+        getContrastColor({
+          backgroundColor: theme.elementBackgroundColor,
+          colors: { light: theme.textColor, dark: theme.textColorDark },
+          threshold: theme.contrastLuminanceThreshold,
+        })};
     }
   }
 `;
@@ -115,11 +114,7 @@ class QACardView extends Component {
         {title ? <Title>{title}</Title> : null}
         <QA>
           {content.map(x => (
-            <Question
-              question={x.question}
-              answer={x.answer}
-              key={`qacard-${x._id}`}
-            />
+            <Question question={x.question} answer={x.answer} key={`qacard-${x._id}`} />
           ))}
         </QA>
       </Container>
