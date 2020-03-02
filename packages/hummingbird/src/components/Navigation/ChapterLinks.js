@@ -65,10 +65,7 @@ export default ({ chapters }) => (
       >
         <Scroll type="id" element={chapter.id}>
           <ChapterItem index={i}>
-            <a href="">
-              {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
-              {i + 1}. {chapter.title}
-            </a>
+            <a href="">{`${i + 1}. ${chapter.title}`}</a>
           </ChapterItem>
         </Scroll>
       </div>
