@@ -202,7 +202,7 @@ const NodesCardView = ({ text, ...props }) => {
           <Loading intent="primary" />
         ) : (
           <FlexGrid
-            divisions={4}
+            divisions={3}
             margins={10}
             alignItems="stretch"
             style={{
