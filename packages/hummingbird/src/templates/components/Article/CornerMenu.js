@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import Scroll from 'react-scroll-to-element';
 import { navigate } from 'gatsby';
 import styled, { withTheme } from 'styled-components';
-import { LanguagePicker, toggleSlideMenu, Icons } from '@wingscms/crane';
+import { LanguagePicker, Icons } from '@wingscms/crane';
 import routing from '../../../../services/routing';
-
-import chaptersImage from '../../../img/chapters.svg';
 
 const Container = styled.div`
   position: fixed;
@@ -18,51 +15,6 @@ const Container = styled.div`
   box-shadow: ${({ theme }) => theme.defaultShadow};
   &.hidden {
     display: none;
-  }
-`;
-
-const ChaptersLink = styled.a`
-  background-color: ${({ theme }) => theme.languagePickerColor};
-  height: 50px;
-  width: ${({ slideMenu }) => (slideMenu ? '65px' : '270px')};
-  display: inline;
-  font-weight: bold;
-  color: ${({ theme }) => theme.textColor};
-  font-size: 18px;
-  float: left;
-  text-decoration: none;
-  text-align: center;
-  position: relative;
-  transition: 0.15s linear all;
-  cursor: pointer;
-  box-shadow: ${({ theme }) => theme.defaultShadow};
-  &.divider {
-    border-right: 2px solid #000;
-  }
-  span {
-    line-height: 50px;
-    vertical-align: middle;
-    display: ${({ slideMenu }) => (slideMenu ? 'none' : 'initial')};
-  }
-  &:hover,
-  &:active {
-    background-color: ${({ theme }) => theme.languagePickerHoverColor};
-  }
-  @media screen and (max-width: 800px) {
-    width: 65px;
-    span {
-      display: none;
-    }
-  }
-`;
-
-const ChapterImage = styled.img`
-  vertical-align: ${({ slideMenu }) => (slideMenu ? 'initial' : 'middle')};
-  margin: ${({ slideMenu }) => (slideMenu ? '25px 25px 0 20px' : '0 0 3px 20px')};
-  @media screen and (max-width: 800px) {
-    vertical-align: initial;
-    margin-top: 25px;
-    margin-right: 23px;
   }
 `;
 
@@ -201,17 +153,8 @@ class CornerMenu extends Component {
   };
 
   render() {
-    const {
-      chapterMenu,
-      chapters = [],
-      chaptersTitle,
-      locale,
-      shareMessage,
-      translations = [],
-      theme,
-    } = this.props;
+    const { locale, shareMessage, translations = [], theme } = this.props;
     const { hidden, url } = this.state;
-    const windowExists = typeof window !== 'undefined';
     return (
       <Container className={hidden ? 'hidden' : ''}>
         {translations.length > 0 ? (
@@ -234,33 +177,6 @@ class CornerMenu extends Component {
               }}
             />
           </LanguagePickerWrap>
-        ) : null}
-        {chapters.length > 0 ? (
-          windowExists && translations.length < 1 && (!chapterMenu || chapterMenu !== 'slide') ? (
-            <Scroll type="id" element="chapter-list">
-              <ChaptersLink>
-                {chaptersTitle}
-                <ChapterImage src={chaptersImage} />
-              </ChaptersLink>
-            </Scroll>
-          ) : (
-            <ChaptersLink
-              className={translations.length > 0 ? 'divider' : ''}
-              slideMenu
-              onClick={e => {
-                e.preventDefault();
-                toggleSlideMenu(
-                  document.getElementById('content-wrapper').classList.contains('chaptersOpen'),
-                  'content-wrapper',
-                  'chaptersOpen',
-                  false,
-                );
-              }}
-            >
-              {chaptersTitle}
-              <ChapterImage src={chaptersImage} slideMenu />
-            </ChaptersLink>
-          )
         ) : null}
         <ShareOpen>
           <ShareOpenInner>
