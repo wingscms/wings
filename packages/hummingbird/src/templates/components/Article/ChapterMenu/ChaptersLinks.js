@@ -51,7 +51,7 @@ const ChapterItem = styled.div`
 
 export default ({ chapters }) => (
   <div>
-    {chapters.map((chapter, i) => (
+    {chapters.map(chapter => (
       // eslint-disable-next-line jsx-a11y/no-static-element-interactions
       <div
         key={`chapter-item-${chapter.id}`}
@@ -64,7 +64,7 @@ export default ({ chapters }) => (
           )}
       >
         <Scroll type="id" element={chapter.id}>
-          <ChapterItem index={i}>
+          <ChapterItem>
             <span>{chapter.title}</span>
           </ChapterItem>
         </Scroll>
