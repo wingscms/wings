@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import Content from '../../../internal/Content';
 import Entry from '../Entry';
 import Chapters from './Chapters';
+import ChapterMenu from './ChapterMenu';
 import CornerMenu from './CornerMenu';
 import ProgressBar from './ProgressBar';
 import Header from './Header';
@@ -32,6 +33,7 @@ const messages = defineMessages({
 
 export default class ArticleTemplate extends Component {
   static ProgressBar = ProgressBar;
+
   static Header = injectIntl(({ pageContext: { node, ...props }, intl }) => (
     <Header
       article={node}
@@ -40,7 +42,7 @@ export default class ArticleTemplate extends Component {
     />
   ));
 
-  static Navigation = ({ pageContext: _props, headers }) => {
+  static Navigation = ({ pageContext: _props, chapters }) => {
     const {
       node: { translations, platforms, menu, locale },
       shareUrls,
@@ -48,7 +50,7 @@ export default class ArticleTemplate extends Component {
     } = _props;
     return (
       <Entry.Navigation
-        chapters={headers}
+        chapters={chapters}
         shareUrls={shareUrls}
         shareMessage={platforms && platforms.all && platforms.all.description}
         items={menu && menu.items}
@@ -59,62 +61,52 @@ export default class ArticleTemplate extends Component {
     );
   };
 
-  static CornerMenu = injectIntl(
-    ({
-      pageContext: {
-        node: { translations, locale },
-        headers,
-      },
-      intl,
-    }) => (
-      <CornerMenu
-        chapters={headers}
-        locale={locale}
-        translations={translations}
-        chaptersTitle={intl.formatMessage(messages.chaptersTitle)}
-      />
-    ),
-  );
+  static CornerMenu = injectIntl(({ pageContext: { node: { translations, locale } }, intl }) => (
+    <CornerMenu
+      locale={locale}
+      translations={translations}
+      chaptersTitle={intl.formatMessage(messages.chaptersTitle)}
+    />
+  ));
+
+  static ChapterMenu = ({ chapters = [] }) => <ChapterMenu chapters={chapters} />;
 
   static Main = ({
     pageContext: {
       node: { content },
     },
-    headers = [],
-    onHeadersChange,
+    chapters = [],
+    onChaptersChange,
     dropcap = true,
-  }) => {
-    const chapters = headers.filter(c => c.displayArticleTop);
-    return (
-      <main>
-        <ArticleWrapper className={classNames('article')}>
-          <div id="article-start">{chapters.length ? <Chapters chapters={chapters} /> : null}</div>
-          <Content
-            className={classNames('mobiledoc-content', { 'drop-cap': dropcap })}
-            id="entry-content"
-            content={content}
-            onLoad={({ headers: h }) => onHeadersChange(h)}
-          />
-        </ArticleWrapper>
-      </main>
-    );
-  };
+  }) => (
+    <main>
+      <ArticleWrapper className="article" id="article-start">
+        <Chapters chapters={chapters} />
+        <Content
+          className={classNames({ 'drop-cap': dropcap })}
+          content={content}
+          onLoad={({ chapters: c }) => onChaptersChange(c)}
+        />
+      </ArticleWrapper>
+    </main>
+  );
 
   static defaultProps = {
     children: [
       <ArticleTemplate.ProgressBar />,
       <ArticleTemplate.Navigation />,
+      <ArticleTemplate.ChapterMenu />,
       <ArticleTemplate.CornerMenu />,
       <ArticleTemplate.Header />,
       <ArticleTemplate.Main />,
     ],
   };
 
-  state = { headers: [] };
+  state = { chapters: [] };
 
   childProps = () => ({
-    headers: this.state.headers,
-    onHeadersChange: headers => this.setState({ headers }),
+    chapters: this.state.chapters,
+    onChaptersChange: chapters => this.setState({ chapters }),
   });
 
   render() {

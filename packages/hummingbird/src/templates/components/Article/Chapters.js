@@ -86,14 +86,17 @@ const ChapterItem = styled.li`
   }
 `;
 
-export default ({ chapters }) => (
-  <ChapterList id="chapter-list">
-    {chapters.map(({ id, marker, title }, i) => (
-      <Scroll type="id" element={id} key={`chapter-item-${id}`}>
-        <ChapterItem marker={marker}>
-          <a href="">{title}</a>
-        </ChapterItem>
-      </Scroll>
-    ))}
-  </ChapterList>
-);
+export default ({ chapters: _chapters }) => {
+  const chapters = _chapters.filter(c => c.displayArticleTop);
+  return !chapters.length ? null : (
+    <ChapterList id="chapter-list">
+      {chapters.map(({ id, marker, title }) => (
+        <Scroll type="id" element={id} key={`chapter-item-${id}`}>
+          <ChapterItem marker={marker}>
+            <a href="">{title}</a>
+          </ChapterItem>
+        </Scroll>
+      ))}
+    </ChapterList>
+  );
+};

@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { getContrastColor, toggleSlideMenu } from '@wingscms/crane';
 
 const ChaptersToggleContainer = styled.div`
+  z-index: 50;
   position: fixed;
   width: 50px;
   background-color: ${({ theme }) => theme.primaryColor};
