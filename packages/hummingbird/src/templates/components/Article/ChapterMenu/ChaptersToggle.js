@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import classNames from 'classnames';
-import { toggleSlideMenu } from '@wingscms/crane';
+import { getContrastColor, toggleSlideMenu } from '@wingscms/crane';
 
 const ChaptersToggleContainer = styled.div`
+  z-index: 50;
   position: fixed;
   width: 50px;
   background-color: ${({ theme }) => theme.primaryColor};
@@ -21,9 +22,15 @@ const ChaptersToggleContainer = styled.div`
     top: 50%;
     transform: translateX(-50%) translateY(-50%) rotate(-90deg);
     left: 50%;
-    color: #000;
+    color: ${({ theme }) =>
+    getContrastColor({
+      backgroundColor: theme.primaryColor,
+      colors: { light: theme.textColor, dark: theme.textColorDark },
+      threshold: theme.contrastLuminanceThreshold,
+    })};
     font-weight: bold;
     transition: 0.2s all ease-in-out;
+    text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
   }
   &:hover {
     background-color: ${({ theme }) => theme.secondaryColor};

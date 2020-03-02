@@ -231,9 +231,9 @@ export default intl => {
         ? `${intl.formatDate(scheduleEnding)} ${intl.formatTime(scheduleEnding)}`
         : null,
       eventFee: fee
-        ? intl.formatNumber(fee.amount / 100, {
+        ? intl.formatNumber(fee.amount.amount / 100, {
             style: 'currency',
-            currency: fee.currencyCode,
+            currency: fee.amount.currency.id,
             currencyDisplay: 'symbol',
           })
         : null,

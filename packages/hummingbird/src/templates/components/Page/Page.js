@@ -13,8 +13,7 @@ const Title = styled.h1`
   text-align: center;
   color: ${({ theme }) => theme.textColor};
   font-size: 2rem;
-  text-transform: ${({ theme }) =>
-    (theme.uppercaseTitles ? 'uppercase' : 'none')};
+  text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
   line-height: 1.2;
   max-width: 90%;
   &.hidden {
@@ -63,33 +62,20 @@ export default class PageTemplate extends Component {
     />
   );
 
-  static Title = ({
-    pageContext: { node, hidden, className, children, ...props },
-  }) => (
-    <Title
-      {...filterInvalidDOMProps(props)}
-      className={classNames(className, { hidden })}
-    >
+  static Title = ({ pageContext: { node, hidden, className, children, ...props } }) => (
+    <Title {...filterInvalidDOMProps(props)} className={classNames(className, { hidden })}>
       {node.title || children}
     </Title>
   );
 
   static Main = ({ pageContext: { node } }) => (
     <ContentWrapper>
-      <Content
-        className="mobiledoc-content"
-        id="entry-content"
-        content={node.content}
-      />
+      <Content content={node.content} />
     </ContentWrapper>
   );
 
   static defaultProps = {
-    children: [
-      <PageTemplate.Navigation />,
-      <PageTemplate.Header />,
-      <PageTemplate.Main />,
-    ],
+    children: [<PageTemplate.Navigation />, <PageTemplate.Header />, <PageTemplate.Main />],
   };
 
   render() {
