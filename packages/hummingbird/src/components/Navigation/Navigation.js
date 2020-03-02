@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useIntl } from 'react-intl';
 import {
   Burger,
   LanguagePicker,
+  MenuButton,
   ShareButtons,
   SlideMenu,
   toggleSlideMenu,
@@ -20,8 +20,6 @@ import whatsappIcon from '../../img/whatsapp.svg';
 import emailIcon from '../../img/email.svg';
 
 import MenuItem from './MenuItem';
-import ChapterLinks from './ChapterLinks';
-import ChaptersToggle from './ChaptersToggle';
 
 import Logo from './Logo';
 
@@ -54,29 +52,6 @@ const Container = styled.div`
   max-width: 1160px;
 `;
 
-const MenuButton = styled.div`
-  position: absolute;
-  right: ${({ active }) => (active ? '-300px' : '0')};
-  top: 8px;
-  z-index: 3000;
-  @media screen and (max-width: 1250px) {
-    position: relative;
-    display: inline-block;
-    float: right;
-  }
-  @media screen and (max-width: 800px) {
-    top: 0;
-    right: ${({ active }) => (active ? '-100vw' : '0')};
-  }
-`;
-
-const ChapterClose = styled(MenuButton)`
-  @media screen and (max-width: 1250px) {
-    position: absolute;
-    display: block;
-  }
-`;
-
 const LanguagePickerWrap = styled.div`
   float: right;
   margin: 30px 10px -30px 0;
@@ -106,7 +81,6 @@ const LanguagePickerWrap = styled.div`
 
 export default function Navigation({
   chapterMenu,
-  chapters,
   items,
   translations = [],
   locale,
@@ -115,7 +89,6 @@ export default function Navigation({
   children,
   ...props
 }) {
-  const intl = useIntl();
   const theme = useTheme();
   const [visible, setVisible] = useState(false);
   const toggleNav = e => {
@@ -123,46 +96,9 @@ export default function Navigation({
     toggleSlideMenu(visible);
     setVisible(!visible);
   };
-
   return (
     <Wrap {...filterInvalidDOMProps(props)}>
       <Container className={visible ? 'visible' : ''}>
-        {chapterMenu && chapters ? (
-          <SlideMenu
-            customCompTop={() => (
-              <div>
-                <ChapterClose
-                  onClick={e => {
-                    e.preventDefault();
-                    toggleSlideMenu(
-                      document.getElementById('content-wrapper').classList.contains('chaptersOpen'),
-                      'content-wrapper',
-                      'chaptersOpen',
-                      false,
-                    );
-                  }}
-                >
-                  <Burger active color="#000000" type="spin" />
-                </ChapterClose>
-                <ChapterLinks chapters={chapters} />
-              </div>
-            )}
-            items={[]}
-            menuItemComp={_MenuItem}
-            InternalLink={_MenuItem}
-            left
-            className="chapters"
-          />
-        ) : null}
-        {chapterMenu && chapters ? (
-          <ChaptersToggle
-            title={intl.formatMessage({
-              id: 'hummingbird.Navigation.chapterMenu.title',
-              description: 'Title for chapter menu',
-              defaultMessage: 'Chapters',
-            })}
-          />
-        ) : null}
         <Link to="/">
           <Logo />
         </Link>
