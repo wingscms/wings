@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {
   Burger,
   LanguagePicker,
+  MenuButton,
   ShareButtons,
   SlideMenu,
   toggleSlideMenu,
@@ -19,7 +20,6 @@ import whatsappIcon from '../../img/whatsapp.svg';
 import emailIcon from '../../img/email.svg';
 
 import MenuItem from './MenuItem';
-import MenuButton from './MenuButton';
 
 import Logo from './Logo';
 

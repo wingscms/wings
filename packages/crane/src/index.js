@@ -1,6 +1,7 @@
 export { default as PaginationControls } from './components/PaginationControls';
 // Form
 export { default as Button } from './components/Button';
+export { default as MenuButton } from './components/MenuButton';
 export { default as Counter } from './components/Counter';
 export { default as Loading } from './components/Loading';
 // export { TextInput } from './components/form';
