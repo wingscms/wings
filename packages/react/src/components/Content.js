@@ -40,10 +40,10 @@ export default class Content extends Component {
 
     const doc = JSON.parse(content);
     onLoad({
-      headers: doc.cards
+      chapters: doc.cards
         .filter(c => ['HeaderCard', 'ChapterCard'].indexOf(c[0]) > -1)
         .map(c => c[1])
-        .map(({ title }) => ({ id: slugify(title), title })),
+        .map(chapter => ({ id: slugify(chapter.title), ...chapter })),
     });
   };
 

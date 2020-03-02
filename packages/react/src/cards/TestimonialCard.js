@@ -3,8 +3,8 @@ import qs from 'qs';
 import classNames from 'classnames';
 import { StickyContainer, Sticky } from 'react-sticky';
 
-import styled from '../lib/styled';
 import { wide } from '@wingscms/crane';
+import styled from '../lib/styled';
 import Content from '../components/MobiledocRenderer';
 import createCard from '../createCard';
 
@@ -188,7 +188,7 @@ class TestimonialCard extends Component {
             </ImageWrap>
           )}
           <ContentWrap>
-            <Content content={content} className="mobiledoc-content" mini />
+            <Content content={content} mini />
           </ContentWrap>
         </Wrap>
       </Testimonial>

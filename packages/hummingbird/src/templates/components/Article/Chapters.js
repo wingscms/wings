@@ -41,18 +41,18 @@ const ChapterItem = styled.li`
   text-align: center;
   font-family: ${({ theme }) => theme.headerFontFamily};
   font-weight: ${({ theme }) => theme.typography.headerFontWeight || 'bold'};
-  text-transform: ${({ theme }) =>
-    (theme.uppercaseTitles ? 'uppercase' : 'none')};
-  a {
+  text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
+  span {
     text-decoration: none;
     color: ${({ theme }) => theme.chapterSelectItemColor};
     position: relative;
     transition: all 0.1s linear;
     -webkit-transition: all 0.1s linear;
     background-image: none;
+    cursor: pointer;
   }
   &:before {
-    content: '${props => props.index + 1}';
+    content: '${props => props.marker}';
     position: absolute;
     top: 0;
     left: 50%;
@@ -87,14 +87,17 @@ const ChapterItem = styled.li`
   }
 `;
 
-export default ({ chapters }) => (
-  <ChapterList id="chapter-list">
-    {chapters.map((chapter, i) => (
-      <Scroll type="id" element={chapter.id} key={`chapter-item-${chapter.id}`}>
-        <ChapterItem index={i}>
-          <a href="">{chapter.title}</a>
-        </ChapterItem>
-      </Scroll>
-    ))}
-  </ChapterList>
-);
+export default ({ chapters: _chapters }) => {
+  const chapters = _chapters.filter(c => c.displayArticleTop);
+  return !chapters.length ? null : (
+    <ChapterList>
+      {chapters.map(({ id, marker, title }) => (
+        <Scroll type="id" element={id} key={`chapter-item-${id}`}>
+          <ChapterItem marker={marker}>
+            <span>{title}</span>
+          </ChapterItem>
+        </Scroll>
+      ))}
+    </ChapterList>
+  );
+};
