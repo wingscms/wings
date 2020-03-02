@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from '../lib/styled';
 import createCard from '../createCard';
-import Content from '../components/Content';
+import Content from '../components/MobiledocRenderer';
 
 const TextWrapper = styled.div`
   margin: ${({ theme }) => theme.mediumSpacing} 0;
