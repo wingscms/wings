@@ -61,13 +61,11 @@ export default class ArticleTemplate extends Component {
     );
   };
 
-  static CornerMenu = injectIntl(({ pageContext: { node: { translations, locale } }, intl }) => (
-    <CornerMenu
-      locale={locale}
-      translations={translations}
-      chaptersTitle={intl.formatMessage(messages.chaptersTitle)}
-    />
-  ));
+  static CornerMenu = ({
+    pageContext: {
+      node: { translations, locale },
+    },
+  }) => <CornerMenu locale={locale} translations={translations} />;
 
   static ChapterMenu = ({ chapters = [] }) => <ChapterMenu chapters={chapters} />;
 
