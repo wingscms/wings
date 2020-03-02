@@ -42,13 +42,14 @@ const ChapterItem = styled.li`
   font-family: ${({ theme }) => theme.headerFontFamily};
   font-weight: ${({ theme }) => theme.typography.headerFontWeight || 'bold'};
   text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
-  a {
+  span {
     text-decoration: none;
     color: ${({ theme }) => theme.chapterSelectItemColor};
     position: relative;
     transition: all 0.1s linear;
     -webkit-transition: all 0.1s linear;
     background-image: none;
+    cursor: pointer;
   }
   &:before {
     content: '${props => props.marker}';
@@ -93,7 +94,7 @@ export default ({ chapters: _chapters }) => {
       {chapters.map(({ id, marker, title }) => (
         <Scroll type="id" element={id} key={`chapter-item-${id}`}>
           <ChapterItem marker={marker}>
-            <a href="">{title}</a>
+            <span>{title}</span>
           </ChapterItem>
         </Scroll>
       ))}
