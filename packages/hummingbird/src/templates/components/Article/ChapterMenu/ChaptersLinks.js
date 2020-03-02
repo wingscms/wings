@@ -17,7 +17,7 @@ const ChapterItem = styled.div`
   margin: 0;
   padding: 10px;
   cursor: pointer;
-  a {
+  span {
     color: #333;
     text-decoration: none;
     text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
@@ -37,7 +37,7 @@ const ChapterItem = styled.div`
     }
   }
   &.special {
-    a {
+    span {
       color: ${({ theme }) => theme.primaryColor};
     }
   }
@@ -65,7 +65,7 @@ export default ({ chapters }) => (
       >
         <Scroll type="id" element={chapter.id}>
           <ChapterItem index={i}>
-            <a href="">{`${i + 1}. ${chapter.title}`}</a>
+            <span>{chapter.title}</span>
           </ChapterItem>
         </Scroll>
       </div>
