@@ -60,12 +60,12 @@ export default ({ chapters }) => (
             'content-wrapper',
             'chaptersOpen',
             false,
-          )
-        }
+          )}
       >
         <Scroll type="id" element={chapter.id}>
           <ChapterItem index={i}>
             <a href="">
+              {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
               {i + 1}. {chapter.title}
             </a>
           </ChapterItem>
