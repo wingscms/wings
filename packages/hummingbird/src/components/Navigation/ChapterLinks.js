@@ -20,6 +20,7 @@ const ChapterItem = styled.div`
   a {
     color: #333;
     text-decoration: none;
+    text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
     background-image: ${({ theme }) =>
     `linear-gradient(120deg, ${theme.primaryColor} 0%, ${theme.primaryColor} 100%)`} !important;
     font-family: ${({ theme }) => theme.headerFontFamily};

@@ -29,6 +29,7 @@ const ChaptersToggleContainer = styled.div`
     })};
     font-weight: bold;
     transition: 0.2s all ease-in-out;
+    text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
   }
   &:hover {
     background-color: ${({ theme }) => theme.secondaryColor};
