@@ -279,6 +279,7 @@ const DEFAULT_COPY = {
   campaignErrorTitle: 'Oops!',
   campaignErrorText:
     'Something went wrong with the submitting the form. Try again or report the issue to us.',
+  campaignErrorButtonText: 'Try again',
 };
 
 class CampaignForm extends Component {
@@ -517,7 +518,9 @@ class CampaignForm extends Component {
         res.submitFundraiser.donation &&
         res.submitFundraiser.donation.id
       ) {
-        window.location.assign(res.submitFundraiser.donation.order.paymentUrl);
+        const paymentUrl = res.submitFundraiser.donation.order.paymentUrl;
+        if (!paymentUrl) this.setState({ stage: 'error' });
+        else window.location.assign(paymentUrl);
       } else {
         this.setState({ stage: 'confirm' });
       }
@@ -626,6 +629,7 @@ class CampaignForm extends Component {
       campaignLoadingText,
       campaignErrorTitle,
       campaignErrorText,
+      campaignErrorButtonText,
     } = this.getCopy();
 
     return loading ? (
@@ -660,6 +664,9 @@ class CampaignForm extends Component {
           <div>
             <h1>{campaignErrorTitle}</h1>
             <p>{campaignErrorText}</p>
+            <Button onClick={() => this.setState({ stage: 'form' })}>
+              {campaignErrorButtonText}
+            </Button>
           </div>
         )}
       </>

@@ -100,6 +100,11 @@ const formMessages = defineMessages({
     defaultMessage:
       'Something went wrong with submitting the form. Try again or report the issue to us.',
   },
+  campaignErrorButtonText: {
+    id: 'hummingbird.Campaign.error.buttonText',
+    description: 'Campaign error step buttton text',
+    defaultMessage: 'Try again',
+  },
 });
 
 const dynamicFormMessages = node => {
