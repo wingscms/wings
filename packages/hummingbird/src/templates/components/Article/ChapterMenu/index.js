@@ -1,10 +1,9 @@
 import React from 'react';
 import { useIntl } from 'react-intl';
-import { Burger, SlideMenu, toggleSlideMenu, useTheme } from '@wingscms/crane';
+import { Burger, SlideMenu, toggleSlideMenu, useTheme, MenuItem } from '@wingscms/crane';
 import ChaptersClose from './ChaptersClose';
 import ChaptersLinks from './ChaptersLinks';
 import ChaptersToggle from './ChaptersToggle';
-import MenuItem from '../../../../components/Navigation/MenuItem';
 
 const _MenuItem = props => {
   const theme = useTheme();
