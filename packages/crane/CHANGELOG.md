@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.21.0](https://github.com/wingscms/wings/compare/@wingscms/crane@0.20.2...@wingscms/crane@0.21.0) (2020-03-03)
+
+
+### Bug Fixes
+
+* dependencies ([#403](https://github.com/wingscms/wings/issues/403)) ([f65b78b](https://github.com/wingscms/wings/commit/f65b78b88292ceeceec48fbe780328b6bd959d49))
+* node card styling fixes ([#400](https://github.com/wingscms/wings/issues/400)) ([d0fab49](https://github.com/wingscms/wings/commit/d0fab493804c9d764f0d913a39e120b246a4cff2))
+
+
+### Features
+
+* **hummingbird:** use new payload for chapters; new chapter navigation options ([#390](https://github.com/wingscms/wings/issues/390)) ([4639d3b](https://github.com/wingscms/wings/commit/4639d3bdd0318a25e5b4d37565189a7f3952965e))
+* add button loading state ([#401](https://github.com/wingscms/wings/issues/401)) ([d494b08](https://github.com/wingscms/wings/commit/d494b08957b1a6f736fa789d5885b145e80a1955))
+
+
+
+
+
 ## [0.20.2](https://github.com/wingscms/wings/compare/@wingscms/crane@0.20.1...@wingscms/crane@0.20.2) (2020-02-11)
 
 **Note:** Version bump only for package @wingscms/crane
