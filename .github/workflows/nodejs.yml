@@ -20,8 +20,8 @@ jobs:
     - name: install, build, and test
       run: |
         npx yarn --frozen-lockfile
-        npx lerna run --ignore @wingscms/gatsby-starter-hummingbird build
         npx lerna run test
+        npx lerna run --ignore @wingscms/gatsby-starter-hummingbird build
       env:
         CI: true
   publish:
