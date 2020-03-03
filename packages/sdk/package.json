@@ -1,6 +1,6 @@
 {
   "name": "@wingscms/sdk",
-  "version": "0.3.15",
+  "version": "0.3.16",
   "main": "build/index.js",
   "scripts": {
     "start": "rollup -c -w",

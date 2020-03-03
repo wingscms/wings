@@ -1,6 +1,6 @@
 {
   "name": "@wingscms/crane",
-  "version": "0.21.1",
+  "version": "0.21.2",
   "description": "Component library for Wings projects",
   "main": "build/index.js",
   "scripts": {
