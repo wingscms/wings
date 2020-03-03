@@ -9,7 +9,7 @@
   "command": {
     "publish": {
       "allowBranch": "master",
-      "conventionalCommits": true
+      "yes": true
     },
     "version": {
       "allowBranch": "master",
