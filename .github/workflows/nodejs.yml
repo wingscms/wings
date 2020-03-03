@@ -36,6 +36,7 @@ jobs:
         node-version: 10.x
     - name: release
       run: |
+        echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
         npx yarn
         npm run release
       env:
