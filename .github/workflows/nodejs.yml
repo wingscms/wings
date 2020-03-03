@@ -19,7 +19,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: install, build, and test
       run: |
-        npx yarn --frozen-lockfile
+        npx yarn
         npx lerna run test
         npx lerna run --ignore @wingscms/gatsby-starter-hummingbird build
       env:
@@ -36,6 +36,8 @@ jobs:
         node-version: 10.x
     - name: release
       run: |
-        npx yarn --frozen-lockfile
-        npx lerna run --ignore @wingscms/gatsby-starter-hummingbird build
+        npx yarn
         npm run release
+      env:
+        CI: true
+        NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
