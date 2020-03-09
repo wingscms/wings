@@ -17,7 +17,6 @@
     "gatsby-paginate": "1.1.1",
     "gatsby-plugin-catch-links": "2.1.15",
     "gatsby-plugin-compile-es6-packages": "2.1.0",
-    "gatsby-plugin-netlify": "2.1.21",
     "gatsby-plugin-nprogress": "2.1.12",
     "gatsby-plugin-page-creator": "2.1.27",
     "gatsby-plugin-react-helmet": "3.1.13",

@@ -105,15 +105,5 @@ module.exports = ({
         },
       },
     },
-    {
-      resolve: 'gatsby-plugin-netlify',
-      options: {
-        headers: {
-          ...(basicAuth && {
-            '/*': [`Basic-Auth: ${basicAuth}`],
-          }),
-        },
-      },
-    },
   ],
 });
