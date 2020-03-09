@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import styled from '../lib/styled';
 import {
   wide,
   ComplexCard,
@@ -7,6 +6,7 @@ import {
   Loading as _Loading,
   PaginationControls as _PaginationControls,
 } from '@wingscms/crane';
+import styled from '../lib/styled';
 import useQueryString from '../hooks/queryString';
 import { useWings } from '../ctx/Wings';
 import createCard from '../createCard';
