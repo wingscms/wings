@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.21.3](https://github.com/wingscms/wings/compare/@wingscms/crane@0.21.2...@wingscms/crane@0.21.3) (2020-03-09)
+
+
+### Bug Fixes
+
+* uppercase titles in nodes card ([#411](https://github.com/wingscms/wings/issues/411)) ([9713dcd](https://github.com/wingscms/wings/commit/9713dcd2a86d192df9dfe3448d785fef21b68650))
+
+
+
+
+
 ## [0.21.2](https://github.com/wingscms/wings/compare/@wingscms/crane@0.21.1...@wingscms/crane@0.21.2) (2020-03-03)
 
 **Note:** Version bump only for package @wingscms/crane

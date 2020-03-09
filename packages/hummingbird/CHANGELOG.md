@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.47.3](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.47.2...@wingscms/hummingbird@0.47.3) (2020-03-09)
+
+
+### Bug Fixes
+
+* remove netlify plugin ([#413](https://github.com/wingscms/wings/issues/413)) ([51dabbe](https://github.com/wingscms/wings/commit/51dabbeb715928744ed6703dd2cc8147fc6e832e))
+
+
+
+
+
 ## [0.47.2](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.47.1...@wingscms/hummingbird@0.47.2) (2020-03-03)
 
 **Note:** Version bump only for package @wingscms/hummingbird
