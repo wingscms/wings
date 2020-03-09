@@ -27,7 +27,6 @@ module.exports = {
               && typographyConfig.options.headerFontFamily.join(', '),
           }),
           ...getDesign(),
-          cornerMenuIconColor: '#ffff00',
         },
         typography: {
           ...typographyConfig,
