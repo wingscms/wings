@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.32.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.31.3...@wingscms/react@0.32.0) (2020-03-12)
+
+
+### Features
+
+* **react:** add signatureCount/signatureGoal props to Campaign ([#415](https://github.com/wingscms/wings/issues/415)) ([5faa929](https://github.com/wingscms/wings/commit/5faa9295f3a78a69392091c92bee3372aa0ccd50))
+
+
+
+
+
 ## [0.31.3](https://github.com/wingscms/wings/compare/@wingscms/react@0.31.2...@wingscms/react@0.31.3) (2020-03-09)
 
 
