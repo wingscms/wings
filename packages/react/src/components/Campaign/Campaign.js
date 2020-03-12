@@ -177,7 +177,6 @@ export default ({
   const [node, setNode] = useState(_node);
   const handleCampaignLoad = campaign => {
     setNode(campaign);
-    if (formProps.onLoad) formProps.onLoad(campaign);
     if (resourceType === 'node.petition') {
       setSignatureCount(campaign.signatureCount);
       setSignatureGoal(campaign.signatureGoal);
@@ -185,6 +184,15 @@ export default ({
     if (resourceType === 'node.fundraiser') {
       setFundraiserRaised(campaign.raised);
       setFundraiserTarget(campaign.target);
+    }
+    if (formProps.onLoad) {
+      formProps.onLoad(campaign, {
+        setNode,
+        setSignatureCount,
+        setSignatureGoal,
+        setFundraiserRaised,
+        setFundraiserTarget,
+      });
     }
   };
   const {
