@@ -166,6 +166,8 @@ export default ({
   wrapElement = e => e,
   redirectUrlForNode = () => null,
   copy = {},
+  signatureCount: _signatureCount,
+  signatureGoal: _signatureGoal,
   ...props
 }) => {
   const campaignContainerRef = useRef(null);
@@ -223,8 +225,8 @@ export default ({
             {typeof signatureCount === 'number' && node.resourceType === 'node.petition' && (
               <CounterContainer>
                 <Counter
-                  current={signatureCount}
-                  goal={signatureGoal}
+                  current={_signatureCount || signatureCount}
+                  goal={_signatureGoal || signatureGoal}
                   descriptionText={petitionCounterMessage}
                   goalText={petitionCounterGoalText}
                 />
