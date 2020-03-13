@@ -9,11 +9,12 @@
   "command": {
     "publish": {
       "allowBranch": "master",
-      "conventionalCommits": true
+      "yes": true
     },
     "version": {
       "allowBranch": "master",
       "conventionalCommits": true,
+      "yes": false,
       "message": "chore(release): publish"
     }
   },

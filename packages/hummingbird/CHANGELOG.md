@@ -3,6 +3,60 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.47.4](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.47.3...@wingscms/hummingbird@0.47.4) (2020-03-12)
+
+**Note:** Version bump only for package @wingscms/hummingbird
+
+
+
+
+
+## [0.47.3](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.47.2...@wingscms/hummingbird@0.47.3) (2020-03-09)
+
+
+### Bug Fixes
+
+* remove netlify plugin ([#413](https://github.com/wingscms/wings/issues/413)) ([51dabbe](https://github.com/wingscms/wings/commit/51dabbeb715928744ed6703dd2cc8147fc6e832e))
+
+
+
+
+
+## [0.47.2](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.47.1...@wingscms/hummingbird@0.47.2) (2020-03-03)
+
+**Note:** Version bump only for package @wingscms/hummingbird
+
+
+
+
+
+## [0.47.1](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.47.0...@wingscms/hummingbird@0.47.1) (2020-03-03)
+
+**Note:** Version bump only for package @wingscms/hummingbird
+
+
+
+
+
+# [0.47.0](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.46.1...@wingscms/hummingbird@0.47.0) (2020-03-03)
+
+
+### Bug Fixes
+
+* campaign form error handling ([#397](https://github.com/wingscms/wings/issues/397)) ([951f955](https://github.com/wingscms/wings/commit/951f955eeb312d06a74ab582b1b6e49c9c858377))
+* Copy changes ([#393](https://github.com/wingscms/wings/issues/393)) ([902eb6c](https://github.com/wingscms/wings/commit/902eb6ccb3f72bc214707ac6b31c4225ac9afc01))
+* dependencies ([#403](https://github.com/wingscms/wings/issues/403)) ([f65b78b](https://github.com/wingscms/wings/commit/f65b78b88292ceeceec48fbe780328b6bd959d49))
+* fix event fee copy ([#389](https://github.com/wingscms/wings/issues/389)) ([7655e70](https://github.com/wingscms/wings/commit/7655e70ae36108de8aa3308b9899b00ea8dc8b22))
+
+
+### Features
+
+* **hummingbird:** use new payload for chapters; new chapter navigation options ([#390](https://github.com/wingscms/wings/issues/390)) ([4639d3b](https://github.com/wingscms/wings/commit/4639d3bdd0318a25e5b4d37565189a7f3952965e))
+
+
+
+
+
 ## [0.46.1](https://github.com/wingscms/wings/compare/@wingscms/hummingbird@0.46.0...@wingscms/hummingbird@0.46.1) (2020-02-13)
 
 **Note:** Version bump only for package @wingscms/hummingbird

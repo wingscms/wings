@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.12](https://github.com/wingscms/wings/compare/@wingscms/gatsby-starter-hummingbird@0.4.11...@wingscms/gatsby-starter-hummingbird@0.4.12) (2020-03-12)
+
+**Note:** Version bump only for package @wingscms/gatsby-starter-hummingbird
+
+
+
+
+
+## [0.4.11](https://github.com/wingscms/wings/compare/@wingscms/gatsby-starter-hummingbird@0.4.10...@wingscms/gatsby-starter-hummingbird@0.4.11) (2020-03-09)
+
+
+### Bug Fixes
+
+* uppercase titles in nodes card ([#411](https://github.com/wingscms/wings/issues/411)) ([9713dcd](https://github.com/wingscms/wings/commit/9713dcd2a86d192df9dfe3448d785fef21b68650))
+
+
+
+
+
+## [0.4.10](https://github.com/wingscms/wings/compare/@wingscms/gatsby-starter-hummingbird@0.4.9...@wingscms/gatsby-starter-hummingbird@0.4.10) (2020-03-03)
+
+**Note:** Version bump only for package @wingscms/gatsby-starter-hummingbird
+
+
+
+
+
+## [0.4.9](https://github.com/wingscms/wings/compare/@wingscms/gatsby-starter-hummingbird@0.4.8...@wingscms/gatsby-starter-hummingbird@0.4.9) (2020-03-03)
+
+**Note:** Version bump only for package @wingscms/gatsby-starter-hummingbird
+
+
+
+
+
+## [0.4.8](https://github.com/wingscms/wings/compare/@wingscms/gatsby-starter-hummingbird@0.4.7...@wingscms/gatsby-starter-hummingbird@0.4.8) (2020-03-03)
+
+**Note:** Version bump only for package @wingscms/gatsby-starter-hummingbird
+
+
+
+
+
 ## [0.4.7](https://github.com/wingscms/wings/compare/@wingscms/gatsby-starter-hummingbird@0.4.6...@wingscms/gatsby-starter-hummingbird@0.4.7) (2020-02-13)
 
 **Note:** Version bump only for package @wingscms/gatsby-starter-hummingbird

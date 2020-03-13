@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.16](https://github.com/wingscms/wings/compare/@wingscms/sdk@0.3.15...@wingscms/sdk@0.3.16) (2020-03-03)
+
+**Note:** Version bump only for package @wingscms/sdk
+
+
+
+
+
+## [0.3.15](https://github.com/wingscms/wings/compare/@wingscms/sdk@0.3.14...@wingscms/sdk@0.3.15) (2020-03-03)
+
+**Note:** Version bump only for package @wingscms/sdk
+
+
+
+
+
+## [0.3.14](https://github.com/wingscms/wings/compare/@wingscms/sdk@0.3.13...@wingscms/sdk@0.3.14) (2020-03-03)
+
+
+### Bug Fixes
+
+* dependencies ([#403](https://github.com/wingscms/wings/issues/403)) ([f65b78b](https://github.com/wingscms/wings/commit/f65b78b88292ceeceec48fbe780328b6bd959d49))
+
+
+
+
+
 ## [0.3.13](https://github.com/wingscms/wings/compare/@wingscms/sdk@0.3.12...@wingscms/sdk@0.3.13) (2020-02-11)
 
 **Note:** Version bump only for package @wingscms/sdk

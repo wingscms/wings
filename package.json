@@ -4,6 +4,7 @@
     "start": "lerna run start --stream --parallel",
     "test": "lerna run test",
     "lint": "eslint .",
+    "release": "cross-env HUSKY_BYPASS=true lerna publish from-git",
     "changelog": "lerna-changelog",
     "prettier": "prettier-eslint --write \"**/*.js\""
   },
@@ -14,7 +15,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
+      "commit-msg": "[[ -n $HUSKY_BYPASS ]] || commitlint -e $HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged"
     }
   },
@@ -40,6 +41,7 @@
     "@commitlint/cli": "8.2.0",
     "@commitlint/config-conventional": "8.2.0",
     "babel-eslint": "10.0.3",
+    "cross-env": "7.0.0",
     "eslint": "6.5.1",
     "eslint-config-airbnb": "18.0.1",
     "eslint-plugin-import": "2.18.2",

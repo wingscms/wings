@@ -3,6 +3,64 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.32.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.31.3...@wingscms/react@0.32.0) (2020-03-12)
+
+
+### Features
+
+* **react:** add signatureCount/signatureGoal props to Campaign ([#415](https://github.com/wingscms/wings/issues/415)) ([5faa929](https://github.com/wingscms/wings/commit/5faa9295f3a78a69392091c92bee3372aa0ccd50))
+
+
+
+
+
+## [0.31.3](https://github.com/wingscms/wings/compare/@wingscms/react@0.31.2...@wingscms/react@0.31.3) (2020-03-09)
+
+
+### Bug Fixes
+
+* uppercase titles in nodes card ([#411](https://github.com/wingscms/wings/issues/411)) ([9713dcd](https://github.com/wingscms/wings/commit/9713dcd2a86d192df9dfe3448d785fef21b68650))
+
+
+
+
+
+## [0.31.2](https://github.com/wingscms/wings/compare/@wingscms/react@0.31.1...@wingscms/react@0.31.2) (2020-03-03)
+
+**Note:** Version bump only for package @wingscms/react
+
+
+
+
+
+## [0.31.1](https://github.com/wingscms/wings/compare/@wingscms/react@0.31.0...@wingscms/react@0.31.1) (2020-03-03)
+
+**Note:** Version bump only for package @wingscms/react
+
+
+
+
+
+# [0.31.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.30.1...@wingscms/react@0.31.0) (2020-03-03)
+
+
+### Bug Fixes
+
+* campaign form error handling ([#397](https://github.com/wingscms/wings/issues/397)) ([951f955](https://github.com/wingscms/wings/commit/951f955eeb312d06a74ab582b1b6e49c9c858377))
+* dependencies ([#403](https://github.com/wingscms/wings/issues/403)) ([f65b78b](https://github.com/wingscms/wings/commit/f65b78b88292ceeceec48fbe780328b6bd959d49))
+* node card selection order ([#395](https://github.com/wingscms/wings/issues/395)) ([9644fbc](https://github.com/wingscms/wings/commit/9644fbc8032b33f12136f998a9bf5db931dade71))
+* node card styling fixes ([#400](https://github.com/wingscms/wings/issues/400)) ([d0fab49](https://github.com/wingscms/wings/commit/d0fab493804c9d764f0d913a39e120b246a4cff2))
+
+
+### Features
+
+* **hummingbird:** use new payload for chapters; new chapter navigation options ([#390](https://github.com/wingscms/wings/issues/390)) ([4639d3b](https://github.com/wingscms/wings/commit/4639d3bdd0318a25e5b4d37565189a7f3952965e))
+* add button loading state ([#401](https://github.com/wingscms/wings/issues/401)) ([d494b08](https://github.com/wingscms/wings/commit/d494b08957b1a6f736fa789d5885b145e80a1955))
+
+
+
+
+
 ## [0.30.1](https://github.com/wingscms/wings/compare/@wingscms/react@0.30.0...@wingscms/react@0.30.1) (2020-02-13)
 
 

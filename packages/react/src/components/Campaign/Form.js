@@ -279,6 +279,7 @@ const DEFAULT_COPY = {
   campaignErrorTitle: 'Oops!',
   campaignErrorText:
     'Something went wrong with the submitting the form. Try again or report the issue to us.',
+  campaignErrorButtonText: 'Try again',
 };
 
 class CampaignForm extends Component {
@@ -330,6 +331,7 @@ class CampaignForm extends Component {
     amount: 0,
     paymentMethod: null,
     stage: 'form',
+    submitLoading: false,
   };
 
   getCopy() {
@@ -499,8 +501,8 @@ class CampaignForm extends Component {
 
   async submit(formData) {
     const { amount, selectedPaymentMethod: paymentMethod } = this.state;
-
     try {
+      this.setState({ submitLoading: true });
       const res = await this.props.wings.query(this.mutation(), {
         input: {
           id: this.props.id,
@@ -517,7 +519,9 @@ class CampaignForm extends Component {
         res.submitFundraiser.donation &&
         res.submitFundraiser.donation.id
       ) {
-        window.location.assign(res.submitFundraiser.donation.order.paymentUrl);
+        const paymentUrl = res.submitFundraiser.donation.order.paymentUrl;
+        if (!paymentUrl) this.setState({ stage: 'error' });
+        else window.location.assign(paymentUrl);
       } else {
         this.setState({ stage: 'confirm' });
       }
@@ -527,6 +531,8 @@ class CampaignForm extends Component {
       });
     } catch (err) {
       console.error(err);
+    } finally {
+      this.setState({ submitLoading: false });
     }
   }
 
@@ -617,7 +623,7 @@ class CampaignForm extends Component {
   }
 
   render() {
-    const { stage } = this.state;
+    const { stage, submitLoading } = this.state;
     const schema = this.getFormSchema();
     const loading = !schema;
     const {
@@ -626,6 +632,7 @@ class CampaignForm extends Component {
       campaignLoadingText,
       campaignErrorTitle,
       campaignErrorText,
+      campaignErrorButtonText,
     } = this.getCopy();
 
     return loading ? (
@@ -647,7 +654,11 @@ class CampaignForm extends Component {
             onSubmit={this.handleSubmit.bind(this)}
           >
             {this.props.type === 'fundraiser' ? this.renderPaymentMethodSelect() : null}
-            {this.props.children || <Button>{this.getSubmitText()}</Button>}
+            {this.props.children || (
+              <Button loading={submitLoading} intent="primary">
+                {this.getSubmitText()}
+              </Button>
+            )}
           </SchemaForm>
         )}
         {!(stage === 'confirm') ? null : (
@@ -660,6 +671,9 @@ class CampaignForm extends Component {
           <div>
             <h1>{campaignErrorTitle}</h1>
             <p>{campaignErrorText}</p>
+            <Button onClick={() => this.setState({ stage: 'form' })}>
+              {campaignErrorButtonText}
+            </Button>
           </div>
         )}
       </>

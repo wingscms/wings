@@ -1,6 +1,6 @@
 {
   "name": "@wingscms/react",
-  "version": "0.30.1",
+  "version": "0.32.0",
   "main": "build/index.js",
   "scripts": {
     "start": "rollup -c -w",
@@ -24,8 +24,8 @@
   "dependencies": {
     "@babel/runtime": "^7.7.7",
     "@dailybeast/mobiledoc-react-renderer": "^1.3.0",
-    "@wingscms/crane": "^0.20.2",
-    "@wingscms/crane-jsonschema-form": "^0.3.3",
+    "@wingscms/crane": "^0.21.3",
+    "@wingscms/crane-jsonschema-form": "^0.3.6",
     "classnames": "^2.2.6",
     "deepmerge": "^4.2.2",
     "filter-invalid-dom-props": "^2.0.0",
@@ -39,6 +39,5 @@
     "react-sticky": "^6.0.3",
     "recompose": "^0.30.0",
     "slugify": "^1.3.1"
-  },
-  "gitHead": "2051165cacab59ebf43dc82a64fa444ffa72a7b8"
+  }
 }

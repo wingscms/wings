@@ -83,7 +83,7 @@ const BottomContent = styled.div`
   padding: 10px 20px 10px 20px;
   height: auto;
   top: 100%;
-  transform: translateY(-72px);
+  transform: translateY(-108px);
   transition: all 0.2s ease-in-out;
   text-shadow: ${({ bottomBackground }) =>
     (bottomBackground ? 'none' : '0px 0px 5px rgba(0, 0, 0, 0.7);')};
@@ -97,15 +97,16 @@ const BottomContent = styled.div`
     align-items: center;
     overflow: hidden;
     position: relative;
-    min-height: 52px;
+    min-height: 86px;
     > h2 {
       user-select: none;
       color: ${({ bottomBackground }) => (bottomBackground ? '#000000' : '#ffffff')};
+      text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
       transition: 0.1s all linear;
       font-size: 20px;
       line-height: 26px;
       min-height: 0;
-      max-height: 52px;
+      max-height: 80px;
       margin: auto;
       overflow: hidden;
       padding: 0;
@@ -318,7 +319,7 @@ export default class ComplexCard extends Component {
     ctaText: '',
     image: '',
     location: {},
-    onClickHandler: () => { },
+    onClickHandler: () => {},
     publishDate: '',
     shadow: true,
     signatureCount: 0,
@@ -371,8 +372,8 @@ export default class ComplexCard extends Component {
           this.toggleActive(false);
         }}
         onClick={
-          onClickHandler ||
-          (() => {
+          onClickHandler
+          || (() => {
             console.log('no card onClick hander');
           })
         }
@@ -397,7 +398,12 @@ export default class ComplexCard extends Component {
                 <Info>
                   <Calendar title="publish date" />
                   <DateSpan day={publish.getDate()}>
-                    {publish.getDate()}-{publish.getMonth() + 1}-{publish.getFullYear()}{' '}
+                    {publish.getDate()}
+-
+                    {publish.getMonth() + 1}
+-
+                    {publish.getFullYear()}
+                    {' '}
                   </DateSpan>
                 </Info>
               ) : null}
@@ -433,8 +439,14 @@ export default class ComplexCard extends Component {
                 <Info>
                   <Calendar title="Start date" />
                   <DateSpan day={start.getDate()}>
-                    {formatMinutes(start.getDate())}-{formatMinutes(start.getMonth() + 1)}-
-                    {start.getFullYear()} {start.getUTCHours() + 1}:
+                    {formatMinutes(start.getDate())}
+-
+                    {formatMinutes(start.getMonth() + 1)}
+-
+                    {start.getFullYear()}
+                    {' '}
+                    {start.getUTCHours() + 1}
+:
                     {formatMinutes(start.getUTCMinutes())}
                   </DateSpan>
                 </Info>
