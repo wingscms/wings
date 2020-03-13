@@ -39,9 +39,11 @@ Do you want to publish the same page in multiple languages? Then, simply publish
 As you might expect, the Dutch version can be found at [demo.wings.dev/articles/nl/articles/demo-article](https://demo.wings.dev/nl/articles/demo-article). 
 
 ## Commerce
-At the Commerce Settings page, you can set up payment integrations, starting with Stripe. Enter your Public Key and Secret, and your Fundraiser campaigns should work automatically. Note: you can also set a Currency on a separate tab.
+At the Commerce Settings page, you can set up payment integrations for payment processors Stripe or Mollie. If you use Stripe, you should fill out your Public Key and Secret. In case of Mollie, just fill out your API key. Your Fundraiser campaigns should work automatically. Tip: fill out your test credentials at first so you can test the payment flow without making actual payments, and change these to your live credentials after publishing your website.
 
-![](https://screens.wings.dev/CleanShot-2020-02-23-at-17.52.44-1582476775.png)
+Note: you can also set a Currency on a separate tab.
+
+![](https://screens.wings.dev/CleanShot-2020-03-13-at-09.11.43-1584087129.png)
 
 ## Integrations
 On the Integrations page, you will be able to set up integrations with third party services such as Mailchimp. Create an API key in your Mailchimp account and enter it here
