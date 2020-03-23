@@ -1,0 +1,9 @@
+{
+  "name": "@wingscms/storybook",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "storybook -p 6666",
+    "build": "build-storybook -c .storybook -o .out"
+  }
+}

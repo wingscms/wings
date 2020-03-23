@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from '../lib/styled';
-import { getIntentColor, getContrastColor } from '../lib/utils';
+import { t } from '../theme';
 import Loading from './Loading';
 
 const outline = ({ color }) =>
@@ -13,7 +13,7 @@ const outline = ({ color }) =>
 
 const getType = ({ color, type }) => {
   switch (type) {
-    case 'outline':
+    case Button.Type.OUTLINE:
       return outline({ color });
     default:
       return '';
@@ -22,7 +22,7 @@ const getType = ({ color, type }) => {
 
 const getSize = ({ size }) => {
   switch (size) {
-    case 'small':
+    case Button.Size.SMALL:
       return css`
         font-size: 14px;
         padding: 10px 20px;
@@ -33,24 +33,20 @@ const getSize = ({ size }) => {
 };
 
 const buttonStyles = ({ disabled, intent, size, theme, type }) => {
-  const colors = { dark: theme.textColorDark, light: theme.textColor };
-  const color = getIntentColor({ intent, theme, defaultColor: '#dddddd' });
+  const color = theme.intentColor(intent);
   const typeCSS = getType({ color, type });
   const sizeCSS = getSize({ size });
   const disabledCSS = !disabled
     ? null
     : css`
-        background-color: ${theme.disabledColor || '#DDDDDD'} !important;
-        color: ${getContrastColor({
-          backgroundColor: theme.disabledColor || '#DDDDDD',
-          colors,
-          threshold: theme.contrastLuminanceThreshold || 50,
-        })};
+        background-color: ${theme.disabledColor} !important;
+        color: ${theme.contrastColor({ backgroundColor: theme.disabledColor })};
         cursor: not-allowed !important;
       `;
+
   return css`
     background-color: ${color};
-    color: ${getContrastColor({ backgroundColor: color, colors })};
+    color: ${theme.contrastColor({ backgroundColor: color })};
     text-decoration: none;
     background-image: none;
     font-size: 1rem;
@@ -59,10 +55,10 @@ const buttonStyles = ({ disabled, intent, size, theme, type }) => {
     cursor: pointer;
     position: relative;
     transition: all 0.15s ease-in-out;
-    font-family: ${theme.headerFontFamily};
+    font-family: ${theme.headerFontFamily}
     font-weight: bold;
     border-radius: 4px;
-    text-transform: ${theme.uppercaseTitles ? 'uppercase' : 'none'};
+    text-transform: ${theme.titleTransform};
     &:hover,
     &:active {
       opacity: 0.8;
@@ -78,13 +74,30 @@ const buttonStyles = ({ disabled, intent, size, theme, type }) => {
   `;
 };
 
-const Button = styled.button`
-  ${({ disabled, intent, size, theme = {}, type }) =>
-    buttonStyles({ disabled, intent, size, theme, type })}
-`;
+function Button({ disabled, loading, children, ...props }) {
+  return (
+    <button disabled={loading || disabled} {...props}>
+      {loading ? (
+        <Loading intent={props.intent} style={{ margin: 0 }} size={Loading.Size.SMALL} />
+      ) : (
+        children
+      )}
+    </button>
+  );
+}
 
-export default ({ disabled, loading, children, ...props }) => (
-  <Button disabled={loading || disabled} {...props}>
-    {loading ? <Loading intent={props.intent} style={{ margin: 0 }} size="small" /> : children}
-  </Button>
-);
+Button.Size = {
+  MEDIUM: 'medium',
+  SMALL: 'small',
+};
+
+Button.Type = {
+  NORMAL: 'normal',
+  OUTLINE: 'outline',
+};
+
+export default styled(Button)`
+  ${t((theme, { disabled, intent, size, type }) =>
+    buttonStyles({ disabled, intent, size, theme, type }),
+  )}
+`;

@@ -44,8 +44,7 @@ export { createSvgIcon, getContrastColor, separateUnit } from './lib/utils';
 
 // Styles
 export { ALIGNLEFT, ALIGNRIGHT, wide } from './styles';
+export { default as Theme, t, useTheme } from './theme';
 
 // Icons
 export { default as Icons } from './img/svg/icons';
-
-export { default as useTheme } from './hooks/useTheme';
