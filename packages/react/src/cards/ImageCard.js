@@ -1,10 +1,10 @@
 import React from 'react';
-import styled from '../lib/styled';
 import { compose, setPropTypes, setStatic } from 'recompose';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Fade from 'react-reveal/Fade';
 import { wide, ALIGNLEFT, ALIGNRIGHT } from '@wingscms/crane';
+import styled from '../lib/styled';
 import { enumerate } from '../lib/utils';
 import createCard from '../createCard';
 
@@ -52,7 +52,6 @@ const Image = styled.figure`
     color: #888;
     text-align: center;
     font-family: sans-serif;
-
   }
   &.size-${SIZE.MEDIUM} {
     max-width: 400px;

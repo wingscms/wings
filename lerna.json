@@ -4,8 +4,7 @@
   "useWorkspaces": true,
   "npmClient": "yarn",
   "packages": [
-    "packages/*",
-    "storybook"
+    "packages/*"
   ],
   "command": {
     "publish": {

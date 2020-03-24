@@ -1,17 +1,17 @@
 {
   "private": true,
   "scripts": {
-    "start": "lerna run start --stream --parallel",
+    "start": "concurrently \"yarn run storybook\" \"lerna run start --stream --parallel\"",
     "test": "lerna run test",
     "lint": "eslint .",
     "release": "cross-env HUSKY_BYPASS=true lerna publish from-git",
     "changelog": "lerna-changelog",
-    "prettier": "prettier-eslint --write \"**/*.js\""
+    "prettier": "prettier-eslint --write \"**/*.js\"",
+    "storybook": "start-storybook -p 8001"
   },
   "workspaces": {
     "packages": [
-      "packages/*",
-      "storybook"
+      "packages/*"
     ]
   },
   "husky": {
@@ -41,7 +41,13 @@
     "@babel/preset-react": "7.7.4",
     "@commitlint/cli": "8.2.0",
     "@commitlint/config-conventional": "8.2.0",
+    "@storybook/addon-actions": "^6.0.0-alpha.28",
+    "@storybook/addon-knobs": "^6.0.0-alpha.28",
+    "@storybook/addon-links": "^6.0.0-alpha.28",
+    "@storybook/react": "^6.0.0-alpha.28",
     "babel-eslint": "10.0.3",
+    "babel-loader": "^8.1.0",
+    "concurrently": "^5.1.0",
     "cross-env": "7.0.0",
     "eslint": "6.5.1",
     "eslint-config-airbnb": "18.0.1",
