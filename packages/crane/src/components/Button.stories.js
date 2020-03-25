@@ -1,27 +1,17 @@
 import React from 'react';
 import { text, select, boolean } from '@storybook/addon-knobs/react';
-import { Button, useTheme } from '..';
+import { Button } from '..';
 
-const props = ({ theme, ...p }) => ({
+const props = ({ size, loading } = {}) => ({
   type: select('type', { normal: 'normal', outline: 'outline' }, 'normal'),
-  intent: select('intent', theme.Intent, 'primary'),
-  size: select('size', Button.Size, p.size || 'medium'),
+  intent: select('intent', Button.Intent, 'none'),
+  size: select('size', Button.Size, size || 'medium'),
   disabled: boolean('disabled', false),
-  loading: boolean('loading', p.loading || false),
+  loading: boolean('loading', loading || false),
   children: text('children', 'Click me!'),
 });
 
-export default () => {
-  const theme = useTheme();
-  return <Button {...props({ theme })} />;
-};
-
-export const Loading = () => {
-  const theme = useTheme();
-  return <Button {...props({ theme, loading: true })} />;
-};
-
-export const Small = () => {
-  const theme = useTheme();
-  return <Button {...props({ theme, size: Button.Size.SMALL })} />;
-};
+export default () => <Button {...props()} />;
+export const Loading = () => <Button {...props({ loading: true })} />;
+export const LoadingSmall = () => <Button {...props({ size: Button.Size.SMALL, loading: true })} />;
+export const Small = () => <Button {...props({ size: Button.Size.SMALL })} />;

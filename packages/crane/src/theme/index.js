@@ -13,10 +13,21 @@ export const useTheme = () => {
 };
 
 export default class Theme {
+  static Intent = {
+    NONE: 'none',
+    PRIMARY: 'primary',
+    SECONDARY: 'secondary',
+    SUCCESS: 'success',
+    WARNING: 'warning',
+    DANGER: 'danger',
+  };
+
   static instance = () => {
     if (!Theme._instance) Theme._instance = new Theme();
     return Theme._instance;
   };
+
+  Intent = Theme.Intent;
 
   constructor(variables = {}) {
     this.setVariables({ ...defaultTheme, ...variables });
@@ -34,15 +45,6 @@ export default class Theme {
       this.variables[v] = this.getVariableValue(v, variables[v]);
     });
   }
-
-  Intent = {
-    SUCCESS: 'success',
-    WARNING: 'warning',
-    DANGER: 'danger',
-    SECONDARY: 'secondary',
-    PRIMARY: 'primary',
-    NONE: 'none',
-  };
 
   contrastColor({
     backgroundColor,

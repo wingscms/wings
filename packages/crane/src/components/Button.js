@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from '../lib/styled';
-import { t } from '../theme';
+import Theme, { t } from '../theme';
 import Loading from './Loading';
 
 const Size = {
@@ -117,6 +117,7 @@ function Button({ disabled, loading, children, size = Size.MEDIUM, ...props }) {
   );
 }
 
+Button.Intent = Theme.Intent;
 Button.Size = Size;
 Button.Type = Type;
 
