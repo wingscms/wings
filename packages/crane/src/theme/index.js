@@ -1,5 +1,5 @@
 /* eslint-disable no-use-before-define */
-import color from 'color';
+import Color from './Color';
 import defaultTheme from './defaultTheme';
 import { separateUnit } from '../lib/utils';
 import { useTheme as _useTheme } from '../lib/styled';
@@ -22,11 +22,16 @@ export default class Theme {
     this.setVariables({ ...defaultTheme, ...variables });
   }
 
+  getVariableValue(name, v) {
+    if (/Color(?:Dark)?$/.test(name)) return Color.fromValue(v);
+    return v;
+  }
+
   setVariables(variables) {
     this.variables = {};
     Object.keys(variables).forEach(v => {
-      if (!this[v]) this[v] = variables[v];
-      this.variables[v] = variables[v];
+      if (!this[v]) this[v] = this.getVariableValue(v, variables[v]);
+      this.variables[v] = this.getVariableValue(v, variables[v]);
     });
   }
 
@@ -44,8 +49,12 @@ export default class Theme {
     colors: { light = this.textColor, dark = this.textColorDark } = {},
     threshold = this.contrastLuminanceThreshold,
   }) {
-    const lightness = color(backgroundColor).hsl().color[2];
+    const lightness = this.color(backgroundColor).hsl().color[2];
     return lightness < threshold ? dark : light;
+  }
+
+  color(value) {
+    return Color.fromValue(value);
   }
 
   intentColor(intent) {

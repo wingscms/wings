@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "start": "concurrently \"yarn run storybook --ci\" \"lerna run start --stream --parallel\"",
+    "start": "concurrently \"yarn run storybook --ci --quiet\" \"lerna run start --stream --parallel\"",
     "test": "lerna run test",
     "lint": "eslint .",
     "release": "cross-env HUSKY_BYPASS=true lerna publish from-git",
@@ -54,6 +54,7 @@
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.16.0",
+    "faker": "^4.1.0",
     "husky": "3.0.9",
     "jest": "24.9.0",
     "lerna": "3.18.1",

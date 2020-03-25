@@ -18,4 +18,6 @@ export default {
   // misc
   contrastLuminanceThreshold: 60,
   uppercaseTitles: false,
+  // typography
+  headerFontFamily: 'sans-serif',
 };
