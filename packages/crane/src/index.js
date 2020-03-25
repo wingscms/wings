@@ -1,9 +1,11 @@
-export { default as PaginationControls } from './components/PaginationControls';
-// Form
 export { default as Button } from './components/Button';
-export { default as MenuButton } from './components/MenuButton';
 export { default as Counter } from './components/Counter';
+export { default as Image } from './components/Image';
 export { default as Loading } from './components/Loading';
+export { default as PaginationControls } from './components/PaginationControls';
+
+// Form
+export { default as MenuButton } from './components/MenuButton';
 // export { TextInput } from './components/form';
 export { RadioInput } from './components/form';
 // export { CheckboxInput } from './components/form';
