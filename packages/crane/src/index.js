@@ -3,6 +3,8 @@ export { default as Counter } from './components/Counter';
 export { default as Image } from './components/Image';
 export { default as Loading } from './components/Loading';
 export { default as PaginationControls } from './components/PaginationControls';
+export { default as SvgIcon } from './components/SvgIcon';
+export { createSvgIcon, getContrastColor, separateUnit } from './lib/utils';
 
 // Form
 export { default as MenuButton } from './components/MenuButton';
@@ -42,7 +44,6 @@ export { default as FlexGrid } from './layout/FlexGrid';
 export { Signup, SignupForm, Newsletter, NewsletterForm } from './components/signup';
 
 // Utils
-export { createSvgIcon, getContrastColor, separateUnit } from './lib/utils';
 
 // Styles
 export { ALIGNLEFT, ALIGNRIGHT, wide } from './styles';
