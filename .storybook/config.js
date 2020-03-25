@@ -1,5 +1,6 @@
 import { configure, storiesOf, addParameters } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs/react';
+import { capitalCase } from 'change-case';
 import './styles.css';
 
 function loadStories() {
@@ -11,7 +12,7 @@ function loadStories() {
 
     const storyMod = r(m);
     const stories = storiesOf([pkg, name].join('/'), module).addDecorator(withKnobs);
-    Object.keys(storyMod).forEach(variant => stories.add(variant, storyMod[variant]));
+    Object.keys(storyMod).forEach(variant => stories.add(capitalCase(variant), storyMod[variant]));
   });
 }
 
