@@ -4,6 +4,11 @@ import { t } from '../theme';
 
 const getSize = ({ size }) => {
   switch (size) {
+    case Loading.Size.MINI:
+      return css`
+        width: 22px;
+        height: 22px;
+      `;
     case Loading.Size.SMALL:
       return css`
         width: 30px;
@@ -53,6 +58,7 @@ const Loading = styled.div`
 `;
 
 Loading.Size = {
+  MINI: 'MINI',
   SMALL: 'small',
   MEDIUM: 'medium',
   LARGE: 'large',
