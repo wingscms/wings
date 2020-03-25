@@ -5,7 +5,6 @@ import './styles.css';
 function loadStories() {
   const r = require.context('../packages', true, /^(?:\.\/[^\/]+)\/src\/.*\.stories\.jsx?$/);
   r.keys().forEach(m => {
-    console.log(m);
     const parts = m.split('/');
     const pkg = parts[1];
     const name = parts[parts.length - 1].replace(/\.stories\.jsx?/, '');
@@ -18,11 +17,19 @@ function loadStories() {
 
 addParameters({
   options: {
-    /**
-     * display the top-level grouping as a "root" in the sidebar
-     * @type {Boolean}
-     */
     showRoots: true,
+    storySort: (a, b) => {
+      const idA = a[0];
+      const idB = b[0];
+      const [componentA, storyA] = idA.split('--');
+      const [componentB, storyB] = idB.split('--');
+
+      if (componentA === componentB && storyA === 'default') return -1;
+      if (componentA === componentB && storyB === 'default') return 1;
+      if (idA < idB) return -1;
+      if (idA > idB) return 1;
+      return 0;
+    },
   },
 });
 
