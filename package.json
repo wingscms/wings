@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "start": "concurrently \"yarn run storybook\" \"lerna run start --stream --parallel\"",
+    "start": "concurrently \"yarn run storybook --ci\" \"lerna run start --stream --parallel\"",
     "test": "lerna run test",
     "lint": "eslint .",
     "release": "cross-env HUSKY_BYPASS=true lerna publish from-git",

@@ -6,26 +6,11 @@ export default () => {
   const theme = useTheme();
   return (
     <Button
-      type={select('Type', { normal: 'normal', outline: 'outline' }, 'normal')}
-      intent={select('Intent', theme.Intent, 'none')}
-      size={select('Size', Button.Size, 'normal')}
-      disabled={boolean('Disabled', false)}
-      loading={boolean('Loading', false)}
-    >
-      {text('Button Text', 'Oh my, a button!')}
-    </Button>
-  );
-};
-
-export const foo = () => {
-  const theme = useTheme();
-  return (
-    <Button
-      type={select('Type', { normal: 'normal', outline: 'outline' }, 'normal')}
-      intent={select('Intent', theme.Intent, 'none')}
-      size={select('Size', Button.Size, 'normal')}
-      disabled={boolean('Disabled', false)}
-      loading={boolean('Loading', false)}
+      type={select('type', { normal: 'normal', outline: 'outline' }, 'normal')}
+      intent={select('intent', theme.Intent, 'primary')}
+      size={select('size', Button.Size, 'medium')}
+      disabled={boolean('disabled', false)}
+      loading={boolean('loading', false)}
     >
       {text('Button Text', 'Oh my, a button!')}
     </Button>

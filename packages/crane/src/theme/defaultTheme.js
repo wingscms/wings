@@ -17,5 +17,5 @@ export default {
   mediumSpacing: '40px',
   // misc
   contrastLuminanceThreshold: 60,
-  uppercaseTitles: 'false',
+  uppercaseTitles: false,
 };

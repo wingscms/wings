@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 import styled, { css } from '../lib/styled';
 import { t } from '../theme';
 
@@ -48,9 +49,7 @@ const loadingStyles = ({ intent, size, theme }) => {
 };
 
 const Loading = styled.div`
-  ${t((theme, { disabled, intent, size, type }) =>
-    loadingStyles({ disabled, intent, size, theme, type }),
-  )}
+  ${t((theme, { intent, size }) => loadingStyles({ intent, size, theme }))}
 `;
 
 Loading.Size = {

@@ -20,7 +20,7 @@ const getPageNumbers = ({ current, total, size: maxSize = 3 }) => {
   const margin = Math.floor(size / 2);
   const shift = !(total <= maxSize);
   const first = (shift
-    && (total - current < margin ? total - margin * 2 : current > margin ? current - margin : 1))
+      && (total - current < margin ? total - margin * 2 : current > margin ? current - margin : 1))
     || 1;
   return new Array(size).fill(0).map((_, i) => first + i);
 };
@@ -31,6 +31,7 @@ export default ({
   hasPreviousPage,
   onPageChange,
   totalPages = 0,
+  size,
   ...props
 }) => {
   const nextPage = () => {
@@ -63,6 +64,7 @@ export default ({
         {getPageNumbers({
           current: currentPage,
           total: totalPages,
+          size,
         }).map((n, i) => (
           <Button
             key={`pagination-page-${i}`}
