@@ -1,13 +1,10 @@
 import React from 'react';
 import { select } from '@storybook/addon-knobs/react';
-import { Loading, useTheme } from '..';
+import { Loading, Theme } from '..';
 
-export default () => {
-  const theme = useTheme();
-  return (
-    <Loading
-      intent={select('intent', theme.Intent, 'primary')}
-      size={select('size', Loading.Size, 'medium')}
-    />
-  );
-};
+export default () => (
+  <Loading
+    intent={select('intent', Theme.Intent, 'primary')}
+    size={select('size', Loading.Size, 'medium')}
+  />
+);

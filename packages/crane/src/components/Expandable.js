@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-
 import React, { useState } from 'react';
 import styled from '../lib/styled';
 import { t } from '../theme';

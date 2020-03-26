@@ -21,3 +21,5 @@ export default {
   // typography
   headerFontFamily: 'sans-serif',
 };
+
+// TODO: add all vars
