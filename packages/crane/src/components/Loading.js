@@ -36,7 +36,7 @@ const loadingStyles = ({ intent, size, theme }) => {
     display: block;
     position: relative;
     margin: 20px auto;
-    border: 3px solid #eee;
+    border: 3px solid #ccc;
     border-top: 3px solid ${color};
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
@@ -58,7 +58,7 @@ const Loading = styled.div`
 `;
 
 Loading.Size = {
-  MINI: 'MINI',
+  MINI: 'mini',
   SMALL: 'small',
   MEDIUM: 'medium',
   LARGE: 'large',
