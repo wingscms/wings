@@ -14,7 +14,7 @@ const Dot = styled.div`
   position: relative;
   display: inline-block;
   background-color: ${({ current }) =>
-    (current ? 'rgba(255, 255, 255, 1)' : 'rgba(255, 255, 255, 0.7)')};
+    current ? 'rgba(255, 255, 255, 1)' : 'rgba(255, 255, 255, 0.7)'};
   border-radius: 100%;
   margin: 0 5px;
   transition: 0.1s all linear;

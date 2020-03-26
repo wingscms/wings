@@ -45,8 +45,8 @@ const Toggle = styled.div`
   background-color: ${t((_, { backgroundColor }) => backgroundColor || _.elementBackgroundColor)};
   color: ${t(
     (_, { toggleColor, backgroundColor }) =>
-      toggleColor
-      || _.contrastColor({ backgroundColor: backgroundColor || _.elementBackgroundColor }),
+      toggleColor ||
+      _.contrastColor({ backgroundColor: backgroundColor || _.elementBackgroundColor }),
   )};
   font-weight: bold;
   font-family: ${t((_, { toggleFontFamily }) => toggleFontFamily || _.headerFontFamily)};
@@ -63,19 +63,19 @@ const Toggle = styled.div`
     color: ${t((_, { toggleHoverColor }) => toggleHoverColor || _.primaryColor)};
   }
   ${t((_, { open, backgroundColor }) =>
-    (open
+    open
       ? null
       : `&:after {
     display: block;
     position: absolute;
     background-image: ${(_.color(backgroundColor) || _.elementBackgroundColor).getLinearGradient({
-        to: 'top',
-      })};
+      to: 'top',
+    })};
     top: -50px;
     height: 50px;
     width: 100%;
     content: '';
-  }`),
+  }`,
   )};
 `;
 

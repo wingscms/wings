@@ -90,7 +90,6 @@ export default class Breakout extends Component {
       shadow,
     } = this.props;
     const { open } = this.state;
-    console.log(openText, closeText);
     return (
       <Expandable
         expandable={expandable}

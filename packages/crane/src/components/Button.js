@@ -1,7 +1,12 @@
 import React from 'react';
+import filterProps from 'filter-invalid-dom-props';
 import styled, { css } from '../lib/styled';
 import Theme, { t } from '../theme';
-import Loading from './Loading';
+import _Loading from './Loading';
+
+const Loading = styled(_Loading)`
+  margin: 0;
+`;
 
 const Size = {
   SMALL: 'small',
@@ -56,73 +61,79 @@ const LoadingWrapper = styled.div`
   border-radius: 4px;
 `;
 
-const buttonStyles = ({ disabled, intent, size, theme, type }) => {
-  const color = theme.intentColor(intent);
-  const typeCSS = getType({ color, type });
-  const sizeCSS = getSize({ size });
-  const disabledCSS = !disabled
-    ? null
-    : css`
-        background-color: ${theme.disabledColor} !important;
-        color: ${theme.contrastColor({ backgroundColor: theme.disabledColor })};
-        cursor: not-allowed !important;
-        ${LoadingWrapper} {
-          background-color: ${theme.disabledColor} !important;
-        }
-      `;
+const Root = styled.button`
+  ${t((theme, { intent, size, type, disabled }) => {
+    const color = theme.intentColor(intent);
+    const typeCSS = getType({ color, type });
+    const sizeCSS = getSize({ size });
 
-  return css`
-    background-color: ${color};
-    color: ${theme.contrastColor({ backgroundColor: color })};
-    text-decoration: none;
-    background-image: none;
-    ${LoadingWrapper} {
+    return css`
       background-color: ${color};
-    }
-    font-size: 1rem;
-    padding: 16px 40px;
-    border: 0;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.15s ease-in-out;
-    font-family: ${theme.headerFontFamily};
-    font-weight: bold;
-    border-radius: 4px;
-    text-transform: ${theme.titleTransform};
-    &:hover,
-    &:active {
-      opacity: 0.8;
-      background-image: none;
+      color: ${theme.contrastColor({ backgroundColor: color })};
       text-decoration: none;
-    }
-    &:active {
-      transform: translateY(1px);
-    }
-    ${typeCSS}
-    ${sizeCSS}
-    ${disabledCSS}
-  `;
-};
+      background-image: none;
+      ${LoadingWrapper} {
+        background-color: ${color};
+      }
+      font-size: 1rem;
+      padding: 16px 40px;
+      border: 0;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.15s ease-in-out;
+      font-family: ${theme.headerFontFamily};
+      font-weight: bold;
+      border-radius: 4px;
+      text-transform: ${theme.titleTransform};
+      &:hover,
+      &:active {
+        opacity: 0.8;
+        background-image: none;
+        text-decoration: none;
+      }
+      &:active {
+        transform: translateY(1px);
+      }
+      ${typeCSS}
+      ${sizeCSS}
+      ${
+        !disabled
+          ? null
+          : css`
+              background-color: ${theme.disabledColor};
+              color: ${theme.contrastColor({ backgroundColor: theme.disabledColor })};
+              cursor: not-allowed;
+              ${LoadingWrapper} {
+                background-color: ${theme.disabledColor};
+              }
+            `
+      }
+    `;
+  })}
+`;
 
-function Button({ disabled, loading, children, size = Size.MEDIUM, ...props }) {
+export default function Button({
+  disabled: disabledProp,
+  loading,
+  children,
+  intent,
+  type,
+  size = Size.MEDIUM,
+  ...props
+}) {
+  const disabled = loading || disabledProp;
   return (
-    <button disabled={loading || disabled} {...props}>
-      {loading ? (
+    <Root disabled={disabled} intent={intent} size={size} type={type} {...filterProps(props)}>
+      {!loading ? null : (
         <LoadingWrapper>
-          <Loading intent={props.intent} style={{ margin: 0 }} size={LOADING_SIZE[size]} />
+          <Loading intent={intent} size={LOADING_SIZE[size]} />
         </LoadingWrapper>
-      ) : null}
+      )}
       {children}
-    </button>
+    </Root>
   );
 }
 
 Button.Intent = Theme.Intent;
 Button.Size = Size;
 Button.Type = Type;
-
-export default styled(Button)`
-  ${t((theme, props) =>
-    buttonStyles({ ...props, theme, disabled: props.loading || props.disabled }),
-  )}
-`;

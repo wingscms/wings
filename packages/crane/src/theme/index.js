@@ -79,8 +79,8 @@ export default class Theme {
 
   get largeSpacing() {
     return (
-      this.variables.largeSpacing
-      || `${separateUnit(this.mediumSpacing)[0] * 2}${separateUnit(this.mediumSpacing)[1]}`
+      this.variables.largeSpacing ||
+      `${separateUnit(this.mediumSpacing)[0] * 2}${separateUnit(this.mediumSpacing)[1]}`
     );
   }
 

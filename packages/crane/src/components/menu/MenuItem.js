@@ -12,11 +12,11 @@ const StyledMenuItem = styled.li`
   margin: 0;
   a {
     color: ${({ theme }) =>
-    getContrastColor({
-      backgroundColor: theme.navigationMenuBackgroundColor || '#ffffff',
-      colors: { light: theme.textColor, dark: theme.textColorDark },
-      threshold: theme.contrastLuminanceThreshold,
-    })};
+      getContrastColor({
+        backgroundColor: theme.navigationMenuBackgroundColor || '#ffffff',
+        colors: { light: theme.textColor, dark: theme.textColorDark },
+        threshold: theme.contrastLuminanceThreshold,
+      })};
   }
 `;
 
@@ -85,7 +85,7 @@ export default class MenuItem extends Component {
         {...this.props}
         className={`${special ? 'special ' : ''}${current ? 'current ' : ''}${
           this.props.className
-          }`}
+        }`}
       >
         {external ? (
           <ExternalLink to={to} target={target}>
@@ -93,11 +93,11 @@ export default class MenuItem extends Component {
             {icon ? <img src={icon} alt="" /> : null}
           </ExternalLink>
         ) : (
-            <InternalLink to={to} target={target}>
-              {text}
-              {icon ? <img src={icon} alt="" /> : null}
-            </InternalLink>
-          )}
+          <InternalLink to={to} target={target}>
+            {text}
+            {icon ? <img src={icon} alt="" /> : null}
+          </InternalLink>
+        )}
         {children}
       </StyledMenuItem>
     );

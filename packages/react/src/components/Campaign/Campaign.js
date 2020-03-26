@@ -233,9 +233,9 @@ export default ({
               </CounterContainer>
             )}
             {/* Fundraiser counter */}
-            {fundraiserRaised
-              && typeof fundraiserRaised.amount === 'number'
-              && node.resourceType === 'node.fundraiser' && (
+            {fundraiserRaised &&
+              typeof fundraiserRaised.amount === 'number' &&
+              node.resourceType === 'node.fundraiser' && (
                 <CounterContainer>
                   <Counter
                     current={fundraiserRaised.amount / 100}
@@ -245,7 +245,7 @@ export default ({
                     symbol={fundraiserRaised.currency.symbol}
                   />
                 </CounterContainer>
-            )}
+              )}
             <FormContainerInner>
               <CampaignForm
                 type={resourceType.split('.')[1]}

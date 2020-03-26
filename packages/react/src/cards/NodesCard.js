@@ -175,7 +175,7 @@ const NodesCardView = ({ text, ...props }) => {
           after,
         }),
       )
-      .catch(err => console.error(err));
+      .catch(err => console.error(err)); // eslint-disable-line no-console
 
     const itemIds = items.map(item => item.nodeId);
     const _nodes = res.nodes.edges.map(node => node.node);

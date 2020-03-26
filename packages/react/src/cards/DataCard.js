@@ -6,6 +6,7 @@ export default createCard({
   renderWith: () => {
     useEffect(
       () =>
+        // eslint-disable-next-line no-console
         console.warn(
           '[hummingbird] No `DataCard` shadow found: to use the `DataCard`, shadow it in `src/@wingscms/hummingbird/cards/DataCard`',
         ),

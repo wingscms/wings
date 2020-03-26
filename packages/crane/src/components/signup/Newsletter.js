@@ -108,15 +108,15 @@ export default class Signup extends Component {
         }),
       })
         .then(res => res)
-        .then((res) => {
+        .then(res => {
           if (res.status === 200) {
             this.setState({ showConfirmation: true });
           } else {
             this.setState({ showError: true });
           }
         })
-        .catch((err) => {
-          console.log(err);
+        .catch(err => {
+          console.log(err); // eslint-disable-line no-console
           this.setState({ showError: true });
         });
     } else {

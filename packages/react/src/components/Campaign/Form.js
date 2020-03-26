@@ -307,7 +307,7 @@ class CampaignForm extends Component {
     onSubmit: null,
     processSchema: s => s,
     processSubmission: s => s,
-    onLoad: v => console.log('onLoad', v),
+    onLoad: () => {},
     disabledFields: [],
     schemaFormProps: {},
     nodeFragment: `
@@ -473,8 +473,8 @@ class CampaignForm extends Component {
         });
         campaign = c;
         formSchema = JSON.parse(c.submissionSchema);
-        // console.log(campaign);
       } catch (e) {
+        // eslint-disable-next-line no-console
         console.error(
           "Couldn't fetch submission schema for campaign",
           this.props.type,
@@ -530,7 +530,7 @@ class CampaignForm extends Component {
         block: 'start',
       });
     } catch (err) {
-      console.error(err);
+      console.error(err); // eslint-disable-line no-console
     } finally {
       this.setState({ submitLoading: false });
     }
@@ -553,7 +553,7 @@ class CampaignForm extends Component {
       }
       await this.submit(formData);
     } catch (err) {
-      console.error(err);
+      console.error(err); // eslint-disable-line no-console
       this.setState({ stage: 'error' });
     }
   };

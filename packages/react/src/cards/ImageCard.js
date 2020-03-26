@@ -106,7 +106,6 @@ const Image = styled.figure`
   }
 `;
 
-/* eslint-disable jsx-a11y/alt-text */
 const ImageCard = compose(
   setPropTypes(propTypes),
   setStatic('defaultProps', defaultProps),
@@ -123,7 +122,6 @@ const ImageCard = compose(
     </Image>
   </Fade>
 ));
-/* eslint-enable jsx-a11y/alt-text */
 
 export default createCard({
   name: 'ImageCard',

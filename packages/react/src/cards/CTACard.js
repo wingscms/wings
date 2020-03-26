@@ -33,11 +33,11 @@ const CTA = styled.div`
       flex-basis: auto;
       font-size: 32px;
       color: ${({ theme }) =>
-    getContrastColor({
-      backgroundColor: theme.primaryColor || '#ffffff',
-      colors: { light: theme.textColor, dark: theme.textColorDark },
-      threshold: theme.contrastLuminanceThreshold,
-    })};
+        getContrastColor({
+          backgroundColor: theme.primaryColor || '#ffffff',
+          colors: { light: theme.textColor, dark: theme.textColorDark },
+          threshold: theme.contrastLuminanceThreshold,
+        })};
       text-transform: uppercase;
       text-align: center;
       margin: 0;
@@ -49,11 +49,11 @@ const CTA = styled.div`
       max-width: 45%;
       flex-basis: auto;
       color: ${({ theme }) =>
-    getContrastColor({
-      backgroundColor: theme.primaryColor || '#ffffff',
-      colors: { light: theme.textColor, dark: theme.textColorDark },
-      threshold: theme.contrastLuminanceThreshold,
-    })};
+        getContrastColor({
+          backgroundColor: theme.primaryColor || '#ffffff',
+          colors: { light: theme.textColor, dark: theme.textColorDark },
+          threshold: theme.contrastLuminanceThreshold,
+        })};
       text-align: left;
       margin: 0;
       padding: 0 10px;

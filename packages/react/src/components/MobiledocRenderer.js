@@ -25,7 +25,7 @@ class MobiledocRenderer extends Component {
     content: null,
     cards: [],
     unknownCardHandler: ({ env: { name } }) =>
-      console.error(`Unknown card type ${name} encountered.`),
+      console.error(`Unknown card type ${name} encountered.`), // eslint-disable-line no-console
   };
 
   createRenderer() {

@@ -74,7 +74,7 @@ const BottomContent = styled.div`
   padding: 20px;
   background-color: ${({ bottomBackgroundColor }) => bottomBackgroundColor};
   ${({ image }) =>
-    (image
+    image
       ? `.large & {
     @media screen and (min-width: 645px) {
       display: inline-flex;
@@ -88,7 +88,7 @@ const BottomContent = styled.div`
       transition: all 0.2s ease-in-out;
     }
   }`
-      : '')} > h2 {
+      : ''} > h2 {
     user-select: none;
     color: ${({ bottomTextColor }) => bottomTextColor};
     transition: 0.1s all linear;
@@ -241,7 +241,7 @@ export default class SimpleCard extends Component {
     ctaText: '',
     image: '',
     location: {},
-    onClickHandler: () => { },
+    onClickHandler: () => {},
     publishDate: '',
     shadow: true,
     signatureCount: 0,
@@ -292,12 +292,7 @@ export default class SimpleCard extends Component {
         onMouseLeave={() => {
           this.toggleActive(false);
         }}
-        onClick={
-          onClickHandler ||
-          (() => {
-            console.log('no card onClick hander');
-          })
-        }
+        onClick={onClickHandler || (() => {})}
         {...props}
       >
         <StyledContainer

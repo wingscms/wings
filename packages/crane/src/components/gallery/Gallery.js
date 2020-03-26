@@ -160,8 +160,8 @@ export default class Gallery extends Component {
     const PlayPause = playing ? (
       <Pause className="pause" title="Pause" onClick={() => this.pause()} />
     ) : (
-        <Play className="play" title="Play" onClick={() => this.play()} />
-      );
+      <Play className="play" title="Play" onClick={() => this.play()} />
+    );
 
     return (
       <ContainerOuter className={fullWidth ? 'fullwidth' : ''}>

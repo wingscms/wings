@@ -117,7 +117,7 @@ export default ({
       ) : null}
       {copyright ? (
         <InfoSpan>
-&copy;
+          &copy;
           {copyright}
         </InfoSpan>
       ) : null}

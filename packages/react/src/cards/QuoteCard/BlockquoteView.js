@@ -11,7 +11,7 @@ const Caption = styled.figcaption`
   color: ${({ theme }) => theme.textColor};
   text-align: center;
   font-size: 0.8em;
-  a { 
+  a {
     color: #000000;
     text-decoration: none;
     background-image: linear-gradient(
@@ -26,12 +26,14 @@ const Caption = styled.figcaption`
     &:hover,
     &:focus {
       background-size: 100% 4px;
-      background-image: linear-gradient(120deg, ${({ theme }) => theme.primaryColor} 0%, ${({
-  theme,
-}) => theme.primaryColor} 100%);
+      background-image: linear-gradient(
+        120deg,
+        ${({ theme }) => theme.primaryColor} 0%,
+        ${({ theme }) => theme.primaryColor} 100%
+      );
     }
   }
-`
+`;
 
 const Blockquote = Quote;
 
@@ -43,8 +45,6 @@ export default compose(
     <Blockquote {...props}>
       <blockquote>{text}</blockquote>
     </Blockquote>
-    {!source ? null : (
-      <Caption>{!sourceUrl ? source : <a href={sourceUrl}>{source}</a>}</Caption>
-    )}
+    {!source ? null : <Caption>{!sourceUrl ? source : <a href={sourceUrl}>{source}</a>}</Caption>}
   </React.Fragment>
 ));
