@@ -4,7 +4,7 @@ import { Loading, Theme } from '..';
 
 export default () => (
   <Loading
-    intent={select('intent', Theme.Intent, 'primary')}
-    size={select('size', Loading.Size, 'medium')}
+    intent={select('intent', Theme.Intent, Theme.Intent.PRIMARY)}
+    size={select('size', Loading.Size, Loading.Size.MEDIUM)}
   />
 );
