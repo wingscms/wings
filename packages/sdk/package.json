@@ -5,12 +5,14 @@
   "scripts": {
     "start": "rollup -c -w",
     "build": "rollup -c",
+    "lint": "eslint .",
     "prepublish": "cross-env NODE_ENV=production npm run build"
   },
   "author": "Maarten Busstra <busstra.m@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "cross-env": "6.0.3",
+    "eslint": "6.5.1",
     "rollup": "1.28.0"
   },
   "dependencies": {
