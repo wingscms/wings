@@ -3,7 +3,7 @@
 Read the docs:
 
 - https://docs.wings.dev
-- https://components.docs.wings.dev
+- https://components.wings.dev
 
 ## Packages
 
