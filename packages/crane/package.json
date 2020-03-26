@@ -18,7 +18,8 @@
   "dependencies": {
     "@babel/runtime": "^7.7.7",
     "classnames": "^2.2.6",
-    "color": "^3.1.2"
+    "color": "^3.1.2",
+    "filter-invalid-dom-props": "^2.0.0"
   },
   "peerDependencies": {
     "prop-types": "^15",
