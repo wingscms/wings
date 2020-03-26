@@ -20,10 +20,10 @@ export default styled.div`
   }
 
   ${({ fullWidth }) =>
-    (!fullWidth
+    !fullWidth
       ? null
       : css`
           max-width: 100%;
           padding: 0;
-        `)}
+        `}
 `;

@@ -1,7 +1,4 @@
-/* eslint-disable max-len */
-
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import styled from '../lib/styled';
 import { Eye } from './icons';
 import { Caption } from './atoms';
@@ -66,6 +63,8 @@ const Figcaption = styled(Caption)`
   > * + * {
     margin-left: 20px;
   }
+  background-color: transparent;
+  padding: 0;
 `;
 
 const StyledImage = styled.img`
@@ -96,69 +95,32 @@ const InfoSpan = styled.div`
   }
 `;
 
-export default class Image extends Component {
-  static propTypes = {
-    /** Author text */
-    author: PropTypes.string,
-    /** Border radius, pixels. Default = 4 */
-    borderRadius: PropTypes.string,
-    /** Caption text */
-    caption: PropTypes.string,
-    /** Caption text color. Color code string. */
-    captionColor: PropTypes.string,
-    /** Copyright text */
-    copyright: PropTypes.string,
-    /** Toggles background shadow for the image. */
-    shadow: PropTypes.bool,
-    /** How to display the image. */
-    type: PropTypes.oneOf([
-      'default',
-      'half',
-      'large',
-      'screenWidth',
-      'offGridWider',
-      'left',
-      'right',
-      'offGridLeft',
-      'offGridRight',
-    ]),
-  };
-
-  static defaultProps = {
-    author: '',
-    borderRadius: '4',
-    caption: '',
-    captionColor: '#000',
-    copyright: '',
-    shadow: false,
-    type: 'default',
-  };
-
-  render() {
-    const {
-      author,
-      borderRadius,
-      caption,
-      captionColor,
-      copyright,
-      shadow,
-      type,
-      url,
-    } = this.props;
-    return (
-      <StyledFigure className={`${type}`}>
-        <StyledImage borderRadius={borderRadius} shadow={shadow} src={url} />
-        <Figcaption textColor={captionColor} padding=".5rem">
-          {caption ? <StyledCaption>{caption}</StyledCaption> : null}
-          {author ? (
-            <InfoSpan>
-              <Eye title="Image author" stroke="#000" />
-              {author}
-            </InfoSpan>
-          ) : null}
-          {copyright ? <InfoSpan>&copy; {copyright}</InfoSpan> : null}
-        </Figcaption>
-      </StyledFigure>
-    );
-  }
-}
+export default ({
+  author = '',
+  borderRadius = 4,
+  caption = '',
+  captionColor = '#000',
+  copyright = '',
+  shadow = false,
+  type = 'default',
+  url,
+}) => (
+  <StyledFigure className={`${type}`}>
+    <StyledImage borderRadius={borderRadius} shadow={shadow} src={url} />
+    <Figcaption textColor={captionColor} padding=".5rem">
+      {caption ? <StyledCaption>{caption}</StyledCaption> : null}
+      {author ? (
+        <InfoSpan>
+          <Eye title="Image author" stroke="#000" />
+          {author}
+        </InfoSpan>
+      ) : null}
+      {copyright ? (
+        <InfoSpan>
+          &copy;
+          {copyright}
+        </InfoSpan>
+      ) : null}
+    </Figcaption>
+  </StyledFigure>
+);

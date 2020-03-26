@@ -14,8 +14,7 @@ const MetaContainer = styled.div`
 
 const MetaName = styled.div`
   font-family: ${({ theme }) => theme.headerFontFamily};
-  text-transform: ${({ theme }) =>
-    (theme.uppercaseTitles ? 'uppercase' : 'none')};
+  text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
   display: inline-block;
   width: 50%;
   font-size: 18px;
@@ -55,8 +54,7 @@ const Wrapper = styled.div`
   text-align: center;
   @media screen and (max-width: 800px) {
     padding: 40px;
-    margin: ${({ theme }) => theme.mediumSpacing} auto
-      ${({ theme }) => theme.mediumSpacing} auto;
+    margin: ${({ theme }) => theme.mediumSpacing} auto ${({ theme }) => theme.mediumSpacing} auto;
   }
 `;
 
@@ -71,39 +69,39 @@ export default ({
   eventEndTime,
   eventFee,
 }) => (
-    <Wrapper>
-      {title}
-      <InfoContainer>
-        {eventStartTime ? (
-          <MetaContainer>
-            <MetaName>{eventStartLabel}</MetaName>
-            <MetaContent>{eventStartTime}</MetaContent>
-          </MetaContainer>
-        ) : null}
-        {eventEndTime ? (
-          <MetaContainer>
-            <MetaName>{eventEndLabel}</MetaName>
-            <MetaContent>{eventEndTime}</MetaContent>
-          </MetaContainer>
-        ) : null}
-        {location ? (
-          <MetaContainer>
-            <MetaName>{eventLocationLabel}</MetaName>
-            <MetaContent>
-              {location.name ? <p>{location.name}</p> : null}
-              {location.street ? <p>{location.street}</p> : null}
-              {location.city ? <p>{location.city}</p> : null}
-              {location.zip ? <p>{location.zip}</p> : null}
-              {location.country ? <p>{location.country}</p> : null}
-            </MetaContent>
-          </MetaContainer>
-        ) : null}
-        {eventFee ? (
-          <MetaContainer>
-            <MetaName>{eventFeeLabel}</MetaName>
-            <MetaContent>{eventFee}</MetaContent>
-          </MetaContainer>
-        ) : null}
-      </InfoContainer>
-    </Wrapper>
-  );
+  <Wrapper>
+    {title}
+    <InfoContainer>
+      {eventStartTime ? (
+        <MetaContainer>
+          <MetaName>{eventStartLabel}</MetaName>
+          <MetaContent>{eventStartTime}</MetaContent>
+        </MetaContainer>
+      ) : null}
+      {eventEndTime ? (
+        <MetaContainer>
+          <MetaName>{eventEndLabel}</MetaName>
+          <MetaContent>{eventEndTime}</MetaContent>
+        </MetaContainer>
+      ) : null}
+      {location ? (
+        <MetaContainer>
+          <MetaName>{eventLocationLabel}</MetaName>
+          <MetaContent>
+            {location.name ? <p>{location.name}</p> : null}
+            {location.street ? <p>{location.street}</p> : null}
+            {location.city ? <p>{location.city}</p> : null}
+            {location.zip ? <p>{location.zip}</p> : null}
+            {location.country ? <p>{location.country}</p> : null}
+          </MetaContent>
+        </MetaContainer>
+      ) : null}
+      {eventFee ? (
+        <MetaContainer>
+          <MetaName>{eventFeeLabel}</MetaName>
+          <MetaContent>{eventFee}</MetaContent>
+        </MetaContainer>
+      ) : null}
+    </InfoContainer>
+  </Wrapper>
+);

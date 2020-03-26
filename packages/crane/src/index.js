@@ -1,9 +1,14 @@
-export { default as PaginationControls } from './components/PaginationControls';
-// Form
 export { default as Button } from './components/Button';
-export { default as MenuButton } from './components/MenuButton';
 export { default as Counter } from './components/Counter';
+export { default as Expandable } from './components/Expandable';
+export { default as Image } from './components/Image';
 export { default as Loading } from './components/Loading';
+export { default as PaginationControls } from './components/PaginationControls';
+export { default as SvgIcon } from './components/SvgIcon';
+export { createSvgIcon, getContrastColor, separateUnit } from './lib/utils';
+
+// Form
+export { default as MenuButton } from './components/MenuButton';
 // export { TextInput } from './components/form';
 export { RadioInput } from './components/form';
 // export { CheckboxInput } from './components/form';
@@ -40,12 +45,10 @@ export { default as FlexGrid } from './layout/FlexGrid';
 export { Signup, SignupForm, Newsletter, NewsletterForm } from './components/signup';
 
 // Utils
-export { createSvgIcon, getContrastColor, separateUnit } from './lib/utils';
 
 // Styles
 export { ALIGNLEFT, ALIGNRIGHT, wide } from './styles';
+export { default as Theme, t, useTheme } from './theme';
 
 // Icons
 export { default as Icons } from './img/svg/icons';
-
-export { default as useTheme } from './hooks/useTheme';

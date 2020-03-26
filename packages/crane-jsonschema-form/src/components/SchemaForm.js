@@ -54,7 +54,8 @@ export default function SchemaForm({ widgets = v => v, ...props }) {
             error.message = ''; // eslint-disable-line no-param-reassign
           }
           return error;
-        })}
+        })
+      }
       {...props}
       widgets={widgets(defaultWidgets)}
     />

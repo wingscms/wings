@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-for */
 import React from 'react';
 import styled, { css } from '../lib/styled';
 
@@ -27,7 +26,6 @@ const StyledInput = styled.input`
 
 function BaseInput(props) {
   if (!props.id) {
-    console.log('No id for', props);
     throw new Error(`no id for props ${JSON.stringify(props)}`);
   }
   const {
@@ -35,7 +33,6 @@ function BaseInput(props) {
     value,
     readonly,
     disabled,
-    autofocus,
     label,
     onBlur,
     onFocus,
@@ -43,7 +40,6 @@ function BaseInput(props) {
     required,
     schema,
     formContext = {},
-    registry,
     rawErrors,
     ...inputProps
   } = props;

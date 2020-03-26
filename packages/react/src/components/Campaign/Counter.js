@@ -55,7 +55,6 @@ export default class PetitionCounter extends Component {
   };
   render() {
     const { current, goal, goalText, descriptionText, symbol } = this.props;
-    console.log(goal);
     return (
       <Container>
         <TopContainer>

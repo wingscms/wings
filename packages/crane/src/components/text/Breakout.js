@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from '../../lib/styled';
-import { Expandable } from '../atoms';
+import Expandable from '../Expandable';
 
 const Title = styled.h4`
   color: ${({ theme }) => theme.headingColor};
@@ -90,7 +90,6 @@ export default class Breakout extends Component {
       shadow,
     } = this.props;
     const { open } = this.state;
-    console.log(openText, closeText);
     return (
       <Expandable
         expandable={expandable}

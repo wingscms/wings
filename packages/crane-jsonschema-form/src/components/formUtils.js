@@ -52,15 +52,20 @@ export const getValue = (event, multiple) => {
 export const guessType = value => {
   if (Array.isArray(value)) {
     return 'array';
-  } if (typeof value === 'string') {
+  }
+  if (typeof value === 'string') {
     return 'string';
-  } if (value == null) {
+  }
+  if (value == null) {
     return 'null';
-  } if (typeof value === 'boolean') {
+  }
+  if (typeof value === 'boolean') {
     return 'boolean';
-  } if (!Number.isNaN(value)) {
+  }
+  if (!Number.isNaN(value)) {
     return 'number';
-  } if (typeof value === 'object') {
+  }
+  if (typeof value === 'object') {
     return 'object';
   }
   return 'string';
@@ -71,18 +76,22 @@ export const processValue = (schema, value) => {
   const nums = new Set(['number', 'integer']);
   if (value === '') {
     return undefined;
-  } if (type === 'array' && items && nums.has(items.type)) {
+  }
+  if (type === 'array' && items && nums.has(items.type)) {
     return value.map(asNumber);
-  } if (type === 'boolean') {
+  }
+  if (type === 'boolean') {
     return value === 'true';
-  } if (type === 'number') {
+  }
+  if (type === 'number') {
     return asNumber(value);
   }
 
   if (schema.enum) {
     if (schema.enum.every(x => guessType(x) === 'number')) {
       return asNumber(value);
-    } if (schema.enum.every(x => guessType(x) === 'boolean')) {
+    }
+    if (schema.enum.every(x => guessType(x) === 'boolean')) {
       return value === 'true';
     }
   }

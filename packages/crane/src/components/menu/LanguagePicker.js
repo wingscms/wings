@@ -82,7 +82,7 @@ const Icon = styled.div`
 export default ({
   current = 'en',
   translations = [],
-  onTranslationClick = () => { },
+  onTranslationClick = () => {},
   showAbove = false,
 }) => {
   const windowDimensions = useWindowDimensions();

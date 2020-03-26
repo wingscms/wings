@@ -11,18 +11,18 @@ const StyledUl = styled.ul`
     padding: ${({ itemPadding }) => itemPadding || 'initial'};
     position: relative;
     ${({
-  bulletCharacter,
-  bulletColor,
-  bulletImage,
-  bulletColorInner,
-  bulletLeft,
-  bulletSize,
-  bulletTop,
-  type,
-}) => {
-    switch (type) {
-      case 'chevron':
-        return `
+      bulletCharacter,
+      bulletColor,
+      bulletImage,
+      bulletColorInner,
+      bulletLeft,
+      bulletSize,
+      bulletTop,
+      type,
+    }) => {
+      switch (type) {
+        case 'chevron':
+          return `
           &::before {
             width: 0;
             height: 0;
@@ -46,8 +46,8 @@ const StyledUl = styled.ul`
             border-left: ${bulletSize - 4}px solid ${bulletColorInner};
           }
         `;
-      case 'diamond':
-        return `
+        case 'diamond':
+          return `
           &::before {
             width: ${bulletSize}px;
             height: ${bulletSize}px;
@@ -60,8 +60,8 @@ const StyledUl = styled.ul`
             transform: rotate(45deg);
           }
         `;
-      case 'diamondHollow':
-        return `
+        case 'diamondHollow':
+          return `
           &::before {
             width: ${bulletSize}px;
             height: ${bulletSize}px;
@@ -83,8 +83,8 @@ const StyledUl = styled.ul`
             transform: rotate(45deg);
           }
         `;
-      case 'discHollow':
-        return `
+        case 'discHollow':
+          return `
           &::before {
             width: ${bulletSize}px;
             height: ${bulletSize}px;
@@ -106,8 +106,8 @@ const StyledUl = styled.ul`
             content: '';
           }
         `;
-      case 'image':
-        return `
+        case 'image':
+          return `
           &::before {
             width: ${bulletSize}px;;
             height: ${bulletSize}px;;
@@ -120,8 +120,8 @@ const StyledUl = styled.ul`
             background-repeat: no-repeat;
           }
         `;
-      case 'square':
-        return `
+        case 'square':
+          return `
           &::before {
             width: ${bulletSize}px;
             height: ${bulletSize}px;
@@ -132,8 +132,8 @@ const StyledUl = styled.ul`
             content: '';
           }
         `;
-      case 'squareHollow':
-        return `
+        case 'squareHollow':
+          return `
           &::before {
             width: ${bulletSize}px;
             height: ${bulletSize}px;
@@ -153,8 +153,8 @@ const StyledUl = styled.ul`
             content: '';
           }
         `;
-      case 'triangle':
-        return `
+        case 'triangle':
+          return `
           &::before {
             width: 0;
             height: 0;
@@ -167,8 +167,8 @@ const StyledUl = styled.ul`
             border-left: ${bulletSize}px solid ${bulletColor};
           }
         `;
-      case 'triangleHollow':
-        return `
+        case 'triangleHollow':
+          return `
           &::before {
             width: 0;
             height: 0;
@@ -192,8 +192,8 @@ const StyledUl = styled.ul`
             border-left: ${bulletSize - 4}px solid ${bulletColorInner};
           }
         `;
-      case 'unicode':
-        return `
+        case 'unicode':
+          return `
           &::before {
             width: 0;
             height: 0;
@@ -204,9 +204,9 @@ const StyledUl = styled.ul`
             color: ${bulletColor};
           }
         `;
-      case 'disc':
-      default:
-        return `
+        case 'disc':
+        default:
+          return `
           &::before {
             width: ${bulletSize}px;
             height: ${bulletSize}px;
@@ -218,10 +218,10 @@ const StyledUl = styled.ul`
             content: '';
           }
         `;
-    }
-  }};
+      }
+    }};
   }
-  `;
+`;
 
 export default class UnorderedList extends Component {
   static propTyps = {

@@ -1,42 +1,17 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": "problems",
+  "plugins": ["prettier", "react"],
   "rules": {
-    "import/no-extraneous-dependencies": 0,
-    "react/jsx-filename-extension": 0,
-    "jsx-a11y/anchor-is-valid": 0,
-    "function-paren-newline": 0,
-    "no-console": 0,
-    "object-curly-newline": 0,
-    "react/prefer-stateless-function": 0,
-    "react/forbid-prop-types": 0,
-    "import/no-unresolved": 0,
-    "import/extensions": 0,
-    "jsx-a11y/click-events-have-key-events": 0,
-    "jsx-a11y/alt-text": 0,
-    "react/prop-types": 0,
-    "react/sort-comp": 0,
-    "no-underscore-dangle": 0,
-    "import/prefer-default-export": 0,
-    "no-nested-ternary": 0,
-    "no-debugger": 0,
-    "global-require": 0,
-    "no-mixed-operators": 0,
-    "react/no-array-index-key": 0,
-    "react/no-multi-comp": 0,
-    "no-shadow-restricted-names": 0,
-    "react/jsx-no-bind": 0,
-    "import/no-cycle": 0,
-    "react/static-property-placement": 0,
-    "arrow-parens": 0,
-    "implicit-arrow-linebreak": 0,
-    "react/jsx-props-no-spreading": 0,
-    "max-classes-per-file": 0,
-    "react/button-has-type": 0,
-    "react/jsx-fragments": 0,
-    "react/state-in-constructor": 0,
-    "react/destructuring-assignment": 0,
-    "react/no-access-state-in-setstate": 0
+    "no-unused-vars": ["error", { "ignoreRestSiblings": true }],
+    "prettier/prettier": "error",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
   },
   "globals": {
     "graphql": true
