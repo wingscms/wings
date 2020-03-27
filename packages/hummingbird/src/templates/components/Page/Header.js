@@ -1,4 +1,3 @@
-/* global window */
 import React, { Component } from 'react';
 import { mediaUrl } from '@wingscms/sdk';
 import styled from 'styled-components';
@@ -34,8 +33,7 @@ const TitleContainer = styled.div`
 const Title = styled.h1`
   letter-spacing: 1.5px;
   color: ${({ theme }) => theme.textColor};
-  text-transform: ${({ theme }) =>
-    (theme.uppercaseTitles ? 'uppercase' : 'none')};
+  text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
   display: inline-block;
   font-size: 2rem;
   line-height: 1.2;

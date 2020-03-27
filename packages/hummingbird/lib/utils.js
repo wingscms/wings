@@ -17,7 +17,7 @@ export function parseJSON(value, { defaultValue = {}, errorMessage = "Couldn't p
   try {
     result = value ? JSON.parse(value) : defaultValue;
   } catch (e) {
-    console.log(errorMessage);
+    console.log(errorMessage); // eslint-disable-line no-console
     result = defaultValue;
   }
   return result;

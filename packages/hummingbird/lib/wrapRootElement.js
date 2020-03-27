@@ -1,4 +1,3 @@
-/* eslint-disable import/first */
 import './bootstrap';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';

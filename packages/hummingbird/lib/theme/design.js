@@ -129,8 +129,8 @@ export default ({
   navigationLanguagePickerColor: navigationLanguagePickerColor || '#ffffff',
   navigationLanguagePickerHoverColor: navigationLanguagePickerHoverColor || primaryColor,
   navigationLanguagePickerIconColor:
-    navigationLanguagePickerIconColor
-    || getContrastColor({
+    navigationLanguagePickerIconColor ||
+    getContrastColor({
       backgroundColor: navigationLanguagePickerColor || '#ffffff',
       colors: { light: navigationIconColor, dark: navigationIconColorDark },
       threshold: contrastLuminanceThreshold,
@@ -139,8 +139,8 @@ export default ({
   // Footer
   footerBackgroundColor: footerBackgroundColor || primaryColor,
   footerTextColor:
-    footerTextColor
-    || getContrastColor({
+    footerTextColor ||
+    getContrastColor({
       backgroundColor: footerBackgroundColor || primaryColor,
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
@@ -148,16 +148,16 @@ export default ({
   // Articles/Pages
   chapterBackgroundColor: chapterBackgroundColor || primaryColor,
   chapterItemColor:
-    chapterItemColor
-    || getContrastColor({
+    chapterItemColor ||
+    getContrastColor({
       backgroundColor: chapterBackgroundColor || primaryColor,
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
     }),
   chapterItemNumberColor: chapterItemNumberColor || secondaryColor,
   chapterIntroColor:
-    chapterIntroColor
-    || getContrastColor({
+    chapterIntroColor ||
+    getContrastColor({
       backgroundColor: chapterBackgroundColor || primaryColor,
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
@@ -165,9 +165,9 @@ export default ({
   chapterSelectBackgroundColor:
     chapterSelectBackgroundColor || chapterBackgroundColor || primaryColor,
   chapterSelectItemColor:
-    chapterSelectItemColor
-    || chapterItemColor
-    || getContrastColor({
+    chapterSelectItemColor ||
+    chapterItemColor ||
+    getContrastColor({
       backgroundColor: chapterSelectBackgroundColor || chapterBackgroundColor || primaryColor,
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
@@ -188,16 +188,16 @@ export default ({
   // Forms
   formBackgroundColor: formBackgroundColor || primaryColor,
   formTextColor:
-    formTextColor
-    || getContrastColor({
+    formTextColor ||
+    getContrastColor({
       backgroundColor: formBackgroundColor || primaryColor,
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
     }),
   formLinkTextColor:
-    formLinkTextColor
-    || formTextColor
-    || getContrastColor({
+    formLinkTextColor ||
+    formTextColor ||
+    getContrastColor({
       backgroundColor: formBackgroundColor || primaryColor,
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
@@ -206,19 +206,19 @@ export default ({
   // Campaigns
   campaignFormBackgroundColor: campaignFormBackgroundColor || formBackgroundColor || primaryColor,
   campaignFormTextColor:
-    campaignFormTextColor
-    || formTextColor
-    || getContrastColor({
+    campaignFormTextColor ||
+    formTextColor ||
+    getContrastColor({
       backgroundColor: formBackgroundColor || primaryColor,
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
     }),
   campaignFormLinkTextColor:
-    campaignFormLinkTextColor
-    || formLinkTextColor
-    || campaignFormTextColor
-    || formTextColor
-    || getContrastColor({
+    campaignFormLinkTextColor ||
+    formLinkTextColor ||
+    campaignFormTextColor ||
+    formTextColor ||
+    getContrastColor({
       backgroundColor: formBackgroundColor || primaryColor,
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,
@@ -226,8 +226,8 @@ export default ({
   campaignFormLinkLineColor: campaignFormLinkLineColor || formLinkLineColor || secondaryColor,
   counterBackgroundColor: counterBackgroundColor || backgroundColor,
   counterTextColor:
-    counterTextColor
-    || getContrastColor({
+    counterTextColor ||
+    getContrastColor({
       backgroundColor: counterBackgroundColor || backgroundColor,
       colors: { light: textColor, dark: textColorDark },
       threshold: contrastLuminanceThreshold,

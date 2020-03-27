@@ -23,11 +23,11 @@ const ChaptersToggleContainer = styled.div`
     transform: translateX(-50%) translateY(-50%) rotate(-90deg);
     left: 50%;
     color: ${({ theme }) =>
-    getContrastColor({
-      backgroundColor: theme.primaryColor,
-      colors: { light: theme.textColor, dark: theme.textColorDark },
-      threshold: theme.contrastLuminanceThreshold,
-    })};
+      getContrastColor({
+        backgroundColor: theme.primaryColor,
+        colors: { light: theme.textColor, dark: theme.textColorDark },
+        threshold: theme.contrastLuminanceThreshold,
+      })};
     font-weight: bold;
     transition: 0.2s all ease-in-out;
     text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};

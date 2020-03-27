@@ -6,7 +6,7 @@
     "test:watch": "jest --watch",
     "test:hummingbird": "yarn workspace @wingscms/hummingbird test",
     "test:hummingbird:watch": "yarn workspace @wingscms/hummingbird test --watch",
-    "lint": "lerna run --ignore @wingscms/gatsby-starter-hummingbird lint",
+    "lint": "eslint .",
     "release": "cross-env HUSKY_BYPASS=true lerna publish from-git",
     "storybook": "start-storybook -p 8001",
     "build-storybook": "build-storybook -o .storybook-build"
