@@ -12,3 +12,12 @@ describe('Theme', () => {
     });
   });
 });
+
+describe('Theme.separateUnit', () => {
+  const theme = new Theme();
+  it('should separate the unit from the value and return an array', () => {
+    expect(theme.separateUnit(theme.mediumSpacing)).toEqual(['40', 'px']);
+    expect(theme.separateUnit('5rem')).toEqual(['5', 'rem']);
+    expect(theme.separateUnit('79%')).toEqual(['79', '%']);
+  });
+});
