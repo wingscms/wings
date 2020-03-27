@@ -7,7 +7,6 @@ import {
   ShareButtons,
   SlideMenu,
   toggleSlideMenu,
-  getContrastColor,
   useTheme,
 } from '@wingscms/crane';
 import { Link, navigate } from 'gatsby';
@@ -107,7 +106,7 @@ export default function Navigation({
           <MenuButton active={visible} onClick={toggleNav}>
             <Burger
               active={visible}
-              activeColor={getContrastColor({
+              activeColor={theme.contrastColor({
                 backgroundColor: theme.navigationMenuBackgroundColor,
                 colors: { light: theme.navigationIconColor, dark: theme.navigationIconColorDark },
                 threshold: theme.contrastLuminanceThreshold,
