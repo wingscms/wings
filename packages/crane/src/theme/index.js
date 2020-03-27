@@ -77,6 +77,25 @@ export default class Theme {
     }
   }
 
+  calc(str, cb) {
+    const [val, unit] = this.separateUnit(str);
+    return [cb(val), unit].join('');
+  }
+
+  separateUnit(str) {
+    const val = /([0-9])*/.exec(str)[0];
+    const unit = str.substr(val.length, str.length - 1);
+    return [val, unit];
+  }
+
+  get extraLargeSpacing() {
+    return this.variables.extralargeSpacing || this.calc(this.mediumSpacing, ms => ms * 4);
+  }
+
+  get extraSmallSpacing() {
+    return this.variables.extraSmallSpacing || this.calc(this.mediumSpacing, ms => ms / 4);
+  }
+
   get headingColor() {
     return this.variables.headingColor || this.textColor;
   }
@@ -86,10 +105,7 @@ export default class Theme {
   }
 
   get largeSpacing() {
-    return (
-      this.variables.largeSpacing ||
-      `${separateUnit(this.mediumSpacing)[0] * 2}${separateUnit(this.mediumSpacing)[1]}`
-    );
+    return this.variables.largeSpacing || this.calc(this.mediumSpacing, ms => ms * 2);
   }
 
   get linkColor() {
@@ -123,6 +139,10 @@ export default class Theme {
 
   get navigationMenuBackgroundColor() {
     return this.variables.navigationMenuBackgroundColor || this.backgroundColor;
+  }
+
+  get smallSpacing() {
+    return this.variables.smallSpacing || this.calc(this.mediumSpacing, ms => ms / 2);
   }
 
   get titleTransform() {
