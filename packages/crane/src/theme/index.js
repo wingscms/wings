@@ -128,7 +128,7 @@ export default class Theme {
     return (
       this.variables.navigationLanguagePickerIconColor ||
       this.contrastColor({
-        backgroundColor: this.navigationLanguagePicker,
+        backgroundColor: this.navigationLanguagePickerColor,
         colors: {
           light: this.navigationIconColor,
           dark: this.navigationIconColorDark,
