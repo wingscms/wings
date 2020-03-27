@@ -1,4 +1,4 @@
-const Color = require('./Color').default;
+import Color from './Color';
 
 describe('Color.fromValue()', () => {
   const tests = [
