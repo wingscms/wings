@@ -7,6 +7,7 @@
     "start": "rollup -c -w",
     "build": "rollup -c",
     "lint": "eslint .",
+    "test": "jest",
     "prepublish": "cross-env NODE_ENV=production npm run build"
   },
   "author": "Mark Jackson <markjackson@bureaubolster.nl>",
