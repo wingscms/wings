@@ -1,7 +1,6 @@
 /* eslint-disable no-use-before-define */
 import Color from './Color';
 import defaultTheme from './defaultTheme';
-import { separateUnit } from '../lib/utils';
 import { useTheme as _useTheme } from '../lib/styled';
 
 export const t = cb => ({ theme, ...props }) =>
@@ -28,6 +27,7 @@ export default class Theme {
   };
 
   Intent = Theme.Intent;
+  defaultConfig = defaultTheme;
 
   constructor(variables = {}) {
     this.setVariables({ ...defaultTheme, ...variables });
