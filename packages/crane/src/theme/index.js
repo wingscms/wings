@@ -77,6 +77,14 @@ export default class Theme {
     }
   }
 
+  get headingColor() {
+    return this.variables.headingColor || this.textColor;
+  }
+
+  get headingColorDark() {
+    return this.variables.headingColorDark || this.textColorDark;
+  }
+
   get largeSpacing() {
     return (
       this.variables.largeSpacing ||
@@ -86,6 +94,35 @@ export default class Theme {
 
   get linkColor() {
     return this.variables.linkColor || this.primaryColor;
+  }
+
+  get navigationIconColor() {
+    return this.variables.navigationIconColor || this.iconColor;
+  }
+
+  get navigationIconColorDark() {
+    return this.variables.navigationIconColorDark || this.iconColorDark;
+  }
+
+  get navigationLanguagePickerHoverColor() {
+    return this.variables.navigationLanguagePickerHoverColor || this.primaryColor;
+  }
+
+  get navigationLanguagePickerIconColor() {
+    return (
+      this.variables.navigationLanguagePickerIconColor ||
+      this.contrastColor({
+        backgroundColor: this.navigationLanguagePicker,
+        colors: {
+          light: this.navigationIconColor,
+          dark: this.navigationIconColorDark,
+        },
+      })
+    );
+  }
+
+  get navigationMenuBackgroundColor() {
+    return this.variables.navigationMenuBackgroundColor || this.backgroundColor;
   }
 
   get titleTransform() {
