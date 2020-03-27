@@ -8,9 +8,8 @@
     "test:hummingbird:watch": "yarn workspace @wingscms/hummingbird test --watch",
     "lint": "lerna run --ignore @wingscms/gatsby-starter-hummingbird lint",
     "release": "cross-env HUSKY_BYPASS=true lerna publish from-git",
-    "changelog": "lerna-changelog",
-    "prettier": "prettier-eslint --write \"**/*.js\"",
-    "storybook": "start-storybook -p 8001"
+    "storybook": "start-storybook -p 8001",
+    "build-storybook": "build-storybook -o .storybook-build"
   },
   "workspaces": {
     "packages": [
