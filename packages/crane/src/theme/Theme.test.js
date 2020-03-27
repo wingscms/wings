@@ -1,4 +1,4 @@
-import Theme from './index';
+import Theme from './Theme';
 
 describe('Theme.separateUnit', () => {
   const theme = new Theme({ mediumSpacing: '3rem' });
