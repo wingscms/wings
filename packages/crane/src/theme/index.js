@@ -1,5 +1,7 @@
 import { useTheme as _useTheme } from '../lib/styled';
-export { default } from './Theme';
+import Theme from './Theme';
+
+export default Theme;
 
 export const t = cb => ({ theme, ...props }) =>
   cb(theme instanceof Theme ? theme : Theme.instance(), props);
