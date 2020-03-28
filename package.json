@@ -8,8 +8,8 @@
     "test:hummingbird:watch": "yarn workspace @wingscms/hummingbird test --watch",
     "lint": "eslint .",
     "release": "cross-env HUSKY_BYPASS=true lerna publish from-git",
-    "storybook": "start-storybook -p 8001",
-    "build-storybook": "build-storybook -o .storybook-build"
+    "storybook": "start-storybook -p 8001 --quiet",
+    "build-storybook": "build-storybook -o .storybook-build --quiet"
   },
   "workspaces": {
     "packages": [
