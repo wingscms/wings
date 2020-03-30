@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@wingscms/hummingbird": "^0.47.4",
-    "core-js": "3.3.2",
+    "core-js": "3.6.4",
     "dotenv": "8.2.0",
     "gatsby": "2.18.18",
     "gatsby-plugin-sentry": "1.0.1",
