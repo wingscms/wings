@@ -5,7 +5,7 @@ import {
   FlexGrid,
   Loading as _Loading,
   PaginationControls as _PaginationControls,
-} from '@wingscms/crane';
+} from '@wingscms/components';
 import styled from '../lib/styled';
 import useQueryString from '../hooks/queryString';
 import { useWings } from '../ctx/Wings';

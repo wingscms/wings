@@ -4,8 +4,6 @@
     "start": "concurrently \"yarn run storybook --ci --quiet\" \"lerna run start --stream --parallel\"",
     "test": "run-s lint && jest && lerna run test",
     "test:watch": "jest --watch",
-    "test:hummingbird": "yarn workspace @wingscms/hummingbird test",
-    "test:hummingbird:watch": "yarn workspace @wingscms/hummingbird test --watch",
     "lint": "eslint .",
     "release": "cross-env HUSKY_BYPASS=true lerna publish from-git",
     "storybook": "start-storybook -p 8001 --quiet",

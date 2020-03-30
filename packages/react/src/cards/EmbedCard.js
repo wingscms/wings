@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from '../lib/styled';
-import { wide } from '@wingscms/crane';
+import { wide } from '@wingscms/components';
 import createCard from '../createCard';
 
 const Figure = styled.figure`

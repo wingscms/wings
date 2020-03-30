@@ -3,7 +3,7 @@ import { compose, setPropTypes, setStatic } from 'recompose';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Fade from 'react-reveal/Fade';
-import { wide, ALIGNLEFT, ALIGNRIGHT } from '@wingscms/crane';
+import { wide, ALIGNLEFT, ALIGNRIGHT } from '@wingscms/components';
 import styled from '../lib/styled';
 import { enumerate } from '../lib/utils';
 import createCard from '../createCard';

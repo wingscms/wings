@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Loading, Button as _Button } from '@wingscms/crane';
-import SchemaForm from '@wingscms/crane-jsonschema-form';
+import { Loading, Button as _Button } from '@wingscms/components';
+import SchemaForm from '@wingscms/jsonschema-form';
 import deepmerge from 'deepmerge';
 import styled from '../../lib/styled';
 

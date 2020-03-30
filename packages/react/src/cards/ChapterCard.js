@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from '../lib/styled';
 import Fade from 'react-reveal/Fade';
 
-import { wide } from '@wingscms/crane';
+import { wide } from '@wingscms/components';
 import { slugify } from '../lib/utils';
 import createCard from '../createCard';
 import Intro from '../components/Intro';
