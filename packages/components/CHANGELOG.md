@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.22.2](https://github.com/wingscms/wings/compare/@wingscms/components@0.22.1...@wingscms/components@0.22.2) (2020-03-30)
+
+**Note:** Version bump only for package @wingscms/components
+
+
+
+
+
 ## [0.22.1](https://github.com/wingscms/wings/compare/@wingscms/components@0.22.0...@wingscms/components@0.22.1) (2020-03-30)
 
 **Note:** Version bump only for package @wingscms/components
