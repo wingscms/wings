@@ -1,5 +1,5 @@
 {
-  "name": "@wingscms/crane",
+  "name": "@wingscms/components",
   "version": "0.21.3",
   "description": "Component library for Wings projects",
   "main": "build/index.js",
@@ -25,6 +25,6 @@
   "peerDependencies": {
     "prop-types": "^15",
     "react": "^16",
-    "styled-components": "^3 || ^4"
+    "styled-components": "^4"
   }
 }

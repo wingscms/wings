@@ -1,4 +1,4 @@
-import { ALIGNLEFT, ALIGNRIGHT, wide } from '@wingscms/crane';
+import { ALIGNLEFT, ALIGNRIGHT, wide } from '@wingscms/components';
 import styled from '../../lib/styled';
 import { FLOAT } from './enums';
 

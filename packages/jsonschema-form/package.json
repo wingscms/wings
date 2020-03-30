@@ -1,7 +1,7 @@
 {
-  "name": "@wingscms/crane-jsonschema-form",
+  "name": "@wingscms/jsonschema-form",
   "version": "0.3.6",
-  "description": "JSON schema forms for Wings' Crane component library",
+  "description": "JSON schema forms for Wings",
   "main": "build/index.js",
   "scripts": {
     "start": "rollup -c -w",
@@ -21,6 +21,6 @@
   "peerDependencies": {
     "react": "^16",
     "react-dom": "^16",
-    "styled-components": "^3 || ^4"
+    "styled-components": "^4"
   }
 }
