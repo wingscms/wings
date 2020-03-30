@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.4.0 (2020-03-30)
+
+
+### Features
+
+* remove gatsby packages and rename packages ([#426](https://github.com/wingscms/wings/issues/426)) ([bc7ce67](https://github.com/wingscms/wings/commit/bc7ce670379f9e6980c5308851ae369794c2523a))
+
+
+
+
+
 ## [0.3.6](https://github.com/wingscms/wings/compare/@wingscms/crane-jsonschema-form@0.3.5...@wingscms/crane-jsonschema-form@0.3.6) (2020-03-03)
 
 **Note:** Version bump only for package @wingscms/crane-jsonschema-form

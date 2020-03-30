@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.33.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.32.0...@wingscms/react@0.33.0) (2020-03-30)
+
+
+### Features
+
+* add new theming APIs ([#420](https://github.com/wingscms/wings/issues/420)) ([d56261b](https://github.com/wingscms/wings/commit/d56261b3a263da4656c2298fa9e1868ea9d4f158))
+* remove gatsby packages and rename packages ([#426](https://github.com/wingscms/wings/issues/426)) ([bc7ce67](https://github.com/wingscms/wings/commit/bc7ce670379f9e6980c5308851ae369794c2523a))
+* update theming ([#424](https://github.com/wingscms/wings/issues/424)) ([280cb33](https://github.com/wingscms/wings/commit/280cb336042c76a06fec026b03d0aa7bd5056cc7))
+
+
+
+
+
 # [0.32.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.31.3...@wingscms/react@0.32.0) (2020-03-12)
 
 
