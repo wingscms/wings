@@ -29,7 +29,7 @@
     "gatsby-source-graphql": "2.1.20",
     "qs": "6.9.0",
     "react-helmet": "5.2.1",
-    "react-intl": "3.3.2",
+    "react-intl": "3.12.1",
     "react-scroll-to-element": "0.2.0",
     "react-typography": "0.16.19",
     "typography": "0.16.19",
