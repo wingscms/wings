@@ -27,21 +27,21 @@ const ShareButton = styled.a`
   svg {
     display: block;
     fill: ${({ theme }) =>
-    getContrastColor({
-      backgroundColor: theme.primaryColor,
-      colors: { light: theme.textColor, dark: theme.textColorDark },
-      threshold: theme.contrastLuminanceThreshold,
-    })};
+      getContrastColor({
+        backgroundColor: theme.primaryColor,
+        colors: { light: theme.textColor, dark: theme.textColorDark },
+        threshold: theme.contrastLuminanceThreshold,
+      })};
   }
   &:hover {
     background-color: ${({ theme }) => theme.secondaryColor};
     svg {
       fill: ${({ theme }) =>
-    getContrastColor({
-      backgroundColor: theme.secondaryColor,
-      colors: { light: theme.textColor, dark: theme.textColorDark },
-      threshold: theme.contrastLuminanceThreshold,
-    })};
+        getContrastColor({
+          backgroundColor: theme.secondaryColor,
+          colors: { light: theme.textColor, dark: theme.textColorDark },
+          threshold: theme.contrastLuminanceThreshold,
+        })};
     }
   }
 

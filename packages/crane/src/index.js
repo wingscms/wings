@@ -5,6 +5,8 @@ export { default as Image } from './components/Image';
 export { default as Loading } from './components/Loading';
 export { default as PaginationControls } from './components/PaginationControls';
 export { default as SvgIcon } from './components/SvgIcon';
+
+export { default as Theme, t, useTheme } from './theme';
 export { createSvgIcon, getContrastColor, separateUnit } from './lib/utils';
 
 // Form
@@ -48,7 +50,6 @@ export { Signup, SignupForm, Newsletter, NewsletterForm } from './components/sig
 
 // Styles
 export { ALIGNLEFT, ALIGNRIGHT, wide } from './styles';
-export { default as Theme, t, useTheme } from './theme';
 
 // Icons
 export { default as Icons } from './img/svg/icons';

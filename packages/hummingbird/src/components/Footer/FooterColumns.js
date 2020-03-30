@@ -51,12 +51,7 @@ export default ({ columns }) => {
         const key = `footer-row-${i}`;
         switch (row.type) {
           case 'text':
-            return (
-              <AddressLine
-                key={key}
-                dangerouslySetInnerHTML={{ __html: row.content }}
-              />
-            );
+            return <AddressLine key={key} dangerouslySetInnerHTML={{ __html: row.content }} />;
           case 'link':
             return (
               <AddressLine key={key}>
@@ -67,29 +62,21 @@ export default ({ columns }) => {
             );
           case 'button':
             return (
-              <Button
-                key={key}
-                href={row.url}
-                size="small"
-                as="a"
-                role="button"
-                intent="secondary"
-              >
+              <Button key={key} href={row.url} size="small" as="a" role="button" intent="secondary">
                 {row.content}
               </Button>
             );
           case 'social':
             return (
               <SocialMediaWrapper key={key}>
-                {row.profiles.map(
-                  ({ platform, url, iconColor, backgroundColor }, j) =>
-                    socialMediaIcon(
-                      platform,
-                      url,
-                      iconColor,
-                      backgroundColor,
-                      `footer-social-icon-${j}`,
-                    ),
+                {row.profiles.map(({ platform, url, iconColor, backgroundColor }, j) =>
+                  socialMediaIcon(
+                    platform,
+                    url,
+                    iconColor,
+                    backgroundColor,
+                    `footer-social-icon-${j}`,
+                  ),
                 )}
               </SocialMediaWrapper>
             );

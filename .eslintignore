@@ -1,2 +1,6 @@
 **/node_modules/**
 packages/*/build
+
+packages/gatsby-starter-hummingbird
+docs
+jest.config.js

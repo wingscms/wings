@@ -13,6 +13,7 @@ export default {
   textColorDark: '#FFFFFF',
   iconColor: '#212121',
   iconColorDark: '#FFFFFF',
+  navigationLanguagePickerColor: '#FFFFFF',
   // spacing
   mediumSpacing: '40px',
   // misc
@@ -21,5 +22,3 @@ export default {
   // typography
   headerFontFamily: 'sans-serif',
 };
-
-// TODO: add all vars

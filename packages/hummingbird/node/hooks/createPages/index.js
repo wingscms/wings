@@ -100,6 +100,7 @@ const verifySlugs = nodes => {
   });
   if (invalidNodes.length) {
     invalidNodes.forEach(node => {
+      // eslint-disable-next-line no-console
       console.error(
         `[hummingbird] invalid/duplicate slug (${node.slug}) for ${node.nodeType}: ${adminUrl(
           node,
@@ -168,7 +169,7 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
       const nodes = processNodes(wings[field].edges.map(({ node }) => node), {
         homeNodeId,
       });
-      console.log(`[hummingbird] found ${nodes.length} of ${resourceType}`);
+      console.log(`[hummingbird] found ${nodes.length} of ${resourceType}`); // eslint-disable-line no-console
       // GENERATE ARTICLES
       nodes.forEach(node => {
         const { isHome } = node;

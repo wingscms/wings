@@ -5,7 +5,6 @@
   "scripts": {
     "start": "rollup -c -w",
     "build": "rollup -c",
-    "lint": "eslint .",
     "prepublish": "cross-env NODE_ENV=production npm run build"
   },
   "author": "Maarten Busstra <busstra.m@gmail.com>",

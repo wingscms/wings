@@ -5,7 +5,6 @@ const siteUrl = process.env.SITE_URL || process.env.URL || 'http://localhost:400
 module.exports = ({
   wings: { project: wingsProject, appKey: wingsAppKey, endpoint: wingsEndpoint },
   blockRobots,
-  basicAuth,
 } = {}) => ({
   siteMetadata: {
     siteTitle: 'Wings',

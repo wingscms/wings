@@ -1,4 +1,3 @@
-/* global window */
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Scroll from 'react-scroll-to-element';

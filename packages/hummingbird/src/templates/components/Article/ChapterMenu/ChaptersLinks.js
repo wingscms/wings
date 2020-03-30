@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-
 import React from 'react';
 import Scroll from 'react-scroll-to-element';
 import styled from 'styled-components';
@@ -22,7 +20,7 @@ const ChapterItem = styled.div`
     text-decoration: none;
     text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
     background-image: ${({ theme }) =>
-    `linear-gradient(120deg, ${theme.primaryColor} 0%, ${theme.primaryColor} 100%)`} !important;
+      `linear-gradient(120deg, ${theme.primaryColor} 0%, ${theme.primaryColor} 100%)`} !important;
     font-family: ${({ theme }) => theme.headerFontFamily};
     background-repeat: no-repeat;
     background-size: 0% 4px;
@@ -52,7 +50,6 @@ const ChapterItem = styled.div`
 export default ({ chapters }) => (
   <div>
     {chapters.map(chapter => (
-      // eslint-disable-next-line jsx-a11y/no-static-element-interactions
       <div
         key={`chapter-item-${chapter.id}`}
         onClick={() =>
@@ -61,7 +58,8 @@ export default ({ chapters }) => (
             'content-wrapper',
             'chaptersOpen',
             false,
-          )}
+          )
+        }
       >
         <Scroll type="id" element={chapter.id}>
           <ChapterItem>
