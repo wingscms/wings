@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { FlexGrid, Icons, wide } from '@wingscms/crane';
+import { FlexGrid, Icons, wide } from '@wingscms/components';
 import styled from '../lib/styled';
 import createCard from '../createCard';
 

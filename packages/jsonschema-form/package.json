@@ -1,14 +1,14 @@
 {
-  "name": "@wingscms/sdk",
-  "version": "0.4.1",
+  "name": "@wingscms/jsonschema-form",
+  "version": "0.4.2",
+  "description": "JSON schema forms for Wings",
   "main": "build/index.js",
   "scripts": {
     "start": "rollup -c -w",
     "build": "rollup -c",
     "prepublish": "cross-env NODE_ENV=production npm run build"
   },
-  "author": "Maarten Busstra <busstra.m@gmail.com>",
-  "license": "MIT",
+  "author": "Mark Jackson <markjackson@bureaubolster.nl>",
   "devDependencies": {
     "cross-env": "6.0.3",
     "eslint": "6.5.1",
@@ -16,7 +16,11 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.7.7",
-    "graphql-request": "^1.6.0",
-    "qs": "^6.5.2"
+    "react-jsonschema-form": "1.8.1"
+  },
+  "peerDependencies": {
+    "react": "^16",
+    "react-dom": "^16",
+    "styled-components": "^4"
   }
 }

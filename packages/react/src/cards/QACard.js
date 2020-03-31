@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
 import styled from '../lib/styled';
-import { getContrastColor, Icons } from '@wingscms/crane';
+import { getContrastColor, Icons } from '@wingscms/components';
 import createCard from '../createCard';
 import Content from '../components/MobiledocRenderer';
 

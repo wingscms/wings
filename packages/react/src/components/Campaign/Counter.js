@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from '../../lib/styled';
-import { Counter } from '@wingscms/crane';
+import { Counter } from '@wingscms/components';
 import CountUp from 'react-countup';
 
 const Container = styled.div`

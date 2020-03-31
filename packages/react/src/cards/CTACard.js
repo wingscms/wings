@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from '../lib/styled';
-import { Button, getContrastColor, wide } from '@wingscms/crane';
+import { Button, getContrastColor, wide } from '@wingscms/components';
 import createCard from '../createCard';
 
 const CTA = styled.div`
