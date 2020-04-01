@@ -52,13 +52,13 @@ const Title = styled.h1`
   }
 `;
 
-export default ({ title, image: { url, caption } = {} } = {}) => {
+export default ({ title, imageUrl, imageCaption } = {}) => {
   return (
     <TitleContainer>
       <Title>{title}</Title>
-      {url ? (
+      {imageUrl ? (
         <ImageContainer>
-          <img src={mediaUrl(url, { width: 1160 })} alt={caption} />
+          <img src={mediaUrl(imageUrl, { width: 1160 })} alt={imageCaption} />
         </ImageContainer>
       ) : null}
     </TitleContainer>

@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Header } from '@wingscms/components/';
 import Entry from './Entry';
 import Content from './Content';
-
-import Header from './Header';
 
 const ContentWrapper = styled.div`
   margin: 0 auto;
@@ -16,9 +15,10 @@ const ContentWrapper = styled.div`
 `;
 
 export default ({ node, ...props }) => {
+  const { image: { url, caption } = {} } = node;
   return (
     <Entry {...props}>
-      <Header title={node.title} image={node.image} />
+      <Header title={node.title} imageUrl={url} imageCaption={caption} />
       <ContentWrapper>
         <Content content={node.content} />
       </ContentWrapper>
