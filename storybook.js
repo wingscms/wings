@@ -7,5 +7,6 @@ bootstrap().then(() =>
     port: 8001,
     quiet: true,
     configDir: './.storybook',
+    ci: true,
   }),
 );
