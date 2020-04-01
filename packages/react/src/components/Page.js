@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Entry from './Entry';
 import Content from './Content';
 
-// import Header from './Header';
+import Header from './Header';
 
 const ContentWrapper = styled.div`
   margin: 0 auto;
@@ -18,7 +18,7 @@ const ContentWrapper = styled.div`
 export default ({ node, ...props }) => {
   return (
     <Entry {...props}>
-      {/* <Header /> */}
+      <Header title={node.title} image={node.image} />
       <ContentWrapper>
         <Content content={node.content} />
       </ContentWrapper>
