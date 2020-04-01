@@ -3,7 +3,7 @@ import client from './wings/wings';
 
 export default [
   {
-    icon: 'box',
+    icon: 'graphql',
     title: 'Default',
     components: [WingsProvider],
     params: [{ name: 'Mock Wings API', props: { client }, default: true }],
