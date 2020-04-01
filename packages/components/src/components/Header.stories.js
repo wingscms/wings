@@ -1,6 +1,6 @@
 import React from 'react';
 import { text, select } from '@storybook/addon-knobs/react';
-import Header, { HEADER_TYPE } from '.';
+import Header, { HEADER_TYPE } from './Header';
 
 export default () => (
   <Header
