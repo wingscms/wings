@@ -60,10 +60,8 @@ const QuestionText = styled.div`
     background-color: ${({ theme }) => theme.elementBackgroundColor};
     p {
       color: ${({ theme }) =>
-        getContrastColor({
-          backgroundColor: theme.elementBackgroundColor,
-          colors: { light: theme.textColor, dark: theme.textColorDark },
-          threshold: theme.contrastLuminanceThreshold,
+        theme.contrastColor({
+          backgroundColor: theme.elementBackgroundColor.hex(),
         })};
     }
   }

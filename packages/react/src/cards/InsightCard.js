@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from '../lib/styled';
-import { getContrastColor, wide } from '@wingscms/components';
+import { wide } from '@wingscms/components';
 import createCard from '../createCard';
 
 const Insight = styled.div`
@@ -9,10 +9,8 @@ const Insight = styled.div`
   font-family: ${({ theme }) => theme.headerFontFamily};
   line-height: 1.2;
   color: ${({ theme }) =>
-    getContrastColor({
-      backgroundColor: theme.primaryColor || '#ffffff',
-      colors: { light: theme.textColor, dark: theme.textColorDark },
-      threshold: theme.contrastLuminanceThreshold,
+    theme.contrastColor({
+      backgroundColor: theme.primaryColor.hex(),
     })};
   text-align: center;
   margin-top: ${({ theme }) => theme.mediumSpacing};
