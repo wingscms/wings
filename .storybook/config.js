@@ -6,12 +6,17 @@ import './styles.css';
 function loadStories() {
   const r = require.context('../packages', true, /^(?:\.\/[^\/]+)\/src\/.*\.stories\.jsx?$/);
   r.keys().forEach(m => {
-    const parts = m.split('/');
-    const pkg = parts[1];
-    const name = parts[parts.length - 1].replace(/\.stories\.jsx?/, '');
-
     const storyMod = r(m);
-    const stories = storiesOf([pkg, name].join('/'), module).addDecorator(withKnobs);
+    const mSplit = m.split('/');
+    const [, pkg, _, __, folder, story] = mSplit;
+    if (mSplit[mSplit.length - 1] !== (story || folder) || !m.startsWith(`./${pkg}/src/components`))
+      return;
+    const storyName = [pkg, capitalCase(folder), story]
+      .filter(v => !!v)
+      .map(v => v.replace(/\.stories\.jsx?/, ''))
+      .join('/');
+
+    const stories = storiesOf(storyName, module).addDecorator(withKnobs);
     Object.keys(storyMod).forEach(variant => stories.add(capitalCase(variant), storyMod[variant]));
   });
 }
