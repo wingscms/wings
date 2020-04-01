@@ -1,9 +1,10 @@
 import React from 'react';
-import { text } from '@storybook/addon-knobs/react';
-import Header from './Header';
+import { text, select } from '@storybook/addon-knobs/react';
+import Header, { HEADER_TYPE } from '.';
 
 export default () => (
   <Header
+    intent={select('intent', HEADER_TYPE)}
     title={text('title', 'Test title')}
     image={{
       url: text(
