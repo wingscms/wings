@@ -1,12 +1,13 @@
 export { default as Button } from './components/Button';
 export { default as Counter } from './components/Counter';
 export { default as Expandable } from './components/Expandable';
+export { default as Header } from './components/Header';
 export { default as Image } from './components/Image';
 export { default as Loading } from './components/Loading';
 export { default as PaginationControls } from './components/PaginationControls';
 export { default as SvgIcon } from './components/SvgIcon';
 
-export { default as Theme, t, useTheme } from './theme';
+export { default as Theme, t, useTheme, ThemeProvider } from './theme';
 export { createSvgIcon, getContrastColor, separateUnit } from './lib/utils';
 
 // Form

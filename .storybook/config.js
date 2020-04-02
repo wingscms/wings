@@ -1,6 +1,11 @@
 import { configure, storiesOf, addParameters } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs/react';
+import { withContexts } from '@storybook/addon-contexts/react';
+
 import { capitalCase } from 'change-case';
+import viewports from './viewports';
+import contexts from './contexts';
+
 import './styles.css';
 
 function loadStories() {
@@ -20,7 +25,10 @@ function loadStories() {
     );
     const storyName = storyNameParts.join('/');
 
-    const stories = storiesOf(storyName, module).addDecorator(withKnobs);
+    const stories = storiesOf(storyName, module)
+      .addDecorator(withKnobs)
+      .addDecorator(withContexts(contexts));
+
     Object.keys(storyMod).forEach(variant => stories.add(capitalCase(variant), storyMod[variant]));
   });
 }
@@ -40,6 +48,10 @@ addParameters({
       if (idA > idB) return 1;
       return 0;
     },
+  },
+  viewport: {
+    viewports,
+    defaultViewport: 'iphonex',
   },
 });
 

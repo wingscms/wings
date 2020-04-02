@@ -1,4 +1,5 @@
 export { default as SvgIcon } from './SvgIcon';
+export { default as ArrowDown } from './ArrowDown';
 export { default as AudioOn } from './AudioOn';
 export { default as AudioOff } from './AudioOff';
 export { default as Calendar } from './Calendar';
