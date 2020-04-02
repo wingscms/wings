@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from '../lib/styled';
-import { wide } from '@wingscms/components';
+import { wide, t } from '@wingscms/components';
 import createCard from '../createCard';
 
 const Insight = styled.div`
   font-size: 30px;
   font-family: ${({ theme }) => theme.headerFontFamily};
   line-height: 1.2;
-  color: ${({ theme }) =>
+  color: ${t(theme =>
     theme.contrastColor({
       backgroundColor: theme.primaryColor.hex(),
-    })};
+    }),
+  )};
   text-align: center;
   margin-top: ${({ theme }) => theme.mediumSpacing};
   margin-bottom: ${({ theme }) => theme.mediumSpacing};

@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
 import styled from '../lib/styled';
-import { getContrastColor, Icons } from '@wingscms/components';
+import { t, Icons } from '@wingscms/components';
 import createCard from '../createCard';
 import Content from '../components/MobiledocRenderer';
 
@@ -59,10 +59,11 @@ const QuestionText = styled.div`
   &:hover {
     background-color: ${({ theme }) => theme.elementBackgroundColor};
     p {
-      color: ${({ theme }) =>
+      color: ${t(theme =>
         theme.contrastColor({
           backgroundColor: theme.elementBackgroundColor.hex(),
-        })};
+        }),
+      )};
     }
   }
 `;
