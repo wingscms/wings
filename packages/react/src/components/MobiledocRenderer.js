@@ -24,13 +24,13 @@ class MobiledocRenderer extends Component {
   static defaultProps = {
     content: null,
     cards: [],
+    cardProps: {},
     unknownCardHandler: ({ env: { name } }) =>
       console.error(`Unknown card type ${name} encountered.`), // eslint-disable-line no-console
   };
 
   createRenderer() {
     const { cards, unknownCardHandler } = this.props;
-
     return new Renderer({
       cards: cards.map(this.injectCardProps),
       unknownCardHandler,
