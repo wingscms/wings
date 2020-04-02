@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.4](https://github.com/wingscms/wings/compare/@wingscms/sdk@0.5.3...@wingscms/sdk@0.5.4) (2020-04-02)
+
+
+### Bug Fixes
+
+* auth headers ([f89f1d0](https://github.com/wingscms/wings/commit/f89f1d0f5cc4de52837b69ed5a90531a4ca2532b))
+
+
+
+
+
 ## [0.5.3](https://github.com/wingscms/wings/compare/@wingscms/sdk@0.5.2...@wingscms/sdk@0.5.3) (2020-04-02)
 
 
