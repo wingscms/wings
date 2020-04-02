@@ -8,9 +8,19 @@ export default class Wings {
     this.project = project;
     this.domain = domain;
 
+    const authHeaders = domain
+      ? {
+          Authorization: `Bearer ${WINGS_APP_KEY}`,
+          'X-Wings-Domain': domain,
+        }
+      : {
+          Authorization: `Bearer ${appKey}`,
+          'X-Wings-Project': project,
+        };
+
     this.client = new GraphQLClient(endpoint, {
       headers: {
-        ...this.authHeaders(),
+        ...authHeaders,
       },
     });
   }
@@ -18,17 +28,4 @@ export default class Wings {
   async query(...args) {
     return this.client.request(...args);
   }
-
-  authHeaders = () => {
-    if (this.domain) {
-      return {
-        Authorization: `Bearer ${WINGS_APP_KEY}`,
-        'X-Wings-Domain': this.domain,
-      };
-    }
-    return {
-      Authorization: `Bearer ${this.appKey}`,
-      'X-Wings-Project': this.project,
-    };
-  };
 }
