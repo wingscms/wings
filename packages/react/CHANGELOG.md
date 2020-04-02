@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.34.1](https://github.com/wingscms/wings/compare/@wingscms/react@0.34.0...@wingscms/react@0.34.1) (2020-04-02)
+
+
+### Bug Fixes
+
+* export article/page ([f77b7dd](https://github.com/wingscms/wings/commit/f77b7dd9a056c6341c1bb19c5f99371905498d37))
+
+
+
+
+
 # [0.34.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.33.2...@wingscms/react@0.34.0) (2020-04-02)
 
 
