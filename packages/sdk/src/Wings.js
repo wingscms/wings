@@ -1,4 +1,3 @@
-import { getIntrospectionQuery } from 'graphql';
 import { GraphQLClient } from 'graphql-request';
 const WINGS_APP_KEY = 'z4SS8rqLDrNWMChzslf3IBuWJG1ldbSy';
 
@@ -15,10 +14,6 @@ export default class Wings {
         'X-Wings-Project': project,
       },
     });
-  }
-
-  introspect({ introspectionQuery = getIntrospectionQuery() } = {}) {
-    return this.query(introspectionQuery);
   }
 
   async query(...args) {
