@@ -1,12 +1,13 @@
 import React from 'react';
+import { t } from '../../theme';
 import { mediaUrl } from '@wingscms/sdk';
 import styled from 'styled-components';
 
 const ImageContainer = styled.figure`
-  margin: ${({ theme }) => theme.mediumSpacing} 0 0 0;
+  margin: ${t(theme => theme.mediumSpacing)} 0 0 0;
   width: 100%;
   @media screen and (min-width: 800px) {
-    margin: ${({ theme }) => theme.largeSpacing} 0 0 50%;
+    margin: ${t(theme => theme.largeSpacing)} 0 0 50%;
     max-width: 1200px;
     width: 100vw;
     transform: translateX(-50%);

@@ -100,8 +100,6 @@ export default ({ title, imageUrl, titleAttribute }) => {
     }
   }, []);
 
-  if (typeof window === 'undefined') return <div />;
-
   return (
     <Container id="landing-section" title={titleAttribute}>
       <BackgroundImageContainerOuter style={{ marginTop: scrollY > 84 ? scrollY / 2 - 84 / 2 : 0 }}>
