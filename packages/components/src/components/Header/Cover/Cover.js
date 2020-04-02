@@ -92,6 +92,7 @@ const ArrowContainer = styled.div`
 export default ({ title, imageUrl, titleAttribute }) => {
   const [scrollY, setScrollY] = useState(0);
   const updateScroll = () => requestAnimationFrame(setScrollY(window.scrollY));
+  // TODO: fix scroll effect
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', () => updateScroll);
