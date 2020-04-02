@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.1](https://github.com/wingscms/wings/compare/@wingscms/sdk@0.5.0...@wingscms/sdk@0.5.1) (2020-04-02)
+
+
+### Bug Fixes
+
+* improve bundle size for sdk ([e7de6e1](https://github.com/wingscms/wings/commit/e7de6e1fa5820b57b7a80f31560cf09af2b71c92))
+
+
+
+
+
 # [0.5.0](https://github.com/wingscms/wings/compare/@wingscms/sdk@0.4.1...@wingscms/sdk@0.5.0) (2020-04-02)
 
 
