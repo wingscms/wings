@@ -1,12 +1,12 @@
 export { default as Burger } from './components/Burger';
 export { default as Button } from './components/Button';
 export { default as Counter } from './components/Counter';
+export { default as Drawer } from './components/Drawer';
 export { default as Expandable } from './components/Expandable';
 export { default as Header } from './components/Header';
 export { default as Image } from './components/Image';
 export { default as Loading } from './components/Loading';
 export { default as PaginationControls } from './components/PaginationControls';
-export { default as SlideMenu } from './components/SlideMenu';
 export { default as SvgIcon } from './components/SvgIcon';
 
 export { default as Theme, t, useTheme, ThemeProvider } from './theme';
