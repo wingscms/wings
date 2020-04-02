@@ -4,6 +4,7 @@ export { default as Counter } from './components/Counter';
 export { default as Drawer } from './components/Drawer';
 export { default as Expandable } from './components/Expandable';
 export { default as Header } from './components/Header';
+export { default as Icon } from './components/Icon';
 export { default as Image } from './components/Image';
 export { default as Loading } from './components/Loading';
 export { default as PaginationControls } from './components/PaginationControls';
@@ -53,5 +54,4 @@ export { Signup, SignupForm, Newsletter, NewsletterForm } from './components/sig
 // Styles
 export { ALIGNLEFT, ALIGNRIGHT, wide } from './styles';
 
-// Icons
-export { default as Icons } from './img/svg/icons';
+export { default as Icons } from './components/Icon'; // TODO: Show deprecation warning. Now Icon.

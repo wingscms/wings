@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from '../../lib/styled';
-import { Calendar, Check, Message, Pin, User } from '../icons';
+import { Calendar, Check, Message, Pin, User } from '../Icon';
 import Counter from '../Counter';
 import Container from './Container';
 

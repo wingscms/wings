@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '../lib/styled';
-import { Eye } from './icons';
+import { Eye } from './Icon';
 import { Caption } from './atoms';
 
 const StyledFigure = styled.figure`
