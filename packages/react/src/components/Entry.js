@@ -13,11 +13,11 @@ const ContentWrapper = styled.div`
   }
 `;
 
-export default ({ children, node, ...props }) => {
+export default ({ children, node, headerType, ...props }) => {
   const { image: { url, caption } = {}, title, content } = node;
   return (
     <div {...props}>
-      <Header title={title} imageUrl={url} imageCaption={caption} />
+      <Header title={title} imageUrl={url} imageCaption={caption} type={headerType} />
       <ContentWrapper>
         <Content content={content} />
       </ContentWrapper>
