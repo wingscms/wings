@@ -6,9 +6,9 @@ import client from './wings/wings';
 export default [
   {
     icon: 'graphql',
-    title: 'Default',
+    title: 'Wings API',
     components: [WingsProvider],
-    params: [{ name: 'Mock Wings API', props: { client }, default: true }],
+    params: [{ name: 'Mocked', props: { client }, default: true }],
     options: {
       deep: true,
       disable: false,
@@ -20,8 +20,9 @@ export default [
     title: 'Theme',
     components: [ThemeProvider],
     params: [
-      { name: 'Default Theme', props: { theme: () => new Theme() }, default: true },
-      { name: 'Test Theme', props: { theme: () => new Theme({ primaryColor: '#ff0000' }) } },
+      { name: 'No Theme', props: {}, default: true },
+      { name: 'Default Theme', props: { theme: new Theme() } },
+      { name: 'Test Theme', props: { theme: new Theme({ primaryColor: '#ff0000' }) } },
     ],
     options: {
       deep: true,
