@@ -10,8 +10,7 @@ export default class Wings {
 
     this.client = new GraphQLClient(endpoint, {
       headers: {
-        Authorization: `Bearer ${appKey}`,
-        'X-Wings-Project': project,
+        ...this.authHeaders(),
       },
     });
   }
