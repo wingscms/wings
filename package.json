@@ -7,7 +7,7 @@
     "lint": "eslint .",
     "release": "cross-env HUSKY_BYPASS=true lerna publish from-git",
     "storybook": "node storybook.js",
-    "build-storybook": "build-storybook -o .storybook-build --quiet"
+    "build-storybook": "node ./.storybook/wings/bootstrap.js && build-storybook -o .storybook-build --quiet"
   },
   "workspaces": {
     "packages": [
