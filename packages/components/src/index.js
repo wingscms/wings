@@ -1,3 +1,4 @@
+export { default as Burger } from './components/Burger';
 export { default as Button } from './components/Button';
 export { default as Counter } from './components/Counter';
 export { default as Expandable } from './components/Expandable';
@@ -19,14 +20,13 @@ export { RadioInput } from './components/form';
 export { ConfirmationBox } from './components/form';
 
 // Menu
-export {
-  Burger,
-  ContentWrapper as MenuContentWrapper,
-  MenuItem,
-  SlideMenu,
-  toggleSlideMenu,
-  LanguagePicker,
-} from './components/menu';
+// export {
+//   ContentWrapper as MenuContentWrapper,
+//   MenuItem,
+//   SlideMenu,
+//   toggleSlideMenu,
+//   LanguagePicker,
+// } from './components/menu';
 
 // Text
 export { Breakout } from './components/text';
