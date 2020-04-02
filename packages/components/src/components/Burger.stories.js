@@ -4,11 +4,11 @@ import { Burger } from '..';
 
 export default () => (
   <Burger
-    height={text('height', '40px')}
-    width={text('width', '30px')}
+    height={text('height', '30px')}
+    width={text('width', '40px')}
     barHeight={text('barHeight', '5px')}
-    backgroundColor={color('backgroundColor')}
-    backgroundHoverColor={color('backgroundHoverColor')}
+    barColor={color('barColor')}
+    barHoverColor={color('barHoverColor')}
     onClick={() => console.log('Button clicked!')}
   />
 );

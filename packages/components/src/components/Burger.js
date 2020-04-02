@@ -5,7 +5,7 @@ import { t } from '../theme';
 const Bar = styled.div`
   position: absolute;
   display: block;
-  background-color: ${t((_, { backgroundColor }) => backgroundColor || _.iconColor)};
+  background-color: ${t((_, { barColor }) => barColor || _.iconColor)};
   height: ${({ barHeight }) => barHeight};
   border-radius: 2px;
   width: 100%;
@@ -33,22 +33,22 @@ const Container = styled.div`
   position: relative;
   cursor: pointer;
   &:hover > ${Top}, &:hover > ${Middle}, &:hover > ${Bottom} {
-    background-color: ${t((_, { backgroundHoverColor }) => backgroundHoverColor || _.primaryColor)};
+    background-color: ${t((_, { barHoverColor }) => barHoverColor || _.primaryColor)};
   }
 `;
 
 export default ({
-  backgroundColor,
-  backgroundHoverColor,
+  barColor,
+  barHoverColor,
   width = '40px',
   height = '30px',
   barHeight = '5px',
   borderRadius = '0',
   ...props
 }) => (
-  <Container height={height} width={width} backgroundHoverColor={backgroundHoverColor} {...props}>
-    <Top barHeight={barHeight} backgroundColor={backgroundColor} borderRadius={borderRadius} />
-    <Middle barHeight={barHeight} backgroundColor={backgroundColor} borderRadius={borderRadius} />
-    <Bottom barHeight={barHeight} backgroundColor={backgroundColor} borderRadius={borderRadius} />
+  <Container height={height} width={width} barHoverColor={barHoverColor} {...props}>
+    <Top barHeight={barHeight} barColor={barColor} borderRadius={borderRadius} />
+    <Middle barHeight={barHeight} barColor={barColor} borderRadius={borderRadius} />
+    <Bottom barHeight={barHeight} barColor={barColor} borderRadius={borderRadius} />
   </Container>
 );
