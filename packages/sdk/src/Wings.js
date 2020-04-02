@@ -11,7 +11,7 @@ export default class Wings {
     const authHeaders = domain
       ? {
           Authorization: `Bearer ${WINGS_APP_KEY}`,
-          'X-Wings-Domain': domain,
+          'X-Wings-App-Domain': domain,
         }
       : {
           Authorization: `Bearer ${appKey}`,
