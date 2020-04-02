@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.34.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.33.2...@wingscms/react@0.34.0) (2020-04-02)
+
+
+### Features
+
+* react pages ([#431](https://github.com/wingscms/wings/issues/431)) ([ebb1271](https://github.com/wingscms/wings/commit/ebb12711843846174b0218aa57eea75b539b0354))
+
+
+
+
+
 ## [0.33.2](https://github.com/wingscms/wings/compare/@wingscms/react@0.33.1...@wingscms/react@0.33.2) (2020-03-30)
 
 **Note:** Version bump only for package @wingscms/react
