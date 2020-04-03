@@ -1,3 +1,5 @@
+// TODO: review icon functionality, delete unnecesary, make better svgs, etc
+
 import { default as _ArrowDown } from './ArrowDown';
 import { default as _AudioOn } from './AudioOn';
 import { default as _AudioOff } from './AudioOff';

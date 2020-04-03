@@ -54,4 +54,4 @@ export { Signup, SignupForm, Newsletter, NewsletterForm } from './components/sig
 // Styles
 export { ALIGNLEFT, ALIGNRIGHT, wide } from './styles';
 
-export { default as Icons } from './components/Icon'; // TODO: Show deprecation warning. Now Icon.
+export { default as Icons } from './components/Icon'; // TODO: Deprecated, now Icon
