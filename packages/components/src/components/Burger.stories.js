@@ -1,12 +1,13 @@
 import React from 'react';
-import { text, color } from '@storybook/addon-knobs/react';
+import { number, color, boolean } from '@storybook/addon-knobs/react';
 import { Burger } from '..';
 
 export default () => (
   <Burger
-    height={text('height', '30px')}
-    width={text('width', '40px')}
-    barHeight={text('barHeight', '5px')}
+    active={boolean('active', false)}
+    height={number('height', 30)}
+    width={number('width', 40)}
+    barHeight={number('barHeight', 5)}
     barColor={color('barColor')}
     barHoverColor={color('barHoverColor')}
     onClick={() => console.log('Button clicked!')}
