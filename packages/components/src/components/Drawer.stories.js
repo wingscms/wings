@@ -26,6 +26,21 @@ export const slideMenu = () => {
           active={open}
           onClick={() => setOpen(!open)}
         />
+        <ul style={{ marginTop: '80px', padding: 0 }}>
+          {['Link 1', 'Link 2', 'Link 3'].map(l => (
+            <li
+              style={{
+                listStyle: 'none',
+                padding: '10px',
+                fontSize: '20px',
+                textTransform: 'uppercase',
+                textAlign: 'center',
+              }}
+            >
+              {l}
+            </li>
+          ))}
+        </ul>
       </Drawer>
     </>
   );
