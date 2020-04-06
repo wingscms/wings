@@ -1,3 +1,4 @@
+export { default as AppBar } from './components/AppBar';
 export { default as Button } from './components/Button';
 export { default as Counter } from './components/Counter';
 export { default as Expandable } from './components/Expandable';
