@@ -33,7 +33,7 @@ const getActiveState = position => ({ active, height, width, barHeight }) => {
 const Bar = styled.div`
   position: absolute;
   display: block;
-  background-color: ${t((_, { barColor }) => barColor || _.iconColor)};
+  background-color: ${t((_, { barColor }) => barColor || _.burgerColor)};
   height: ${({ barHeight }) => `${barHeight}px`};
   border-radius: ${({ borderRadius }) => `${borderRadius}px`};
   width: 100%;
@@ -69,7 +69,7 @@ const Container = styled.div`
   position: relative;
   cursor: pointer;
   &:hover > ${Top}, &:hover > ${Middle}, &:hover > ${Bottom} {
-    background-color: ${t((_, { barHoverColor }) => barHoverColor || _.primaryColor)};
+    background-color: ${t((_, { barHoverColor }) => barHoverColor || _.burgerHoverColor)};
   }
 `;
 

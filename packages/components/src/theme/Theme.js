@@ -78,6 +78,22 @@ export default class Theme {
     return [val, unit];
   }
 
+  get burgerColor() {
+    return this.variables.burgerColor || this.iconColor;
+  }
+
+  get burgerHoverColor() {
+    return this.variables.burgerColor || this.iconHoverColor;
+  }
+
+  get drawerBackgroundColor() {
+    return this.variables.drawerBackgroundColor || this.elementBackgroundColor;
+  }
+
+  get expandableBackgroundColor() {
+    return this.variables.expandableBackgroundColor || this.elementBackgroundColor;
+  }
+
   get extraLargeSpacing() {
     return this.variables.extralargeSpacing || this.calc(this.mediumSpacing, ms => ms * 4);
   }
@@ -92,6 +108,10 @@ export default class Theme {
 
   get headingColorDark() {
     return this.variables.headingColorDark || this.textColorDark;
+  }
+
+  get iconHoverColor() {
+    return this.variables.iconHoverColor || this.primaryColor;
   }
 
   get largeSpacing() {
