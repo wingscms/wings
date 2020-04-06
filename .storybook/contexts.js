@@ -1,5 +1,5 @@
-import WingsProvider from '@wingscms/react/src/ctx/Wings';
-import { Theme, ThemeProvider } from '@wingscms/components/src';
+import { WingsProvider } from '@wingscms/react';
+import { Theme, ThemeProvider } from '@wingscms/components';
 import client from './wings/wings';
 
 export default [

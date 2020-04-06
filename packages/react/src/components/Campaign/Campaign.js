@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
 import styled from '../../lib/styled';
 
+import { t } from '../../theme';
+
 import Content from '../MobiledocRenderer';
 import CampaignForm from './Form';
 import Counter from './Counter';
@@ -79,7 +81,7 @@ const FormContainer = styled.div`
   display: inline-block;
   width: 460px;
   min-height: 500px;
-  background-color: ${({ theme }) => theme.campaignFormBackgroundColor};
+  background-color: ${t(_ => _.campaignFormBackgroundColor)};
   color: ${({ theme }) => theme.campaignFormTextColor};
   vertical-align: top;
   border-radius: 4px;
