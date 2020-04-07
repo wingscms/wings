@@ -1,17 +1,22 @@
 import React from 'react';
 import { Campaign } from '@wingscms/react';
-import richMd from '../../fixtures/mobiledocRich.json';
-import { image } from '../../../../utils';
 
-const node = {
-  title: 'This is a test campaign',
-  image: {
-    url: image(800, 600),
-    caption: 'A test image',
-  },
-};
+export const petition = () => (
+  <Campaign
+    id="asdasd"
+    resourceType="node.petition"
+    copy={{
+      descriptionCollapse: 'Less',
+      descriptionExpand: 'More',
+      petitionCounterMessage: 'have signed the petition',
+      petitionCounterGoalText: '500',
+    }}
+    signatureCount={50}
+    signatureGoal={500}
+  />
+);
 
-export default () => (
+export const fundrasier = () => (
   <Campaign
     id="asdasd"
     resourceType="node.fundraiser"
@@ -19,6 +24,19 @@ export default () => (
       descriptionCollapse: 'Less',
       descriptionExpand: 'More',
       fundraiserCounterMessage: 'has been donated',
+      fundraiserTargetText: '500',
+    }}
+  />
+);
+
+export const event = () => (
+  <Campaign
+    id="asdasd"
+    resourceType="node.event"
+    copy={{
+      descriptionCollapse: 'Less',
+      descriptionExpand: 'More',
+      fundraiserCounterMessage: 'are attending',
       fundraiserTargetText: '500',
     }}
   />
