@@ -98,6 +98,15 @@ export default class Theme {
     return this.variables.formBackgroundColor || this.primaryColor;
   }
 
+  get formLinkTextColor() {
+    return (
+      this.variables.formLinkTextColor ||
+      this.contrastColor({
+        backgroundColor: this.formBackgroundColor,
+      })
+    );
+  }
+
   get formTextColor() {
     return (
       this.variables.formTextColor ||

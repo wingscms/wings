@@ -10,6 +10,14 @@ class Theme extends _Theme {
     return this.variables.campaignFormBackgroundColor || this.formBackgroundColor;
   }
 
+  get campaignFormLinkLineColor() {
+    return this.variables.campaignFormLinkLineColor || this.secondaryColor;
+  }
+
+  get campaignFormLinkTextColor() {
+    return this.variables.campaignFormLinkTextColor || this.formLinkTextColor;
+  }
+
   get campaignFormTextColor() {
     return this.variables.campaignFormTextColor || this.formTextColor;
   }
