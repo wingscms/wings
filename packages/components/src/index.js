@@ -1,5 +1,6 @@
 export { default as Button } from './components/Button';
 export { default as Counter } from './components/Counter';
+export { default as CounterBar } from './components/CounterBar';
 export { default as Expandable } from './components/Expandable';
 export { default as Header } from './components/Header';
 export { default as Image } from './components/Image';

@@ -42,7 +42,7 @@ const server = mockServer(
         submissionSchema:
           '{"type":"object","required":["email","firstName","lastName","terms","privacyConsent"],"properties":{"email":{"title":"Email address","type":"string","format":"email"},"firstName":{"title":"First name","type":"string"},"lastName":{"title":"Last name","type":"string"},"newsletter":{"title":"Stay up to date","type":"boolean"},"terms":{"title":"Agree to our terms & conditions","type":"boolean","enum":[true]},"privacyConsent":{"title":"Agree to our privacy policy","type":"boolean","enum":[true]}}}',
         target: {
-          amount: 50400,
+          amount: 50000,
           currency: {
             id: 'EUR',
             name: 'Euro',

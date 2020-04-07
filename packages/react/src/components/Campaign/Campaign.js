@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react';
+import { Counter } from '@wingscms/components';
 import styled from '../../lib/styled';
 
 import { t } from '../../theme';
 
 import Content from '../MobiledocRenderer';
 import CampaignForm from './Form';
-import Counter from './Counter';
 import EventDetails from './EventDetails';
 import Proposition from './Proposition';
 
@@ -139,14 +139,12 @@ const Intro = styled.p`
     font-size: 1em;
   }
 `;
-const CounterContainer = styled(FormContainerInner)`
-  padding: 20px 40px;
+const CounterContainer = styled.div`
   background-color: ${t(_ => _.counterBackgroundColor)};
   color: ${t(_ => _.counterTextColor)};
   border-radius: 4px 4px 0 0;
-  @media screen and (max-width: 1000px) {
-    max-width: 100%;
-  }
+  padding: ${t(_ => _.smallSpacing)};
+  width: 100%;
 `;
 
 const DEFAULT_COPY = {
@@ -229,7 +227,7 @@ export default ({
                 <Counter
                   current={_signatureCount || signatureCount}
                   goal={_signatureGoal || signatureGoal}
-                  descriptionText={petitionCounterMessage}
+                  description={petitionCounterMessage}
                   goalText={petitionCounterGoalText}
                 />
               </CounterContainer>
@@ -242,7 +240,7 @@ export default ({
                   <Counter
                     current={fundraiserRaised.amount / 100}
                     goal={fundraiserTarget.amount / 100}
-                    descriptionText={fundraiserCounterMessage}
+                    description={fundraiserCounterMessage}
                     goalText={fundraiserTargetText}
                     symbol={fundraiserRaised.currency.symbol}
                   />

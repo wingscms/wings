@@ -11,4 +11,10 @@ const node = {
   },
 };
 
-export default () => <Campaign id="asdasd" resourceType="node.fundraiser" />;
+export default () => (
+  <Campaign
+    id="asdasd"
+    resourceType="node.fundraiser"
+    copy={{ fundraiserCounterMessage: 'has been donated', fundraiserTargetText: '500' }}
+  />
+);
