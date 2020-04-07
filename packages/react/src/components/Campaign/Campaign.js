@@ -14,7 +14,7 @@ const Container = styled.div`
   width: 100%;
   height: auto;
   position: relative;
-  background-color: ${({ theme }) => theme.backgroundColor || 'transparent'};
+  background-color: ${t(_ => _.backgroundColor)};
 `;
 
 const NodeFragment = `
@@ -58,9 +58,9 @@ const CampaignFragment = `
 const MainContainerOuter = styled(Container)`
   background-color: transparent;
   overflow: auto;
-  margin-bottom: ${({ theme }) => theme.largeSpacing};
+  margin-bottom: ${t(_ => _.largeSpacing)};
   @media screen and (max-width: 800px) {
-    margin-bottom: ${({ theme }) => theme.mediumSpacing};
+    margin-bottom: ${t(_ => _.mediumSpacing)};
   }
 `;
 
@@ -82,18 +82,18 @@ const FormContainer = styled.div`
   width: 460px;
   min-height: 500px;
   background-color: ${t(_ => _.campaignFormBackgroundColor)};
-  color: ${({ theme }) => theme.campaignFormTextColor};
+  color: ${t(_ => _.campaignFormTextColor)};
   vertical-align: top;
   border-radius: 4px;
-  box-shadow: ${({ theme }) => theme.defaultShadow};
+  box-shadow: ${t(_ => _.shadow)};
   align-self: flex-start;
   a {
-    color: ${({ theme }) => theme.campaignFormLinkTextColor};
+    color: ${t(_ => _.campaignFormLinkTextColor)};
     text-decoration: none;
     background-image: linear-gradient(
       120deg,
-      ${({ theme }) => theme.campaignFormLinkLineColor} 0%,
-      ${({ theme }) => theme.campaignFormLinkLineColor} 100%
+      ${t(_ => _.campaignFormLinkLineColor)} 0%,
+      ${t(_ => _.campaignFormLinkLineColor)} 100%
     );
     padding-bottom: 2px;
     background-repeat: no-repeat;
@@ -105,8 +105,8 @@ const FormContainer = styled.div`
       background-size: 100% 4px;
       background-image: linear-gradient(
         120deg,
-        ${({ theme }) => theme.campaignFormLinkLineColor} 0%,
-        ${({ theme }) => theme.campaignFormLinkLineColor} 100%
+        ${t(_ => _.campaignFormLinkLineColor)} 0%,
+        ${t(_ => _.campaignFormLinkLineColor)} 100%
       );
     }
   }
@@ -127,7 +127,7 @@ const FormContainerInner = styled.div`
 
 const Title = styled.h1`
   font-size: 2rem;
-  text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
+  text-transform: ${t(_ => _.uppercaseTitles)};
   @media screen and (max-width: 800px) {
     font-size: 1.3rem;
   }
@@ -141,8 +141,8 @@ const Intro = styled.p`
 `;
 const CounterContainer = styled(FormContainerInner)`
   padding: 20px 40px;
-  background-color: ${({ theme }) => theme.counterBackgroundColor};
-  color: ${({ theme }) => theme.counterTextColor};
+  background-color: ${t(_ => _.counterBackgroundColor)};
+  color: ${t(_ => _.counterTextColor)};
   border-radius: 4px 4px 0 0;
   @media screen and (max-width: 1000px) {
     max-width: 100%;

@@ -78,12 +78,33 @@ export default class Theme {
     return [val, unit];
   }
 
+  get counterBackgroundColor() {
+    return this.variables.counterBackgroundColor || this.backgroundColor;
+  }
+
+  get counterTextColor() {
+    return this.variables.counterTextColor || this.textColor;
+  }
+
   get extraLargeSpacing() {
     return this.variables.extralargeSpacing || this.calc(this.mediumSpacing, ms => ms * 4);
   }
 
   get extraSmallSpacing() {
     return this.variables.extraSmallSpacing || this.calc(this.mediumSpacing, ms => ms / 4);
+  }
+
+  get formBackgroundColor() {
+    return this.variables.formBackgroundColor || this.primaryColor;
+  }
+
+  get formTextColor() {
+    return (
+      this.variables.formTextColor ||
+      this.contrastColor({
+        backgroundColor: this.formBackgroundColor,
+      })
+    );
   }
 
   get headingColor() {

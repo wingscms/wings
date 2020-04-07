@@ -6,8 +6,12 @@ class Theme extends _Theme {
     return Theme.__instance;
   };
 
-  get campaignForasdasmBackgroundColor() {
-    return this.variables.campaignFormBackgroundColor || this.primaryColor;
+  get campaignFormBackgroundColor() {
+    return this.variables.campaignFormBackgroundColor || this.formBackgroundColor;
+  }
+
+  get campaignFormTextColor() {
+    return this.variables.campaignFormTextColor || this.formTextColor;
   }
 }
 

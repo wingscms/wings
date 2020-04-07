@@ -19,6 +19,7 @@ export default {
   // misc
   contrastLuminanceThreshold: 60,
   uppercaseTitles: false,
+  shadow: '0 0 40px 0 rgba(0, 0, 0, 0.05)',
   // typography
   headerFontFamily: 'sans-serif',
 };
