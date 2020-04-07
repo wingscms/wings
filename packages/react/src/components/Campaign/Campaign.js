@@ -80,7 +80,6 @@ const MainContainerInner = styled(Container)`
 const FormContainer = styled.div`
   display: inline-block;
   width: 460px;
-  min-height: 500px;
   background-color: ${t(_ => _.campaignFormBackgroundColor)};
   color: ${t(_ => _.campaignFormTextColor)};
   vertical-align: top;
