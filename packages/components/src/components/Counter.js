@@ -12,6 +12,7 @@ const Container = styled.div`
   width: 100%;
 `;
 
+// TODO: generalise spacing of heights/spacing and font sizes
 const TopContainer = styled.div`
   position: relative;
   display: flex;
