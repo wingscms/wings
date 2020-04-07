@@ -36,8 +36,10 @@ export const event = () => (
     copy={{
       descriptionCollapse: 'Less',
       descriptionExpand: 'More',
-      fundraiserCounterMessage: 'are attending',
-      fundraiserTargetText: '500',
+      eventInfoTitle: 'Event Information',
+      eventLocationLabel: 'Location',
+      eventFeeLabel: 'Fee',
+      eventFee: '€5',
     }}
   />
 );
