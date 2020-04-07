@@ -15,6 +15,11 @@ export default () => (
   <Campaign
     id="asdasd"
     resourceType="node.fundraiser"
-    copy={{ fundraiserCounterMessage: 'has been donated', fundraiserTargetText: '500' }}
+    copy={{
+      descriptionCollapse: 'Less',
+      descriptionExpand: 'More',
+      fundraiserCounterMessage: 'has been donated',
+      fundraiserTargetText: '500',
+    }}
   />
 );
