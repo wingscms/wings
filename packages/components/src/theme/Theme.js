@@ -131,6 +131,14 @@ export default class Theme {
     return this.variables.navigationMenuBackgroundColor || this.backgroundColor;
   }
 
+  get progressBarColor() {
+    return this.variables.progressBarColor || this.primaryColor;
+  }
+
+  get progressBarBackgroundColor() {
+    return this.variables.progressBarColor || this.elementBackgroundColor;
+  }
+
   get smallSpacing() {
     return this.variables.smallSpacing || this.calc(this.mediumSpacing, ms => ms / 2);
   }

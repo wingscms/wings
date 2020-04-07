@@ -1,22 +1,32 @@
 import React from 'react';
-import { text, select, boolean } from '@storybook/addon-knobs/react';
-import { Button } from '..';
+import { boolean, color, number, select, text } from '@storybook/addon-knobs/react';
+import { ProgressBar } from '@wingscms/components';
+import styled from '../lib/styled';
 
-const props = ({
-  size = Button.Size.MEDIUM,
-  loading = false,
-  intent = Button.Intent.NONE,
-} = {}) => ({
-  type: select('type', { normal: 'normal', outline: 'outline' }, 'normal'),
-  intent: select('intent', Button.Intent, intent),
-  size: select('size', Button.Size, size),
-  disabled: boolean('disabled', false),
-  loading: boolean('loading', loading),
-  children: text('children', 'Click me!'),
-});
+const Container = styled.div`
+  height: 200vh;
+`;
 
-export default () => <Button {...props()} />;
-export const Primary = () => <Button {...props({ intent: Button.Intent.PRIMARY })} />;
-export const Small = () => <Button {...props({ size: Button.Size.SMALL })} />;
-export const Loading = () => <Button {...props({ loading: true })} />;
-export const LoadingSmall = () => <Button {...props({ size: Button.Size.SMALL, loading: true })} />;
+export default () => (
+  <Container>
+    <ProgressBar
+      percentage={number('percentage', 14, { range: true, min: 0, max: 100 })}
+      barColor={color('barColor')}
+      backgroundColor={color('backgroundColor')}
+      position={select('position', ProgressBar.Position, ProgressBar.Position.FIXED)}
+      height={text('height', '5px')}
+    />
+  </Container>
+);
+
+export const useWindowScrollPosition = () => (
+  <Container>
+    <ProgressBar
+      barColor={color('barColor')}
+      backgroundColor={color('backgroundColor')}
+      position={select('position', ProgressBar.Position, ProgressBar.Position.FIXED)}
+      height={text('height', '5px')}
+      useWindowScrollPosition={true}
+    />
+  </Container>
+);

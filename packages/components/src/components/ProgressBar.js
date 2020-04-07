@@ -1,48 +1,65 @@
-import React, { Component } from 'react';
-import styled, { css } from '../lib/styled';
-import Theme, { t } from '../theme';
+import React, { useState, useEffect } from 'react';
+import styled from '../lib/styled';
+import { t } from '../theme';
+
+const Position = {
+  FIXED: 'fixed',
+  RELATIVE: 'relative',
+};
 
 const Container = styled.div`
-  position: fixed;
+  position: ${({ position }) => position};
   display: block;
-  height: 5px;
-  width: 100vw;
-  background-color: #f8f8f8;
+  height: ${({ height }) => height};
+  width: 100%;
+  background-color: ${t(
+    (_, { backgroundColor }) => backgroundColor || _.progressBarBackgroundColor,
+  )};
   top: 0;
   left: 0;
   z-index: 20;
-  .inner {
-    height: 100%;
-    background-color: ${({ theme }) => theme.primaryColor};
-    transition: width 0.1s ease-out;
-  }
 `;
 
-export default class ProgressBar extends Component {
-  state = {
-    percentage: 0,
-  };
+const Inner = styled.div`
+  height: 100%;
+  width: ${({ percentage }) => percentage}%;
+  background-color: ${t((_, { barColor }) => barColor || _.progressBarColor)};
+  transition: width 0.1s ease-out;
+`;
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.updatePercentage);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.updatePercentage);
-  }
-
-  updatePercentage = () =>
+const ProgressBar = ({
+  barColor,
+  backgroundColor,
+  height = '5px',
+  percentage = 0,
+  position = Position.FIXED,
+  useWindowScrollPosition,
+  ...props
+}) => {
+  const [windowScrollPercentage, setWindowScrollPercentage] = useState(0);
+  const updatePercentage = () =>
     requestAnimationFrame(() => {
       const { scrollY, innerHeight, document } = window;
-      const percentage = (100 / (document.body.clientHeight - innerHeight)) * scrollY;
-      this.setState({ percentage });
+      const p = (100 / (document.body.clientHeight - innerHeight)) * scrollY;
+      setWindowScrollPercentage(p);
     });
 
-  render() {
-    return (
-      <Container>
-        <div className="inner" style={{ width: `${this.state.percentage}%` }} />
-      </Container>
-    );
-  }
-}
+  if (useWindowScrollPosition && typeof window !== undefined)
+    useEffect(() => {
+      window.addEventListener('scroll', updatePercentage);
+      return () => window.removeEventListener('scroll', updatePercentage);
+    }, []);
+
+  return (
+    <Container backgroundColor={backgroundColor} position={position} height={height} {...props}>
+      <Inner
+        barColor={barColor}
+        percentage={useWindowScrollPosition ? windowScrollPercentage : percentage}
+      />
+    </Container>
+  );
+};
+
+ProgressBar.Position = Position;
+
+export default ProgressBar;
