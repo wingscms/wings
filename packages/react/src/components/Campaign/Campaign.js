@@ -116,9 +116,10 @@ const FormContainer = styled.div`
 `;
 
 const FormContainerInner = styled.div`
-  padding: 40px;
+  padding: ${t(_ => _.mediumSpacing)};
   display: block;
   @media screen and (max-width: 1000px) {
+    padding: ${t(_ => _.smallSpacing)};
     max-width: 500px;
     margin: 0 auto;
     padding: 20px;
@@ -143,8 +144,11 @@ const CounterContainer = styled.div`
   background-color: ${t(_ => _.counterBackgroundColor)};
   color: ${t(_ => _.counterTextColor)};
   border-radius: 4px 4px 0 0;
-  padding: ${t(_ => _.smallSpacing)};
+  padding: ${t(_ => `${_.smallSpacing} ${_.mediumSpacing}`)};
   width: 100%;
+  @media screen and (max-width: 1000px) {
+    padding: ${t(_ => _.smallSpacing)};
+  }
 `;
 
 const DEFAULT_COPY = {
