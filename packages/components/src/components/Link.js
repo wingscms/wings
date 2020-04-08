@@ -43,7 +43,7 @@ const Style = {
 const CSS = {
   [Style.BASIC]: Basic,
   [Style.LINE_GROW]: LineGrow,
-  [Style.NONE]: null,
+  [Style.NONE]: css``,
 };
 
 const _Link = styled.a`
