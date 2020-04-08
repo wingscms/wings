@@ -2,7 +2,21 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Renderer03 from '@dailybeast/mobiledoc-react-renderer/dist/renderers/0-3';
 import Renderer from '@dailybeast/mobiledoc-react-renderer';
+import { Link } from '@wingscms/components';
 import styled from '../lib/styled';
+
+const P = ({ children, ...props }) => (
+  <p {...props}>
+    {children.map(child => {
+      switch (child.type) {
+        case 'a':
+          return <Link {...child.props} />;
+        default:
+          return child;
+      }
+    })}
+  </p>
+);
 
 Renderer03.prototype.parseProps = function parseProps(attrss) {
   if (attrss) {
@@ -34,6 +48,7 @@ class MobiledocRenderer extends Component {
     return new Renderer({
       cards: cards.map(this.injectCardProps),
       unknownCardHandler,
+      sections: [{ name: 'p', component: P }],
     });
   }
 
@@ -62,7 +77,6 @@ export default styled(MobiledocRenderer)`
   @media screen and (min-width: 800px) {
     font-size: 23px;
   }
-  p a,
   ol a,
   ul a {
     color: ${({ theme }) => theme.textColor};
