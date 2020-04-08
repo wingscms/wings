@@ -3,6 +3,7 @@ export { default as Counter } from './components/Counter';
 export { default as Expandable } from './components/Expandable';
 export { default as Header } from './components/Header';
 export { default as Image } from './components/Image';
+export { default as Link } from './components/Link';
 export { default as Loading } from './components/Loading';
 export { default as PaginationControls } from './components/PaginationControls';
 export { default as SvgIcon } from './components/SvgIcon';
