@@ -35,17 +35,23 @@ const LineGrow = css`
 `;
 
 const Style = {
-  BASIC: Basic,
-  LINE_GROW: LineGrow,
-  NONE: null,
+  BASIC: 'basic',
+  LINE_GROW: 'lineGrow',
+  NONE: 'none',
+};
+
+const CSS = {
+  [Style.BASIC]: Basic,
+  [Style.LINE_GROW]: LineGrow,
+  [Style.NONE]: null,
 };
 
 const _Link = styled.a`
   cursor: pointer;
-  ${({ linkStyle }) => linkStyle || ''}
+  ${t((_, { linkStyle }) => CSS[linkStyle] || CSS[_.linkStyle])}
 `;
 
-const Link = ({ primaryColor, secondaryColor, linkStyle = Style.LINE, ...props }) => (
+const Link = ({ primaryColor, secondaryColor, linkStyle, ...props }) => (
   <_Link
     primaryColor={primaryColor}
     secondaryColor={secondaryColor}
@@ -55,5 +61,6 @@ const Link = ({ primaryColor, secondaryColor, linkStyle = Style.LINE, ...props }
 );
 
 Link.Style = Style;
+Link.CSS = CSS;
 
 export default Link;

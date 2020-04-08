@@ -18,6 +18,7 @@ export default {
   mediumSpacing: '40px',
   // misc
   contrastLuminanceThreshold: 60,
+  linkStyle: 'lineGrow',
   uppercaseTitles: false,
   // typography
   headerFontFamily: 'sans-serif',
