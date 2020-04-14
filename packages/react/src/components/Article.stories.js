@@ -13,3 +13,4 @@ const node = {
 };
 
 export default () => <Article node={node} />;
+export const NoImage = () => <Article node={{ ...node, image: null }} />;
