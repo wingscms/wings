@@ -1,5 +1,5 @@
 import React from 'react';
-import Article from './Article';
+import { Article } from '@wingscms/react';
 import richMd from '../../fixtures/mobiledocRich.json';
 import { image } from '../../../../utils';
 

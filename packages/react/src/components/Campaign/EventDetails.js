@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '../../lib/styled';
+import { t } from '../../theme';
 
 const InfoContainer = styled.div`
   padding: 20px;
@@ -13,8 +14,8 @@ const MetaContainer = styled.div`
 `;
 
 const MetaName = styled.div`
-  font-family: ${({ theme }) => theme.headerFontFamily};
-  text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
+  font-family: ${t(_ => _.headerFontFamily)};
+  text-transform: ${t(_ => _.uppercaseTitles)};
   display: inline-block;
   width: 50%;
   font-size: 18px;
@@ -46,15 +47,15 @@ const Wrapper = styled.div`
   position: relative;
   width: calc(100% - 20px);
   max-width: 800px;
-  margin: 0 auto ${({ theme }) => theme.largeSpacing} auto;
+  margin: 0 auto ${t(_ => _.largeSpacing)} auto;
   padding: 20px;
   background-color: #fff !important;
   border-radius: 4px;
-  box-shadow: ${({ theme }) => theme.defaultShadow};
+  box-shadow: ${t(_ => _.shadow)};
   text-align: center;
   @media screen and (max-width: 800px) {
     padding: 40px;
-    margin: ${({ theme }) => theme.mediumSpacing} auto ${({ theme }) => theme.mediumSpacing} auto;
+    margin: ${t(_ => _.mediumSpacing)} auto ${t(_ => _.mediumSpacing)} auto;
   }
 `;
 

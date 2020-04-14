@@ -1,7 +1,7 @@
 import React from 'react';
 import { boolean, select, text, number } from '@storybook/addon-knobs/react';
+import { Image } from '@wingscms/components';
 import styled from '../lib/styled';
-import { Image } from '..';
 
 import jellyfish from '../img/story/jellyfish.jpg';
 

@@ -1,5 +1,5 @@
-import WingsProvider from '@wingscms/react/src/ctx/Wings';
-import { Theme, ThemeProvider } from '@wingscms/components/src';
+import { WingsProvider } from '@wingscms/react';
+import { Theme, ThemeProvider } from '@wingscms/components';
 import client from './wings/wings';
 
 export default [
@@ -19,9 +19,8 @@ export default [
     title: 'Theme',
     components: [ThemeProvider],
     params: [
-      { name: 'No Theme', props: {}, default: true },
-      { name: 'Default Theme', props: { theme: new Theme() } },
-      { name: 'Test Theme', props: { theme: new Theme({ primaryColor: '#ff0000' }) } },
+      { name: 'None', props: {}, default: true },
+      { name: 'Red', props: { theme: { primaryColor: '#ff0000' } } },
     ],
     options: {
       deep: true,

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styled from '../../lib/styled';
+import { t } from '../../theme';
 
 const Container = styled.div`
   display: inline-block;
@@ -12,7 +13,7 @@ const Container = styled.div`
   background-color: #fff;
   vertical-align: top;
   border-radius: 4px 0 0 4px;
-  box-shadow: ${({ theme }) => theme.defaultShadow};
+  box-shadow: ${t(_ => _.shadow)};
   max-height: ${({ show, height, containerInnerHeight }) =>
     !show && height ? `${height - 80}px` : `${containerInnerHeight + 200}px`};
   transition: max-height 0.15s linear;
@@ -39,8 +40,8 @@ const ToggleButton = styled.div`
   font-size: 24px;
   line-height: 28px;
   padding: 20px 0;
-  font-family: ${({ theme }) => theme.headerFontFamily};
-  text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
+  font-family: ${t(_ => _.headerFontFamily)};
+  text-transform: ${t(_ => _.uppercaseTitles)};
   font-weight: bold;
   bottom: 0;
   left: 0;
@@ -49,7 +50,7 @@ const ToggleButton = styled.div`
   background-color: #fff;
   cursor: pointer;
   &:hover {
-    color: ${({ theme }) => theme.primaryColor};
+    color: ${t(_ => _.primaryColor)};
   }
   &::before {
     content: '';

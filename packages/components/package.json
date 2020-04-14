@@ -20,7 +20,8 @@
     "@babel/runtime": "^7.7.7",
     "classnames": "^2.2.6",
     "color": "^3.1.2",
-    "filter-invalid-dom-props": "^2.0.0"
+    "filter-invalid-dom-props": "^2.0.0",
+    "react-countup": "^4.3.3"
   },
   "peerDependencies": {
     "prop-types": "^15",
