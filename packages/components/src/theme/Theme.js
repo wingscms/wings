@@ -11,9 +11,8 @@ export default class Theme {
     DANGER: 'danger',
   };
 
-  static instance = () => {
-    if (!Theme._instance) Theme._instance = new Theme();
-    return Theme._instance;
+  static instance = (...args) => {
+    return new Theme(...args);
   };
 
   Intent = Theme.Intent;

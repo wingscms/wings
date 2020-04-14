@@ -1,9 +1,8 @@
 import { useTheme as _useTheme, Theme as _Theme } from '@wingscms/components';
 
 class Theme extends _Theme {
-  static instance = variables => {
-    if (!Theme.__instance) Theme.__instance = new Theme(variables);
-    return Theme.__instance;
+  static instance = (...args) => {
+    return new Theme(...args);
   };
 
   get campaignFormBackgroundColor() {
@@ -23,8 +22,16 @@ class Theme extends _Theme {
   }
 }
 
-const getThemeInstance = theme =>
-  theme instanceof Theme ? theme : Theme.instance(theme.variables);
+const getThemeInstance = theme => {
+  switch (true) {
+    case theme instanceof Theme:
+      return theme;
+    case theme instanceof _Theme:
+      return Theme.instance(theme.variables);
+    default:
+      return Theme.instance(theme);
+  }
+};
 
 export const t = cb => ({ theme, ...props }) => cb(getThemeInstance(theme), props);
 
