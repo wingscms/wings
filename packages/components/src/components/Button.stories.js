@@ -1,6 +1,6 @@
 import React from 'react';
 import { text, select, boolean } from '@storybook/addon-knobs/react';
-import { Button } from '..';
+import { Button } from '@wingscms/components';
 
 const props = ({
   size = Button.Size.MEDIUM,

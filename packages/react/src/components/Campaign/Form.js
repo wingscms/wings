@@ -4,6 +4,7 @@ import { Loading, Button as _Button } from '@wingscms/components';
 import SchemaForm from '@wingscms/jsonschema-form';
 import deepmerge from 'deepmerge';
 import styled from '../../lib/styled';
+import { t } from '../../theme';
 
 import { withWings } from '../../ctx/Wings';
 
@@ -210,7 +211,7 @@ const Button = styled(_Button)`
   }
   &:hover {
     text-decoration: none;
-    color: ${({ theme }) => theme.primaryColor};
+    color: ${t(_ => _.primaryColor)};
   }
   @media screen and (max-width: 800px) {
     font-size: 22px;

@@ -1,9 +1,11 @@
 import React, { useState, useRef } from 'react';
+import { Counter } from '@wingscms/components';
 import styled from '../../lib/styled';
+
+import { t } from '../../theme';
 
 import Content from '../MobiledocRenderer';
 import CampaignForm from './Form';
-import Counter from './Counter';
 import EventDetails from './EventDetails';
 import Proposition from './Proposition';
 
@@ -12,7 +14,7 @@ const Container = styled.div`
   width: 100%;
   height: auto;
   position: relative;
-  background-color: ${({ theme }) => theme.backgroundColor || 'transparent'};
+  background-color: ${t(_ => _.backgroundColor)};
 `;
 
 const NodeFragment = `
@@ -56,9 +58,9 @@ const CampaignFragment = `
 const MainContainerOuter = styled(Container)`
   background-color: transparent;
   overflow: auto;
-  margin-bottom: ${({ theme }) => theme.largeSpacing};
+  margin-bottom: ${t(_ => _.largeSpacing)};
   @media screen and (max-width: 800px) {
-    margin-bottom: ${({ theme }) => theme.mediumSpacing};
+    margin-bottom: ${t(_ => _.mediumSpacing)};
   }
 `;
 
@@ -78,20 +80,19 @@ const MainContainerInner = styled(Container)`
 const FormContainer = styled.div`
   display: inline-block;
   width: 460px;
-  min-height: 500px;
-  background-color: ${({ theme }) => theme.campaignFormBackgroundColor};
-  color: ${({ theme }) => theme.campaignFormTextColor};
+  background-color: ${t(_ => _.campaignFormBackgroundColor)};
+  color: ${t(_ => _.campaignFormTextColor)};
   vertical-align: top;
   border-radius: 4px;
-  box-shadow: ${({ theme }) => theme.defaultShadow};
+  box-shadow: ${t(_ => _.shadow)};
   align-self: flex-start;
   a {
-    color: ${({ theme }) => theme.campaignFormLinkTextColor};
+    color: ${t(_ => _.campaignFormLinkTextColor)};
     text-decoration: none;
     background-image: linear-gradient(
       120deg,
-      ${({ theme }) => theme.campaignFormLinkLineColor} 0%,
-      ${({ theme }) => theme.campaignFormLinkLineColor} 100%
+      ${t(_ => _.campaignFormLinkLineColor)} 0%,
+      ${t(_ => _.campaignFormLinkLineColor)} 100%
     );
     padding-bottom: 2px;
     background-repeat: no-repeat;
@@ -103,8 +104,8 @@ const FormContainer = styled.div`
       background-size: 100% 4px;
       background-image: linear-gradient(
         120deg,
-        ${({ theme }) => theme.campaignFormLinkLineColor} 0%,
-        ${({ theme }) => theme.campaignFormLinkLineColor} 100%
+        ${t(_ => _.campaignFormLinkLineColor)} 0%,
+        ${t(_ => _.campaignFormLinkLineColor)} 100%
       );
     }
   }
@@ -114,9 +115,10 @@ const FormContainer = styled.div`
 `;
 
 const FormContainerInner = styled.div`
-  padding: 40px;
+  padding: ${t(_ => _.mediumSpacing)};
   display: block;
   @media screen and (max-width: 1000px) {
+    padding: ${t(_ => _.smallSpacing)};
     max-width: 500px;
     margin: 0 auto;
     padding: 20px;
@@ -125,7 +127,7 @@ const FormContainerInner = styled.div`
 
 const Title = styled.h1`
   font-size: 2rem;
-  text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
+  text-transform: ${t(_ => _.uppercaseTitles)};
   @media screen and (max-width: 800px) {
     font-size: 1.3rem;
   }
@@ -137,13 +139,14 @@ const Intro = styled.p`
     font-size: 1em;
   }
 `;
-const CounterContainer = styled(FormContainerInner)`
-  padding: 20px 40px;
-  background-color: ${({ theme }) => theme.counterBackgroundColor};
-  color: ${({ theme }) => theme.counterTextColor};
+const CounterContainer = styled.div`
+  background-color: ${t(_ => _.counterBackgroundColor)};
+  color: ${t(_ => _.counterTextColor)};
   border-radius: 4px 4px 0 0;
+  padding: ${t(_ => `${_.smallSpacing} ${_.mediumSpacing}`)};
+  width: 100%;
   @media screen and (max-width: 1000px) {
-    max-width: 100%;
+    padding: ${t(_ => _.smallSpacing)};
   }
 `;
 
@@ -227,7 +230,7 @@ export default ({
                 <Counter
                   current={_signatureCount || signatureCount}
                   goal={_signatureGoal || signatureGoal}
-                  descriptionText={petitionCounterMessage}
+                  description={petitionCounterMessage}
                   goalText={petitionCounterGoalText}
                 />
               </CounterContainer>
@@ -240,7 +243,7 @@ export default ({
                   <Counter
                     current={fundraiserRaised.amount / 100}
                     goal={fundraiserTarget.amount / 100}
-                    descriptionText={fundraiserCounterMessage}
+                    description={fundraiserCounterMessage}
                     goalText={fundraiserTargetText}
                     symbol={fundraiserRaised.currency.symbol}
                   />

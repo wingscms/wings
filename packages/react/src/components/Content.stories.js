@@ -1,5 +1,5 @@
 import React from 'react';
-import { Content } from '..';
+import { Content } from '@wingscms/react';
 import mobiledocRich from '../../fixtures/mobiledocRich';
 import mobiledocBasic from '../../fixtures/mobiledocBasic';
 
