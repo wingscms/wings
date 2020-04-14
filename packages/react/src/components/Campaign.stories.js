@@ -1,7 +1,7 @@
 import React from 'react';
 import { Campaign } from '@wingscms/react';
 
-export const petition = () => (
+export const Petition = () => (
   <Campaign
     id="asdasd"
     resourceType="node.petition"
@@ -16,7 +16,7 @@ export const petition = () => (
   />
 );
 
-export const fundrasier = () => (
+export const Fundraiser = () => (
   <Campaign
     id="asdasd"
     resourceType="node.fundraiser"
@@ -29,7 +29,7 @@ export const fundrasier = () => (
   />
 );
 
-export const event = () => (
+export const Event = () => (
   <Campaign
     id="asdasd"
     resourceType="node.event"
