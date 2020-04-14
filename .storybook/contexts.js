@@ -1,5 +1,5 @@
-import { WingsProvider } from '@wingscms/react';
-import { ThemeProvider, IntlProvider } from '@wingscms/components';
+import { WingsProvider, IntlProvider } from '@wingscms/react';
+import { ThemeProvider } from '@wingscms/components';
 import client from './wings/wings';
 
 export default [
@@ -33,8 +33,15 @@ export default [
     title: 'i18n',
     components: [IntlProvider],
     params: [
-      { locale: 'en', messages: { testMessage: 'English' } },
-      { locale: 'nl', messages: { testMessage: 'Nederlands' } },
+      {
+        name: 'English',
+        props: { locale: 'en', messages: { 'wings.Campaign.description.collapse': 'Collapse' } },
+        default: true,
+      },
+      {
+        name: 'Nederlands',
+        props: { locale: 'nl', messages: { 'wings.Campaign.description.collapse': 'Inklappen' } },
+      },
     ],
     options: {
       deep: true,

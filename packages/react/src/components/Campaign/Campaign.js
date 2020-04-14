@@ -3,6 +3,7 @@ import { Counter } from '@wingscms/components';
 import styled from '../../lib/styled';
 
 import { t } from '../../theme';
+import { useIntl } from '../../ctx/Intl';
 
 import Content from '../MobiledocRenderer';
 import CampaignForm from './Form';
@@ -150,17 +151,6 @@ const CounterContainer = styled.div`
   }
 `;
 
-const DEFAULT_COPY = {
-  descriptionCollapse: 'Collapse proposition button text',
-  descriptionExpand: 'Expand proposition button text',
-  eventInfoTitle: 'Title for Event metadata',
-  eventStartLabel: 'Label for Event Start date',
-  eventEndLabel: 'Label for Event End date',
-  eventLocationLabel: 'Label for Event Location',
-  eventFeeLabel: 'Label for Event Fee',
-  counterMessage: 'other people signed this petition',
-};
-
 export default ({
   id,
   resourceType,
@@ -173,6 +163,7 @@ export default ({
   signatureGoal: _signatureGoal,
   ...props
 }) => {
+  const intl = useIntl();
   const campaignContainerRef = useRef(null);
   const formContainerRef = useRef(null);
   const [signatureCount, setSignatureCount] = useState(null);
@@ -192,22 +183,23 @@ export default ({
       setFundraiserTarget(campaign.target);
     }
   };
+
   const {
-    descriptionCollapse,
-    descriptionExpand,
-    eventInfoTitle,
-    eventStartLabel,
-    eventEndLabel,
-    eventLocationLabel,
-    eventFeeLabel,
-    eventStartTime,
-    eventEndTime,
-    eventFee,
-    petitionCounterMessage,
-    petitionCounterGoalText,
-    fundraiserTargetText,
-    fundraiserCounterMessage,
-  } = { ...DEFAULT_COPY, ...copy };
+    descriptionCollapse = intl.formatMessage('wings.Campaign.description.collapse'),
+    descriptionExpand = intl.formatMessage('wings.Campaign.description.expand'),
+    eventInfoTitle = intl.formatMessage('wings.Campaign.eventInfo.title'),
+    eventStartLabel = intl.formatMessage('wings.Campaign.eventStart.label'),
+    eventEndLabel = intl.formatMessage('wings.Campaign.eventEnd.label'),
+    eventLocationLabel = intl.formatMessage('wings.Campaign.eventLocation.label'),
+    eventFeeLabel = intl.formatMessage('wings.Campaign.eventFee.label'),
+    eventStartTime = intl.formatMessage(''),
+    eventEndTime = intl.formatMessage(''),
+    eventFee = intl.formatMessage(''),
+    petitionCounterMessage = intl.formatMessage('wings.Campaign.petitionCounter.message'),
+    petitionCounterGoalText = intl.formatMessage(''),
+    fundraiserTargetText = intl.formatMessage(''),
+    fundraiserCounterMessage = intl.formatMessage('wings.Campaign.fundraiserCounter.message'),
+  } = copy;
   const { intro, title } = node;
   const element = (
     <React.Fragment>

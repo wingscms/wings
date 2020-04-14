@@ -6,7 +6,6 @@ export const Petition = () => (
     id="asdasd"
     resourceType="node.petition"
     copy={{
-      descriptionCollapse: 'Less',
       descriptionExpand: 'More',
       petitionCounterMessage: 'have signed the petition',
       petitionCounterGoalText: '500',
@@ -21,7 +20,6 @@ export const Fundraiser = () => (
     id="asdasd"
     resourceType="node.fundraiser"
     copy={{
-      descriptionCollapse: 'Less',
       descriptionExpand: 'More',
       fundraiserCounterMessage: 'has been donated',
       fundraiserTargetText: '500',
@@ -34,7 +32,6 @@ export const Event = () => (
     id="asdasd"
     resourceType="node.event"
     copy={{
-      descriptionCollapse: 'Less',
       descriptionExpand: 'More',
       eventInfoTitle: 'Event Information',
       eventLocationLabel: 'Location',

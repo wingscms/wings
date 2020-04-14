@@ -1,3 +1,4 @@
+import React from 'react';
 import { IntlProvider as ReactIntlProvider, useIntl as useReactIntl } from 'react-intl';
 
 const useMessages = node =>
@@ -22,8 +23,11 @@ export const IntlProvider = ({ node, messages: mP, children }) => {
 
 export const useIntl = () => {
   const intl = useReactIntl();
+  if (intl.formatMessage._wings) return intl;
   let old = intl.formatMessage;
   old = old.bind(intl);
-  intl.formatMessage = (id, ...args) => old({ id }, ...args);
+  const newFn = (id, ...args) => old({ id }, ...args);
+  newFn._wings = true;
+  intl.formatMessage = newFn;
   return intl;
 };
