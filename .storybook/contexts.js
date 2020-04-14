@@ -19,9 +19,8 @@ export default [
     title: 'Theme',
     components: [ThemeProvider],
     params: [
-      { name: 'No Theme', props: {}, default: true },
-      { name: 'Default Theme', props: { theme: new Theme() } },
-      { name: 'Test Theme', props: { theme: new Theme({ primaryColor: '#ff0000' }) } },
+      { name: 'None', props: {}, default: true },
+      { name: 'Red', props: { theme: { primaryColor: '#ff0000' } } },
     ],
     options: {
       deep: true,
