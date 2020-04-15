@@ -31,3 +31,8 @@ export const useIntl = () => {
   intl.formatMessage = newFn;
   return intl;
 };
+
+export const withIntl = Comp => props => {
+  const intl = useIntl();
+  return <Comp {...props} intl={intl} />;
+};
