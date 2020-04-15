@@ -183,22 +183,37 @@ export default ({
       setFundraiserTarget(campaign.target);
     }
   };
+  const { fee, schedule } = node;
 
   const {
     descriptionCollapse = intl.formatMessage('wings.Campaign.description.collapse'),
     descriptionExpand = intl.formatMessage('wings.Campaign.description.expand'),
+    petitionCounterMessage = intl.formatMessage('wings.Campaign.petitionCounter.message', {
+      signatureCount,
+    }),
+    petitionCounterGoalText = signatureGoal ? intl.formatNumber(signatureGoal) : null,
+    fundraiserTargetText = fundraiserTarget
+      ? `${fundraiserTarget.currency.symbol}${intl.formatNumber(fundraiserTarget.amount / 100)}`
+      : null,
+    fundraiserCounterMessage = intl.formatMessage('wings.Campaign.fundraiserCounter.message'),
     eventInfoTitle = intl.formatMessage('wings.Campaign.eventInfo.title'),
     eventStartLabel = intl.formatMessage('wings.Campaign.eventStart.label'),
     eventEndLabel = intl.formatMessage('wings.Campaign.eventEnd.label'),
     eventLocationLabel = intl.formatMessage('wings.Campaign.eventLocation.label'),
     eventFeeLabel = intl.formatMessage('wings.Campaign.eventFee.label'),
-    eventStartTime = intl.formatMessage(''),
-    eventEndTime = intl.formatMessage(''),
-    eventFee = intl.formatMessage(''),
-    petitionCounterMessage = intl.formatMessage('wings.Campaign.petitionCounter.message'),
-    petitionCounterGoalText = intl.formatMessage(''),
-    fundraiserTargetText = intl.formatMessage(''),
-    fundraiserCounterMessage = intl.formatMessage('wings.Campaign.fundraiserCounter.message'),
+    eventStartTime = schedule?.start
+      ? `${intl.formatDate(new Date(schedule.start))} ${intl.formatTime(new Date(schedule.start))}`
+      : null,
+    eventEndTime = schedule?.end
+      ? `${intl.formatDate(new Date(schedule.end))} ${intl.formatTime(new Date(schedule.end))}`
+      : null,
+    eventFee = fee
+      ? intl.formatNumber(fee.amount.amount / 100, {
+          style: 'currency',
+          currency: fee.amount.currency.id,
+          currencyDisplay: 'symbol',
+        })
+      : null,
   } = copy;
   const { intro, title } = node;
   const element = (

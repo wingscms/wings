@@ -35,12 +35,26 @@ export default [
     params: [
       {
         name: 'English',
-        props: { locale: 'en', messages: { 'wings.Campaign.description.collapse': 'Collapse' } },
+        props: {
+          locale: 'en',
+          messages: {
+            'wings.Campaign.description.collapse': 'Collapse',
+            'wings.Campaign.petitionCounter.message':
+              '{signatureCount, plural, one {person has} other {people have}} signed this petition',
+          },
+        },
         default: true,
       },
       {
         name: 'Nederlands',
-        props: { locale: 'nl', messages: { 'wings.Campaign.description.collapse': 'Inklappen' } },
+        props: {
+          locale: 'nl',
+          messages: {
+            'wings.Campaign.description.collapse': 'Inklappen',
+            'wings.Campaign.petitionCounter.message':
+              '{signatureCount, plural, one {persoon heeft} other {mensen hebben}} de petitie getekend',
+          },
+        },
       },
     ],
     options: {

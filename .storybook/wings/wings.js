@@ -30,7 +30,7 @@ const server = mockServer(
         attendeeCount: 50,
         schedule: {
           start: 1578567951390,
-          end: null,
+          end: 1578568051390,
         },
         location: {
           name: 'A place',
@@ -41,7 +41,7 @@ const server = mockServer(
         },
         fee: {
           amount: {
-            amount: 5,
+            amount: 500,
           },
         },
       }),
