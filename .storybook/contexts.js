@@ -1,7 +1,8 @@
 import { WingsProvider, IntlProvider } from '@wingscms/react';
 import { ThemeProvider } from '@wingscms/components';
 import client from './wings/wings';
-import messages from './wings/messages.json';
+import en from './wings/en.json';
+import nl from './wings/nl.json';
 
 export default [
   {
@@ -38,7 +39,7 @@ export default [
         name: 'English',
         props: {
           locale: 'en',
-          messages,
+          messages: en,
         },
         default: true,
       },
@@ -46,11 +47,7 @@ export default [
         name: 'Nederlands',
         props: {
           locale: 'nl',
-          messages: {
-            'wings.Campaign.description.collapse': 'Inklappen',
-            'wings.Campaign.petitionCounter.message':
-              '{signatureCount, plural, one {persoon heeft} other {mensen hebben}} de petitie getekend',
-          },
+          messages: nl,
         },
       },
     ],

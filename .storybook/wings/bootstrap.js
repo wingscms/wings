@@ -4,7 +4,8 @@ const path = require('path');
 const { getIntrospectionQuery } = require('graphql');
 
 const schemaPath = path.join(__dirname, 'introspectionResult.json');
-const messagesPath = path.join(__dirname, 'messages.json');
+
+const locales = ['en', 'nl'];
 
 const bootstrap = async () => {
   const client = new Wings({ domain: 'localhost' });
@@ -12,34 +13,46 @@ const bootstrap = async () => {
     const data = await client.query(getIntrospectionQuery());
     fs.writeFileSync(schemaPath, JSON.stringify(data, null, 2));
   }
-  if (!fs.existsSync(messagesPath)) {
-    const localeData = await client.query(`{
-      currentApp {
-        ... on WebApp {
-          copy {
-            message {
-              messageId
-              message
+
+  const pLocales = locales.map(async locale => {
+    const localePath = path.join(__dirname, `${locale}.json`);
+
+    if (!fs.existsSync(localePath)) {
+      const data = await client.query(
+        `
+      query LocaleData($locale: String) {
+        currentApp {
+          ... on WebApp {
+            copy(localeId: $locale) {
+              message {
+                messageId
+                message
+              }
             }
           }
         }
-      }
-    }`);
-    fs.writeFileSync(
-      messagesPath,
-      JSON.stringify(
-        localeData.currentApp.copy.reduce(
-          (messages, entry) => ({
-            ...messages,
-            [entry.message.messageId]: entry.message.message,
-          }),
-          {},
+      }`,
+        { locale },
+      );
+
+      fs.writeFileSync(
+        localePath,
+        JSON.stringify(
+          data.currentApp.copy.reduce(
+            (messages, entry) => ({
+              ...messages,
+              [entry.message.messageId]: entry.message.message,
+            }),
+            {},
+          ),
+          null,
+          2,
         ),
-        null,
-        2,
-      ),
-    );
-  }
+      );
+    }
+  });
+
+  await Promise.all(pLocales);
 };
 
 module.exports = bootstrap();

@@ -8,4 +8,5 @@ lerna-debug.log
 .changelog
 .storybook-build
 .storybook/wings/introspectionResult.json
-.storybook/wings/messages.json
+.storybook/wings/en.json
+.storybook/wings/nl.json
