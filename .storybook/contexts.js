@@ -1,6 +1,7 @@
 import { WingsProvider, IntlProvider } from '@wingscms/react';
 import { ThemeProvider } from '@wingscms/components';
 import client from './wings/wings';
+import messages from './wings/messages.json';
 
 export default [
   {
@@ -37,11 +38,7 @@ export default [
         name: 'English',
         props: {
           locale: 'en',
-          messages: {
-            'wings.Campaign.description.collapse': 'Collapse',
-            'wings.Campaign.petitionCounter.message':
-              '{signatureCount, plural, one {person has} other {people have}} signed this petition',
-          },
+          messages,
         },
         default: true,
       },
