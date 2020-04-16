@@ -33,6 +33,9 @@ const Current = styled.div`
   line-height: 38px;
   text-align: right;
   padding-top: 2px;
+  * {
+    font-family: ${t(_ => _.headerFontFamily)};
+  }
 `;
 
 const Description = styled.div`

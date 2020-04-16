@@ -128,6 +128,7 @@ const FormContainerInner = styled.div`
 const Title = styled.h1`
   font-size: 2rem;
   text-transform: ${t(_ => _.uppercaseTitles)};
+  font-family: ${t(_ => _.headerFontFamily)};
   @media screen and (max-width: 800px) {
     font-size: 1.3rem;
   }
