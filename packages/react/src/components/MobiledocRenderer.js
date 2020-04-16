@@ -5,19 +5,6 @@ import Renderer from '@dailybeast/mobiledoc-react-renderer';
 import { Link } from '@wingscms/components';
 import styled from '../lib/styled';
 
-const P = ({ children, ...props }) => (
-  <p {...props}>
-    {children.map(child => {
-      switch (child.type) {
-        case 'a':
-          return <Link {...child.props} />;
-        default:
-          return child;
-      }
-    })}
-  </p>
-);
-
 Renderer03.prototype.parseProps = function parseProps(attrss) {
   if (attrss) {
     return {
@@ -48,7 +35,7 @@ class MobiledocRenderer extends Component {
     return new Renderer({
       cards: cards.map(this.injectCardProps),
       unknownCardHandler,
-      sections: [{ name: 'p', component: P }],
+      markups: [{ name: 'a', render: Link }],
     });
   }
 
