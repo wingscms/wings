@@ -19,7 +19,7 @@ export default styled('p')`
       : `
   line-height: 1.4;
   span {
-    background: ${_.landingSectionSubtitleBackgroundColor};
+    background: ${t(_ => _.landingSectionSubtitleBackgroundColor)};
     line-height: 1.4;
     padding: 0 0.25em;
     box-decoration-break: clone;
