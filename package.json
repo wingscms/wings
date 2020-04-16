@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "start": "concurrently \"yarn run storybook\" \"lerna run start --stream --parallel\"",
+    "build": "lerna run build",
     "test": "run-s lint && jest && lerna run test",
     "test:watch": "jest --watch",
     "lint": "eslint .",

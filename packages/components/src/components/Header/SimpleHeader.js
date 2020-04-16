@@ -4,10 +4,10 @@ import { mediaUrl } from '@wingscms/sdk';
 import styled from 'styled-components';
 
 const ImageContainer = styled.figure`
-  margin: ${t(theme => theme.mediumSpacing)} 0 0 0;
+  margin: ${t(_ => _.mediumSpacing)} 0 0 0;
   width: 100%;
   @media screen and (min-width: 800px) {
-    margin: ${t(theme => theme.largeSpacing)} 0 0 50%;
+    margin: ${t(_ => _.largeSpacing)} 0 0 50%;
     max-width: 1200px;
     width: 100vw;
     transform: translateX(-50%);
@@ -24,16 +24,17 @@ const TitleContainer = styled.div`
   padding: 0;
   position: relative;
   text-align: center;
-  margin-top: ${({ theme }) => theme.mediumSpacing};
+  margin-top: ${t(_ => _.mediumSpacing)};
   @media screen and (min-width: 800px) {
-    margin-top: ${({ theme }) => theme.largeSpacing};
+    margin-top: ${t(_ => _.largeSpacing)};
   }
 `;
 
 const Title = styled.h1`
+  font-family: ${t(_ => _.headerFontFamily)};
   letter-spacing: 1.5px;
-  color: ${({ theme }) => theme.textColor};
-  text-transform: ${({ theme }) => theme.uppercaseTitles};
+  color: ${t(_ => _.textColor)};
+  text-transform: ${t(_ => _.uppercaseTitles)};
   display: inline-block;
   font-size: 2rem;
   line-height: 1.2;

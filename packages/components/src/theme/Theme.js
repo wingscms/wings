@@ -123,6 +123,18 @@ export default class Theme {
     return this.variables.headingColorDark || this.textColorDark;
   }
 
+  get landingSectionBackgroundColor() {
+    return this.variables.landingSectionBackgroundColor || this.primaryColor;
+  }
+
+  get landingSectionTitleColor() {
+    return this.variables.landingSectionTitleColor || this.textColor;
+  }
+
+  get landingSectionTitleBackgroundColor() {
+    return this.variables.landingSectionTitleBackgroundColor || null;
+  }
+
   get largeSpacing() {
     return this.variables.largeSpacing || this.calc(this.mediumSpacing, ms => ms * 2);
   }
