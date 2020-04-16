@@ -332,12 +332,12 @@ class CampaignForm extends Component {
       privacyConsentFieldLabel: intl.formatMessage('wings.CampaignForm.privacyConsentField.label', {
         url: (node.settings ? node.settings.legal.privacyPolicy.url : '') || '/privacy',
       }),
-      campaignConfirmTitle: intl.formatMessage('wings.Campaign.confirm.title'),
-      campaignConfirmText: intl.formatMessage('wings.Campaign.confirm.text'),
-      campaignLoadingText: intl.formatMessage('wings.Campaign.loading.text'),
-      campaignErrorTitle: intl.formatMessage('wings.Campaign.error.title'),
-      campaignErrorText: intl.formatMessage('wings.Campaign.error.text'),
-      campaignErrorButtonText: intl.formatMessage('wings.Campaign.error.buttonText'),
+      campaignConfirmTitle: intl.formatMessage('wings.CampaignForm.confirm.title'),
+      campaignConfirmText: intl.formatMessage('wings.CampaignForm.confirm.text'),
+      campaignLoadingText: intl.formatMessage('wings.CampaignForm.loading.text'),
+      campaignErrorTitle: intl.formatMessage('wings.CampaignForm.error.title'),
+      campaignErrorText: intl.formatMessage('wings.CampaignForm.error.text'),
+      campaignErrorButtonText: intl.formatMessage('wings.CampaignForm.error.buttonText'),
     };
     return { ...messages, ...copy };
   }
