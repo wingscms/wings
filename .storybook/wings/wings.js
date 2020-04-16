@@ -2,7 +2,7 @@ import Wings from '@wingscms/sdk/src';
 import { buildClientSchema } from 'graphql';
 import { mockServer } from 'graphql-tools';
 import { image } from '../../utils';
-import introspectionResult from './introspectionResult.json';
+import introspectionResult from './data/introspectionResult.json';
 
 const schema = buildClientSchema(introspectionResult);
 

@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { getIntrospectionQuery } = require('graphql');
 
-const schemaPath = path.join(__dirname, 'introspectionResult.json');
+const schemaPath = path.join(__dirname, 'data', 'introspectionResult.json');
 
 const locales = ['en', 'de', 'nl'];
 
@@ -15,7 +15,7 @@ const bootstrap = async () => {
   }
 
   const pLocales = locales.map(async locale => {
-    const localePath = path.join(__dirname, `${locale}.json`);
+    const localePath = path.join(__dirname, 'data', `${locale}.json`);
 
     if (!fs.existsSync(localePath)) {
       const data = await client.query(
