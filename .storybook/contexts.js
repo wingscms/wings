@@ -2,6 +2,7 @@ import { WingsProvider, IntlProvider } from '@wingscms/react';
 import { ThemeProvider } from '@wingscms/components';
 import client from './wings/wings';
 import en from './wings/en.json';
+import de from './wings/de.json';
 import nl from './wings/nl.json';
 
 export default [
@@ -42,6 +43,13 @@ export default [
           messages: en,
         },
         default: true,
+      },
+      {
+        name: 'Deutsch',
+        props: {
+          locale: 'de',
+          messages: de,
+        },
       },
       {
         name: 'Nederlands',

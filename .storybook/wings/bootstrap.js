@@ -5,7 +5,7 @@ const { getIntrospectionQuery } = require('graphql');
 
 const schemaPath = path.join(__dirname, 'introspectionResult.json');
 
-const locales = ['en', 'nl'];
+const locales = ['en', 'de', 'nl'];
 
 const bootstrap = async () => {
   const client = new Wings({ domain: 'localhost' });
