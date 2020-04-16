@@ -210,7 +210,7 @@ export default ({
   } = { ...DEFAULT_COPY, ...copy };
   const { intro, title } = node;
   const element = (
-    <React.Fragment>
+    <>
       <MainContainerOuter {...props} ref={campaignContainerRef}>
         <MainContainerInner>
           <Proposition
@@ -279,7 +279,7 @@ export default ({
           }}
         />
       )}
-    </React.Fragment>
+    </>
   );
   return wrapElement(element, node);
 };

@@ -41,10 +41,10 @@ export default compose(
   setPropTypes(propTypes),
   setStatic('defaultProps', defaultProps),
 )(({ text, source, sourceUrl, ...props }) => (
-  <React.Fragment>
+  <>
     <Blockquote {...props}>
       <blockquote>{text}</blockquote>
     </Blockquote>
     {!source ? null : <Caption>{!sourceUrl ? source : <a href={sourceUrl}>{source}</a>}</Caption>}
-  </React.Fragment>
+  </>
 ));

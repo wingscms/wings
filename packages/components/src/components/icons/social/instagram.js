@@ -3,7 +3,7 @@ import React from 'react';
 import { createSvgIcon } from '../../../lib/utils';
 
 export default createSvgIcon(
-  <React.Fragment>
+  <>
     <g>
       <g>
         <path
@@ -26,7 +26,7 @@ export default createSvgIcon(
         <circle cx="393.6" cy="118.4" r="17.056" />
       </g>
     </g>
-  </React.Fragment>,
+  </>,
   'instagram',
   '0 0 512 512',
 );

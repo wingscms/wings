@@ -3,7 +3,7 @@ import React from 'react';
 import { createSvgIcon } from '../../../lib/utils';
 
 export default createSvgIcon(
-  <React.Fragment>
+  <>
     <g>
       <g>
         <polygon points="176,289.089 176,289.121 192,289.121 		" />
@@ -31,7 +31,7 @@ export default createSvgIcon(
         />
       </g>
     </g>
-  </React.Fragment>,
+  </>,
   'reddit',
   '0 0 512 512',
 );
