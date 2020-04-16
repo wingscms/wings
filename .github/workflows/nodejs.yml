@@ -17,11 +17,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: install, build, and test
+    - name: install, test, build
       run: |
         npx yarn
-        npx lerna run test
-        npx lerna run --ignore @wingscms/gatsby-starter-hummingbird build
+        npx yarn test
+        npx yarn build
       env:
         CI: true
   publish:
