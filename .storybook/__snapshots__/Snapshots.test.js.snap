@@ -1,0 +1,257 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots components/Button Default 1`] = `
+<button
+  className="sc-bxivhb fCsCwt"
+  disabled={false}
+  size="medium"
+  type="normal"
+>
+  Click me!
+</button>
+`;
+
+exports[`Storyshots components/Button Loading 1`] = `
+<button
+  className="sc-bxivhb jIhTHF"
+  disabled={true}
+  size="medium"
+  type="normal"
+>
+  <div
+    className="sc-htpNat kbTBHE"
+  >
+    <div
+      className="sc-bdVaJa sc-bwzfXH fgXDYz"
+      size="small"
+    />
+  </div>
+  Click me!
+</button>
+`;
+
+exports[`Storyshots components/Button Loading Small 1`] = `
+<button
+  className="sc-bxivhb kDIGCO"
+  disabled={true}
+  size="small"
+  type="normal"
+>
+  <div
+    className="sc-htpNat kbTBHE"
+  >
+    <div
+      className="sc-bdVaJa sc-bwzfXH fVArY"
+      size="mini"
+    />
+  </div>
+  Click me!
+</button>
+`;
+
+exports[`Storyshots components/Button Primary 1`] = `
+<button
+  className="sc-bxivhb dHSStC"
+  disabled={false}
+  size="medium"
+  type="normal"
+>
+  Click me!
+</button>
+`;
+
+exports[`Storyshots components/Button Small 1`] = `
+<button
+  className="sc-bxivhb jHImxL"
+  disabled={false}
+  size="small"
+  type="normal"
+>
+  Click me!
+</button>
+`;
+
+exports[`Storyshots components/Counter Default 1`] = `
+<div
+  className="sc-bZQynM cbTQrn"
+>
+  <div
+    className="sc-gzVnrw hcSRYx"
+  >
+    <div
+      className="sc-htoDjs dyPXvz"
+    >
+      €
+      <span />
+    </div>
+    <div
+      className="sc-dnqmqq lgbCWI"
+    >
+      has been donated
+    </div>
+  </div>
+  <div
+    className="sc-ifAKCX iBZWju"
+    height={12}
+  >
+    <div
+      className="sc-ifAKCX sc-EHOje hLwHHv"
+      height={12}
+      width={76}
+    />
+  </div>
+  <div
+    className="sc-iwsKbI dpOsHX"
+  >
+    €100
+  </div>
+</div>
+`;
+
+exports[`Storyshots components/CounterBar Default 1`] = `
+<div
+  className="sc-ifAKCX iBZWju"
+  height={12}
+>
+  <div
+    className="sc-ifAKCX sc-EHOje hLwHHv"
+    height={12}
+    width={76}
+  />
+</div>
+`;
+
+exports[`Storyshots components/Expandable Default 1`] = `
+<div
+  className="sc-gZMcBi ekXqdA"
+  height="250px"
+  open={false}
+>
+  Quisquam recusandae alias consequuntur corporis repellat ratione ut sunt qui. Iure ut libero qui. Ut nulla quam ipsam nobis cupiditate sed dignissimos debitis incidunt. Sed libero repudiandae.
+ 
+Natus et eos itaque velit omnis. Porro ut et ipsam explicabo eligendi occaecati debitis et. Eum dicta eum eaque enim ipsum inventore debitis libero aspernatur. Quam tempore a velit provident velit eligendi.
+ 
+Qui nobis repellendus fugiat velit. Aperiam placeat fuga. Distinctio placeat ullam minima ducimus temporibus modi aut architecto ducimus. Voluptates explicabo exercitationem ut quis sed.
+ 
+Sit vitae soluta sint non voluptates ut. Quos qui illo error sunt. Ratione a officia quaerat cumque incidunt aut.
+ 
+Hic eligendi quos esse ut ab. Sed quae nam eos sint autem rerum doloremque officia. Ut ut eos ducimus eos saepe consequatur vel in ut. Et molestiae ea ut. Placeat quidem est consequuntur aut est fuga.
+ 
+Ex ut voluptas enim ex eveniet facere molestiae aut. Aut nam et dolorum architecto fugit repellendus hic veritatis qui. Culpa earum voluptate vel labore. Ut est sunt corporis alias est et sequi voluptas. Non aut rerum impedit ex rem voluptates.
+ 
+Totam perferendis ut non fugiat eligendi omnis. Quasi ipsum rem eos quod recusandae consectetur optio laudantium et. Possimus molestias facere quia. Ab quo occaecati quia ipsum sit qui accusantium odit doloremque. Dolore aut eos quis ut incidunt omnis. Voluptas minima quia ut minima sunt qui similique ut quam.
+ 
+Sit vel et nostrum ut. Aut laborum iure molestiae et facere placeat molestiae. Molestiae dolores commodi inventore sequi quia itaque. Sint odit dolor. Et quo aperiam natus.
+ 
+Magni quasi exercitationem. Ea similique ad sed architecto magnam voluptatem maxime neque adipisci. Culpa quis ut ab nulla quod labore ullam quos sed. Voluptatibus eum saepe nesciunt omnis sit et. Eaque corrupti vel.
+ 
+Similique blanditiis voluptatem provident doloribus aut culpa ratione vel. Omnis numquam maxime sint libero laudantium voluptatem. Et voluptas quis non. Architecto non explicabo facere neque et ex quaerat. Aut qui adipisci.
+  <div
+    className="sc-gqjmRU iNfgYt"
+    onClick={[Function]}
+    open={false}
+  >
+    More
+  </div>
+</div>
+`;
+
+exports[`Storyshots components/Header Cover 1`] = `
+<div
+  className="sc-cooIXK fVukXW"
+>
+  <header
+    className="sc-cSHVUG fsalfQ"
+    id="landing-section"
+  >
+    <div
+      className="sc-kAzzGY HSvgI"
+      style={
+        Object {
+          "marginTop": 0,
+        }
+      }
+    >
+      <div
+        className="sc-kgoBCf jlJUUY"
+      />
+      <div
+        className="sc-chPdSV iWlkeV"
+      />
+    </div>
+    <div
+      className="sc-kGXeez bRUmTu"
+    >
+      <div
+        className="sc-kpOJdX dPQemP"
+      >
+        <h1
+          className="sc-jzJRlG bwntWL"
+        >
+          <span>
+            Test title
+          </span>
+        </h1>
+      </div>
+      <div
+        className="sc-dxgOiQ jVQZtU"
+      >
+        <svg
+          aria-hidden="true"
+          aria-labelledby={null}
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 23 30"
+        >
+          <g
+            fill="none"
+            fill-rule="evenodd"
+            id="Templates"
+            stroke="none"
+            stroke-width="1"
+          >
+            <g
+              fill-rule="nonzero"
+              id="Longread"
+              transform="translate(-948.000000, -770.000000)"
+            >
+              <g
+                id="noun_1561795_cc"
+                transform="translate(948.000000, 770.000000)"
+              >
+                <path
+                  d="M22.7325185,18.59125 L20.3205,16.23875 C20.2957963,16.2125 20.2642778,16.1925 20.2289259,16.1804167 C20.1411852,16.1516667 20.0445,16.1825 19.9899815,16.2545833 L13.5853333,22.5204167 L13.5857593,0.416666667 C13.5857593,0.36125 13.5631852,0.308333333 13.5235741,0.269166667 C13.483963,0.23 13.4294444,0.208333333 13.3727963,0.208333333 L9.62337037,0.208333333 C9.50581481,0.208333333 9.41040741,0.301666667 9.41040741,0.416666667 L9.41040741,22.5195833 L2.98233333,16.23125 C2.89927778,16.15 2.76425926,16.15 2.6812037,16.23125 L0.267481481,18.5916667 C0.184425926,18.6729167 0.184425926,18.805 0.267481481,18.88625 L11.3462407,29.7304167 C11.3862778,29.7695833 11.4403704,29.79125 11.4970185,29.79125 C11.5536667,29.79125 11.6077593,29.7691667 11.6477963,29.7304167 L22.7333704,18.88625 C22.7734074,18.8470833 22.7955556,18.7941667 22.7955556,18.73875 C22.7955556,18.6833333 22.7729815,18.6304167 22.7325185,18.59125 Z"
+                  id="Shape"
+                />
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </header>
+</div>
+`;
+
+exports[`Storyshots components/Header Default 1`] = `
+<div
+  className="sc-cooIXK fVukXW"
+>
+  <div
+    className="sc-jTzLTM fxBFUL"
+  >
+    <h1
+      className="sc-fjdhpX ejZYok"
+    >
+      Test title
+    </h1>
+    <figure
+      className="sc-VigVT glCwOM"
+    >
+      <img
+        src="https://via.placeholder.com/1200x800?w=1160&quality=100"
+      />
+    </figure>
+  </div>
+</div>
+`;
