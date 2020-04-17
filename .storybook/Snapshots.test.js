@@ -1,3 +1,14 @@
-import initStoryshots from '@storybook/addon-storyshots';
+import initStoryshots, { snapshotWithOptions } from '@storybook/addon-storyshots';
 
-initStoryshots();
+const mockTypes = ['MainContainerOuter', 'FormContainer'];
+
+initStoryshots({
+  test: snapshotWithOptions({
+    createNodeMock: element => {
+      console.log(element);
+      // if (element.type === TextareaThatUsesRefs) {
+      //   return document.createElement('textarea');
+      // }
+    },
+  }),
+});

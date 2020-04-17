@@ -10,6 +10,7 @@ export { default as SvgIcon } from './components/SvgIcon';
 
 export { default as Theme, t, useTheme, ThemeProvider } from './theme';
 export { createSvgIcon, getContrastColor, separateUnit } from './lib/utils';
+export { default as useWindowDimensions } from './hooks/useWindowDimensions';
 
 // Form
 export { default as MenuButton } from './components/MenuButton';

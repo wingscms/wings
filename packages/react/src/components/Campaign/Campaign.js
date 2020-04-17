@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Counter } from '@wingscms/components';
+import { Counter, useWindowDimensions } from '@wingscms/components';
 import styled from '../../lib/styled';
 
 import { t } from '../../theme';
@@ -78,9 +78,11 @@ const MainContainerInner = styled(Container)`
   }
 `;
 
+const FORM_WIDTH = '460px';
+
 const FormContainer = styled.div`
   display: inline-block;
-  width: 460px;
+  width: ${FORM_WIDTH};
   background-color: ${t(_ => _.campaignFormBackgroundColor)};
   color: ${t(_ => _.campaignFormTextColor)};
   vertical-align: top;
@@ -165,6 +167,7 @@ export default ({
   ...props
 }) => {
   const intl = useIntl();
+  const { width } = useWindowDimensions();
   const campaignContainerRef = useRef(null);
   const formContainerRef = useRef(null);
   const [signatureCount, setSignatureCount] = useState(null);
@@ -216,20 +219,31 @@ export default ({
         })
       : null,
   } = copy;
-  const { intro, title } = node;
+  const { intro, title, description } = node;
   const element = (
-    <React.Fragment>
+    <>
       <MainContainerOuter {...props} ref={campaignContainerRef}>
         <MainContainerInner>
           <Proposition
             {...{ descriptionCollapse, descriptionExpand }}
-            formContainerRef={formContainerRef}
-            campaignContainerRef={campaignContainerRef}
-            campaign={node}
+            initialHeight={formContainerRef?.current?.offsetHeight}
+            onToggle={show => {
+              if (show) return;
+              campaignContainerRef.current.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+              });
+            }}
+            width={width}
+            style={{ width: width > 1000 ? `calc(100% - ${FORM_WIDTH})` : '100%' }}
           >
-            {title ? <Title>{title}</Title> : null}
-            {intro ? <Intro fullWidth>{intro}</Intro> : null}
-            <Content content={node.description} mini />
+            {!(title || intro || description) ? null : (
+              <>
+                {title ? <Title>{title}</Title> : null}
+                {intro ? <Intro fullWidth>{intro}</Intro> : null}
+                <Content content={description} mini />
+              </>
+            )}
           </Proposition>
           <FormContainer ref={formContainerRef}>
             {/* Petition counter */}
@@ -287,7 +301,7 @@ export default ({
           }}
         />
       )}
-    </React.Fragment>
+    </>
   );
   return wrapElement(element, node);
 };
