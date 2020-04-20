@@ -12997,10 +12997,10 @@ react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-mobiledoc-editor@^0.8.0:
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/react-mobiledoc-editor/-/react-mobiledoc-editor-0.8.1.tgz#4d77539b29fa729d9247362a45b99074da6ddba6"
-  integrity sha512-XWiO1hkQ03Dl5D5CtQR8lQl8twfsu12WuikhsCumzTc/YByoibjha361QWLfB0qccAS/0ZWQTHjdKpofEPMaWg==
+react-mobiledoc-editor@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/react-mobiledoc-editor/-/react-mobiledoc-editor-0.10.0.tgz#11e89d511948d6733431081bc26e409a5ae52b3a"
+  integrity sha512-DNo2MpQ0Vc3jTxpmfwLw4fuGAtLe24+9BnbEnb3cncSjtuUBnJDVCzzs1mlQDXn3Zzbni5mqv1Yzr/j57Dirig==
   dependencies:
     prop-types "^15.6.2"
 
