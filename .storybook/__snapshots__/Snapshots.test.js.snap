@@ -311,6 +311,1246 @@ exports[`Storyshots components/SvgIcon Default 1`] = `
 
 exports[`Storyshots jsonschema-form/Amount Default 1`] = `"Amount"`;
 
+exports[`Storyshots react/Article Default 1`] = `
+<div>
+  <header
+    className="sc-cSHVUG fsalfQ"
+    id="landing-section"
+  >
+    <div
+      className="sc-kAzzGY HSvgI"
+      style={
+        Object {
+          "marginTop": 0,
+        }
+      }
+    >
+      <div
+        className="sc-kgoBCf kGauKR"
+      />
+      <div
+        className="sc-chPdSV iWlkeV"
+      />
+    </div>
+    <div
+      className="sc-kGXeez bRUmTu"
+    >
+      <div
+        className="sc-kpOJdX dPQemP"
+      >
+        <h1
+          className="sc-jzJRlG bwntWL"
+        >
+          <span>
+            This is a test article
+          </span>
+        </h1>
+      </div>
+      <div
+        className="sc-dxgOiQ jVQZtU"
+      >
+        <svg
+          aria-hidden="true"
+          aria-labelledby={null}
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 23 30"
+        >
+          <g
+            fill="none"
+            fill-rule="evenodd"
+            id="Templates"
+            stroke="none"
+            stroke-width="1"
+          >
+            <g
+              fill-rule="nonzero"
+              id="Longread"
+              transform="translate(-948.000000, -770.000000)"
+            >
+              <g
+                id="noun_1561795_cc"
+                transform="translate(948.000000, 770.000000)"
+              >
+                <path
+                  d="M22.7325185,18.59125 L20.3205,16.23875 C20.2957963,16.2125 20.2642778,16.1925 20.2289259,16.1804167 C20.1411852,16.1516667 20.0445,16.1825 19.9899815,16.2545833 L13.5853333,22.5204167 L13.5857593,0.416666667 C13.5857593,0.36125 13.5631852,0.308333333 13.5235741,0.269166667 C13.483963,0.23 13.4294444,0.208333333 13.3727963,0.208333333 L9.62337037,0.208333333 C9.50581481,0.208333333 9.41040741,0.301666667 9.41040741,0.416666667 L9.41040741,22.5195833 L2.98233333,16.23125 C2.89927778,16.15 2.76425926,16.15 2.6812037,16.23125 L0.267481481,18.5916667 C0.184425926,18.6729167 0.184425926,18.805 0.267481481,18.88625 L11.3462407,29.7304167 C11.3862778,29.7695833 11.4403704,29.79125 11.4970185,29.79125 C11.5536667,29.79125 11.6077593,29.7691667 11.6477963,29.7304167 L22.7333704,18.88625 C22.7734074,18.8470833 22.7955556,18.7941667 22.7955556,18.73875 C22.7955556,18.6833333 22.7729815,18.6304167 22.7325185,18.59125 Z"
+                  id="Shape"
+                />
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </header>
+  <div
+    className="sc-kxynE kixoE"
+  >
+    <div
+      className="sc-esOvli cilAJx"
+    >
+      <div
+        className="Mobiledoc"
+      >
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div
+          className="react-reveal"
+          style={
+            Object {
+              "opacity": undefined,
+            }
+          }
+        >
+          <figure
+            className="sc-cmthru jUahXZ size-0 align-0"
+          >
+            <img
+              alt={null}
+              large=""
+              sectionKey={1}
+              src="https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&quality=100"
+            />
+          </figure>
+        </div>
+        <div
+          className="sc-bXGyLb HYxEB headerContainer"
+          id="chapter-one"
+        >
+          <div
+            className="sc-eLExRp epULZM"
+          >
+            <div
+              className="react-reveal"
+              style={
+                Object {
+                  "opacity": undefined,
+                }
+              }
+            >
+              <span
+                className="sc-krvtoX hpkrZy"
+              >
+                1
+              </span>
+            </div>
+            <div
+              className="react-reveal"
+              style={
+                Object {
+                  "opacity": undefined,
+                }
+              }
+            >
+              <h2
+                className="sc-cbkKFq gnVukq"
+              >
+                Chapter One
+              </h2>
+            </div>
+            <div
+              className="react-reveal"
+              style={
+                Object {
+                  "opacity": undefined,
+                }
+              }
+            >
+              <div
+                className="sc-daURTG sc-lkqHmb etaRQJ"
+              >
+                An eloquent introduction to chapter one
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div
+          className="sc-eMigcr LbjWn"
+        >
+          <div
+            className="sc-esOvli cPpIGR"
+            mini={true}
+          >
+            <div
+              className="Mobiledoc"
+            >
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+        </div>
+        <figure
+          className="sc-cLQEGU iskwJH"
+          type={0}
+        >
+          <blockquote>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          </blockquote>
+        </figure>
+        <figcaption
+          className="sc-gqPbQI kMfjCx"
+        >
+          <a
+            href="wings.dev"
+          >
+            Someone
+          </a>
+        </figcaption>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div
+          className="sc-bXGyLb HYxEB headerContainer"
+          id="chapter-two"
+        >
+          <div
+            className="sc-eLExRp epULZM"
+          >
+            <div
+              className="react-reveal"
+              style={
+                Object {
+                  "opacity": undefined,
+                }
+              }
+            >
+              <span
+                className="sc-krvtoX hpkrZy"
+              >
+                2
+              </span>
+            </div>
+            <div
+              className="react-reveal"
+              style={
+                Object {
+                  "opacity": undefined,
+                }
+              }
+            >
+              <h2
+                className="sc-cbkKFq gnVukq"
+              >
+                Chapter Two
+              </h2>
+            </div>
+            <div
+              className="react-reveal"
+              style={
+                Object {
+                  "opacity": undefined,
+                }
+              }
+            >
+              <div
+                className="sc-daURTG sc-lkqHmb etaRQJ"
+              >
+                An eloquent introduction to chapter two
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div
+          className="sc-hMFtBS jKqFwo"
+        >
+          <div
+            className="inner"
+          >
+            <strong>
+              Lorem ipsum dolor sit amet.
+            </strong>
+          </div>
+        </div>
+        <div
+          className="sc-laTMn GDazh"
+        >
+          <h3
+            className="sc-hGoxap cUKdqq"
+          >
+            Question and Answers
+          </h3>
+          <div
+            className="sc-TFwJa eIeWjd"
+          >
+            <div
+              className="sc-bHwgHz gYHfut"
+            >
+              <div
+                className="sc-krDsej bqGHLR"
+                onClick={[Function]}
+              >
+                <div
+                  className="sc-itybZL gOvnWR"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-labelledby={null}
+                    focusable="false"
+                    role="presentation"
+                    viewBox="0 0 444.819 444.819"
+                  >
+                    <path
+                      d="M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="sc-fjmCvl kYedgb"
+                >
+                  <div
+                    className="sc-esOvli cPpIGR"
+                    mini={true}
+                  >
+                    <div
+                      className="Mobiledoc"
+                    >
+                      <h2>
+                        Question
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="sc-dTdPqK bKGusO"
+              >
+                <div
+                  className="sc-fjmCvl kYedgb"
+                >
+                  <div
+                    className="sc-esOvli cPpIGR"
+                    mini={true}
+                  >
+                    <div
+                      className="Mobiledoc"
+                    >
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="sc-bHwgHz gYHfut"
+            >
+              <div
+                className="sc-krDsej bqGHLR"
+                onClick={[Function]}
+              >
+                <div
+                  className="sc-itybZL gOvnWR"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-labelledby={null}
+                    focusable="false"
+                    role="presentation"
+                    viewBox="0 0 444.819 444.819"
+                  >
+                    <path
+                      d="M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="sc-fjmCvl kYedgb"
+                >
+                  <div
+                    className="sc-esOvli cPpIGR"
+                    mini={true}
+                  >
+                    <div
+                      className="Mobiledoc"
+                    >
+                      <h2>
+                        Question
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="sc-dTdPqK bKGusO"
+              >
+                <div
+                  className="sc-fjmCvl kYedgb"
+                >
+                  <div
+                    className="sc-esOvli cPpIGR"
+                    mini={true}
+                  >
+                    <div
+                      className="Mobiledoc"
+                    >
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="sc-bHwgHz gYHfut"
+            >
+              <div
+                className="sc-krDsej bqGHLR"
+                onClick={[Function]}
+              >
+                <div
+                  className="sc-itybZL gOvnWR"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-labelledby={null}
+                    focusable="false"
+                    role="presentation"
+                    viewBox="0 0 444.819 444.819"
+                  >
+                    <path
+                      d="M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="sc-fjmCvl kYedgb"
+                >
+                  <div
+                    className="sc-esOvli cPpIGR"
+                    mini={true}
+                  >
+                    <div
+                      className="Mobiledoc"
+                    >
+                      <h2>
+                        Question
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="sc-dTdPqK bKGusO"
+              >
+                <div
+                  className="sc-fjmCvl kYedgb"
+                >
+                  <div
+                    className="sc-esOvli cPpIGR"
+                    mini={true}
+                  >
+                    <div
+                      className="Mobiledoc"
+                    >
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div
+          className="sc-jtggT kIbeHr"
+        >
+          <div
+            className="sc-jKVCRD eRBwhe"
+          />
+          <div
+            className="sc-ebFjAB iYZItB"
+          >
+            <div
+              className="sc-dliRfk sc-kLIISr gCZFQa"
+              style={
+                Object {
+                  "marginTop": "0",
+                }
+              }
+            >
+              <div
+                className="sc-dliRfk sc-qrIAp bsCNma"
+              >
+                <div
+                  className="sc-ipXKqB ckkgtD"
+                  height={320}
+                  style={
+                    Object {
+                      "margin": "10px 0",
+                      "padding": "20px 20px 0",
+                      "width": "calc(100% - 460px)",
+                    }
+                  }
+                  width={1024}
+                >
+                  <div
+                    className="sc-hmXxxW UXsez"
+                  />
+                </div>
+                <div
+                  className="sc-iqzUVk elrNlX"
+                >
+                  <div
+                    className="sc-ipZHIp hmgMzR"
+                  >
+                    <div
+                      style={
+                        Object {
+                          "textAlign": "center",
+                        }
+                      }
+                    >
+                      loading
+                      <div
+                        className="sc-bdVaJa kfCdkg"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div
+          className="sc-kaNhvL kTMOJr"
+        >
+          <div
+            className="sc-LKuAh bBnjYV"
+            style={
+              Object {
+                "minHeight": 0,
+              }
+            }
+          >
+            <div
+              className="sc-bdVaJa sc-hzNEM pNjcJ"
+            />
+          </div>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <figure
+          className="sc-gojNiO bqGGDp"
+          src="https://www.youtube.com/watch?v=Htckxql7GRA"
+        >
+          <div
+            className="video-wrapper"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<iframe width=\\"480\\" height=\\"270\\" src=\\"https://www.youtube.com/embed/Htckxql7GRA?feature=oembed\\" frameborder=\\"0\\" allow=\\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\\" allowfullscreen></iframe>",
+              }
+            }
+            style={
+              Object {
+                "paddingBottom": "56%",
+              }
+            }
+          />
+        </figure>
+        <section
+          className="sc-hORach eiAZaK"
+          src="https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&quality=100"
+          type={1}
+        >
+          <header>
+            <h1
+              className="sc-bAeIUo fXmkYd"
+            >
+              A testimonial
+            </h1>
+            <p
+              className="sc-iujRgT jdlKvT"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </header>
+          <div
+            className="sc-bMVAic jjddNl"
+            onScroll={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+          >
+            <div
+              className="sc-exAgwC lkVHup"
+            >
+              <div>
+                <div />
+                <figure
+                  className="sc-GMQeP hxuETX"
+                >
+                  <img
+                    alt="portret van A testimonial"
+                    src="https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=760&h=1280&quality=100"
+                  />
+                </figure>
+              </div>
+            </div>
+            <div
+              className="sc-cQFLBn fFXhvH"
+            >
+              <div
+                className="sc-esOvli cPpIGR"
+                mini={true}
+              >
+                <div
+                  className="Mobiledoc"
+                >
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots react/Article No Image 1`] = `
+<div>
+  <header
+    className="sc-cSHVUG fsalfQ"
+    id="landing-section"
+  >
+    <div
+      className="sc-kAzzGY HSvgI"
+      style={
+        Object {
+          "marginTop": 0,
+        }
+      }
+    >
+      <div
+        className="sc-kgoBCf Fwhgm"
+      />
+      <div
+        className="sc-chPdSV iWlkeV"
+      />
+    </div>
+    <div
+      className="sc-kGXeez bRUmTu"
+    >
+      <div
+        className="sc-kpOJdX dPQemP"
+      >
+        <h1
+          className="sc-jzJRlG bwntWL"
+        >
+          <span>
+            This is a test article
+          </span>
+        </h1>
+      </div>
+      <div
+        className="sc-dxgOiQ jVQZtU"
+      >
+        <svg
+          aria-hidden="true"
+          aria-labelledby={null}
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 23 30"
+        >
+          <g
+            fill="none"
+            fill-rule="evenodd"
+            id="Templates"
+            stroke="none"
+            stroke-width="1"
+          >
+            <g
+              fill-rule="nonzero"
+              id="Longread"
+              transform="translate(-948.000000, -770.000000)"
+            >
+              <g
+                id="noun_1561795_cc"
+                transform="translate(948.000000, 770.000000)"
+              >
+                <path
+                  d="M22.7325185,18.59125 L20.3205,16.23875 C20.2957963,16.2125 20.2642778,16.1925 20.2289259,16.1804167 C20.1411852,16.1516667 20.0445,16.1825 19.9899815,16.2545833 L13.5853333,22.5204167 L13.5857593,0.416666667 C13.5857593,0.36125 13.5631852,0.308333333 13.5235741,0.269166667 C13.483963,0.23 13.4294444,0.208333333 13.3727963,0.208333333 L9.62337037,0.208333333 C9.50581481,0.208333333 9.41040741,0.301666667 9.41040741,0.416666667 L9.41040741,22.5195833 L2.98233333,16.23125 C2.89927778,16.15 2.76425926,16.15 2.6812037,16.23125 L0.267481481,18.5916667 C0.184425926,18.6729167 0.184425926,18.805 0.267481481,18.88625 L11.3462407,29.7304167 C11.3862778,29.7695833 11.4403704,29.79125 11.4970185,29.79125 C11.5536667,29.79125 11.6077593,29.7691667 11.6477963,29.7304167 L22.7333704,18.88625 C22.7734074,18.8470833 22.7955556,18.7941667 22.7955556,18.73875 C22.7955556,18.6833333 22.7729815,18.6304167 22.7325185,18.59125 Z"
+                  id="Shape"
+                />
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </header>
+  <div
+    className="sc-kxynE kixoE"
+  >
+    <div
+      className="sc-esOvli cilAJx"
+    >
+      <div
+        className="Mobiledoc"
+      >
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div
+          className="react-reveal"
+          style={
+            Object {
+              "opacity": undefined,
+            }
+          }
+        >
+          <figure
+            className="sc-cmthru jUahXZ size-0 align-0"
+          >
+            <img
+              alt={null}
+              large=""
+              sectionKey={1}
+              src="https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&quality=100"
+            />
+          </figure>
+        </div>
+        <div
+          className="sc-bXGyLb HYxEB headerContainer"
+          id="chapter-one"
+        >
+          <div
+            className="sc-eLExRp epULZM"
+          >
+            <div
+              className="react-reveal"
+              style={
+                Object {
+                  "opacity": undefined,
+                }
+              }
+            >
+              <span
+                className="sc-krvtoX hpkrZy"
+              >
+                1
+              </span>
+            </div>
+            <div
+              className="react-reveal"
+              style={
+                Object {
+                  "opacity": undefined,
+                }
+              }
+            >
+              <h2
+                className="sc-cbkKFq gnVukq"
+              >
+                Chapter One
+              </h2>
+            </div>
+            <div
+              className="react-reveal"
+              style={
+                Object {
+                  "opacity": undefined,
+                }
+              }
+            >
+              <div
+                className="sc-daURTG sc-lkqHmb etaRQJ"
+              >
+                An eloquent introduction to chapter one
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div
+          className="sc-eMigcr LbjWn"
+        >
+          <div
+            className="sc-esOvli cPpIGR"
+            mini={true}
+          >
+            <div
+              className="Mobiledoc"
+            >
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+        </div>
+        <figure
+          className="sc-cLQEGU iskwJH"
+          type={0}
+        >
+          <blockquote>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          </blockquote>
+        </figure>
+        <figcaption
+          className="sc-gqPbQI kMfjCx"
+        >
+          <a
+            href="wings.dev"
+          >
+            Someone
+          </a>
+        </figcaption>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div
+          className="sc-bXGyLb HYxEB headerContainer"
+          id="chapter-two"
+        >
+          <div
+            className="sc-eLExRp epULZM"
+          >
+            <div
+              className="react-reveal"
+              style={
+                Object {
+                  "opacity": undefined,
+                }
+              }
+            >
+              <span
+                className="sc-krvtoX hpkrZy"
+              >
+                2
+              </span>
+            </div>
+            <div
+              className="react-reveal"
+              style={
+                Object {
+                  "opacity": undefined,
+                }
+              }
+            >
+              <h2
+                className="sc-cbkKFq gnVukq"
+              >
+                Chapter Two
+              </h2>
+            </div>
+            <div
+              className="react-reveal"
+              style={
+                Object {
+                  "opacity": undefined,
+                }
+              }
+            >
+              <div
+                className="sc-daURTG sc-lkqHmb etaRQJ"
+              >
+                An eloquent introduction to chapter two
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div
+          className="sc-hMFtBS jKqFwo"
+        >
+          <div
+            className="inner"
+          >
+            <strong>
+              Lorem ipsum dolor sit amet.
+            </strong>
+          </div>
+        </div>
+        <div
+          className="sc-laTMn GDazh"
+        >
+          <h3
+            className="sc-hGoxap cUKdqq"
+          >
+            Question and Answers
+          </h3>
+          <div
+            className="sc-TFwJa eIeWjd"
+          >
+            <div
+              className="sc-bHwgHz gYHfut"
+            >
+              <div
+                className="sc-krDsej bqGHLR"
+                onClick={[Function]}
+              >
+                <div
+                  className="sc-itybZL gOvnWR"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-labelledby={null}
+                    focusable="false"
+                    role="presentation"
+                    viewBox="0 0 444.819 444.819"
+                  >
+                    <path
+                      d="M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="sc-fjmCvl kYedgb"
+                >
+                  <div
+                    className="sc-esOvli cPpIGR"
+                    mini={true}
+                  >
+                    <div
+                      className="Mobiledoc"
+                    >
+                      <h2>
+                        Question
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="sc-dTdPqK bKGusO"
+              >
+                <div
+                  className="sc-fjmCvl kYedgb"
+                >
+                  <div
+                    className="sc-esOvli cPpIGR"
+                    mini={true}
+                  >
+                    <div
+                      className="Mobiledoc"
+                    >
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="sc-bHwgHz gYHfut"
+            >
+              <div
+                className="sc-krDsej bqGHLR"
+                onClick={[Function]}
+              >
+                <div
+                  className="sc-itybZL gOvnWR"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-labelledby={null}
+                    focusable="false"
+                    role="presentation"
+                    viewBox="0 0 444.819 444.819"
+                  >
+                    <path
+                      d="M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="sc-fjmCvl kYedgb"
+                >
+                  <div
+                    className="sc-esOvli cPpIGR"
+                    mini={true}
+                  >
+                    <div
+                      className="Mobiledoc"
+                    >
+                      <h2>
+                        Question
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="sc-dTdPqK bKGusO"
+              >
+                <div
+                  className="sc-fjmCvl kYedgb"
+                >
+                  <div
+                    className="sc-esOvli cPpIGR"
+                    mini={true}
+                  >
+                    <div
+                      className="Mobiledoc"
+                    >
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="sc-bHwgHz gYHfut"
+            >
+              <div
+                className="sc-krDsej bqGHLR"
+                onClick={[Function]}
+              >
+                <div
+                  className="sc-itybZL gOvnWR"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-labelledby={null}
+                    focusable="false"
+                    role="presentation"
+                    viewBox="0 0 444.819 444.819"
+                  >
+                    <path
+                      d="M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="sc-fjmCvl kYedgb"
+                >
+                  <div
+                    className="sc-esOvli cPpIGR"
+                    mini={true}
+                  >
+                    <div
+                      className="Mobiledoc"
+                    >
+                      <h2>
+                        Question
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="sc-dTdPqK bKGusO"
+              >
+                <div
+                  className="sc-fjmCvl kYedgb"
+                >
+                  <div
+                    className="sc-esOvli cPpIGR"
+                    mini={true}
+                  >
+                    <div
+                      className="Mobiledoc"
+                    >
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div
+          className="sc-jtggT kIbeHr"
+        >
+          <div
+            className="sc-jKVCRD eRBwhe"
+          />
+          <div
+            className="sc-ebFjAB iYZItB"
+          >
+            <div
+              className="sc-dliRfk sc-kLIISr gCZFQa"
+              style={
+                Object {
+                  "marginTop": "0",
+                }
+              }
+            >
+              <div
+                className="sc-dliRfk sc-qrIAp bsCNma"
+              >
+                <div
+                  className="sc-ipXKqB ckkgtD"
+                  height={320}
+                  style={
+                    Object {
+                      "margin": "10px 0",
+                      "padding": "20px 20px 0",
+                      "width": "calc(100% - 460px)",
+                    }
+                  }
+                  width={1024}
+                >
+                  <div
+                    className="sc-hmXxxW UXsez"
+                  />
+                </div>
+                <div
+                  className="sc-iqzUVk elrNlX"
+                >
+                  <div
+                    className="sc-ipZHIp hmgMzR"
+                  >
+                    <div
+                      style={
+                        Object {
+                          "textAlign": "center",
+                        }
+                      }
+                    >
+                      loading
+                      <div
+                        className="sc-bdVaJa kfCdkg"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div
+          className="sc-kaNhvL kTMOJr"
+        >
+          <div
+            className="sc-LKuAh bBnjYV"
+            style={
+              Object {
+                "minHeight": 0,
+              }
+            }
+          >
+            <div
+              className="sc-bdVaJa sc-hzNEM pNjcJ"
+            />
+          </div>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <figure
+          className="sc-gojNiO bqGGDp"
+          src="https://www.youtube.com/watch?v=Htckxql7GRA"
+        >
+          <div
+            className="video-wrapper"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<iframe width=\\"480\\" height=\\"270\\" src=\\"https://www.youtube.com/embed/Htckxql7GRA?feature=oembed\\" frameborder=\\"0\\" allow=\\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\\" allowfullscreen></iframe>",
+              }
+            }
+            style={
+              Object {
+                "paddingBottom": "56%",
+              }
+            }
+          />
+        </figure>
+        <section
+          className="sc-hORach eiAZaK"
+          src="https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&quality=100"
+          type={1}
+        >
+          <header>
+            <h1
+              className="sc-bAeIUo fXmkYd"
+            >
+              A testimonial
+            </h1>
+            <p
+              className="sc-iujRgT jdlKvT"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </header>
+          <div
+            className="sc-bMVAic jjddNl"
+            onScroll={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+          >
+            <div
+              className="sc-exAgwC lkVHup"
+            >
+              <div>
+                <div />
+                <figure
+                  className="sc-GMQeP hxuETX"
+                >
+                  <img
+                    alt="portret van A testimonial"
+                    src="https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=760&h=1280&quality=100"
+                  />
+                </figure>
+              </div>
+            </div>
+            <div
+              className="sc-cQFLBn fFXhvH"
+            >
+              <div
+                className="sc-esOvli cPpIGR"
+                mini={true}
+              >
+                <div
+                  className="Mobiledoc"
+                >
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots react/Campaign Event 1`] = `
 <div
   className="sc-dliRfk sc-kLIISr gCZFQa"
@@ -319,22 +1559,20 @@ exports[`Storyshots react/Campaign Event 1`] = `
     className="sc-dliRfk sc-qrIAp bsCNma"
   >
     <div
-      className="sc-ipXKqB irNMrW"
+      className="sc-ipXKqB ckkgtD"
+      height={320}
+      style={
+        Object {
+          "margin": "10px 0",
+          "padding": "20px 20px 0",
+          "width": "calc(100% - 460px)",
+        }
+      }
+      width={1024}
     >
       <div
         className="sc-hmXxxW UXsez"
-      >
-        <div
-          className="sc-esOvli cPpIGR"
-          mini={true}
-        />
-      </div>
-      <div
-        className="sc-cqCuEk fYuDSX"
-        onClick={[Function]}
-      >
-        Read more
-      </div>
+      />
     </div>
     <div
       className="sc-iqzUVk elrNlX"
@@ -349,7 +1587,7 @@ exports[`Storyshots react/Campaign Event 1`] = `
             }
           }
         >
-          wings.CampaignForm.loading.text
+          loading
           <div
             className="sc-bdVaJa kfCdkg"
           />
@@ -368,22 +1606,20 @@ exports[`Storyshots react/Campaign Fundraiser 1`] = `
     className="sc-dliRfk sc-qrIAp bsCNma"
   >
     <div
-      className="sc-ipXKqB irNMrW"
+      className="sc-ipXKqB ckkgtD"
+      height={320}
+      style={
+        Object {
+          "margin": "10px 0",
+          "padding": "20px 20px 0",
+          "width": "calc(100% - 460px)",
+        }
+      }
+      width={1024}
     >
       <div
         className="sc-hmXxxW UXsez"
-      >
-        <div
-          className="sc-esOvli cPpIGR"
-          mini={true}
-        />
-      </div>
-      <div
-        className="sc-cqCuEk fYuDSX"
-        onClick={[Function]}
-      >
-        Read more
-      </div>
+      />
     </div>
     <div
       className="sc-iqzUVk elrNlX"
@@ -398,7 +1634,7 @@ exports[`Storyshots react/Campaign Fundraiser 1`] = `
             }
           }
         >
-          wings.CampaignForm.loading.text
+          loading
           <div
             className="sc-bdVaJa kfCdkg"
           />
@@ -417,22 +1653,20 @@ exports[`Storyshots react/Campaign Petition 1`] = `
     className="sc-dliRfk sc-qrIAp bsCNma"
   >
     <div
-      className="sc-ipXKqB irNMrW"
+      className="sc-ipXKqB ckkgtD"
+      height={320}
+      style={
+        Object {
+          "margin": "10px 0",
+          "padding": "20px 20px 0",
+          "width": "calc(100% - 460px)",
+        }
+      }
+      width={1024}
     >
       <div
         className="sc-hmXxxW UXsez"
-      >
-        <div
-          className="sc-esOvli cPpIGR"
-          mini={true}
-        />
-      </div>
-      <div
-        className="sc-cqCuEk fYuDSX"
-        onClick={[Function]}
-      >
-        Read more
-      </div>
+      />
     </div>
     <div
       className="sc-iqzUVk elrNlX"
@@ -447,7 +1681,7 @@ exports[`Storyshots react/Campaign Petition 1`] = `
             }
           }
         >
-          wings.CampaignForm.loading.text
+          loading
           <div
             className="sc-bdVaJa kfCdkg"
           />
@@ -474,4 +1708,1115 @@ exports[`Storyshots react/Content Default 1`] = `
 </div>
 `;
 
+exports[`Storyshots react/Content With Cards 1`] = `
+<div
+  className="sc-esOvli cilAJx"
+>
+  <div
+    className="Mobiledoc"
+  >
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <div
+      className="react-reveal"
+      style={
+        Object {
+          "opacity": undefined,
+        }
+      }
+    >
+      <figure
+        className="sc-cmthru jUahXZ size-0 align-0"
+      >
+        <img
+          alt={null}
+          large=""
+          sectionKey={1}
+          src="https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&quality=100"
+        />
+      </figure>
+    </div>
+    <div
+      className="sc-bXGyLb HYxEB headerContainer"
+      id="chapter-one"
+    >
+      <div
+        className="sc-eLExRp epULZM"
+      >
+        <div
+          className="react-reveal"
+          style={
+            Object {
+              "opacity": undefined,
+            }
+          }
+        >
+          <span
+            className="sc-krvtoX hpkrZy"
+          >
+            1
+          </span>
+        </div>
+        <div
+          className="react-reveal"
+          style={
+            Object {
+              "opacity": undefined,
+            }
+          }
+        >
+          <h2
+            className="sc-cbkKFq gnVukq"
+          >
+            Chapter One
+          </h2>
+        </div>
+        <div
+          className="react-reveal"
+          style={
+            Object {
+              "opacity": undefined,
+            }
+          }
+        >
+          <div
+            className="sc-daURTG sc-lkqHmb etaRQJ"
+          >
+            An eloquent introduction to chapter one
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <div
+      className="sc-eMigcr LbjWn"
+    >
+      <div
+        className="sc-esOvli cPpIGR"
+        mini={true}
+      >
+        <div
+          className="Mobiledoc"
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </div>
+    </div>
+    <figure
+      className="sc-cLQEGU iskwJH"
+      type={0}
+    >
+      <blockquote>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+      </blockquote>
+    </figure>
+    <figcaption
+      className="sc-gqPbQI kMfjCx"
+    >
+      <a
+        href="wings.dev"
+      >
+        Someone
+      </a>
+    </figcaption>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <div
+      className="sc-bXGyLb HYxEB headerContainer"
+      id="chapter-two"
+    >
+      <div
+        className="sc-eLExRp epULZM"
+      >
+        <div
+          className="react-reveal"
+          style={
+            Object {
+              "opacity": undefined,
+            }
+          }
+        >
+          <span
+            className="sc-krvtoX hpkrZy"
+          >
+            2
+          </span>
+        </div>
+        <div
+          className="react-reveal"
+          style={
+            Object {
+              "opacity": undefined,
+            }
+          }
+        >
+          <h2
+            className="sc-cbkKFq gnVukq"
+          >
+            Chapter Two
+          </h2>
+        </div>
+        <div
+          className="react-reveal"
+          style={
+            Object {
+              "opacity": undefined,
+            }
+          }
+        >
+          <div
+            className="sc-daURTG sc-lkqHmb etaRQJ"
+          >
+            An eloquent introduction to chapter two
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <div
+      className="sc-hMFtBS jKqFwo"
+    >
+      <div
+        className="inner"
+      >
+        <strong>
+          Lorem ipsum dolor sit amet.
+        </strong>
+      </div>
+    </div>
+    <div
+      className="sc-laTMn GDazh"
+    >
+      <h3
+        className="sc-hGoxap cUKdqq"
+      >
+        Question and Answers
+      </h3>
+      <div
+        className="sc-TFwJa eIeWjd"
+      >
+        <div
+          className="sc-bHwgHz gYHfut"
+        >
+          <div
+            className="sc-krDsej bqGHLR"
+            onClick={[Function]}
+          >
+            <div
+              className="sc-itybZL gOvnWR"
+            >
+              <svg
+                aria-hidden="true"
+                aria-labelledby={null}
+                focusable="false"
+                role="presentation"
+                viewBox="0 0 444.819 444.819"
+              >
+                <path
+                  d="M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z"
+                />
+              </svg>
+            </div>
+            <div
+              className="sc-fjmCvl kYedgb"
+            >
+              <div
+                className="sc-esOvli cPpIGR"
+                mini={true}
+              >
+                <div
+                  className="Mobiledoc"
+                >
+                  <h2>
+                    Question
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="sc-dTdPqK bKGusO"
+          >
+            <div
+              className="sc-fjmCvl kYedgb"
+            >
+              <div
+                className="sc-esOvli cPpIGR"
+                mini={true}
+              >
+                <div
+                  className="Mobiledoc"
+                >
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-bHwgHz gYHfut"
+        >
+          <div
+            className="sc-krDsej bqGHLR"
+            onClick={[Function]}
+          >
+            <div
+              className="sc-itybZL gOvnWR"
+            >
+              <svg
+                aria-hidden="true"
+                aria-labelledby={null}
+                focusable="false"
+                role="presentation"
+                viewBox="0 0 444.819 444.819"
+              >
+                <path
+                  d="M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z"
+                />
+              </svg>
+            </div>
+            <div
+              className="sc-fjmCvl kYedgb"
+            >
+              <div
+                className="sc-esOvli cPpIGR"
+                mini={true}
+              >
+                <div
+                  className="Mobiledoc"
+                >
+                  <h2>
+                    Question
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="sc-dTdPqK bKGusO"
+          >
+            <div
+              className="sc-fjmCvl kYedgb"
+            >
+              <div
+                className="sc-esOvli cPpIGR"
+                mini={true}
+              >
+                <div
+                  className="Mobiledoc"
+                >
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-bHwgHz gYHfut"
+        >
+          <div
+            className="sc-krDsej bqGHLR"
+            onClick={[Function]}
+          >
+            <div
+              className="sc-itybZL gOvnWR"
+            >
+              <svg
+                aria-hidden="true"
+                aria-labelledby={null}
+                focusable="false"
+                role="presentation"
+                viewBox="0 0 444.819 444.819"
+              >
+                <path
+                  d="M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z"
+                />
+              </svg>
+            </div>
+            <div
+              className="sc-fjmCvl kYedgb"
+            >
+              <div
+                className="sc-esOvli cPpIGR"
+                mini={true}
+              >
+                <div
+                  className="Mobiledoc"
+                >
+                  <h2>
+                    Question
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="sc-dTdPqK bKGusO"
+          >
+            <div
+              className="sc-fjmCvl kYedgb"
+            >
+              <div
+                className="sc-esOvli cPpIGR"
+                mini={true}
+              >
+                <div
+                  className="Mobiledoc"
+                >
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <div
+      className="sc-jtggT kIbeHr"
+    >
+      <div
+        className="sc-jKVCRD eRBwhe"
+      />
+      <div
+        className="sc-ebFjAB iYZItB"
+      >
+        <div
+          className="sc-dliRfk sc-kLIISr gCZFQa"
+          style={
+            Object {
+              "marginTop": "0",
+            }
+          }
+        >
+          <div
+            className="sc-dliRfk sc-qrIAp bsCNma"
+          >
+            <div
+              className="sc-ipXKqB ckkgtD"
+              height={320}
+              style={
+                Object {
+                  "margin": "10px 0",
+                  "padding": "20px 20px 0",
+                  "width": "calc(100% - 460px)",
+                }
+              }
+              width={1024}
+            >
+              <div
+                className="sc-hmXxxW UXsez"
+              />
+            </div>
+            <div
+              className="sc-iqzUVk elrNlX"
+            >
+              <div
+                className="sc-ipZHIp hmgMzR"
+              >
+                <div
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  loading
+                  <div
+                    className="sc-bdVaJa kfCdkg"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <div
+      className="sc-kaNhvL kTMOJr"
+    >
+      <div
+        className="sc-LKuAh bBnjYV"
+        style={
+          Object {
+            "minHeight": 0,
+          }
+        }
+      >
+        <div
+          className="sc-bdVaJa sc-hzNEM pNjcJ"
+        />
+      </div>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <figure
+      className="sc-gojNiO bqGGDp"
+      src="https://www.youtube.com/watch?v=Htckxql7GRA"
+    >
+      <div
+        className="video-wrapper"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<iframe width=\\"480\\" height=\\"270\\" src=\\"https://www.youtube.com/embed/Htckxql7GRA?feature=oembed\\" frameborder=\\"0\\" allow=\\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\\" allowfullscreen></iframe>",
+          }
+        }
+        style={
+          Object {
+            "paddingBottom": "56%",
+          }
+        }
+      />
+    </figure>
+    <section
+      className="sc-hORach eiAZaK"
+      src="https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&quality=100"
+      type={1}
+    >
+      <header>
+        <h1
+          className="sc-bAeIUo fXmkYd"
+        >
+          A testimonial
+        </h1>
+        <p
+          className="sc-iujRgT jdlKvT"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </header>
+      <div
+        className="sc-bMVAic jjddNl"
+        onScroll={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+      >
+        <div
+          className="sc-exAgwC lkVHup"
+        >
+          <div>
+            <div />
+            <figure
+              className="sc-GMQeP hxuETX"
+            >
+              <img
+                alt="portret van A testimonial"
+                src="https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=760&h=1280&quality=100"
+              />
+            </figure>
+          </div>
+        </div>
+        <div
+          className="sc-cQFLBn fFXhvH"
+        >
+          <div
+            className="sc-esOvli cPpIGR"
+            mini={true}
+          >
+            <div
+              className="Mobiledoc"
+            >
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </div>
+</div>
+`;
+
 exports[`Storyshots react/Node Default 1`] = `"asdasd"`;
+
+exports[`Storyshots react/Page Default 1`] = `
+<div>
+  <div
+    className="sc-jTzLTM fxBFUL"
+  >
+    <h1
+      className="sc-fjdhpX ejZYok"
+    >
+      This is a test page
+    </h1>
+    <figure
+      className="sc-VigVT glCwOM"
+    >
+      <img
+        alt="A test image"
+        src="https://via.placeholder.com/800x600?w=1160&quality=100"
+      />
+    </figure>
+  </div>
+  <div
+    className="sc-kxynE kixoE"
+  >
+    <div
+      className="sc-esOvli cilAJx"
+    >
+      <div
+        className="Mobiledoc"
+      >
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div
+          className="react-reveal"
+          style={
+            Object {
+              "opacity": undefined,
+            }
+          }
+        >
+          <figure
+            className="sc-cmthru jUahXZ size-0 align-0"
+          >
+            <img
+              alt={null}
+              large=""
+              sectionKey={1}
+              src="https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&quality=100"
+            />
+          </figure>
+        </div>
+        <div
+          className="sc-bXGyLb HYxEB headerContainer"
+          id="chapter-one"
+        >
+          <div
+            className="sc-eLExRp epULZM"
+          >
+            <div
+              className="react-reveal"
+              style={
+                Object {
+                  "opacity": undefined,
+                }
+              }
+            >
+              <span
+                className="sc-krvtoX hpkrZy"
+              >
+                1
+              </span>
+            </div>
+            <div
+              className="react-reveal"
+              style={
+                Object {
+                  "opacity": undefined,
+                }
+              }
+            >
+              <h2
+                className="sc-cbkKFq gnVukq"
+              >
+                Chapter One
+              </h2>
+            </div>
+            <div
+              className="react-reveal"
+              style={
+                Object {
+                  "opacity": undefined,
+                }
+              }
+            >
+              <div
+                className="sc-daURTG sc-lkqHmb etaRQJ"
+              >
+                An eloquent introduction to chapter one
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div
+          className="sc-eMigcr LbjWn"
+        >
+          <div
+            className="sc-esOvli cPpIGR"
+            mini={true}
+          >
+            <div
+              className="Mobiledoc"
+            >
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+        </div>
+        <figure
+          className="sc-cLQEGU iskwJH"
+          type={0}
+        >
+          <blockquote>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          </blockquote>
+        </figure>
+        <figcaption
+          className="sc-gqPbQI kMfjCx"
+        >
+          <a
+            href="wings.dev"
+          >
+            Someone
+          </a>
+        </figcaption>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div
+          className="sc-bXGyLb HYxEB headerContainer"
+          id="chapter-two"
+        >
+          <div
+            className="sc-eLExRp epULZM"
+          >
+            <div
+              className="react-reveal"
+              style={
+                Object {
+                  "opacity": undefined,
+                }
+              }
+            >
+              <span
+                className="sc-krvtoX hpkrZy"
+              >
+                2
+              </span>
+            </div>
+            <div
+              className="react-reveal"
+              style={
+                Object {
+                  "opacity": undefined,
+                }
+              }
+            >
+              <h2
+                className="sc-cbkKFq gnVukq"
+              >
+                Chapter Two
+              </h2>
+            </div>
+            <div
+              className="react-reveal"
+              style={
+                Object {
+                  "opacity": undefined,
+                }
+              }
+            >
+              <div
+                className="sc-daURTG sc-lkqHmb etaRQJ"
+              >
+                An eloquent introduction to chapter two
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div
+          className="sc-hMFtBS jKqFwo"
+        >
+          <div
+            className="inner"
+          >
+            <strong>
+              Lorem ipsum dolor sit amet.
+            </strong>
+          </div>
+        </div>
+        <div
+          className="sc-laTMn GDazh"
+        >
+          <h3
+            className="sc-hGoxap cUKdqq"
+          >
+            Question and Answers
+          </h3>
+          <div
+            className="sc-TFwJa eIeWjd"
+          >
+            <div
+              className="sc-bHwgHz gYHfut"
+            >
+              <div
+                className="sc-krDsej bqGHLR"
+                onClick={[Function]}
+              >
+                <div
+                  className="sc-itybZL gOvnWR"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-labelledby={null}
+                    focusable="false"
+                    role="presentation"
+                    viewBox="0 0 444.819 444.819"
+                  >
+                    <path
+                      d="M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="sc-fjmCvl kYedgb"
+                >
+                  <div
+                    className="sc-esOvli cPpIGR"
+                    mini={true}
+                  >
+                    <div
+                      className="Mobiledoc"
+                    >
+                      <h2>
+                        Question
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="sc-dTdPqK bKGusO"
+              >
+                <div
+                  className="sc-fjmCvl kYedgb"
+                >
+                  <div
+                    className="sc-esOvli cPpIGR"
+                    mini={true}
+                  >
+                    <div
+                      className="Mobiledoc"
+                    >
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="sc-bHwgHz gYHfut"
+            >
+              <div
+                className="sc-krDsej bqGHLR"
+                onClick={[Function]}
+              >
+                <div
+                  className="sc-itybZL gOvnWR"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-labelledby={null}
+                    focusable="false"
+                    role="presentation"
+                    viewBox="0 0 444.819 444.819"
+                  >
+                    <path
+                      d="M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="sc-fjmCvl kYedgb"
+                >
+                  <div
+                    className="sc-esOvli cPpIGR"
+                    mini={true}
+                  >
+                    <div
+                      className="Mobiledoc"
+                    >
+                      <h2>
+                        Question
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="sc-dTdPqK bKGusO"
+              >
+                <div
+                  className="sc-fjmCvl kYedgb"
+                >
+                  <div
+                    className="sc-esOvli cPpIGR"
+                    mini={true}
+                  >
+                    <div
+                      className="Mobiledoc"
+                    >
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="sc-bHwgHz gYHfut"
+            >
+              <div
+                className="sc-krDsej bqGHLR"
+                onClick={[Function]}
+              >
+                <div
+                  className="sc-itybZL gOvnWR"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-labelledby={null}
+                    focusable="false"
+                    role="presentation"
+                    viewBox="0 0 444.819 444.819"
+                  >
+                    <path
+                      d="M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="sc-fjmCvl kYedgb"
+                >
+                  <div
+                    className="sc-esOvli cPpIGR"
+                    mini={true}
+                  >
+                    <div
+                      className="Mobiledoc"
+                    >
+                      <h2>
+                        Question
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="sc-dTdPqK bKGusO"
+              >
+                <div
+                  className="sc-fjmCvl kYedgb"
+                >
+                  <div
+                    className="sc-esOvli cPpIGR"
+                    mini={true}
+                  >
+                    <div
+                      className="Mobiledoc"
+                    >
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div
+          className="sc-jtggT kIbeHr"
+        >
+          <div
+            className="sc-jKVCRD eRBwhe"
+          />
+          <div
+            className="sc-ebFjAB iYZItB"
+          >
+            <div
+              className="sc-dliRfk sc-kLIISr gCZFQa"
+              style={
+                Object {
+                  "marginTop": "0",
+                }
+              }
+            >
+              <div
+                className="sc-dliRfk sc-qrIAp bsCNma"
+              >
+                <div
+                  className="sc-ipXKqB ckkgtD"
+                  height={320}
+                  style={
+                    Object {
+                      "margin": "10px 0",
+                      "padding": "20px 20px 0",
+                      "width": "calc(100% - 460px)",
+                    }
+                  }
+                  width={1024}
+                >
+                  <div
+                    className="sc-hmXxxW UXsez"
+                  />
+                </div>
+                <div
+                  className="sc-iqzUVk elrNlX"
+                >
+                  <div
+                    className="sc-ipZHIp hmgMzR"
+                  >
+                    <div
+                      style={
+                        Object {
+                          "textAlign": "center",
+                        }
+                      }
+                    >
+                      loading
+                      <div
+                        className="sc-bdVaJa kfCdkg"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div
+          className="sc-kaNhvL kTMOJr"
+        >
+          <div
+            className="sc-LKuAh bBnjYV"
+            style={
+              Object {
+                "minHeight": 0,
+              }
+            }
+          >
+            <div
+              className="sc-bdVaJa sc-hzNEM pNjcJ"
+            />
+          </div>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <figure
+          className="sc-gojNiO bqGGDp"
+          src="https://www.youtube.com/watch?v=Htckxql7GRA"
+        >
+          <div
+            className="video-wrapper"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<iframe width=\\"480\\" height=\\"270\\" src=\\"https://www.youtube.com/embed/Htckxql7GRA?feature=oembed\\" frameborder=\\"0\\" allow=\\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\\" allowfullscreen></iframe>",
+              }
+            }
+            style={
+              Object {
+                "paddingBottom": "56%",
+              }
+            }
+          />
+        </figure>
+        <section
+          className="sc-hORach eiAZaK"
+          src="https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&quality=100"
+          type={1}
+        >
+          <header>
+            <h1
+              className="sc-bAeIUo fXmkYd"
+            >
+              A testimonial
+            </h1>
+            <p
+              className="sc-iujRgT jdlKvT"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </header>
+          <div
+            className="sc-bMVAic jjddNl"
+            onScroll={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+          >
+            <div
+              className="sc-exAgwC lkVHup"
+            >
+              <div>
+                <div />
+                <figure
+                  className="sc-GMQeP hxuETX"
+                >
+                  <img
+                    alt="portret van A testimonial"
+                    src="https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=760&h=1280&quality=100"
+                  />
+                </figure>
+              </div>
+            </div>
+            <div
+              className="sc-cQFLBn fFXhvH"
+            >
+              <div
+                className="sc-esOvli cPpIGR"
+                mini={true}
+              >
+                <div
+                  className="Mobiledoc"
+                >
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
