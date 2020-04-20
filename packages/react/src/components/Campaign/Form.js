@@ -327,10 +327,18 @@ class CampaignForm extends Component {
       amountFieldLabel: intl.formatMessage('wings.CampaignForm.amountField.label'),
       newsletterFieldLabel: intl.formatMessage('wings.CampaignForm.newsletterField.label'),
       termsFieldLabel: intl.formatMessage('wings.CampaignForm.termsField.label', {
-        url: (node.settings ? node.settings.legal.terms.url : '') || '/terms',
+        a: str => (
+          <a href={node?.settings?.legal?.terms?.url || '/terms'} target="_blank">
+            {str}
+          </a>
+        ),
       }),
       privacyConsentFieldLabel: intl.formatMessage('wings.CampaignForm.privacyConsentField.label', {
-        url: (node.settings ? node.settings.legal.privacyPolicy.url : '') || '/privacy',
+        a: str => (
+          <a href={node?.settings?.legal?.privacyPolicy?.url || '/privacy'} target="_blank">
+            {str}
+          </a>
+        ),
       }),
       campaignConfirmTitle: intl.formatMessage('wings.CampaignForm.confirm.title'),
       campaignConfirmText: intl.formatMessage('wings.CampaignForm.confirm.text'),
