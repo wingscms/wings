@@ -3,6 +3,7 @@ import { Counter } from '@wingscms/components';
 import styled from '../../lib/styled';
 
 import { t } from '../../theme';
+import { useIntl } from '../../ctx/Intl';
 
 import Content from '../MobiledocRenderer';
 import CampaignForm from './Form';
@@ -128,6 +129,7 @@ const FormContainerInner = styled.div`
 const Title = styled.h1`
   font-size: 2rem;
   text-transform: ${t(_ => _.uppercaseTitles)};
+  font-family: ${t(_ => _.headerFontFamily)};
   @media screen and (max-width: 800px) {
     font-size: 1.3rem;
   }
@@ -150,17 +152,6 @@ const CounterContainer = styled.div`
   }
 `;
 
-const DEFAULT_COPY = {
-  descriptionCollapse: 'Collapse proposition button text',
-  descriptionExpand: 'Expand proposition button text',
-  eventInfoTitle: 'Title for Event metadata',
-  eventStartLabel: 'Label for Event Start date',
-  eventEndLabel: 'Label for Event End date',
-  eventLocationLabel: 'Label for Event Location',
-  eventFeeLabel: 'Label for Event Fee',
-  counterMessage: 'other people signed this petition',
-};
-
 export default ({
   id,
   resourceType,
@@ -173,6 +164,7 @@ export default ({
   signatureGoal: _signatureGoal,
   ...props
 }) => {
+  const intl = useIntl();
   const campaignContainerRef = useRef(null);
   const formContainerRef = useRef(null);
   const [signatureCount, setSignatureCount] = useState(null);
@@ -192,22 +184,38 @@ export default ({
       setFundraiserTarget(campaign.target);
     }
   };
+  const { fee, schedule } = node;
+
   const {
-    descriptionCollapse,
-    descriptionExpand,
-    eventInfoTitle,
-    eventStartLabel,
-    eventEndLabel,
-    eventLocationLabel,
-    eventFeeLabel,
-    eventStartTime,
-    eventEndTime,
-    eventFee,
-    petitionCounterMessage,
-    petitionCounterGoalText,
-    fundraiserTargetText,
-    fundraiserCounterMessage,
-  } = { ...DEFAULT_COPY, ...copy };
+    descriptionCollapse = intl.formatMessage('wings.Campaign.description.collapse'),
+    descriptionExpand = intl.formatMessage('wings.Campaign.description.expand'),
+    petitionCounterMessage = intl.formatMessage('wings.Campaign.petitionCounter.message', {
+      signatureCount,
+    }),
+    petitionCounterGoalText = signatureGoal ? intl.formatNumber(signatureGoal) : null,
+    fundraiserTargetText = fundraiserTarget
+      ? `${fundraiserTarget.currency.symbol}${intl.formatNumber(fundraiserTarget.amount / 100)}`
+      : null,
+    fundraiserCounterMessage = intl.formatMessage('wings.Campaign.fundraiserCounter.message'),
+    eventInfoTitle = intl.formatMessage('wings.Campaign.eventInfo.title'),
+    eventStartLabel = intl.formatMessage('wings.Campaign.eventStart.label'),
+    eventEndLabel = intl.formatMessage('wings.Campaign.eventEnd.label'),
+    eventLocationLabel = intl.formatMessage('wings.Campaign.eventLocation.label'),
+    eventFeeLabel = intl.formatMessage('wings.Campaign.eventFee.label'),
+    eventStartTime = schedule?.start
+      ? `${intl.formatDate(new Date(schedule.start))} ${intl.formatTime(new Date(schedule.start))}`
+      : null,
+    eventEndTime = schedule?.end
+      ? `${intl.formatDate(new Date(schedule.end))} ${intl.formatTime(new Date(schedule.end))}`
+      : null,
+    eventFee = fee
+      ? intl.formatNumber(fee.amount.amount / 100, {
+          style: 'currency',
+          currency: fee.amount.currency.id,
+          currencyDisplay: 'symbol',
+        })
+      : null,
+  } = copy;
   const { intro, title } = node;
   const element = (
     <>
