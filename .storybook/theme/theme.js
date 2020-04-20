@@ -19,6 +19,6 @@ export default create({
   inputTextColor: '#212121',
   inputBorderRadius: 4,
   brandTitle: 'Wings Components',
-  brandUrl: 'https:/wings.dev',
+  brandUrl: 'https://wings.dev',
   brandImage: logo,
 });
