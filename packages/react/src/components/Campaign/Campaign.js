@@ -229,7 +229,7 @@ export default ({
             initialHeight={formContainerRef?.current?.offsetHeight}
             onToggle={show => {
               if (!campaignContainerRef?.current || show) return;
-              campaignContainerRef.current.scrollIntoView({
+              campaignContainerRef?.current?.scrollIntoView?.({
                 behavior: 'smooth',
                 block: 'start',
               });

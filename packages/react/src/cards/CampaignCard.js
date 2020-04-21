@@ -51,7 +51,7 @@ export const CampaignCardView = ({ id, resourceType, ...props }) => {
   const [imageMargin, setImageMargin] = useState(0);
   useEffect(() => {
     if (!imageRef?.current) return;
-    const { offsetHeight } = imageRef.current;
+    const { offsetHeight } = imageRef?.current;
     setImageMargin(offsetHeight / 5);
   });
   if (!id || !resourceType) {

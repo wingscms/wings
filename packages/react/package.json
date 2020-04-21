@@ -35,7 +35,6 @@
     "mobiledoc-kit": "^0.12.1",
     "qs": "^6.9.1",
     "react-intl": "^4.4.0",
-    "react-mobiledoc-editor": "^0.8.0",
     "react-reveal": "^1.2.2",
     "react-sticky": "^6.0.3",
     "recompose": "^0.30.0",

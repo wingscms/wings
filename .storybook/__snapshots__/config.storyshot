@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots components/Button Default 1`] = `undefined`;
+
+exports[`Storyshots components/Button Loading 1`] = `undefined`;
+
+exports[`Storyshots components/Button Loading Small 1`] = `undefined`;
+
+exports[`Storyshots components/Button Primary 1`] = `undefined`;
+
+exports[`Storyshots components/Button Small 1`] = `undefined`;
+
+exports[`Storyshots components/Counter Default 1`] = `undefined`;
+
+exports[`Storyshots components/CounterBar Default 1`] = `undefined`;
+
+exports[`Storyshots components/Expandable Default 1`] = `undefined`;
+
+exports[`Storyshots components/Header Cover 1`] = `undefined`;
+
+exports[`Storyshots components/Header Default 1`] = `undefined`;
+
+exports[`Storyshots components/Image Default 1`] = `undefined`;
+
+exports[`Storyshots components/Loading Default 1`] = `undefined`;
+
+exports[`Storyshots components/SvgIcon Default 1`] = `undefined`;
+
+exports[`Storyshots jsonschema-form/Amount Default 1`] = `undefined`;
+
+exports[`Storyshots react/Campaign Event 1`] = `undefined`;
+
+exports[`Storyshots react/Campaign Fundraiser 1`] = `undefined`;
+
+exports[`Storyshots react/Campaign Petition 1`] = `undefined`;
+
+exports[`Storyshots react/Cards/ImageCard Default 1`] = `undefined`;
+
+exports[`Storyshots react/Cards/NodesCard Default 1`] = `undefined`;
+
+exports[`Storyshots react/Content Default 1`] = `undefined`;
+
+exports[`Storyshots react/Content With Cards 1`] = `undefined`;

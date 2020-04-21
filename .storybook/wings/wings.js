@@ -22,6 +22,9 @@ const server = mockServer(
     PaymentMethodIcon: () => ({
       url: 'https://assets.wings.dev/img/icons/homepay.png',
     }),
+    ImageFile: () => ({
+      url: image(),
+    }),
     Query: () => ({
       event: () => ({
         description:
