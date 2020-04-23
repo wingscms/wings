@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Counter, useWindowDimensions } from '@wingscms/components';
+import { Counter, useDimensions } from '@wingscms/components';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import styled from '../../lib/styled';
 
@@ -168,7 +168,7 @@ export default ({
   ...props
 }) => {
   const intl = useIntl();
-  const { width } = useWindowDimensions();
+  const { width } = useDimensions();
   const campaignContainerRef = useRef(null);
   const formContainerRef = useRef(null);
   const [signatureCount, setSignatureCount] = useState(null);
@@ -235,7 +235,6 @@ export default ({
                 block: 'start',
               });
             }}
-            width={width}
             style={{ width: width > 1000 ? `calc(100% - ${FORM_WIDTH})` : '100%' }}
           >
             {!(title || intro || description) ? null : (

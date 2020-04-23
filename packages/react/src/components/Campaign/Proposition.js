@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { useDimensions } from '@wingscms/components';
 
 import styled, { css } from '../../lib/styled';
 import { t } from '../../theme';
@@ -57,30 +58,6 @@ const ToggleButton = styled.div`
         `}
 `;
 
-const useDimensions = deps => {
-  const ref = useRef(null);
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-
-  const updateDimensions = () => {
-    const w = ref?.current?.offsetWidth;
-    const h = ref?.current?.offsetHeight;
-    if (!(w && h)) return;
-    setDimensions({ width: w, height: h });
-  };
-
-  useEffect(() => {
-    updateDimensions();
-  }, deps);
-
-  useEffect(() => {
-    window.addEventListener('resize', updateDimensions);
-    return () => {
-      window.removeEventListener('resize', updateDimensions);
-    };
-  }, []);
-  return [ref, dimensions];
-};
-
 export default ({
   initialHeight = 400,
   children,
@@ -91,9 +68,13 @@ export default ({
   ...props
 }) => {
   const [show, setShow] = useState(false);
-  const [containerRef, { width: containerWidth }] = useDimensions([children]);
-  const [contentRef, { height: contentHeight }] = useDimensions([children]);
-  const [toggleRef, { height: toggleHeight }] = useDimensions([children, show]);
+  const containerRef = useRef(null);
+  const { width: containerWidth } = useDimensions(containerRef, [children]);
+  const contentRef = useRef(null);
+  const { height: contentHeight } = useDimensions(contentRef, [children]);
+  const toggleRef = useRef(null);
+  const { height: toggleHeight } = useDimensions(toggleRef, [children, show]);
+
   const toggleShow = () => setShow(!show);
 
   const margin = containerWidth < 400 ? 10 : 40;
