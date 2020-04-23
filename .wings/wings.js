@@ -1,7 +1,7 @@
 import Wings from '@wingscms/sdk/src';
 import { buildClientSchema } from 'graphql';
 import { mockServer } from 'graphql-tools';
-import { image } from '../../utils';
+import { image } from '../utils';
 import introspectionResult from './data/introspectionResult.json';
 
 const isTest = process.env.NODE_ENV === 'test';
