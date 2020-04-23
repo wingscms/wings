@@ -1,7 +1,7 @@
 import initStoryshots, { Stories2SnapsConverter } from '@storybook/addon-storyshots';
 import { configure, shallow } from 'enzyme';
-import pretty from 'pretty';
 import Adapter from 'enzyme-adapter-react-16';
+import pretty from 'pretty';
 
 configure({ adapter: new Adapter() });
 
@@ -16,7 +16,6 @@ initStoryshots({
 
     const waitTime = story.parameters.snapshotDelay;
 
-    // TODO: pretty html
     const testSnapshot = () => {
       if (snapshotFilename) {
         expect(pretty(tree.html())).toMatchSpecificSnapshot(snapshotFilename);
