@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import qs from 'qs';
 import classNames from 'classnames';
 import { StickyContainer, Sticky } from 'react-sticky';
+import filterInvalidDOMProps from 'filter-invalid-dom-props';
 
 import { wide } from '@wingscms/components';
 import styled from '../lib/styled';
@@ -163,7 +164,7 @@ class TestimonialCard extends Component {
     const { title, intro, content, url, ...props } = this.props;
     const sized = mediaUrl(url, { width: 760, height: 1280 });
     return (
-      <Testimonial {...props}>
+      <Testimonial {...filterInvalidDOMProps(props)}>
         {!(title || intro) ? null : (
           <header>
             {!title ? null : <Title>{title}</Title>}

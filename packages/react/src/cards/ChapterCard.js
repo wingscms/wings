@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import styled from '../lib/styled';
 import Fade from 'react-reveal/Fade';
 
@@ -85,7 +86,7 @@ class ChapterView extends Component {
     const { title, intro, marker, ...props } = this.props;
     return (
       <Container className="headerContainer" id={slugify(title)}>
-        <Chapter {...props}>
+        <Chapter {...filterInvalidDOMProps(props)}>
           <Fade bottom distance="20px">
             <Marker>{marker}</Marker>
           </Fade>

@@ -147,7 +147,7 @@ exports[`Storyshots react/Article Default 1`] = `
       <div class=\\"Mobiledoc\\">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <div class=\\"react-reveal\\">
-          <figure class=\\"sc-cmthru jUahXZ size-0 align-0\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" sectionKey=\\"1\\" large=\\"\\" /></figure>
+          <figure class=\\"sc-cmthru jUahXZ size-0 align-0\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" /></figure>
         </div>
         <div class=\\"sc-bXGyLb HYxEB headerContainer\\" id=\\"chapter-one\\">
           <div class=\\"sc-eLExRp epULZM\\">
@@ -188,7 +188,7 @@ exports[`Storyshots react/Article Default 1`] = `
         <div class=\\"sc-hMFtBS jKqFwo\\">
           <div class=\\"inner\\"><strong>Lorem ipsum dolor sit amet.</strong></div>
         </div>
-        <div class=\\"sc-laTMn GDazh\\">
+        <div type=\\"2\\" src=\\"http://via.placeholder.com/350x350.png\\" class=\\"sc-laTMn GDazh\\">
           <h3 class=\\"sc-hGoxap cUKdqq\\">Question and Answers</h3>
           <div class=\\"sc-TFwJa eIeWjd\\">
             <div class=\\"sc-bHwgHz gYHfut\\">
@@ -346,7 +346,7 @@ exports[`Storyshots react/Article No Image 1`] = `
       <div class=\\"Mobiledoc\\">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <div class=\\"react-reveal\\">
-          <figure class=\\"sc-cmthru jUahXZ size-0 align-0\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" sectionKey=\\"1\\" large=\\"\\" /></figure>
+          <figure class=\\"sc-cmthru jUahXZ size-0 align-0\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" /></figure>
         </div>
         <div class=\\"sc-bXGyLb HYxEB headerContainer\\" id=\\"chapter-one\\">
           <div class=\\"sc-eLExRp epULZM\\">
@@ -387,7 +387,7 @@ exports[`Storyshots react/Article No Image 1`] = `
         <div class=\\"sc-hMFtBS jKqFwo\\">
           <div class=\\"inner\\"><strong>Lorem ipsum dolor sit amet.</strong></div>
         </div>
-        <div class=\\"sc-laTMn GDazh\\">
+        <div type=\\"2\\" src=\\"http://via.placeholder.com/350x350.png\\" class=\\"sc-laTMn GDazh\\">
           <h3 class=\\"sc-hGoxap cUKdqq\\">Question and Answers</h3>
           <div class=\\"sc-TFwJa eIeWjd\\">
             <div class=\\"sc-bHwgHz gYHfut\\">
@@ -583,7 +583,7 @@ exports[`Storyshots react/Content With Cards 1`] = `
   <div class=\\"Mobiledoc\\">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <div class=\\"react-reveal\\">
-      <figure class=\\"sc-cmthru jUahXZ size-0 align-0\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" sectionKey=\\"1\\" large=\\"\\" /></figure>
+      <figure class=\\"sc-cmthru jUahXZ size-0 align-0\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" /></figure>
     </div>
     <div class=\\"sc-bXGyLb HYxEB headerContainer\\" id=\\"chapter-one\\">
       <div class=\\"sc-eLExRp epULZM\\">
@@ -624,7 +624,7 @@ exports[`Storyshots react/Content With Cards 1`] = `
     <div class=\\"sc-hMFtBS jKqFwo\\">
       <div class=\\"inner\\"><strong>Lorem ipsum dolor sit amet.</strong></div>
     </div>
-    <div class=\\"sc-laTMn GDazh\\">
+    <div type=\\"2\\" src=\\"http://via.placeholder.com/350x350.png\\" class=\\"sc-laTMn GDazh\\">
       <h3 class=\\"sc-hGoxap cUKdqq\\">Question and Answers</h3>
       <div class=\\"sc-TFwJa eIeWjd\\">
         <div class=\\"sc-bHwgHz gYHfut\\">
@@ -766,7 +766,7 @@ exports[`Storyshots react/Page Default 1`] = `
       <div class=\\"Mobiledoc\\">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <div class=\\"react-reveal\\">
-          <figure class=\\"sc-cmthru jUahXZ size-0 align-0\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" sectionKey=\\"1\\" large=\\"\\" /></figure>
+          <figure class=\\"sc-cmthru jUahXZ size-0 align-0\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" /></figure>
         </div>
         <div class=\\"sc-bXGyLb HYxEB headerContainer\\" id=\\"chapter-one\\">
           <div class=\\"sc-eLExRp epULZM\\">
@@ -807,7 +807,7 @@ exports[`Storyshots react/Page Default 1`] = `
         <div class=\\"sc-hMFtBS jKqFwo\\">
           <div class=\\"inner\\"><strong>Lorem ipsum dolor sit amet.</strong></div>
         </div>
-        <div class=\\"sc-laTMn GDazh\\">
+        <div type=\\"2\\" src=\\"http://via.placeholder.com/350x350.png\\" class=\\"sc-laTMn GDazh\\">
           <h3 class=\\"sc-hGoxap cUKdqq\\">Question and Answers</h3>
           <div class=\\"sc-TFwJa eIeWjd\\">
             <div class=\\"sc-bHwgHz gYHfut\\">

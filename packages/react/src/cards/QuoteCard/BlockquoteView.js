@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-fragments */
 import React from 'react';
-import styled from '../../lib/styled';
 import { compose, setPropTypes, setStatic } from 'recompose';
+import filterInvalidDOMProps from 'filter-invalid-dom-props';
+import styled from '../../lib/styled';
 import propTypes, { defaultProps } from './propTypes';
 import Quote from './Quote';
 
@@ -42,7 +43,7 @@ export default compose(
   setStatic('defaultProps', defaultProps),
 )(({ text, source, sourceUrl, ...props }) => (
   <React.Fragment>
-    <Blockquote {...props}>
+    <Blockquote {...filterInvalidDOMProps(props)}>
       <blockquote>{text}</blockquote>
     </Blockquote>
     {!source ? null : <Caption>{!sourceUrl ? source : <a href={sourceUrl}>{source}</a>}</Caption>}
