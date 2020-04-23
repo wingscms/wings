@@ -568,7 +568,13 @@ exports[`Storyshots react/Campaign Petition 1`] = `
 
 exports[`Storyshots react/Cards/ImageCard Default 1`] = `"default"`;
 
-exports[`Storyshots react/Cards/NodesCard Default 1`] = `""`;
+exports[`Storyshots react/Cards/NodesCard Default 1`] = `
+"<div class=\\"sc-kaNhvL kTMOJr\\">
+  <div style=\\"min-height:0\\" class=\\"sc-LKuAh bBnjYV\\">
+    <div class=\\"sc-bdVaJa sc-hzNEM pNjcJ\\"></div>
+  </div>
+</div>"
+`;
 
 exports[`Storyshots react/Content Default 1`] = `
 "<div class=\\"sc-esOvli cilAJx\\">

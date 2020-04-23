@@ -1,3 +1,6 @@
-//import { NodesCard } from '@wingscms/react';
+import { NodesCard } from '@wingscms/react';
 
-export default () => ''; //NodesCard.render({ payload: { items: ['', '', '', ''] } });
+const Default = () => NodesCard.render({ payload: { items: ['', '', '', ''] } });
+export default Default;
+
+Default.snapshotDelay = 1;
