@@ -12,4 +12,8 @@ const node = {
   content: JSON.stringify(richMd),
 };
 
-export default () => <Page node={node} />;
+const Default = () => <Page node={node} />;
+
+export default Default;
+
+Default.snapshotDelay = 1;
