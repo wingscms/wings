@@ -17,7 +17,6 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "[[ -n $HUSKY_BYPASS ]] || commitlint -e $HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged"
     }
   },
@@ -28,11 +27,6 @@
       "git add"
     ]
   },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
   "devDependencies": {
     "@babel/cli": "7.7.7",
     "@babel/core": "7.7.7",
@@ -41,8 +35,6 @@
     "@babel/plugin-transform-runtime": "7.7.6",
     "@babel/preset-env": "7.7.7",
     "@babel/preset-react": "7.7.4",
-    "@commitlint/cli": "8.2.0",
-    "@commitlint/config-conventional": "8.2.0",
     "@storybook/addon-actions": "6.0.0-alpha.28",
     "@storybook/addon-contexts": "^5.3.18",
     "@storybook/addon-knobs": "6.0.0-alpha.28",
