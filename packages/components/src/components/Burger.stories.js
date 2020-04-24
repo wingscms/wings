@@ -1,6 +1,6 @@
 import React from 'react';
 import { number, color, boolean } from '@storybook/addon-knobs/react';
-import { Burger } from '..';
+import { Burger } from '@wingscms/components';
 
 export default () => (
   <Burger
