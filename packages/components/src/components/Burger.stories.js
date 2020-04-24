@@ -8,8 +8,8 @@ export default () => (
     height={number('height', 30)}
     width={number('width', 40)}
     barHeight={number('barHeight', 5)}
-    barColor={color('barColor')}
-    barHoverColor={color('barHoverColor')}
-    onClick={() => console.log('Button clicked!')}
+    barBorderRadius={number('barBorderRadius', 0)}
+    color={color('color')}
+    hoverColor={color('hoverColor')}
   />
 );
