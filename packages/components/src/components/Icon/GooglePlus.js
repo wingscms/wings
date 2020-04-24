@@ -3,7 +3,7 @@ import React from 'react';
 import { createSvgIcon } from '../../lib/utils';
 
 export default createSvgIcon(
-  <React.Fragment>
+  <>
     <g>
       <g>
         <polygon points="448,224 448,160 416,160 416,224 352,224 352,256 416,256 416,320 448,320 448,256 512,256 512,224 		" />
@@ -18,7 +18,7 @@ export default createSvgIcon(
         />
       </g>
     </g>
-  </React.Fragment>,
+  </>,
   'google-plus',
   '0 0 512 512',
 );

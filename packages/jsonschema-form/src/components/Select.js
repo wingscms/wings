@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from '../lib/styled';
 import { getValue, processValue } from './formUtils';
 
@@ -97,7 +97,7 @@ export default props => {
         }}
       >
         {schema ? (
-          <Fragment>
+          <>
             {!multiple && schema.default === undefined && <option value="">{placeholder}</option>}
             {enumOptions.map(({ value, label }, i) => {
               const disabledOption = enumDisabled && enumDisabled.indexOf(value) !== -1;
@@ -108,16 +108,16 @@ export default props => {
                 </option>
               );
             })}
-          </Fragment>
+          </>
         ) : (
-          <Fragment>
+          <>
             {options.map((x, i) => (
               // eslint-disable-next-line react/no-array-index-key
               <option key={i} value={x}>
                 {x}
               </option>
             ))}
-          </Fragment>
+          </>
         )}
       </StyledSelect>
     </Wrapper>

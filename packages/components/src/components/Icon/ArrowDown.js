@@ -2,7 +2,7 @@ import React from 'react';
 import { createSvgIcon } from '../../lib/utils';
 
 export default createSvgIcon(
-  <React.Fragment>
+  <>
     <g id="Templates" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g id="Longread" transform="translate(-948.000000, -770.000000)" fillRule="nonzero">
         <g id="noun_1561795_cc" transform="translate(948.000000, 770.000000)">
@@ -13,7 +13,7 @@ export default createSvgIcon(
         </g>
       </g>
     </g>
-  </React.Fragment>,
+  </>,
   'arrowDown',
   '0 0 23 30',
 );

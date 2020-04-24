@@ -2,7 +2,7 @@ import React from 'react';
 import { createSvgIcon } from '../../lib/utils';
 
 export default createSvgIcon(
-  <React.Fragment>
+  <>
     <g>
       <g>
         <circle cx="64" cy="384" r="64" />
@@ -18,7 +18,7 @@ export default createSvgIcon(
         <path d="M0,0v85.344C200,85.344,362.688,248,362.688,448H448C448,200.96,247.04,0,0,0z" />
       </g>
     </g>
-  </React.Fragment>,
+  </>,
   'rss',
   '0 0 448 448',
 );
