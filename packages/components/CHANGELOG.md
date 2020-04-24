@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.24.0](https://github.com/wingscms/wings/compare/@wingscms/components@0.23.0...@wingscms/components@0.24.0) (2020-04-24)
+
+
+### Bug Fixes
+
+* refactor campaign components and fix theming behavior ([#435](https://github.com/wingscms/wings/issues/435)) ([911dd63](https://github.com/wingscms/wings/commit/911dd635170a82a305f516fe48fcd23b32cbd6d6))
+
+
+### Features
+
+* Add storyshots and refactor campaign ([#442](https://github.com/wingscms/wings/issues/442)) ([eb479a5](https://github.com/wingscms/wings/commit/eb479a5ce4b8bd50a61d1bc36b9987012c5770df))
+* navigation components (Burger, Drawer); Icons refactor ([#433](https://github.com/wingscms/wings/issues/433)) ([2b34d0c](https://github.com/wingscms/wings/commit/2b34d0c80235208c6692ae2176c996911c2723b2))
+* wings theme and fonts for storybook ([#439](https://github.com/wingscms/wings/issues/439)) ([841051f](https://github.com/wingscms/wings/commit/841051fb453602422f3108312f71aabdad8fd0e3))
+
+
+
+
+
 # [0.23.0](https://github.com/wingscms/wings/compare/@wingscms/components@0.22.2...@wingscms/components@0.23.0) (2020-04-02)
 
 

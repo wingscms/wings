@@ -1,6 +1,6 @@
 {
   "name": "@wingscms/jsonschema-form",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "JSON schema forms for Wings",
   "main": "build/index.js",
   "scripts": {
