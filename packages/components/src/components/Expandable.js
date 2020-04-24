@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import fP from 'filter-invalid-dom-props';
 import styled from '../lib/styled';
 import { t } from '../theme';
 
@@ -94,6 +95,7 @@ export default ({
   toggleHoverColor,
   toggleFontFamily,
   theme,
+  ...props
 }) => {
   const [open, setOpen] = useState(false);
   const toggleHeight = () => setOpen(!open);
@@ -107,6 +109,7 @@ export default ({
       shadow={shadow}
       borderRadius={borderRadius}
       theme={theme}
+      {...fP(props)}
     >
       {children}
       {expandable ? (

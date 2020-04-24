@@ -1,4 +1,5 @@
 import React from 'react';
+import fP from 'filter-invalid-dom-props';
 import styled, { css } from '../lib/styled';
 import { t } from '../theme';
 
@@ -83,7 +84,7 @@ export default ({
   barBorderRadius = 0,
   ...props
 }) => (
-  <Container height={height} width={width} hoverColor={hoverColor} {...props}>
+  <Container height={height} width={width} hoverColor={hoverColor} {...fP(props)}>
     <Top
       height={height}
       width={width}

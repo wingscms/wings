@@ -1,4 +1,5 @@
 import React from 'react';
+import fP from 'filter-invalid-dom-props';
 import styled, { css } from '../lib/styled';
 import { t } from '../theme';
 
@@ -84,7 +85,7 @@ const Drawer = ({
       backgroundColor={backgroundColor}
       position={position}
       size={size}
-      {...props}
+      {...fP(props)}
     >
       {children}
     </Container>

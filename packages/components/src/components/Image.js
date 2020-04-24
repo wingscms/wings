@@ -1,4 +1,5 @@
 import React from 'react';
+import fP from 'filter-invalid-dom-props';
 import styled from '../lib/styled';
 import { Eye } from './Icon';
 import { Caption } from './atoms';
@@ -104,8 +105,9 @@ export default ({
   shadow = false,
   type = 'default',
   url,
+  ...props
 }) => (
-  <StyledFigure className={`${type}`}>
+  <StyledFigure className={`${type}`} {...fP(props)}>
     <StyledImage borderRadius={borderRadius} shadow={shadow} src={url} />
     <Figcaption textColor={captionColor} padding=".5rem">
       {caption ? <StyledCaption>{caption}</StyledCaption> : null}
