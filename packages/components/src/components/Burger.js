@@ -34,7 +34,6 @@ const getActiveState = position => ({ active, height, width, barHeight }) => {
 const Bar = styled.div`
   position: absolute;
   display: block;
-  background-color: ${t((_, { color }) => color || _.burgerColor)};
   height: ${({ barHeight }) => `${barHeight}px`};
   border-radius: ${({ barBorderRadius }) => `${barBorderRadius}px`};
   width: 100%;
@@ -69,7 +68,10 @@ const Container = styled.div`
   display: block;
   position: relative;
   cursor: pointer;
-  &:hover > ${Top}, &:hover > ${Middle}, &:hover > ${Bottom} {
+  ${Bar} {
+    background-color: ${t((_, { color }) => color || _.burgerColor)};
+  }
+  &:hover > ${Bar} {
     background-color: ${t((_, { hoverColor }) => hoverColor || _.burgerHoverColor)};
   }
 `;
@@ -83,24 +85,19 @@ export default ({
   barHeight = 5,
   barBorderRadius = 0,
   ...props
-}) => (
-  <Container height={height} width={width} hoverColor={hoverColor} {...fP(props)}>
-    <Top
-      height={height}
-      width={width}
-      active={active}
-      barHeight={barHeight}
-      color={color}
-      barBorderRadius={barBorderRadius}
-    />
-    <Middle active={active} barHeight={barHeight} color={color} barBorderRadius={barBorderRadius} />
-    <Bottom
-      height={height}
-      width={width}
-      active={active}
-      barHeight={barHeight}
-      color={color}
-      barBorderRadius={barBorderRadius}
-    />
-  </Container>
-);
+}) => {
+  const barProps = {
+    active,
+    barHeight,
+    barBorderRadius,
+    height,
+    width,
+  };
+  return (
+    <Container height={height} width={width} color={color} hoverColor={hoverColor} {...fP(props)}>
+      <Top {...barProps} />
+      <Middle {...barProps} />
+      <Bottom {...barProps} />
+    </Container>
+  );
+};
