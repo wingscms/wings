@@ -18,12 +18,6 @@ const getPosition = ({ open, position }) => {
         left: 0;
         transform: ${open ? 'translateX(0%)' : 'translateX(-100%)'};
       `;
-    case Position.RIGHT:
-      return css`
-        top: 0;
-        left: 100vw;
-        transform: ${open ? 'translateX(-100%)' : 'translateX(0%)'};
-      `;
     case Position.TOP:
       return css`
         top: 0;
@@ -36,20 +30,17 @@ const getPosition = ({ open, position }) => {
         left: 0;
         transform: ${open ? 'translateY(-100%)' : 'translateY(0%)'};
       `;
+    default:
+      return css`
+        top: 0;
+        left: 100vw;
+        transform: ${open ? 'translateX(-100%)' : 'translateX(0%)'};
+      `;
   }
 };
 
 const getSize = ({ position, size }) => {
   switch (position) {
-    case Position.LEFT:
-    case Position.RIGHT:
-      return css`
-        height: 100vh;
-        width: 100vw;
-        @media screen and (min-width: 800px) {
-          width: ${size};
-        }
-      `;
     case Position.TOP:
     case Position.BOTTOM:
       return css`
@@ -57,6 +48,14 @@ const getSize = ({ position, size }) => {
         width: 100vw;
         @media screen and (min-width: 800px) {
           height: ${size};
+        }
+      `;
+    default:
+      return css`
+        height: 100vh;
+        width: 100vw;
+        @media screen and (min-width: 800px) {
+          width: ${size};
         }
       `;
   }
