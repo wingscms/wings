@@ -31,7 +31,10 @@ const getActiveState = position => ({ active, height, width, barHeight }) => {
   }
 };
 
-const Bar = styled.div`
+const Bar = styled('div').withConfig({
+  shouldForwardProp: prop =>
+    !['height', 'width', 'barHeight', 'barBorderRadius', 'active'].includes(prop),
+})`
   position: absolute;
   display: block;
   height: ${({ barHeight }) => `${barHeight}px`};
@@ -62,7 +65,9 @@ const Bottom = styled(Bar)`
   ${getActiveState('bottom')}
 `;
 
-const Container = styled.div`
+const Container = styled('div').withConfig({
+  shouldForwardProp: prop => !['height', 'width', 'color', 'hoverColor'].includes(prop),
+})`
   width: ${({ width }) => `${width}px`};
   height: ${({ height }) => `${height}px`};
   display: block;

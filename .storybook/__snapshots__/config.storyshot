@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots components/Burger Active Red 1`] = `
-"<div height=\\"30\\" width=\\"40\\" color=\\"#ff0000\\" class=\\"sc-AxhUy dXXPij\\">
-  <div height=\\"30\\" width=\\"40\\" class=\\"sc-AxjAm sc-AxirZ cQtFZy\\"></div>
-  <div height=\\"30\\" width=\\"40\\" class=\\"sc-AxjAm sc-AxiKw kQxBYZ\\"></div>
-  <div height=\\"30\\" width=\\"40\\" class=\\"sc-AxjAm sc-AxhCb jxCVof\\"></div>
+"<div class=\\"sc-AxhUy dXXPij\\">
+  <div class=\\"sc-AxjAm sc-AxirZ cQtFZy\\"></div>
+  <div class=\\"sc-AxjAm sc-AxiKw kQxBYZ\\"></div>
+  <div class=\\"sc-AxjAm sc-AxhCb jxCVof\\"></div>
 </div>"
 `;
 
 exports[`Storyshots components/Burger Default 1`] = `
-"<div height=\\"30\\" width=\\"40\\" class=\\"sc-AxhUy ezLZpE\\">
-  <div height=\\"30\\" width=\\"40\\" class=\\"sc-AxjAm sc-AxirZ cqbDDr\\"></div>
-  <div height=\\"30\\" width=\\"40\\" class=\\"sc-AxjAm sc-AxiKw icScPt\\"></div>
-  <div height=\\"30\\" width=\\"40\\" class=\\"sc-AxjAm sc-AxhCb ddGYrn\\"></div>
+"<div class=\\"sc-AxhUy ezLZpE\\">
+  <div class=\\"sc-AxjAm sc-AxirZ cqbDDr\\"></div>
+  <div class=\\"sc-AxjAm sc-AxiKw icScPt\\"></div>
+  <div class=\\"sc-AxjAm sc-AxhCb ddGYrn\\"></div>
 </div>"
 `;
 
