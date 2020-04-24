@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import styled from '../lib/styled';
 import { wide, t } from '@wingscms/components';
 import createCard from '../createCard';
@@ -50,7 +51,7 @@ class InsightCardView extends Component {
   render() {
     const { text, ...props } = this.props;
     return (
-      <Insight {...props}>
+      <Insight {...filterInvalidDOMProps(props)}>
         <div className="inner">
           <strong>{text}</strong>
         </div>

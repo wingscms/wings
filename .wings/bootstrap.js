@@ -55,4 +55,4 @@ const bootstrap = async () => {
   await Promise.all(pLocales);
 };
 
-module.exports = bootstrap();
+module.exports = bootstrap;

@@ -12,11 +12,6 @@ const mergeCards = (base, overrides) => {
   return filtered.concat(overrides);
 };
 
-const convertCard = ({ View, ...card }) => ({
-  ...card,
-  render: ({ payload, ...props }) => <View {...payload} {...props} />,
-});
-
 export default class Content extends Component {
   static propTypes = {
     cards: PropTypes.array,
@@ -49,6 +44,6 @@ export default class Content extends Component {
 
   render() {
     const { cards, onLoad, ...props } = this.props;
-    return <MobiledocRenderer {...props} cards={mergeCards(allCards, cards).map(convertCard)} />;
+    return <MobiledocRenderer {...props} cards={mergeCards(allCards, cards)} />;
   }
 }

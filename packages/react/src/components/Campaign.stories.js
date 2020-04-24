@@ -8,3 +8,7 @@ export const Petition = () => (
 export const Fundraiser = () => <Campaign id="asdasd" resourceType="node.fundraiser" />;
 
 export const Event = () => <Campaign id="asdasd" resourceType="node.event" />;
+
+Petition.snapshotDelay = 1;
+Fundraiser.snapshotDelay = 1;
+Event.snapshotDelay = 1;

@@ -1,8 +1,10 @@
 import Wings from '@wingscms/sdk/src';
 import { buildClientSchema } from 'graphql';
 import { mockServer } from 'graphql-tools';
-import { image } from '../../utils';
+import { image } from '../utils';
 import introspectionResult from './data/introspectionResult.json';
+
+const isTest = process.env.NODE_ENV === 'test';
 
 const schema = buildClientSchema(introspectionResult);
 
@@ -19,6 +21,9 @@ const server = mockServer(
     }),
     PaymentMethodIcon: () => ({
       url: 'https://assets.wings.dev/img/icons/homepay.png',
+    }),
+    ImageFile: () => ({
+      url: image(),
     }),
     Query: () => ({
       event: () => ({
@@ -109,7 +114,7 @@ const client = new Wings({ domain: 'localhost' });
 
 client.query = async (...args) => {
   const res = await server.query(...args);
-  console.log('client.query', ...args, 'result', res);
+  if (!isTest) console.log('client.query', ...args, 'result', res);
   return res.data;
 };
 

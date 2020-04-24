@@ -161,7 +161,7 @@ const NodesCardView = ({ text, ...props }) => {
   const pageNumber = query[`nc${sectionKey}page`] || '1';
 
   const fetchNodes = async ({ first = 12, after = '0' } = {}) => {
-    setContainerHeight(nodesCardContainerRef.current.offsetHeight);
+    setContainerHeight(nodesCardContainerRef?.current?.offsetHeight || 0);
     setLoading(true);
 
     const res = await wings
