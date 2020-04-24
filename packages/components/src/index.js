@@ -23,15 +23,6 @@ export { RadioInput } from './components/form';
 // export { Select } from './components/form';
 export { ConfirmationBox } from './components/form';
 
-// Menu
-// export {
-//   ContentWrapper as MenuContentWrapper,
-//   MenuItem,
-//   SlideMenu,
-//   toggleSlideMenu,
-//   LanguagePicker,
-// } from './components/menu';
-
 // Text
 export { Breakout } from './components/text';
 
