@@ -1,10 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots components/Burger Active Red 1`] = `
+"<div height=\\"30\\" width=\\"40\\" color=\\"#ff0000\\" class=\\"sc-ifAKCX bsungh\\">
+  <div height=\\"30\\" width=\\"40\\" class=\\"sc-bdVaJa sc-bwzfXH fZHoDU\\"></div>
+  <div height=\\"30\\" width=\\"40\\" class=\\"sc-bdVaJa sc-htpNat fEzJbc\\"></div>
+  <div height=\\"30\\" width=\\"40\\" class=\\"sc-bdVaJa sc-bxivhb eEJiUK\\"></div>
+</div>"
+`;
+
 exports[`Storyshots components/Burger Default 1`] = `
-"<div height=\\"30\\" width=\\"40\\" class=\\"sc-ifAKCX goFpoM\\">
-  <div height=\\"30\\" width=\\"40\\" class=\\"sc-bdVaJa sc-bwzfXH eKcCoG\\"></div>
-  <div class=\\"sc-bdVaJa sc-htpNat jLrqEa\\"></div>
-  <div height=\\"30\\" width=\\"40\\" class=\\"sc-bdVaJa sc-bxivhb jZIDwm\\"></div>
+"<div height=\\"30\\" width=\\"40\\" class=\\"sc-ifAKCX iKzBIp\\">
+  <div height=\\"30\\" width=\\"40\\" class=\\"sc-bdVaJa sc-bwzfXH frYbie\\"></div>
+  <div height=\\"30\\" width=\\"40\\" class=\\"sc-bdVaJa sc-htpNat jaNRSu\\"></div>
+  <div height=\\"30\\" width=\\"40\\" class=\\"sc-bdVaJa sc-bxivhb bQSsQR\\"></div>
 </div>"
 `;
 
