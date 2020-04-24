@@ -2,12 +2,13 @@
   "private": true,
   "scripts": {
     "start": "concurrently \"yarn run storybook\" \"lerna run start --stream --parallel\"",
-    "test": "run-s lint && jest && lerna run test",
+    "build": "lerna run build",
+    "test": "yarn run build && run-s lint && jest && lerna run test",
     "test:watch": "jest --watch",
     "lint": "eslint .",
     "release": "cross-env HUSKY_BYPASS=true lerna publish from-git",
     "storybook": "node storybook.js",
-    "build-storybook": "node ./.storybook/wings/bootstrap.js && build-storybook -o .storybook-build --quiet"
+    "build-storybook": "node .storybook/bootstrap.js && build-storybook -o .storybook-build --quiet"
   },
   "workspaces": {
     "packages": [
@@ -16,7 +17,6 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "[[ -n $HUSKY_BYPASS ]] || commitlint -e $HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged"
     }
   },
@@ -27,11 +27,6 @@
       "git add"
     ]
   },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
   "devDependencies": {
     "@babel/cli": "7.7.7",
     "@babel/core": "7.7.7",
@@ -40,28 +35,32 @@
     "@babel/plugin-transform-runtime": "7.7.6",
     "@babel/preset-env": "7.7.7",
     "@babel/preset-react": "7.7.4",
-    "@commitlint/cli": "8.2.0",
-    "@commitlint/config-conventional": "8.2.0",
     "@storybook/addon-actions": "6.0.0-alpha.28",
-    "@storybook/addon-contexts": "^5.3.18",
+    "@storybook/addon-contexts": "5.3.18",
     "@storybook/addon-knobs": "6.0.0-alpha.28",
     "@storybook/addon-links": "6.0.0-alpha.28",
-    "@storybook/addon-viewport": "^5.3.17",
+    "@storybook/addon-storyshots": "5.3.18",
+    "@storybook/addon-viewport": "5.3.17",
     "@storybook/react": "6.0.0-alpha.28",
     "@testing-library/react": "10.0.1",
     "babel-eslint": "10.0.3",
     "babel-loader": "8.1.0",
+    "babel-plugin-file-loader": "2.0.0",
+    "babel-plugin-require-context-hook": "1.0.0",
     "change-case": "4.1.1",
     "concurrently": "5.1.0",
     "cross-env": "7.0.0",
+    "enzyme": "3.11.0",
+    "enzyme-adapter-react-16": "1.15.2",
     "eslint": "6.5.1",
     "eslint-config-problems": "4.0.0",
     "eslint-plugin-prettier": "3.1.2",
     "eslint-plugin-react": "7.19.0",
     "faker": "4.1.0",
-    "graphql": "^14.6.0",
-    "graphql-tools": "^4.0.7",
+    "graphql": "14.6.0",
+    "graphql-tools": "4.0.7",
     "husky": "3.0.9",
+    "identity-obj-proxy": "3.0.0",
     "jest": "24.9.0",
     "lerna": "3.18.1",
     "lerna-changelog": "0.8.2",
@@ -69,6 +68,7 @@
     "npm-run-all": "4.1.5",
     "prettier": "1.18.2",
     "prettier-eslint-cli": "5.0.0",
+    "pretty": "2.0.0",
     "react": "16.12.0",
     "react-dom": "16.12.0",
     "rollup": "1.28.0",

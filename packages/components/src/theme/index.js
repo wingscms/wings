@@ -4,7 +4,7 @@ import Theme from './Theme';
 
 export default Theme;
 
-const getThemeInstance = theme => (theme instanceof Theme ? theme : Theme.instance());
+const getThemeInstance = theme => (theme instanceof Theme ? theme : Theme.instance(theme));
 
 export const t = cb => ({ theme, ...props }) => cb(getThemeInstance(theme), props);
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import fP from 'filter-invalid-dom-props';
 import styled from '../lib/styled';
 import _Button from './Button';
 
@@ -52,7 +53,7 @@ export default ({
   const goToPage = n => onPageChange(n);
 
   return (
-    <div {...props}>
+    <div {...fP(props)}>
       <ButtonGroup>
         <Button onClick={firstPage} disabled={!hasPreviousPage}>
           &lt;&lt;

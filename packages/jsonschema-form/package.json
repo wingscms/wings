@@ -1,6 +1,6 @@
 {
   "name": "@wingscms/jsonschema-form",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "JSON schema forms for Wings",
   "main": "build/index.js",
   "scripts": {
@@ -21,6 +21,6 @@
   "peerDependencies": {
     "react": "^16",
     "react-dom": "^16",
-    "styled-components": "^4"
+    "styled-components": "^5"
   }
 }

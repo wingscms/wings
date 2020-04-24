@@ -1,5 +1,5 @@
 import React from 'react';
-import Page from './Page';
+import { Page } from '@wingscms/react';
 import richMd from '../../fixtures/mobiledocRich.json';
 import { image } from '../../../../utils';
 
@@ -12,4 +12,8 @@ const node = {
   content: JSON.stringify(richMd),
 };
 
-export default () => <Page node={node} />;
+const Default = () => <Page node={node} />;
+
+export default Default;
+
+Default.snapshotDelay = 1;

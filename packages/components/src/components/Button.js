@@ -1,5 +1,5 @@
 import React from 'react';
-import filterProps from 'filter-invalid-dom-props';
+import fP from 'filter-invalid-dom-props';
 import styled, { css } from '../lib/styled';
 import Theme, { t } from '../theme';
 import _Loading from './Loading';
@@ -123,7 +123,7 @@ export default function Button({
 }) {
   const disabled = loading || disabledProp;
   return (
-    <Root disabled={disabled} intent={intent} size={size} type={type} {...filterProps(props)}>
+    <Root disabled={disabled} intent={intent} size={size} type={type} {...fP(props)}>
       {!loading ? null : (
         <LoadingWrapper>
           <Loading intent={intent} size={LOADING_SIZE[size]} />

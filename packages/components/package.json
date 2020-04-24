@@ -1,6 +1,6 @@
 {
   "name": "@wingscms/components",
-  "version": "0.23.0",
+  "version": "0.24.0",
   "description": "Component library for Wings projects",
   "main": "build/index.js",
   "scripts": {
@@ -14,17 +14,18 @@
     "eslint": "6.5.1",
     "react-json-view": "1.19.1",
     "rollup": "1.28.0",
-    "styled-components": "4.4.0"
+    "styled-components": "5.1.0"
   },
   "dependencies": {
     "@babel/runtime": "^7.7.7",
     "classnames": "^2.2.6",
     "color": "^3.1.2",
-    "filter-invalid-dom-props": "^2.0.0"
+    "filter-invalid-dom-props": "^2.0.0",
+    "react-countup": "^4.3.3"
   },
   "peerDependencies": {
     "prop-types": "^15",
     "react": "^16",
-    "styled-components": "^4"
+    "styled-components": "^5"
   }
 }

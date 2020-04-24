@@ -1,7 +1,11 @@
+export { default as Burger } from './components/Burger';
 export { default as Button } from './components/Button';
 export { default as Counter } from './components/Counter';
+export { default as Drawer } from './components/Drawer';
+export { default as CounterBar } from './components/CounterBar';
 export { default as Expandable } from './components/Expandable';
 export { default as Header } from './components/Header';
+export { default as Icon } from './components/Icon';
 export { default as Image } from './components/Image';
 export { default as Loading } from './components/Loading';
 export { default as PaginationControls } from './components/PaginationControls';
@@ -10,6 +14,7 @@ export { default as SvgIcon } from './components/SvgIcon';
 
 export { default as Theme, t, useTheme, ThemeProvider } from './theme';
 export { createSvgIcon, getContrastColor, separateUnit } from './lib/utils';
+export { default as useDimensions } from './hooks/useDimensions';
 
 // Form
 export { default as MenuButton } from './components/MenuButton';
@@ -18,16 +23,6 @@ export { RadioInput } from './components/form';
 // export { CheckboxInput } from './components/form';
 // export { Select } from './components/form';
 export { ConfirmationBox } from './components/form';
-
-// Menu
-export {
-  Burger,
-  ContentWrapper as MenuContentWrapper,
-  MenuItem,
-  SlideMenu,
-  toggleSlideMenu,
-  LanguagePicker,
-} from './components/menu';
 
 // Text
 export { Breakout } from './components/text';
@@ -53,5 +48,4 @@ export { Signup, SignupForm, Newsletter, NewsletterForm } from './components/sig
 // Styles
 export { ALIGNLEFT, ALIGNRIGHT, wide } from './styles';
 
-// Icons
-export { default as Icons } from './img/svg/icons';
+export { default as Icons } from './components/Icon'; // TODO: Deprecated, now Icon

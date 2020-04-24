@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 import { Loading, Button as _Button } from '@wingscms/components';
 import SchemaForm from '@wingscms/jsonschema-form';
 import deepmerge from 'deepmerge';
+
 import styled from '../../lib/styled';
+import { t } from '../../theme';
 
 import { withWings } from '../../ctx/Wings';
+import { withIntl } from '../../ctx/Intl';
 
 const patchSchema = (schema, fieldDefinitions) =>
   deepmerge(schema, { properties: fieldDefinitions });
@@ -210,7 +213,7 @@ const Button = styled(_Button)`
   }
   &:hover {
     text-decoration: none;
-    color: ${({ theme }) => theme.primaryColor};
+    color: ${t(_ => _.primaryColor)};
   }
   @media screen and (max-width: 800px) {
     font-size: 22px;
@@ -252,34 +255,6 @@ const FIELD_COPY_MAPPING = {
   [FIELDS.COUNTRY]: 'countryFieldLabel',
   [FIELDS.PHONE]: 'phoneFieldLabel',
   [FIELDS.AMOUNT]: 'amountFieldLabel',
-};
-
-const DEFAULT_COPY = {
-  submitText: 'Submit',
-  eventSubmitText: 'Attend',
-  fundraiserSubmitText: 'Donate',
-  signupSubmitText: 'Submit',
-  petitionSubmitText: 'Sign',
-  emailFieldLabel: 'Email address',
-  firstNameFieldLabel: 'First name',
-  lastNameFieldLabel: 'Last name',
-  addressFieldLabel: 'Address',
-  zipcodeFieldLabel: 'Postcode',
-  cityFieldLabel: 'City',
-  countryFieldLabel: 'Country',
-  phoneFieldLabel: 'Phone number',
-  amountFieldLabel: 'Amount',
-  newsletterFieldLabel: 'Stay up to date',
-  termsFieldLabel: 'Agree to our terms & conditions',
-  privacyConsentFieldLabel: 'Agree to our privacy policy',
-  campaignConfirmTitle: 'We’re almost there!',
-  campaignConfirmText:
-    'We have sent you an email with a confirmation link to make sure all signatures are genuine. If you follow that link, your signature will count. Thanks!',
-  campaignLoadingText: 'loading',
-  campaignErrorTitle: 'Oops!',
-  campaignErrorText:
-    'Something went wrong with the submitting the form. Try again or report the issue to us.',
-  campaignErrorButtonText: 'Try again',
 };
 
 class CampaignForm extends Component {
@@ -335,7 +310,44 @@ class CampaignForm extends Component {
   };
 
   getCopy() {
-    return { ...DEFAULT_COPY, ...this.props.copy };
+    const { copy, intl, node } = this.props;
+    const messages = {
+      eventSubmitText: intl.formatMessage('wings.CampaignForm.eventSubmit.text'),
+      fundraiserSubmitText: intl.formatMessage('wings.CampaignForm.fundraiserSubmit.text'),
+      signupSubmitText: intl.formatMessage('wings.CampaignForm.signupSubmit.text'),
+      petitionSubmitText: intl.formatMessage('wings.CampaignForm.petitionSubmit.text'),
+      emailFieldLabel: intl.formatMessage('wings.CampaignForm.emailField.label'),
+      firstNameFieldLabel: intl.formatMessage('wings.CampaignForm.firstNameField.label'),
+      lastNameFieldLabel: intl.formatMessage('wings.CampaignForm.lastNameField.label'),
+      addressFieldLabel: intl.formatMessage('wings.CampaignForm.addressField.label'),
+      zipcodeFieldLabel: intl.formatMessage('wings.CampaignForm.zipcodeField.label'),
+      cityFieldLabel: intl.formatMessage('wings.CampaignForm.cityField.label'),
+      countryFieldLabel: intl.formatMessage('wings.CampaignForm.countryField.label'),
+      phoneFieldLabel: intl.formatMessage('wings.CampaignForm.phoneField.label'),
+      amountFieldLabel: intl.formatMessage('wings.CampaignForm.amountField.label'),
+      newsletterFieldLabel: intl.formatMessage('wings.CampaignForm.newsletterField.label'),
+      termsFieldLabel: intl.formatMessage('wings.CampaignForm.termsField.label', {
+        a: str => (
+          <a href={node?.settings?.legal?.terms?.url || '/terms'} target="_blank">
+            {str}
+          </a>
+        ),
+      }),
+      privacyConsentFieldLabel: intl.formatMessage('wings.CampaignForm.privacyConsentField.label', {
+        a: str => (
+          <a href={node?.settings?.legal?.privacyPolicy?.url || '/privacy'} target="_blank">
+            {str}
+          </a>
+        ),
+      }),
+      campaignConfirmTitle: intl.formatMessage('wings.CampaignForm.confirm.title'),
+      campaignConfirmText: intl.formatMessage('wings.CampaignForm.confirm.text'),
+      campaignLoadingText: intl.formatMessage('wings.CampaignForm.loading.text'),
+      campaignErrorTitle: intl.formatMessage('wings.CampaignForm.error.title'),
+      campaignErrorText: intl.formatMessage('wings.CampaignForm.error.text'),
+      campaignErrorButtonText: intl.formatMessage('wings.CampaignForm.error.buttonText'),
+    };
+    return { ...messages, ...copy };
   }
 
   componentDidMount() {
@@ -426,14 +438,13 @@ class CampaignForm extends Component {
 
   getSubmitText() {
     const { type, submitText = '' } = this.props;
+    if (submitText) return submitText;
     const {
       signupSubmitText,
       eventSubmitText,
       petitionSubmitText,
       fundraiserSubmitText,
-      defaultSubmitText,
     } = this.getCopy();
-    if (submitText) return submitText;
     switch (type) {
       case 'signup':
         return signupSubmitText;
@@ -444,7 +455,7 @@ class CampaignForm extends Component {
       case 'fundraiser':
         return fundraiserSubmitText;
       default:
-        return defaultSubmitText;
+        return 'Submit';
     }
   }
 
@@ -681,4 +692,4 @@ class CampaignForm extends Component {
   }
 }
 
-export default withWings(CampaignForm);
+export default withIntl(withWings(CampaignForm));

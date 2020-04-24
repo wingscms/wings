@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import styled from '../../lib/styled';
 import GalleryImage from './GalleryImage';
 import Dots from './Dots';
-import { ChevronRight, ChevronLeft, Pause, Play } from '../icons';
+import { ChevronRight, ChevronLeft, Pause, Play } from '../Icon';
 import { randomString } from '../../lib/utils';
 
 const ContainerOuter = styled.div`
