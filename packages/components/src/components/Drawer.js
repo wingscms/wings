@@ -66,8 +66,8 @@ const Container = styled.div`
   background-color: ${t((_, { backgroundColor }) => backgroundColor || _.drawerBackgroundColor)};
   transition: 0.2s all ease-in-out;
   z-index: 1000;
-  ${props => getPosition(props)}
-  ${props => getSize(props)}
+  ${getPosition}
+  ${getSize}
 `;
 
 const Drawer = ({
