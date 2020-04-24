@@ -8,51 +8,51 @@ exports[`Storyshots components/Burger Default 1`] = `
 </div>"
 `;
 
-exports[`Storyshots components/Button Default 1`] = `"<button type=\\"normal\\" class=\\"sc-bxivhb fCsCwt\\">Click me!</button>"`;
+exports[`Storyshots components/Button Default 1`] = `"<button type=\\"normal\\" class=\\"sc-htoDjs eseTCh\\">Click me!</button>"`;
 
 exports[`Storyshots components/Button Loading 1`] = `
-"<button disabled=\\"\\" type=\\"normal\\" class=\\"sc-bxivhb jIhTHF\\">
-  <div class=\\"sc-htpNat kbTBHE\\">
-    <div class=\\"sc-bdVaJa sc-bwzfXH fgXDYz\\"></div>
+"<button disabled=\\"\\" type=\\"normal\\" class=\\"sc-htoDjs wLpTP\\">
+  <div class=\\"sc-gzVnrw dLkcDl\\">
+    <div class=\\"sc-EHOje sc-bZQynM hnSKdZ\\"></div>
   </div>Click me!
 </button>"
 `;
 
 exports[`Storyshots components/Button Loading Small 1`] = `
-"<button disabled=\\"\\" type=\\"normal\\" class=\\"sc-bxivhb kDIGCO\\">
-  <div class=\\"sc-htpNat kbTBHE\\">
-    <div class=\\"sc-bdVaJa sc-bwzfXH fVArY\\"></div>
+"<button disabled=\\"\\" type=\\"normal\\" class=\\"sc-htoDjs ldrsBx\\">
+  <div class=\\"sc-gzVnrw dLkcDl\\">
+    <div class=\\"sc-EHOje sc-bZQynM pfNwz\\"></div>
   </div>Click me!
 </button>"
 `;
 
-exports[`Storyshots components/Button Primary 1`] = `"<button type=\\"normal\\" class=\\"sc-bxivhb dHSStC\\">Click me!</button>"`;
+exports[`Storyshots components/Button Primary 1`] = `"<button type=\\"normal\\" class=\\"sc-htoDjs kmNPHr\\">Click me!</button>"`;
 
-exports[`Storyshots components/Button Small 1`] = `"<button type=\\"normal\\" class=\\"sc-bxivhb jHImxL\\">Click me!</button>"`;
+exports[`Storyshots components/Button Small 1`] = `"<button type=\\"normal\\" class=\\"sc-htoDjs gAjjhN\\">Click me!</button>"`;
 
 exports[`Storyshots components/Counter Default 1`] = `
-"<div class=\\"sc-bZQynM cbTQrn\\">
-  <div class=\\"sc-gzVnrw hcSRYx\\">
-    <div class=\\"sc-htoDjs dyPXvz\\">€<span></span></div>
-    <div class=\\"sc-dnqmqq lgbCWI\\">has been donated</div>
+"<div class=\\"sc-gZMcBi kovKVs\\">
+  <div class=\\"sc-gqjmRU bVGxNA\\">
+    <div class=\\"sc-VigVT homDnr\\">€<span></span></div>
+    <div class=\\"sc-jTzLTM gfXFgn\\">has been donated</div>
   </div>
-  <div height=\\"12\\" class=\\"sc-ifAKCX iBZWju\\">
-    <div height=\\"12\\" width=\\"76\\" class=\\"sc-ifAKCX sc-EHOje hLwHHv\\"></div>
+  <div height=\\"12\\" class=\\"sc-dnqmqq glTPBP\\">
+    <div height=\\"12\\" width=\\"76\\" class=\\"sc-dnqmqq sc-iwsKbI cdezEN\\"></div>
   </div>
-  <div class=\\"sc-iwsKbI dpOsHX\\">€100</div>
+  <div class=\\"sc-fjdhpX gcKljn\\">€100</div>
 </div>"
 `;
 
 exports[`Storyshots components/CounterBar Default 1`] = `
-"<div height=\\"12\\" class=\\"sc-ifAKCX iBZWju\\">
-  <div height=\\"12\\" width=\\"76\\" class=\\"sc-ifAKCX sc-EHOje hLwHHv\\"></div>
+"<div height=\\"12\\" class=\\"sc-dnqmqq glTPBP\\">
+  <div height=\\"12\\" width=\\"76\\" class=\\"sc-dnqmqq sc-iwsKbI cdezEN\\"></div>
 </div>"
 `;
 
 exports[`Storyshots components/Drawer Default 1`] = `"<div open=\\"\\" class=\\"sc-jzJRlG dccgkM\\"></div>"`;
 
 exports[`Storyshots components/Expandable Default 1`] = `
-"<div height=\\"250px\\" class=\\"sc-gZMcBi ekXqdA\\">Quisquam recusandae alias consequuntur corporis repellat ratione ut sunt qui. Iure ut libero qui. Ut nulla quam ipsam nobis cupiditate sed dignissimos debitis incidunt. Sed libero repudiandae.
+"<div height=\\"250px\\" class=\\"sc-cSHVUG kJMbXj\\">Quisquam recusandae alias consequuntur corporis repellat ratione ut sunt qui. Iure ut libero qui. Ut nulla quam ipsam nobis cupiditate sed dignissimos debitis incidunt. Sed libero repudiandae.
 
   Natus et eos itaque velit omnis. Porro ut et ipsam explicabo eligendi occaecati debitis et. Eum dicta eum eaque enim ipsum inventore debitis libero aspernatur. Quam tempore a velit provident velit eligendi.
 
@@ -70,22 +70,22 @@ exports[`Storyshots components/Expandable Default 1`] = `
 
   Magni quasi exercitationem. Ea similique ad sed architecto magnam voluptatem maxime neque adipisci. Culpa quis ut ab nulla quod labore ullam quos sed. Voluptatibus eum saepe nesciunt omnis sit et. Eaque corrupti vel.
 
-  Similique blanditiis voluptatem provident doloribus aut culpa ratione vel. Omnis numquam maxime sint libero laudantium voluptatem. Et voluptas quis non. Architecto non explicabo facere neque et ex quaerat. Aut qui adipisci.<div class=\\"sc-gqjmRU iNfgYt\\">More</div>
+  Similique blanditiis voluptatem provident doloribus aut culpa ratione vel. Omnis numquam maxime sint libero laudantium voluptatem. Et voluptas quis non. Architecto non explicabo facere neque et ex quaerat. Aut qui adipisci.<div class=\\"sc-kAzzGY gesHvN\\">More</div>
 </div>"
 `;
 
 exports[`Storyshots components/Header Cover 1`] = `
-"<div class=\\"sc-cooIXK fVukXW\\">
-  <header id=\\"landing-section\\" class=\\"sc-cSHVUG fsalfQ\\">
-    <div style=\\"margin-top:0\\" class=\\"sc-kAzzGY HSvgI\\">
-      <div class=\\"sc-kgoBCf jlJUUY\\"></div>
-      <div class=\\"sc-chPdSV iWlkeV\\"></div>
+"<div class=\\"sc-iBEsjs epTVVk\\">
+  <header id=\\"landing-section\\" class=\\"sc-dxgOiQ fbhmTm\\">
+    <div style=\\"margin-top:0\\" class=\\"sc-ckVGcZ bCJPVs\\">
+      <div class=\\"sc-eNQAEJ khBDWF\\"></div>
+      <div class=\\"sc-jKJlTe NxaJo\\"></div>
     </div>
-    <div class=\\"sc-kGXeez bRUmTu\\">
-      <div class=\\"sc-kpOJdX dPQemP\\">
-        <h1 class=\\"sc-jzJRlG bwntWL\\"><span>Test title</span></h1>
+    <div class=\\"sc-hMqMXs ifLmhg\\">
+      <div class=\\"sc-kEYyzF eVzful\\">
+        <h1 class=\\"sc-kpOJdX drJtvh\\"><span>Test title</span></h1>
       </div>
-      <div class=\\"sc-dxgOiQ jVQZtU\\"><svg focusable=\\"false\\" viewBox=\\"0 0 23 30\\" aria-hidden=\\"true\\" role=\\"presentation\\">
+      <div class=\\"sc-kkGfuU fxpsNf\\"><svg focusable=\\"false\\" viewBox=\\"0 0 23 30\\" aria-hidden=\\"true\\" role=\\"presentation\\">
           <g id=\\"Templates\\" stroke=\\"none\\" stroke-width=\\"1\\" fill=\\"none\\" fill-rule=\\"evenodd\\">
             <g id=\\"Longread\\" transform=\\"translate(-948.000000, -770.000000)\\" fill-rule=\\"nonzero\\">
               <g id=\\"noun_1561795_cc\\" transform=\\"translate(948.000000, 770.000000)\\">
@@ -100,10 +100,10 @@ exports[`Storyshots components/Header Cover 1`] = `
 `;
 
 exports[`Storyshots components/Header Default 1`] = `
-"<div class=\\"sc-cooIXK fVukXW\\">
-  <div class=\\"sc-jTzLTM fxBFUL\\">
-    <h1 class=\\"sc-fjdhpX ejZYok\\">Test title</h1>
-    <figure class=\\"sc-VigVT glCwOM\\"><img src=\\"https://via.placeholder.com/1200x800?w=1160&amp;quality=100\\" /></figure>
+"<div class=\\"sc-iBEsjs epTVVk\\">
+  <div class=\\"sc-kgoBCf hbhwfO\\">
+    <h1 class=\\"sc-kGXeez dzRoip\\">Test title</h1>
+    <figure class=\\"sc-chPdSV kfgMHb\\"><img src=\\"https://via.placeholder.com/1200x800?w=1160&amp;quality=100\\" /></figure>
   </div>
 </div>"
 `;
@@ -121,17 +121,17 @@ exports[`Storyshots components/Icon Default 1`] = `
 `;
 
 exports[`Storyshots components/Image Default 1`] = `
-"<div class=\\"sc-fcdeBU BRpoD\\">
+"<div class=\\"sc-bYwvMP jawkgx\\">
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  <figure class=\\"sc-eNQAEJ iRbTXa default\\"><img src=\\"/public/feae5e9e98109ce336d7c41456bf34da.jpg\\" class=\\"sc-kEYyzF hgjNqK\\" />
-    <figcaption class=\\"sc-ckVGcZ bRCeJE sc-hMqMXs dEpahv\\"></figcaption>
+  <figure class=\\"sc-eHgmQL hKtFaS default\\"><img src=\\"/public/feae5e9e98109ce336d7c41456bf34da.jpg\\" class=\\"sc-jWBwVP cojRgB\\" />
+    <figcaption class=\\"sc-iAyFgw hoyEmK sc-cvbbAY cxRayN\\"></figcaption>
   </figure>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </div>"
 `;
 
-exports[`Storyshots components/Loading Default 1`] = `"<div class=\\"sc-bdVaJa eXLAnL\\"></div>"`;
+exports[`Storyshots components/Loading Default 1`] = `"<div class=\\"sc-EHOje emftSB\\"></div>"`;
 
 exports[`Storyshots components/SvgIcon Default 1`] = `
 "<svg focusable=\\"false\\" viewBox=\\"0 0 1100 750\\" aria-hidden=\\"true\\" role=\\"presentation\\">
@@ -144,16 +144,16 @@ exports[`Storyshots jsonschema-form/Amount Default 1`] = `"Amount"`;
 
 exports[`Storyshots react/Article Default 1`] = `
 "<div>
-  <header id=\\"landing-section\\" class=\\"sc-cSHVUG fsalfQ\\">
-    <div style=\\"margin-top:0\\" class=\\"sc-kAzzGY HSvgI\\">
-      <div class=\\"sc-kgoBCf kGauKR\\"></div>
-      <div class=\\"sc-chPdSV iWlkeV\\"></div>
+  <header id=\\"landing-section\\" class=\\"sc-dxgOiQ fbhmTm\\">
+    <div style=\\"margin-top:0\\" class=\\"sc-ckVGcZ bCJPVs\\">
+      <div class=\\"sc-eNQAEJ lCUwQ\\"></div>
+      <div class=\\"sc-jKJlTe NxaJo\\"></div>
     </div>
-    <div class=\\"sc-kGXeez bRUmTu\\">
-      <div class=\\"sc-kpOJdX dPQemP\\">
-        <h1 class=\\"sc-jzJRlG bwntWL\\"><span>This is a test article</span></h1>
+    <div class=\\"sc-hMqMXs ifLmhg\\">
+      <div class=\\"sc-kEYyzF eVzful\\">
+        <h1 class=\\"sc-kpOJdX drJtvh\\"><span>This is a test article</span></h1>
       </div>
-      <div class=\\"sc-dxgOiQ jVQZtU\\"><svg focusable=\\"false\\" viewBox=\\"0 0 23 30\\" aria-hidden=\\"true\\" role=\\"presentation\\">
+      <div class=\\"sc-kkGfuU fxpsNf\\"><svg focusable=\\"false\\" viewBox=\\"0 0 23 30\\" aria-hidden=\\"true\\" role=\\"presentation\\">
           <g id=\\"Templates\\" stroke=\\"none\\" stroke-width=\\"1\\" fill=\\"none\\" fill-rule=\\"evenodd\\">
             <g id=\\"Longread\\" transform=\\"translate(-948.000000, -770.000000)\\" fill-rule=\\"nonzero\\">
               <g id=\\"noun_1561795_cc\\" transform=\\"translate(948.000000, 770.000000)\\">
@@ -164,71 +164,71 @@ exports[`Storyshots react/Article Default 1`] = `
         </svg></div>
     </div>
   </header>
-  <div class=\\"sc-kxynE kixoE\\">
-    <div class=\\"sc-esOvli cilAJx\\">
+  <div class=\\"sc-LKuAh hCjtDB\\">
+    <div class=\\"sc-bsbRJL ddkCbC\\">
       <div class=\\"Mobiledoc\\">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <div class=\\"react-reveal\\">
-          <figure class=\\"sc-cmthru jUahXZ size-0 align-0\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" /></figure>
+          <figure class=\\"sc-hZSUBg eJQqXg size-0 align-0\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" /></figure>
         </div>
-        <div class=\\"sc-bXGyLb HYxEB headerContainer\\" id=\\"chapter-one\\">
-          <div class=\\"sc-eLExRp epULZM\\">
-            <div class=\\"react-reveal\\"><span class=\\"sc-krvtoX hpkrZy\\">1</span></div>
+        <div class=\\"sc-exAgwC grsVzx headerContainer\\" id=\\"chapter-one\\">
+          <div class=\\"sc-gojNiO hpZuaq\\">
+            <div class=\\"react-reveal\\"><span class=\\"sc-bXGyLb hBlMkx\\">1</span></div>
             <div class=\\"react-reveal\\">
-              <h2 class=\\"sc-cbkKFq gnVukq\\">Chapter One</h2>
+              <h2 class=\\"sc-daURTG koRClK\\">Chapter One</h2>
             </div>
             <div class=\\"react-reveal\\">
-              <div class=\\"sc-daURTG sc-lkqHmb etaRQJ\\">An eloquent introduction to chapter one</div>
+              <div class=\\"sc-GMQeP sc-cQFLBn fXdeeG\\">An eloquent introduction to chapter one</div>
             </div>
           </div>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <div class=\\"sc-eMigcr LbjWn\\">
-          <div class=\\"sc-esOvli cPpIGR\\">
+        <div class=\\"sc-bHwgHz ktbQtw\\">
+          <div class=\\"sc-bsbRJL jvlQFu\\">
             <div class=\\"Mobiledoc\\">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
           </div>
         </div>
-        <figure type=\\"0\\" class=\\"sc-cLQEGU iskwJH\\">
+        <figure type=\\"0\\" class=\\"sc-iuJeZd ehCFKa\\">
           <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </blockquote>
         </figure>
-        <figcaption class=\\"sc-gqPbQI kMfjCx\\"><a href=\\"wings.dev\\">Someone</a></figcaption>
+        <figcaption class=\\"sc-esOvli jEQdDw\\"><a href=\\"wings.dev\\">Someone</a></figcaption>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <div class=\\"sc-bXGyLb HYxEB headerContainer\\" id=\\"chapter-two\\">
-          <div class=\\"sc-eLExRp epULZM\\">
-            <div class=\\"react-reveal\\"><span class=\\"sc-krvtoX hpkrZy\\">2</span></div>
+        <div class=\\"sc-exAgwC grsVzx headerContainer\\" id=\\"chapter-two\\">
+          <div class=\\"sc-gojNiO hpZuaq\\">
+            <div class=\\"react-reveal\\"><span class=\\"sc-bXGyLb hBlMkx\\">2</span></div>
             <div class=\\"react-reveal\\">
-              <h2 class=\\"sc-cbkKFq gnVukq\\">Chapter Two</h2>
+              <h2 class=\\"sc-daURTG koRClK\\">Chapter Two</h2>
             </div>
             <div class=\\"react-reveal\\">
-              <div class=\\"sc-daURTG sc-lkqHmb etaRQJ\\">An eloquent introduction to chapter two</div>
+              <div class=\\"sc-GMQeP sc-cQFLBn fXdeeG\\">An eloquent introduction to chapter two</div>
             </div>
           </div>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <div class=\\"sc-hMFtBS jKqFwo\\">
+        <div class=\\"sc-cMhqgX epbAeA\\">
           <div class=\\"inner\\"><strong>Lorem ipsum dolor sit amet.</strong></div>
         </div>
-        <div type=\\"2\\" src=\\"http://via.placeholder.com/350x350.png\\" class=\\"sc-laTMn GDazh\\">
-          <h3 class=\\"sc-hGoxap cUKdqq\\">Question and Answers</h3>
-          <div class=\\"sc-TFwJa eIeWjd\\">
-            <div class=\\"sc-bHwgHz gYHfut\\">
-              <div class=\\"sc-krDsej bqGHLR\\">
-                <div class=\\"sc-itybZL gOvnWR\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
+        <div type=\\"2\\" src=\\"http://via.placeholder.com/350x350.png\\" class=\\"sc-gJWqzi diydXM\\">
+          <h3 class=\\"sc-rBLzX eHgeNw\\">Question and Answers</h3>
+          <div class=\\"sc-CtfFt gFLNki\\">
+            <div class=\\"sc-laTMn iUTehi\\">
+              <div class=\\"sc-hGoxap dZbugp\\">
+                <div class=\\"sc-TFwJa icLnaO\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
                     <path d=\\"M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z\\"></path>
                   </svg></div>
-                <div class=\\"sc-fjmCvl kYedgb\\">
-                  <div class=\\"sc-esOvli cPpIGR\\">
+                <div class=\\"sc-bMvGRv fpqKIF\\">
+                  <div class=\\"sc-bsbRJL jvlQFu\\">
                     <div class=\\"Mobiledoc\\">
                       <h2>Question</h2>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class=\\"sc-dTdPqK bKGusO\\">
-                <div class=\\"sc-fjmCvl kYedgb\\">
-                  <div class=\\"sc-esOvli cPpIGR\\">
+              <div class=\\"sc-fjmCvl ebxceK\\">
+                <div class=\\"sc-bMvGRv fpqKIF\\">
+                  <div class=\\"sc-bsbRJL jvlQFu\\">
                     <div class=\\"Mobiledoc\\">
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
@@ -236,22 +236,22 @@ exports[`Storyshots react/Article Default 1`] = `
                 </div>
               </div>
             </div>
-            <div class=\\"sc-bHwgHz gYHfut\\">
-              <div class=\\"sc-krDsej bqGHLR\\">
-                <div class=\\"sc-itybZL gOvnWR\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
+            <div class=\\"sc-laTMn iUTehi\\">
+              <div class=\\"sc-hGoxap dZbugp\\">
+                <div class=\\"sc-TFwJa icLnaO\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
                     <path d=\\"M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z\\"></path>
                   </svg></div>
-                <div class=\\"sc-fjmCvl kYedgb\\">
-                  <div class=\\"sc-esOvli cPpIGR\\">
+                <div class=\\"sc-bMvGRv fpqKIF\\">
+                  <div class=\\"sc-bsbRJL jvlQFu\\">
                     <div class=\\"Mobiledoc\\">
                       <h2>Question</h2>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class=\\"sc-dTdPqK bKGusO\\">
-                <div class=\\"sc-fjmCvl kYedgb\\">
-                  <div class=\\"sc-esOvli cPpIGR\\">
+              <div class=\\"sc-fjmCvl ebxceK\\">
+                <div class=\\"sc-bMvGRv fpqKIF\\">
+                  <div class=\\"sc-bsbRJL jvlQFu\\">
                     <div class=\\"Mobiledoc\\">
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
@@ -259,22 +259,22 @@ exports[`Storyshots react/Article Default 1`] = `
                 </div>
               </div>
             </div>
-            <div class=\\"sc-bHwgHz gYHfut\\">
-              <div class=\\"sc-krDsej bqGHLR\\">
-                <div class=\\"sc-itybZL gOvnWR\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
+            <div class=\\"sc-laTMn iUTehi\\">
+              <div class=\\"sc-hGoxap dZbugp\\">
+                <div class=\\"sc-TFwJa icLnaO\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
                     <path d=\\"M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z\\"></path>
                   </svg></div>
-                <div class=\\"sc-fjmCvl kYedgb\\">
-                  <div class=\\"sc-esOvli cPpIGR\\">
+                <div class=\\"sc-bMvGRv fpqKIF\\">
+                  <div class=\\"sc-bsbRJL jvlQFu\\">
                     <div class=\\"Mobiledoc\\">
                       <h2>Question</h2>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class=\\"sc-dTdPqK bKGusO\\">
-                <div class=\\"sc-fjmCvl kYedgb\\">
-                  <div class=\\"sc-esOvli cPpIGR\\">
+              <div class=\\"sc-fjmCvl ebxceK\\">
+                <div class=\\"sc-bMvGRv fpqKIF\\">
+                  <div class=\\"sc-bsbRJL jvlQFu\\">
                     <div class=\\"Mobiledoc\\">
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
@@ -285,17 +285,17 @@ exports[`Storyshots react/Article Default 1`] = `
           </div>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <div class=\\"sc-jtggT kIbeHr\\">
-          <div class=\\"sc-jKVCRD eRBwhe\\"></div>
-          <div class=\\"sc-ebFjAB iYZItB\\">
-            <div style=\\"margin-top:0\\" class=\\"sc-dliRfk sc-kLIISr gCZFQa\\">
-              <div class=\\"sc-dliRfk sc-qrIAp bsCNma\\">
-                <div height=\\"320\\" style=\\"width:calc(100% - 460px);padding:20px 20px 0;margin:10px 0\\" class=\\"sc-ipXKqB ckkgtD\\">
-                  <div class=\\"sc-hmXxxW UXsez\\"></div>
+        <div class=\\"sc-ipZHIp cHujnH\\">
+          <div class=\\"sc-bmyXtO dHGdr\\"></div>
+          <div class=\\"sc-iGrrsa fDfCky\\">
+            <div style=\\"margin-top:0\\" class=\\"sc-VJcYb sc-ipXKqB duhnad\\">
+              <div class=\\"sc-VJcYb sc-hmXxxW eOcnlB\\">
+                <div height=\\"320\\" style=\\"width:calc(100% - 460px);padding:20px 20px 0;margin:10px 0\\" class=\\"sc-kUaPvJ OvdNt\\">
+                  <div class=\\"sc-giadOv fXifnO\\"></div>
                 </div>
-                <div class=\\"sc-iqzUVk elrNlX\\">
-                  <div class=\\"sc-ipZHIp hmgMzR\\">
-                    <div style=\\"text-align:center\\">loading<div class=\\"sc-bdVaJa kfCdkg\\"></div>
+                <div class=\\"sc-cqCuEk fdoCRO\\">
+                  <div class=\\"sc-dliRfk jdOoiT\\">
+                    <div style=\\"text-align:center\\">loading<div class=\\"sc-EHOje dyMrzE\\"></div>
                     </div>
                   </div>
                 </div>
@@ -304,29 +304,29 @@ exports[`Storyshots react/Article Default 1`] = `
           </div>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <div class=\\"sc-kaNhvL kTMOJr\\">
-          <div style=\\"min-height:0\\" class=\\"sc-LKuAh bBnjYV\\">
-            <div class=\\"sc-bdVaJa sc-hzNEM pNjcJ\\"></div>
+        <div class=\\"sc-dEoRIm pteci\\">
+          <div style=\\"min-height:0\\" class=\\"sc-jtggT kzwurx\\">
+            <div class=\\"sc-EHOje sc-jKVCRD bQNQdA\\"></div>
           </div>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <figure src=\\"https://www.youtube.com/watch?v=Htckxql7GRA\\" class=\\"sc-gojNiO bqGGDp\\">
+        <figure src=\\"https://www.youtube.com/watch?v=Htckxql7GRA\\" class=\\"sc-iujRgT gOnMgV\\">
           <div class=\\"video-wrapper\\" style=\\"padding-bottom:56%\\"><iframe width=\\"480\\" height=\\"270\\" src=\\"https://www.youtube.com/embed/Htckxql7GRA?feature=oembed\\" frameborder=\\"0\\" allow=\\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\\" allowfullscreen></iframe></div>
         </figure>
-        <section type=\\"1\\" src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" class=\\"sc-hORach eiAZaK\\">
+        <section type=\\"1\\" src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" class=\\"sc-cmthru ckFpNg\\">
           <header>
-            <h1 class=\\"sc-bAeIUo fXmkYd\\">A testimonial</h1>
-            <p class=\\"sc-iujRgT jdlKvT\\">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h1 class=\\"sc-cLQEGU iWSqMO\\">A testimonial</h1>
+            <p class=\\"sc-gqPbQI ewnKnG\\">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </header>
-          <div class=\\"sc-bMVAic jjddNl\\">
-            <div class=\\"sc-exAgwC lkVHup\\">
+          <div class=\\"sc-hMFtBS efZQs\\">
+            <div class=\\"sc-bMVAic dRQDgg\\">
               <div>
                 <div></div>
-                <figure class=\\"sc-GMQeP hxuETX\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=760&amp;h=1280&amp;quality=100\\" alt=\\"portret van A testimonial\\" /></figure>
+                <figure class=\\"sc-hORach jzySgz\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=760&amp;h=1280&amp;quality=100\\" alt=\\"portret van A testimonial\\" /></figure>
               </div>
             </div>
-            <div class=\\"sc-cQFLBn fFXhvH\\">
-              <div class=\\"sc-esOvli cPpIGR\\">
+            <div class=\\"sc-bAeIUo bQiuNC\\">
+              <div class=\\"sc-bsbRJL jvlQFu\\">
                 <div class=\\"Mobiledoc\\">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
@@ -343,16 +343,16 @@ exports[`Storyshots react/Article Default 1`] = `
 
 exports[`Storyshots react/Article No Image 1`] = `
 "<div>
-  <header id=\\"landing-section\\" class=\\"sc-cSHVUG fsalfQ\\">
-    <div style=\\"margin-top:0\\" class=\\"sc-kAzzGY HSvgI\\">
-      <div class=\\"sc-kgoBCf Fwhgm\\"></div>
-      <div class=\\"sc-chPdSV iWlkeV\\"></div>
+  <header id=\\"landing-section\\" class=\\"sc-dxgOiQ fbhmTm\\">
+    <div style=\\"margin-top:0\\" class=\\"sc-ckVGcZ bCJPVs\\">
+      <div class=\\"sc-eNQAEJ enYtZs\\"></div>
+      <div class=\\"sc-jKJlTe NxaJo\\"></div>
     </div>
-    <div class=\\"sc-kGXeez bRUmTu\\">
-      <div class=\\"sc-kpOJdX dPQemP\\">
-        <h1 class=\\"sc-jzJRlG bwntWL\\"><span>This is a test article</span></h1>
+    <div class=\\"sc-hMqMXs ifLmhg\\">
+      <div class=\\"sc-kEYyzF eVzful\\">
+        <h1 class=\\"sc-kpOJdX drJtvh\\"><span>This is a test article</span></h1>
       </div>
-      <div class=\\"sc-dxgOiQ jVQZtU\\"><svg focusable=\\"false\\" viewBox=\\"0 0 23 30\\" aria-hidden=\\"true\\" role=\\"presentation\\">
+      <div class=\\"sc-kkGfuU fxpsNf\\"><svg focusable=\\"false\\" viewBox=\\"0 0 23 30\\" aria-hidden=\\"true\\" role=\\"presentation\\">
           <g id=\\"Templates\\" stroke=\\"none\\" stroke-width=\\"1\\" fill=\\"none\\" fill-rule=\\"evenodd\\">
             <g id=\\"Longread\\" transform=\\"translate(-948.000000, -770.000000)\\" fill-rule=\\"nonzero\\">
               <g id=\\"noun_1561795_cc\\" transform=\\"translate(948.000000, 770.000000)\\">
@@ -363,71 +363,71 @@ exports[`Storyshots react/Article No Image 1`] = `
         </svg></div>
     </div>
   </header>
-  <div class=\\"sc-kxynE kixoE\\">
-    <div class=\\"sc-esOvli cilAJx\\">
+  <div class=\\"sc-LKuAh hCjtDB\\">
+    <div class=\\"sc-bsbRJL ddkCbC\\">
       <div class=\\"Mobiledoc\\">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <div class=\\"react-reveal\\">
-          <figure class=\\"sc-cmthru jUahXZ size-0 align-0\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" /></figure>
+          <figure class=\\"sc-hZSUBg eJQqXg size-0 align-0\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" /></figure>
         </div>
-        <div class=\\"sc-bXGyLb HYxEB headerContainer\\" id=\\"chapter-one\\">
-          <div class=\\"sc-eLExRp epULZM\\">
-            <div class=\\"react-reveal\\"><span class=\\"sc-krvtoX hpkrZy\\">1</span></div>
+        <div class=\\"sc-exAgwC grsVzx headerContainer\\" id=\\"chapter-one\\">
+          <div class=\\"sc-gojNiO hpZuaq\\">
+            <div class=\\"react-reveal\\"><span class=\\"sc-bXGyLb hBlMkx\\">1</span></div>
             <div class=\\"react-reveal\\">
-              <h2 class=\\"sc-cbkKFq gnVukq\\">Chapter One</h2>
+              <h2 class=\\"sc-daURTG koRClK\\">Chapter One</h2>
             </div>
             <div class=\\"react-reveal\\">
-              <div class=\\"sc-daURTG sc-lkqHmb etaRQJ\\">An eloquent introduction to chapter one</div>
+              <div class=\\"sc-GMQeP sc-cQFLBn fXdeeG\\">An eloquent introduction to chapter one</div>
             </div>
           </div>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <div class=\\"sc-eMigcr LbjWn\\">
-          <div class=\\"sc-esOvli cPpIGR\\">
+        <div class=\\"sc-bHwgHz ktbQtw\\">
+          <div class=\\"sc-bsbRJL jvlQFu\\">
             <div class=\\"Mobiledoc\\">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
           </div>
         </div>
-        <figure type=\\"0\\" class=\\"sc-cLQEGU iskwJH\\">
+        <figure type=\\"0\\" class=\\"sc-iuJeZd ehCFKa\\">
           <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </blockquote>
         </figure>
-        <figcaption class=\\"sc-gqPbQI kMfjCx\\"><a href=\\"wings.dev\\">Someone</a></figcaption>
+        <figcaption class=\\"sc-esOvli jEQdDw\\"><a href=\\"wings.dev\\">Someone</a></figcaption>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <div class=\\"sc-bXGyLb HYxEB headerContainer\\" id=\\"chapter-two\\">
-          <div class=\\"sc-eLExRp epULZM\\">
-            <div class=\\"react-reveal\\"><span class=\\"sc-krvtoX hpkrZy\\">2</span></div>
+        <div class=\\"sc-exAgwC grsVzx headerContainer\\" id=\\"chapter-two\\">
+          <div class=\\"sc-gojNiO hpZuaq\\">
+            <div class=\\"react-reveal\\"><span class=\\"sc-bXGyLb hBlMkx\\">2</span></div>
             <div class=\\"react-reveal\\">
-              <h2 class=\\"sc-cbkKFq gnVukq\\">Chapter Two</h2>
+              <h2 class=\\"sc-daURTG koRClK\\">Chapter Two</h2>
             </div>
             <div class=\\"react-reveal\\">
-              <div class=\\"sc-daURTG sc-lkqHmb etaRQJ\\">An eloquent introduction to chapter two</div>
+              <div class=\\"sc-GMQeP sc-cQFLBn fXdeeG\\">An eloquent introduction to chapter two</div>
             </div>
           </div>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <div class=\\"sc-hMFtBS jKqFwo\\">
+        <div class=\\"sc-cMhqgX epbAeA\\">
           <div class=\\"inner\\"><strong>Lorem ipsum dolor sit amet.</strong></div>
         </div>
-        <div type=\\"2\\" src=\\"http://via.placeholder.com/350x350.png\\" class=\\"sc-laTMn GDazh\\">
-          <h3 class=\\"sc-hGoxap cUKdqq\\">Question and Answers</h3>
-          <div class=\\"sc-TFwJa eIeWjd\\">
-            <div class=\\"sc-bHwgHz gYHfut\\">
-              <div class=\\"sc-krDsej bqGHLR\\">
-                <div class=\\"sc-itybZL gOvnWR\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
+        <div type=\\"2\\" src=\\"http://via.placeholder.com/350x350.png\\" class=\\"sc-gJWqzi diydXM\\">
+          <h3 class=\\"sc-rBLzX eHgeNw\\">Question and Answers</h3>
+          <div class=\\"sc-CtfFt gFLNki\\">
+            <div class=\\"sc-laTMn iUTehi\\">
+              <div class=\\"sc-hGoxap dZbugp\\">
+                <div class=\\"sc-TFwJa icLnaO\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
                     <path d=\\"M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z\\"></path>
                   </svg></div>
-                <div class=\\"sc-fjmCvl kYedgb\\">
-                  <div class=\\"sc-esOvli cPpIGR\\">
+                <div class=\\"sc-bMvGRv fpqKIF\\">
+                  <div class=\\"sc-bsbRJL jvlQFu\\">
                     <div class=\\"Mobiledoc\\">
                       <h2>Question</h2>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class=\\"sc-dTdPqK bKGusO\\">
-                <div class=\\"sc-fjmCvl kYedgb\\">
-                  <div class=\\"sc-esOvli cPpIGR\\">
+              <div class=\\"sc-fjmCvl ebxceK\\">
+                <div class=\\"sc-bMvGRv fpqKIF\\">
+                  <div class=\\"sc-bsbRJL jvlQFu\\">
                     <div class=\\"Mobiledoc\\">
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
@@ -435,22 +435,22 @@ exports[`Storyshots react/Article No Image 1`] = `
                 </div>
               </div>
             </div>
-            <div class=\\"sc-bHwgHz gYHfut\\">
-              <div class=\\"sc-krDsej bqGHLR\\">
-                <div class=\\"sc-itybZL gOvnWR\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
+            <div class=\\"sc-laTMn iUTehi\\">
+              <div class=\\"sc-hGoxap dZbugp\\">
+                <div class=\\"sc-TFwJa icLnaO\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
                     <path d=\\"M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z\\"></path>
                   </svg></div>
-                <div class=\\"sc-fjmCvl kYedgb\\">
-                  <div class=\\"sc-esOvli cPpIGR\\">
+                <div class=\\"sc-bMvGRv fpqKIF\\">
+                  <div class=\\"sc-bsbRJL jvlQFu\\">
                     <div class=\\"Mobiledoc\\">
                       <h2>Question</h2>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class=\\"sc-dTdPqK bKGusO\\">
-                <div class=\\"sc-fjmCvl kYedgb\\">
-                  <div class=\\"sc-esOvli cPpIGR\\">
+              <div class=\\"sc-fjmCvl ebxceK\\">
+                <div class=\\"sc-bMvGRv fpqKIF\\">
+                  <div class=\\"sc-bsbRJL jvlQFu\\">
                     <div class=\\"Mobiledoc\\">
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
@@ -458,22 +458,22 @@ exports[`Storyshots react/Article No Image 1`] = `
                 </div>
               </div>
             </div>
-            <div class=\\"sc-bHwgHz gYHfut\\">
-              <div class=\\"sc-krDsej bqGHLR\\">
-                <div class=\\"sc-itybZL gOvnWR\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
+            <div class=\\"sc-laTMn iUTehi\\">
+              <div class=\\"sc-hGoxap dZbugp\\">
+                <div class=\\"sc-TFwJa icLnaO\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
                     <path d=\\"M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z\\"></path>
                   </svg></div>
-                <div class=\\"sc-fjmCvl kYedgb\\">
-                  <div class=\\"sc-esOvli cPpIGR\\">
+                <div class=\\"sc-bMvGRv fpqKIF\\">
+                  <div class=\\"sc-bsbRJL jvlQFu\\">
                     <div class=\\"Mobiledoc\\">
                       <h2>Question</h2>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class=\\"sc-dTdPqK bKGusO\\">
-                <div class=\\"sc-fjmCvl kYedgb\\">
-                  <div class=\\"sc-esOvli cPpIGR\\">
+              <div class=\\"sc-fjmCvl ebxceK\\">
+                <div class=\\"sc-bMvGRv fpqKIF\\">
+                  <div class=\\"sc-bsbRJL jvlQFu\\">
                     <div class=\\"Mobiledoc\\">
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
@@ -484,17 +484,17 @@ exports[`Storyshots react/Article No Image 1`] = `
           </div>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <div class=\\"sc-jtggT kIbeHr\\">
-          <div class=\\"sc-jKVCRD eRBwhe\\"></div>
-          <div class=\\"sc-ebFjAB iYZItB\\">
-            <div style=\\"margin-top:0\\" class=\\"sc-dliRfk sc-kLIISr gCZFQa\\">
-              <div class=\\"sc-dliRfk sc-qrIAp bsCNma\\">
-                <div height=\\"320\\" style=\\"width:calc(100% - 460px);padding:20px 20px 0;margin:10px 0\\" class=\\"sc-ipXKqB ckkgtD\\">
-                  <div class=\\"sc-hmXxxW UXsez\\"></div>
+        <div class=\\"sc-ipZHIp cHujnH\\">
+          <div class=\\"sc-bmyXtO dHGdr\\"></div>
+          <div class=\\"sc-iGrrsa fDfCky\\">
+            <div style=\\"margin-top:0\\" class=\\"sc-VJcYb sc-ipXKqB duhnad\\">
+              <div class=\\"sc-VJcYb sc-hmXxxW eOcnlB\\">
+                <div height=\\"320\\" style=\\"width:calc(100% - 460px);padding:20px 20px 0;margin:10px 0\\" class=\\"sc-kUaPvJ OvdNt\\">
+                  <div class=\\"sc-giadOv fXifnO\\"></div>
                 </div>
-                <div class=\\"sc-iqzUVk elrNlX\\">
-                  <div class=\\"sc-ipZHIp hmgMzR\\">
-                    <div style=\\"text-align:center\\">loading<div class=\\"sc-bdVaJa kfCdkg\\"></div>
+                <div class=\\"sc-cqCuEk fdoCRO\\">
+                  <div class=\\"sc-dliRfk jdOoiT\\">
+                    <div style=\\"text-align:center\\">loading<div class=\\"sc-EHOje dyMrzE\\"></div>
                     </div>
                   </div>
                 </div>
@@ -503,29 +503,29 @@ exports[`Storyshots react/Article No Image 1`] = `
           </div>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <div class=\\"sc-kaNhvL kTMOJr\\">
-          <div style=\\"min-height:0\\" class=\\"sc-LKuAh bBnjYV\\">
-            <div class=\\"sc-bdVaJa sc-hzNEM pNjcJ\\"></div>
+        <div class=\\"sc-dEoRIm pteci\\">
+          <div style=\\"min-height:0\\" class=\\"sc-jtggT kzwurx\\">
+            <div class=\\"sc-EHOje sc-jKVCRD bQNQdA\\"></div>
           </div>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <figure src=\\"https://www.youtube.com/watch?v=Htckxql7GRA\\" class=\\"sc-gojNiO bqGGDp\\">
+        <figure src=\\"https://www.youtube.com/watch?v=Htckxql7GRA\\" class=\\"sc-iujRgT gOnMgV\\">
           <div class=\\"video-wrapper\\" style=\\"padding-bottom:56%\\"><iframe width=\\"480\\" height=\\"270\\" src=\\"https://www.youtube.com/embed/Htckxql7GRA?feature=oembed\\" frameborder=\\"0\\" allow=\\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\\" allowfullscreen></iframe></div>
         </figure>
-        <section type=\\"1\\" src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" class=\\"sc-hORach eiAZaK\\">
+        <section type=\\"1\\" src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" class=\\"sc-cmthru ckFpNg\\">
           <header>
-            <h1 class=\\"sc-bAeIUo fXmkYd\\">A testimonial</h1>
-            <p class=\\"sc-iujRgT jdlKvT\\">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h1 class=\\"sc-cLQEGU iWSqMO\\">A testimonial</h1>
+            <p class=\\"sc-gqPbQI ewnKnG\\">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </header>
-          <div class=\\"sc-bMVAic jjddNl\\">
-            <div class=\\"sc-exAgwC lkVHup\\">
+          <div class=\\"sc-hMFtBS efZQs\\">
+            <div class=\\"sc-bMVAic dRQDgg\\">
               <div>
                 <div></div>
-                <figure class=\\"sc-GMQeP hxuETX\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=760&amp;h=1280&amp;quality=100\\" alt=\\"portret van A testimonial\\" /></figure>
+                <figure class=\\"sc-hORach jzySgz\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=760&amp;h=1280&amp;quality=100\\" alt=\\"portret van A testimonial\\" /></figure>
               </div>
             </div>
-            <div class=\\"sc-cQFLBn fFXhvH\\">
-              <div class=\\"sc-esOvli cPpIGR\\">
+            <div class=\\"sc-bAeIUo bQiuNC\\">
+              <div class=\\"sc-bsbRJL jvlQFu\\">
                 <div class=\\"Mobiledoc\\">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
@@ -541,14 +541,14 @@ exports[`Storyshots react/Article No Image 1`] = `
 `;
 
 exports[`Storyshots react/Campaign Event 1`] = `
-"<div class=\\"sc-dliRfk sc-kLIISr gCZFQa\\">
-  <div class=\\"sc-dliRfk sc-qrIAp bsCNma\\">
-    <div height=\\"320\\" style=\\"width:calc(100% - 460px);padding:20px 20px 0;margin:10px 0\\" class=\\"sc-ipXKqB ckkgtD\\">
-      <div class=\\"sc-hmXxxW UXsez\\"></div>
+"<div class=\\"sc-VJcYb sc-ipXKqB duhnad\\">
+  <div class=\\"sc-VJcYb sc-hmXxxW eOcnlB\\">
+    <div height=\\"320\\" style=\\"width:calc(100% - 460px);padding:20px 20px 0;margin:10px 0\\" class=\\"sc-kUaPvJ OvdNt\\">
+      <div class=\\"sc-giadOv fXifnO\\"></div>
     </div>
-    <div class=\\"sc-iqzUVk elrNlX\\">
-      <div class=\\"sc-ipZHIp hmgMzR\\">
-        <div style=\\"text-align:center\\">loading<div class=\\"sc-bdVaJa kfCdkg\\"></div>
+    <div class=\\"sc-cqCuEk fdoCRO\\">
+      <div class=\\"sc-dliRfk jdOoiT\\">
+        <div style=\\"text-align:center\\">loading<div class=\\"sc-EHOje dyMrzE\\"></div>
         </div>
       </div>
     </div>
@@ -557,14 +557,14 @@ exports[`Storyshots react/Campaign Event 1`] = `
 `;
 
 exports[`Storyshots react/Campaign Fundraiser 1`] = `
-"<div class=\\"sc-dliRfk sc-kLIISr gCZFQa\\">
-  <div class=\\"sc-dliRfk sc-qrIAp bsCNma\\">
-    <div height=\\"320\\" style=\\"width:calc(100% - 460px);padding:20px 20px 0;margin:10px 0\\" class=\\"sc-ipXKqB ckkgtD\\">
-      <div class=\\"sc-hmXxxW UXsez\\"></div>
+"<div class=\\"sc-VJcYb sc-ipXKqB duhnad\\">
+  <div class=\\"sc-VJcYb sc-hmXxxW eOcnlB\\">
+    <div height=\\"320\\" style=\\"width:calc(100% - 460px);padding:20px 20px 0;margin:10px 0\\" class=\\"sc-kUaPvJ OvdNt\\">
+      <div class=\\"sc-giadOv fXifnO\\"></div>
     </div>
-    <div class=\\"sc-iqzUVk elrNlX\\">
-      <div class=\\"sc-ipZHIp hmgMzR\\">
-        <div style=\\"text-align:center\\">loading<div class=\\"sc-bdVaJa kfCdkg\\"></div>
+    <div class=\\"sc-cqCuEk fdoCRO\\">
+      <div class=\\"sc-dliRfk jdOoiT\\">
+        <div style=\\"text-align:center\\">loading<div class=\\"sc-EHOje dyMrzE\\"></div>
         </div>
       </div>
     </div>
@@ -573,14 +573,14 @@ exports[`Storyshots react/Campaign Fundraiser 1`] = `
 `;
 
 exports[`Storyshots react/Campaign Petition 1`] = `
-"<div class=\\"sc-dliRfk sc-kLIISr gCZFQa\\">
-  <div class=\\"sc-dliRfk sc-qrIAp bsCNma\\">
-    <div height=\\"320\\" style=\\"width:calc(100% - 460px);padding:20px 20px 0;margin:10px 0\\" class=\\"sc-ipXKqB ckkgtD\\">
-      <div class=\\"sc-hmXxxW UXsez\\"></div>
+"<div class=\\"sc-VJcYb sc-ipXKqB duhnad\\">
+  <div class=\\"sc-VJcYb sc-hmXxxW eOcnlB\\">
+    <div height=\\"320\\" style=\\"width:calc(100% - 460px);padding:20px 20px 0;margin:10px 0\\" class=\\"sc-kUaPvJ OvdNt\\">
+      <div class=\\"sc-giadOv fXifnO\\"></div>
     </div>
-    <div class=\\"sc-iqzUVk elrNlX\\">
-      <div class=\\"sc-ipZHIp hmgMzR\\">
-        <div style=\\"text-align:center\\">loading<div class=\\"sc-bdVaJa kfCdkg\\"></div>
+    <div class=\\"sc-cqCuEk fdoCRO\\">
+      <div class=\\"sc-dliRfk jdOoiT\\">
+        <div style=\\"text-align:center\\">loading<div class=\\"sc-EHOje dyMrzE\\"></div>
         </div>
       </div>
     </div>
@@ -591,15 +591,15 @@ exports[`Storyshots react/Campaign Petition 1`] = `
 exports[`Storyshots react/Cards/ImageCard Default 1`] = `"default"`;
 
 exports[`Storyshots react/Cards/NodesCard Default 1`] = `
-"<div class=\\"sc-kaNhvL kTMOJr\\">
-  <div style=\\"min-height:0\\" class=\\"sc-LKuAh bBnjYV\\">
-    <div class=\\"sc-bdVaJa sc-hzNEM pNjcJ\\"></div>
+"<div class=\\"sc-dEoRIm pteci\\">
+  <div style=\\"min-height:0\\" class=\\"sc-jtggT kzwurx\\">
+    <div class=\\"sc-EHOje sc-jKVCRD bQNQdA\\"></div>
   </div>
 </div>"
 `;
 
 exports[`Storyshots react/Content Default 1`] = `
-"<div class=\\"sc-esOvli cilAJx\\">
+"<div class=\\"sc-bsbRJL ddkCbC\\">
   <div class=\\"Mobiledoc\\">
     <p>Some content</p>
   </div>
@@ -607,70 +607,70 @@ exports[`Storyshots react/Content Default 1`] = `
 `;
 
 exports[`Storyshots react/Content With Cards 1`] = `
-"<div class=\\"sc-esOvli cilAJx\\">
+"<div class=\\"sc-bsbRJL ddkCbC\\">
   <div class=\\"Mobiledoc\\">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <div class=\\"react-reveal\\">
-      <figure class=\\"sc-cmthru jUahXZ size-0 align-0\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" /></figure>
+      <figure class=\\"sc-hZSUBg eJQqXg size-0 align-0\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" /></figure>
     </div>
-    <div class=\\"sc-bXGyLb HYxEB headerContainer\\" id=\\"chapter-one\\">
-      <div class=\\"sc-eLExRp epULZM\\">
-        <div class=\\"react-reveal\\"><span class=\\"sc-krvtoX hpkrZy\\">1</span></div>
+    <div class=\\"sc-exAgwC grsVzx headerContainer\\" id=\\"chapter-one\\">
+      <div class=\\"sc-gojNiO hpZuaq\\">
+        <div class=\\"react-reveal\\"><span class=\\"sc-bXGyLb hBlMkx\\">1</span></div>
         <div class=\\"react-reveal\\">
-          <h2 class=\\"sc-cbkKFq gnVukq\\">Chapter One</h2>
+          <h2 class=\\"sc-daURTG koRClK\\">Chapter One</h2>
         </div>
         <div class=\\"react-reveal\\">
-          <div class=\\"sc-daURTG sc-lkqHmb etaRQJ\\">An eloquent introduction to chapter one</div>
+          <div class=\\"sc-GMQeP sc-cQFLBn fXdeeG\\">An eloquent introduction to chapter one</div>
         </div>
       </div>
     </div>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <div class=\\"sc-eMigcr LbjWn\\">
-      <div class=\\"sc-esOvli cPpIGR\\">
+    <div class=\\"sc-bHwgHz ktbQtw\\">
+      <div class=\\"sc-bsbRJL jvlQFu\\">
         <div class=\\"Mobiledoc\\">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
       </div>
     </div>
-    <figure type=\\"0\\" class=\\"sc-cLQEGU iskwJH\\">
+    <figure type=\\"0\\" class=\\"sc-iuJeZd ehCFKa\\">
       <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </blockquote>
     </figure>
-    <figcaption class=\\"sc-gqPbQI kMfjCx\\"><a href=\\"wings.dev\\">Someone</a></figcaption>
+    <figcaption class=\\"sc-esOvli jEQdDw\\"><a href=\\"wings.dev\\">Someone</a></figcaption>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <div class=\\"sc-bXGyLb HYxEB headerContainer\\" id=\\"chapter-two\\">
-      <div class=\\"sc-eLExRp epULZM\\">
-        <div class=\\"react-reveal\\"><span class=\\"sc-krvtoX hpkrZy\\">2</span></div>
+    <div class=\\"sc-exAgwC grsVzx headerContainer\\" id=\\"chapter-two\\">
+      <div class=\\"sc-gojNiO hpZuaq\\">
+        <div class=\\"react-reveal\\"><span class=\\"sc-bXGyLb hBlMkx\\">2</span></div>
         <div class=\\"react-reveal\\">
-          <h2 class=\\"sc-cbkKFq gnVukq\\">Chapter Two</h2>
+          <h2 class=\\"sc-daURTG koRClK\\">Chapter Two</h2>
         </div>
         <div class=\\"react-reveal\\">
-          <div class=\\"sc-daURTG sc-lkqHmb etaRQJ\\">An eloquent introduction to chapter two</div>
+          <div class=\\"sc-GMQeP sc-cQFLBn fXdeeG\\">An eloquent introduction to chapter two</div>
         </div>
       </div>
     </div>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <div class=\\"sc-hMFtBS jKqFwo\\">
+    <div class=\\"sc-cMhqgX epbAeA\\">
       <div class=\\"inner\\"><strong>Lorem ipsum dolor sit amet.</strong></div>
     </div>
-    <div type=\\"2\\" src=\\"http://via.placeholder.com/350x350.png\\" class=\\"sc-laTMn GDazh\\">
-      <h3 class=\\"sc-hGoxap cUKdqq\\">Question and Answers</h3>
-      <div class=\\"sc-TFwJa eIeWjd\\">
-        <div class=\\"sc-bHwgHz gYHfut\\">
-          <div class=\\"sc-krDsej bqGHLR\\">
-            <div class=\\"sc-itybZL gOvnWR\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
+    <div type=\\"2\\" src=\\"http://via.placeholder.com/350x350.png\\" class=\\"sc-gJWqzi diydXM\\">
+      <h3 class=\\"sc-rBLzX eHgeNw\\">Question and Answers</h3>
+      <div class=\\"sc-CtfFt gFLNki\\">
+        <div class=\\"sc-laTMn iUTehi\\">
+          <div class=\\"sc-hGoxap dZbugp\\">
+            <div class=\\"sc-TFwJa icLnaO\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
                 <path d=\\"M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z\\"></path>
               </svg></div>
-            <div class=\\"sc-fjmCvl kYedgb\\">
-              <div class=\\"sc-esOvli cPpIGR\\">
+            <div class=\\"sc-bMvGRv fpqKIF\\">
+              <div class=\\"sc-bsbRJL jvlQFu\\">
                 <div class=\\"Mobiledoc\\">
                   <h2>Question</h2>
                 </div>
               </div>
             </div>
           </div>
-          <div class=\\"sc-dTdPqK bKGusO\\">
-            <div class=\\"sc-fjmCvl kYedgb\\">
-              <div class=\\"sc-esOvli cPpIGR\\">
+          <div class=\\"sc-fjmCvl ebxceK\\">
+            <div class=\\"sc-bMvGRv fpqKIF\\">
+              <div class=\\"sc-bsbRJL jvlQFu\\">
                 <div class=\\"Mobiledoc\\">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
@@ -678,22 +678,22 @@ exports[`Storyshots react/Content With Cards 1`] = `
             </div>
           </div>
         </div>
-        <div class=\\"sc-bHwgHz gYHfut\\">
-          <div class=\\"sc-krDsej bqGHLR\\">
-            <div class=\\"sc-itybZL gOvnWR\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
+        <div class=\\"sc-laTMn iUTehi\\">
+          <div class=\\"sc-hGoxap dZbugp\\">
+            <div class=\\"sc-TFwJa icLnaO\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
                 <path d=\\"M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z\\"></path>
               </svg></div>
-            <div class=\\"sc-fjmCvl kYedgb\\">
-              <div class=\\"sc-esOvli cPpIGR\\">
+            <div class=\\"sc-bMvGRv fpqKIF\\">
+              <div class=\\"sc-bsbRJL jvlQFu\\">
                 <div class=\\"Mobiledoc\\">
                   <h2>Question</h2>
                 </div>
               </div>
             </div>
           </div>
-          <div class=\\"sc-dTdPqK bKGusO\\">
-            <div class=\\"sc-fjmCvl kYedgb\\">
-              <div class=\\"sc-esOvli cPpIGR\\">
+          <div class=\\"sc-fjmCvl ebxceK\\">
+            <div class=\\"sc-bMvGRv fpqKIF\\">
+              <div class=\\"sc-bsbRJL jvlQFu\\">
                 <div class=\\"Mobiledoc\\">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
@@ -701,22 +701,22 @@ exports[`Storyshots react/Content With Cards 1`] = `
             </div>
           </div>
         </div>
-        <div class=\\"sc-bHwgHz gYHfut\\">
-          <div class=\\"sc-krDsej bqGHLR\\">
-            <div class=\\"sc-itybZL gOvnWR\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
+        <div class=\\"sc-laTMn iUTehi\\">
+          <div class=\\"sc-hGoxap dZbugp\\">
+            <div class=\\"sc-TFwJa icLnaO\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
                 <path d=\\"M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z\\"></path>
               </svg></div>
-            <div class=\\"sc-fjmCvl kYedgb\\">
-              <div class=\\"sc-esOvli cPpIGR\\">
+            <div class=\\"sc-bMvGRv fpqKIF\\">
+              <div class=\\"sc-bsbRJL jvlQFu\\">
                 <div class=\\"Mobiledoc\\">
                   <h2>Question</h2>
                 </div>
               </div>
             </div>
           </div>
-          <div class=\\"sc-dTdPqK bKGusO\\">
-            <div class=\\"sc-fjmCvl kYedgb\\">
-              <div class=\\"sc-esOvli cPpIGR\\">
+          <div class=\\"sc-fjmCvl ebxceK\\">
+            <div class=\\"sc-bMvGRv fpqKIF\\">
+              <div class=\\"sc-bsbRJL jvlQFu\\">
                 <div class=\\"Mobiledoc\\">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
@@ -727,17 +727,17 @@ exports[`Storyshots react/Content With Cards 1`] = `
       </div>
     </div>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <div class=\\"sc-jtggT kIbeHr\\">
-      <div class=\\"sc-jKVCRD eRBwhe\\"></div>
-      <div class=\\"sc-ebFjAB iYZItB\\">
-        <div style=\\"margin-top:0\\" class=\\"sc-dliRfk sc-kLIISr gCZFQa\\">
-          <div class=\\"sc-dliRfk sc-qrIAp bsCNma\\">
-            <div height=\\"320\\" style=\\"width:calc(100% - 460px);padding:20px 20px 0;margin:10px 0\\" class=\\"sc-ipXKqB ckkgtD\\">
-              <div class=\\"sc-hmXxxW UXsez\\"></div>
+    <div class=\\"sc-ipZHIp cHujnH\\">
+      <div class=\\"sc-bmyXtO dHGdr\\"></div>
+      <div class=\\"sc-iGrrsa fDfCky\\">
+        <div style=\\"margin-top:0\\" class=\\"sc-VJcYb sc-ipXKqB duhnad\\">
+          <div class=\\"sc-VJcYb sc-hmXxxW eOcnlB\\">
+            <div height=\\"320\\" style=\\"width:calc(100% - 460px);padding:20px 20px 0;margin:10px 0\\" class=\\"sc-kUaPvJ OvdNt\\">
+              <div class=\\"sc-giadOv fXifnO\\"></div>
             </div>
-            <div class=\\"sc-iqzUVk elrNlX\\">
-              <div class=\\"sc-ipZHIp hmgMzR\\">
-                <div style=\\"text-align:center\\">loading<div class=\\"sc-bdVaJa kfCdkg\\"></div>
+            <div class=\\"sc-cqCuEk fdoCRO\\">
+              <div class=\\"sc-dliRfk jdOoiT\\">
+                <div style=\\"text-align:center\\">loading<div class=\\"sc-EHOje dyMrzE\\"></div>
                 </div>
               </div>
             </div>
@@ -746,29 +746,29 @@ exports[`Storyshots react/Content With Cards 1`] = `
       </div>
     </div>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <div class=\\"sc-kaNhvL kTMOJr\\">
-      <div style=\\"min-height:0\\" class=\\"sc-LKuAh bBnjYV\\">
-        <div class=\\"sc-bdVaJa sc-hzNEM pNjcJ\\"></div>
+    <div class=\\"sc-dEoRIm pteci\\">
+      <div style=\\"min-height:0\\" class=\\"sc-jtggT kzwurx\\">
+        <div class=\\"sc-EHOje sc-jKVCRD bQNQdA\\"></div>
       </div>
     </div>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <figure src=\\"https://www.youtube.com/watch?v=Htckxql7GRA\\" class=\\"sc-gojNiO bqGGDp\\">
+    <figure src=\\"https://www.youtube.com/watch?v=Htckxql7GRA\\" class=\\"sc-iujRgT gOnMgV\\">
       <div class=\\"video-wrapper\\" style=\\"padding-bottom:56%\\"><iframe width=\\"480\\" height=\\"270\\" src=\\"https://www.youtube.com/embed/Htckxql7GRA?feature=oembed\\" frameborder=\\"0\\" allow=\\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\\" allowfullscreen></iframe></div>
     </figure>
-    <section type=\\"1\\" src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" class=\\"sc-hORach eiAZaK\\">
+    <section type=\\"1\\" src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" class=\\"sc-cmthru ckFpNg\\">
       <header>
-        <h1 class=\\"sc-bAeIUo fXmkYd\\">A testimonial</h1>
-        <p class=\\"sc-iujRgT jdlKvT\\">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <h1 class=\\"sc-cLQEGU iWSqMO\\">A testimonial</h1>
+        <p class=\\"sc-gqPbQI ewnKnG\\">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </header>
-      <div class=\\"sc-bMVAic jjddNl\\">
-        <div class=\\"sc-exAgwC lkVHup\\">
+      <div class=\\"sc-hMFtBS efZQs\\">
+        <div class=\\"sc-bMVAic dRQDgg\\">
           <div>
             <div></div>
-            <figure class=\\"sc-GMQeP hxuETX\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=760&amp;h=1280&amp;quality=100\\" alt=\\"portret van A testimonial\\" /></figure>
+            <figure class=\\"sc-hORach jzySgz\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=760&amp;h=1280&amp;quality=100\\" alt=\\"portret van A testimonial\\" /></figure>
           </div>
         </div>
-        <div class=\\"sc-cQFLBn fFXhvH\\">
-          <div class=\\"sc-esOvli cPpIGR\\">
+        <div class=\\"sc-bAeIUo bQiuNC\\">
+          <div class=\\"sc-bsbRJL jvlQFu\\">
             <div class=\\"Mobiledoc\\">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
@@ -783,75 +783,75 @@ exports[`Storyshots react/Content With Cards 1`] = `
 
 exports[`Storyshots react/Page Default 1`] = `
 "<div>
-  <div class=\\"sc-jTzLTM fxBFUL\\">
-    <h1 class=\\"sc-fjdhpX ejZYok\\">This is a test page</h1>
-    <figure class=\\"sc-VigVT glCwOM\\"><img src=\\"https://via.placeholder.com/800x600?w=1160&amp;quality=100\\" alt=\\"A test image\\" /></figure>
+  <div class=\\"sc-kgoBCf hbhwfO\\">
+    <h1 class=\\"sc-kGXeez dzRoip\\">This is a test page</h1>
+    <figure class=\\"sc-chPdSV kfgMHb\\"><img src=\\"https://via.placeholder.com/800x600?w=1160&amp;quality=100\\" alt=\\"A test image\\" /></figure>
   </div>
-  <div class=\\"sc-kxynE kixoE\\">
-    <div class=\\"sc-esOvli cilAJx\\">
+  <div class=\\"sc-LKuAh hCjtDB\\">
+    <div class=\\"sc-bsbRJL ddkCbC\\">
       <div class=\\"Mobiledoc\\">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <div class=\\"react-reveal\\">
-          <figure class=\\"sc-cmthru jUahXZ size-0 align-0\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" /></figure>
+          <figure class=\\"sc-hZSUBg eJQqXg size-0 align-0\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" /></figure>
         </div>
-        <div class=\\"sc-bXGyLb HYxEB headerContainer\\" id=\\"chapter-one\\">
-          <div class=\\"sc-eLExRp epULZM\\">
-            <div class=\\"react-reveal\\"><span class=\\"sc-krvtoX hpkrZy\\">1</span></div>
+        <div class=\\"sc-exAgwC grsVzx headerContainer\\" id=\\"chapter-one\\">
+          <div class=\\"sc-gojNiO hpZuaq\\">
+            <div class=\\"react-reveal\\"><span class=\\"sc-bXGyLb hBlMkx\\">1</span></div>
             <div class=\\"react-reveal\\">
-              <h2 class=\\"sc-cbkKFq gnVukq\\">Chapter One</h2>
+              <h2 class=\\"sc-daURTG koRClK\\">Chapter One</h2>
             </div>
             <div class=\\"react-reveal\\">
-              <div class=\\"sc-daURTG sc-lkqHmb etaRQJ\\">An eloquent introduction to chapter one</div>
+              <div class=\\"sc-GMQeP sc-cQFLBn fXdeeG\\">An eloquent introduction to chapter one</div>
             </div>
           </div>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <div class=\\"sc-eMigcr LbjWn\\">
-          <div class=\\"sc-esOvli cPpIGR\\">
+        <div class=\\"sc-bHwgHz ktbQtw\\">
+          <div class=\\"sc-bsbRJL jvlQFu\\">
             <div class=\\"Mobiledoc\\">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
           </div>
         </div>
-        <figure type=\\"0\\" class=\\"sc-cLQEGU iskwJH\\">
+        <figure type=\\"0\\" class=\\"sc-iuJeZd ehCFKa\\">
           <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </blockquote>
         </figure>
-        <figcaption class=\\"sc-gqPbQI kMfjCx\\"><a href=\\"wings.dev\\">Someone</a></figcaption>
+        <figcaption class=\\"sc-esOvli jEQdDw\\"><a href=\\"wings.dev\\">Someone</a></figcaption>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <div class=\\"sc-bXGyLb HYxEB headerContainer\\" id=\\"chapter-two\\">
-          <div class=\\"sc-eLExRp epULZM\\">
-            <div class=\\"react-reveal\\"><span class=\\"sc-krvtoX hpkrZy\\">2</span></div>
+        <div class=\\"sc-exAgwC grsVzx headerContainer\\" id=\\"chapter-two\\">
+          <div class=\\"sc-gojNiO hpZuaq\\">
+            <div class=\\"react-reveal\\"><span class=\\"sc-bXGyLb hBlMkx\\">2</span></div>
             <div class=\\"react-reveal\\">
-              <h2 class=\\"sc-cbkKFq gnVukq\\">Chapter Two</h2>
+              <h2 class=\\"sc-daURTG koRClK\\">Chapter Two</h2>
             </div>
             <div class=\\"react-reveal\\">
-              <div class=\\"sc-daURTG sc-lkqHmb etaRQJ\\">An eloquent introduction to chapter two</div>
+              <div class=\\"sc-GMQeP sc-cQFLBn fXdeeG\\">An eloquent introduction to chapter two</div>
             </div>
           </div>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <div class=\\"sc-hMFtBS jKqFwo\\">
+        <div class=\\"sc-cMhqgX epbAeA\\">
           <div class=\\"inner\\"><strong>Lorem ipsum dolor sit amet.</strong></div>
         </div>
-        <div type=\\"2\\" src=\\"http://via.placeholder.com/350x350.png\\" class=\\"sc-laTMn GDazh\\">
-          <h3 class=\\"sc-hGoxap cUKdqq\\">Question and Answers</h3>
-          <div class=\\"sc-TFwJa eIeWjd\\">
-            <div class=\\"sc-bHwgHz gYHfut\\">
-              <div class=\\"sc-krDsej bqGHLR\\">
-                <div class=\\"sc-itybZL gOvnWR\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
+        <div type=\\"2\\" src=\\"http://via.placeholder.com/350x350.png\\" class=\\"sc-gJWqzi diydXM\\">
+          <h3 class=\\"sc-rBLzX eHgeNw\\">Question and Answers</h3>
+          <div class=\\"sc-CtfFt gFLNki\\">
+            <div class=\\"sc-laTMn iUTehi\\">
+              <div class=\\"sc-hGoxap dZbugp\\">
+                <div class=\\"sc-TFwJa icLnaO\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
                     <path d=\\"M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z\\"></path>
                   </svg></div>
-                <div class=\\"sc-fjmCvl kYedgb\\">
-                  <div class=\\"sc-esOvli cPpIGR\\">
+                <div class=\\"sc-bMvGRv fpqKIF\\">
+                  <div class=\\"sc-bsbRJL jvlQFu\\">
                     <div class=\\"Mobiledoc\\">
                       <h2>Question</h2>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class=\\"sc-dTdPqK bKGusO\\">
-                <div class=\\"sc-fjmCvl kYedgb\\">
-                  <div class=\\"sc-esOvli cPpIGR\\">
+              <div class=\\"sc-fjmCvl ebxceK\\">
+                <div class=\\"sc-bMvGRv fpqKIF\\">
+                  <div class=\\"sc-bsbRJL jvlQFu\\">
                     <div class=\\"Mobiledoc\\">
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
@@ -859,22 +859,22 @@ exports[`Storyshots react/Page Default 1`] = `
                 </div>
               </div>
             </div>
-            <div class=\\"sc-bHwgHz gYHfut\\">
-              <div class=\\"sc-krDsej bqGHLR\\">
-                <div class=\\"sc-itybZL gOvnWR\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
+            <div class=\\"sc-laTMn iUTehi\\">
+              <div class=\\"sc-hGoxap dZbugp\\">
+                <div class=\\"sc-TFwJa icLnaO\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
                     <path d=\\"M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z\\"></path>
                   </svg></div>
-                <div class=\\"sc-fjmCvl kYedgb\\">
-                  <div class=\\"sc-esOvli cPpIGR\\">
+                <div class=\\"sc-bMvGRv fpqKIF\\">
+                  <div class=\\"sc-bsbRJL jvlQFu\\">
                     <div class=\\"Mobiledoc\\">
                       <h2>Question</h2>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class=\\"sc-dTdPqK bKGusO\\">
-                <div class=\\"sc-fjmCvl kYedgb\\">
-                  <div class=\\"sc-esOvli cPpIGR\\">
+              <div class=\\"sc-fjmCvl ebxceK\\">
+                <div class=\\"sc-bMvGRv fpqKIF\\">
+                  <div class=\\"sc-bsbRJL jvlQFu\\">
                     <div class=\\"Mobiledoc\\">
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
@@ -882,22 +882,22 @@ exports[`Storyshots react/Page Default 1`] = `
                 </div>
               </div>
             </div>
-            <div class=\\"sc-bHwgHz gYHfut\\">
-              <div class=\\"sc-krDsej bqGHLR\\">
-                <div class=\\"sc-itybZL gOvnWR\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
+            <div class=\\"sc-laTMn iUTehi\\">
+              <div class=\\"sc-hGoxap dZbugp\\">
+                <div class=\\"sc-TFwJa icLnaO\\"><svg focusable=\\"false\\" viewBox=\\"0 0 444.819 444.819\\" aria-hidden=\\"true\\" role=\\"presentation\\">
                     <path d=\\"M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561 L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416 C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848 c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693 C444.819,130.287,441.295,121.629,434.252,114.203z\\"></path>
                   </svg></div>
-                <div class=\\"sc-fjmCvl kYedgb\\">
-                  <div class=\\"sc-esOvli cPpIGR\\">
+                <div class=\\"sc-bMvGRv fpqKIF\\">
+                  <div class=\\"sc-bsbRJL jvlQFu\\">
                     <div class=\\"Mobiledoc\\">
                       <h2>Question</h2>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class=\\"sc-dTdPqK bKGusO\\">
-                <div class=\\"sc-fjmCvl kYedgb\\">
-                  <div class=\\"sc-esOvli cPpIGR\\">
+              <div class=\\"sc-fjmCvl ebxceK\\">
+                <div class=\\"sc-bMvGRv fpqKIF\\">
+                  <div class=\\"sc-bsbRJL jvlQFu\\">
                     <div class=\\"Mobiledoc\\">
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
@@ -908,17 +908,17 @@ exports[`Storyshots react/Page Default 1`] = `
           </div>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <div class=\\"sc-jtggT kIbeHr\\">
-          <div class=\\"sc-jKVCRD eRBwhe\\"></div>
-          <div class=\\"sc-ebFjAB iYZItB\\">
-            <div style=\\"margin-top:0\\" class=\\"sc-dliRfk sc-kLIISr gCZFQa\\">
-              <div class=\\"sc-dliRfk sc-qrIAp bsCNma\\">
-                <div height=\\"320\\" style=\\"width:calc(100% - 460px);padding:20px 20px 0;margin:10px 0\\" class=\\"sc-ipXKqB ckkgtD\\">
-                  <div class=\\"sc-hmXxxW UXsez\\"></div>
+        <div class=\\"sc-ipZHIp cHujnH\\">
+          <div class=\\"sc-bmyXtO dHGdr\\"></div>
+          <div class=\\"sc-iGrrsa fDfCky\\">
+            <div style=\\"margin-top:0\\" class=\\"sc-VJcYb sc-ipXKqB duhnad\\">
+              <div class=\\"sc-VJcYb sc-hmXxxW eOcnlB\\">
+                <div height=\\"320\\" style=\\"width:calc(100% - 460px);padding:20px 20px 0;margin:10px 0\\" class=\\"sc-kUaPvJ OvdNt\\">
+                  <div class=\\"sc-giadOv fXifnO\\"></div>
                 </div>
-                <div class=\\"sc-iqzUVk elrNlX\\">
-                  <div class=\\"sc-ipZHIp hmgMzR\\">
-                    <div style=\\"text-align:center\\">loading<div class=\\"sc-bdVaJa kfCdkg\\"></div>
+                <div class=\\"sc-cqCuEk fdoCRO\\">
+                  <div class=\\"sc-dliRfk jdOoiT\\">
+                    <div style=\\"text-align:center\\">loading<div class=\\"sc-EHOje dyMrzE\\"></div>
                     </div>
                   </div>
                 </div>
@@ -927,29 +927,29 @@ exports[`Storyshots react/Page Default 1`] = `
           </div>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <div class=\\"sc-kaNhvL kTMOJr\\">
-          <div style=\\"min-height:0\\" class=\\"sc-LKuAh bBnjYV\\">
-            <div class=\\"sc-bdVaJa sc-hzNEM pNjcJ\\"></div>
+        <div class=\\"sc-dEoRIm pteci\\">
+          <div style=\\"min-height:0\\" class=\\"sc-jtggT kzwurx\\">
+            <div class=\\"sc-EHOje sc-jKVCRD bQNQdA\\"></div>
           </div>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <figure src=\\"https://www.youtube.com/watch?v=Htckxql7GRA\\" class=\\"sc-gojNiO bqGGDp\\">
+        <figure src=\\"https://www.youtube.com/watch?v=Htckxql7GRA\\" class=\\"sc-iujRgT gOnMgV\\">
           <div class=\\"video-wrapper\\" style=\\"padding-bottom:56%\\"><iframe width=\\"480\\" height=\\"270\\" src=\\"https://www.youtube.com/embed/Htckxql7GRA?feature=oembed\\" frameborder=\\"0\\" allow=\\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\\" allowfullscreen></iframe></div>
         </figure>
-        <section type=\\"1\\" src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" class=\\"sc-hORach eiAZaK\\">
+        <section type=\\"1\\" src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=400&amp;quality=100\\" class=\\"sc-cmthru ckFpNg\\">
           <header>
-            <h1 class=\\"sc-bAeIUo fXmkYd\\">A testimonial</h1>
-            <p class=\\"sc-iujRgT jdlKvT\\">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h1 class=\\"sc-cLQEGU iWSqMO\\">A testimonial</h1>
+            <p class=\\"sc-gqPbQI ewnKnG\\">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </header>
-          <div class=\\"sc-bMVAic jjddNl\\">
-            <div class=\\"sc-exAgwC lkVHup\\">
+          <div class=\\"sc-hMFtBS efZQs\\">
+            <div class=\\"sc-bMVAic dRQDgg\\">
               <div>
                 <div></div>
-                <figure class=\\"sc-GMQeP hxuETX\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=760&amp;h=1280&amp;quality=100\\" alt=\\"portret van A testimonial\\" /></figure>
+                <figure class=\\"sc-hORach jzySgz\\"><img src=\\"https://files.wings.dev/1530796123797/space-travel-1784461640.png?w=760&amp;h=1280&amp;quality=100\\" alt=\\"portret van A testimonial\\" /></figure>
               </div>
             </div>
-            <div class=\\"sc-cQFLBn fFXhvH\\">
-              <div class=\\"sc-esOvli cPpIGR\\">
+            <div class=\\"sc-bAeIUo bQiuNC\\">
+              <div class=\\"sc-bsbRJL jvlQFu\\">
                 <div class=\\"Mobiledoc\\">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
