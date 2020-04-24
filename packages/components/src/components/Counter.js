@@ -1,29 +1,87 @@
-/* eslint-disable no-mixed-operators */
-
 import React from 'react';
 import styled from '../lib/styled';
+import CounterBar from './CounterBar';
 import { t } from '../theme';
+import CountUp from 'react-countup';
 
-const StyledCounter = styled.div`
+const Container = styled.div`
+  color: ${t((_, { textColor }) => textColor || _.counterTextColor)};
+  background-color: ${t((_, { backgroundColor }) => backgroundColor || _.counterBackgroundColor)};
+  display: block;
+  position: relative;
   width: 100%;
-  height: ${({ height }) => `${height}px`};
-  border-radius: 7.5px;
-  background-color: transparent;
-  border: 1px solid ${t((_, { intent }) => _.intentColor(intent))};
 `;
 
-const StyledCounterInner = styled(StyledCounter)`
-  width: ${props => `${props.width || 0}%`};
-  height: ${({ height }) => `${height - 2}px` || '12px'};
-  margin-top: 0;
-  background-color: ${t((_, { intent }) => _.intentColor(intent))};
+// TODO: generalise spacing of heights/spacing and font sizes
+const TopContainer = styled.div`
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  align-items: center;
+  min-height: 80px;
 `;
 
-export default function Counter({ current, max, height = 12, intent, ...props }) {
-  const width = current >= max ? 100 : (100 / max) * current;
+const Current = styled.div`
+  font-size: 44px;
+  font-weight: 800;
+  font-family: ${t(_ => _.headerFontFamily)};
+  font-weight: bold;
+  max-width: 70%;
+  width: auto;
+  display: block;
+  line-height: 38px;
+  text-align: right;
+  padding-top: 2px;
+  * {
+    font-family: ${t(_ => _.headerFontFamily)};
+  }
+`;
+
+const Description = styled.div`
+  font-size: 16px;
+  line-height: 20px;
+  padding: 0 10px;
+  min-width: 30%;
+  width: auto;
+  max-width: initial;
+  display: block;
+`;
+
+const GoalText = styled.div`
+  text-align: right;
+  font-weight: 800;
+  font-family: ${t(_ => _.headerFontFamily)};
+  font-weight: bold;
+  margin-top: 10px;
+`;
+
+export default ({
+  backgroundColor,
+  barColor,
+  current = 0,
+  description,
+  goal,
+  goalText,
+  symbol,
+  textColor,
+  ...props
+}) => {
   return (
-    <StyledCounter intent={intent} height={height} {...props}>
-      <StyledCounterInner intent={intent} height={height} width={width} {...props} />
-    </StyledCounter>
+    <Container textColor={textColor} backgroundColor={backgroundColor} {...props}>
+      <TopContainer>
+        <Current>
+          {symbol ? symbol : ''}
+          <CountUp end={current} duration={1.5} />
+        </Current>
+        <Description>{description}</Description>
+      </TopContainer>
+      {!goal ? null : (
+        <>
+          <CounterBar barColor={barColor} intent="primary" current={current} max={goal} />
+          <GoalText>{goalText}</GoalText>
+        </>
+      )}
+    </Container>
   );
-}
+};

@@ -1,5 +1,5 @@
 import React from 'react';
-import { SvgIcon } from '..';
+import { SvgIcon } from '@wingscms/components';
 
 export default () => (
   <SvgIcon viewBox="0 0 1100 750">

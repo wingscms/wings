@@ -2,6 +2,7 @@ export { default as Burger } from './components/Burger';
 export { default as Button } from './components/Button';
 export { default as Counter } from './components/Counter';
 export { default as Drawer } from './components/Drawer';
+export { default as CounterBar } from './components/CounterBar';
 export { default as Expandable } from './components/Expandable';
 export { default as Header } from './components/Header';
 export { default as Icon } from './components/Icon';
@@ -12,6 +13,7 @@ export { default as SvgIcon } from './components/SvgIcon';
 
 export { default as Theme, t, useTheme, ThemeProvider } from './theme';
 export { createSvgIcon, getContrastColor, separateUnit } from './lib/utils';
+export { default as useDimensions } from './hooks/useDimensions';
 
 // Form
 export { default as MenuButton } from './components/MenuButton';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { text, color, number, boolean } from '@storybook/addon-knobs/react';
 import faker from 'faker';
-import { Expandable } from '..';
+import { Expandable } from '@wingscms/components';
 
 export default () => {
   faker.seed(1);

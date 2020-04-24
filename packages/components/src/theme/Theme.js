@@ -11,9 +11,8 @@ export default class Theme {
     DANGER: 'danger',
   };
 
-  static instance = () => {
-    if (!Theme._instance) Theme._instance = new Theme();
-    return Theme._instance;
+  static instance = (...args) => {
+    return new Theme(...args);
   };
 
   Intent = Theme.Intent;
@@ -86,6 +85,14 @@ export default class Theme {
     return this.variables.burgerColor || this.iconHoverColor;
   }
 
+  get counterBackgroundColor() {
+    return this.variables.counterBackgroundColor || this.backgroundColor;
+  }
+
+  get counterTextColor() {
+    return this.variables.counterTextColor || this.textColor;
+  }
+
   get drawerBackgroundColor() {
     return this.variables.drawerBackgroundColor || this.elementBackgroundColor;
   }
@@ -102,6 +109,28 @@ export default class Theme {
     return this.variables.extraSmallSpacing || this.calc(this.mediumSpacing, ms => ms / 4);
   }
 
+  get formBackgroundColor() {
+    return this.variables.formBackgroundColor || this.primaryColor;
+  }
+
+  get formLinkTextColor() {
+    return (
+      this.variables.formLinkTextColor ||
+      this.contrastColor({
+        backgroundColor: this.formBackgroundColor,
+      })
+    );
+  }
+
+  get formTextColor() {
+    return (
+      this.variables.formTextColor ||
+      this.contrastColor({
+        backgroundColor: this.formBackgroundColor,
+      })
+    );
+  }
+
   get headingColor() {
     return this.variables.headingColor || this.textColor;
   }
@@ -112,6 +141,18 @@ export default class Theme {
 
   get iconHoverColor() {
     return this.variables.iconHoverColor || this.primaryColor;
+  }
+
+  get landingSectionBackgroundColor() {
+    return this.variables.landingSectionBackgroundColor || this.primaryColor;
+  }
+
+  get landingSectionTitleColor() {
+    return this.variables.landingSectionTitleColor || this.textColor;
+  }
+
+  get landingSectionTitleBackgroundColor() {
+    return this.variables.landingSectionTitleBackgroundColor || null;
   }
 
   get largeSpacing() {

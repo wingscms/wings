@@ -1,6 +1,6 @@
 import React from 'react';
 import { select } from '@storybook/addon-knobs/react';
-import { Loading, Theme } from '..';
+import { Loading, Theme } from '@wingscms/components';
 
 export default () => (
   <Loading

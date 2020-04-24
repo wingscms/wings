@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '../../lib/styled';
-import useWindowDimensions from '../../hooks/useWindowDimensions';
+import useDimensions from '../../hooks/useDimensions';
 import Icons from '../../img/svg/icons';
 
 const { Globe } = Icons;
@@ -85,7 +85,7 @@ export default ({
   onTranslationClick = () => {},
   showAbove = false,
 }) => {
-  const windowDimensions = useWindowDimensions();
+  const windowDimensions = useDimensions();
   return (
     <Wrapper>
       <Icon>

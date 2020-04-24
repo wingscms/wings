@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.4](https://github.com/wingscms/wings/compare/@wingscms/sdk@0.5.3...@wingscms/sdk@0.5.4) (2020-04-02)
+
+
+### Bug Fixes
+
+* auth headers ([f89f1d0](https://github.com/wingscms/wings/commit/f89f1d0f5cc4de52837b69ed5a90531a4ca2532b))
+
+
+
+
+
+## [0.5.3](https://github.com/wingscms/wings/compare/@wingscms/sdk@0.5.2...@wingscms/sdk@0.5.3) (2020-04-02)
+
+
+### Bug Fixes
+
+* auth ([46154f9](https://github.com/wingscms/wings/commit/46154f97b0eef1609e2fd556e3dc97dbcb743606))
+
+
+
+
+
+## [0.5.2](https://github.com/wingscms/wings/compare/@wingscms/sdk@0.5.1...@wingscms/sdk@0.5.2) (2020-04-02)
+
+
+### Bug Fixes
+
+* use auth method ([aa16b6b](https://github.com/wingscms/wings/commit/aa16b6bb409958184890ca69f098dcb8daa70954))
+
+
+
+
+
+## [0.5.1](https://github.com/wingscms/wings/compare/@wingscms/sdk@0.5.0...@wingscms/sdk@0.5.1) (2020-04-02)
+
+
+### Bug Fixes
+
+* improve bundle size for sdk ([e7de6e1](https://github.com/wingscms/wings/commit/e7de6e1fa5820b57b7a80f31560cf09af2b71c92))
+
+
+
+
+
 # [0.5.0](https://github.com/wingscms/wings/compare/@wingscms/sdk@0.4.1...@wingscms/sdk@0.5.0) (2020-04-02)
 
 
