@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
+import fP from 'filter-invalid-dom-props';
 import styled from '../lib/styled';
 import { t } from '../theme';
 
 const ExpandableWrapper = styled.div`
-  background-color: ${t((_, { backgroundColor }) => backgroundColor || _.elementBackgroundColor)};
+  background-color: ${t(
+    (_, { backgroundColor }) => backgroundColor || _.expandableBackgroundColor,
+  )};
   border-radius: ${({ borderRadius }) => `${borderRadius || 4}px`};
   box-shadow: ${({ shadow }) => (shadow ? '0 0 20px 0 rgba(0, 0, 0, 0.05)' : 'none')};
   color: ${t((_, { backgroundColor }) =>
-    _.contrastColor({ backgroundColor: backgroundColor || _.elementBackgroundColor }),
+    _.contrastColor({ backgroundColor: backgroundColor || _.expandableBackgroundColor }),
   )}
   padding: 30px;
   margin: 40px 0;
@@ -40,11 +43,13 @@ const ExpandableWrapper = styled.div`
 `;
 
 const Toggle = styled.div`
-  background-color: ${t((_, { backgroundColor }) => backgroundColor || _.elementBackgroundColor)};
+  background-color: ${t(
+    (_, { backgroundColor }) => backgroundColor || _.expandableBackgroundColor,
+  )};
   color: ${t(
     (_, { toggleColor, backgroundColor }) =>
       toggleColor ||
-      _.contrastColor({ backgroundColor: backgroundColor || _.elementBackgroundColor }),
+      _.contrastColor({ backgroundColor: backgroundColor || _.expandableBackgroundColor }),
   )};
   font-weight: bold;
   font-family: ${t((_, { toggleFontFamily }) => toggleFontFamily || _.headerFontFamily)};
@@ -90,6 +95,7 @@ export default ({
   toggleHoverColor,
   toggleFontFamily,
   theme,
+  ...props
 }) => {
   const [open, setOpen] = useState(false);
   const toggleHeight = () => setOpen(!open);
@@ -103,6 +109,7 @@ export default ({
       shadow={shadow}
       borderRadius={borderRadius}
       theme={theme}
+      {...fP(props)}
     >
       {children}
       {expandable ? (

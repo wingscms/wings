@@ -77,12 +77,28 @@ export default class Theme {
     return [val, unit];
   }
 
+  get burgerColor() {
+    return this.variables.burgerColor || this.iconColor;
+  }
+
+  get burgerHoverColor() {
+    return this.variables.burgerColor || this.iconHoverColor;
+  }
+
   get counterBackgroundColor() {
     return this.variables.counterBackgroundColor || this.backgroundColor;
   }
 
   get counterTextColor() {
     return this.variables.counterTextColor || this.textColor;
+  }
+
+  get drawerBackgroundColor() {
+    return this.variables.drawerBackgroundColor || this.elementBackgroundColor;
+  }
+
+  get expandableBackgroundColor() {
+    return this.variables.expandableBackgroundColor || this.elementBackgroundColor;
   }
 
   get extraLargeSpacing() {
@@ -121,6 +137,10 @@ export default class Theme {
 
   get headingColorDark() {
     return this.variables.headingColorDark || this.textColorDark;
+  }
+
+  get iconHoverColor() {
+    return this.variables.iconHoverColor || this.primaryColor;
   }
 
   get landingSectionBackgroundColor() {

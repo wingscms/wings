@@ -14,7 +14,7 @@
     "eslint": "6.5.1",
     "react-json-view": "1.19.1",
     "rollup": "1.28.0",
-    "styled-components": "4.4.0"
+    "styled-components": "5.1.0"
   },
   "dependencies": {
     "@babel/runtime": "^7.7.7",
@@ -26,6 +26,6 @@
   "peerDependencies": {
     "prop-types": "^15",
     "react": "^16",
-    "styled-components": "^4"
+    "styled-components": "^5"
   }
 }

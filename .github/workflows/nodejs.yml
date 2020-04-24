@@ -20,7 +20,6 @@ jobs:
     - name: install, build, test
       run: |
         npx yarn
-        npx yarn build
         npx yarn test
       env:
         CI: true

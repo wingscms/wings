@@ -1,4 +1,5 @@
 import React from 'react';
+import fP from 'filter-invalid-dom-props';
 import classNameFromString from '../lib/utils/classNameFromString';
 import randomString from '../lib/utils/randomString';
 
@@ -17,7 +18,7 @@ export default ({
       aria-hidden={title ? 'false' : 'true'}
       role={title ? 'img' : 'presentation'}
       aria-labelledby={ariaLabelledby}
-      {...props}
+      {...fP(props)}
     >
       {children}
       {title ? <title id={ariaLabelledby}>{title}</title> : null}

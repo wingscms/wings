@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from '../../lib/styled';
 import { Caption, Quote } from '../atoms';
-import { Quote as QuoteIcon } from '../icons';
+import { Quote as QuoteIcon } from '../Icon';
 
 const BlockquoteWrapper = styled('figure')`
   background-color: ${({ backgroundColor }) => backgroundColor};

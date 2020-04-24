@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import styled from '../../lib/styled';
-import { Calendar, Check, Message, Pin, User } from '../icons';
-import Counter from '../CounterBar';
+import { Calendar, Check, Message, Pin, User } from '../Icon';
+import CounterBar from '../CounterBar';
 import Container from './Container';
 
 const OuterContainer = styled.div`
@@ -416,7 +416,7 @@ export default class ComplexCard extends Component {
                 <Info>
                   <Check title="signatures" />
                   <InfoSpan>
-                    <Counter
+                    <CounterBar
                       max={signatureMax || 1000}
                       current={signatureCount}
                       height="8"

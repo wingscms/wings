@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from '../../lib/styled';
 import NewsletterForm from './NewsletterForm';
 import { ConfirmationBox } from '../form';
-import { Envelope } from '../icons';
+import { Envelope } from '../Icon';
 import { insertLink, randomString } from '../../lib/utils';
 
 const Warning = styled.p`
