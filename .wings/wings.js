@@ -30,6 +30,7 @@ const server = mockServer(
       name: 'English',
       primary: true,
     }),
+    NodeStatus: () => 'PUBLISHED',
     Query: () => ({
       event: () => ({
         description:
