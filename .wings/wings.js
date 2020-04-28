@@ -25,6 +25,11 @@ const server = mockServer(
     ImageFile: () => ({
       url: image(),
     }),
+    Locale: () => ({
+      id: 'en',
+      name: 'English',
+      primary: true,
+    }),
     Query: () => ({
       event: () => ({
         description:
