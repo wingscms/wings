@@ -1,9 +1,9 @@
 import React from 'react';
 import fP from 'filter-invalid-dom-props';
+import { ShareButtons } from '@wingscms/components';
 
 import styled from '../lib/styled';
 import { useIntl } from '../ctx/Intl';
-// import ShareButtons from './ShareButtons';
 
 const Title = styled.h1`
   font-size: 3em;
@@ -17,6 +17,14 @@ const Text = styled.p`
   font-size: 18px;
   @media screen and (min-width: 800px) {
     font-size: 24px;
+  }
+`;
+
+const ShareTitle = styled.h2`
+  font-size: 24px;
+  margin-bottom: 0.4em;
+  @media screen and (min-width: 800px) {
+    font-size: 32px;
   }
 `;
 
@@ -124,13 +132,25 @@ const getCopy = (copy, resourceType, transactionStatus) => {
   }
 };
 
-const CampaignConfirmed = ({ copy = {}, resourceType, transactionStatus, ...props }) => {
-  const { title, text } = getCopy(copy, resourceType, transactionStatus);
+const CampaignConfirmed = ({
+  copy = {},
+  resourceType,
+  transactionStatus,
+  shareItems,
+  ...props
+}) => {
+  const { title, text, shareTitle } = getCopy(copy, resourceType, transactionStatus);
 
   return (
     <div {...fP(props)}>
       <Title>{title}</Title>
       <Text>{text}</Text>
+      {shareItems && (
+        <>
+          <ShareTitle>{shareTitle}</ShareTitle>
+          <ShareButtons items={shareItems} />
+        </>
+      )}
     </div>
   );
 };

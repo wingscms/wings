@@ -1,4 +1,5 @@
 import React from 'react';
+import { ShareButtons } from '@wingscms/components';
 import { CampaignConfirmed } from '@wingscms/react';
 import { select } from '@storybook/addon-knobs/react';
 
@@ -12,6 +13,24 @@ const props = ({
     CampaignConfirmed.TransactionStatus,
     transactionStatus,
   ),
+  shareItems: [
+    {
+      platform: ShareButtons.Platform.FACEBOOK,
+      url: '',
+    },
+    {
+      platform: ShareButtons.Platform.TWITTER,
+      url: '',
+    },
+    {
+      platform: ShareButtons.Platform.WHATSAPP,
+      url: '',
+    },
+    {
+      platform: ShareButtons.Platform.EMAIL,
+      url: '',
+    },
+  ],
 });
 
 export default () => <CampaignConfirmed {...props()} />;

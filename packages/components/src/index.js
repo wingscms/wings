@@ -9,6 +9,7 @@ export { default as Icon } from './components/Icon';
 export { default as Image } from './components/Image';
 export { default as Loading } from './components/Loading';
 export { default as PaginationControls } from './components/PaginationControls';
+export { default as ShareButtons } from './components/ShareButtons';
 export { default as SvgIcon } from './components/SvgIcon';
 
 export { default as Theme, t, useTheme, ThemeProvider } from './theme';
@@ -27,7 +28,6 @@ export { ConfirmationBox } from './components/form';
 export { Breakout } from './components/text';
 
 // Share
-export { ShareButtons } from './components/share';
 
 // Cards
 export { ComplexCard } from './components/cards';
