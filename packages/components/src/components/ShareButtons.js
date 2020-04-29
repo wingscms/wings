@@ -19,22 +19,25 @@ const ShareImage = styled.div`
   margin-right: ${({ spaceBetweenItems }) => spaceBetweenItems}px;
   padding: ${({ itemPadding }) => itemPadding}px;
   border-radius: ${({ itemBorderRadius }) => itemBorderRadius}px;
-  background-color: ${t((_, { itemBackgroundColor }) => itemBackgroundColor || _.primaryColor)};
+  background-color: ${t(
+    (_, { itemBackgroundColor }) => itemBackgroundColor || _.shareButtonBackgroundColor,
+  )};
   transition: 0.2s all ease-in-out;
   svg {
     position: relative;
     width: 100%;
     height: 100%;
-    fill: ${t((_, { iconColor }) => iconColor || _.iconColor)};
+    fill: ${t((_, { iconColor }) => iconColor || _.shareButtonIconColor)};
     transition: 0.2s all ease-in-out;
   }
   &:hover,
   &:active {
     background-color: ${t(
-      (_, { itemBackgroundHoverColor }) => itemBackgroundHoverColor || _.secondaryColor,
+      (_, { itemBackgroundHoverColor }) =>
+        itemBackgroundHoverColor || _.shareButtonBackgroundHoverColor,
     )};
     svg {
-      fill: ${t((_, { iconHoverColor }) => iconHoverColor || _.iconColor)};
+      fill: ${t((_, { iconHoverColor }) => iconHoverColor || _.shareButtonIconHoverColor)};
     }
   }
 `;
