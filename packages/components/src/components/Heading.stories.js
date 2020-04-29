@@ -9,8 +9,8 @@ const Info = styled.p`
   font-size: 12px;
 `;
 
-const props = ({ type = Heading.Type.h1 } = {}) => ({
-  type,
+const props = ({ rank = 1 } = {}) => ({
+  rank,
   scale: number('scale', 1.25),
   baseFontSize: number('baseFontSize', 16),
   uppercase: boolean('uppercase', false),
@@ -26,11 +26,11 @@ const getInfo = steps => {
 
 export default () => (
   <>
-    <Heading {...props({ type: Heading.Type.h1 })}>This is a Heading</Heading>
-    <Heading {...props({ type: Heading.Type.h2 })}>This is a Heading</Heading>
-    <Heading {...props({ type: Heading.Type.h3 })}>This is a Heading</Heading>
-    <Heading {...props({ type: Heading.Type.h4 })}>This is a Heading</Heading>
-    <Heading {...props({ type: Heading.Type.h5 })}>This is a Heading</Heading>
+    <Heading {...props({ rank: 1 })}>This is a Heading</Heading>
+    <Heading {...props({ rank: 2 })}>This is a Heading</Heading>
+    <Heading {...props({ rank: 3 })}>This is a Heading</Heading>
+    <Heading {...props({ rank: 4 })}>This is a Heading</Heading>
+    <Heading {...props({ rank: 5 })}>This is a Heading</Heading>
     <Info>h1 {getInfo(4)}</Info>
     <Info>h2 {getInfo(3)}</Info>
     <Info>h3 {getInfo(2)}</Info>

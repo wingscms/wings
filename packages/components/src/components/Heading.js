@@ -1,6 +1,6 @@
 import React from 'react';
 import fP from 'filter-invalid-dom-props';
-import styled from '../lib/styled';
+import styled, { css } from '../lib/styled';
 import { t } from '../theme';
 
 const modularScale = (base, scale, steps) => {
@@ -11,79 +11,51 @@ const modularScale = (base, scale, steps) => {
   return size.toFixed(2);
 };
 
-const H1 = styled.h1`
-  font-size: ${t(
-    (_, { fontSize, baseFontSize, scale }) =>
-      fontSize ||
-      _.heading1Size ||
-      modularScale(baseFontSize || _.baseFontSize, scale || _.headingScale, 4),
-  )}px;
+const getFontSize = steps => (_, { fontSize, baseFontSize, scale }) =>
+  `${fontSize ||
+    _.heading1Size ||
+    modularScale(baseFontSize || _.baseFontSize, scale || _.headingScale, steps)}px`;
+
+const shared = css`
   text-transform: ${t((_, { uppercase }) => uppercase || _.uppercaseTitles)};
   font-family: ${t(_ => _.headerFontFamily)};
+`;
+
+const H1 = styled.h1`
+  font-size: ${t(getFontSize(4))};
+  ${shared}
 `;
 
 const H2 = styled.h2`
-  font-size: ${t(
-    (_, { fontSize, baseFontSize, scale }) =>
-      fontSize ||
-      _.heading2Size ||
-      modularScale(baseFontSize || _.baseFontSize, scale || _.headingScale, 3),
-  )}px;
-  text-transform: ${t((_, { uppercase }) => uppercase || _.uppercaseTitles)};
-  font-family: ${t(_ => _.headerFontFamily)};
+  font-size: ${t(getFontSize(3))};
+  ${shared}
 `;
 
 const H3 = styled.h3`
-  font-size: ${t(
-    (_, { fontSize, baseFontSize, scale }) =>
-      fontSize ||
-      _.heading3Size ||
-      modularScale(baseFontSize || _.baseFontSize, scale || _.headingScale, 2),
-  )}px;
-  text-transform: ${t((_, { uppercase }) => uppercase || _.uppercaseTitles)};
-  font-family: ${t(_ => _.headerFontFamily)};
+  font-size: ${t(getFontSize(2))};
+  ${shared}
 `;
 
 const H4 = styled.h4`
-  font-size: ${t(
-    (_, { fontSize, baseFontSize, scale }) =>
-      fontSize ||
-      _.heading4Size ||
-      modularScale(baseFontSize || _.baseFontSize, scale || _.headingScale, 1),
-  )}px;
-  text-transform: ${t((_, { uppercase }) => uppercase || _.uppercaseTitles)};
-  font-family: ${t(_ => _.headerFontFamily)};
+  font-size: ${t(getFontSize(1))};
+  ${shared}
 `;
 
 const H5 = styled.h5`
-  font-size: ${t(
-    (_, { fontSize, baseFontSize, scale }) =>
-      fontSize ||
-      _.heading5Size ||
-      modularScale(baseFontSize || _.baseFontSize, scale || _.headingScale, 0),
-  )}px;
-  text-transform: ${t((_, { uppercase }) => uppercase || _.uppercaseTitles)};
-  font-family: ${t(_ => _.headerFontFamily)};
+  font-size: ${t(getFontSize(0))};
+  ${shared}
 `;
 
-const Type = {
-  h1: 'h1',
-  h2: 'h2',
-  h3: 'h3',
-  h4: 'h4',
-  h5: 'h5',
-};
-
 const Components = {
-  [Type.h1]: H1,
-  [Type.h2]: H2,
-  [Type.h3]: H3,
-  [Type.h4]: H4,
-  [Type.h5]: H5,
+  1: H1,
+  2: H2,
+  3: H3,
+  4: H4,
+  5: H5,
 };
 
-const Heading = ({ baseFontSize, fontSize, scale, type = Type.h1, uppercase, ...props }) => {
-  const Comp = Components[type];
+const Heading = ({ baseFontSize, fontSize, scale, rank = 1, uppercase, ...props }) => {
+  const Comp = Components[rank > 5 ? 5 : rank];
   return (
     <Comp
       baseFontSize={baseFontSize}
@@ -97,7 +69,6 @@ const Heading = ({ baseFontSize, fontSize, scale, type = Type.h1, uppercase, ...
   );
 };
 
-Heading.Type = Type;
 Heading.modularScale = modularScale;
 
 export default Heading;
