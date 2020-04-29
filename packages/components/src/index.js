@@ -10,6 +10,7 @@ export { default as Image } from './components/Image';
 export { default as Loading } from './components/Loading';
 export { default as PaginationControls } from './components/PaginationControls';
 export { default as SvgIcon } from './components/SvgIcon';
+export { default as Heading } from './components/Heading';
 
 export { default as Theme, t, useTheme, ThemeProvider } from './theme';
 export { createSvgIcon, getContrastColor, separateUnit } from './lib/utils';
