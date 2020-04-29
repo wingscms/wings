@@ -1,4 +1,5 @@
 import React from 'react';
+import { color, number } from '@storybook/addon-knobs/react';
 import { ShareButtons } from '@wingscms/components';
 
 const items = [
@@ -20,4 +21,16 @@ const items = [
   },
 ];
 
-export default () => <ShareButtons items={items} />;
+export default () => (
+  <ShareButtons
+    items={items}
+    iconColor={color('iconColor')}
+    iconHoverColor={color('iconHoverColor')}
+    itemBackgroundColor={color('itemBackgroundColor')}
+    itemBackgroundHoverColor={color('itemBackgroundHoverColor')}
+    itemBorderRadius={number('itemBorderRadius', 4)}
+    itemPadding={number('itemPadding', 8)}
+    size={number('size', 40)}
+    spaceBetweenItems={number('spaceBetweenItems', 10)}
+  />
+);
