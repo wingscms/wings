@@ -21,7 +21,7 @@ export default {
   shadow: '0 0 40px 0 rgba(0, 0, 0, 0.05)',
   // typography
   baseFontSize: 16,
-  headingScale: 1.25,
+  headingScaleRatio: 1.25,
   headerFontFamily: '"Poppins", sans-serif',
   uppercaseTitles: false,
 };

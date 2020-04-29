@@ -3,22 +3,23 @@ import fP from 'filter-invalid-dom-props';
 import styled, { css } from '../lib/styled';
 import { t } from '../theme';
 
-const modularScale = (base, scale, steps) => {
+const modularScale = (base, scaleRatio, steps) => {
   let size = base;
   for (let step = 0; step < steps; step++) {
-    size = size * scale;
+    size = size * scaleRatio;
   }
   return size.toFixed(2);
 };
 
-const getFontSize = steps => (_, { fontSize, baseFontSize, scale }) =>
+const getFontSize = steps => (_, { fontSize, baseFontSize, scaleRatio }) =>
   `${fontSize ||
     _.heading1Size ||
-    modularScale(baseFontSize || _.baseFontSize, scale || _.headingScale, steps)}px`;
+    modularScale(baseFontSize || _.baseFontSize, scaleRatio || _.headingScaleRatio, steps)}px`;
 
 const shared = css`
-  text-transform: ${t((_, { uppercase }) => uppercase || _.uppercaseTitles)};
   font-family: ${t(_ => _.headerFontFamily)};
+  text-align: ${({ textAlign }) => textAlign};
+  text-transform: ${t((_, { uppercase }) => uppercase || _.uppercaseTitles)};
 `;
 
 const H1 = styled.h1`
@@ -54,13 +55,28 @@ const Components = {
   5: H5,
 };
 
-const Heading = ({ baseFontSize, fontSize, scale, rank = 1, uppercase, ...props }) => {
+const TextAlign = {
+  CENTER: 'center',
+  LEFT: 'left',
+  RIGHT: 'right',
+};
+
+const Heading = ({
+  baseFontSize,
+  fontSize,
+  scaleRatio,
+  rank = 1,
+  textAlign = TextAlign.LEFT,
+  uppercase,
+  ...props
+}) => {
   const Comp = Components[rank > 5 ? 5 : rank];
   return (
     <Comp
+      textAlign={textAlign}
       baseFontSize={baseFontSize}
       fontSize={fontSize}
-      scale={scale}
+      scaleRatio={scaleRatio}
       uppercase={uppercase && 'uppercase'}
       {...fP(props)}
     >
@@ -70,5 +86,6 @@ const Heading = ({ baseFontSize, fontSize, scale, rank = 1, uppercase, ...props 
 };
 
 Heading.modularScale = modularScale;
+Heading.TextAlign = TextAlign;
 
 export default Heading;
