@@ -43,8 +43,8 @@ const ShareButtons = ({ items, ...props }) => (
     {items.map(({ platform, url, icon }, idx) => {
       const ItemIcon = icon || Icons[platform];
       return (
-        <a href={url}>
-          <ShareImage key={`${platform}-${idx}`}>
+        <a href={url} key={idx}>
+          <ShareImage>
             <ItemIcon />
           </ShareImage>
         </a>
