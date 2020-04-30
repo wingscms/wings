@@ -26,8 +26,10 @@ const getFontSize = (steps, breakpoint) => (
     default:
       base = baseFontSize || _.baseFontSize;
   }
+
   const scaleRatio = _scaleRatio || _.headingScaleRatio;
   const fontSize = _fontSize || modularScale(base, scaleRatio, steps);
+
   switch (breakpoint) {
     case BREAKPOINT_TYPE.MOBILE:
       return _.mobileQuery(
