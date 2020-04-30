@@ -1,5 +1,5 @@
 import React from 'react';
-import { boolean, color, number, select, text } from '@storybook/addon-knobs/react';
+import { color, number, select, text } from '@storybook/addon-knobs/react';
 import { ProgressBar } from '@wingscms/components';
 import styled from '../lib/styled';
 
