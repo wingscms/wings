@@ -5,7 +5,7 @@ import { t } from '../theme';
 import { modularScale } from '../lib/utils';
 import { BREAKPOINT_TYPE } from '../lib/constants';
 
-const getFontSize = (steps, breakpoint) => (
+const getStyles = (steps, breakpoint) => (
   _,
   {
     fontSize: _fontSize,
@@ -35,16 +35,21 @@ const getFontSize = (steps, breakpoint) => (
       return _.mobileQuery(
         css`
           font-size: ${fontSize};
+          margin-bottom: ${_.extraSmallSpacing};
         `,
       );
     case BREAKPOINT_TYPE.TABLET:
       return _.tabletQuery(
         css`
           font-size: ${fontSize};
+          margin-bottom: ${_.extraSmallSpacing};
         `,
       );
     default:
-      return `font-size: ${fontSize};`;
+      return css`
+        font-size: ${fontSize};
+        margin-bottom: ${_.smallSpacing};
+      `;
   }
 };
 
@@ -52,41 +57,50 @@ const shared = css`
   font-family: ${t(_ => _.headerFontFamily)};
   text-align: ${({ textAlign }) => textAlign};
   text-transform: ${t((_, { uppercase }) => uppercase || _.uppercaseTitles)};
+  line-height: 1.2;
 `;
 
 const H1 = styled.h1`
-  ${t(getFontSize(4))}
-  ${t(getFontSize(4, BREAKPOINT_TYPE.TABLET))}
-  ${t(getFontSize(4, BREAKPOINT_TYPE.MOBILE))}
+  ${t(getStyles(4))}
+  ${t(getStyles(4, BREAKPOINT_TYPE.TABLET))}
+  ${t(getStyles(4, BREAKPOINT_TYPE.MOBILE))}
   ${shared}
 `;
 
 const H2 = styled.h2`
-  ${t(getFontSize(3))}
-  ${t(getFontSize(3, BREAKPOINT_TYPE.TABLET))}
-  ${t(getFontSize(3, BREAKPOINT_TYPE.MOBILE))}
+  ${t(getStyles(3))}
+  ${t(getStyles(3, BREAKPOINT_TYPE.TABLET))}
+  ${t(getStyles(3, BREAKPOINT_TYPE.MOBILE))}
   ${shared}
 `;
 
 const H3 = styled.h3`
-  ${t(getFontSize(2))}
-  ${t(getFontSize(2, BREAKPOINT_TYPE.TABLET))}
-  ${t(getFontSize(2, BREAKPOINT_TYPE.MOBILE))}
+  ${t(getStyles(2))}
+  ${t(getStyles(2, BREAKPOINT_TYPE.TABLET))}
+  ${t(getStyles(2, BREAKPOINT_TYPE.MOBILE))}
   ${shared}
 `;
 
 const H4 = styled.h4`
-  ${t(getFontSize(1))}
-  ${t(getFontSize(1, BREAKPOINT_TYPE.TABLET))}
-  ${t(getFontSize(1, BREAKPOINT_TYPE.MOBILE))}
+  ${t(getStyles(1))}
+  ${t(getStyles(1, BREAKPOINT_TYPE.TABLET))}
+  ${t(getStyles(1, BREAKPOINT_TYPE.MOBILE))}
   ${shared}
 `;
 
 const H5 = styled.h5`
-  ${t(getFontSize(0))}
-  ${t(getFontSize(0, BREAKPOINT_TYPE.TABLET))}
-  ${t(getFontSize(0, BREAKPOINT_TYPE.MOBILE))}
+  ${t(getStyles(0))}
+  ${t(getStyles(0, BREAKPOINT_TYPE.TABLET))}
+  ${t(getStyles(0, BREAKPOINT_TYPE.MOBILE))}
   ${shared}
+`;
+
+const H6 = styled.h6`
+  ${t(getStyles(0))}
+  ${t(getStyles(0, BREAKPOINT_TYPE.TABLET))}
+  ${t(getStyles(0, BREAKPOINT_TYPE.MOBILE))}
+  ${shared}
+  font-style: italic;
 `;
 
 const Components = {
@@ -95,6 +109,7 @@ const Components = {
   3: H3,
   4: H4,
   5: H5,
+  6: H6,
 };
 
 const TextAlign = {
@@ -114,7 +129,7 @@ const Heading = ({
   uppercase,
   ...props
 }) => {
-  const Comp = Components[rank > 5 ? 5 : rank];
+  const Comp = Components[rank > 6 ? 6 : rank];
   return (
     <Comp
       textAlign={textAlign}
