@@ -1,5 +1,5 @@
 import React from 'react';
-import { boolean, number, select } from '@storybook/addon-knobs/react';
+import { boolean, number, select, text } from '@storybook/addon-knobs/react';
 import { Heading } from '@wingscms/components';
 import styled from '../lib/styled';
 import { modularScale } from '../lib/utils';
@@ -13,17 +13,17 @@ const Info = styled.p`
 const props = ({ rank = 1 } = {}) => ({
   rank,
   scaleRatio: number('scaleRatio', 1.25),
-  baseFontSize: number('baseFontSize', 16),
+  baseFontSize: text('baseFontSize', '16px'),
   textAlign: select('textAlign', Heading.TextAlign, Heading.TextAlign.LEFT),
   uppercase: boolean('uppercase', false),
 });
 
 const getInfo = steps => {
   return `(${modularScale(
-    number('baseFontSize', 16),
+    text('baseFontSize', '16px'),
     number('scaleRatio', 1.25),
     steps,
-  )}px/${modularScale(1, number('scaleRatio', 1.25), steps)}rem)`;
+  )}px/${modularScale('1rem', number('scaleRatio', 1.25), steps)})`;
 };
 
 export default () => (

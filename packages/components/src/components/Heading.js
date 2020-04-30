@@ -2,12 +2,11 @@ import React from 'react';
 import fP from 'filter-invalid-dom-props';
 import styled, { css } from '../lib/styled';
 import { t } from '../theme';
-import { modularScale } from '../lib/utils';
+import { mediaQuery, modularScale } from '../lib/utils';
 
 const getFontSize = steps => (_, { fontSize, baseFontSize, scaleRatio }) =>
   `${fontSize ||
-    _.heading1Size ||
-    modularScale(baseFontSize || _.baseFontSize, scaleRatio || _.headingScaleRatio, steps)}px`;
+    modularScale(baseFontSize || _.baseFontSize, scaleRatio || _.headingScaleRatio, steps)}`;
 
 const shared = css`
   font-family: ${t(_ => _.headerFontFamily)};
@@ -17,6 +16,14 @@ const shared = css`
 
 const H1 = styled.h1`
   font-size: ${t(getFontSize(4))};
+  ${t((_, props) =>
+    mediaQuery(
+      _.mobileBreakpoint,
+      css`
+        font-size: ${getFontSize(3)(_, props)};
+      `,
+    ),
+  )}
   ${shared}
 `;
 
