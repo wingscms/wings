@@ -2,6 +2,7 @@ import React from 'react';
 import { boolean, number, select } from '@storybook/addon-knobs/react';
 import { Heading } from '@wingscms/components';
 import styled from '../lib/styled';
+import { modularScale } from '../lib/utils';
 
 const Info = styled.p`
   font-weight: normal;
@@ -18,11 +19,11 @@ const props = ({ rank = 1 } = {}) => ({
 });
 
 const getInfo = steps => {
-  return `(${Heading.modularScale(
+  return `(${modularScale(
     number('baseFontSize', 16),
     number('scaleRatio', 1.25),
     steps,
-  )}px/${Heading.modularScale(1, number('scaleRatio', 1.25), steps)}rem)`;
+  )}px/${modularScale(1, number('scaleRatio', 1.25), steps)}rem)`;
 };
 
 export default () => (

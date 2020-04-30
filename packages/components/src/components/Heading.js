@@ -2,14 +2,7 @@ import React from 'react';
 import fP from 'filter-invalid-dom-props';
 import styled, { css } from '../lib/styled';
 import { t } from '../theme';
-
-const modularScale = (base, scaleRatio, steps) => {
-  let size = base;
-  for (let step = 0; step < steps; step++) {
-    size = size * scaleRatio;
-  }
-  return size.toFixed(2);
-};
+import { modularScale } from '../lib/utils';
 
 const getFontSize = steps => (_, { fontSize, baseFontSize, scaleRatio }) =>
   `${fontSize ||
@@ -85,7 +78,6 @@ const Heading = ({
   );
 };
 
-Heading.modularScale = modularScale;
 Heading.TextAlign = TextAlign;
 
 export default Heading;

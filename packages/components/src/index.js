@@ -13,7 +13,7 @@ export { default as SvgIcon } from './components/SvgIcon';
 export { default as Heading } from './components/Heading';
 
 export { default as Theme, t, useTheme, ThemeProvider } from './theme';
-export { createSvgIcon, getContrastColor, separateUnit } from './lib/utils';
+export { createSvgIcon, getContrastColor, modularScale, separateUnit } from './lib/utils';
 export { default as useDimensions } from './hooks/useDimensions';
 
 // Form
