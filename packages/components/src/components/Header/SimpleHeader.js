@@ -29,7 +29,7 @@ const ImageContainer = styled.figure`
   }
 `;
 
-export default ({ title, imageUrl, imageCaption } = {}) => {
+export default ({ title, subtitle, imageUrl, imageCaption } = {}) => {
   return (
     <Container>
       <Heading
@@ -39,6 +39,15 @@ export default ({ title, imageUrl, imageCaption } = {}) => {
       >
         {title}
       </Heading>
+      {!subtitle ? null : (
+        <Heading
+          rank={2}
+          textAlign={Heading.TextAlign.CENTER}
+          style={{ margin: '0 auto', width: '90%' }}
+        >
+          {subtitle}
+        </Heading>
+      )}
       {imageUrl ? (
         <ImageContainer>
           <img src={mediaUrl(imageUrl, { width: 1160 })} alt={imageCaption} />

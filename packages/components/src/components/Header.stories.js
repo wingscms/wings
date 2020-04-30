@@ -13,6 +13,7 @@ const StoryWrap = styled.div`
 const props = ({ type = Header.Type.SIMPLE } = {}) => ({
   type: select('type', Header.Type, type),
   title: text('title', 'Test title'),
+  subtitle: text('subtitle', ''),
   imageUrl: text('url', image(1200, 800)),
   caption: text('caption', 'A test caption'),
 });

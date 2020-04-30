@@ -1,11 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { mediaUrl } from '@wingscms/sdk';
-import { getViewportDimensions } from '../../../lib/utils';
-import { ArrowDown } from '../../Icon';
-import Title from './Title';
+import { getViewportDimensions } from '../../lib/utils';
+import { ArrowDown } from '../Icon';
+import Heading from '../Heading';
+import { t } from '../../theme';
 
-import { t } from '../../../theme';
+const Title = styled(Heading)`
+  color: ${t(_ => _.landingSectionTitleColor)};
+  margin: 0 auto;
+  max-width: 95%;
+  position: relative;
+  z-index: 2;
+  @media screen and (min-width: 800px) {
+    max-width: 1000px;
+  }
+  ${t(_ =>
+    !_.landingSectionTitleBackgroundColor
+      ? null
+      : `
+  line-height: 1.4;
+  span {
+    background: ${_.landingSectionTitleBackgroundColor};
+    line-height: 1.4;
+    padding: 0 0.25em;
+    box-decoration-break: clone;
+  }
+  `,
+  )};
+`;
 
 const Container = styled.header`
   width: 100%;
@@ -91,7 +114,7 @@ const ArrowContainer = styled.div`
     }
   }
 `;
-export default ({ title, imageUrl, titleAttribute }) => {
+export default ({ title, subtitle, imageUrl, titleAttribute }) => {
   const [scrollY, setScrollY] = useState(0);
   const updateScroll = () => requestAnimationFrame(setScrollY(window.scrollY));
   // TODO: fix scroll effect
@@ -110,10 +133,17 @@ export default ({ title, imageUrl, titleAttribute }) => {
       </BackgroundImageContainerOuter>
       <ContentContainer>
         <TitleContainer>
-          <Title>
+          <Title rank={1} textAlign={Heading.TextAlign.CENTER}>
             <span>{title}</span>
           </Title>
         </TitleContainer>
+        {!subtitle ? null : (
+          <TitleContainer>
+            <Title rank={2} textAlign={Heading.TextAlign.CENTER}>
+              <span>{subtitle}</span>
+            </Title>
+          </TitleContainer>
+        )}
         <ArrowContainer>
           <ArrowDown />
         </ArrowContainer>
