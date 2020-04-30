@@ -1,3 +1,5 @@
+import { BREAKPOINT_TYPE, BREAKPOINT_SIZE } from '../lib/constants';
+
 export default {
   // colors
   primaryColor: '#417DE8',
@@ -22,8 +24,8 @@ export default {
   // typography
   baseFontSize: '16px',
   baseMobileFontSize: '12px',
-  mobileBreakpoint: '375px',
-  tabletBreakpoint: '768px',
+  mobileBreakpoint: BREAKPOINT_SIZE[BREAKPOINT_TYPE.MOBILE],
+  tabletBreakpoint: BREAKPOINT_SIZE[BREAKPOINT_TYPE.TABLET],
   headingScaleRatio: 1.25,
   headerFontFamily: '"Poppins", sans-serif',
   uppercaseTitles: false,
