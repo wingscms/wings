@@ -3,6 +3,13 @@ import fP from 'filter-invalid-dom-props';
 import styled from '../lib/styled';
 import _Button from './Button';
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`;
+
 const Button = styled(_Button)`
   font-size: 0.8em;
   padding: 10px 15px;
@@ -53,7 +60,7 @@ export default ({
   const goToPage = n => onPageChange(n);
 
   return (
-    <div {...fP(props)}>
+    <Container {...fP(props)}>
       <ButtonGroup>
         <Button onClick={firstPage} disabled={!hasPreviousPage}>
           &lt;&lt;
@@ -88,6 +95,6 @@ export default ({
           &gt;&gt;
         </Button>
       </ButtonGroup>
-    </div>
+    </Container>
   );
 };

@@ -4,7 +4,7 @@ import {
   ComplexCard,
   FlexGrid,
   Loading as _Loading,
-  PaginationControls as _PaginationControls,
+  PaginationControls,
 } from '@wingscms/components';
 import styled from '../lib/styled';
 import useQueryString from '../hooks/queryString';
@@ -49,13 +49,6 @@ const Loading = styled(_Loading)`
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-`;
-
-const PaginationControls = styled(_PaginationControls)`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
 `;
 
 const QUERY = `
