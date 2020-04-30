@@ -20,7 +20,10 @@ export default {
   contrastLuminanceThreshold: 60,
   shadow: '0 0 40px 0 rgba(0, 0, 0, 0.05)',
   // typography
-  baseFontSize: 16,
+  baseFontSize: '16px',
+  baseMobileFontSize: '12px',
+  mobileBreakpoint: '375px',
+  tabletBreakpoint: '768px',
   headingScaleRatio: 1.25,
   headerFontFamily: '"Poppins", sans-serif',
   uppercaseTitles: false,
