@@ -20,6 +20,19 @@ class Theme extends _Theme {
   get campaignFormTextColor() {
     return this.variables.campaignFormTextColor || this.formTextColor;
   }
+
+  get footerBackgroundColor() {
+    return this.variables.footerBackgroundColor || this.primaryColor;
+  }
+
+  get footerTextColor() {
+    return (
+      this.variables.footerTextColor ||
+      this.contrastColor({
+        backgroundColor: this.footerBackgroundColor,
+      })
+    );
+  }
 }
 
 const getThemeInstance = theme => {
