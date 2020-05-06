@@ -1,9 +1,10 @@
 export { default as Burger } from './components/Burger';
 export { default as Button } from './components/Button';
 export { default as Counter } from './components/Counter';
-export { default as Drawer } from './components/Drawer';
 export { default as CounterBar } from './components/CounterBar';
+export { default as Drawer } from './components/Drawer';
 export { default as Expandable } from './components/Expandable';
+export { default as FlexGrid } from './components/FlexGrid';
 export { default as Header } from './components/Header';
 export { default as Icon } from './components/Icon';
 export { default as Image } from './components/Image';
@@ -37,7 +38,6 @@ export { SimpleCard } from './components/cards';
 export { default as Gallery } from './components/gallery';
 
 // Layout
-export { default as FlexGrid } from './layout/FlexGrid';
 
 // Signup
 export { Signup, SignupForm, Newsletter, NewsletterForm } from './components/signup';
