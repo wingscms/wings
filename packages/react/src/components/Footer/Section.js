@@ -1,23 +1,25 @@
 import styled from '../../lib/styled';
+import { t } from '../../theme';
 
 export default styled.div`
   padding: 20px 20px 0;
-  color: ${({ theme }) => theme.footerTextColor};
+  color: inherit;
   text-align: left;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.2;
   .title {
+    font-family: ${t(_ => _.headerFontFamily)};
+    text-transform: ${t(_ => _.uppercaseTitles)};
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 20px;
-    text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
   }
   a.footerLink {
-    color: ${({ theme }) => theme.footerTextColor};
+    color: inherit;
     text-decoration: none;
     background-image: none;
     &:hover {
-      color: ${({ theme }) => theme.footerTextColor};
+      color: inherit;
       text-decoration: underline;
     }
   }

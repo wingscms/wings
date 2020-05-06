@@ -91,7 +91,7 @@ const Logo = styled.img`
   max-height: 80px;
 `;
 
-const Footer = ({ backgroundColor, color, columns, copy = {}, logo = {}, title }) => {
+const Footer = ({ backgroundColor, children, color, columns, copy = {}, logo = {}, title }) => {
   const _ = useTheme();
   const intl = useIntl();
 
@@ -121,7 +121,8 @@ const Footer = ({ backgroundColor, color, columns, copy = {}, logo = {}, title }
             </div>
           </CTASection>
         ) : null}
-        <FooterColumns columns={columns} />
+        {columns && <FooterColumns columns={columns} />}
+        {children}
         <BolsterLinkContainer>
           <BolsterLink href="https://wings.dev">{poweredBy}</BolsterLink>
           <BolsterLink href="https://bolster.digital">{madeBy}</BolsterLink>

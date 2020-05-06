@@ -1,31 +1,8 @@
 import React from 'react';
-import { Newsletter, Button } from '@wingscms/components';
+import { Button } from '@wingscms/components';
 import styled from 'styled-components';
 import Section from './Section';
 import socialMediaIcon from './SocialMediaIcon';
-
-const MailchimpForm = styled(Newsletter)`
-  input {
-    font-size: 12px;
-    padding: 5px;
-    height: auto;
-  }
-  label {
-    font-size: 12px;
-  }
-  button {
-    background-color: #000;
-    border: none;
-    color: ${({ theme }) => theme.footerTextColor};
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.1s all linear;
-    &:hover {
-      color: #000;
-      background-color: #fff;
-    }
-  }
-`;
 
 const AddressLine = styled.p`
   margin: 0;
@@ -62,7 +39,7 @@ export default ({ columns }) => {
             );
           case 'button':
             return (
-              <Button key={key} href={row.url} size="small" as="a" role="button" intent="secondary">
+              <Button key={key} href={row.url} size="small" as="a" intent={Button.Intent.SECONDARY}>
                 {row.content}
               </Button>
             );
@@ -79,17 +56,6 @@ export default ({ columns }) => {
                   ),
                 )}
               </SocialMediaWrapper>
-            );
-          case 'mailchimp':
-            return (
-              <MailchimpForm
-                key={key}
-                action={row.action}
-                buttonLabel={row.buttonLabel}
-                confirmationText={row.confirmationText}
-                privacyCheckbox={false}
-                privacyMessage=""
-              />
             );
           default:
             return <div key={key} />;
