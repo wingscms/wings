@@ -1,6 +1,6 @@
 import React from 'react';
 import fP from 'filter-invalid-dom-props';
-import { ShareButtons } from '@wingscms/components';
+import { SocialButtons } from '@wingscms/components';
 
 import styled from '../lib/styled';
 import { useIntl } from '../ctx/Intl';
@@ -136,7 +136,7 @@ const CampaignConfirmed = ({
   copy = {},
   resourceType,
   transactionStatus,
-  shareItems,
+  shareButtons,
   ...props
 }) => {
   const { title, text, shareTitle } = getCopy(copy, resourceType, transactionStatus);
@@ -145,10 +145,14 @@ const CampaignConfirmed = ({
     <div {...fP(props)}>
       <Title>{title}</Title>
       <Text>{text}</Text>
-      {shareItems && (
+      {shareButtons && (
         <>
           <ShareTitle>{shareTitle}</ShareTitle>
-          <ShareButtons items={shareItems} />
+          <SocialButtons>
+            {shareButtons.map(({ icon, url }) => (
+              <SocialButtons.Button icon={icon} url={url} />
+            ))}
+          </SocialButtons>
         </>
       )}
     </div>

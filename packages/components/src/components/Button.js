@@ -2,6 +2,7 @@ import React from 'react';
 import fP from 'filter-invalid-dom-props';
 import styled, { css } from '../lib/styled';
 import Theme, { t } from '../theme';
+import Icon from './Icon';
 import _Loading from './Loading';
 
 const Loading = styled(_Loading)`
@@ -115,6 +116,7 @@ const Root = styled.button`
 export default function Button({
   disabled: disabledProp,
   loading,
+  icon,
   children,
   intent,
   type,
@@ -129,6 +131,7 @@ export default function Button({
           <Loading intent={intent} size={LOADING_SIZE[size]} />
         </LoadingWrapper>
       )}
+      {icon && <Icon icon={icon} />}
       {children}
     </Root>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
   wide,
-  ComplexCard,
+  Card,
   FlexGrid,
   Loading as _Loading,
   PaginationControls as _PaginationControls,
@@ -126,7 +126,7 @@ const getNodeQueryParams = ({ items, selector, type, first, after }) => {
 };
 
 const ItemDefault = ({ node, ...props }) => (
-  <ComplexCard
+  <Card
     {...props}
     item={node}
     title={node.featured && node.featured.title}

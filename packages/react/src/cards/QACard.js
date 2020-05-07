@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
 import styled from '../lib/styled';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
-import { t, Icons } from '@wingscms/components';
+import { t, Icon as _Icon } from '@wingscms/components';
 import createCard from '../createCard';
 import Content from '../components/MobiledocRenderer';
 
@@ -92,7 +92,7 @@ const Question = ({ question, answer }) => {
   return (
     <QuestionWrapper>
       <QuestionText onClick={() => setShow(!show)} show={show}>
-        <Icon>{show ? <Icons.ChevronUp /> : <Icons.ChevronDown />}</Icon>
+        <Icon>{show ? <_Icon icon="chevron-up" /> : <_Icon icon="chevron-down" />}</Icon>
         <Text>
           <Content content={question} mini />
         </Text>
