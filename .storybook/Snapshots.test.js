@@ -9,12 +9,9 @@ import 'jest-styled-components';
 configure({ adapter: new Adapter() });
 
 const wait = waitTime =>
-  act(
-    () =>
-      new Promise(resolve => {
-        setTimeout(resolve, waitTime);
-      }),
-  );
+  new Promise(resolve => {
+    setTimeout(resolve, waitTime);
+  });
 
 initStoryshots({
   asyncJest: true,
@@ -33,15 +30,18 @@ initStoryshots({
       if (snapshotFilename) {
         expect(toJson(tree)).toMatchSnapshot();
       }
-      done();
     };
 
     if (!waitTime) {
       testSnapshot();
     } else {
-      await wait(waitTime);
-      tree.update();
-      testSnapshot();
+      await act(async () => {
+        await wait(waitTime);
+        tree.update();
+        testSnapshot();
+      });
     }
+
+    done();
   },
 });
