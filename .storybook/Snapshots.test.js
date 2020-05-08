@@ -1,35 +1,47 @@
 import initStoryshots, { Stories2SnapsConverter } from '@storybook/addon-storyshots';
-import { configure, shallow } from 'enzyme';
+import path from 'path';
+import { act } from 'react-dom/test-utils';
+import { configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import pretty from 'pretty';
+import toJson from 'enzyme-to-json';
+import 'jest-styled-components';
 
 configure({ adapter: new Adapter() });
 
+const wait = waitTime =>
+  new Promise(resolve => {
+    setTimeout(resolve, waitTime);
+  });
+
 initStoryshots({
   asyncJest: true,
-  test: ({ story, context, done }) => {
+  test: async ({ story, context, done }) => {
     const converter = new Stories2SnapsConverter();
-    const snapshotFilename = converter.getSnapshotFileName(context);
-    const storyElement = story.render();
+    const snapshotFilename = path.join(
+      path.dirname(converter.getSnapshotFileName(context)),
+      [context.id.split('--')[0], '.storyshot'].join(''),
+    );
 
-    const tree = shallow(storyElement);
+    const tree = mount(story.render());
 
     const waitTime = story.parameters.snapshotDelay;
 
     const testSnapshot = () => {
       if (snapshotFilename) {
-        expect(pretty(tree.html())).toMatchSpecificSnapshot(snapshotFilename);
+        expect(toJson(tree)).toMatchSnapshot();
       }
-      done();
     };
 
     if (!waitTime) {
       testSnapshot();
     } else {
-      setTimeout(() => {
+      await act(async () => {
+        await wait(waitTime);
         tree.update();
         testSnapshot();
-      }, waitTime);
+      });
     }
+
+    done();
   },
 });

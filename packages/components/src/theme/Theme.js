@@ -200,6 +200,22 @@ export default class Theme {
     return this.variables.progressBarColor || this.elementBackgroundColor;
   }
 
+  get shareButtonBackgroundColor() {
+    return this.variables.shareButtonBackgroundColor || this.primaryColor;
+  }
+
+  get shareButtonBackgroundHoverColor() {
+    return this.variables.shareButtonBackgroundHoverColor || this.secondaryColor;
+  }
+
+  get shareButtonIconColor() {
+    return this.variables.shareButtonIconColor || this.iconColor;
+  }
+
+  get shareButtonIconHoverColor() {
+    return this.variables.shareButtonIconHoverColor || this.iconColor;
+  }
+
   get smallSpacing() {
     return this.variables.smallSpacing || this.calc(this.mediumSpacing, ms => ms / 2);
   }

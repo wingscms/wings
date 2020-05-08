@@ -1,8 +1,8 @@
 import React from 'react';
 import fP from 'filter-invalid-dom-props';
 import styled from '../lib/styled';
-import { Eye } from './Icon';
-import { Caption } from './atoms';
+import Icon from './Icon';
+import Caption from './Caption';
 
 const StyledFigure = styled.figure`
   max-width: 100%;
@@ -113,7 +113,7 @@ export default ({
       {caption ? <StyledCaption>{caption}</StyledCaption> : null}
       {author ? (
         <InfoSpan>
-          <Eye title="Image author" stroke="#000" />
+          <Icon icon="eye" title="Image author" stroke="#000" />
           {author}
         </InfoSpan>
       ) : null}
