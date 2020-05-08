@@ -1,7 +1,6 @@
 import React from 'react';
-import { select } from '@storybook/addon-knobs/react';
-import styled from '../lib/styled';
-import { Icon } from '..';
+import styled from 'styled-components';
+import { Icon } from '@wingscms/components';
 
 const Wrapper = styled.div`
   max-width: 100px;
@@ -14,11 +13,9 @@ const Wrapper = styled.div`
 `;
 
 export default () => {
-  const icon = select('icon', Object.keys(Icon), Object.keys(Icon)[0]);
-  const _Icon = Icon[icon];
   return (
     <Wrapper>
-      <_Icon />
+      <Icon icon="facebook" />
     </Wrapper>
   );
 };

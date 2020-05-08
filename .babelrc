@@ -7,7 +7,16 @@
   ],
   "env": {
     "test": {
-      "plugins": ["require-context-hook", "file-loader"]
+      "plugins": [
+        "require-context-hook",
+        [
+          "file-loader", 
+          {
+            "publicPath": "/.jest/public",
+            "outputPath": "/.jest/public" 
+          }
+        ]
+      ]
     }
   }
 }

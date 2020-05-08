@@ -1,5 +1,6 @@
 import initStoryshots, { Stories2SnapsConverter } from '@storybook/addon-storyshots';
 import path from 'path';
+import { act } from 'react-dom/test-utils';
 import { configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import toJson from 'enzyme-to-json';
@@ -7,9 +8,14 @@ import 'jest-styled-components';
 
 configure({ adapter: new Adapter() });
 
+const wait = waitTime =>
+  new Promise(resolve => {
+    setTimeout(resolve, waitTime);
+  });
+
 initStoryshots({
   asyncJest: true,
-  test: ({ story, context, done }) => {
+  test: async ({ story, context, done }) => {
     const converter = new Stories2SnapsConverter();
     const snapshotFilename = path.join(
       path.dirname(converter.getSnapshotFileName(context)),
@@ -24,16 +30,18 @@ initStoryshots({
       if (snapshotFilename) {
         expect(toJson(tree)).toMatchSnapshot();
       }
-      done();
     };
 
     if (!waitTime) {
       testSnapshot();
     } else {
-      setTimeout(() => {
+      await act(async () => {
+        await wait(waitTime);
         tree.update();
         testSnapshot();
-      }, waitTime);
+      });
     }
+
+    done();
   },
 });
