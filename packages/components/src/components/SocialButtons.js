@@ -25,6 +25,7 @@ const Item = styled(Button)`
   transition: 0.2s all ease-in-out;
   svg {
     position: relative;
+    display: block;
     width: 100%;
     height: 100%;
     fill: ${t((_, { iconColor }) => iconColor || _.shareButtonIconColor)};

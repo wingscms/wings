@@ -2,8 +2,18 @@ import React from 'react';
 import fP from 'filter-invalid-dom-props';
 import styled, { css } from '../lib/styled';
 import Theme, { t } from '../theme';
-import Icon from './Icon';
+import { default as _Icon } from './Icon';
 import _Loading from './Loading';
+
+const Icon = styled(_Icon)`
+  display: inline;
+  width: 1.3em;
+  vertical-align: middle;
+  margin-right: ${t(_ => _.extraSmallSpacing)};
+  * {
+    fill: ${t((_, { intent }) => _.contrastColor({ backgroundColor: _.intentColor(intent) }))};
+  }
+`;
 
 const Loading = styled(_Loading)`
   margin: 0;
@@ -76,7 +86,7 @@ const Root = styled.button`
       ${LoadingWrapper} {
         background-color: ${color};
       }
-      font-size: 1rem;
+      font-size: 1em;
       padding: 16px 40px;
       border: 0;
       cursor: pointer;
@@ -131,7 +141,7 @@ export default function Button({
           <Loading intent={intent} size={LOADING_SIZE[size]} />
         </LoadingWrapper>
       )}
-      {icon && <Icon icon={icon} />}
+      {icon && <Icon intent={intent} icon={icon} />}
       {children}
     </Root>
   );

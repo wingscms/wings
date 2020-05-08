@@ -22,5 +22,8 @@ const props = ({
 export default () => <Button {...props()} />;
 export const Primary = () => <Button {...props({ intent: Button.Intent.PRIMARY })} />;
 export const Small = () => <Button {...props({ size: Button.Size.SMALL })} />;
+export const WithIcon = () => (
+  <Button {...props({ icon: 'twitter', intent: Button.Intent.PRIMARY })} />
+);
 export const Loading = () => <Button {...props({ loading: true })} />;
 export const LoadingSmall = () => <Button {...props({ size: Button.Size.SMALL, loading: true })} />;
