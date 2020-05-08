@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@0.4.2...@wingscms/jsonschema-form@0.5.0) (2020-04-24)
+
+
+### Bug Fixes
+
+* refactor campaign components and fix theming behavior ([#435](https://github.com/wingscms/wings/issues/435)) ([911dd63](https://github.com/wingscms/wings/commit/911dd635170a82a305f516fe48fcd23b32cbd6d6))
+
+
+### Features
+
+* navigation components (Burger, Drawer); Icons refactor ([#433](https://github.com/wingscms/wings/issues/433)) ([2b34d0c](https://github.com/wingscms/wings/commit/2b34d0c80235208c6692ae2176c996911c2723b2))
+
+
+
+
+
 ## [0.4.2](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@0.4.1...@wingscms/jsonschema-form@0.4.2) (2020-03-30)
 
 **Note:** Version bump only for package @wingscms/jsonschema-form

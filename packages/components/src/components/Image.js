@@ -1,7 +1,8 @@
 import React from 'react';
+import fP from 'filter-invalid-dom-props';
 import styled from '../lib/styled';
-import { Eye } from './icons';
-import { Caption } from './atoms';
+import Icon from './Icon';
+import Caption from './Caption';
 
 const StyledFigure = styled.figure`
   max-width: 100%;
@@ -104,14 +105,15 @@ export default ({
   shadow = false,
   type = 'default',
   url,
+  ...props
 }) => (
-  <StyledFigure className={`${type}`}>
+  <StyledFigure className={`${type}`} {...fP(props)}>
     <StyledImage borderRadius={borderRadius} shadow={shadow} src={url} />
     <Figcaption textColor={captionColor} padding=".5rem">
       {caption ? <StyledCaption>{caption}</StyledCaption> : null}
       {author ? (
         <InfoSpan>
-          <Eye title="Image author" stroke="#000" />
+          <Icon icon="eye" title="Image author" stroke="#000" />
           {author}
         </InfoSpan>
       ) : null}

@@ -20,6 +20,7 @@ export default {
   contrastLuminanceThreshold: 60,
   linkStyle: 'lineGrow',
   uppercaseTitles: false,
+  shadow: '0 0 40px 0 rgba(0, 0, 0, 0.05)',
   // typography
-  headerFontFamily: 'sans-serif',
+  headerFontFamily: '"Poppins", sans-serif',
 };

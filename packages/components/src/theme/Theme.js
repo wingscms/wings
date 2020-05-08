@@ -11,9 +11,8 @@ export default class Theme {
     DANGER: 'danger',
   };
 
-  static instance = () => {
-    if (!Theme._instance) Theme._instance = new Theme();
-    return Theme._instance;
+  static instance = (...args) => {
+    return new Theme(...args);
   };
 
   Intent = Theme.Intent;
@@ -78,6 +77,30 @@ export default class Theme {
     return [val, unit];
   }
 
+  get burgerColor() {
+    return this.variables.burgerColor || this.iconColor;
+  }
+
+  get burgerHoverColor() {
+    return this.variables.burgerColor || this.iconHoverColor;
+  }
+
+  get counterBackgroundColor() {
+    return this.variables.counterBackgroundColor || this.backgroundColor;
+  }
+
+  get counterTextColor() {
+    return this.variables.counterTextColor || this.textColor;
+  }
+
+  get drawerBackgroundColor() {
+    return this.variables.drawerBackgroundColor || this.elementBackgroundColor;
+  }
+
+  get expandableBackgroundColor() {
+    return this.variables.expandableBackgroundColor || this.elementBackgroundColor;
+  }
+
   get extraLargeSpacing() {
     return this.variables.extralargeSpacing || this.calc(this.mediumSpacing, ms => ms * 4);
   }
@@ -86,12 +109,50 @@ export default class Theme {
     return this.variables.extraSmallSpacing || this.calc(this.mediumSpacing, ms => ms / 4);
   }
 
+  get formBackgroundColor() {
+    return this.variables.formBackgroundColor || this.primaryColor;
+  }
+
+  get formLinkTextColor() {
+    return (
+      this.variables.formLinkTextColor ||
+      this.contrastColor({
+        backgroundColor: this.formBackgroundColor,
+      })
+    );
+  }
+
+  get formTextColor() {
+    return (
+      this.variables.formTextColor ||
+      this.contrastColor({
+        backgroundColor: this.formBackgroundColor,
+      })
+    );
+  }
+
   get headingColor() {
     return this.variables.headingColor || this.textColor;
   }
 
   get headingColorDark() {
     return this.variables.headingColorDark || this.textColorDark;
+  }
+
+  get iconHoverColor() {
+    return this.variables.iconHoverColor || this.primaryColor;
+  }
+
+  get landingSectionBackgroundColor() {
+    return this.variables.landingSectionBackgroundColor || this.primaryColor;
+  }
+
+  get landingSectionTitleColor() {
+    return this.variables.landingSectionTitleColor || this.textColor;
+  }
+
+  get landingSectionTitleBackgroundColor() {
+    return this.variables.landingSectionTitleBackgroundColor || null;
   }
 
   get largeSpacing() {
@@ -137,6 +198,22 @@ export default class Theme {
 
   get navigationMenuBackgroundColor() {
     return this.variables.navigationMenuBackgroundColor || this.backgroundColor;
+  }
+
+  get shareButtonBackgroundColor() {
+    return this.variables.shareButtonBackgroundColor || this.primaryColor;
+  }
+
+  get shareButtonBackgroundHoverColor() {
+    return this.variables.shareButtonBackgroundHoverColor || this.secondaryColor;
+  }
+
+  get shareButtonIconColor() {
+    return this.variables.shareButtonIconColor || this.iconColor;
+  }
+
+  get shareButtonIconHoverColor() {
+    return this.variables.shareButtonIconHoverColor || this.iconColor;
   }
 
   get smallSpacing() {

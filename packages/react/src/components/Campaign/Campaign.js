@@ -1,9 +1,13 @@
 import React, { useState, useRef } from 'react';
+import { Counter, useDimensions } from '@wingscms/components';
+import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import styled from '../../lib/styled';
+
+import { t } from '../../theme';
+import { useIntl } from '../../ctx/Intl';
 
 import Content from '../MobiledocRenderer';
 import CampaignForm from './Form';
-import Counter from './Counter';
 import EventDetails from './EventDetails';
 import Proposition from './Proposition';
 
@@ -12,7 +16,7 @@ const Container = styled.div`
   width: 100%;
   height: auto;
   position: relative;
-  background-color: ${({ theme }) => theme.backgroundColor || 'transparent'};
+  background-color: ${t(_ => _.backgroundColor)};
 `;
 
 const NodeFragment = `
@@ -56,9 +60,9 @@ const CampaignFragment = `
 const MainContainerOuter = styled(Container)`
   background-color: transparent;
   overflow: auto;
-  margin-bottom: ${({ theme }) => theme.largeSpacing};
+  margin-bottom: ${t(_ => _.largeSpacing)};
   @media screen and (max-width: 800px) {
-    margin-bottom: ${({ theme }) => theme.mediumSpacing};
+    margin-bottom: ${t(_ => _.mediumSpacing)};
   }
 `;
 
@@ -75,23 +79,24 @@ const MainContainerInner = styled(Container)`
   }
 `;
 
+const FORM_WIDTH = '460px';
+
 const FormContainer = styled.div`
   display: inline-block;
-  width: 460px;
-  min-height: 500px;
-  background-color: ${({ theme }) => theme.campaignFormBackgroundColor};
-  color: ${({ theme }) => theme.campaignFormTextColor};
+  width: ${FORM_WIDTH};
+  background-color: ${t(_ => _.campaignFormBackgroundColor)};
+  color: ${t(_ => _.campaignFormTextColor)};
   vertical-align: top;
   border-radius: 4px;
-  box-shadow: ${({ theme }) => theme.defaultShadow};
+  box-shadow: ${t(_ => _.shadow)};
   align-self: flex-start;
   a {
-    color: ${({ theme }) => theme.campaignFormLinkTextColor};
+    color: ${t(_ => _.campaignFormLinkTextColor)};
     text-decoration: none;
     background-image: linear-gradient(
       120deg,
-      ${({ theme }) => theme.campaignFormLinkLineColor} 0%,
-      ${({ theme }) => theme.campaignFormLinkLineColor} 100%
+      ${t(_ => _.campaignFormLinkLineColor)} 0%,
+      ${t(_ => _.campaignFormLinkLineColor)} 100%
     );
     padding-bottom: 2px;
     background-repeat: no-repeat;
@@ -103,8 +108,8 @@ const FormContainer = styled.div`
       background-size: 100% 4px;
       background-image: linear-gradient(
         120deg,
-        ${({ theme }) => theme.campaignFormLinkLineColor} 0%,
-        ${({ theme }) => theme.campaignFormLinkLineColor} 100%
+        ${t(_ => _.campaignFormLinkLineColor)} 0%,
+        ${t(_ => _.campaignFormLinkLineColor)} 100%
       );
     }
   }
@@ -114,9 +119,10 @@ const FormContainer = styled.div`
 `;
 
 const FormContainerInner = styled.div`
-  padding: 40px;
+  padding: ${t(_ => _.mediumSpacing)};
   display: block;
   @media screen and (max-width: 1000px) {
+    padding: ${t(_ => _.smallSpacing)};
     max-width: 500px;
     margin: 0 auto;
     padding: 20px;
@@ -125,7 +131,8 @@ const FormContainerInner = styled.div`
 
 const Title = styled.h1`
   font-size: 2rem;
-  text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
+  text-transform: ${t(_ => _.uppercaseTitles)};
+  font-family: ${t(_ => _.headerFontFamily)};
   @media screen and (max-width: 800px) {
     font-size: 1.3rem;
   }
@@ -137,26 +144,16 @@ const Intro = styled.p`
     font-size: 1em;
   }
 `;
-const CounterContainer = styled(FormContainerInner)`
-  padding: 20px 40px;
-  background-color: ${({ theme }) => theme.counterBackgroundColor};
-  color: ${({ theme }) => theme.counterTextColor};
+const CounterContainer = styled.div`
+  background-color: ${t(_ => _.counterBackgroundColor)};
+  color: ${t(_ => _.counterTextColor)};
   border-radius: 4px 4px 0 0;
+  padding: ${t(_ => `${_.smallSpacing} ${_.mediumSpacing}`)};
+  width: 100%;
   @media screen and (max-width: 1000px) {
-    max-width: 100%;
+    padding: ${t(_ => _.smallSpacing)};
   }
 `;
-
-const DEFAULT_COPY = {
-  descriptionCollapse: 'Collapse proposition button text',
-  descriptionExpand: 'Expand proposition button text',
-  eventInfoTitle: 'Title for Event metadata',
-  eventStartLabel: 'Label for Event Start date',
-  eventEndLabel: 'Label for Event End date',
-  eventLocationLabel: 'Label for Event Location',
-  eventFeeLabel: 'Label for Event Fee',
-  counterMessage: 'other people signed this petition',
-};
 
 export default ({
   id,
@@ -170,6 +167,8 @@ export default ({
   signatureGoal: _signatureGoal,
   ...props
 }) => {
+  const intl = useIntl();
+  const { width } = useDimensions();
   const campaignContainerRef = useRef(null);
   const formContainerRef = useRef(null);
   const [signatureCount, setSignatureCount] = useState(null);
@@ -189,36 +188,62 @@ export default ({
       setFundraiserTarget(campaign.target);
     }
   };
+  const { fee, schedule } = node;
+
   const {
-    descriptionCollapse,
-    descriptionExpand,
-    eventInfoTitle,
-    eventStartLabel,
-    eventEndLabel,
-    eventLocationLabel,
-    eventFeeLabel,
-    eventStartTime,
-    eventEndTime,
-    eventFee,
-    petitionCounterMessage,
-    petitionCounterGoalText,
-    fundraiserTargetText,
-    fundraiserCounterMessage,
-  } = { ...DEFAULT_COPY, ...copy };
-  const { intro, title } = node;
+    descriptionCollapse = intl.formatMessage('wings.Campaign.description.collapse'),
+    descriptionExpand = intl.formatMessage('wings.Campaign.description.expand'),
+    petitionCounterMessage = intl.formatMessage('wings.Campaign.petitionCounter.message', {
+      signatureCount,
+    }),
+    petitionCounterGoalText = signatureGoal ? intl.formatNumber(signatureGoal) : null,
+    fundraiserTargetText = fundraiserTarget
+      ? `${fundraiserTarget.currency.symbol}${intl.formatNumber(fundraiserTarget.amount / 100)}`
+      : null,
+    fundraiserCounterMessage = intl.formatMessage('wings.Campaign.fundraiserCounter.message'),
+    eventInfoTitle = intl.formatMessage('wings.Campaign.eventInfo.title'),
+    eventStartLabel = intl.formatMessage('wings.Campaign.eventStart.label'),
+    eventEndLabel = intl.formatMessage('wings.Campaign.eventEnd.label'),
+    eventLocationLabel = intl.formatMessage('wings.Campaign.eventLocation.label'),
+    eventFeeLabel = intl.formatMessage('wings.Campaign.eventFee.label'),
+    eventStartTime = schedule?.start
+      ? `${intl.formatDate(new Date(schedule.start))} ${intl.formatTime(new Date(schedule.start))}`
+      : null,
+    eventEndTime = schedule?.end
+      ? `${intl.formatDate(new Date(schedule.end))} ${intl.formatTime(new Date(schedule.end))}`
+      : null,
+    eventFee = fee
+      ? intl.formatNumber(fee.amount.amount / 100, {
+          style: 'currency',
+          currency: fee.amount.currency.id,
+          currencyDisplay: 'symbol',
+        })
+      : null,
+  } = copy;
+  const { intro, title, description } = node;
   const element = (
-    <React.Fragment>
-      <MainContainerOuter {...props} ref={campaignContainerRef}>
+    <>
+      <MainContainerOuter {...filterInvalidDOMProps(props)} ref={campaignContainerRef}>
         <MainContainerInner>
           <Proposition
             {...{ descriptionCollapse, descriptionExpand }}
-            formContainerRef={formContainerRef}
-            campaignContainerRef={campaignContainerRef}
-            campaign={node}
+            initialHeight={formContainerRef?.current?.offsetHeight}
+            onToggle={show => {
+              if (!campaignContainerRef?.current || show) return;
+              campaignContainerRef?.current?.scrollIntoView?.({
+                behavior: 'smooth',
+                block: 'start',
+              });
+            }}
+            style={{ width: width > 1000 ? `calc(100% - ${FORM_WIDTH})` : '100%' }}
           >
-            {title ? <Title>{title}</Title> : null}
-            {intro ? <Intro fullWidth>{intro}</Intro> : null}
-            <Content content={node.description} mini />
+            {!(title || intro || description) ? null : (
+              <>
+                {title ? <Title>{title}</Title> : null}
+                {intro ? <Intro fullWidth>{intro}</Intro> : null}
+                <Content content={description} mini />
+              </>
+            )}
           </Proposition>
           <FormContainer ref={formContainerRef}>
             {/* Petition counter */}
@@ -227,7 +252,7 @@ export default ({
                 <Counter
                   current={_signatureCount || signatureCount}
                   goal={_signatureGoal || signatureGoal}
-                  descriptionText={petitionCounterMessage}
+                  description={petitionCounterMessage}
                   goalText={petitionCounterGoalText}
                 />
               </CounterContainer>
@@ -240,7 +265,7 @@ export default ({
                   <Counter
                     current={fundraiserRaised.amount / 100}
                     goal={fundraiserTarget.amount / 100}
-                    descriptionText={fundraiserCounterMessage}
+                    description={fundraiserCounterMessage}
                     goalText={fundraiserTargetText}
                     symbol={fundraiserRaised.currency.symbol}
                   />
@@ -276,7 +301,7 @@ export default ({
           }}
         />
       )}
-    </React.Fragment>
+    </>
   );
   return wrapElement(element, node);
 };

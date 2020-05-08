@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
   wide,
-  ComplexCard,
+  Card,
   FlexGrid,
   Loading as _Loading,
   PaginationControls as _PaginationControls,
@@ -126,7 +126,7 @@ const getNodeQueryParams = ({ items, selector, type, first, after }) => {
 };
 
 const ItemDefault = ({ node, ...props }) => (
-  <ComplexCard
+  <Card
     {...props}
     item={node}
     title={node.featured && node.featured.title}
@@ -161,7 +161,7 @@ const NodesCardView = ({ text, ...props }) => {
   const pageNumber = query[`nc${sectionKey}page`] || '1';
 
   const fetchNodes = async ({ first = 12, after = '0' } = {}) => {
-    setContainerHeight(nodesCardContainerRef.current.offsetHeight);
+    setContainerHeight(nodesCardContainerRef?.current?.offsetHeight || 0);
     setLoading(true);
 
     const res = await wings
@@ -212,7 +212,7 @@ const NodesCardView = ({ text, ...props }) => {
               width: 'calc(100% + 20px)',
             }}
           >
-            {nodes.map(node => {
+            {nodes.map((node, idx) => {
               const itemElement = (
                 <Item
                   node={node}
@@ -222,7 +222,7 @@ const NodesCardView = ({ text, ...props }) => {
                 />
               );
               return (
-                <React.Fragment key={`${node.id}`}>
+                <React.Fragment key={`${node.id}-${idx}`}>
                   {wrapItemElement(itemElement, { node })}
                 </React.Fragment>
               );

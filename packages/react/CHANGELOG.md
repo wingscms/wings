@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.35.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.34.1...@wingscms/react@0.35.0) (2020-04-24)
+
+
+### Bug Fixes
+
+* Article header image null issue ([#438](https://github.com/wingscms/wings/issues/438)) ([0b01fca](https://github.com/wingscms/wings/commit/0b01fcae1c959fa33fba6a12952dc8853f46e67b))
+* refactor campaign components and fix theming behavior ([#435](https://github.com/wingscms/wings/issues/435)) ([911dd63](https://github.com/wingscms/wings/commit/911dd635170a82a305f516fe48fcd23b32cbd6d6))
+
+
+### Features
+
+* add i18n to react package and storybook ([#440](https://github.com/wingscms/wings/issues/440)) ([5b84d49](https://github.com/wingscms/wings/commit/5b84d493c3a358ee130d2b162945707980b5b3b0))
+* Add storyshots and refactor campaign ([#442](https://github.com/wingscms/wings/issues/442)) ([eb479a5](https://github.com/wingscms/wings/commit/eb479a5ce4b8bd50a61d1bc36b9987012c5770df))
+* navigation components (Burger, Drawer); Icons refactor ([#433](https://github.com/wingscms/wings/issues/433)) ([2b34d0c](https://github.com/wingscms/wings/commit/2b34d0c80235208c6692ae2176c996911c2723b2))
+* wings theme and fonts for storybook ([#439](https://github.com/wingscms/wings/issues/439)) ([841051f](https://github.com/wingscms/wings/commit/841051fb453602422f3108312f71aabdad8fd0e3))
+
+
+
+
+
 ## [0.34.1](https://github.com/wingscms/wings/compare/@wingscms/react@0.34.0...@wingscms/react@0.34.1) (2020-04-02)
 
 
