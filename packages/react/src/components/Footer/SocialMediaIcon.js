@@ -1,26 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Icons } from '@wingscms/components';
+import { Icon } from '@wingscms/components';
 
-const {
-  Facebook,
-  GitHub,
-  GooglePlus,
-  Instagram,
-  LinkedIn,
-  Pinterest,
-  Reddit,
-  Rss,
-  Skype,
-  Spotify,
-  Twitch,
-  Twitter,
-  Vimeo,
-  Whatsapp,
-  YouTube,
-} = Icons;
-
-const Icon = styled.div`
+const IconContainer = styled.div`
   width: 100%;
   height: 100%;
   background-color: ${({ backgroundColor }) => backgroundColor || 'transparent'};
@@ -46,123 +28,171 @@ export default (name, url, iconColor, backgroundColor, key) => {
   switch (name) {
     case 'facebook':
       return (
-        <Icon key={key} iconColor={iconColor || '#3b5998'} backgroundColor={backgroundColor}>
+        <IconContainer
+          key={key}
+          iconColor={iconColor || '#3b5998'}
+          backgroundColor={backgroundColor}
+        >
           <a href={url}>
-            <Facebook />
+            <Icon icon="facebook" />
           </a>
-        </Icon>
+        </IconContainer>
       );
     case 'github':
       return (
-        <Icon key={key} iconColor={iconColor || '#4078c0'} backgroundColor={backgroundColor}>
+        <IconContainer
+          key={key}
+          iconColor={iconColor || '#4078c0'}
+          backgroundColor={backgroundColor}
+        >
           <a href={url}>
-            <GitHub />
+            <Icon icon="github" />
           </a>
-        </Icon>
-      );
-    case 'googleplus':
-      return (
-        <Icon key={key} iconColor={iconColor || '#d34836'} backgroundColor={backgroundColor}>
-          <a href={url}>
-            <GooglePlus />
-          </a>
-        </Icon>
+        </IconContainer>
       );
     case 'instagram':
       return (
-        <Icon key={key} iconColor={iconColor || '#e95950'} backgroundColor={backgroundColor}>
+        <IconContainer
+          key={key}
+          iconColor={iconColor || '#e95950'}
+          backgroundColor={backgroundColor}
+        >
           <a href={url}>
-            <Instagram />
+            <Icon icon="instagram" />
           </a>
-        </Icon>
+        </IconContainer>
       );
     case 'linkedin':
       return (
-        <Icon key={key} iconColor={iconColor || '#0077B5'} backgroundColor={backgroundColor}>
+        <IconContainer
+          key={key}
+          iconColor={iconColor || '#0077B5'}
+          backgroundColor={backgroundColor}
+        >
           <a href={url}>
-            <LinkedIn />
+            <Icon icon="linkedin" />
           </a>
-        </Icon>
+        </IconContainer>
       );
     case 'pinterest':
       return (
-        <Icon key={key} iconColor={iconColor || '#BD081C'} backgroundColor={backgroundColor}>
+        <IconContainer
+          key={key}
+          iconColor={iconColor || '#BD081C'}
+          backgroundColor={backgroundColor}
+        >
           <a href={url}>
-            <Pinterest />
+            <Icon icon="pinterest" />
           </a>
-        </Icon>
+        </IconContainer>
       );
     case 'reddit':
       return (
-        <Icon key={key} iconColor={iconColor || '#ff4500'} backgroundColor={backgroundColor}>
+        <IconContainer
+          key={key}
+          iconColor={iconColor || '#ff4500'}
+          backgroundColor={backgroundColor}
+        >
           <a href={url}>
-            <Reddit />
+            <Icon icon="reddit" />
           </a>
-        </Icon>
+        </IconContainer>
       );
     case 'rss':
       return (
-        <Icon key={key} iconColor={iconColor || '#f26522'} backgroundColor={backgroundColor}>
+        <IconContainer
+          key={key}
+          iconColor={iconColor || '#f26522'}
+          backgroundColor={backgroundColor}
+        >
           <a href={url}>
-            <Rss />
+            <Icon icon="rss" />
           </a>
-        </Icon>
+        </IconContainer>
       );
     case 'skype':
       return (
-        <Icon key={key} iconColor={iconColor || '#00aff0'} backgroundColor={backgroundColor}>
+        <IconContainer
+          key={key}
+          iconColor={iconColor || '#00aff0'}
+          backgroundColor={backgroundColor}
+        >
           <a href={url}>
-            <Skype />
+            <Icon icon="skype" />
           </a>
-        </Icon>
+        </IconContainer>
       );
     case 'spotify':
       return (
-        <Icon key={key} iconColor={iconColor || '#1db954'} backgroundColor={backgroundColor}>
+        <IconContainer
+          key={key}
+          iconColor={iconColor || '#1db954'}
+          backgroundColor={backgroundColor}
+        >
           <a href={url}>
-            <Spotify />
+            <Icon icon="spotify" />
           </a>
-        </Icon>
+        </IconContainer>
       );
     case 'twitch':
       return (
-        <Icon key={key} iconColor={iconColor || '#6441a5'} backgroundColor={backgroundColor}>
+        <IconContainer
+          key={key}
+          iconColor={iconColor || '#6441a5'}
+          backgroundColor={backgroundColor}
+        >
           <a href={url}>
-            <Twitch />
+            <Icon icon="twitch" />
           </a>
-        </Icon>
+        </IconContainer>
       );
     case 'twitter':
       return (
-        <Icon key={key} iconColor={iconColor || '#1da1f2'} backgroundColor={backgroundColor}>
+        <IconContainer
+          key={key}
+          iconColor={iconColor || '#1da1f2'}
+          backgroundColor={backgroundColor}
+        >
           <a href={url}>
-            <Twitter />
+            <Icon icon="twitter" />
           </a>
-        </Icon>
+        </IconContainer>
       );
     case 'vimeo':
       return (
-        <Icon key={key} iconColor={iconColor || '#1ab7ea'} backgroundColor={backgroundColor}>
+        <IconContainer
+          key={key}
+          iconColor={iconColor || '#1ab7ea'}
+          backgroundColor={backgroundColor}
+        >
           <a href={url}>
-            <Vimeo />
+            <Icon icon="vimeo" />
           </a>
-        </Icon>
+        </IconContainer>
       );
     case 'whatsapp':
       return (
-        <Icon key={key} iconColor={iconColor || '#075e54'} backgroundColor={backgroundColor}>
+        <IconContainer
+          key={key}
+          iconColor={iconColor || '#075e54'}
+          backgroundColor={backgroundColor}
+        >
           <a href={url}>
-            <Whatsapp />
+            <Icon icon="whatsapp" />
           </a>
-        </Icon>
+        </IconContainer>
       );
     case 'youtube':
       return (
-        <Icon key={key} iconColor={iconColor || '#ff0000'} backgroundColor={backgroundColor}>
+        <IconContainer
+          key={key}
+          iconColor={iconColor || '#ff0000'}
+          backgroundColor={backgroundColor}
+        >
           <a href={url}>
-            <YouTube />
+            <Icon icon="youtube" />
           </a>
-        </Icon>
+        </IconContainer>
       );
     default:
       return <div />;
