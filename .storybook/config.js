@@ -29,7 +29,11 @@ function loadStories() {
       .addDecorator(withKnobs)
       .addDecorator(withContexts(contexts));
 
-    Object.keys(storyMod).forEach(variant => stories.add(capitalCase(variant), storyMod[variant]));
+    Object.keys(storyMod).forEach(variant =>
+      stories.add(capitalCase(variant), storyMod[variant], {
+        snapshotDelay: storyMod[variant].snapshotDelay,
+      }),
+    );
   });
 }
 

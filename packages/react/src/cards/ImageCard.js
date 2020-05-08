@@ -1,6 +1,7 @@
 import React from 'react';
 import { compose, setPropTypes, setStatic } from 'recompose';
 import classNames from 'classnames';
+import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import PropTypes from 'prop-types';
 import Fade from 'react-reveal/Fade';
 import { wide, ALIGNLEFT, ALIGNRIGHT } from '@wingscms/components';
@@ -117,7 +118,7 @@ const ImageCard = compose(
         [`align-${float}`]: size === SIZE.MEDIUM,
       })}
     >
-      <img {...props} />
+      <img {...filterInvalidDOMProps(props)} />
       {!caption ? null : <figcaption>{caption}</figcaption>}
     </Image>
   </Fade>

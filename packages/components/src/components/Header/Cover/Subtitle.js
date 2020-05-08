@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import { t } from '../../../theme';
 
 export default styled('p')`
-  color: ${({ theme }) => theme.landingSectionSubtitleColor};
-  font-family: ${({ theme }) => theme.headerFontFamily};
-  font-weight: ${({ theme }) => theme.typography.headerFontWeight};
-  text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
+  color: ${t(_ => _.landingSectionSubtitleColor)};
+  font-family: ${t(_ => _.headerFontFamily)};
+  font-weight: bold;
+  text-transform: ${t(_ => _.uppercaseTitles)};
   font-size: 21px;
   margin: 1em auto 0;
   max-width: 95%;
@@ -12,16 +13,17 @@ export default styled('p')`
   @media screen and (min-width: 800px) {
     font-size: 30px;
   }
-  ${({ theme }) =>
-    theme.landingSectionSubtitleBackgroundColor
-      ? `
+  ${t(_ =>
+    !_.landingSectionSubtitleBackgroundColor
+      ? null
+      : `
   line-height: 1.4;
   span {
-    background: ${theme.landingSectionSubtitleBackgroundColor};
+    background: ${t(_ => _.landingSectionSubtitleBackgroundColor)};
     line-height: 1.4;
     padding: 0 0.25em;
     box-decoration-break: clone;
   }
-  `
-      : null};
+  `,
+  )};
 `;

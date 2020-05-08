@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { mediaUrl } from '@wingscms/sdk';
 import { getViewportDimensions } from '../../../lib/utils';
-import { ArrowDown } from '../../icons';
+import Icon from '../../Icon';
 import Title from './Title';
+
+import { t } from '../../../theme';
 
 const Container = styled.header`
   width: 100%;
   height: 100%;
-  background-color: ${({ theme }) => theme.landingSectionBackgroundColor};
+  background-color: ${t(_ => _.landingSectionBackgroundColor)};
   position: relative;
   overflow: hidden;
   transition: 0.2s all ease-in-out;
@@ -80,7 +82,7 @@ const ArrowContainer = styled.div`
     height: 25px;
     margin: 10px auto;
     g {
-      fill: ${theme => theme.landingSectionTitleColor || '#000'};
+      fill: ${t(_ => _.landingSectionTitleColor)};
     }
   }
   @media screen and (max-width: 800px) {
@@ -113,7 +115,7 @@ export default ({ title, imageUrl, titleAttribute }) => {
           </Title>
         </TitleContainer>
         <ArrowContainer>
-          <ArrowDown />
+          <Icon icon="arrow-down" />
         </ArrowContainer>
       </ContentContainer>
     </Container>

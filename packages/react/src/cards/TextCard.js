@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import styled from '../lib/styled';
 import createCard from '../createCard';
 import Content from '../components/MobiledocRenderer';
@@ -19,7 +20,7 @@ class TextCardView extends Component {
   render() {
     const { content, ...props } = this.props;
     return (
-      <TextWrapper {...props}>
+      <TextWrapper {...filterInvalidDOMProps(props)}>
         <Content content={content} mini />
       </TextWrapper>
     );

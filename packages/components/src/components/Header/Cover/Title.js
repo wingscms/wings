@@ -1,9 +1,11 @@
 import styled from 'styled-components';
+import { t } from '../../../theme';
 
 export default styled.h1`
   letter-spacing: 1.5px;
-  color: ${({ theme }) => theme.landingSectionTitleColor};
-  text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
+  font-family: ${t(_ => _.headerFontFamily)};
+  color: ${t(_ => _.landingSectionTitleColor)};
+  text-transform: ${t(_ => _.uppercaseTitles)};
   display: inline-block;
   font-size: 32px;
   line-height: 1.2;
@@ -17,16 +19,17 @@ export default styled.h1`
     line-height: 1.166666;
     max-width: 1000px;
   }
-  ${({ theme }) =>
-    theme.landingSectionTitleBackgroundColor
-      ? `
+  ${t(_ =>
+    !_.landingSectionTitleBackgroundColor
+      ? null
+      : `
   line-height: 1.4;
   span {
-    background: ${theme.landingSectionTitleBackgroundColor};
+    background: ${_.landingSectionTitleBackgroundColor};
     line-height: 1.4;
     padding: 0 0.25em;
     box-decoration-break: clone;
   }
-  `
-      : null};
+  `,
+  )};
 `;

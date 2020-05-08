@@ -18,6 +18,8 @@ import URLInput from './URLInput';
 const StyledForm = styled(Form)`
   fieldset {
     border: 0;
+    padding: 0;
+    margin: 0;
   }
   .form-group {
     margin-bottom: 10px;
