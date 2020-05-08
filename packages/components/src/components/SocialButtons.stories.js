@@ -15,10 +15,10 @@ const props = () => ({
 
 export default () => (
   <SocialButtons {...props()}>
-    <SocialButtons.Button backgroundColor="red" icon="facebook" url="example.com" />
+    <SocialButtons.Button icon="facebook" url="example.com" />
     <SocialButtons.Button icon="twitter" url="example.com" />
     <SocialButtons.Button icon="linkedin" url="example.com" />
     <SocialButtons.Button icon="reddit" url="example.com" />
-    <SocialButtons.Button backgroundColor="blue" icon="email" url="mailto:example@example.com" />
+    <SocialButtons.Button icon="email" url="mailto:example@example.com" />
   </SocialButtons>
 );
