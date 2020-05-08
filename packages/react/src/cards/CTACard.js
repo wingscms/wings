@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import styled from '../lib/styled';
+import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import { Button, getContrastColor, wide } from '@wingscms/components';
+import styled from '../lib/styled';
 import createCard from '../createCard';
 
 const CTA = styled.div`
@@ -114,9 +115,9 @@ const CTAButton = styled(Button)`
 
 class CTACardView extends Component {
   render() {
-    const { title, text, actionText, actionUrl } = this.props;
+    const { title, text, actionText, actionUrl, ...props } = this.props;
     return (
-      <CTA>
+      <CTA {...filterInvalidDOMProps(props)}>
         <div className="inner">
           <h2>{title}</h2>
           <p>{text}</p>

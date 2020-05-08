@@ -1,9 +1,9 @@
 import { WingsProvider, IntlProvider } from '@wingscms/react';
 import { ThemeProvider } from '@wingscms/components';
-import client from './wings/wings';
-import en from './wings/data/en.json';
-import de from './wings/data/de.json';
-import nl from './wings/data/nl.json';
+import client from '../.wings/wings';
+import en from '../.wings/data/en.json';
+import de from '../.wings/data/de.json';
+import nl from '../.wings/data/nl.json';
 
 export default [
   {

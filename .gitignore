@@ -7,5 +7,7 @@ yarn-error.log*
 lerna-debug.log
 .changelog
 .storybook-build
-.storybook/wings/data/**
-!.storybook/wings/data/.gitkeep
+.wings/introspectionResult.json
+.wings/data/**
+!.wings/data/.gitkeep
+.jest/public

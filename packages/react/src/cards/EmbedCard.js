@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from '../lib/styled';
+import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import { wide } from '@wingscms/components';
+import styled from '../lib/styled';
 import createCard from '../createCard';
 
 const Figure = styled.figure`
@@ -55,7 +56,7 @@ class EmbedCard extends Component {
     percentage: 56,
   };
 
-  componentWillReceiveProps(props) {
+  UNSAFE_componentWillReceiveProps(props) {
     this.determineDimensions(props);
   }
 
@@ -74,7 +75,7 @@ class EmbedCard extends Component {
     const { html, ...props } = this.props;
 
     return (
-      <Figure {...props}>
+      <Figure {...filterInvalidDOMProps(props)}>
         <div
           className="video-wrapper"
           style={{ paddingBottom: `${this.state.percentage}%` }}

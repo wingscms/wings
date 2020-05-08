@@ -1,6 +1,7 @@
 /* eslint-disable no-mixed-operators */
 
 import React from 'react';
+import fP from 'filter-invalid-dom-props';
 import styled from '../lib/styled';
 import { t } from '../theme';
 
@@ -22,7 +23,7 @@ const StyledCounterInner = styled(StyledCounter)`
 export default function Counter({ barColor, current, max, height = 12, intent, ...props }) {
   const width = current >= max ? 100 : (100 / max) * current;
   return (
-    <StyledCounter barColor={barColor} intent={intent} height={height} {...props}>
+    <StyledCounter barColor={barColor} intent={intent} height={height} {...fP(props)}>
       <StyledCounterInner
         barColor={barColor}
         intent={intent}

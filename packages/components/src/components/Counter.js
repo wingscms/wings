@@ -1,4 +1,5 @@
 import React from 'react';
+import fP from 'filter-invalid-dom-props';
 import styled from '../lib/styled';
 import CounterBar from './CounterBar';
 import { t } from '../theme';
@@ -68,7 +69,7 @@ export default ({
   ...props
 }) => {
   return (
-    <Container textColor={textColor} backgroundColor={backgroundColor} {...props}>
+    <Container textColor={textColor} backgroundColor={backgroundColor} {...fP(props)}>
       <TopContainer>
         <Current>
           {symbol ? symbol : ''}

@@ -1,8 +1,17 @@
 import React from 'react';
-import filterProps from 'filter-invalid-dom-props';
+import fP from 'filter-invalid-dom-props';
 import styled, { css } from '../lib/styled';
 import Theme, { t } from '../theme';
+import { default as _Icon } from './Icon';
 import _Loading from './Loading';
+
+const Icon = styled(_Icon)`
+  display: inline;
+  width: 1.3em;
+  vertical-align: middle;
+  margin-right: ${t(_ => _.extraSmallSpacing)};
+  fill: currentColor;
+`;
 
 const Loading = styled(_Loading)`
   margin: 0;
@@ -75,7 +84,7 @@ const Root = styled.button`
       ${LoadingWrapper} {
         background-color: ${color};
       }
-      font-size: 1rem;
+      font-size: 1em;
       padding: 16px 40px;
       border: 0;
       cursor: pointer;
@@ -115,6 +124,7 @@ const Root = styled.button`
 export default function Button({
   disabled: disabledProp,
   loading,
+  icon,
   children,
   intent,
   type,
@@ -123,12 +133,13 @@ export default function Button({
 }) {
   const disabled = loading || disabledProp;
   return (
-    <Root disabled={disabled} intent={intent} size={size} type={type} {...filterProps(props)}>
+    <Root disabled={disabled} intent={intent} size={size} type={type} {...fP(props)}>
       {!loading ? null : (
         <LoadingWrapper>
           <Loading intent={intent} size={LOADING_SIZE[size]} />
         </LoadingWrapper>
       )}
+      {icon && <Icon intent={intent} icon={icon} />}
       {children}
     </Root>
   );
