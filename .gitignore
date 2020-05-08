@@ -10,3 +10,4 @@ lerna-debug.log
 .wings/introspectionResult.json
 .wings/data/**
 !.wings/data/.gitkeep
+.jest/public

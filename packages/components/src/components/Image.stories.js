@@ -1,9 +1,8 @@
 import React from 'react';
 import { boolean, select, text, number } from '@storybook/addon-knobs/react';
 import { Image } from '@wingscms/components';
-import styled from '../lib/styled';
-
-import jellyfish from '../img/story/jellyfish.jpg';
+import styled from 'styled-components';
+import { image } from '../../../../utils';
 
 const Wrapper = styled.div`
   display: block;
@@ -24,7 +23,7 @@ export default () => (
       non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
     <Image
-      url={text('url', jellyfish)}
+      url={text('url', image())}
       type={select(
         'type',
         {
