@@ -21,6 +21,7 @@
     "classnames": "^2.2.6",
     "color": "^3.1.2",
     "filter-invalid-dom-props": "^2.0.0",
+    "param-case": "^3.0.3",
     "react-countup": "^4.3.3"
   },
   "peerDependencies": {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { mediaUrl } from '@wingscms/sdk';
 import { getViewportDimensions } from '../../lib/utils';
-import { ArrowDown } from '../Icon';
+import Icon from '../../Icon';
 import Heading from '../Heading';
 import { t } from '../../theme';
 
@@ -145,7 +145,7 @@ export default ({ title, subtitle, imageUrl, titleAttribute }) => {
           </TitleContainer>
         )}
         <ArrowContainer>
-          <ArrowDown />
+          <Icon icon="arrow-down" />
         </ArrowContainer>
       </ContentContainer>
     </Container>

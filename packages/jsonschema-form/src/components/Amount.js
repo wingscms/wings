@@ -67,8 +67,8 @@ export default props => {
         </label>
       ) : null}
       <InputRow amounts={amounts}>
-        {amounts.map(x => (
-          <AmountButton onClick={() => onChange(x)}>
+        {amounts.map((x, idx) => (
+          <AmountButton onClick={() => onChange(x)} key={idx}>
             {symbol} {x / 100}
           </AmountButton>
         ))}
