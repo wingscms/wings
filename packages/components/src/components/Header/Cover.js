@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { mediaUrl } from '@wingscms/sdk';
 import { getViewportDimensions } from '../../lib/utils';
-import Icon from '../../Icon';
+import Icon from '../Icon';
 import Heading from '../Heading';
 import { t } from '../../theme';
 
