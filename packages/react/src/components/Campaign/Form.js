@@ -610,8 +610,8 @@ class CampaignForm extends Component {
     const { paymentMethods } = fundraiser;
     return (
       <div>
-        {paymentMethods.map(method => (
-          <div style={{ marginTop: '10px' }}>
+        {paymentMethods.map((method, idx) => (
+          <div style={{ marginTop: '10px' }} key={idx}>
             <label style={{ fontSize: '16px', verticalAlign: 'middle' }}>
               <input
                 type="radio"
@@ -623,8 +623,8 @@ class CampaignForm extends Component {
                 onChange={this.handlePaymentMethodChange}
                 style={{ marginRight: '20px' }}
               />
-              {method.icons.map(icon => (
-                <PaymentMethodIcon src={icon.url} alt={method.title} />
+              {method.icons.map((icon, idx) => (
+                <PaymentMethodIcon src={icon.url} alt={method.title} key={idx} />
               ))}
             </label>
           </div>

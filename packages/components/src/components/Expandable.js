@@ -11,7 +11,7 @@ const ExpandableWrapper = styled.div`
   box-shadow: ${({ shadow }) => (shadow ? '0 0 20px 0 rgba(0, 0, 0, 0.05)' : 'none')};
   color: ${t((_, { backgroundColor }) =>
     _.contrastColor({ backgroundColor: backgroundColor || _.expandableBackgroundColor }),
-  )}
+  )};
   padding: 30px;
   margin: 40px 0;
   transition: all 0.2s linear;

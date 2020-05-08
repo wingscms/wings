@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React from 'react';
+import classnames from 'classnames';
 import styled from '../lib/styled';
 
 const StyledInput = styled.input`
@@ -56,14 +57,24 @@ function schemaRequiresTrueValue(schema) {
   }
 }
 
-export default props => {
-  let { required } = props;
-  const { schema, id, value, disabled, readonly, label, onBlur, onFocus, onChange } = props;
-
-  required = schema ? schemaRequiresTrueValue(schema) : required;
+export default ({
+  schema,
+  id,
+  value,
+  disabled,
+  readonly,
+  label,
+  onBlur,
+  onFocus,
+  onChange,
+  autofocus,
+  required: requiredProp,
+  ...props
+}) => {
+  const required = schema ? schemaRequiresTrueValue(schema) : requiredProp;
 
   return (
-    <div className={`checkbox ${disabled || readonly ? 'disabled' : ''}`}>
+    <div className={classnames('checkbox', { disabled: disabled || readonly })}>
       {schema && schema.description && <p>{schema.description}</p>}
       <StyledInput
         {...props}
@@ -75,12 +86,12 @@ export default props => {
         onChange={event => onChange(event.target.checked)}
         onBlur={onBlur && (event => onBlur(id, event.target.checked))}
         onFocus={onFocus && (event => onFocus(id, event.target.checked))}
+        autoFocus={autofocus}
       />
-      <StyledLabel
-        className={value ? 'checked' : ''}
-        htmlFor={id}
-        dangerouslySetInnerHTML={{ __html: `${label}${required ? '*' : ''}` }}
-      />
+      <StyledLabel className={value ? 'checked' : ''} htmlFor={id}>
+        {label}
+        {required ? '*' : ''}
+      </StyledLabel>
     </div>
   );
 };
