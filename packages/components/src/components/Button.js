@@ -10,9 +10,7 @@ const Icon = styled(_Icon)`
   width: 1.3em;
   vertical-align: middle;
   margin-right: ${t(_ => _.extraSmallSpacing)};
-  * {
-    fill: ${t((_, { intent }) => _.contrastColor({ backgroundColor: _.intentColor(intent) }))};
-  }
+  fill: currentColor;
 `;
 
 const Loading = styled(_Loading)`
