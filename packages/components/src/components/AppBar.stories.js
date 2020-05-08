@@ -1,8 +1,8 @@
 import React from 'react';
 import { boolean, color, number, select, text } from '@storybook/addon-knobs/react';
 import faker from 'faker';
-import styled from '../lib/styled';
-import { AppBar } from '..';
+import styled from 'styled-components';
+import { AppBar } from '@wingscms/components';
 
 const props = ({ position = AppBar.Position.TOP } = {}) => ({
   position: select('position', AppBar.Position, position),
