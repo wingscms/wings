@@ -56,7 +56,7 @@ class EmbedCard extends Component {
     percentage: 56,
   };
 
-  componentWillReceiveProps(props) {
+  UNSAFE_componentWillReceiveProps(props) {
     this.determineDimensions(props);
   }
 

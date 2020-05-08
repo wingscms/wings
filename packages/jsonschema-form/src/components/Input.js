@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 import styled, { css } from '../lib/styled';
 
 const StyledInput = styled.input`
@@ -32,7 +33,9 @@ function BaseInput(props) {
     id,
     value,
     readonly,
+    className,
     disabled,
+    autofocus,
     label,
     onBlur,
     onFocus,
@@ -94,7 +97,7 @@ function BaseInput(props) {
       ) : null}
       <StyledInput
         id={id}
-        className={`form-control ${props.className}`}
+        className={classnames('form-control', className)}
         readOnly={readonly}
         disabled={disabled}
         value={getInputValue()}
@@ -102,6 +105,7 @@ function BaseInput(props) {
         inputStyles={formContext.inputStyles}
         error={rawErrors && rawErrors.length}
         {...inputProps}
+        autoFocus={autofocus}
         onChange={_onChange}
         onBlur={onBlur && (event => onBlur(inputProps.id, event.target.value))}
         onFocus={onFocus && (event => onFocus(inputProps.id, event.target.value))}
