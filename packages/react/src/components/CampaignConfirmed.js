@@ -149,8 +149,8 @@ const CampaignConfirmed = ({
         <>
           <ShareTitle>{shareTitle}</ShareTitle>
           <SocialButtons>
-            {shareButtons.map(({ icon, url }) => (
-              <SocialButtons.Button icon={icon} url={url} />
+            {shareButtons.map(({ icon, url }, idx) => (
+              <SocialButtons.Button icon={icon} url={url} key={idx} />
             ))}
           </SocialButtons>
         </>
