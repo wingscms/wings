@@ -7,6 +7,7 @@ export { default as CounterBar } from './components/CounterBar';
 export { default as Drawer } from './components/Drawer';
 export { default as Expandable } from './components/Expandable';
 export { default as FlexGrid } from './components/FlexGrid';
+export { default as Footer } from './components/Footer';
 export { default as Gallery } from './components/Gallery';
 export { default as Header } from './components/Header';
 export { default as Icon } from './components/Icon';
