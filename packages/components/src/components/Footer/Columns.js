@@ -78,7 +78,17 @@ export default ({ columns }) => {
         wrapRow(row => {
           switch (row.type) {
             case 'text':
-              return <Text>{row.content}</Text>;
+              return (
+                <Text>
+                  {row.content
+                    .trim()
+                    .split('\n')
+                    .reduce((arr, text, i) => {
+                      if (i === 0) return [text.trim()];
+                      return [...arr, <br />, text.trim()];
+                    }, [])}
+                </Text>
+              );
             case 'link':
               return (
                 <Text>
