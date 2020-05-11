@@ -12,9 +12,9 @@ const Wrap = styled.div`
   width: 100%;
   display: block;
   text-align: center;
-  padding: 40px 0 80px 0;
+  padding: ${t(_ => `${_.mediumSpacing} 0 ${_.largeSpacing} 0`)};
   @media screen and (min-width: 800px) {
-    padding: 80px 40px;
+    padding: ${t(_ => `${_.mediumSpacing} ${_.largeSpacing}`)};
   }
 `;
 
@@ -36,16 +36,15 @@ const CTASection = styled(Section)`
   font-weight: bolder;
   font-size: 24px;
   line-height: 1.2;
-
   .title {
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: ${t(_ => _.smallSpacing)};
     text-transform: ${t(_ => _.uppercaseTitles)};
   }
 `;
 
 const Logo = styled.img`
-  max-height: 80px;
+  max-height: ${t(_ => _.largeSpacing)};
 `;
 
 const Footer = ({ children, columns, logo = {}, title, ...props }) => {

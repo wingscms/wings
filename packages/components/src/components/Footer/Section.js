@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { t } from '../../theme';
 
 export default styled.div`
-  padding: 20px 20px 0;
+  padding: ${t(_ => `${_.smallSpacing} ${_.smallSpacing} 0`)};
   color: inherit;
   text-align: left;
   font-size: 16px;
@@ -22,14 +22,14 @@ export default styled.div`
     min-width: 100%;
   }
   @media screen and (min-width: 800px) {
-    padding: 20px;
+    padding: ${t(_ => _.smallSpacing)};
   }
   .title {
     font-family: ${t(_ => _.headerFontFamily)};
     text-transform: ${t(_ => _.uppercaseTitles)};
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: ${t(_ => _.smallSpacing)};
   }
   a.footerLink {
     color: inherit;
