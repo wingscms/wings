@@ -1,8 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import fP from 'filter-invalid-dom-props';
+import styled from '../../lib/styled';
 import { t } from '../../theme';
-
 import Columns from './Columns';
 
 const Wrap = styled.div`

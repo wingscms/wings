@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button } from '@wingscms/components';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 import { t } from '../../theme';
+import Button from '../Button';
 import SocialButtons from '../SocialButtons';
 
 const Column = styled.div`
