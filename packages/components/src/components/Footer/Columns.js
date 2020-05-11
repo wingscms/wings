@@ -69,6 +69,18 @@ const wrapRow = fn => (row, idx) => (
   </React.Fragment>
 );
 
+const Image = styled.img`
+  max-width: 100%;
+`;
+
+const ImageRow = ({ src, alt, url }) => {
+  const image = <Image src={src} alt={alt} />;
+  if (url) {
+    return <a href={url}>{image}</a>;
+  }
+  return image;
+};
+
 export default ({ columns }) => {
   if (!columns) return null;
   return columns.map((column, idx) => (
@@ -89,6 +101,8 @@ export default ({ columns }) => {
                     }, [])}
                 </Text>
               );
+            case 'image':
+              return <ImageRow src={row.src} alt={row.alt} url={row.url} />;
             case 'link':
               return (
                 <Text>

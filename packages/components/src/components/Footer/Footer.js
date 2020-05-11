@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import fP from 'filter-invalid-dom-props';
-import { t, useTheme } from '../../theme';
+import { t } from '../../theme';
 
 import Columns from './Columns';
 
@@ -26,34 +26,12 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  img {
-    margin: 0;
-  }
 `;
 
-const Logo = styled.img`
-  max-height: ${t(_ => _.largeSpacing)};
-`;
-
-const Footer = ({ children, columns, logo = {}, title, ...props }) => {
-  const _ = useTheme();
-
+const Footer = ({ children, columns, title, ...props }) => {
   return (
     <Wrap {...fP(props)}>
       <Container>
-        {title || _.logoImageUrl ? (
-          <CTASection>
-            <h2 className="title">{title}</h2>
-            <div>
-              {logo.url ||
-                (_.footerLogoImageUrl && (
-                  <a href="/">
-                    <Logo src={logo.url || _.footerLogoImageUrl} alt="logo" />
-                  </a>
-                ))}
-            </div>
-          </CTASection>
-        ) : null}
         {columns && <Columns columns={columns} />}
         {children}
       </Container>

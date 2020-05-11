@@ -3,7 +3,20 @@ import { object } from '@storybook/addon-knobs';
 import faker from 'faker';
 import { Footer } from '@wingscms/components';
 
+import { image } from '../../../../utils';
+
 const columns = [
+  {
+    title: 'Wings',
+    rows: [
+      {
+        type: 'image',
+        src: image(320, 100),
+        alt: 'Wings',
+        url: 'https://wings.dev',
+      },
+    ],
+  },
   {
     title: 'Contact',
     rows: [
