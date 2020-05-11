@@ -31,7 +31,6 @@ export { default as Campaign } from './components/Campaign/Campaign';
 export { default as CampaignConfirmed } from './components/CampaignConfirmed';
 export { default as Article } from './components/Article';
 export { default as Page } from './components/Page';
-export { default as Footer } from './components/Footer';
 
 export {
   allCards,
