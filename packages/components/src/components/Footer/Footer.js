@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import fP from 'filter-invalid-dom-props';
 import { t, useTheme } from '../../theme';
 
-import Section from './Section';
-import FooterColumns from './FooterColumns';
+import Columns from './Columns';
 
 const Wrap = styled.div`
   background-color: ${t(_ => _.footerBackgroundColor)};
@@ -32,17 +31,6 @@ const Container = styled.div`
   }
 `;
 
-const CTASection = styled(Section)`
-  font-weight: bolder;
-  font-size: 24px;
-  line-height: 1.2;
-  .title {
-    font-weight: bold;
-    margin-bottom: ${t(_ => _.smallSpacing)};
-    text-transform: ${t(_ => _.uppercaseTitles)};
-  }
-`;
-
 const Logo = styled.img`
   max-height: ${t(_ => _.largeSpacing)};
 `;
@@ -66,7 +54,7 @@ const Footer = ({ children, columns, logo = {}, title, ...props }) => {
             </div>
           </CTASection>
         ) : null}
-        {columns && <FooterColumns columns={columns} />}
+        {columns && <Columns columns={columns} />}
         {children}
       </Container>
     </Wrap>

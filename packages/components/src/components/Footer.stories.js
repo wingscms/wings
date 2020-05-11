@@ -8,10 +8,20 @@ const columns = [
     title: 'Contact',
     rows: [
       {
+        title: 'Address',
         type: 'text',
-        content: '67 Blahblah, Some City, Somewhere',
+        content: '67 Blahblah',
       },
       {
+        type: 'text',
+        content: 'Some City',
+      },
+      {
+        type: 'text',
+        content: 'Somewhere',
+      },
+      {
+        title: 'Email',
         type: 'link',
         url: 'mailto:info@wings.dev',
         content: 'info@wings.dev',
