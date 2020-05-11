@@ -6,6 +6,9 @@ import Renderer from '@dailybeast/mobiledoc-react-renderer';
 import { Link } from '@wingscms/components';
 import styled from '../lib/styled';
 
+const MARKUP_MARKER_TYPE = 0;
+const ATOM_MARKER_TYPE = 1;
+
 Renderer03.prototype.parseProps = function parseProps(attrss) {
   if (attrss) {
     return {
@@ -14,6 +17,52 @@ Renderer03.prototype.parseProps = function parseProps(attrss) {
     };
   }
   return null;
+};
+
+Renderer03.prototype.renderMarkersOnElement = function renderMarkersOnElement(element, markers) {
+  const elements = [element];
+  const pushElement = openedElement => {
+    element.props.children.push(openedElement);
+    elements.push(openedElement);
+    element = openedElement;
+  };
+
+  markers.forEach((marker, idx) => {
+    let [type, openTypes, closeCount, value] = marker; // eslint-disable-line prefer-const
+    openTypes.forEach(openType => {
+      const [TagName, attrs] = this.mobiledoc.markups[openType];
+      const props = { children: [], ...this.parseProps(attrs) };
+
+      if (TagName) {
+        const definedMarkup = this.markups.find(markup => markup.name === TagName);
+        if (definedMarkup) {
+          const { render: Markup } = definedMarkup;
+          pushElement(<Markup key={idx} {...props} {...this.additionalProps} />);
+        } else {
+          pushElement(<TagName key={idx} {...props} />);
+        }
+      } else {
+        closeCount -= 1;
+      }
+    });
+
+    switch (type) {
+      case MARKUP_MARKER_TYPE:
+        element.props.children.push(value);
+        break;
+      case ATOM_MARKER_TYPE:
+        element.props.children.push(this.renderAtomSection(value));
+        break;
+      default:
+    }
+
+    for (let j = 0, m = closeCount; j < m; j += 1) {
+      elements.pop();
+      element = elements[elements.length - 1];
+    }
+  });
+
+  return element;
 };
 
 class MobiledocRenderer extends Component {
