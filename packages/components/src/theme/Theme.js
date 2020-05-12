@@ -213,12 +213,12 @@ export default class Theme {
     return this.variables.navigationMenuBackgroundColor || this.backgroundColor;
   }
 
-  get progressBarColor() {
-    return this.variables.progressBarColor || this.primaryColor;
+  get scrollBarColor() {
+    return this.variables.scrollBarColor || this.primaryColor;
   }
 
-  get progressBarBackgroundColor() {
-    return this.variables.progressBarColor || this.elementBackgroundColor;
+  get scrollBarBackgroundColor() {
+    return this.variables.scrollBarColor || this.elementBackgroundColor;
   }
 
   get shareButtonBackgroundColor() {

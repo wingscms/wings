@@ -1,62 +1,36 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable no-mixed-operators */
+
+import React from 'react';
 import fP from 'filter-invalid-dom-props';
 import styled from '../lib/styled';
 import { t } from '../theme';
 
-const Position = {
-  FIXED: 'fixed',
-  RELATIVE: 'relative',
-};
-
-const Container = styled.div`
-  position: ${({ position }) => position};
-  display: block;
-  height: 5px;
+const StyledCounter = styled.div`
   width: 100%;
-  background-color: ${t(_ => _.progressBarBackgroundColor)};
-  top: 0;
-  left: 0;
-  z-index: 20;
+  height: ${({ height }) => `${height}px`};
+  border-radius: 7.5px;
+  background-color: transparent;
+  border: 1px solid ${t((_, { barColor, intent }) => barColor || _.intentColor(intent))};
 `;
 
-const Inner = styled.div`
-  height: 100%;
-  width: ${({ percentage }) => percentage}%;
-  background-color: ${t((_, { barColor }) => barColor || _.progressBarColor)};
-  transition: width 0.1s ease-out;
+const StyledCounterInner = styled(StyledCounter)`
+  width: ${props => `${props.width || 0}%`};
+  height: ${({ height }) => `${height - 2}px` || '12px'};
+  margin-top: 0;
+  background-color: ${t((_, { barColor, intent }) => barColor || _.intentColor(intent))};
 `;
 
-const ProgressBar = ({
-  barColor,
-  percentage = 0,
-  position = Position.FIXED,
-  useWindowScrollPosition,
-  ...props
-}) => {
-  const [windowScrollPercentage, setWindowScrollPercentage] = useState(0);
-  const updatePercentage = () =>
-    requestAnimationFrame(() => {
-      const { scrollY, innerHeight, document } = window;
-      const p = (100 / (document.body.clientHeight - innerHeight)) * scrollY;
-      setWindowScrollPercentage(p);
-    });
-
-  if (useWindowScrollPosition && typeof window !== undefined)
-    useEffect(() => {
-      window.addEventListener('scroll', updatePercentage);
-      return () => window.removeEventListener('scroll', updatePercentage);
-    }, []);
-
+export default function ProgressBar({ barColor, current, max, height = 12, intent, ...props }) {
+  const width = current >= max ? 100 : (100 / max) * current;
   return (
-    <Container position={position} {...fP(props)}>
-      <Inner
+    <StyledCounter barColor={barColor} intent={intent} height={height} {...fP(props)}>
+      <StyledCounterInner
         barColor={barColor}
-        percentage={useWindowScrollPosition ? windowScrollPercentage : percentage}
+        intent={intent}
+        height={height}
+        width={width}
+        {...props}
       />
-    </Container>
+    </StyledCounter>
   );
-};
-
-ProgressBar.Position = Position;
-
-export default ProgressBar;
+}

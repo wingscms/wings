@@ -1,7 +1,7 @@
 import React from 'react';
 import fP from 'filter-invalid-dom-props';
 import styled from '../lib/styled';
-import CounterBar from './CounterBar';
+import ProgressBar from './ProgressBar';
 import { t } from '../theme';
 import CountUp from 'react-countup';
 
@@ -79,7 +79,7 @@ export default ({
       </TopContainer>
       {!goal ? null : (
         <>
-          <CounterBar barColor={barColor} intent="primary" current={current} max={goal} />
+          <ProgressBar barColor={barColor} intent="primary" current={current} max={goal} />
           <GoalText>{goalText}</GoalText>
         </>
       )}

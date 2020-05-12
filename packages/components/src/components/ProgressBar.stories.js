@@ -1,28 +1,13 @@
 import React from 'react';
 import { color, number, select } from '@storybook/addon-knobs/react';
-import { ProgressBar } from '@wingscms/components';
-import styled from 'styled-components';
-
-const Container = styled.div`
-  height: 200vh;
-`;
+import { ProgressBar, Theme } from '@wingscms/components';
 
 export default () => (
-  <Container>
-    <ProgressBar
-      percentage={number('percentage', 14, { range: true, min: 0, max: 100 })}
-      barColor={color('barColor')}
-      position={select('position', ProgressBar.Position, ProgressBar.Position.FIXED)}
-    />
-  </Container>
-);
-
-export const useWindowScrollPosition = () => (
-  <Container>
-    <ProgressBar
-      barColor={color('barColor')}
-      position={select('position', ProgressBar.Position, ProgressBar.Position.FIXED)}
-      useWindowScrollPosition={true}
-    />
-  </Container>
+  <ProgressBar
+    intent={select('intent', Theme.Intent, 'primary')}
+    max={number('max', 100)}
+    current={number('current', 76)}
+    height={number('height', 12)}
+    barColor={color('barColor')}
+  />
 );
