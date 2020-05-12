@@ -117,6 +117,19 @@ export default class Theme {
     return this.variables.extraSmallSpacing || this.calc(this.mediumSpacing, ms => ms / 4);
   }
 
+  get footerBackgroundColor() {
+    return this.variables.footerBackgroundColor || this.primaryColor;
+  }
+
+  get footerTextColor() {
+    return (
+      this.variables.footerTextColor ||
+      this.contrastColor({
+        backgroundColor: this.footerBackgroundColor,
+      })
+    );
+  }
+
   get formBackgroundColor() {
     return this.variables.formBackgroundColor || this.primaryColor;
   }
