@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.25.0](https://github.com/wingscms/wings/compare/@wingscms/components@0.24.0...@wingscms/components@0.25.0) (2020-05-12)
+
+
+### Features
+
+* add ScrollBar to components library; rename CounterBar to ProgressBar ([#436](https://github.com/wingscms/wings/issues/436)) ([5c45d5f](https://github.com/wingscms/wings/commit/5c45d5f8bb55be6a63464e5957e712a70f94c978))
+* AppBar component ([#434](https://github.com/wingscms/wings/issues/434)) ([0969bdc](https://github.com/wingscms/wings/commit/0969bdc1a99f32705e0f3401638fd5453e669f45))
+* campaign confirmed and share buttons ([#452](https://github.com/wingscms/wings/issues/452)) ([da7946a](https://github.com/wingscms/wings/commit/da7946a51988c2ec728669f235dc1614163192da))
+* move Footer to components package ([#457](https://github.com/wingscms/wings/issues/457)) ([789b44a](https://github.com/wingscms/wings/commit/789b44ab275b174e24addc698df775a40b38a0d8))
+
+
+
+
+
 # [0.24.0](https://github.com/wingscms/wings/compare/@wingscms/components@0.23.0...@wingscms/components@0.24.0) (2020-04-24)
 
 
