@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import fP from 'filter-invalid-dom-props';
 import styled from '../lib/styled';
 import { t } from '../theme';
 
@@ -10,11 +11,9 @@ const Position = {
 const Container = styled.div`
   position: ${({ position }) => position};
   display: block;
-  height: ${({ height }) => height};
+  height: 5px;
   width: 100%;
-  background-color: ${t(
-    (_, { backgroundColor }) => backgroundColor || _.progressBarBackgroundColor,
-  )};
+  background-color: ${t(_ => _.progressBarBackgroundColor)};
   top: 0;
   left: 0;
   z-index: 20;
@@ -29,8 +28,6 @@ const Inner = styled.div`
 
 const ProgressBar = ({
   barColor,
-  backgroundColor,
-  height = '5px',
   percentage = 0,
   position = Position.FIXED,
   useWindowScrollPosition,
@@ -51,7 +48,7 @@ const ProgressBar = ({
     }, []);
 
   return (
-    <Container backgroundColor={backgroundColor} position={position} height={height} {...props}>
+    <Container position={position} {...fP(props)}>
       <Inner
         barColor={barColor}
         percentage={useWindowScrollPosition ? windowScrollPercentage : percentage}
