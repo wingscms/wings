@@ -77,6 +77,14 @@ export default class Theme {
     return [val, unit];
   }
 
+  get appBarBackgroundColor() {
+    return this.variables.appBarBackgroundColor || this.elementBackgroundColor;
+  }
+
+  get appBarHeight() {
+    return this.variables.appBarHeight || this.largeSpacing;
+  }
+
   get burgerColor() {
     return this.variables.burgerColor || this.iconColor;
   }
