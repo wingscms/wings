@@ -21,26 +21,29 @@ const Inner = styled.div`
   transition: width 0.1s ease-out;
 `;
 
-export default function ScrollBar({ barColor, percentage = 0, useWindowScrollPosition, ...props }) {
+export default function ScrollBar({ barColor, percentage, ...props }) {
   const [windowScrollPercentage, setWindowScrollPercentage] = useState(0);
-  const updatePercentage = () =>
+  const updatePercentage = () => {
+    if (typeof percentage === 'number') return;
     requestAnimationFrame(() => {
       const { scrollY, innerHeight, document } = window;
       const p = (100 / (document.body.clientHeight - innerHeight)) * scrollY;
       setWindowScrollPercentage(p);
     });
+  };
 
-  if (useWindowScrollPosition && typeof window !== undefined)
-    useEffect(() => {
+  useEffect(() => {
+    if (typeof window !== undefined) {
       window.addEventListener('scroll', updatePercentage);
       return () => window.removeEventListener('scroll', updatePercentage);
-    }, []);
+    }
+  }, []);
 
   return (
     <Container {...fP(props)}>
       <Inner
         barColor={barColor}
-        percentage={useWindowScrollPosition ? windowScrollPercentage : percentage}
+        percentage={typeof percentage === 'number' ? percentage : windowScrollPercentage}
       />
     </Container>
   );
