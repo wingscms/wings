@@ -1,4 +1,5 @@
 import React from 'react';
+import fP from 'filter-invalid-dom-props';
 import styled, { css } from '../lib/styled';
 import { t } from '../theme';
 
@@ -34,34 +35,18 @@ const getPosition = ({ position, open }) => {
 
 const Container = styled.div`
   position: fixed;
-  height: ${t((_, { height }) => height || _.appBarHeight)};
+  height: ${t(_ => _.appBarHeight)};
   opacity: 1;
   width: 100%;
-  background-color: ${t((_, { backgroundColor }) => backgroundColor || _.appBarBackgroundColor)};
-  z-index: ${({ zIndex }) => zIndex};
+  background-color: ${t(_ => _.appBarBackgroundColor)};
+  z-index: 100;
   transform: none;
   transition: 0.1s all linear;
   ${getPosition}
 `;
 
-const AppBar = ({
-  backgroundColor,
-  height,
-  open = true,
-  position = Position.BOTTOM,
-  zIndex = 100,
-  ...props
-}) => {
-  return (
-    <Container
-      backgroundColor={backgroundColor}
-      height={height}
-      open={open}
-      position={position}
-      zIndex={zIndex}
-      {...props}
-    />
-  );
+const AppBar = ({ open = true, position = Position.BOTTOM, ...props }) => {
+  return <Container open={open} position={position} {...fP(props)} />;
 };
 
 AppBar.Position = Position;

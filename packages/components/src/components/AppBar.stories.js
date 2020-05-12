@@ -1,15 +1,12 @@
 import React from 'react';
-import { boolean, color, number, select, text } from '@storybook/addon-knobs/react';
+import { boolean, select } from '@storybook/addon-knobs/react';
 import faker from 'faker';
 import styled from 'styled-components';
 import { AppBar } from '@wingscms/components';
 
 const props = ({ position = AppBar.Position.TOP } = {}) => ({
   position: select('position', AppBar.Position, position),
-  backgroundColor: color('backgroundColor'),
   open: boolean('open', true),
-  height: text('height', '80px'),
-  zIndex: number('zIndex', 100),
 });
 
 const ExampleContent = styled.div`
