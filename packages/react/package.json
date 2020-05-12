@@ -32,7 +32,7 @@
     "filter-invalid-dom-props": "^2.0.0",
     "lodash.includes": "^4.3.0",
     "mobiledoc-dom-renderer": "^0.7.0",
-    "mobiledoc-kit": "^0.12.1",
+    "mobiledoc-kit": "^0.13.0",
     "qs": "^6.9.1",
     "raf": "^3.4.1",
     "react-intl": "^4.4.0",

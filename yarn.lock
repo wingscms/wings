@@ -11662,18 +11662,18 @@ mobiledoc-dom-renderer@0.7.0, mobiledoc-dom-renderer@^0.7.0:
   resolved "https://registry.yarnpkg.com/mobiledoc-dom-renderer/-/mobiledoc-dom-renderer-0.7.0.tgz#53ab5f14dd612b16f03513390e5cbcc2b89f6979"
   integrity sha512-A+gT6D4Ru3DKY7ZYOBRORmwhRJ7rDj2vy75D2dWuZS5NgX0mCmGs0yN7qs48YlxvfCif8RFpYsaaPg6Kc3MdJg==
 
-mobiledoc-kit@^0.12.1:
-  version "0.12.1"
-  resolved "https://registry.yarnpkg.com/mobiledoc-kit/-/mobiledoc-kit-0.12.1.tgz#a0341deae172ed774c8205fcace72340e978c59b"
-  integrity sha512-2XaGbGlJ5/DGhOlFEys7zVylFhCYL4FbOkXOzLxrFXMDnhBuP3+4YAwNFaLKOUlZ0a+UL6m2S3I8MZwe37xRAg==
+mobiledoc-kit@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/mobiledoc-kit/-/mobiledoc-kit-0.13.0.tgz#c70da1e9d76a57d7392c6b9f19879ca8075320b0"
+  integrity sha512-eCAdO4nwvaS8PwIltX8zNWKAnw+t2qexfxfxtMrwi57HZL3gqV5TnWYHtESKFR50Tdr1QZFGpzCoFIPdjXIa5g==
   dependencies:
     mobiledoc-dom-renderer "0.7.0"
-    mobiledoc-text-renderer "0.4.0"
+    mobiledoc-text-renderer "0.4.1"
 
-mobiledoc-text-renderer@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/mobiledoc-text-renderer/-/mobiledoc-text-renderer-0.4.0.tgz#473fbe50aa6cde2c3b449752f3b984834dc824d2"
-  integrity sha512-+Tzfo0hhUFxS0n5FWZ0nf6WUrvnVmsxaIdq0CyeLYD1lk8oW2ml+6WLdeLlzKM5OYYi3PWV6NR9HCUG01cdvWQ==
+mobiledoc-text-renderer@0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/mobiledoc-text-renderer/-/mobiledoc-text-renderer-0.4.1.tgz#a3dbab2771e209faf208736fd44e2e040ceb76fc"
+  integrity sha512-lTu8zCjcBJPRMaHeqoS1vECw3hczxQQjdmqtGSKa3yGHIuozmcWqOGPGrrIcsc4W018dAG/nPdsJiUp+9UkWGw==
 
 modify-values@^1.0.0:
   version "1.0.1"
