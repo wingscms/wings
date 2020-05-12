@@ -21,6 +21,7 @@ const Inner = styled.div`
   transition: width 0.1s ease-out;
 `;
 
+// NOTE: possibly add ref to update scroll position for non-window element
 export default function ScrollBar({ barColor, percentage, ...props }) {
   const [windowScrollPercentage, setWindowScrollPercentage] = useState(0);
   const updatePercentage = () => {
