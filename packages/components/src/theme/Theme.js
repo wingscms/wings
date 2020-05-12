@@ -188,10 +188,6 @@ export default class Theme {
     return this.variables.linkSecondaryColor || this.secondaryColor;
   }
 
-  get menuItemBackgroundColor() {
-    return this.variables.menuItemBackgroundColor || this.elementBackgroundColor;
-  }
-
   get navigationIconColor() {
     return this.variables.navigationIconColor || this.iconColor;
   }
