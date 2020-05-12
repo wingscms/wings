@@ -1,19 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
-import Renderer03 from '@dailybeast/mobiledoc-react-renderer/dist/renderers/0-3';
-import Renderer from '@dailybeast/mobiledoc-react-renderer';
+import Renderer from '@wingscms/mobiledoc-renderer';
 import styled from '../lib/styled';
-
-Renderer03.prototype.parseProps = function parseProps(attrss) {
-  if (attrss) {
-    return {
-      [attrss[0]]: attrss[1],
-      [attrss[2]]: attrss[3],
-    };
-  }
-  return null;
-};
 
 class MobiledocRenderer extends Component {
   static propTypes = {
