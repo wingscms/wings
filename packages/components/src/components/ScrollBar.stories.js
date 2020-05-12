@@ -7,7 +7,7 @@ const Container = styled.div`
   height: 200vh;
 `;
 
-export default () => (
+export const Controlled = () => (
   <Container>
     <ScrollBar
       percentage={number('percentage', 14, { range: true, min: 0, max: 100 })}
@@ -16,8 +16,8 @@ export default () => (
   </Container>
 );
 
-export const useWindowScrollPosition = () => (
+export const Uncontrolled = () => (
   <Container>
-    <ScrollBar barColor={color('barColor')} useWindowScrollPosition={true} />
+    <ScrollBar barColor={color('barColor')} />
   </Container>
 );
