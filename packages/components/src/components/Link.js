@@ -51,16 +51,15 @@ const _Link = styled.a`
   ${t((_, { linkStyle }) => CSS[linkStyle] || CSS[_.linkStyle])}
 `;
 
-const Link = ({ primaryColor, secondaryColor, linkStyle, ...props }) => (
-  <_Link
-    primaryColor={primaryColor}
-    secondaryColor={secondaryColor}
-    linkStyle={linkStyle}
-    {...props}
-  />
-);
+export default function Link({ primaryColor, secondaryColor, linkStyle, ...props }) {
+  return (
+    <_Link
+      primaryColor={primaryColor}
+      secondaryColor={secondaryColor}
+      linkStyle={linkStyle}
+      {...props}
+    />
+  );
+}
 
 Link.Style = Style;
-Link.CSS = CSS;
-
-export default Link;

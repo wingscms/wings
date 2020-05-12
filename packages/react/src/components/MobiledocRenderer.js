@@ -118,29 +118,6 @@ export default styled(MobiledocRenderer)`
   @media screen and (min-width: 800px) {
     font-size: 23px;
   }
-  ol a,
-  ul a {
-    color: ${({ theme }) => theme.textColor};
-    text-decoration: none;
-    background-image: linear-gradient(
-      120deg,
-      ${({ theme }) => theme.primaryColor} 0%,
-      ${({ theme }) => theme.primaryColor} 100%
-    );
-    background-repeat: no-repeat;
-    background-size: 100% 2px;
-    background-position: 0% 100%;
-    transition: background-size 0.1s linear;
-    &:hover,
-    &:focus {
-      background-size: 100% 4px;
-      background-image: linear-gradient(
-        120deg,
-        ${({ theme }) => theme.primaryColor} 0%,
-        ${({ theme }) => theme.primaryColor} 100%
-      );
-    }
-  }
   color: ${({ theme }) => theme.textColor};
   padding-bottom: ${({ mini }) => (mini ? '0' : '40px')};
   font-weight: ${({ theme }) => theme.bodyFontWeight};
