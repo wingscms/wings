@@ -1,12 +1,14 @@
+export { default as AppBar } from './components/AppBar';
 export { default as Breakout } from './components/Breakout';
 export { default as Burger } from './components/Burger';
 export { default as Button } from './components/Button';
 export { default as Card } from './components/Card';
 export { default as Counter } from './components/Counter';
-export { default as CounterBar } from './components/CounterBar';
+export { default as ProgressBar } from './components/ProgressBar';
 export { default as Drawer } from './components/Drawer';
 export { default as Expandable } from './components/Expandable';
 export { default as FlexGrid } from './components/FlexGrid';
+export { default as Footer } from './components/Footer';
 export { default as Gallery } from './components/Gallery';
 export { default as Header } from './components/Header';
 export { default as Icon } from './components/Icon';
@@ -15,8 +17,8 @@ export { default as Link } from './components/Link';
 export { default as Loading } from './components/Loading';
 export { default as MenuButton } from './components/MenuButton';
 export { default as PaginationControls } from './components/PaginationControls';
+export { default as ScrollBar } from './components/ScrollBar';
 export { default as SocialButtons } from './components/SocialButtons';
-
 export { default as Theme, t, useTheme, ThemeProvider } from './theme';
 export { default as useDimensions } from './hooks/useDimensions';
 export { ALIGNLEFT, ALIGNRIGHT, wide } from './styles';

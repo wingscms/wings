@@ -77,6 +77,14 @@ export default class Theme {
     return [val, unit];
   }
 
+  get appBarBackgroundColor() {
+    return this.variables.appBarBackgroundColor || this.elementBackgroundColor;
+  }
+
+  get appBarHeight() {
+    return this.variables.appBarHeight || this.largeSpacing;
+  }
+
   get burgerColor() {
     return this.variables.burgerColor || this.iconColor;
   }
@@ -107,6 +115,19 @@ export default class Theme {
 
   get extraSmallSpacing() {
     return this.variables.extraSmallSpacing || this.calc(this.mediumSpacing, ms => ms / 4);
+  }
+
+  get footerBackgroundColor() {
+    return this.variables.footerBackgroundColor || this.primaryColor;
+  }
+
+  get footerTextColor() {
+    return (
+      this.variables.footerTextColor ||
+      this.contrastColor({
+        backgroundColor: this.footerBackgroundColor,
+      })
+    );
   }
 
   get formBackgroundColor() {
@@ -198,6 +219,14 @@ export default class Theme {
 
   get navigationMenuBackgroundColor() {
     return this.variables.navigationMenuBackgroundColor || this.backgroundColor;
+  }
+
+  get scrollBarColor() {
+    return this.variables.scrollBarColor || this.primaryColor;
+  }
+
+  get scrollBarBackgroundColor() {
+    return this.variables.scrollBarColor || this.elementBackgroundColor;
   }
 
   get shareButtonBackgroundColor() {
