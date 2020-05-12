@@ -1,13 +1,23 @@
 import styled from '../lib/styled';
 
-// eslint-disable-next-line
+const AlignItems = {
+  START: 'flex-start',
+  CENTER: 'middle',
+  END: 'flex-end',
+};
+
+const JustifyContent = {
+  START: 'flex-start',
+  CENTER: 'center',
+  END: 'flex-end',
+};
+
 const calculatePercentage = n => 100 / n;
 const getDivisions = n => n || 4;
 const getMargins = n => (n || 0) * 2;
 
-// Return css calc() for witdh of item.
-const returnCalc = (screen, props) => {
-  const { divisions, tabletDivisions, mobileDivisions, margins } = props;
+// TODO: use theme breakpoints for sizes
+const getCalc = (screen, { divisions, tabletDivisions, mobileDivisions, margins }) => {
   switch (screen) {
     case 'mobile':
       return `calc(${calculatePercentage(getDivisions(mobileDivisions || 1))}% - ${getMargins(
@@ -25,32 +35,35 @@ const returnCalc = (screen, props) => {
 
 const FlexGrid = styled.div`
   display: flex;
-  flex-direction: ${props => props.flexDirection || 'row'};
-  flex-wrap: ${props => props.flexWrap || 'wrap'};
-  align-items: ${props => props.alignItems || 'flex-start'};
-  justify-content: ${props => props.justifyContent || 'center'};
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: ${({ alignItems }) => alignItems || AlignItems.START};
+  justify-content: ${({ justifyContent }) => justifyContent || JustifyContent.CENTER};
   width: 100%;
   height: auto;
   & > * {
-    width: ${props => returnCalc('desktop', props)};
-    max-width: ${props => returnCalc('desktop', props)};
-    min-width: ${props => returnCalc('desktop', props)};
-    flex: 0 0 ${props => returnCalc('desktop', props)};
-    margin: ${props => `${props.margins}px`};
+    width: ${props => getCalc('desktop', props)};
+    max-width: ${props => getCalc('desktop', props)};
+    min-width: ${props => getCalc('desktop', props)};
+    flex: 0 0 ${props => getCalc('desktop', props)};
+    margin: ${({ margins }) => `${margins}px`};
     height: auto;
     @media screen and (max-width: 900px) {
-      width: ${props => returnCalc('tablet', props)};
-      max-width: ${props => returnCalc('tablet', props)};
-      min-width: ${props => returnCalc('tablet', props)};
-      flex: 0 0 ${props => returnCalc('tablet', props)};
+      width: ${props => getCalc('tablet', props)};
+      max-width: ${props => getCalc('tablet', props)};
+      min-width: ${props => getCalc('tablet', props)};
+      flex: 0 0 ${props => getCalc('tablet', props)};
     }
     @media screen and (max-width: 645px) {
-      width: ${props => returnCalc('mobile', props)};
-      max-width: ${props => returnCalc('mobile', props)};
-      min-width: ${props => returnCalc('mobile', props)};
-      flex: 0 0 ${props => returnCalc('mobile', props)};
+      width: ${props => getCalc('mobile', props)};
+      max-width: ${props => getCalc('mobile', props)};
+      min-width: ${props => getCalc('mobile', props)};
+      flex: 0 0 ${props => getCalc('mobile', props)};
     }
   }
 `;
+
+FlexGrid.AlignItems = AlignItems;
+FlexGrid.JustifyContent = JustifyContent;
 
 export default FlexGrid;
