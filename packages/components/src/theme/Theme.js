@@ -213,6 +213,14 @@ export default class Theme {
     return this.variables.navigationMenuBackgroundColor || this.backgroundColor;
   }
 
+  get scrollBarColor() {
+    return this.variables.scrollBarColor || this.primaryColor;
+  }
+
+  get scrollBarBackgroundColor() {
+    return this.variables.scrollBarColor || this.elementBackgroundColor;
+  }
+
   get shareButtonBackgroundColor() {
     return this.variables.shareButtonBackgroundColor || this.primaryColor;
   }
