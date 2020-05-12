@@ -45,9 +45,9 @@ const Container = styled.div`
   ${getPosition}
 `;
 
-const AppBar = ({ open = true, position = Position.BOTTOM, ...props }) => {
+function AppBar({ open = true, position = Position.BOTTOM, ...props }) {
   return <Container open={open} position={position} {...fP(props)} />;
-};
+}
 
 AppBar.Position = Position;
 
