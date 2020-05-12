@@ -18,8 +18,6 @@
     "rollup": "1.28.0"
   },
   "peerDependencies": {
-    "react": "^16",
-    "react-dom": "^16",
-    "styled-components": "^5"
+    "react": "^16"
   }
 }
