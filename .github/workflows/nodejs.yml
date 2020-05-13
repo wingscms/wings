@@ -17,7 +17,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: install, build, test
+    - name: Test
       run: |
         npx yarn
         npx yarn test
@@ -37,7 +37,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 10.x
-    - name: release
+    - name: Release
       run: |
         echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
         npx yarn
