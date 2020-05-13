@@ -59,6 +59,7 @@
     "eslint-plugin-react": "7.19.0",
     "faker": "4.1.0",
     "graphql": "14.6.0",
+    "graphql-request": "^1.8.2",
     "graphql-tools": "4.0.8",
     "husky": "3.0.9",
     "identity-obj-proxy": "3.0.0",
