@@ -2,9 +2,9 @@ import React, { createContext, useContext } from 'react';
 
 const WingsContext = createContext(null);
 
-export default ({ client, children }) => (
-  <WingsContext.Provider value={client}>{children}</WingsContext.Provider>
-);
+export default function WingsProvider({ client, children }) {
+  return <WingsContext.Provider value={client}>{children}</WingsContext.Provider>;
+}
 
 export const useWings = () => useContext(WingsContext);
 

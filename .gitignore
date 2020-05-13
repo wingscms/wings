@@ -11,3 +11,4 @@ lerna-debug.log
 .wings/data/**
 !.wings/data/.gitkeep
 .jest/public
+coverage

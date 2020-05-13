@@ -155,7 +155,7 @@ const CounterContainer = styled.div`
   }
 `;
 
-export default ({
+export default function Campaign({
   id,
   resourceType,
   node: _node = {},
@@ -166,7 +166,7 @@ export default ({
   signatureCount: _signatureCount,
   signatureGoal: _signatureGoal,
   ...props
-}) => {
+}) {
   const intl = useIntl();
   const { width } = useDimensions();
   const campaignContainerRef = useRef(null);
@@ -304,4 +304,4 @@ export default ({
     </>
   );
   return wrapElement(element, node);
-};
+}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
+import classNames from 'classnames';
 import styled from '../lib/styled';
 import Icon from './Icon';
 import ProgressBar from './ProgressBar';
@@ -282,7 +283,7 @@ const Info = styled.div`
 
 const formatMinutes = m => (m < 10 ? `0${m}` : m);
 
-export default ({
+export default function Card({
   author = '',
   borderRadius = '4',
   ctaText = '',
@@ -300,7 +301,7 @@ export default ({
   summary,
   size = 'medium',
   ...props
-}) => {
+}) {
   const [active, setActive] = useState(false);
 
   const start = new Date(startDate);
@@ -314,7 +315,7 @@ export default ({
       {...filterInvalidDOMProps(props)}
     >
       <StyledContainer
-        className={`${active ? 'active' : ''} ${size || 'medium'}`}
+        className={classNames(size, { active, medium: !size })}
         size={size}
         shadow={shadow}
         borderRadius={borderRadius || 4}
@@ -386,4 +387,4 @@ export default ({
       </StyledContainer>
     </OuterContainer>
   );
-};
+}
