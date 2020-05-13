@@ -1,4 +1,4 @@
-name: Build, test, publish
+name: Test/Publish
 
 on: ["push", "pull_request"]
 
