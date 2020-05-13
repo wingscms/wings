@@ -1,4 +1,4 @@
-const Wings = require('@wingscms/sdk').default;
+const Wings = require('@wingscms/sdk/src').default;
 const fs = require('fs');
 const path = require('path');
 const { getIntrospectionQuery } = require('graphql');
