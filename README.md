@@ -10,5 +10,6 @@ Read the docs:
 
 - @wingscms/crane
 - @wingscms/hummingbird
+- @wingscms/mobiledoc-renderer
 - @wingscms/react
 - @wingscms/sdk
