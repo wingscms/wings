@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import Renderer from '@wingscms/mobiledoc-renderer';
+import { Link } from '@wingscms/components';
 import styled from '../lib/styled';
 
 class MobiledocRenderer extends Component {
@@ -24,6 +25,7 @@ class MobiledocRenderer extends Component {
     return new Renderer({
       cards: cards.map(this.injectCardProps),
       unknownCardHandler,
+      markups: [{ name: 'a', render: Link }],
     });
   }
 
@@ -55,30 +57,6 @@ export default styled(MobiledocRenderer)`
   }
   @media screen and (min-width: 800px) {
     font-size: 23px;
-  }
-  p a,
-  ol a,
-  ul a {
-    color: ${({ theme }) => theme.textColor};
-    text-decoration: none;
-    background-image: linear-gradient(
-      120deg,
-      ${({ theme }) => theme.primaryColor} 0%,
-      ${({ theme }) => theme.primaryColor} 100%
-    );
-    background-repeat: no-repeat;
-    background-size: 100% 2px;
-    background-position: 0% 100%;
-    transition: background-size 0.1s linear;
-    &:hover,
-    &:focus {
-      background-size: 100% 4px;
-      background-image: linear-gradient(
-        120deg,
-        ${({ theme }) => theme.primaryColor} 0%,
-        ${({ theme }) => theme.primaryColor} 100%
-      );
-    }
   }
   color: ${({ theme }) => theme.textColor};
   padding-bottom: ${({ mini }) => (mini ? '0' : '40px')};

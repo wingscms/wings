@@ -13,6 +13,7 @@ export { default as Gallery } from './components/Gallery';
 export { default as Header } from './components/Header';
 export { default as Icon } from './components/Icon';
 export { default as Image } from './components/Image';
+export { default as Link } from './components/Link';
 export { default as Loading } from './components/Loading';
 export { default as MenuButton } from './components/MenuButton';
 export { default as PaginationControls } from './components/PaginationControls';
