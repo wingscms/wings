@@ -1,4 +1,4 @@
-import Wings from '@wingscms/sdk/src';
+import Wings from '@wingscms/sdk';
 import { buildClientSchema } from 'graphql';
 import { mockServer } from 'graphql-tools';
 import { image } from '../utils';
