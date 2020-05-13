@@ -1,9 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "start": "concurrently \"yarn run storybook\" \"lerna run start --stream --parallel\"",
+    "start": "yarn run storybook",
     "build": "lerna run build",
-    "test": "yarn run build && run-s lint && jest --coverage && lerna run test",
+    "test": "run-s lint && jest --coverage && lerna run test",
     "test:watch": "jest --watch",
     "lint": "eslint .",
     "release": "cross-env HUSKY_BYPASS=true lerna publish from-git",
@@ -47,8 +47,8 @@
     "babel-loader": "8.1.0",
     "babel-plugin-file-loader": "2.0.0",
     "babel-plugin-require-context-hook": "1.0.0",
+    "babel-plugin-styled-components": "^1.10.7",
     "change-case": "4.1.1",
-    "concurrently": "5.1.0",
     "cross-env": "7.0.0",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.2",

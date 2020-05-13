@@ -201,21 +201,21 @@ class CollectionCardView extends Component {
             {x.profiles.website ? (
               <a href={x.profiles.website.url} target="_blank" rel="noopener noreferrer">
                 <ProfileImage>
-                  <Globe />
+                  <Icon icon="globe" />
                 </ProfileImage>
               </a>
             ) : null}
             {x.profiles.facebook ? (
               <a href={x.profiles.facebook.url} target="_blank" rel="noopener noreferrer">
                 <ProfileImage>
-                  <Facebook />
+                  <Icon icon="facebook" />
                 </ProfileImage>
               </a>
             ) : null}
             {x.profiles.linkedIn ? (
               <a href={x.profiles.linkedIn.url} target="_blank" rel="noopener noreferrer">
                 <ProfileImage>
-                  <Linkedin />
+                  <Icon icon="linkedin" />
                 </ProfileImage>
               </a>
             ) : null}
@@ -226,7 +226,7 @@ class CollectionCardView extends Component {
                 rel="noopener noreferrer"
               >
                 <ProfileImage>
-                  <Instagram />
+                  <Icon icon="instagram" />
                 </ProfileImage>
               </a>
             ) : null}
@@ -237,7 +237,7 @@ class CollectionCardView extends Component {
                 rel="noopener noreferrer"
               >
                 <ProfileImage>
-                  <Twitter />
+                  <Icon icon="twitter" />
                 </ProfileImage>
               </a>
             ) : null}
