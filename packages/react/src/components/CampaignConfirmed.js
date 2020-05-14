@@ -1,30 +1,14 @@
 import React from 'react';
 import fP from 'filter-invalid-dom-props';
-import { SocialButtons } from '@wingscms/components';
+import { Heading, SocialButtons } from '@wingscms/components';
 
 import styled from '../lib/styled';
 import { useIntl } from '../ctx/Intl';
-
-const Title = styled.h1`
-  font-size: 3em;
-  text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
-  @media screen and (max-width: 800px) {
-    font-size: 2em;
-  }
-`;
 
 const Text = styled.p`
   font-size: 18px;
   @media screen and (min-width: 800px) {
     font-size: 24px;
-  }
-`;
-
-const ShareTitle = styled.h2`
-  font-size: 24px;
-  margin-bottom: 0.4em;
-  @media screen and (min-width: 800px) {
-    font-size: 32px;
   }
 `;
 
@@ -132,22 +116,22 @@ const getCopy = (copy, resourceType, transactionStatus) => {
   }
 };
 
-const CampaignConfirmed = ({
+export default function CampaignConfirmed({
   copy = {},
   resourceType,
   transactionStatus,
   shareButtons,
   ...props
-}) => {
+}) {
   const { title, text, shareTitle } = getCopy(copy, resourceType, transactionStatus);
 
   return (
     <div {...fP(props)}>
-      <Title>{title}</Title>
+      <Heading rank={1}>{title}</Heading>
       <Text>{text}</Text>
       {shareButtons && (
         <>
-          <ShareTitle>{shareTitle}</ShareTitle>
+          <Heading rank={2}>{shareTitle}</Heading>
           <SocialButtons>
             {shareButtons.map(({ icon, url }, idx) => (
               <SocialButtons.Button icon={icon} url={url} key={idx} />
@@ -157,9 +141,7 @@ const CampaignConfirmed = ({
       )}
     </div>
   );
-};
+}
 
 CampaignConfirmed.ResourceType = ResourceType;
 CampaignConfirmed.TransactionStatus = TransactionStatus;
-
-export default CampaignConfirmed;
