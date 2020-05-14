@@ -1,8 +1,12 @@
 import React from 'react';
 import { t } from '../../theme';
 import { mediaUrl } from '@wingscms/sdk';
-import Heading from '../Heading';
+import _Heading from '../Heading';
 import styled from 'styled-components';
+
+const Heading = styled(_Heading)`
+  text-align: center;
+`;
 
 const Container = styled.div`
   padding: 0;
@@ -32,19 +36,11 @@ const ImageContainer = styled.figure`
 export default function Simple({ title, subtitle, imageUrl, imageCaption } = {}) {
   return (
     <Container>
-      <Heading
-        rank={1}
-        textAlign={Heading.TextAlign.CENTER}
-        style={{ margin: '0 auto', width: '90%' }}
-      >
+      <Heading rank={1} style={{ margin: '0 auto', width: '90%' }}>
         {title}
       </Heading>
       {!subtitle ? null : (
-        <Heading
-          rank={2}
-          textAlign={Heading.TextAlign.CENTER}
-          style={{ margin: '0 auto', width: '90%' }}
-        >
+        <Heading rank={2} style={{ margin: '0 auto', width: '90%' }}>
           {subtitle}
         </Heading>
       )}

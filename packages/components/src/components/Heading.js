@@ -112,27 +112,19 @@ const Components = {
   6: H6,
 };
 
-const TextAlign = {
-  CENTER: 'center',
-  LEFT: 'left',
-  RIGHT: 'right',
-};
-
-const Heading = ({
+export default function Heading({
   baseFontSize,
   baseMobileFontSize,
   baseTabletFontSize,
   fontSize,
   scaleRatio,
   rank = 1,
-  textAlign = TextAlign.LEFT,
   uppercase,
   ...props
-}) => {
+}) {
   const Comp = Components[rank > 6 ? 6 : rank];
   return (
     <Comp
-      textAlign={textAlign}
       baseFontSize={baseFontSize}
       baseMobileFontSize={baseMobileFontSize}
       baseTabletFontSize={baseTabletFontSize}
@@ -144,8 +136,4 @@ const Heading = ({
       {props.children}
     </Comp>
   );
-};
-
-Heading.TextAlign = TextAlign;
-
-export default Heading;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { boolean, number, select } from '@storybook/addon-knobs/react';
+import { boolean, number } from '@storybook/addon-knobs/react';
 import { Heading } from '@wingscms/components';
 
 const props = ({ rank = 1 } = {}) => {
@@ -12,7 +12,6 @@ const props = ({ rank = 1 } = {}) => {
     baseFontSize: bfs ? `${bfs}px` : null,
     baseTabletFontSize: bfst ? `${bfst}px` : null,
     baseMobileFontSize: bfsm ? `${bfsm}px` : null,
-    textAlign: select('textAlign', Heading.TextAlign, Heading.TextAlign.LEFT),
     uppercase: boolean('uppercase', false),
   };
 };

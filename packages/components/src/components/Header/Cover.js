@@ -9,6 +9,7 @@ import { t } from '../../theme';
 
 const Title = styled(Heading)`
   color: ${t(_ => _.landingSectionTitleColor)};
+  text-align: center;
   margin: 0 auto;
   max-width: 95%;
   position: relative;
@@ -133,13 +134,13 @@ export default function Cover({ title, subtitle, imageUrl, titleAttribute, ...pr
       </BackgroundImageContainerOuter>
       <ContentContainer>
         <TitleContainer>
-          <Title rank={1} textAlign={Heading.TextAlign.CENTER}>
+          <Title rank={1}>
             <span>{title}</span>
           </Title>
         </TitleContainer>
         {!subtitle ? null : (
           <TitleContainer>
-            <Title rank={2} textAlign={Heading.TextAlign.CENTER}>
+            <Title rank={2}>
               <span>{subtitle}</span>
             </Title>
           </TitleContainer>
