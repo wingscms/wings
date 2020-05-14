@@ -99,6 +99,7 @@ const CTAButton = styled(Button)`
 
 class CTACardView extends Component {
   render() {
+    // TODO: reevaluate whether we need to replace title due to clash with title HTML attr for tooltips
     const { title, text, actionText, actionUrl, ...props } = this.props;
     return (
       <CTA {...filterInvalidDOMProps(props)}>
