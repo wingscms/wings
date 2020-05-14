@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
-import { Button, getContrastColor, wide } from '@wingscms/components';
+import { Button, wide } from '@wingscms/components';
 import styled from '../lib/styled';
 import createCard from '../createCard';
+import { t } from '../theme';
 
 const CTA = styled.div`
   ${wide};
-  margin-top: ${({ theme }) => theme.largeSpacing};
-  margin-bottom: ${({ theme }) => theme.largeSpacing};
+  margin-top: ${t(_ => _.largeSpacing)};
+  margin-bottom: ${t(_ => _.largeSpacing)};
   width: 100vw;
   text-align: center;
   .inner {
-    background: ${({ theme }) => theme.primaryColor};
+    background: ${t(_ => _.primaryColor)};
     padding: 40px;
     margin: 0 auto;
     max-width: 1160px;
@@ -33,12 +34,11 @@ const CTA = styled.div`
       max-width: 30%;
       flex-basis: auto;
       font-size: 32px;
-      color: ${({ theme }) =>
-        getContrastColor({
-          backgroundColor: theme.primaryColor || '#ffffff',
-          colors: { light: theme.textColor, dark: theme.textColorDark },
-          threshold: theme.contrastLuminanceThreshold,
-        })};
+      color: ${t(_ =>
+        _.contrastColor({
+          backgroundColor: _.primaryColor || '#ffffff',
+        }),
+      )};
       text-transform: uppercase;
       text-align: center;
       margin: 0;
@@ -49,12 +49,11 @@ const CTA = styled.div`
       min-width: 45%;
       max-width: 45%;
       flex-basis: auto;
-      color: ${({ theme }) =>
-        getContrastColor({
-          backgroundColor: theme.primaryColor || '#ffffff',
-          colors: { light: theme.textColor, dark: theme.textColorDark },
-          threshold: theme.contrastLuminanceThreshold,
-        })};
+      color: ${t(_ =>
+        _.contrastColor({
+          backgroundColor: _.primaryColor || '#ffffff',
+        }),
+      )};
       text-align: left;
       margin: 0;
       padding: 0 10px;
@@ -62,8 +61,8 @@ const CTA = styled.div`
     }
   }
   @media screen and (max-width: 800px) {
-    margin-top: ${({ theme }) => theme.mediumSpacing};
-    margin-bottom: ${({ theme }) => theme.mediumSpacing};
+    margin-top: ${t(_ => _.mediumSpacing)};
+    margin-bottom: ${t(_ => _.mediumSpacing)};
     .inner {
       padding: 10px;
       flex-direction: column;
@@ -88,24 +87,9 @@ const CTA = styled.div`
 `;
 
 const CTAButton = styled(Button)`
-  font-size: 20px;
-  background-color: ${({ theme }) => theme.backgroundColorDark};
-  background-image: none;
-  color: ${({ theme }) => theme.textColorDark};
-  font-family: ${({ theme }) => theme.headerFontFamily};
-  padding: 20px 40px;
-  border-radius: 3px;
   display: block;
   margin-left: auto;
-  cursor: pointer;
-  position: relative;
-  font-weight: bold;
   text-decoration: none;
-  transition: all 0.15s linear;
-  &:hover,
-  &:active {
-    background-color: ${({ theme }) => theme.iconHoverColor};
-  }
   @media screen and (max-width: 800px) {
     margin-right: auto;
     padding: 10px 20px;
@@ -122,9 +106,9 @@ class CTACardView extends Component {
           <h2>{title}</h2>
           <p>{text}</p>
           <div>
-            <CTAButton as="a" href={actionUrl}>
-              {actionText}
-            </CTAButton>
+            <a href={actionUrl} style={{ textDecoration: 'none' }}>
+              <CTAButton intent={Button.Intent.SECONDARY}>{actionText}</CTAButton>
+            </a>
           </div>
         </div>
       </CTA>
