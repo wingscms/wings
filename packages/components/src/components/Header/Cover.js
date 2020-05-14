@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import fP from 'filter-invalid-dom-props';
 import { mediaUrl } from '@wingscms/sdk';
 import { getViewportDimensions } from '../../lib/utils';
 import Icon from '../Icon';
@@ -32,14 +33,11 @@ const Title = styled(Heading)`
 
 const Container = styled.header`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: ${t(_ => _.landingSectionBackgroundColor)};
   position: relative;
   overflow: hidden;
   transition: 0.2s all ease-in-out;
-  @media screen and (max-width: 800px) {
-    height: calc(100vh - 60px);
-  }
 `;
 
 const BackgroundImageContainerOuter = styled.div`
@@ -114,9 +112,11 @@ const ArrowContainer = styled.div`
     }
   }
 `;
-export default ({ title, subtitle, imageUrl, titleAttribute }) => {
+
+export default function Cover({ title, subtitle, imageUrl, titleAttribute, ...props }) {
   const [scrollY, setScrollY] = useState(0);
   const updateScroll = () => requestAnimationFrame(setScrollY(window.scrollY));
+
   // TODO: fix scroll effect
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -126,7 +126,7 @@ export default ({ title, subtitle, imageUrl, titleAttribute }) => {
   }, []);
 
   return (
-    <Container id="landing-section" title={titleAttribute}>
+    <Container id="landing-section" title={titleAttribute} {...fP(props)}>
       <BackgroundImageContainerOuter style={{ marginTop: scrollY > 84 ? scrollY / 2 - 84 / 2 : 0 }}>
         <BackgroundImageContainer backgroundImage={imageUrl} backgroundPosition="center center" />
         <BackgroundOverlay />
@@ -150,4 +150,4 @@ export default ({ title, subtitle, imageUrl, titleAttribute }) => {
       </ContentContainer>
     </Container>
   );
-};
+}

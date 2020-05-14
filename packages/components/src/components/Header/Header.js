@@ -1,5 +1,5 @@
 import React from 'react';
-import SimpleHeader from './SimpleHeader';
+import Simple from './Simple';
 import Cover from './Cover';
 
 const Type = {
@@ -8,15 +8,13 @@ const Type = {
 };
 
 const headers = {
-  [Type.SIMPLE]: SimpleHeader,
+  [Type.SIMPLE]: Simple,
   [Type.COVER]: Cover,
 };
 
-const Header = ({ type = Type.SIMPLE, ...props }) => {
+export default function Header({ type = Type.SIMPLE, ...props }) {
   const Header = headers[type];
   return <Header {...props} />;
-};
-
-export default Header;
+}
 
 Header.Type = Type;

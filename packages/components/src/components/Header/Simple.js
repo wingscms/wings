@@ -29,7 +29,7 @@ const ImageContainer = styled.figure`
   }
 `;
 
-export default ({ title, subtitle, imageUrl, imageCaption } = {}) => {
+export default function Simple({ title, subtitle, imageUrl, imageCaption } = {}) {
   return (
     <Container>
       <Heading
@@ -55,4 +55,4 @@ export default ({ title, subtitle, imageUrl, imageCaption } = {}) => {
       ) : null}
     </Container>
   );
-};
+}
