@@ -7,10 +7,13 @@ const snapshotPath = path.join(
   '..',
   '.storybook',
   '__snapshots__',
-  `${path.basename(__filename)}.snap`,
+  `Snapshots.test.js.snap`,
 );
 
-if (!fs.existsSync(snapshotPath)) return;
+if (!fs.existsSync(snapshotPath)) {
+  console.log('snapshot file not found');
+  process.exit(1);
+}
 const snapshot = require(snapshotPath);
 const output = Object.keys(snapshot)
   .map(
