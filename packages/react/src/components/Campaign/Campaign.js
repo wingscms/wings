@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Counter, useDimensions } from '@wingscms/components';
+import { Counter, Heading, useDimensions } from '@wingscms/components';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import styled from '../../lib/styled';
 
@@ -129,15 +129,6 @@ const FormContainerInner = styled.div`
   }
 `;
 
-const Title = styled.h1`
-  font-size: 2rem;
-  text-transform: ${t(_ => _.uppercaseTitles)};
-  font-family: ${t(_ => _.headerFontFamily)};
-  @media screen and (max-width: 800px) {
-    font-size: 1.3rem;
-  }
-`;
-
 const Intro = styled.p`
   font-size: 1.2em;
   @media screen and (max-width: 600px) {
@@ -239,7 +230,7 @@ export default function Campaign({
           >
             {!(title || intro || description) ? null : (
               <>
-                {title ? <Title>{title}</Title> : null}
+                {title ? <Heading rank={1}>{title}</Heading> : null}
                 {intro ? <Intro fullWidth>{intro}</Intro> : null}
                 <Content content={description} mini />
               </>
@@ -288,7 +279,7 @@ export default function Campaign({
       </MainContainerOuter>
       {resourceType === 'node.event' && (node.schedule || node.fee || node.location) && (
         <EventDetails
-          title={<Title>{eventInfoTitle}</Title>}
+          title={<Heading rank={2}>{eventInfoTitle}</Heading>}
           location={node.location}
           {...{
             eventStartLabel,

@@ -8,6 +8,8 @@ import contexts from './contexts';
 
 import './styles.css';
 
+const CONFIG_EXPORTS = ['wrapStory'];
+
 function loadStories() {
   const r = require.context('../packages', true, /^(?:\.\/[^\/]+)\/src\/.*\.stories\.jsx?$/);
   r.keys().forEach(m => {
@@ -29,11 +31,18 @@ function loadStories() {
       .addDecorator(withKnobs)
       .addDecorator(withContexts(contexts));
 
-    Object.keys(storyMod).forEach(variant =>
-      stories.add(capitalCase(variant), storyMod[variant], {
-        snapshotDelay: storyMod[variant].snapshotDelay,
-      }),
-    );
+    const applyConfig = storyVariant => {
+      const withWrap = storyMod.wrapStory || (s => s);
+      return () => withWrap(storyVariant());
+    };
+
+    Object.keys(storyMod)
+      .filter(v => !CONFIG_EXPORTS.includes(v))
+      .forEach(variant =>
+        stories.add(capitalCase(variant), applyConfig(storyMod[variant]), {
+          snapshotDelay: storyMod[variant].snapshotDelay,
+        }),
+      );
   });
 }
 

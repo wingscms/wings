@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '../lib/styled';
 
 export default styled.div`
   position: absolute;

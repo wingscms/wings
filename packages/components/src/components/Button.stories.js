@@ -27,3 +27,5 @@ export const WithIcon = () => (
 );
 export const Loading = () => <Button {...props({ loading: true })} />;
 export const LoadingSmall = () => <Button {...props({ size: Button.Size.SMALL, loading: true })} />;
+
+export const wrapStory = elem => <div style={{ padding: '1rem' }}>{elem}</div>;

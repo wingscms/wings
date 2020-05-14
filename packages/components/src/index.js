@@ -11,6 +11,7 @@ export { default as FlexGrid } from './components/FlexGrid';
 export { default as Footer } from './components/Footer';
 export { default as Gallery } from './components/Gallery';
 export { default as Header } from './components/Header';
+export { default as Heading } from './components/Heading';
 export { default as Icon } from './components/Icon';
 export { default as Image } from './components/Image';
 export { default as Link } from './components/Link';
@@ -22,3 +23,5 @@ export { default as SocialButtons } from './components/SocialButtons';
 export { default as Theme, t, useTheme, ThemeProvider } from './theme';
 export { default as useDimensions } from './hooks/useDimensions';
 export { ALIGNLEFT, ALIGNRIGHT, wide } from './styles';
+
+export { mediaQuery, modularScale } from './lib/utils';

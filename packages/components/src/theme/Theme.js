@@ -1,5 +1,6 @@
 import Color from './Color';
 import defaultTheme from './defaultTheme';
+import { mediaQuery } from '../lib/utils';
 
 export default class Theme {
   static Intent = {
@@ -75,6 +76,18 @@ export default class Theme {
     const val = /([0-9])*/.exec(str)[0];
     const unit = str.substr(val.length, str.length - 1);
     return [val, unit];
+  }
+
+  mobileQuery(css) {
+    return mediaQuery(this.mobileBreakpoint, css);
+  }
+
+  tabletQuery(css) {
+    return mediaQuery(this.tabletBreakpoint, css);
+  }
+
+  get baseTabletFontSize() {
+    return this.variables.baseTabletFontSize || this.baseFontSize;
   }
 
   get appBarBackgroundColor() {
