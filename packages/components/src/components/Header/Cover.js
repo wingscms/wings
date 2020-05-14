@@ -114,7 +114,7 @@ const ArrowContainer = styled.div`
   }
 `;
 
-export default function Cover({ title, subtitle, imageUrl, titleAttribute, ...props }) {
+export default function Cover({ headerTitle, headerSubtitle, imageUrl, ...props }) {
   const [scrollY, setScrollY] = useState(0);
   const updateScroll = () => requestAnimationFrame(setScrollY(window.scrollY));
   useWindow(() => {
@@ -122,7 +122,7 @@ export default function Cover({ title, subtitle, imageUrl, titleAttribute, ...pr
     return () => window.removeEventListener('scroll', () => updateScroll);
   });
   return (
-    <Container title={titleAttribute} {...fP(props)}>
+    <Container {...fP(props)}>
       <BackgroundImageContainerOuter style={{ marginTop: scrollY > 84 ? scrollY / 2 - 84 / 2 : 0 }}>
         <BackgroundImageContainer backgroundImage={imageUrl} backgroundPosition="center center" />
         <BackgroundOverlay />
@@ -130,13 +130,13 @@ export default function Cover({ title, subtitle, imageUrl, titleAttribute, ...pr
       <ContentContainer>
         <TitleContainer>
           <Title rank={1}>
-            <span>{title}</span>
+            <span>{headerTitle}</span>
           </Title>
         </TitleContainer>
-        {!subtitle ? null : (
+        {!headerSubtitle ? null : (
           <TitleContainer>
             <Title rank={2}>
-              <span>{subtitle}</span>
+              <span>{headerSubtitle}</span>
             </Title>
           </TitleContainer>
         )}

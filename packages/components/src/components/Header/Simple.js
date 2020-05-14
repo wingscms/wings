@@ -33,15 +33,15 @@ const ImageContainer = styled.figure`
   }
 `;
 
-export default function Simple({ title, subtitle, imageUrl, imageCaption } = {}) {
+export default function Simple({ headerTitle, headerSubtitle, imageUrl, imageCaption } = {}) {
   return (
     <Container>
       <Heading rank={1} style={{ margin: '0 auto', width: '90%' }}>
-        {title}
+        {headerTitle}
       </Heading>
-      {!subtitle ? null : (
+      {!headerSubtitle ? null : (
         <Heading rank={2} style={{ margin: '0 auto', width: '90%' }}>
-          {subtitle}
+          {headerSubtitle}
         </Heading>
       )}
       {imageUrl ? (

@@ -18,7 +18,7 @@ export default function Entry({ children, node, headerType, ...props }) {
   const { url, caption } = image || {};
   return (
     <div {...props}>
-      <Header title={title} imageUrl={url} imageCaption={caption} type={headerType} />
+      <Header headerTitle={title} imageUrl={url} imageCaption={caption} type={headerType} />
       <ContentWrapper>
         <Content content={content} />
       </ContentWrapper>
