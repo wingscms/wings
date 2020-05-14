@@ -15,7 +15,7 @@ const MetaContainer = styled.div`
 
 const MetaName = styled.div`
   font-family: ${t(_ => _.headerFontFamily)};
-  text-transform: ${t(_ => _.uppercaseTitles)};
+  text-transform: ${t(_ => _.titleTransform)};
   display: inline-block;
   width: 50%;
   font-size: 18px;

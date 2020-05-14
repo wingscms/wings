@@ -4,6 +4,13 @@ import styled, { css } from '../lib/styled';
 import { t } from '../theme';
 import { modularScale } from '../lib/utils';
 
+const shared = css`
+  font-family: ${t(_ => _.headerFontFamily)};
+  text-align: ${({ textAlign }) => textAlign};
+  text-transform: ${t((_, { transform }) => transform || _.titleTransform)};
+  line-height: 1.2;
+`;
+
 const getStyles = steps => (
   _,
   {
@@ -39,44 +46,32 @@ const getStyles = steps => (
     ${styles}
     ${tabletStyles}
     ${mobileStyles}
+    ${shared}
   `;
 };
 
-const shared = css`
-  font-family: ${t(_ => _.headerFontFamily)};
-  text-align: ${({ textAlign }) => textAlign};
-  text-transform: ${t((_, { uppercase }) => uppercase || _.uppercaseTitles)};
-  line-height: 1.2;
-`;
-
 const H1 = styled.h1`
   ${t(getStyles(4))}
-  ${shared}
 `;
 
 const H2 = styled.h2`
   ${t(getStyles(3))}
-  ${shared}
 `;
 
 const H3 = styled.h3`
   ${t(getStyles(2))}
-  ${shared}
 `;
 
 const H4 = styled.h4`
   ${t(getStyles(1))}
-  ${shared}
 `;
 
 const H5 = styled.h5`
   ${t(getStyles(0))}
-  ${shared}
 `;
 
 const H6 = styled.h6`
   ${t(getStyles(0))}
-  ${shared}
   font-style: italic;
 `;
 
@@ -99,7 +94,8 @@ export default function Heading({
   uppercase,
   ...props
 }) {
-  const Comp = Components[rank > 6 ? 6 : rank];
+  if (rank < 1 || rank > 6) throw new Error("that's not a valid rank for Heading");
+  const Comp = Components[rank];
   return (
     <Comp
       baseFontSize={baseFontSize}
@@ -107,7 +103,7 @@ export default function Heading({
       baseTabletFontSize={baseTabletFontSize}
       fontSize={fontSize}
       scaleRatio={scaleRatio}
-      uppercase={uppercase && 'uppercase'}
+      transform={uppercase && 'uppercase'}
       {...fP(props)}
     >
       {props.children}

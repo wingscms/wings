@@ -29,7 +29,7 @@ const ToggleButton = styled.div`
   line-height: 28px;
   padding: 20px 0;
   font-family: ${t(_ => _.headerFontFamily)};
-  text-transform: ${t(_ => _.uppercaseTitles)};
+  text-transform: ${t(_ => _.titleTransform)};
   font-weight: bold;
   bottom: 0;
   left: 0;
