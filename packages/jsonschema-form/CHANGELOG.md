@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@0.5.0...@wingscms/jsonschema-form@0.6.0) (2020-05-12)
+
+
+### Features
+
+* campaign confirmed and share buttons ([#452](https://github.com/wingscms/wings/issues/452)) ([da7946a](https://github.com/wingscms/wings/commit/da7946a51988c2ec728669f235dc1614163192da))
+
+
+
+
+
 # [0.5.0](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@0.4.2...@wingscms/jsonschema-form@0.5.0) (2020-04-24)
 
 

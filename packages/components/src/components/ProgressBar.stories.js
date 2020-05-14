@@ -1,9 +1,9 @@
 import React from 'react';
 import { color, number, select } from '@storybook/addon-knobs/react';
-import { CounterBar, Theme } from '@wingscms/components';
+import { ProgressBar, Theme } from '@wingscms/components';
 
 export default () => (
-  <CounterBar
+  <ProgressBar
     intent={select('intent', Theme.Intent, 'primary')}
     max={number('max', 100)}
     current={number('current', 76)}

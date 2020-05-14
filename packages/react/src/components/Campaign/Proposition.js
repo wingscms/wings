@@ -58,7 +58,7 @@ const ToggleButton = styled.div`
         `}
 `;
 
-export default ({
+export default function Proposition({
   initialHeight = 400,
   children,
   descriptionCollapse,
@@ -66,7 +66,7 @@ export default ({
   onToggle = () => {},
   style,
   ...props
-}) => {
+}) {
   const [show, setShow] = useState(false);
   const containerRef = useRef(null);
   const { width: containerWidth } = useDimensions(containerRef, [children]);
@@ -107,4 +107,4 @@ export default ({
       )}
     </Container>
   );
-};
+}

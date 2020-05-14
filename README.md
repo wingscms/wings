@@ -1,4 +1,5 @@
 # Wings
+[![Coverage Status](https://coveralls.io/repos/github/wingscms/wings/badge.svg)](https://coveralls.io/github/wingscms/wings)
 
 Read the docs:
 
@@ -9,5 +10,6 @@ Read the docs:
 
 - @wingscms/crane
 - @wingscms/hummingbird
+- @wingscms/mobiledoc-renderer
 - @wingscms/react
 - @wingscms/sdk

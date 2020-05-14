@@ -20,7 +20,7 @@ const StyledCounterInner = styled(StyledCounter)`
   background-color: ${t((_, { barColor, intent }) => barColor || _.intentColor(intent))};
 `;
 
-export default function Counter({ barColor, current, max, height = 12, intent, ...props }) {
+export default function ProgressBar({ barColor, current, max, height = 12, intent, ...props }) {
   const width = current >= max ? 100 : (100 / max) * current;
   return (
     <StyledCounter barColor={barColor} intent={intent} height={height} {...fP(props)}>

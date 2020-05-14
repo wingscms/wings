@@ -8,12 +8,13 @@
   "env": {
     "test": {
       "plugins": [
+        "styled-components",
         "require-context-hook",
         [
-          "file-loader", 
+          "file-loader",
           {
             "publicPath": "/.jest/public",
-            "outputPath": "/.jest/public" 
+            "outputPath": "/.jest/public"
           }
         ]
       ]

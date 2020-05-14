@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.36.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.35.0...@wingscms/react@0.36.0) (2020-05-12)
+
+
+### Bug Fixes
+
+* **react:** clean up dependencies ([cabecf8](https://github.com/wingscms/wings/commit/cabecf8b7a5a451069e51d45e661ab3bb830380c))
+* **react:** use own renderer ([affb453](https://github.com/wingscms/wings/commit/affb453dff05383d370ba08e94a5f05c24909f34))
+
+
+### Features
+
+* campaign confirmed and share buttons ([#452](https://github.com/wingscms/wings/issues/452)) ([da7946a](https://github.com/wingscms/wings/commit/da7946a51988c2ec728669f235dc1614163192da))
+
+
+
+
+
 # [0.35.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.34.1...@wingscms/react@0.35.0) (2020-04-24)
 
 

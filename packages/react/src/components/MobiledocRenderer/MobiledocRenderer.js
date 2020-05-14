@@ -1,20 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
-import Renderer03 from '@dailybeast/mobiledoc-react-renderer/dist/renderers/0-3';
-import Renderer from '@dailybeast/mobiledoc-react-renderer';
+import Renderer from '@wingscms/mobiledoc-renderer';
+
 import styled from '../../lib/styled';
 import sections from './sections';
-
-Renderer03.prototype.parseProps = function parseProps(attrss) {
-  if (attrss) {
-    return {
-      [attrss[0]]: attrss[1],
-      [attrss[2]]: attrss[3],
-    };
-  }
-  return null;
-};
+import markups from './markups';
 
 class MobiledocRenderer extends Component {
   static propTypes = {
@@ -37,6 +28,7 @@ class MobiledocRenderer extends Component {
       cards: cards.map(this.injectCardProps),
       sections,
       unknownCardHandler,
+      markups,
     });
   }
 
@@ -68,30 +60,6 @@ export default styled(MobiledocRenderer)`
   }
   @media screen and (min-width: 800px) {
     font-size: 23px;
-  }
-  p a,
-  ol a,
-  ul a {
-    color: ${({ theme }) => theme.textColor};
-    text-decoration: none;
-    background-image: linear-gradient(
-      120deg,
-      ${({ theme }) => theme.primaryColor} 0%,
-      ${({ theme }) => theme.primaryColor} 100%
-    );
-    background-repeat: no-repeat;
-    background-size: 100% 2px;
-    background-position: 0% 100%;
-    transition: background-size 0.1s linear;
-    &:hover,
-    &:focus {
-      background-size: 100% 4px;
-      background-image: linear-gradient(
-        120deg,
-        ${({ theme }) => theme.primaryColor} 0%,
-        ${({ theme }) => theme.primaryColor} 100%
-      );
-    }
   }
   color: ${({ theme }) => theme.textColor};
   padding-bottom: ${({ mini }) => (mini ? '0' : '40px')};
