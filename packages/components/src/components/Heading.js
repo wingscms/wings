@@ -3,9 +3,8 @@ import fP from 'filter-invalid-dom-props';
 import styled, { css } from '../lib/styled';
 import { t } from '../theme';
 import { modularScale } from '../lib/utils';
-import { BREAKPOINT_TYPE } from '../lib/constants';
 
-const getStyles = (steps, breakpoint) => (
+const getStyles = steps => (
   _,
   {
     fontSize: _fontSize,
@@ -15,42 +14,32 @@ const getStyles = (steps, breakpoint) => (
     scaleRatio: _scaleRatio,
   },
 ) => {
-  let base;
-  switch (breakpoint) {
-    case BREAKPOINT_TYPE.MOBILE:
-      base = baseMobileFontSize || _.baseMobileFontSize;
-      break;
-    case BREAKPOINT_TYPE.TABLET:
-      base = baseTabletFontSize || _.baseTabletFontSize;
-      break;
-    default:
-      base = baseFontSize || _.baseFontSize;
-  }
-
   const scaleRatio = _scaleRatio || _.headingScaleRatio;
-  const fontSize = _fontSize || modularScale(base, scaleRatio, steps);
 
-  switch (breakpoint) {
-    case BREAKPOINT_TYPE.MOBILE:
-      return _.mobileQuery(
-        css`
-          font-size: ${fontSize};
-          margin-bottom: ${_.extraSmallSpacing};
-        `,
-      );
-    case BREAKPOINT_TYPE.TABLET:
-      return _.tabletQuery(
-        css`
-          font-size: ${fontSize};
-          margin-bottom: ${_.extraSmallSpacing};
-        `,
-      );
-    default:
-      return css`
-        font-size: ${fontSize};
-        margin-bottom: ${_.smallSpacing};
-      `;
-  }
+  const fontSize = base => _fontSize || modularScale(base, scaleRatio, steps);
+
+  const styles = css`
+    font-size: ${fontSize(baseFontSize || _.baseFontSize)};
+    margin-bottom: ${_.smallSpacing};
+  `;
+  const tabletStyles = _.tabletQuery(
+    css`
+      font-size: ${fontSize(baseTabletFontSize || _.baseTabletFontSize)};
+      margin-bottom: ${_.extraSmallSpacing};
+    `,
+  );
+  const mobileStyles = _.mobileQuery(
+    css`
+      font-size: ${fontSize(baseMobileFontSize || _.baseMobileFontSize)};
+      margin-bottom: ${_.extraSmallSpacing};
+    `,
+  );
+
+  return css`
+    ${styles}
+    ${tabletStyles}
+    ${mobileStyles}
+  `;
 };
 
 const shared = css`
@@ -62,43 +51,31 @@ const shared = css`
 
 const H1 = styled.h1`
   ${t(getStyles(4))}
-  ${t(getStyles(4, BREAKPOINT_TYPE.TABLET))}
-  ${t(getStyles(4, BREAKPOINT_TYPE.MOBILE))}
   ${shared}
 `;
 
 const H2 = styled.h2`
   ${t(getStyles(3))}
-  ${t(getStyles(3, BREAKPOINT_TYPE.TABLET))}
-  ${t(getStyles(3, BREAKPOINT_TYPE.MOBILE))}
   ${shared}
 `;
 
 const H3 = styled.h3`
   ${t(getStyles(2))}
-  ${t(getStyles(2, BREAKPOINT_TYPE.TABLET))}
-  ${t(getStyles(2, BREAKPOINT_TYPE.MOBILE))}
   ${shared}
 `;
 
 const H4 = styled.h4`
   ${t(getStyles(1))}
-  ${t(getStyles(1, BREAKPOINT_TYPE.TABLET))}
-  ${t(getStyles(1, BREAKPOINT_TYPE.MOBILE))}
   ${shared}
 `;
 
 const H5 = styled.h5`
   ${t(getStyles(0))}
-  ${t(getStyles(0, BREAKPOINT_TYPE.TABLET))}
-  ${t(getStyles(0, BREAKPOINT_TYPE.MOBILE))}
   ${shared}
 `;
 
 const H6 = styled.h6`
   ${t(getStyles(0))}
-  ${t(getStyles(0, BREAKPOINT_TYPE.TABLET))}
-  ${t(getStyles(0, BREAKPOINT_TYPE.MOBILE))}
   ${shared}
   font-style: italic;
 `;
