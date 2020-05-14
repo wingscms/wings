@@ -2,7 +2,7 @@ import React from 'react';
 import { t } from '../../theme';
 import { mediaUrl } from '@wingscms/sdk';
 import _Heading from '../Heading';
-import styled from 'styled-components';
+import styled from '../../lib/styled';
 
 const Heading = styled(_Heading)`
   text-align: center;

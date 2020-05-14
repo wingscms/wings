@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Header } from '@wingscms/components';
+import styled from '../lib/styled';
 import Content from './Content';
 
 const ContentWrapper = styled.div`
