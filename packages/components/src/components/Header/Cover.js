@@ -122,7 +122,7 @@ export default function Cover({ title, subtitle, imageUrl, titleAttribute, ...pr
     return () => window.removeEventListener('scroll', () => updateScroll);
   });
   return (
-    <Container id="landing-section" title={titleAttribute} {...fP(props)}>
+    <Container title={titleAttribute} {...fP(props)}>
       <BackgroundImageContainerOuter style={{ marginTop: scrollY > 84 ? scrollY / 2 - 84 / 2 : 0 }}>
         <BackgroundImageContainer backgroundImage={imageUrl} backgroundPosition="center center" />
         <BackgroundOverlay />
