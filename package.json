@@ -4,6 +4,7 @@
     "start": "yarn run storybook",
     "build": "lerna run build",
     "test": "run-s lint && jest --coverage && lerna run test",
+    "update-snapshots": "jest -u && node .jest/hash-snapshots.js",
     "test:watch": "jest --watch",
     "lint": "eslint .",
     "release": "cross-env HUSKY_BYPASS=true lerna publish from-git",
