@@ -3,9 +3,9 @@ import { boolean, number } from '@storybook/addon-knobs/react';
 import { Heading } from '@wingscms/components';
 
 const props = ({ rank = 1 } = {}) => {
-  const bfs = number('baseFontSize', '');
-  const bfst = number('baseTabletFontSize', '');
-  const bfsm = number('baseMobileFontSize', '');
+  const bfs = number('baseFontSize', 0);
+  const bfst = number('baseTabletFontSize', 0);
+  const bfsm = number('baseMobileFontSize', 0);
   return {
     rank,
     scaleRatio: number('scaleRatio', 1.25),
