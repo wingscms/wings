@@ -14,8 +14,8 @@ Storyshots components/Expandable Default 1: 81becd974beefe89043f4700a301ad4d
 Storyshots components/FlexGrid Default 1: 7d17679d0c4dc62cf1e4cb53c3c5fc08
 Storyshots components/Footer Custom Content 1: 45e2f65850955a72693e4e616270bbb5
 Storyshots components/Footer Default 1: be24419a38e7d2a8ab0754a06e53e873
-Storyshots components/Header Cover 1: fbb2e45685d69fcbefa8108c40f037bd
-Storyshots components/Header Default 1: 5a34bf0dddbbcc90cfbd82e42b2ba39d
+Storyshots components/Header Cover 1: e8c4ec640e121c7dafa1c6742f7575f6
+Storyshots components/Header Default 1: 1f534ea4ed066036654d2030e62dbdce
 Storyshots components/Heading Default 1: 9b56baf60e4ea570acc030c64cba3ca7
 Storyshots components/Icon Default 1: 2d36554384ad03750ff6242fca5cf643
 Storyshots components/Image Default 1: c45a7057373dd3187db04754fff65cc4
@@ -29,8 +29,8 @@ Storyshots components/ScrollBar Controlled 1: 12fec2dbf4a1b0432226a62ff40b9674
 Storyshots components/ScrollBar Uncontrolled 1: 2a144f350c1212b7d046a2ae8824d321
 Storyshots components/SocialButtons Default 1: b4b3f318e4246332dff5aa29c548d92e
 Storyshots jsonschema-form/Amount Default 1: bc67e34e6e4d35e04e5de9e335f4443f
-Storyshots react/Article Default 1: 116edd8531b26970b39ca3dc7c3dcd33
-Storyshots react/Article No Image 1: 24d4ae7bed17ecce948b4a405df2483a
+Storyshots react/Article Default 1: 2b7ae292b955585c0fa8cf320f6d2fda
+Storyshots react/Article No Image 1: 06affd9289b69a9fd2ebf1a3608e6780
 Storyshots react/Campaign Event 1: 44431ef52868eeef928bf8aa92daa195
 Storyshots react/Campaign Fundraiser 1: 9d0e575597c604d324e544defb0f909a
 Storyshots react/Campaign Petition 1: a64a9ee6b6e48aeebb495fe472573f6a
@@ -45,4 +45,4 @@ Storyshots react/Cards/InsightCard Default 1: e3f94635f5fe293171d89125f3e1e9e7
 Storyshots react/Cards/NodesCard Default 1: 607de1a5fd074645554bbcf79a6c05a1
 Storyshots react/Content Default 1: cf9e4da995467963f6cc887b7775b1ce
 Storyshots react/Content With Cards 1: ca5936fb0e7c7f95fed8ef3bd321441e
-Storyshots react/Page Default 1: 5fe33108b59bb59eb578c96435d450c4
+Storyshots react/Page Default 1: 15bd17283da035a5698eedaf5670f0c2
