@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react';
 import fP from 'filter-invalid-dom-props';
 import { mediaUrl } from '@wingscms/sdk';
+import styled, { css } from '../../lib/styled';
 import { getViewportDimensions } from '../../lib/utils';
+import useWindow from '../../hooks/useWindow';
 import Icon from '../Icon';
 import Heading from '../Heading';
 import { t } from '../../theme';
@@ -17,19 +18,18 @@ const Title = styled(Heading)`
   @media screen and (min-width: 800px) {
     max-width: 1000px;
   }
-  ${t(_ =>
-    !_.landingSectionTitleBackgroundColor
-      ? null
-      : `
-  line-height: 1.4;
-  span {
-    background: ${_.landingSectionTitleBackgroundColor};
-    line-height: 1.4;
-    padding: 0 0.25em;
-    box-decoration-break: clone;
-  }
-  `,
-  )};
+  ${t(({ landingSectionTitleBackgroundColor: v }) => {
+    if (!v) return;
+    return css`
+      line-height: 1.4;
+      span {
+        background: ${v};
+        line-height: 1.4;
+        padding: 0 0.25em;
+        box-decoration-break: clone;
+      }
+    `;
+  })}
 `;
 
 const Container = styled.header`
@@ -117,15 +117,10 @@ const ArrowContainer = styled.div`
 export default function Cover({ title, subtitle, imageUrl, titleAttribute, ...props }) {
   const [scrollY, setScrollY] = useState(0);
   const updateScroll = () => requestAnimationFrame(setScrollY(window.scrollY));
-
-  // TODO: fix scroll effect
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', () => updateScroll);
-      return () => window.removeEventListener('scroll', () => updateScroll);
-    }
-  }, []);
-
+  useWindow(() => {
+    window.addEventListener('scroll', () => updateScroll);
+    return () => window.removeEventListener('scroll', () => updateScroll);
+  });
   return (
     <Container id="landing-section" title={titleAttribute} {...fP(props)}>
       <BackgroundImageContainerOuter style={{ marginTop: scrollY > 84 ? scrollY / 2 - 84 / 2 : 0 }}>
