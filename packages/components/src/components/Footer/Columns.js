@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '../../lib/styled';
 import { t } from '../../theme';
 import Button from '../Button';
+import Heading from '../Heading';
 import SocialButtons from '../SocialButtons';
 
 const Column = styled.div`
@@ -46,11 +47,7 @@ const Text = styled.p`
   margin: 0;
 `;
 
-const Title = styled(Text)`
-  font-family: ${t(_ => _.headerFontFamily)};
-  text-transform: ${t(_ => _.uppercaseTitles)};
-  font-size: 20px;
-  font-weight: bold;
+const Title = styled(Heading)`
   margin-top: ${t(_ => _.smallSpacing)};
   margin-bottom: ${t(_ => _.smallSpacing)};
   &:first-child {
@@ -58,13 +55,9 @@ const Title = styled(Text)`
   }
 `;
 
-const ColumnTitle = styled(Title)`
-  font-size: 26px;
-`;
-
 const wrapRow = fn => (row, idx) => (
   <React.Fragment key={idx}>
-    {row.title ? <Title>{row.title}</Title> : null}
+    {row.title ? <Title rank={3}>{row.title}</Title> : null}
     {fn(row)}
   </React.Fragment>
 );
@@ -85,7 +78,7 @@ export default ({ columns }) => {
   if (!columns) return null;
   return columns.map((column, idx) => (
     <Column key={`footer-column-${idx}`}>
-      {column.title && <ColumnTitle>{column.title}</ColumnTitle>}
+      {column.title && <Title rank={2}>{column.title}</Title>}
       {column.rows.map(
         wrapRow(row => {
           switch (row.type) {
