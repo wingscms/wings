@@ -1,5 +1,7 @@
-import initStoryshots, { Stories2SnapsConverter } from '@storybook/addon-storyshots';
+import fs from 'fs';
 import path from 'path';
+import crypto from 'crypto';
+import initStoryshots, { Stories2SnapsConverter } from '@storybook/addon-storyshots';
 import { act } from 'react-dom/test-utils';
 import { configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -44,4 +46,20 @@ initStoryshots({
 
     done();
   },
+});
+
+afterAll(() => {
+  const snapshotPath = path.join(__dirname, '__snapshots__', `${path.basename(__filename)}.snap`);
+  if (!fs.existsSync(snapshotPath)) return;
+  const snapshot = require(snapshotPath);
+  const output = Object.keys(snapshot)
+    .map(
+      name =>
+        `${name}: ${crypto
+          .createHash('md5')
+          .update(snapshot[name])
+          .digest('hex')}`,
+    )
+    .join('\n');
+  fs.writeFileSync(`${snapshotPath}.hash`, output);
 });
