@@ -1,5 +1,5 @@
-import path from 'path';
 import initStoryshots, { Stories2SnapsConverter } from '@storybook/addon-storyshots';
+import path from 'path';
 import { act } from 'react-dom/test-utils';
 import { configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
