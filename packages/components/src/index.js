@@ -18,6 +18,7 @@ export { default as Link } from './components/Link';
 export { default as Loading } from './components/Loading';
 export { default as MenuButton } from './components/MenuButton';
 export { default as PaginationControls } from './components/PaginationControls';
+export { default as SectionMarker } from './components/SectionMarker';
 export { default as ScrollBar } from './components/ScrollBar';
 export { default as SocialButtons } from './components/SocialButtons';
 export { default as Theme, t, useTheme, ThemeProvider } from './theme';

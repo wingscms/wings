@@ -238,6 +238,40 @@ export default class Theme {
     return this.variables.scrollBarColor || this.elementBackgroundColor;
   }
 
+  get sectionMarkerBackgroundColor() {
+    return this.variables.sectionMarkerBackgroundColor || this.primaryColor;
+  }
+
+  get sectionMarkerNumberColor() {
+    return (
+      this.variables.sectionMarkerNumberColor ||
+      this.contrastColor({
+        backgroundColor: this.sectionMarkerBackgroundColor,
+      })
+    );
+  }
+
+  get sectionMarkerNumberOpacity() {
+    return this.variables.sectionMarkerNumberOpacity || 0.3;
+  }
+
+  get sectionMarkerTextColor() {
+    return (
+      this.variables.sectionMarkerTextColor ||
+      this.contrastColor({
+        backgroundColor: this.sectionMarkerBackgroundColor,
+      })
+    );
+  }
+
+  get sectionMarkerTitleColor() {
+    return (
+      this.variables.sectionMarkerTitleColor ||
+      this.contrastColor({
+        backgroundColor: this.sectionMarkerBackgroundColor,
+      })
+    );
+  }
   get shareButtonBackgroundColor() {
     return this.variables.shareButtonBackgroundColor || this.primaryColor;
   }

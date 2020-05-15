@@ -20,37 +20,6 @@ class Theme extends _Theme {
   get campaignFormTextColor() {
     return this.variables.campaignFormTextColor || this.formTextColor;
   }
-
-  get chapterBackgroundColor() {
-    return this.variables.chapterBackgroundColor || this.primaryColor;
-  }
-
-  get chapterItemColor() {
-    return (
-      this.variables.chapterItemColor ||
-      this.contrastColor({
-        backgroundColor: this.chapterBackgroundColor,
-      })
-    );
-  }
-
-  get chapterItemNumberColor() {
-    return (
-      this.variables.chapterItemNumberColor ||
-      this.contrastColor({
-        backgroundColor: this.chapterBackgroundColor,
-      })
-    );
-  }
-
-  get chapterIntroColor() {
-    return (
-      this.variables.chapterIntroColor ||
-      this.contrastColor({
-        backgroundColor: this.chapterBackgroundColor,
-      })
-    );
-  }
 }
 
 const getThemeInstance = theme => {
