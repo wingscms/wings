@@ -29,8 +29,8 @@ Storyshots components/ScrollBar Controlled 1: 12fec2dbf4a1b0432226a62ff40b9674
 Storyshots components/ScrollBar Uncontrolled 1: 2a144f350c1212b7d046a2ae8824d321
 Storyshots components/SocialButtons Default 1: b4b3f318e4246332dff5aa29c548d92e
 Storyshots jsonschema-form/Amount Default 1: bc67e34e6e4d35e04e5de9e335f4443f
-Storyshots react/Article Default 1: 164e9a28e9641a9383edadafbc2f421f
-Storyshots react/Article No Image 1: 308ab8fb6862c0309384cd1ffd6f48b6
+Storyshots react/Article Default 1: 8ae4ca7a895c2bfdcb8c2c17ac0c9847
+Storyshots react/Article No Image 1: 6ac71dcef835bc0c5ef676a198e3affe
 Storyshots react/Campaign Event 1: 7268acd0321034fcede8458c04c9cbb4
 Storyshots react/Campaign Fundraiser 1: d50a4462ed6e6693affe6d5c09d1c6ce
 Storyshots react/Campaign Petition 1: 70f4b4bcbe8cf13372c76bdba82d3769
@@ -40,9 +40,11 @@ Storyshots react/CampaignConfirmed Fundraiser 1: b3d6a2fcafe7553d21201b5f27da48e
 Storyshots react/CampaignConfirmed Petition 1: 7237f115c97014ef706e3f18dcec32e6
 Storyshots react/CampaignConfirmed Signup 1: 32c0f3670179c53082445794259de66c
 Storyshots react/Cards/CTACard Default 1: 6150f70f526b3f630ea9208b681388e3
+Storyshots react/Cards/CampaignCard Default 1: 716ffcddfdac08a276fcb69548267da8
 Storyshots react/Cards/ImageCard Default 1: 0a2503ed8b47a0d080110911044ea26e
 Storyshots react/Cards/InsightCard Default 1: e3f94635f5fe293171d89125f3e1e9e7
 Storyshots react/Cards/NodesCard Default 1: 607de1a5fd074645554bbcf79a6c05a1
-Storyshots react/Content Default 1: cf9e4da995467963f6cc887b7775b1ce
-Storyshots react/Content With Cards 1: ba7c3057abe49e0f5685cdfa26df3628
-Storyshots react/Page Default 1: 04323d3b845335bf5d0de719805fce0d
+Storyshots react/Cards/SectionMarkerCard Default 1: a2d54835c5f208295a44ad5013895ebc
+Storyshots react/Content Default 1: 70ef82b7fc383e4f0a2f004557f40bbe
+Storyshots react/Content With Cards 1: e2db71e2001948653a31124e2f657e05
+Storyshots react/Page Default 1: afd33c2dfab51d786ae1e4db7e5f5380
