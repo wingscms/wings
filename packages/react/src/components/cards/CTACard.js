@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import { Button, wide } from '@wingscms/components';
-import styled from '../lib/styled';
-import createCard from '../createCard';
-import { t } from '../theme';
+import styled from '../../lib/styled';
+import createCard from '../../createCard';
+import { t } from '../../theme';
 
 const CTA = styled.div`
   ${wide};

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import styled, { css } from '../lib/styled';
+import styled, { css } from '../../lib/styled';
 import { wide } from '@wingscms/components';
-import Campaign from '../components/Campaign/Campaign';
-import createCard from '../createCard';
+import Campaign from '../Campaign/Campaign';
+import createCard from '../../createCard';
 
 const Wrapper = styled.div`
   ${wide};

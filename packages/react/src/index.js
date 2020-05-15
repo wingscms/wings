@@ -48,4 +48,4 @@ export {
   QuoteCard,
   TestimonialCard,
   TextCard,
-} from './cards';
+} from './components/cards';

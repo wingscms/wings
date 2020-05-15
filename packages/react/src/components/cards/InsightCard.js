@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
-import styled from '../lib/styled';
+import styled from '../../lib/styled';
 import { wide } from '@wingscms/components';
-import { t } from '../theme';
-import createCard from '../createCard';
+import { t } from '../../theme';
+import createCard from '../../createCard';
 
 const Insight = styled.div`
   font-size: 30px;

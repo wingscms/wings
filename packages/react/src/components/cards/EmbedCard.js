@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import { wide } from '@wingscms/components';
-import styled from '../lib/styled';
-import createCard from '../createCard';
+import styled from '../../lib/styled';
+import createCard from '../../createCard';
 
 const Figure = styled.figure`
   ${wide};

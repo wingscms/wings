@@ -2,7 +2,7 @@
 import React from 'react';
 import { compose, setPropTypes, setStatic } from 'recompose';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
-import styled from '../../lib/styled';
+import styled from '../../../lib/styled';
 import propTypes, { defaultProps } from './propTypes';
 import Quote from './Quote';
 

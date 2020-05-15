@@ -5,9 +5,9 @@ import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import PropTypes from 'prop-types';
 import Fade from 'react-reveal/Fade';
 import { wide, ALIGNLEFT, ALIGNRIGHT } from '@wingscms/components';
-import styled from '../lib/styled';
-import { enumerate } from '../lib/utils';
-import createCard from '../createCard';
+import styled from '../../lib/styled';
+import { enumerate } from '../../lib/utils';
+import createCard from '../../createCard';
 
 const SIZE = enumerate('MEDIUM', 'LARGE', 'EXTRALARGE');
 const FLOAT = enumerate('NONE', 'LEFT', 'RIGHT');

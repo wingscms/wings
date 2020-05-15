@@ -1,8 +1,8 @@
 import { ALIGNLEFT, ALIGNRIGHT, wide } from '@wingscms/components';
-import styled from '../../lib/styled';
+import styled from '../../../lib/styled';
 import { FLOAT } from './enums';
 
-import { quote } from '../../img/icons';
+import { quote } from '../../../img/icons';
 
 export default styled.figure`
   clear: both;

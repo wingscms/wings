@@ -1,9 +1,9 @@
 import React, { Component, useState } from 'react';
-import styled from '../lib/styled';
+import styled from '../../lib/styled';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import { t, Icon as _Icon } from '@wingscms/components';
-import createCard from '../createCard';
-import Content from '../components/MobiledocRenderer';
+import createCard from '../../createCard';
+import Content from '../MobiledocRenderer';
 
 const Container = styled.div`
   margin: ${({ theme }) => theme.mediumSpacing} 0;

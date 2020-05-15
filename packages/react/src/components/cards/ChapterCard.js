@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
-import styled from '../lib/styled';
+import styled from '../../lib/styled';
 import Fade from 'react-reveal/Fade';
 
 import { wide } from '@wingscms/components';
-import { slugify } from '../lib/utils';
-import createCard from '../createCard';
-import Intro from '../components/Intro';
+import { slugify } from '../../lib/utils';
+import createCard from '../../createCard';
+import Intro from '../Intro';
 
 const Container = styled.div`
   ${wide};

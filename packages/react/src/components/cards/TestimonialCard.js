@@ -4,10 +4,10 @@ import classNames from 'classnames';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import { wide } from '@wingscms/components';
 
-import { StickyContainer, Sticky } from '../lib/react-sticky';
-import styled from '../lib/styled';
-import Content from '../components/MobiledocRenderer';
-import createCard from '../createCard';
+import { StickyContainer, Sticky } from '../../lib/react-sticky';
+import styled from '../../lib/styled';
+import Content from '../MobiledocRenderer';
+import createCard from '../../createCard';
 
 const Testimonial = styled.section`
   ${wide};

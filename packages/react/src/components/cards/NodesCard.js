@@ -6,10 +6,10 @@ import {
   Loading as _Loading,
   PaginationControls,
 } from '@wingscms/components';
-import styled from '../lib/styled';
-import useQueryString from '../hooks/queryString';
-import { useWings } from '../ctx/Wings';
-import createCard from '../createCard';
+import styled from '../../lib/styled';
+import useQueryString from '../../hooks/queryString';
+import { useWings } from '../../ctx/Wings';
+import createCard from '../../createCard';
 
 const Wide = styled.div`
   ${wide};
