@@ -1,5 +1,5 @@
 import React from 'react';
-import { text, color, number } from '@storybook/addon-knobs/react';
+import { boolean, text, color, number } from '@storybook/addon-knobs/react';
 import { SectionMarker } from '@wingscms/components';
 
 export default () => (
@@ -11,5 +11,6 @@ export default () => (
     textColor={color('textColor')}
     numberColor={color('numberColor')}
     numberOpacity={number('numberOpacity')}
+    fade={boolean('fade', true)}
   />
 );

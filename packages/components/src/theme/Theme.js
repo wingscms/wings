@@ -177,6 +177,19 @@ export default class Theme {
     return this.variables.iconHoverColor || this.primaryColor;
   }
 
+  get insightBackgroundColor() {
+    return this.variables.insightBackgroundColor || this.primaryColor;
+  }
+
+  get insightTextColor() {
+    return (
+      this.variables.insightTextColor ||
+      this.contrastColor({
+        backgroundColor: this.insightBackgroundColor,
+      })
+    );
+  }
+
   get landingSectionBackgroundColor() {
     return this.variables.landingSectionBackgroundColor || this.primaryColor;
   }
