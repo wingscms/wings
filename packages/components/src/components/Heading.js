@@ -110,3 +110,5 @@ export default function Heading({
     </Comp>
   );
 }
+
+Heading.getStyles = getStyles;

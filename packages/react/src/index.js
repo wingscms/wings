@@ -40,12 +40,12 @@ export {
   CTACard,
   DataCard,
   EmbedCard,
-  HeaderCard,
   ImageCard,
   InsightCard,
   NodesCard,
   QACard,
   QuoteCard,
+  SectionMarkerCard,
   TestimonialCard,
   TextCard,
 } from './components/cards';
