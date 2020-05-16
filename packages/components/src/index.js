@@ -2,6 +2,7 @@ export { default as AppBar } from './components/AppBar';
 export { default as Breakout } from './components/Breakout';
 export { default as Burger } from './components/Burger';
 export { default as Button } from './components/Button';
+export { default as CallToAction } from './components/CallToAction';
 export { default as Card } from './components/Card';
 export { default as Counter } from './components/Counter';
 export { default as ProgressBar } from './components/ProgressBar';

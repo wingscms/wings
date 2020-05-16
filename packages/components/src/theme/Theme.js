@@ -106,6 +106,19 @@ export default class Theme {
     return this.variables.burgerColor || this.iconHoverColor;
   }
 
+  get callToActionBackgroundColor() {
+    return this.variables.callToActionBackgroundColor || this.primaryColor;
+  }
+
+  get callToActionTextColor() {
+    return (
+      this.variables.allToActionTextColor ||
+      this.contrastColor({
+        backgroundColor: this.callToActionBackgroundColor,
+      })
+    );
+  }
+
   get counterBackgroundColor() {
     return this.variables.counterBackgroundColor || this.backgroundColor;
   }

@@ -8,17 +8,19 @@ Storyshots components/Button Loading Small 1: 1d4e4f7f1ca7bacdc133e1bee6814e4a
 Storyshots components/Button Primary 1: 1912270dffc89d63550ad20bf88efff3
 Storyshots components/Button Small 1: 24b907a99ffaa0eb4a50564a66d00e25
 Storyshots components/Button With Icon 1: 7cd97a6760d0c69ea1dbd2aa87a6b778
+Storyshots components/CallToAction Background Image 1: bfa290beb02d2b6ed4959483fc8983de
+Storyshots components/CallToAction Default 1: 84375956434d42cc595899f7a909864b
 Storyshots components/Counter Default 1: 64983f913a56fa4fe5f7ebddf13cb865
 Storyshots components/Drawer Default 1: fb659b9978bf537ec763a618374b8e94
 Storyshots components/Expandable Default 1: 5d05d36f8d38cffb4794483ded2c37de
 Storyshots components/FlexGrid Default 1: 91587777ace2ef39dae2a9499db420c5
-Storyshots components/Footer Custom Content 1: e8d86bdbcde141ca89041b4264c2e087
-Storyshots components/Footer Default 1: f6cb09766dbd0896cf05952dacf5945a
-Storyshots components/Header Cover 1: 59c44f585596b2a0c09518234e2f917e
-Storyshots components/Header Default 1: c0ce6592d3b44886a0430e0cdb8c8594
+Storyshots components/Footer Custom Content 1: 0e24444e1a787d01e241ff57906188dd
+Storyshots components/Footer Default 1: 91b2bb9fcd2c7d05d55d2f105fbb4925
+Storyshots components/Header Cover 1: 6957aa4a340cf9264b537e025ecd5c27
+Storyshots components/Header Default 1: 77bfe25238ab19bd4d486215f8008a77
 Storyshots components/Heading Default 1: 703e9f65188a02dab226f1d3745783fe
 Storyshots components/Icon Default 1: 3474d8d3b15d2498ab9ac9e9363d47d6
-Storyshots components/Image Default 1: d1a1ccb410aaffe9721a411560606d80
+Storyshots components/Image Default 1: b5d2062fe056f906cd10fb7a480b916a
 Storyshots components/Insight Default 1: 0bc6f78649c2f8e7813703a7598e1ca1
 Storyshots components/Link Basic 1: 7e0ecf2ba9810fce964ee46ed3e15f60
 Storyshots components/Link Line Grow 1: 89cc1df120e8d0bc71ce6efa158ba4d3
@@ -31,22 +33,23 @@ Storyshots components/ScrollBar Uncontrolled 1: 8aea4e74b6df42094d70f30d3bad36ab
 Storyshots components/SectionMarker Default 1: ea3634ca6af4d4461ae8bcf5a2c52aa8
 Storyshots components/SocialButtons Default 1: 681f15e29273e3b9de90695ef82f65e3
 Storyshots jsonschema-form/Amount Default 1: 2426c52ef6231381b6abb0b3a3ecdbb0
-Storyshots react/Article Default 1: a37a3f9c96edfe89819872e6867392ac
-Storyshots react/Article No Image 1: 67652dd0fc02b2b0361a4cddefff8c0b
-Storyshots react/Campaign Event 1: 9cd6c7bb5400ac0448b08afb013ee068
-Storyshots react/Campaign Fundraiser 1: d31d507d65ce1f3396c1fde809bdc32f
-Storyshots react/Campaign Petition 1: f73312c16ae8f41e5ae1fe0936331b00
+Storyshots react/Article Default 1: 4442020f46da34251d9a0ede9347a9c5
+Storyshots react/Article No Image 1: 06cea42fe75aa1cfa483ee6db0b59444
+Storyshots react/Campaign Event 1: d71086e1e70bd40a1b7b290c6dbc02f3
+Storyshots react/Campaign Fundraiser 1: f14f9481fca02e5f27241c7eaa11f603
+Storyshots react/Campaign Petition 1: 79abce389880a142635479c9a9527087
 Storyshots react/CampaignConfirmed Default 1: 61d50ba45b0e682bc2912cb7ac21ae06
 Storyshots react/CampaignConfirmed Event 1: bfdf306ae9407f643870c7c511800769
 Storyshots react/CampaignConfirmed Fundraiser 1: 59d646ce3e6bdf2e3548e039bbd466b5
 Storyshots react/CampaignConfirmed Petition 1: 61d50ba45b0e682bc2912cb7ac21ae06
 Storyshots react/CampaignConfirmed Signup 1: 1f4dad31aac8e5be072d8a7d3471e81d
-Storyshots react/Cards/CTACard Default 1: 98e21d60be395c08f639e8f0cde604cd
-Storyshots react/Cards/CampaignCard Default 1: b5d6594ec5530accd64703f7dc6d80d6
+Storyshots react/Cards/CTACard Background Image 1: ace92560215cf714839f7d5689bd0acc
+Storyshots react/Cards/CTACard Default 1: 11e733ace2c0652faa55639992d83ebb
+Storyshots react/Cards/CampaignCard Default 1: e28e5be7e7cc0f9e1499fe17d502f880
 Storyshots react/Cards/ImageCard Default 1: e708120acdf5af156fea71fce0d8559a
 Storyshots react/Cards/InsightCard Default 1: 0fd73e75d2898ba4860c272714a3d347
-Storyshots react/Cards/NodesCard Default 1: 7dc521432fa9d4562d5d77af94ea1e0b
-Storyshots react/Cards/SectionMarkerCard Default 1: f608acdf7c3b2fd68e4bf7c1228f5f3e
+Storyshots react/Cards/NodesCard Default 1: 84222db9cb33d4467a8c9c45c6d71f99
+Storyshots react/Cards/SectionMarkerCard Default 1: ac1a86bbeca55191ea6f3e278bcad6b3
 Storyshots react/Content Default 1: 7152be0ff41e7a6b228e4c845b7eaa92
-Storyshots react/Content With Cards 1: eead55b341e12e3b6b2750210a1409ca
-Storyshots react/Page Default 1: ec6c2e65e40332385bb552cd1a45bf4e
+Storyshots react/Content With Cards 1: 828031ac3cf0681ab325754b1687cc91
+Storyshots react/Page Default 1: 819f18c512f67e8fa4795714a488a4f3
