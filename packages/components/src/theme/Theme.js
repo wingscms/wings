@@ -256,6 +256,10 @@ export default class Theme {
     return this.variables.navigationMenuBackgroundColor || this.backgroundColor;
   }
 
+  get pullquoteTextColor() {
+    return this.variables.pullquoteTextColor || this.primaryColor;
+  }
+
   get scrollBarColor() {
     return this.variables.scrollBarColor || this.primaryColor;
   }

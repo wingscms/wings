@@ -5,11 +5,12 @@ import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import styled from '../../../lib/styled';
 import propTypes, { defaultProps } from './propTypes';
 import Quote from './Quote';
+import { t } from '../../../theme';
 
 const Caption = styled.figcaption`
   margin-top: -30px;
-  margin-bottom: ${({ theme }) => theme.mediumSpacing};
-  color: ${({ theme }) => theme.textColor};
+  margin-bottom: ${t(_ => _.mediumSpacing)};
+  color: ${t(_ => _.textColor)};
   text-align: center;
   font-size: 0.8em;
   a {
@@ -17,8 +18,8 @@ const Caption = styled.figcaption`
     text-decoration: none;
     background-image: linear-gradient(
       120deg,
-      ${({ theme }) => theme.primaryColor} 0%,
-      ${({ theme }) => theme.primaryColor} 100%
+      ${t(_ => _.primaryColor)} 0%,
+      ${t(_ => _.primaryColor)} 100%
     );
     background-repeat: no-repeat;
     background-size: 100% 2px;
@@ -29,8 +30,8 @@ const Caption = styled.figcaption`
       background-size: 100% 4px;
       background-image: linear-gradient(
         120deg,
-        ${({ theme }) => theme.primaryColor} 0%,
-        ${({ theme }) => theme.primaryColor} 100%
+        ${t(_ => _.primaryColor)} 0%,
+        ${t(_ => _.primaryColor)} 100%
       );
     }
   }

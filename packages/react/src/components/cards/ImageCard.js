@@ -8,6 +8,7 @@ import { wide, ALIGNLEFT, ALIGNRIGHT } from '@wingscms/components';
 import styled from '../../lib/styled';
 import { enumerate } from '../../lib/utils';
 import createCard from '../../createCard';
+import { t } from '../../theme';
 
 const SIZE = enumerate('MEDIUM', 'LARGE', 'EXTRALARGE');
 const FLOAT = enumerate('NONE', 'LEFT', 'RIGHT');
@@ -35,10 +36,10 @@ const defaultProps = {
 };
 
 const Image = styled.figure`
-  margin: ${({ theme }) => theme.mediumSpacing} 0;
+  margin: ${t(_ => _.mediumSpacing)} 0;
   @media screen and (min-width: 800px) {
-    margin-top: ${({ theme }) => theme.largeSpacing};
-    margin-bottom: ${({ theme }) => theme.largeSpacing};
+    margin-top: ${t(_ => _.largeSpacing)};
+    margin-bottom: ${t(_ => _.largeSpacing)};
   }
   img {
     display: block;

@@ -3,22 +3,23 @@ import styled from '../../../lib/styled';
 import { FLOAT } from './enums';
 
 import { quote } from '../../../img/icons';
+import { t } from '../../../theme';
 
 export default styled.figure`
   clear: both;
   width: 100%;
   text-align: center;
-  margin: ${({ theme }) => theme.mediumSpacing} 0;
-  box-shadow: ${({ theme }) => theme.defaultShadow};
+  margin: ${t(_ => _.mediumSpacing)} 0;
+  box-shadow:  ${t(_ => _.shadow)};
   padding: 30px;
-  background-color: ${({ theme }) => theme.blockquoteBackgroundColor};
+  background-color:  ${t(_ => _.blockquoteBackgroundColor)};
   a { 
       color: #000000;
       text-decoration: none;
       background-image: linear-gradient(
         120deg,
-        ${({ theme }) => theme.primaryColor} 0%,
-        ${({ theme }) => theme.primaryColor} 100%
+         ${t(_ => _.primaryColor)} 0%,
+         ${t(_ => _.primaryColor)} 100%
       );
       background-repeat: no-repeat;
       background-size: 100% 2px;
@@ -27,9 +28,9 @@ export default styled.figure`
       &:hover,
       &:focus {
         background-size: 100% 4px;
-        background-image: linear-gradient(120deg, ${({ theme }) => theme.primaryColor} 0%, ${({
-  theme,
-}) => theme.primaryColor} 100%);
+        background-image: linear-gradient(120deg,  ${t(_ => _.primaryColor)} 0%, ${t(
+  _ => _.primaryColor,
+)} 100%);
       }
     }
   @media screen and (max-width: 800px) {
@@ -39,12 +40,12 @@ export default styled.figure`
   &.pullquote-${FLOAT.NONE},
   &.pullquote-${FLOAT.LEFT},
   &.pullquote-${FLOAT.RIGHT} {
-    background-color: ${({ theme }) => theme.pullquoteBackgroundColor};
+    background-color: ${t(_ => _.pullquoteBackgroundColor)};
     margin: 40px 0;
     padding: 20px;
     box-shadow: none;
     aside {
-      font-family: ${({ theme }) => theme.headerFontFamily};
+      font-family: ${t(_ => _.headerFontFamily)};
       font-size: 1.8em;
       line-height: 1.2;
     }
@@ -77,18 +78,18 @@ export default styled.figure`
     }
   }
   aside {
-    color: ${({ theme }) => theme.pullquoteColor};
+    color: ${t(_ => _.pullquoteTextColor)};
     padding: 0;
-    font-weight: ${({ theme }) => theme.pullquoteFontWeight};
+    font-weight: bold;
   }
   blockquote {
-    color: ${({ theme }) => theme.blockquoteColor};
-    background-color: ${({ theme }) => theme.blockquoteBackgroundColor};
+    color:  ${t(_ => _.blockquoteTextColor)};
+    background-color:  ${t(_ => _.blockquoteTextColor)};
     padding: 0;
-    font-weight: ${({ theme }) => theme.blockquoteFontWeight};
     font-size: 0.9em;
     font-style: italic;
     text-align: left;
+    font-weight: bold;
     position: relative;
     margin: 0;
     &:after {
@@ -105,7 +106,7 @@ export default styled.figure`
   }
   figcaption {
     margin-top: 1rem;
-    color: ${({ theme }) => theme.textColor};
+    color:  ${t(_ => _.textColor)};
     &:before {
       content: '— ';
     }

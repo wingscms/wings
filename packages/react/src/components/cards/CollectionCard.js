@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { FlexGrid, Icon, wide } from '@wingscms/components';
 import styled from '../../lib/styled';
 import createCard from '../../createCard';
+import { t } from '../../theme';
 
 const Wide = styled.div`
   ${wide}
@@ -15,7 +16,7 @@ const WideContentWrap = styled.div`
 `;
 
 const Title = styled.h3`
-  color: ${({ theme }) => theme.textColor};
+  color: ${t(_ => _.textColor)};
   font-size: 40px;
   line-height: 42px;
   font-weight: bold;
@@ -28,7 +29,7 @@ const Title = styled.h3`
 const OrganisationContainer = styled.div`
   display: block;
   padding: 20px;
-  background-color: ${({ theme }) => theme.elementBackgroundColor};
+  background-color: ${t(_ => _.elementBackgroundColor)};
   position: relative;
   margin-bottom: 30px;
   height: auto;
@@ -59,7 +60,7 @@ const OrganisationContent = styled.div`
 `;
 
 const OrganisationName = styled.h3`
-  color: ${({ theme }) => theme.textColor};
+  color: ${t(_ => _.textColor)};
   text-align: left;
   padding: 0;
   @media screen and (max-width: 900px) {
@@ -76,7 +77,7 @@ const OrganisationDescription = styled.p`
 const PersonContainer = styled.div`
   display: block;
   padding: 20px;
-  background-color: ${({ theme }) => theme.elementBackgroundColor};
+  background-color: ${t(_ => _.elementBackgroundColor)};
   position: relative;
   margin-bottom: 30px;
   height: auto;
@@ -89,7 +90,7 @@ const PersonImg = styled.img`
 `;
 
 const PersonName = styled.h3`
-  color: ${({ theme }) => theme.textColor};
+  color: ${t(_ => _.textColor)};
   font-weight: 800;
   text-align: center;
   padding: 0;
@@ -123,7 +124,7 @@ const ProfileImage = styled.div`
 `;
 
 const StyledFlexGrid = styled(FlexGrid)`
-  background-color: ${({ theme }) => theme.appBackgroundColor};
+  background-color: ${t(_ => _.backgroundColor)};
   padding: 10px;
 `;
 
