@@ -20,6 +20,10 @@ class Theme extends _Theme {
   get campaignFormTextColor() {
     return this.variables.campaignFormTextColor || this.formTextColor;
   }
+
+  get testimonialBackgroundColor() {
+    return this.variables.testimonialBackgroundColor || this.elementBackgroundColor;
+  }
 }
 
 const getThemeInstance = theme => {

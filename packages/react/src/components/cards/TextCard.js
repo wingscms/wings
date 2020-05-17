@@ -3,12 +3,13 @@ import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import styled from '../../lib/styled';
 import createCard from '../../createCard';
 import Content from '../MobiledocRenderer';
+import { t } from '../../theme';
 
 const TextWrapper = styled.div`
-  margin: ${({ theme }) => theme.mediumSpacing} 0;
+  margin: ${t(_ => _.mediumSpacing)} 0;
   padding: 30px;
-  box-shadow: ${({ theme }) => theme.defaultShadow};
-  background-color: ${({ theme }) => theme.elementBackgroundColor};
+  box-shadow: ${t(_ => _.shadow)};
+  background-color: ${t(_ => _.elementBackgroundColor)};
   p {
     font-size: 0.9em;
   }
