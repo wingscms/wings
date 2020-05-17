@@ -33,8 +33,8 @@ Storyshots components/ScrollBar Uncontrolled 1: 8aea4e74b6df42094d70f30d3bad36ab
 Storyshots components/SectionMarker Default 1: ea3634ca6af4d4461ae8bcf5a2c52aa8
 Storyshots components/SocialButtons Default 1: 681f15e29273e3b9de90695ef82f65e3
 Storyshots jsonschema-form/Amount Default 1: 2426c52ef6231381b6abb0b3a3ecdbb0
-Storyshots react/Article Default 1: 4442020f46da34251d9a0ede9347a9c5
-Storyshots react/Article No Image 1: 06cea42fe75aa1cfa483ee6db0b59444
+Storyshots react/Article Default 1: 3968ac4798a838a0b197072ab428b129
+Storyshots react/Article No Image 1: eb926f67d53f6ffccf0a002a0a7bcd33
 Storyshots react/Campaign Event 1: d71086e1e70bd40a1b7b290c6dbc02f3
 Storyshots react/Campaign Fundraiser 1: f14f9481fca02e5f27241c7eaa11f603
 Storyshots react/Campaign Petition 1: 79abce389880a142635479c9a9527087
@@ -46,10 +46,14 @@ Storyshots react/CampaignConfirmed Signup 1: 1f4dad31aac8e5be072d8a7d3471e81d
 Storyshots react/Cards/CTACard Background Image 1: ace92560215cf714839f7d5689bd0acc
 Storyshots react/Cards/CTACard Default 1: 11e733ace2c0652faa55639992d83ebb
 Storyshots react/Cards/CampaignCard Default 1: e28e5be7e7cc0f9e1499fe17d502f880
-Storyshots react/Cards/ImageCard Default 1: e708120acdf5af156fea71fce0d8559a
+Storyshots react/Cards/CollectionCard Default 1: 0e2dd74c73e35a9522411d2068cc9862
+Storyshots react/Cards/EmbedCard Default 1: 4e089c79c62bcf66d576ed4876944d37
+Storyshots react/Cards/ImageCard Default 1: d02d143ee0659852a12d13c44d0c1d3c
 Storyshots react/Cards/InsightCard Default 1: 0fd73e75d2898ba4860c272714a3d347
-Storyshots react/Cards/NodesCard Default 1: 84222db9cb33d4467a8c9c45c6d71f99
+Storyshots react/Cards/NodesCard Default 1: d996a299fdb645ad7021045f9495eebb
+Storyshots react/Cards/QuoteCard Block Quote 1: 01f6347fd7fa7392441bb6028b21c27a
+Storyshots react/Cards/QuoteCard Pull Quote 1: e4c45f0215d757190143796156e19df0
 Storyshots react/Cards/SectionMarkerCard Default 1: ac1a86bbeca55191ea6f3e278bcad6b3
 Storyshots react/Content Default 1: 7152be0ff41e7a6b228e4c845b7eaa92
-Storyshots react/Content With Cards 1: 828031ac3cf0681ab325754b1687cc91
-Storyshots react/Page Default 1: 819f18c512f67e8fa4795714a488a4f3
+Storyshots react/Content With Cards 1: d47c351644f91dea8aec2b556c574f31
+Storyshots react/Page Default 1: 5f9514a77a8a1aa51b6db513489cd49e
