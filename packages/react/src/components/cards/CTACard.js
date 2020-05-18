@@ -1,11 +1,7 @@
 import React from 'react';
-import { CallToAction as _CallToAction, wide } from '@wingscms/components';
-import styled from '../../lib/styled';
+import { CallToAction } from '@wingscms/components';
 import createCard from '../../createCard';
-
-const CallToAction = styled(_CallToAction)`
-  ${wide}
-`;
+import OffGridContainer from '../OffGridContainer';
 
 function CallToActionView({
   align,
@@ -20,16 +16,18 @@ function CallToActionView({
   ...props
 }) {
   return (
-    <CallToAction
-      align={align}
-      backgroundImage={backgroundImage}
-      buttonText={buttonText || actionText}
-      buttonUrl={buttonUrl || actionUrl}
-      fade={fade}
-      title={title}
-      text={text}
-      {...props}
-    />
+    <OffGridContainer>
+      <CallToAction
+        align={align}
+        backgroundImage={backgroundImage}
+        buttonText={buttonText || actionText}
+        buttonUrl={buttonUrl || actionUrl}
+        fade={fade}
+        title={title}
+        text={text}
+        {...props}
+      />
+    </OffGridContainer>
   );
 }
 

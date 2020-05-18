@@ -1,6 +1,7 @@
 import React from 'react';
 import { select } from '@storybook/addon-knobs/react';
 import { Loading, Theme } from '@wingscms/components';
+import { paddingWrap } from '../../../../.storybook/utils';
 
 export default () => (
   <Loading
@@ -8,3 +9,5 @@ export default () => (
     size={select('size', Loading.Size, Loading.Size.MEDIUM)}
   />
 );
+
+export const wrapStory = paddingWrap;

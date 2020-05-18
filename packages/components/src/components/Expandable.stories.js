@@ -2,6 +2,7 @@ import React from 'react';
 import { text, color, number, boolean } from '@storybook/addon-knobs/react';
 import faker from 'faker';
 import { Expandable } from '@wingscms/components';
+import { paddingWrap } from '../../../../.storybook/utils';
 
 export default () => {
   faker.seed(1);
@@ -22,3 +23,5 @@ export default () => {
     </Expandable>
   );
 };
+
+export const wrapStory = paddingWrap;

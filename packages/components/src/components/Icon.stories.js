@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Icon } from '@wingscms/components';
+import { paddingWrap } from '../../../../.storybook/utils';
 
 const Wrapper = styled.div`
   max-width: 100px;
@@ -19,3 +20,5 @@ export default () => {
     </Wrapper>
   );
 };
+
+export const wrapStory = paddingWrap;

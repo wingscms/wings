@@ -1,6 +1,7 @@
 import React from 'react';
 import { color, number, text } from '@storybook/addon-knobs/react';
 import { Counter } from '@wingscms/components';
+import { paddingWrap } from '../../../../.storybook/utils';
 
 export default () => (
   <Counter
@@ -14,3 +15,5 @@ export default () => (
     barColor={color('barColor')}
   />
 );
+
+export const wrapStory = paddingWrap;

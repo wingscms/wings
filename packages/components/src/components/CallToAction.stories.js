@@ -2,6 +2,7 @@ import React from 'react';
 import { boolean, select, text } from '@storybook/addon-knobs/react';
 import { CallToAction } from '@wingscms/components';
 import { image } from '../../../../utils';
+import { paddingWrap } from '../../../../.storybook/utils';
 
 const props = ({ backgroundImage = null } = {}) => ({
   align: select('align', CallToAction.Align, CallToAction.Align.LEFT),
@@ -16,3 +17,5 @@ const props = ({ backgroundImage = null } = {}) => ({
 export default () => <CallToAction {...props()} />;
 
 export const BackgroundImage = () => <CallToAction {...props({ backgroundImage: image() })} />;
+
+export const wrapStory = paddingWrap;

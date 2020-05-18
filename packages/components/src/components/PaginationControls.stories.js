@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { number } from '@storybook/addon-knobs/react';
 import { PaginationControls } from '@wingscms/components';
+import { paddingWrap } from '../../../../.storybook/utils';
 
 const DefaultStoryWithHook = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -15,3 +16,5 @@ const DefaultStoryWithHook = () => {
 };
 
 export default () => <DefaultStoryWithHook />;
+
+export const wrapStory = paddingWrap;

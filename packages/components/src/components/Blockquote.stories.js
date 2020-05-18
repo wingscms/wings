@@ -1,6 +1,7 @@
 import React from 'react';
 import { text } from '@storybook/addon-knobs/react';
 import { Blockquote } from '@wingscms/components';
+import { paddingWrap } from '../../../../.storybook/utils';
 
 export default () => (
   <Blockquote
@@ -12,3 +13,5 @@ export default () => (
     sourceUrl={text('sourceUrl', 'http://example.com')}
   />
 );
+
+export const wrapStory = paddingWrap;

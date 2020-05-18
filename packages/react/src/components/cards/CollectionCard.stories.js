@@ -1,5 +1,6 @@
 import { CollectionCard } from '@wingscms/react';
 import { image } from '../../../../../utils';
+import { contentWrap } from '../../../../../.storybook/utils';
 
 export default () =>
   CollectionCard.render({
@@ -100,3 +101,5 @@ export default () =>
       },
     ],
   });
+
+export const storyWrap = contentWrap;

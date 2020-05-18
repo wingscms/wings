@@ -37,6 +37,7 @@ const Container = styled.div`
   padding: ${t(_ => _.mediumSpacing)};
   background-color: ${t(_ => _.callToActionBackgroundColor)};
   ${({ backgroundImage }) => (backgroundImage ? backgroundImageStyles : '')}
+  box-shadow: ${t(_ => _.shadow)}''
   width: 100%;
 `;
 

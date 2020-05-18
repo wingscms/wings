@@ -15,19 +15,9 @@ const Text = styled.div`
 const Container = styled.div`
   width: 100%;
   background: ${t(_ => _.sectionMarkerBackgroundColor)};
-  margin-top: ${t(_ => _.largeSpacing)};
-  margin-bottom: ${t(_ => _.largeSpacing)};
   &:first-child {
     margin-top: 0 !important;
   }
-  ${t(_ =>
-    _.tabletQuery(
-      css`
-        margin-top: ${t(_ => _.mediumSpacing)};
-        margin-bottom: ${t(_ => _.mediumSpacing)};
-      `,
-    ),
-  )}
 `;
 
 const Chapter = styled.div`

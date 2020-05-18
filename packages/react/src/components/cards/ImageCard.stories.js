@@ -1,5 +1,6 @@
 import { ImageCard } from '@wingscms/react';
 import { image } from '../../../../../utils';
+import { contentWrap } from '../../../../../.storybook/utils';
 
 export default () =>
   ImageCard.render({
@@ -9,3 +10,5 @@ export default () =>
     size: 0,
     float: 0,
   });
+
+export const storyWrap = contentWrap;

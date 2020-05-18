@@ -1,6 +1,7 @@
 import React from 'react';
 import { boolean, text, color, number } from '@storybook/addon-knobs/react';
 import { SectionMarker } from '@wingscms/components';
+import { paddingWrap } from '../../../../.storybook/utils';
 
 export default () => (
   <SectionMarker
@@ -14,3 +15,5 @@ export default () => (
     fade={boolean('fade', true)}
   />
 );
+
+export const wrapStory = paddingWrap;

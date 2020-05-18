@@ -1,5 +1,6 @@
 import { SectionMarkerCard } from '@wingscms/react';
 import { boolean, text, color, number } from '@storybook/addon-knobs/react';
+import { contentWrap } from '../../../../../.storybook/utils';
 
 export default () =>
   SectionMarkerCard.render({
@@ -12,3 +13,5 @@ export default () =>
     numberOpacity: number('numberOpacity'),
     fade: boolean('fade', true),
   });
+
+export const wrapStory = contentWrap;

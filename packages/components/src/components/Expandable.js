@@ -12,8 +12,7 @@ const ExpandableWrapper = styled.div`
   color: ${t((_, { backgroundColor }) =>
     _.contrastColor({ backgroundColor: backgroundColor || _.expandableBackgroundColor }),
   )};
-  padding: 30px;
-  margin: 40px 0;
+  padding: ${t(_ => _.mediumSpacing)};
   transition: all 0.2s linear;
   width: 100%;
   position: relative;

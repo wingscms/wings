@@ -1,6 +1,7 @@
 import React from 'react';
 import { text, select, boolean } from '@storybook/addon-knobs/react';
 import { Button, Icon } from '@wingscms/components';
+import { paddingWrap } from '../../../../.storybook/utils';
 
 const DEFAULT_ICON = '';
 
@@ -28,4 +29,4 @@ export const WithIcon = () => (
 export const Loading = () => <Button {...props({ loading: true })} />;
 export const LoadingSmall = () => <Button {...props({ size: Button.Size.SMALL, loading: true })} />;
 
-export const wrapStory = elem => <div style={{ padding: '1rem' }}>{elem}</div>;
+export const wrapStory = paddingWrap;

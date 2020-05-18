@@ -1,6 +1,7 @@
 import React from 'react';
 import { color, number } from '@storybook/addon-knobs/react';
 import { SocialButtons } from '@wingscms/components';
+import { paddingWrap } from '../../../../.storybook/utils';
 
 const props = () => ({
   iconColor: color('iconColor'),
@@ -22,3 +23,5 @@ export default () => (
     <SocialButtons.Button icon="email" url="mailto:example@example.com" />
   </SocialButtons>
 );
+
+export const wrapStory = paddingWrap;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { number, color as _color, boolean } from '@storybook/addon-knobs/react';
 import { Burger } from '@wingscms/components';
+import { paddingWrap } from '../../../../.storybook/utils';
 
 const props = ({ active = false, color = null, barBorderRadius = 0 } = {}) => ({
   active: boolean('active', active),
@@ -17,3 +18,5 @@ export default () => <Burger {...props()} />;
 export const ActiveRed = () => (
   <Burger {...props({ active: true, color: '#ff0000', barBorderRadius: 4 })} />
 );
+
+export const wrapStory = paddingWrap;

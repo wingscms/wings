@@ -1,4 +1,5 @@
 import { QACard } from '@wingscms/react';
+import { contentWrap } from '../../../../../.storybook/utils';
 
 export default () =>
   QACard.render({
@@ -26,3 +27,5 @@ export default () =>
       },
     ],
   });
+
+export const wrapStory = contentWrap;

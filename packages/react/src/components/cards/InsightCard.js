@@ -1,14 +1,14 @@
 import React from 'react';
-import { Insight, wide } from '@wingscms/components';
-import styled from '../../lib/styled';
+import { Insight } from '@wingscms/components';
 import createCard from '../../createCard';
-
-const _Insight = styled(Insight)`
-  ${wide}
-`;
+import OffGridContainer from '../OffGridContainer';
 
 function InsightCardView({ text, ...props }) {
-  return <_Insight {...props}>{text}</_Insight>;
+  return (
+    <OffGridContainer>
+      <Insight {...props}>{text}</Insight>
+    </OffGridContainer>
+  );
 }
 export default createCard({
   name: 'InsightCard',

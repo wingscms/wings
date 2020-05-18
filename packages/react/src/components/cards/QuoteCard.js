@@ -10,7 +10,7 @@ const Type = {
 // for backwards compatibility
 const getAlign = align => {
   if (align === Pullquote.Align.LEFT || align === 1) return Pullquote.Align.LEFT;
-  if (align === Pullquote.Align.RIGHT || align === 2) return Pullquote.Align.LEFT;
+  if (align === Pullquote.Align.RIGHT || align === 2) return Pullquote.Align.RIGHT;
   return Pullquote.Align.CENTER;
 };
 

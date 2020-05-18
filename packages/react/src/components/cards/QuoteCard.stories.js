@@ -1,6 +1,7 @@
 import { QuoteCard } from '@wingscms/react';
 import { Pullquote } from '@wingscms/components';
 import { text, select } from '@storybook/addon-knobs/react';
+import { contentWrap } from '../../../../../.storybook/utils';
 
 export const BlockQuote = () =>
   QuoteCard.render({
@@ -24,3 +25,5 @@ export const PullQuote = () =>
     sourceUrl: text('sourceUrl', 'http://example.com'),
     align: select('align', Pullquote.Align, Pullquote.Align.CENTER),
   });
+
+export const wrapStory = contentWrap;
