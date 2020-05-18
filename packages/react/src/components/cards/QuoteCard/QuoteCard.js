@@ -1,27 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Blockquote } from '@wingscms/components';
 import createCard from '../../../createCard';
-import propTypes from './propTypes';
-import BlockquoteView from './BlockquoteView';
 import PullquoteView from './PullquoteView';
-import { TYPE, FLOAT } from './enums';
+import { TYPE } from './enums';
 
-class QuoteCardView extends Component {
-  static TYPE = TYPE;
-  static FLOAT = FLOAT;
-  static propTypes = propTypes;
-
-  getComponent() {
-    switch (this.props.type) {
-      case TYPE.PULLQUOTE:
-        return PullquoteView;
-      default:
-        return BlockquoteView;
-    }
-  }
-
-  render() {
-    const Comp = this.getComponent();
-    return <Comp {...this.props} />;
+function QuoteCardView(props) {
+  switch (props.type) {
+    case TYPE.PULLQUOTE:
+      return <PullquoteView {...props} />;
+    default:
+      return <Blockquote {...props} />;
   }
 }
 

@@ -1,4 +1,5 @@
 export { default as AppBar } from './components/AppBar';
+export { default as Blockquote } from './components/Blockquote';
 export { default as Breakout } from './components/Breakout';
 export { default as Burger } from './components/Burger';
 export { default as Button } from './components/Button';

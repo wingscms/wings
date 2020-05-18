@@ -98,6 +98,10 @@ export default class Theme {
     return this.variables.appBarHeight || this.largeSpacing;
   }
 
+  get blockquoteBackgroundColor() {
+    return this.variables.blockquoteBackgroundColor || this.elementBackgroundColor;
+  }
+
   get burgerColor() {
     return this.variables.burgerColor || this.iconColor;
   }

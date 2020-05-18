@@ -6,7 +6,7 @@ export const BlockQuote = () =>
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     source: 'Source',
     sourceUrl: 'example.com',
-    type: 1,
+    type: 0,
     float: 0,
   });
 
