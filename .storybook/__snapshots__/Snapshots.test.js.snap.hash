@@ -1,6 +1,6 @@
 Storyshots components/AppBar Default 1: 49bb52dc951cc76fccb5655d2ad3898d
 Storyshots components/AppBar With Content 1: 473e9208d9ee1c97372e2917db565b37
-Storyshots components/Blockquote Default 1: 8cb0b76daf3c231db5e22eac6d8319fe
+Storyshots components/Blockquote Default 1: 79069ccd24e7330ba598fdf4c8b2d5cc
 Storyshots components/Burger Active Red 1: f02d27a403657f6c05d1a2d34b92e4ae
 Storyshots components/Burger Default 1: 711989425f0f3d9caf836dfba0c1df70
 Storyshots components/Button Default 1: e8a025be27e86dd325c03991ba79bac0
@@ -29,16 +29,17 @@ Storyshots components/Link No Styling 1: a53a9de150b4e790127d209bb2ea70f7
 Storyshots components/Loading Default 1: 04ebad2f983cb363f752834714542db8
 Storyshots components/PaginationControls Default 1: 1a5970ca41d89ded0c3c6a91e693e0a0
 Storyshots components/ProgressBar Default 1: 44dbeeabcad71e5d6c83ca67806dc514
+Storyshots components/Pullquote Default 1: 54e5db449918b056683fa6ae6ec4b0d7
 Storyshots components/ScrollBar Controlled 1: e8441d95ba93fe2bb5827e3808f067e5
 Storyshots components/ScrollBar Uncontrolled 1: 8aea4e74b6df42094d70f30d3bad36ab
 Storyshots components/SectionMarker Default 1: ea3634ca6af4d4461ae8bcf5a2c52aa8
 Storyshots components/SocialButtons Default 1: 904f57d014fbfbe2ef256efda0156d62
 Storyshots jsonschema-form/Amount Default 1: 2426c52ef6231381b6abb0b3a3ecdbb0
-Storyshots react/Article Default 1: ed531aba17dd6d36b887f7d36016cbf4
-Storyshots react/Article No Image 1: d780ea439d06087e133aba55cf5dfc95
-Storyshots react/Campaign Event 1: 2a53f89862a889d627b70e96aa25c168
-Storyshots react/Campaign Fundraiser 1: 35a3dba075dbf8b97123578c731959c1
-Storyshots react/Campaign Petition 1: d1837f67522513ac3432689c6c035f45
+Storyshots react/Article Default 1: 7ca47a38527dc37c71152bb9ca8fe640
+Storyshots react/Article No Image 1: f1788579db8c00622eebb95fad65c24e
+Storyshots react/Campaign Event 1: c27a05a11e4ace88b4b48c32009afb99
+Storyshots react/Campaign Fundraiser 1: 5f0bbcfc19cde2ac0cd1051112695f97
+Storyshots react/Campaign Petition 1: 5f605dcbc4a73a9f6d7a849f498a634e
 Storyshots react/CampaignConfirmed Default 1: c8115631ebfed43122c135ebb3fe65f8
 Storyshots react/CampaignConfirmed Event 1: 7ff335552b9c94f0d22d642bb5933efc
 Storyshots react/CampaignConfirmed Fundraiser 1: ab3f32874ed4bb06cac129a8c5e050f9
@@ -46,18 +47,18 @@ Storyshots react/CampaignConfirmed Petition 1: c8115631ebfed43122c135ebb3fe65f8
 Storyshots react/CampaignConfirmed Signup 1: aa76cc72eb53fe7b336069a19effd6be
 Storyshots react/Cards/CTACard Background Image 1: 5cabd2ac269475871c92afe530833d10
 Storyshots react/Cards/CTACard Default 1: 8fea64cd1d3445af7b0eb6b0f621c585
-Storyshots react/Cards/CampaignCard Default 1: 020703a1ac335467a4f1588e654adb47
+Storyshots react/Cards/CampaignCard Default 1: 39d16ca7d796a195dc239472f86c23e0
 Storyshots react/Cards/CollectionCard Default 1: 32c91878ef1a4dc27164e0340fac3320
 Storyshots react/Cards/EmbedCard Default 1: 4e089c79c62bcf66d576ed4876944d37
 Storyshots react/Cards/ImageCard Default 1: d02d143ee0659852a12d13c44d0c1d3c
 Storyshots react/Cards/InsightCard Default 1: 0fd73e75d2898ba4860c272714a3d347
 Storyshots react/Cards/NodesCard Default 1: 4345bdbd49887700e027dc76c2e82268
 Storyshots react/Cards/QACard Default 1: 33cc364e1f2dccc3a8633cb9e75c5e28
-Storyshots react/Cards/QuoteCard Block Quote 1: 5c86902fe3d718941a1e9e07d0ea10b9
-Storyshots react/Cards/QuoteCard Pull Quote 1: dd0ddd691e97544083626511dd8c565c
+Storyshots react/Cards/QuoteCard Block Quote 1: 1c33696627669ed579c404e8337ef1e3
+Storyshots react/Cards/QuoteCard Pull Quote 1: 7e3bb11599f6de3cacf768cecc49ffba
 Storyshots react/Cards/SectionMarkerCard Default 1: ac1a86bbeca55191ea6f3e278bcad6b3
 Storyshots react/Cards/TestimonialCard Default 1: c0e52bdfafd2c1b14377136009fe87d0
 Storyshots react/Cards/TextCard Default 1: f5f60ad2eb0e1db5e58ea2948d759b99
 Storyshots react/Content Default 1: 7152be0ff41e7a6b228e4c845b7eaa92
-Storyshots react/Content With Cards 1: 814a908e5ad7c965def9b33d03dfd811
-Storyshots react/Page Default 1: 19864d8eb8765915e29d372b1f273706
+Storyshots react/Content With Cards 1: 8b57b7216673f98b748a41f08203db9d
+Storyshots react/Page Default 1: bc39d7264293c614eaed6b3de860ae5b

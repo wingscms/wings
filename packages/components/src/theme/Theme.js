@@ -102,6 +102,15 @@ export default class Theme {
     return this.variables.blockquoteBackgroundColor || this.elementBackgroundColor;
   }
 
+  get blockquoteTextColor() {
+    return (
+      this.variables.blockquoteTextColor ||
+      this.contrastColor({
+        backgroundColor: this.blockquoteBackgroundColor,
+      })
+    );
+  }
+
   get burgerColor() {
     return this.variables.burgerColor || this.iconColor;
   }
@@ -258,6 +267,10 @@ export default class Theme {
 
   get navigationMenuBackgroundColor() {
     return this.variables.navigationMenuBackgroundColor || this.backgroundColor;
+  }
+
+  get pullquoteBackgroundColor() {
+    return this.variables.pullquoteBackgroundColor || this.backgroundColor;
   }
 
   get pullquoteTextColor() {

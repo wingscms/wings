@@ -1,20 +1,26 @@
 import { QuoteCard } from '@wingscms/react';
+import { Pullquote } from '@wingscms/components';
+import { text, select } from '@storybook/addon-knobs/react';
 
 export const BlockQuote = () =>
   QuoteCard.render({
-    text:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    source: 'Source',
-    sourceUrl: 'example.com',
     type: 0,
-    float: 0,
+    text: text(
+      'text',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    ),
+    source: text('source', 'Source'),
+    sourceUrl: text('sourceUrl', 'http://example.com'),
   });
 
 export const PullQuote = () =>
   QuoteCard.render({
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    source: 'Source',
-    sourceUrl: 'example.com',
     type: 1,
-    float: 2,
+    text: text(
+      'text',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    ),
+    source: text('source', 'Source'),
+    sourceUrl: text('sourceUrl', 'http://example.com'),
+    align: select('align', Pullquote.Align, Pullquote.Align.CENTER),
   });
