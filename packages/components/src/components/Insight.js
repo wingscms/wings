@@ -24,6 +24,20 @@ const Inner = styled.div`
   font-weight: bold;
   max-width: 1160px;
   margin: 0 auto;
+  ${t(_ =>
+    _.tabletQuery(
+      css`
+        ${t(Heading.getStyles(4))}
+      `,
+    ),
+  )}
+  ${t(_ =>
+    _.mobileQuery(
+      css`
+        ${t(Heading.getStyles(3))}
+      `,
+    ),
+  )}
 `;
 
 export default function Insight({ fade = true, children, ...props }) {

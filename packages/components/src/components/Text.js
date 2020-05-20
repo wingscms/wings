@@ -28,6 +28,7 @@ const getStyles = (_, { baseFontSize, baseMobileFontSize, baseTabletFontSize }) 
   );
 
   return css`
+    font-family: ${t(_ => _.textFontFamily)};
     line-height: ${t(_ => _.textLineHeight)};
     letter-spacing: ${t(_ => _.textLetterSpacing)};
     ${getSpacing}

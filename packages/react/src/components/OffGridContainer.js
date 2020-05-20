@@ -7,12 +7,10 @@ import { t } from '../theme';
 const ContainerOuter = styled.div`
   ${wide}
   margin: ${t(_ => _.mediumSpacing)} initial;
-  padding: ${t(_ => `0 ${_.mediumSpacing}`)};
  ${t(_ =>
    _.mobileQuery(
      css`
        margin: ${t(_ => _.smallSpacing)} initial;
-       padding: ${t(_ => `0 ${_.smallSpacing}`)};
      `,
    ),
  )}

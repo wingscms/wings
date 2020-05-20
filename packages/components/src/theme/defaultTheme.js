@@ -24,6 +24,7 @@ export default {
   baseMobileFontSize: '14px',
   textLineHeight: '1.5',
   textLetterSpacing: '0.01em',
+  textFontFamily: '"Source Sans Pro", sans-serif',
   headerFontFamily: '"Poppins", sans-serif',
   headingScaleRatio: 1.25,
   uppercaseTitles: false,

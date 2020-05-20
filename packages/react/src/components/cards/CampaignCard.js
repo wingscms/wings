@@ -14,7 +14,9 @@ const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
   margin-bottom: ${t(_ => _.largeSpacing)};
+  margin-top: -${t(_ => _.largeSpacing)};
   @media screen and (max-width: 800px) {
+    margin-top: -${t(_ => _.smallSpacing)};
     margin-bottom: ${t(_ => _.mediumSpacing)};
   }
 `;
