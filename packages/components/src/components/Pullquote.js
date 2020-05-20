@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-fragments */
 import React from 'react';
 import fP from 'filter-invalid-dom-props';
 import styled, { css } from '../lib/styled';
