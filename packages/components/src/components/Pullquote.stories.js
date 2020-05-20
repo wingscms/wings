@@ -1,6 +1,6 @@
 import React from 'react';
 import { text, select } from '@storybook/addon-knobs/react';
-import { Pullquote } from '@wingscms/components';
+import { Pullquote, Text } from '@wingscms/components';
 import faker from 'faker';
 import { contentWrap } from '../../../../.storybook/utils';
 
@@ -17,7 +17,7 @@ export default () => {
         sourceUrl={text('sourceUrl', 'http://example.com')}
         align={select('align', Pullquote.Align, Pullquote.Align.LEFT)}
       />
-      {faker.lorem.paragraphs(10)}
+      <Text>{faker.lorem.paragraphs(10)}</Text>
     </>
   );
 };
