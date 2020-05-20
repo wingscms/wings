@@ -4,6 +4,7 @@ import styled from '../lib/styled';
 import { t } from '../theme';
 import Icon from './Icon';
 import Link from './Link';
+import Text from './Text';
 
 const Container = styled.div`
   padding-top: ${t(_ => _.smallSpacing)};
@@ -48,7 +49,9 @@ export default function Blockquote({ text, source, sourceUrl, ...props }) {
         <IconWrap>
           <Icon icon="quote" />
         </IconWrap>
-        <Quote>{text}</Quote>
+        <Quote>
+          <Text noSpacing>{text}</Text>
+        </Quote>
         {!source ? null : (
           <Caption>{!sourceUrl ? source : <Link href={sourceUrl}>{source}</Link>}</Caption>
         )}

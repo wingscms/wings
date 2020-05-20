@@ -2,14 +2,14 @@ import React from 'react';
 import { boolean, select } from '@storybook/addon-knobs/react';
 import faker from 'faker';
 import styled from 'styled-components';
-import { AppBar } from '@wingscms/components';
+import { AppBar, Text } from '@wingscms/components';
 
 const props = ({ position = AppBar.Position.TOP } = {}) => ({
   position: select('position', AppBar.Position, position),
   open: boolean('open', true),
 });
 
-const ExampleContent = styled.div`
+const ExampleContent = styled(Text)`
   padding: 100px 20px;
   max-width: 700px;
   margin: 0 auto;

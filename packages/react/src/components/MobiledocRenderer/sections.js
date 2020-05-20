@@ -1,7 +1,9 @@
 import React from 'react';
-import { Heading } from '@wingscms/components';
+import { Heading, Text } from '@wingscms/components';
 
-export default [1, 2, 3, 4, 5, 6].map(rank => ({
+const headings = [1, 2, 3, 4, 5, 6].map(rank => ({
   name: `h${rank}`,
   component: props => <Heading rank={rank} {...props} />,
 }));
+
+export default [{ name: 'p', component: Text }, ...headings];

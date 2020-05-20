@@ -18,17 +18,19 @@ export default {
   navigationLanguagePickerColor: '#FFFFFF',
   // spacing
   mediumSpacing: '40px',
-  // misc
-  contrastLuminanceThreshold: 60,
-  linkStyle: 'lineGrow',
-  shadow: '0 0 40px 0 rgba(0, 0, 0, 0.05)',
   // typography
   baseFontSize: '18px',
   baseTabletFontSize: '16px',
-  baseMobileFontSize: '12px',
+  baseMobileFontSize: '14px',
+  textLineHeight: '1.5',
+  textLetterSpacing: '0.01em',
+  headerFontFamily: '"Poppins", sans-serif',
+  headingScaleRatio: 1.25,
+  uppercaseTitles: false,
+  // misc
   mobileBreakpoint: BREAKPOINT_SIZE[BREAKPOINT_TYPE.MOBILE],
   tabletBreakpoint: BREAKPOINT_SIZE[BREAKPOINT_TYPE.TABLET],
-  headingScaleRatio: 1.25,
-  headerFontFamily: '"Poppins", sans-serif',
-  uppercaseTitles: false,
+  contrastLuminanceThreshold: 60,
+  linkStyle: 'lineGrow',
+  shadow: '0 0 40px 0 rgba(0, 0, 0, 0.05)',
 };

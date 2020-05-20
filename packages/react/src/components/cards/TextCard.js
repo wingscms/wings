@@ -7,12 +7,9 @@ import { t } from '../../theme';
 
 const TextWrapper = styled.div`
   margin: ${t(_ => _.mediumSpacing)} 0;
-  padding: 30px;
+  padding: ${t(_ => _.mediumSpacing)};
   box-shadow: ${t(_ => _.shadow)};
   background-color: ${t(_ => _.elementBackgroundColor)};
-  p {
-    font-size: 0.9em;
-  }
   p:last-child {
     margin-bottom: 0;
   }

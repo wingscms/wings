@@ -1,13 +1,14 @@
 import React from 'react';
 import fp from 'filter-invalid-dom-props';
-import { Heading } from '@wingscms/components';
 
 import styled, { css } from '../lib/styled';
 import { slugify } from '../lib/utils';
 import { t } from '../theme';
 import Fade from './Fade';
+import Heading from './Heading';
+import _Text from './Text';
 
-const Text = styled.div`
+const Text = styled(_Text)`
   color: ${t((_, { textColor }) => textColor || _.sectionMarkerTextColor)};
   margin-bottom: 0;
 `;

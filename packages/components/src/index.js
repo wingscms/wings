@@ -26,6 +26,8 @@ export { default as Pullquote } from './components/Pullquote';
 export { default as SectionMarker } from './components/SectionMarker';
 export { default as ScrollBar } from './components/ScrollBar';
 export { default as SocialButtons } from './components/SocialButtons';
+export { default as Text } from './components/Text';
+
 export { default as Theme, t, useTheme, ThemeProvider } from './theme';
 export { default as useDimensions } from './hooks/useDimensions';
 export { ALIGNLEFT, ALIGNRIGHT, wide } from './styles';

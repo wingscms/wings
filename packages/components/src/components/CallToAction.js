@@ -7,6 +7,7 @@ import { t } from '../theme';
 import _Button from './Button';
 import Fade from './Fade';
 import _Heading from './Heading';
+import _Text from './Text';
 
 const Align = {
   LEFT: 'left',
@@ -41,7 +42,7 @@ const Container = styled.div`
   width: 100%;
 `;
 
-const Text = styled.p`
+const Text = styled(_Text)`
   color: ${t(_ => _.callToActionTextColor)};
   text-align: ${({ align }) => align};
 `;
