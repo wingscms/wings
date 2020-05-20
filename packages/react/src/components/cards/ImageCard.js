@@ -3,8 +3,7 @@ import { compose, setPropTypes, setStatic } from 'recompose';
 import classNames from 'classnames';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import PropTypes from 'prop-types';
-import Fade from 'react-reveal/Fade';
-import { wide, ALIGNLEFT, ALIGNRIGHT } from '@wingscms/components';
+import { Fade, wide, ALIGNLEFT, ALIGNRIGHT } from '@wingscms/components';
 import styled from '../../lib/styled';
 import { enumerate } from '../../lib/utils';
 import createCard from '../../createCard';
@@ -111,8 +110,8 @@ const Image = styled.figure`
 const ImageCard = compose(
   setPropTypes(propTypes),
   setStatic('defaultProps', defaultProps),
-)(({ size, float, className, mediaId, url, caption, onClick, _mediaId, ...props }) => (
-  <Fade bottom distance="20px">
+)(({ fade = true, size, float, className, mediaId, url, caption, onClick, _mediaId, ...props }) => (
+  <Fade fade={fade}>
     <Image
       onClick={onClick}
       className={classNames(`size-${size}`, className, {

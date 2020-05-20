@@ -9,6 +9,7 @@ export { default as Counter } from './components/Counter';
 export { default as ProgressBar } from './components/ProgressBar';
 export { default as Drawer } from './components/Drawer';
 export { default as Expandable } from './components/Expandable';
+export { default as Fade } from './components/Fade';
 export { default as FlexGrid } from './components/FlexGrid';
 export { default as Footer } from './components/Footer';
 export { default as Gallery } from './components/Gallery';
