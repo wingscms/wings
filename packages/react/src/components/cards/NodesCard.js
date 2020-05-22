@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
-  wide,
+  _WIDE,
   Card,
   FlexGrid,
   Loading as _Loading,
@@ -12,7 +12,7 @@ import { useWings } from '../../ctx/Wings';
 import createCard from '../../createCard';
 
 const Wide = styled.div`
-  ${wide};
+  ${_WIDE};
 `;
 
 const Container = styled.div`

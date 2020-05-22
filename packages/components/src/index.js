@@ -31,6 +31,7 @@ export { default as Text } from './components/Text';
 
 export { default as Theme, t, useTheme, ThemeProvider } from './theme';
 export { default as useDimensions } from './hooks/useDimensions';
-export { ALIGNLEFT, ALIGNRIGHT, wide } from './styles';
 
 export { mediaQuery, modularScale } from './lib/utils';
+
+export { ALIGNLEFT as _ALIGNLEFT, ALIGNRIGHT as _ALIGNRIGHT, WIDE as _WIDE } from './styles';

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import { FlexGrid, Icon, wide } from '@wingscms/components';
+import { FlexGrid, Icon, _WIDE } from '@wingscms/components';
 import styled from '../../lib/styled';
 import createCard from '../../createCard';
 import { t } from '../../theme';
 
 const Wide = styled.div`
-  ${wide}
+  ${_WIDE}
 `;
 
 const WideContentWrap = styled.div`

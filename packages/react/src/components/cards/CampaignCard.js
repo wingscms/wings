@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled, { css } from '../../lib/styled';
-import { wide } from '@wingscms/components';
+import { _WIDE } from '@wingscms/components';
 import Campaign from '../Campaign/Campaign';
 import createCard from '../../createCard';
 import { t } from '../../theme';
 
 const Wrapper = styled.div`
-  ${wide};
+  ${_WIDE};
 `;
 
 const Container = styled.div`

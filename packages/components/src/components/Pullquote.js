@@ -3,7 +3,7 @@ import fP from 'filter-invalid-dom-props';
 import styled, { css } from '../lib/styled';
 import { t } from '../theme';
 import Heading from './Heading';
-import { ALIGNLEFT, ALIGNRIGHT } from '../styles/floats';
+import { ALIGNLEFT, ALIGNRIGHT } from '../styles';
 import Link from './Link';
 
 const Align = {
