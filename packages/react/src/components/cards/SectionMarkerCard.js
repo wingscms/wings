@@ -1,5 +1,6 @@
 import React from 'react';
 import { SectionMarker, wide } from '@wingscms/components';
+import { slugify } from '../../lib/utils';
 import styled, { css } from '../../lib/styled';
 import createCard from '../../createCard';
 import { t } from '../../theme';
@@ -21,8 +22,16 @@ const _SectionMarker = styled(SectionMarker)`
   )}
 `;
 
-function SectionMarkerView({ marker, number, intro, text, ...props }) {
-  return <_SectionMarker number={marker || number} text={intro || text} {...props} />;
+function SectionMarkerView({ marker, number, intro, text, title, ...props }) {
+  return (
+    <_SectionMarker
+      number={marker || number}
+      text={intro || text}
+      title={title}
+      id={slugify(title)}
+      {...props}
+    />
+  );
 }
 
 export default createCard({

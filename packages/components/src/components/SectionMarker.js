@@ -2,7 +2,6 @@ import React from 'react';
 import fp from 'filter-invalid-dom-props';
 
 import styled, { css } from '../lib/styled';
-import { slugify } from '../lib/utils';
 import { t } from '../theme';
 import Reveal from './Reveal';
 import Heading from './Heading';
@@ -70,7 +69,7 @@ export default function SectionMarkerView({
   ...props
 }) {
   return (
-    <Container className="headerContainer" id={slugify(title)} {...fp(props)}>
+    <Container {...fp(props)}>
       <Chapter>
         <Reveal reveal={reveal}>
           <TitleWrap>

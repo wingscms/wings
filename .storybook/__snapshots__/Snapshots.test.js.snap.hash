@@ -34,12 +34,12 @@ Storyshots components/ProgressBar Default 1: dda009a5cc4473c32834366122dca9b3
 Storyshots components/Pullquote Default 1: 087ca751b41bd8148fd4191621aa443c
 Storyshots components/ScrollBar Controlled 1: 668ef61143c933a120dc43467825b3d9
 Storyshots components/ScrollBar Uncontrolled 1: 6075831204afcb0e741bc33f5f92fbc8
-Storyshots components/SectionMarker Default 1: 687616a9cabebce862f32367691397c8
+Storyshots components/SectionMarker Default 1: 41c1124e310bbf642df57a4629c33afa
 Storyshots components/SocialButtons Default 1: cbd102290837a6ba77344c0c269b707a
 Storyshots components/Text Default 1: c6804dbf42dcedeef1e955f41dbe14c8
 Storyshots jsonschema-form/Amount Default 1: 0fc7bb06efb5c5f7f81cea4e8f6b6a3a
-Storyshots react/Article Default 1: dc30c6e6fb27de5f26ee6be0b29e0bbc
-Storyshots react/Article No Image 1: 04fb20ebfe5cff3faef50e7ee475c83d
+Storyshots react/Article Default 1: 13bc86bafd88742e8d7aba334ef482ea
+Storyshots react/Article No Image 1: 00d2c96c9ec235008e098a80e127ec81
 Storyshots react/Campaign Event 1: 929af6a51b0ec040b962256d7e42b530
 Storyshots react/Campaign Fundraiser 1: 4e631276e10b6f2b26af630642315b58
 Storyshots react/Campaign Petition 1: ce32aedfd6efffbc03667c16fe228b16
@@ -59,9 +59,9 @@ Storyshots react/Cards/NodesCard Default 1: 7426e5635b95ccffb739679d56e7c9d0
 Storyshots react/Cards/QACard Default 1: d69ecb4c64ee23c2ca6f8921726626db
 Storyshots react/Cards/QuoteCard Block Quote 1: 2b78584e238590e94d764b2962f9dd93
 Storyshots react/Cards/QuoteCard Pull Quote 1: 229a9e537e9a43a8429accec1e3e588f
-Storyshots react/Cards/SectionMarkerCard Default 1: d072ff2ccb390eb19d799808fd8d27ba
+Storyshots react/Cards/SectionMarkerCard Default 1: 7f709f7b6dea8e57a8902a417c345bd1
 Storyshots react/Cards/TestimonialCard Default 1: 4acdd5ee67c7675e877d685322ee5b3e
 Storyshots react/Cards/TextCard Default 1: b2743f10df3b800958450631101c9eed
 Storyshots react/Content Default 1: 008a39072f505f6d3e4118b2399fd55c
-Storyshots react/Content With Cards 1: d219f295546636cc77439de259605ad3
-Storyshots react/Page Default 1: 7ed24a3cea3cc35bc2a899c0365bb4e7
+Storyshots react/Content With Cards 1: 9c0dacb44213316eb01e391f1b66e67b
+Storyshots react/Page Default 1: 6cba06da041fde913a9311c524013935
