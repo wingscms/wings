@@ -35,11 +35,11 @@ const buttonAlignStyles = ({ align }) => {
 };
 
 const Container = styled.div`
+  width: 100%;
   padding: ${t(_ => _.mediumSpacing)};
   background-color: ${t(_ => _.callToActionBackgroundColor)};
+  box-shadow: ${t(_ => _.shadow)};
   ${({ backgroundImage }) => (backgroundImage ? backgroundImageStyles : '')}
-  box-shadow: ${t(_ => _.shadow)}''
-  width: 100%;
 `;
 
 const Text = styled(_Text)`
