@@ -22,7 +22,7 @@ const _SectionMarker = styled(SectionMarker)`
   )}
 `;
 
-function SectionMarkerView({ marker, number, intro, text, title, ...props }) {
+function ChapterCardView({ marker, number, intro, text, title, ...props }) {
   return (
     <_SectionMarker
       number={marker || number}
@@ -35,6 +35,6 @@ function SectionMarkerView({ marker, number, intro, text, title, ...props }) {
 }
 
 export default createCard({
-  name: 'SectionMarkerCard',
-  renderWith: SectionMarkerView,
+  name: 'ChapterCard',
+  renderWith: ChapterCardView,
 });

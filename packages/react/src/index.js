@@ -36,6 +36,7 @@ export {
   allCards,
   CampaignCard,
   CampaignCardView,
+  ChapterCard,
   CollectionCard,
   CTACard,
   DataCard,
@@ -45,7 +46,6 @@ export {
   NodesCard,
   QACard,
   QuoteCard,
-  SectionMarkerCard,
   TestimonialCard,
   TextCard,
 } from './components/cards';

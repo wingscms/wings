@@ -1,9 +1,9 @@
-import { SectionMarkerCard } from '@wingscms/react';
+import { ChapterCard } from '@wingscms/react';
 import { boolean, text, color, number } from '@storybook/addon-knobs/react';
 import { contentWrap } from '../../../../../utils';
 
 export default () =>
-  SectionMarkerCard.render({
+  ChapterCard.render({
     title: text('title', 'Section One'),
     text: text('text', 'This is an introduction to the first section of the article'),
     number: text('number', '1'),
