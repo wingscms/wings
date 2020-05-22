@@ -53,10 +53,10 @@ export default function List({
   children,
   markerColor,
   textColor,
-  type = Type.UNORDERED,
+  listType = Type.UNORDERED,
   ...props
 }) {
-  const _List = Components[type];
+  const _List = Components[listType];
   return (
     <_List markerColor={markerColor} textColor={textColor} {...fP(props)}>
       {children}

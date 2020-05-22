@@ -11,7 +11,7 @@ const props = ({
   intent = Button.Intent.NONE,
   icon = DEFAULT_ICON,
 } = {}) => ({
-  type: select('type', { normal: 'normal', outline: 'outline' }, 'normal'),
+  buttonType: select('buttonType', { normal: 'normal', outline: 'outline' }, 'normal'),
   intent: select('intent', Button.Intent, intent),
   size: select('size', Button.Size, size),
   disabled: boolean('disabled', false),

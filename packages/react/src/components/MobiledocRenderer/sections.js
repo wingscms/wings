@@ -6,8 +6,8 @@ const headings = [1, 2, 3, 4, 5, 6].map(rank => ({
   component: props => <Heading rank={rank} {...props} />,
 }));
 
-const _List = type => props => (
-  <List type={type} {...props}>
+const _List = listType => props => (
+  <List listType={listType} {...props}>
     {React.Children.map(props.children, child => (
       <List.Item {...child.props}></List.Item>
     ))}
