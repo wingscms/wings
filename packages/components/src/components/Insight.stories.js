@@ -5,7 +5,7 @@ import { paddingWrap } from '../../../../utils';
 
 export default () => (
   <Insight reveal={boolean('reveal', true)}>
-    {text('text', 'This is some example text inside of an insight.')}
+    {text('children', 'This is some example text inside of an insight.')}
   </Insight>
 );
 
