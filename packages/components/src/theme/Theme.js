@@ -240,6 +240,14 @@ export default class Theme {
     return this.variables.linkSecondaryColor || this.secondaryColor;
   }
 
+  get listMarkerColor() {
+    return this.variables.listMarkerColor || this.primaryColor;
+  }
+
+  get listTextColor() {
+    return this.variables.listTextColor || this.textColor;
+  }
+
   get navigationIconColor() {
     return this.variables.navigationIconColor || this.iconColor;
   }
@@ -267,6 +275,14 @@ export default class Theme {
 
   get navigationMenuBackgroundColor() {
     return this.variables.navigationMenuBackgroundColor || this.backgroundColor;
+  }
+
+  get orderedListMarkerColor() {
+    return this.variables.orderedListMarkerColor || this.listMarkerColor;
+  }
+
+  get orderedListTextColor() {
+    return this.variables.orderedListTextColor || this.listTextColor;
   }
 
   get pullquoteBackgroundColor() {
@@ -341,5 +357,13 @@ export default class Theme {
 
   get titleTransform() {
     return this.uppercaseTitles ? 'uppercase' : 'none';
+  }
+
+  get unorderedListMarkerColor() {
+    return this.variables.unorderedListMarkerColor || this.listMarkerColor;
+  }
+
+  get unorderedListTextColor() {
+    return this.variables.unorderedListTextColor || this.listTextColor;
   }
 }

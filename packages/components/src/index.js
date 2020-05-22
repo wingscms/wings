@@ -19,6 +19,7 @@ export { default as Icon } from './components/Icon';
 export { default as Image } from './components/Image';
 export { default as Insight } from './components/Insight';
 export { default as Link } from './components/Link';
+export { default as List } from './components/List';
 export { default as Loading } from './components/Loading';
 export { default as MenuButton } from './components/MenuButton';
 export { default as PaginationControls } from './components/PaginationControls';
