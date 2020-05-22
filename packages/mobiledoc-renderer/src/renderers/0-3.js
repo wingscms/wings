@@ -42,8 +42,11 @@ export default class Renderer {
     return this.mobiledoc.sections.map((section, index) => this.renderSection(section, index));
   }
 
-  renderSection(section, nodeKey) {
-    const [type] = section;
+  renderSection(_section, nodeKey) {
+    const [type, TagName, markers] = _section;
+    const customSection = this.sections.find(s => s.name === TagName);
+    const Component = customSection?.component || TagName;
+    const section = [type, Component, markers];
 
     switch (type) {
       case MARKUP_SECTION_TYPE:
@@ -58,39 +61,20 @@ export default class Renderer {
   }
 
   renderMarkupSection([, TagName, markers], nodeKey) {
-    let Element;
-    const customSection = this.sections.find(s => s.name === TagName);
-
-    if (customSection) {
-      const Section = customSection.component;
-      Element = (
-        <Section key={nodeKey} {...this.additionalProps}>
-          {[]}
-        </Section>
-      );
-    } else {
-      Element = <TagName key={nodeKey}>{[]}</TagName>;
-    }
-
-    return this.renderMarkersOnElement(Element, markers);
+    return this.renderMarkersOnElement(
+      <TagName key={nodeKey} {...this.additionalProps}>
+        {[]}
+      </TagName>,
+      markers,
+    );
   }
 
   renderListSection([, TagName, markers], nodeKey) {
-    const customSection = this.sections.find(s => s.name === TagName);
-
-    const items = markers.map((item, index) =>
-      this.renderMarkersOnElement(<li key={index}>{[]}</li>, item),
+    return (
+      <TagName key={nodeKey} {...this.additionalProps}>
+        {markers.map((item, index) => this.renderMarkersOnElement(<li key={index}>{[]}</li>, item))}
+      </TagName>
     );
-
-    if (customSection) {
-      const Section = customSection.component;
-      return (
-        <Section key={nodeKey} {...this.additionalProps}>
-          {items}
-        </Section>
-      );
-    }
-    return <TagName key={nodeKey}>{items}</TagName>;
   }
 
   renderAtomSection(atomIndex) {
