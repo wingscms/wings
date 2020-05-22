@@ -7,4 +7,4 @@ export default () =>
     text: text('text', 'This is some example text inside of an insight.'),
   });
 
-export const storyWrap = contentWrap;
+export const wrapStory = contentWrap;

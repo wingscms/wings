@@ -101,4 +101,4 @@ export default () =>
     ],
   });
 
-export const storyWrap = contentWrap;
+export const wrapStory = contentWrap;

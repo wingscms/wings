@@ -17,4 +17,4 @@ export default () => CTACard.render(props());
 
 export const BackgroundImage = () => CTACard.render(props({ backgroundImage: image() }));
 
-export const storyWrap = contentWrap;
+export const wrapStory = contentWrap;
