@@ -3,7 +3,7 @@ import { compose, setPropTypes, setStatic } from 'recompose';
 import classNames from 'classnames';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import PropTypes from 'prop-types';
-import { Reveal, _WIDE, ALIGNLEFT, ALIGNRIGHT } from '@wingscms/components';
+import { Reveal, _WIDE, _ALIGNLEFT, _ALIGNRIGHT } from '@wingscms/components';
 import styled from '../../lib/styled';
 import { enumerate } from '../../lib/utils';
 import createCard from '../../createCard';
@@ -90,7 +90,7 @@ const Image = styled.figure`
     }
   }
   &.align-${FLOAT.LEFT} {
-    ${ALIGNLEFT};
+    ${_ALIGNLEFT};
     @media screen and (min-width: 800px) {
       figcaption {
         padding: 10px 0;
@@ -98,7 +98,7 @@ const Image = styled.figure`
     }
   }
   &.align-${FLOAT.RIGHT} {
-    ${ALIGNRIGHT};
+    ${_ALIGNRIGHT};
     @media screen and (min-width: 800px) {
       figcaption {
         padding: 10px 0;
