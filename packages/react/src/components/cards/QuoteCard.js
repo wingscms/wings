@@ -2,7 +2,7 @@ import React from 'react';
 import { Blockquote, Pullquote } from '@wingscms/components';
 import createCard from '../../createCard';
 
-export const Type = {
+const Type = {
   BLOCKQUOTE: 'blockquote',
   PULLQUOTE: 'pullquote',
 };
@@ -22,7 +22,11 @@ function QuoteCardView({ align, float, type, ...props }) {
   return <Blockquote {...props} />;
 }
 
-export default createCard({
+const QuoteCard = createCard({
   name: 'QuoteCard',
   renderWith: QuoteCardView,
 });
+
+export default QuoteCard;
+
+QuoteCard.Type = Type;
