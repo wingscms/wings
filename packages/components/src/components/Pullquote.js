@@ -3,7 +3,7 @@ import fP from 'filter-invalid-dom-props';
 import styled, { css } from '../lib/styled';
 import { t } from '../theme';
 import Heading from './Heading';
-import { _ALIGNLEFT, _ALIGNRIGHT } from '../styles';
+import { ALIGNLEFT, ALIGNRIGHT } from '../styles';
 import Link from './Link';
 
 const Align = {
@@ -15,9 +15,9 @@ const Align = {
 const getContainerStyles = ({ align }) => {
   switch (align) {
     case Align.LEFT:
-      return _ALIGNLEFT;
+      return ALIGNLEFT;
     case Align.RIGHT:
-      return _ALIGNRIGHT;
+      return ALIGNRIGHT;
     default:
       return css`
         text-align: center;
