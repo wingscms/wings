@@ -5,7 +5,7 @@ import styled, { css } from '../lib/styled';
 import { t } from '../theme';
 
 import _Button from './Button';
-import Fade from './Fade';
+import Reveal from './Reveal';
 import _Heading from './Heading';
 import _Text from './Text';
 
@@ -65,14 +65,14 @@ export default function CallToAction({
   backgroundImage,
   buttonText,
   buttonUrl,
-  fade = true,
+  reveal = true,
   title,
   text,
   ...props
 }) {
   return (
     <Container backgroundImage={backgroundImage} {...filterInvalidDOMProps(props)}>
-      <Fade fade={fade}>
+      <Reveal reveal={reveal}>
         <Heading rank={2} align={align}>
           {title}
         </Heading>
@@ -85,7 +85,7 @@ export default function CallToAction({
             {buttonText}
           </Button>
         </a>
-      </Fade>
+      </Reveal>
     </Container>
   );
 }

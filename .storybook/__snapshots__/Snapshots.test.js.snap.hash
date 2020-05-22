@@ -9,8 +9,8 @@ Storyshots components/Button Loading Small 1: 93e2c58f7d7b337502de2f9b0e45b751
 Storyshots components/Button Primary 1: 50647d27ee297e8c02b180137049cfdc
 Storyshots components/Button Small 1: 65c7c211db9af7f01d83818a2e5816aa
 Storyshots components/Button With Icon 1: d57bb20eb40fc3fee090243a83c6e96e
-Storyshots components/CallToAction Background Image 1: c65e058ef9173a82b2f20b350c3aa230
-Storyshots components/CallToAction Default 1: a3d7e75b763abb95d28e99ba4a186f53
+Storyshots components/CallToAction Background Image 1: 450fe1f6fc9f77e14ff4c12cf8b61eb2
+Storyshots components/CallToAction Default 1: 15feacff3babfd405e86a8a98c65a3c6
 Storyshots components/Counter Default 1: f6c0d4b48dc64ed1a1bead3e5eef63d4
 Storyshots components/Drawer Default 1: 298c8e32b3113feb84e8a245e84a3943
 Storyshots components/Expandable Default 1: aba3f88c786780a8b1ef329fce913620
@@ -38,8 +38,8 @@ Storyshots components/SectionMarker Default 1: d442bb8a230963103c5da3c234284174
 Storyshots components/SocialButtons Default 1: cbd102290837a6ba77344c0c269b707a
 Storyshots components/Text Default 1: c6804dbf42dcedeef1e955f41dbe14c8
 Storyshots jsonschema-form/Amount Default 1: 0fc7bb06efb5c5f7f81cea4e8f6b6a3a
-Storyshots react/Article Default 1: e9eea9d11df26eb5b1a8c53555e0a439
-Storyshots react/Article No Image 1: 89d1d7041dfbe146f52764fe0bedf9cd
+Storyshots react/Article Default 1: 4fc5d18e04f6bfb3ce3d848249277b9f
+Storyshots react/Article No Image 1: 51022a5cd11edea3360460c823ada956
 Storyshots react/Campaign Event 1: 929af6a51b0ec040b962256d7e42b530
 Storyshots react/Campaign Fundraiser 1: 4e631276e10b6f2b26af630642315b58
 Storyshots react/Campaign Petition 1: ce32aedfd6efffbc03667c16fe228b16
@@ -48,8 +48,8 @@ Storyshots react/CampaignConfirmed Event 1: 368f5c66994b32cbef86c7f9a74705cb
 Storyshots react/CampaignConfirmed Fundraiser 1: 8849b3950f7134161b05ff3d9e91d6df
 Storyshots react/CampaignConfirmed Petition 1: c214784f4f449e1069c8c36377c85c34
 Storyshots react/CampaignConfirmed Signup 1: ee506ad211c0e32284bd694c3a753572
-Storyshots react/Cards/CTACard Background Image 1: c419b953933443c87c939c396d7941e3
-Storyshots react/Cards/CTACard Default 1: c46f83722df992d3493a1dbf30a8ae1e
+Storyshots react/Cards/CTACard Background Image 1: bb73e34b98e03786fa3770bf2dfa9492
+Storyshots react/Cards/CTACard Default 1: 9fbbd707d500e4399705d5bd7459e161
 Storyshots react/Cards/CTACard Story Wrap 1: 1300e901fbfb834de90d77edc8ecb0fd
 Storyshots react/Cards/CampaignCard Default 1: ad9d7c5e94ba8c2e8bed90cf8b1a6a10
 Storyshots react/Cards/CollectionCard Default 1: afc35ee27e1a3a68148bd484525e3b56
@@ -67,5 +67,5 @@ Storyshots react/Cards/SectionMarkerCard Default 1: 07dbabf58b3133bebc309ee2c131
 Storyshots react/Cards/TestimonialCard Default 1: 4acdd5ee67c7675e877d685322ee5b3e
 Storyshots react/Cards/TextCard Default 1: b2743f10df3b800958450631101c9eed
 Storyshots react/Content Default 1: 008a39072f505f6d3e4118b2399fd55c
-Storyshots react/Content With Cards 1: cd52aee1d8578e0cba0bbf8f8df3a668
-Storyshots react/Page Default 1: c7762c59663537c1c6d0e3e22befa5b2
+Storyshots react/Content With Cards 1: 58fdca316c192d77bec06661a4061e9e
+Storyshots react/Page Default 1: 29d8ee370f7699858257712aabdecfc7

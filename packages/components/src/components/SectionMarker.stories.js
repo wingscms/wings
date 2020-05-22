@@ -12,7 +12,7 @@ export default () => (
     textColor={color('textColor')}
     numberColor={color('numberColor')}
     numberOpacity={number('numberOpacity')}
-    fade={boolean('fade', true)}
+    reveal={boolean('reveal', true)}
   />
 );
 

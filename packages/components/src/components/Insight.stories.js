@@ -4,7 +4,7 @@ import { Insight } from '@wingscms/components';
 import { paddingWrap } from '../../../../.storybook/utils';
 
 export default () => (
-  <Insight fade={boolean('fade', true)}>
+  <Insight reveal={boolean('reveal', true)}>
     {text('text', 'This is some example text inside of an insight.')}
   </Insight>
 );

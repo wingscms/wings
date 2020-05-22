@@ -2,7 +2,7 @@ import React from 'react';
 import fP from 'filter-invalid-dom-props';
 import styled, { css } from '../lib/styled';
 import { t } from '../theme';
-import Fade from './Fade';
+import Reveal from './Reveal';
 import Heading from './Heading';
 
 const Container = styled.div`
@@ -40,12 +40,12 @@ const Inner = styled.div`
   )}
 `;
 
-export default function Insight({ fade = true, children, ...props }) {
+export default function Insight({ reveal = true, children, ...props }) {
   return (
     <Container {...fP(props)}>
-      <Fade fade={fade}>
+      <Reveal reveal={reveal}>
         <Inner>{children}</Inner>
-      </Fade>
+      </Reveal>
     </Container>
   );
 }

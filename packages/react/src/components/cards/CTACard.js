@@ -15,7 +15,7 @@ function CallToActionView({
   backgroundImage,
   buttonText,
   buttonUrl,
-  fade,
+  reveal,
   text,
   title,
   actionText,
@@ -29,7 +29,7 @@ function CallToActionView({
         backgroundImage={backgroundImage}
         buttonText={buttonText || actionText}
         buttonUrl={buttonUrl || actionUrl}
-        fade={fade}
+        reveal={reveal}
         title={title}
         text={text}
         {...props}

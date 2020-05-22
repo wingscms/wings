@@ -9,7 +9,7 @@ const props = ({ backgroundImage = null } = {}) => ({
   backgroundImage: text('backgroundImage', backgroundImage),
   buttonText: text('buttonText', 'Sign up now'),
   buttonUrl: text('buttonUrl', 'http://example.com'),
-  fade: boolean('fade', true),
+  reveal: boolean('reveal', true),
   text: text('text', 'This is an introduction to the first section of the article'),
   title: text('title', 'Section One'),
 });

@@ -4,7 +4,7 @@ import fp from 'filter-invalid-dom-props';
 import styled, { css } from '../lib/styled';
 import { slugify } from '../lib/utils';
 import { t } from '../theme';
-import Fade from './Fade';
+import Reveal from './Reveal';
 import Heading from './Heading';
 import _Text from './Text';
 
@@ -59,7 +59,7 @@ const Number = styled.span`
 `;
 
 export default function SectionMarkerView({
-  fade = true,
+  reveal = true,
   title = '',
   text = '',
   number = '',
@@ -72,7 +72,7 @@ export default function SectionMarkerView({
   return (
     <Container className="headerContainer" id={slugify(title)} {...fp(props)}>
       <Chapter>
-        <Fade fade={fade}>
+        <Reveal reveal={reveal}>
           <TitleWrap>
             <Number numberColor={numberColor} numberOpacity={numberOpacity}>
               {number}
@@ -82,7 +82,7 @@ export default function SectionMarkerView({
             </Title>
           </TitleWrap>
           {text && <Text textColor={textColor}>{text}</Text>}
-        </Fade>
+        </Reveal>
       </Chapter>
     </Container>
   );
