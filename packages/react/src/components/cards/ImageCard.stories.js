@@ -10,4 +10,4 @@ export default () =>
     float: 0,
   });
 
-export const storyWrap = contentWrap;
+export const wrapStory = contentWrap;
