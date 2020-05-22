@@ -1,7 +1,7 @@
 import React from 'react';
 import { boolean, text } from '@storybook/addon-knobs/react';
 import { Insight } from '@wingscms/components';
-import { paddingWrap } from '../../../../.storybook/utils';
+import { paddingWrap } from '../../../../utils';
 
 export default () => (
   <Insight reveal={boolean('reveal', true)}>

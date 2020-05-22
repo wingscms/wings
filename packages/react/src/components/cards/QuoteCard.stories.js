@@ -1,7 +1,7 @@
 import { QuoteCard } from '@wingscms/react';
 import { Pullquote } from '@wingscms/components';
 import { text, select } from '@storybook/addon-knobs/react';
-import { contentWrap } from '../../../../../.storybook/utils';
+import { contentWrap } from '../../../../../utils';
 
 export const BlockQuote = () =>
   QuoteCard.render({

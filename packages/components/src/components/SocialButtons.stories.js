@@ -1,7 +1,7 @@
 import React from 'react';
 import { color, number } from '@storybook/addon-knobs/react';
 import { SocialButtons } from '@wingscms/components';
-import { paddingWrap } from '../../../../.storybook/utils';
+import { paddingWrap } from '../../../../utils';
 
 const props = () => ({
   iconColor: color('iconColor'),

@@ -1,7 +1,7 @@
 import React from 'react';
 import { boolean, number } from '@storybook/addon-knobs/react';
 import { Heading } from '@wingscms/components';
-import { paddingWrap } from '../../../../.storybook/utils';
+import { paddingWrap } from '../../../../utils';
 
 const props = ({ rank = 1 } = {}) => {
   const bfs = number('baseFontSize', 0);

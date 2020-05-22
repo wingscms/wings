@@ -1,6 +1,5 @@
 import { ImageCard } from '@wingscms/react';
-import { image } from '../../../../../utils';
-import { contentWrap } from '../../../../../.storybook/utils';
+import { contentWrap, image } from '../../../../../utils';
 
 export default () =>
   ImageCard.render({

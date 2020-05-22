@@ -1,7 +1,7 @@
 import React from 'react';
 import { text, select, boolean } from '@storybook/addon-knobs/react';
 import { Button, Icon } from '@wingscms/components';
-import { paddingWrap } from '../../../../.storybook/utils';
+import { paddingWrap } from '../../../../utils';
 
 const DEFAULT_ICON = '';
 

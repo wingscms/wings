@@ -1,5 +1,5 @@
 import { EmbedCard } from '@wingscms/react';
-import { contentWrap } from '../../../../../.storybook/utils';
+import { contentWrap } from '../../../../../utils';
 
 export default () =>
   EmbedCard.render({

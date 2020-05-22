@@ -2,7 +2,7 @@ import React from 'react';
 import { text, select } from '@storybook/addon-knobs/react';
 import { Pullquote, Text } from '@wingscms/components';
 import faker from 'faker';
-import { contentWrap } from '../../../../.storybook/utils';
+import { contentWrap } from '../../../../utils';
 
 export default () => {
   faker.seed(1);

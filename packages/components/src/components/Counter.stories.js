@@ -1,7 +1,7 @@
 import React from 'react';
 import { color, number, text } from '@storybook/addon-knobs/react';
 import { Counter } from '@wingscms/components';
-import { paddingWrap } from '../../../../.storybook/utils';
+import { paddingWrap } from '../../../../utils';
 
 export default () => (
   <Counter

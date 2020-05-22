@@ -1,7 +1,7 @@
 import React from 'react';
 import { select } from '@storybook/addon-knobs/react';
 import { Loading, Theme } from '@wingscms/components';
-import { paddingWrap } from '../../../../.storybook/utils';
+import { paddingWrap } from '../../../../utils';
 
 export default () => (
   <Loading

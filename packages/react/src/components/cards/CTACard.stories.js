@@ -1,8 +1,7 @@
 import { CTACard } from '@wingscms/react';
 import { CallToAction } from '@wingscms/components';
 import { boolean, select, text } from '@storybook/addon-knobs/react';
-import { image } from '../../../../../utils';
-import { contentWrap } from '../../../../../.storybook/utils';
+import { contentWrap, image } from '../../../../../utils';
 
 const props = ({ backgroundImage = null } = {}) => ({
   align: select('align', CallToAction.Align, CallToAction.Align.LEFT),

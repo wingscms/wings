@@ -1,7 +1,7 @@
 import React from 'react';
 import { color, select } from '@storybook/addon-knobs/react';
 import { List } from '@wingscms/components';
-import { paddingWrap } from '../../../../.storybook/utils';
+import { paddingWrap } from '../../../../utils';
 
 const props = ({ type = List.Type.UNORDERED } = {}) => ({
   markerColor: color('markerColor'),

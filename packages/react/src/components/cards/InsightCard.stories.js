@@ -1,6 +1,6 @@
 import { InsightCard } from '@wingscms/react';
 import { text } from '@storybook/addon-knobs/react';
-import { contentWrap } from '../../../../../.storybook/utils';
+import { contentWrap } from '../../../../../utils';
 
 export default () =>
   InsightCard.render({

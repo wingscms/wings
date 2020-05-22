@@ -2,7 +2,7 @@ import React from 'react';
 import { number, select } from '@storybook/addon-knobs/react';
 import styled from '../lib/styled';
 import { FlexGrid } from '@wingscms/components';
-import { paddingWrap } from '../../../../.storybook/utils';
+import { paddingWrap } from '../../../../utils';
 
 const Child = styled.div`
   display: block;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { boolean, text, color, number } from '@storybook/addon-knobs/react';
 import { SectionMarker } from '@wingscms/components';
-import { paddingWrap } from '../../../../.storybook/utils';
+import { paddingWrap } from '../../../../utils';
 
 export default () => (
   <SectionMarker

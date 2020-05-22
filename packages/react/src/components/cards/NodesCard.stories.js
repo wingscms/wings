@@ -1,5 +1,5 @@
 import { NodesCard } from '@wingscms/react';
-import { contentWrap } from '../../../../../.storybook/utils';
+import { contentWrap } from '../../../../../utils';
 
 const Default = () => NodesCard.render({ payload: { items: ['', '', '', ''] } });
 export default Default;

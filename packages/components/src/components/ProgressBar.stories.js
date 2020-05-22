@@ -1,7 +1,7 @@
 import React from 'react';
 import { color, number, select } from '@storybook/addon-knobs/react';
 import { ProgressBar, Theme } from '@wingscms/components';
-import { paddingWrap } from '../../../../.storybook/utils';
+import { paddingWrap } from '../../../../utils';
 
 export default () => (
   <ProgressBar
