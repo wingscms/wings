@@ -1,6 +1,7 @@
 import React from 'react';
 import { color } from '@storybook/addon-knobs/react';
 import { Link } from '@wingscms/components';
+import { paddingWrap } from '../../../../utils';
 
 const props = () => ({
   primaryColor: color('primaryColor'),
@@ -24,3 +25,5 @@ export const NoStyling = () => (
     This is a link
   </Link>
 );
+
+export const wrapStory = paddingWrap;

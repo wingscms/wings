@@ -36,11 +36,11 @@ export {
   allCards,
   CampaignCard,
   CampaignCardView,
+  ChapterCard,
   CollectionCard,
   CTACard,
   DataCard,
   EmbedCard,
-  HeaderCard,
   ImageCard,
   InsightCard,
   NodesCard,
@@ -48,4 +48,4 @@ export {
   QuoteCard,
   TestimonialCard,
   TextCard,
-} from './cards';
+} from './components/cards';

@@ -3,7 +3,7 @@ import includes from 'lodash.includes';
 import PropTypes from 'prop-types';
 import MobiledocRenderer from './MobiledocRenderer';
 import { slugify } from '../lib/utils';
-import { allCards } from '../cards';
+import { allCards } from './cards';
 
 const mergeCards = (base, overrides) => {
   const names = overrides.map(({ name }) => name);

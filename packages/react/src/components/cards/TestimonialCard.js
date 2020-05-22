@@ -4,29 +4,30 @@ import classNames from 'classnames';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import { wide } from '@wingscms/components';
 
-import { StickyContainer, Sticky } from '../lib/react-sticky';
-import styled from '../lib/styled';
-import Content from '../components/MobiledocRenderer';
-import createCard from '../createCard';
+import { StickyContainer, Sticky } from '../../lib/react-sticky';
+import styled from '../../lib/styled';
+import Content from '../MobiledocRenderer';
+import createCard from '../../createCard';
+import { t } from '../../theme';
 
 const Testimonial = styled.section`
   ${wide};
-  background-color: ${({ theme }) => theme.testimonialBackgroundColor};
-  margin-top: ${({ theme }) => theme.largeSpacing};
-  margin-bottom: ${({ theme }) => theme.largeSpacing};
-  padding: ${({ theme }) => theme.largeSpacing} 0;
+  background-color: ${t(_ => _.testimonialBackgroundColor)};
+  margin-top: ${t(_ => _.largeSpacing)};
+  margin-bottom: ${t(_ => _.largeSpacing)};
+  padding: ${t(_ => _.largeSpacing)} 0;
   header {
     padding: 0 20px;
     text-align: center;
-    margin-bottom: ${({ theme }) => theme.largeSpacing};
+    margin-bottom: ${t(_ => _.largeSpacing)};
     @media screen and (max-width: 800px) {
-      margin-bottom: ${({ theme }) => theme.mediumSpacing};
+      margin-bottom: ${t(_ => _.mediumSpacing)};
     }
   }
   @media screen and (max-width: 800px) {
-    margin-top: ${({ theme }) => theme.mediumSpacing};
-    margin-bottom: ${({ theme }) => theme.mediumSpacing};
-    padding: ${({ theme }) => theme.mediumSpacing} 0;
+    margin-top: ${t(_ => _.mediumSpacing)};
+    margin-bottom: ${t(_ => _.mediumSpacing)};
+    padding: ${t(_ => _.mediumSpacing)} 0;
     padding-bottom: 0;
   }
 `;
@@ -46,10 +47,10 @@ const Wrap = styled(StickyContainer)`
 `;
 
 const Title = styled.h1`
-  color: ${({ theme }) => (theme.brand ? theme.brand : theme.primaryColor)};
-  text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
+  color: ${t(_ => _.primaryColor)};
+  text-transform: ${t(_ => _.titleTransform)};
   line-height: 1;
-  font-family: ${({ theme }) => theme.headerFontFamily};
+  font-family: ${t(_ => _.headerFontFamily)};
   position: relative;
   z-index: 1;
   font-size: 32px;
@@ -82,7 +83,7 @@ const Image = styled.figure`
     &.sticky {
       position: fixed;
       top: 0;
-      margin-top: ${({ theme }) => theme.mediumSpacing};
+      margin-top: ${t(_ => _.mediumSpacing)};
       width: calc(47% - 20px);
       padding: 0;
     }
@@ -106,7 +107,7 @@ const Image = styled.figure`
 `;
 
 const ImageWrap = styled.div`
-  margin: ${({ theme }) => theme.mediumSpacing} ${({ theme }) => theme.smallSpacing};
+  margin: ${t(_ => `${_.mediumSpacing} ${_.smallSpacing}`)};
   max-width: 740px;
   @media screen and (min-width: 600px) {
     margin-bottom: 2rem;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { boolean, number } from '@storybook/addon-knobs/react';
 import { Heading } from '@wingscms/components';
+import { paddingWrap } from '../../../../utils';
 
 const props = ({ rank = 1 } = {}) => {
   const bfs = number('baseFontSize', 0);
@@ -25,3 +26,5 @@ export default () => (
     <Heading {...props({ rank: 5 })}>This is a Heading</Heading>
   </>
 );
+
+export const wrapStory = paddingWrap;

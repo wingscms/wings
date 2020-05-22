@@ -41,6 +41,26 @@
       }
     ],
     [
+      "QuoteCard",
+      {
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "source": "Source",
+        "sourceUrl": "example.com",
+        "type": 1,
+        "float": 2
+      }
+    ],
+    [
+      "QuoteCard",
+      {
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "source": "",
+        "sourceUrl": "",
+        "type": 1,
+        "float": 0
+      }
+    ],
+    [
       "ChapterCard",
       {
         "title": "Chapter Two",
@@ -85,6 +105,15 @@
       }
     ],
     [
+      "CTACard",
+      {
+        "title": "Lorem ipsum dolor sit",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "actionText": "Lorem Ipsum",
+        "actionUrl": "https://example.com"
+      }
+    ],
+    [
       "CampaignCard",
       {
         "id": "KN7YlWlxkPCkW9V879jg",
@@ -104,6 +133,115 @@
           },
           {
             "nodeId": "Ngj7wznNy7FQxzGXm5Dv"
+          }
+        ]
+      }
+    ],
+    [
+      "CollectionCard",
+      {
+        "type": 0,
+        "title": "My People Collection",
+        "items": [
+          {
+            "_id": "rtXbsC626ylOiamHP",
+            "image": {
+              "_mediaId": "4jvk3qng4BsONgwRx4yg",
+              "url": "https://files.wings.dev/Ffpp3gTpnpoBYpQS5/1571726733756/pinyon-jay-bird.jpg"
+            },
+            "name": "Lorem Ipsum",
+            "profiles": {
+              "website": {
+                "url": "example.com"
+              },
+              "facebook": {
+                "url": "example.com"
+              },
+              "linkedIn": {
+                "url": "example.com"
+              },
+              "twitter": {
+                "username": "example"
+              },
+              "instagram": {
+                "username": "example"
+              }
+            }
+          },
+          {
+            "_id": "lzDiwQ2of286xe8sx",
+            "name": "Lorem Ipsum",
+            "image": {
+              "_mediaId": "PkKq6Gy35RIkzmwqZJoK",
+              "url": "https://files.wings.dev/Ffpp3gTpnpoBYpQS5/1573465415572/img0130.jpeg"
+            },
+            "profiles": {
+              "website": {
+                "url": "example.com"
+              },
+              "facebook": {
+                "url": "example.com"
+              },
+              "linkedIn": {
+                "url": "example.com"
+              },
+              "twitter": {
+                "username": "example"
+              },
+              "instagram": {
+                "username": "example"
+              }
+            }
+          },
+          {
+            "_id": "t8ZvfwGNp68vYZ0fw",
+            "image": {
+              "_mediaId": "4jvk3qng4BsONgwRx4yg",
+              "url": "https://files.wings.dev/Ffpp3gTpnpoBYpQS5/1571726733756/pinyon-jay-bird.jpg"
+            },
+            "name": "Lorem Ipsum",
+            "profiles": {
+              "website": {
+                "url": "example.com"
+              },
+              "facebook": {
+                "url": "example.com"
+              },
+              "linkedIn": {
+                "url": "example.com"
+              },
+              "twitter": {
+                "username": "example"
+              },
+              "instagram": {
+                "username": "example"
+              }
+            }
+          },
+          {
+            "_id": "rE22YaWHBUVBwlEqx",
+            "name": "Lorem Ipsum",
+            "image": {
+              "_mediaId": "PkKq6Gy35RIkzmwqZJoK",
+              "url": "https://files.wings.dev/Ffpp3gTpnpoBYpQS5/1573465415572/img0130.jpeg"
+            },
+            "profiles": {
+              "website": {
+                "url": "example.com"
+              },
+              "facebook": {
+                "url": "example.com"
+              },
+              "linkedIn": {
+                "url": "example.com"
+              },
+              "twitter": {
+                "username": "example"
+              },
+              "instagram": {
+                "username": "example"
+              }
+            }
           }
         ]
       }
@@ -405,6 +543,18 @@
       ]
     ],
     [
+      1,
+      "p",
+      [
+        [
+          0,
+          [],
+          0,
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        ]
+      ]
+    ],
+    [
       10,
       5
     ],
@@ -429,6 +579,22 @@
       7
     ],
     [
+      10,
+      8
+    ],
+    [
+      1,
+      "p",
+      [
+        [
+          0,
+          [],
+          0,
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        ]
+      ]
+    ],
+    [
       1,
       "p",
       [
@@ -442,7 +608,11 @@
     ],
     [
       10,
-      8
+      9
+    ],
+    [
+      10,
+      10
     ],
     [
       1,
@@ -452,17 +622,49 @@
           0,
           [],
           0,
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         ]
       ]
     ],
     [
       10,
-      9
+      11
+    ],
+    [
+      1,
+      "p",
+      [
+        [
+          0,
+          [],
+          0,
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        ]
+      ]
     ],
     [
       10,
-      10
+      12
+    ],
+    [
+      1,
+      "p",
+      [
+        [
+          0,
+          [],
+          0,
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        ]
+      ]
+    ],
+    [
+      10,
+      13
+    ],
+    [
+      10,
+      14
     ],
     [
       1,

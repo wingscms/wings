@@ -1,10 +1,10 @@
 import { InsightCard } from '@wingscms/react';
 import { text } from '@storybook/addon-knobs/react';
+import { contentWrap } from '../../../../../utils';
 
 export default () =>
   InsightCard.render({
-    text: text(
-      'text',
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt',
-    ),
+    text: text('text', 'This is some example text inside of an insight.'),
   });
+
+export const wrapStory = contentWrap;

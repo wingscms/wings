@@ -1,6 +1,7 @@
 import React from 'react';
 import { color, number, select } from '@storybook/addon-knobs/react';
 import { ProgressBar, Theme } from '@wingscms/components';
+import { paddingWrap } from '../../../../utils';
 
 export default () => (
   <ProgressBar
@@ -11,3 +12,5 @@ export default () => (
     barColor={color('barColor')}
   />
 );
+
+export const wrapStory = paddingWrap;

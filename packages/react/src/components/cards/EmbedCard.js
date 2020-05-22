@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import { wide } from '@wingscms/components';
-import styled from '../lib/styled';
-import createCard from '../createCard';
+import styled from '../../lib/styled';
+import createCard from '../../createCard';
+import { t } from '../../theme';
 
 const Figure = styled.figure`
   ${wide};
   max-width: 1160px;
   margin-left: 50%;
   transform: translateX(-50%);
-  margin-top: ${({ theme }) => theme.largeSpacing};
-  margin-bottom: ${({ theme }) => theme.largeSpacing};
+  margin-top: ${t(_ => _.largeSpacing)};
+  margin-bottom: ${t(_ => _.largeSpacing)};
   .video-wrapper {
     max-width: 1160px;
     width: 100%;
@@ -28,8 +29,8 @@ const Figure = styled.figure`
     height: 100%;
   }
   @media screen and (max-width: 800px) {
-    margin-top: ${({ theme }) => theme.mediumSpacing};
-    margin-bottom: ${({ theme }) => theme.mediumSpacing};
+    margin-top: ${t(_ => _.mediumSpacing)};
+    margin-bottom: ${t(_ => _.mediumSpacing)};
   }
 `;
 

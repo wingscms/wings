@@ -1,7 +1,8 @@
 import React from 'react';
 import { text, color, number, boolean } from '@storybook/addon-knobs/react';
 import faker from 'faker';
-import { Expandable } from '@wingscms/components';
+import { Expandable, Text } from '@wingscms/components';
+import { paddingWrap } from '../../../../utils';
 
 export default () => {
   faker.seed(1);
@@ -18,7 +19,9 @@ export default () => {
       height={text('height', '250px')}
       toggleFontFamily={text('toggleFontFamily', '')}
     >
-      {faker.lorem.paragraphs(10)}
+      <Text>{faker.lorem.paragraphs(10)}</Text>
     </Expandable>
   );
 };
+
+export const wrapStory = paddingWrap;

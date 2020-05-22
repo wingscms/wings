@@ -32,8 +32,8 @@ const LOADING_SIZE = {
   [Size.MEDIUM]: Loading.Size.SMALL,
 };
 
-const getType = ({ color, type }) => {
-  switch (type) {
+const getType = ({ color, buttonType }) => {
+  switch (buttonType) {
     case Type.OUTLINE:
       return css`
         border: 2px solid ${color};
@@ -71,9 +71,9 @@ const LoadingWrapper = styled.div`
 `;
 
 const Root = styled.button`
-  ${t((theme, { intent, size, type, disabled }) => {
+  ${t((theme, { intent, size, buttonType, disabled }) => {
     const color = theme.intentColor(intent);
-    const typeCSS = getType({ color, type });
+    const buttonTypeCSS = getType({ color, buttonType });
     const sizeCSS = getSize({ size });
 
     return css`
@@ -103,7 +103,7 @@ const Root = styled.button`
       &:active {
         transform: translateY(1px);
       }
-      ${typeCSS}
+      ${buttonTypeCSS}
       ${sizeCSS}
       ${
         !disabled
@@ -127,13 +127,13 @@ export default function Button({
   icon,
   children,
   intent,
-  type,
+  buttonType,
   size = Size.MEDIUM,
   ...props
 }) {
   const disabled = loading || disabledProp;
   return (
-    <Root disabled={disabled} intent={intent} size={size} type={type} {...fP(props)}>
+    <Root disabled={disabled} intent={intent} size={size} buttonType={buttonType} {...fP(props)}>
       {!loading ? null : (
         <LoadingWrapper>
           <Loading intent={intent} size={LOADING_SIZE[size]} />

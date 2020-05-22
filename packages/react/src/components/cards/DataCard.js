@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import createCard from '../createCard';
+import createCard from '../../createCard';
 
 export default createCard({
   name: 'DataCard',

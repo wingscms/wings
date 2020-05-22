@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import styled, { css } from '../lib/styled';
+import styled, { css } from '../../lib/styled';
 import { wide } from '@wingscms/components';
-import Campaign from '../components/Campaign/Campaign';
-import createCard from '../createCard';
+import Campaign from '../Campaign/Campaign';
+import createCard from '../../createCard';
+import { t } from '../../theme';
 
 const Wrapper = styled.div`
   ${wide};
@@ -12,9 +13,11 @@ const Container = styled.div`
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: ${({ theme }) => theme.largeSpacing};
+  margin-bottom: ${t(_ => _.largeSpacing)};
+  margin-top: -${t(_ => _.largeSpacing)};
   @media screen and (max-width: 800px) {
-    margin-bottom: ${({ theme }) => theme.mediumSpacing};
+    margin-top: -${t(_ => _.smallSpacing)};
+    margin-bottom: ${t(_ => _.mediumSpacing)};
   }
 `;
 
@@ -31,11 +34,11 @@ const Image = styled.div`
           background-repeat: no-repeat;
           min-height: 500px;
           max-height: 700px;
-          margin-top: ${({ theme }) => theme.largeSpacing};
+          margin-top: ${t(_ => _.largeSpacing)};
           margin-bottom: ${({ imageMargin }) => `-${imageMargin}px` || 0};
           padding-top: 80px;
           @media screen and (max-width: 1000px) {
-            margin-top: ${({ theme }) => theme.mediumSpacing};
+            margin-top: ${t(_ => _.mediumSpacing)};
             min-height: 0;
             margin-bottom: 0;
             max-height: 0;

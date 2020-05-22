@@ -88,6 +88,7 @@ export default function Heading({
   baseFontSize,
   baseMobileFontSize,
   baseTabletFontSize,
+  children,
   fontSize,
   scaleRatio,
   rank = 1,
@@ -106,7 +107,9 @@ export default function Heading({
       transform={uppercase && 'uppercase'}
       {...fP(props)}
     >
-      {props.children}
+      {children}
     </Comp>
   );
 }
+
+Heading.getStyles = getStyles;

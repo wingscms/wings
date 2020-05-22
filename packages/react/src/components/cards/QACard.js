@@ -1,19 +1,20 @@
 import React, { Component, useState } from 'react';
-import styled from '../lib/styled';
+import styled from '../../lib/styled';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
-import { t, Icon as _Icon } from '@wingscms/components';
-import createCard from '../createCard';
-import Content from '../components/MobiledocRenderer';
+import { Icon as _Icon } from '@wingscms/components';
+import createCard from '../../createCard';
+import Content from '../MobiledocRenderer';
+import { t } from '../../theme';
 
 const Container = styled.div`
-  margin: ${({ theme }) => theme.mediumSpacing} 0;
+  margin: ${t(_ => _.mediumSpacing)} 0;
   @media screen and (min-width: 800px) {
-    margin: ${({ theme }) => theme.largeSpacing} 0;
+    margin: ${t(_ => _.largeSpacing)} 0;
   }
 `;
 
 const Title = styled.h3`
-  text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
+  text-transform: ${t(_ => _.titleTransform)};
   font-size: 40px;
   font-weight: 800;
   line-height: 42px;
@@ -37,11 +38,11 @@ const Text = styled.div`
 
 const QA = styled.div`
   display: block;
-  box-shadow: ${({ theme }) => theme.defaultShadow};
+  box-shadow: ${t(_ => _.shadow)};
 `;
 
 const QuestionWrapper = styled.div`
-  border-bottom: 1px solid ${({ theme }) => theme.elementBackgroundColor};
+  border-bottom: 1px solid ${t(_ => _.elementBackgroundColor)};
   &:last-child {
     border-bottom: none;
   }
@@ -58,11 +59,11 @@ const QuestionText = styled.div`
     transition: all 0.2s ease-in-out;
   }
   &:hover {
-    background-color: ${({ theme }) => theme.elementBackgroundColor};
+    background-color: ${t(_ => _.elementBackgroundColor)};
     p {
-      color: ${t(theme =>
-        theme.contrastColor({
-          backgroundColor: theme.elementBackgroundColor.hex(),
+      color: ${t(_ =>
+        _.contrastColor({
+          backgroundColor: _.elementBackgroundColor,
         }),
       )};
     }
@@ -80,7 +81,7 @@ const Icon = styled.div`
   width: 20px;
   height: auto;
   transform: translateY(-50%);
-  fill: ${({ theme }) => theme.primaryColor};
+  fill: ${t(_ => _.primaryColor)};
   svg {
     width: 100%;
     height: auto;

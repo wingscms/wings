@@ -23,5 +23,6 @@ const output = Object.keys(snapshot)
         .update(snapshot[name])
         .digest('hex')}`,
   )
+  .concat([''])
   .join('\n');
 fs.writeFileSync(`${snapshotPath}.hash`, output);

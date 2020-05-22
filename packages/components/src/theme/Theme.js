@@ -98,12 +98,38 @@ export default class Theme {
     return this.variables.appBarHeight || this.largeSpacing;
   }
 
+  get blockquoteBackgroundColor() {
+    return this.variables.blockquoteBackgroundColor || this.elementBackgroundColor;
+  }
+
+  get blockquoteTextColor() {
+    return (
+      this.variables.blockquoteTextColor ||
+      this.contrastColor({
+        backgroundColor: this.blockquoteBackgroundColor,
+      })
+    );
+  }
+
   get burgerColor() {
     return this.variables.burgerColor || this.iconColor;
   }
 
   get burgerHoverColor() {
     return this.variables.burgerColor || this.iconHoverColor;
+  }
+
+  get callToActionBackgroundColor() {
+    return this.variables.callToActionBackgroundColor || this.primaryColor;
+  }
+
+  get callToActionTextColor() {
+    return (
+      this.variables.allToActionTextColor ||
+      this.contrastColor({
+        backgroundColor: this.callToActionBackgroundColor,
+      })
+    );
   }
 
   get counterBackgroundColor() {
@@ -177,6 +203,19 @@ export default class Theme {
     return this.variables.iconHoverColor || this.primaryColor;
   }
 
+  get insightBackgroundColor() {
+    return this.variables.insightBackgroundColor || this.primaryColor;
+  }
+
+  get insightTextColor() {
+    return (
+      this.variables.insightTextColor ||
+      this.contrastColor({
+        backgroundColor: this.insightBackgroundColor,
+      })
+    );
+  }
+
   get landingSectionBackgroundColor() {
     return this.variables.landingSectionBackgroundColor || this.primaryColor;
   }
@@ -199,6 +238,14 @@ export default class Theme {
 
   get linkSecondaryColor() {
     return this.variables.linkSecondaryColor || this.secondaryColor;
+  }
+
+  get listMarkerColor() {
+    return this.variables.listMarkerColor || this.primaryColor;
+  }
+
+  get listTextColor() {
+    return this.variables.listTextColor || this.textColor;
   }
 
   get navigationIconColor() {
@@ -230,6 +277,22 @@ export default class Theme {
     return this.variables.navigationMenuBackgroundColor || this.backgroundColor;
   }
 
+  get orderedListMarkerColor() {
+    return this.variables.orderedListMarkerColor || this.listMarkerColor;
+  }
+
+  get orderedListTextColor() {
+    return this.variables.orderedListTextColor || this.listTextColor;
+  }
+
+  get pullquoteBackgroundColor() {
+    return this.variables.pullquoteBackgroundColor || this.backgroundColor;
+  }
+
+  get pullquoteTextColor() {
+    return this.variables.pullquoteTextColor || this.primaryColor;
+  }
+
   get scrollBarColor() {
     return this.variables.scrollBarColor || this.primaryColor;
   }
@@ -238,6 +301,40 @@ export default class Theme {
     return this.variables.scrollBarColor || this.elementBackgroundColor;
   }
 
+  get sectionMarkerBackgroundColor() {
+    return this.variables.sectionMarkerBackgroundColor || this.primaryColor;
+  }
+
+  get sectionMarkerNumberColor() {
+    return (
+      this.variables.sectionMarkerNumberColor ||
+      this.contrastColor({
+        backgroundColor: this.sectionMarkerBackgroundColor,
+      })
+    );
+  }
+
+  get sectionMarkerNumberOpacity() {
+    return this.variables.sectionMarkerNumberOpacity || 0.3;
+  }
+
+  get sectionMarkerTextColor() {
+    return (
+      this.variables.sectionMarkerTextColor ||
+      this.contrastColor({
+        backgroundColor: this.sectionMarkerBackgroundColor,
+      })
+    );
+  }
+
+  get sectionMarkerTitleColor() {
+    return (
+      this.variables.sectionMarkerTitleColor ||
+      this.contrastColor({
+        backgroundColor: this.sectionMarkerBackgroundColor,
+      })
+    );
+  }
   get shareButtonBackgroundColor() {
     return this.variables.shareButtonBackgroundColor || this.primaryColor;
   }
@@ -260,5 +357,13 @@ export default class Theme {
 
   get titleTransform() {
     return this.uppercaseTitles ? 'uppercase' : 'none';
+  }
+
+  get unorderedListMarkerColor() {
+    return this.variables.unorderedListMarkerColor || this.listMarkerColor;
+  }
+
+  get unorderedListTextColor() {
+    return this.variables.unorderedListTextColor || this.listTextColor;
   }
 }
