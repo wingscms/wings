@@ -16,3 +16,12 @@ export const contentWrap = elem => <ContentWrapper>{elem}</ContentWrapper>;
 export const paddingWrap = elem => <div style={{ padding: '1rem' }}>{elem}</div>;
 
 export const image = (width = 800, height = 600) => `https://picsum.photos/${width}/${height}`;
+
+export const mobiledocWithText = text =>
+  JSON.stringify({
+    version: '0.3.0',
+    atoms: [],
+    cards: [],
+    markups: [],
+    sections: [[1, 'p', [[0, [], 0, text]]]],
+  });
