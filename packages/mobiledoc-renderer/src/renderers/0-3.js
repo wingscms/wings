@@ -76,10 +76,20 @@ export default class Renderer {
   }
 
   renderListSection([, TagName, markers], nodeKey) {
+    const customSection = this.sections.find(s => s.name === TagName);
+
     const items = markers.map((item, index) =>
       this.renderMarkersOnElement(<li key={index}>{[]}</li>, item),
     );
 
+    if (customSection) {
+      const Section = customSection.component;
+      return (
+        <Section key={nodeKey} {...this.additionalProps}>
+          {items}
+        </Section>
+      );
+    }
     return <TagName key={nodeKey}>{items}</TagName>;
   }
 
