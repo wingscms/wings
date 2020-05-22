@@ -2,7 +2,7 @@ import React from 'react';
 import { Blockquote, Pullquote } from '@wingscms/components';
 import createCard from '../../createCard';
 
-const Type = {
+export const Type = {
   BLOCKQUOTE: 'blockquote',
   PULLQUOTE: 'pullquote',
 };

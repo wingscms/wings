@@ -2,10 +2,11 @@ import { QuoteCard } from '@wingscms/react';
 import { Pullquote } from '@wingscms/components';
 import { text, select } from '@storybook/addon-knobs/react';
 import { contentWrap } from '../../../../../utils';
+import { Type } from './QuoteCard';
 
 export const BlockQuote = () =>
   QuoteCard.render({
-    type: 0,
+    type: Type.BLOCKQUOTE,
     text: text(
       'text',
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -16,7 +17,7 @@ export const BlockQuote = () =>
 
 export const PullQuote = () =>
   QuoteCard.render({
-    type: 1,
+    type: Type.PULLQUOTE,
     text: text(
       'text',
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
