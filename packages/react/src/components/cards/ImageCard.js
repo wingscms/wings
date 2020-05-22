@@ -110,32 +110,19 @@ const Image = styled.figure`
 const ImageCard = compose(
   setPropTypes(propTypes),
   setStatic('defaultProps', defaultProps),
-)(
-  ({
-    reveal = true,
-    size,
-    float,
-    className,
-    mediaId,
-    url,
-    caption,
-    onClick,
-    _mediaId,
-    ...props
-  }) => (
-    <Reveal reveal={reveal}>
-      <Image
-        onClick={onClick}
-        className={classNames(`size-${size}`, className, {
-          [`align-${float}`]: size === SIZE.MEDIUM,
-        })}
-      >
-        <img {...filterInvalidDOMProps(props)} />
-        {!caption ? null : <figcaption>{caption}</figcaption>}
-      </Image>
-    </Reveal>
-  ),
-);
+)(({ size, float, className, mediaId, url, caption, onClick, _mediaId, ...props }) => (
+  <Reveal reveal>
+    <Image
+      onClick={onClick}
+      className={classNames(`size-${size}`, className, {
+        [`align-${float}`]: size === SIZE.MEDIUM,
+      })}
+    >
+      <img {...filterInvalidDOMProps(props)} />
+      {!caption ? null : <figcaption>{caption}</figcaption>}
+    </Image>
+  </Reveal>
+));
 
 export default createCard({
   name: 'ImageCard',

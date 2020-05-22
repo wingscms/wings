@@ -1,8 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
 import fP from 'filter-invalid-dom-props';
 import styled from '../lib/styled';
 import Icon from './Icon';
-import Caption from './Caption';
+
+const CaptionWrapper = styled.figcaption`
+  background-color: ${({ backgroundColor }) => backgroundColor};
+  border-style: ${({ borderStyle }) => borderStyle};
+  border-color: ${({ borderColor }) => borderColor};
+  border-width: ${({ borderWidth }) => borderWidth};
+  color: ${({ textColor }) => textColor};
+  margin: ${({ margin }) => margin};
+  padding: ${({ padding }) => padding};
+`;
+
+class Caption extends Component {
+  static defaultProps = {
+    backgroundColor: '#fff',
+    borderColor: 'transparent',
+    borderStyle: 'none',
+    borderWidth: '0',
+    margin: '0',
+    padding: '.75rem 0 0 0',
+    textColor: '#000',
+  };
+
+  render() {
+    const { children, ...props } = this.props;
+    return <CaptionWrapper {...props}>{children}</CaptionWrapper>;
+  }
+}
 
 const StyledFigure = styled.figure`
   max-width: 100%;

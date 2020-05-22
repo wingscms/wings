@@ -29,6 +29,7 @@ function ChapterCardView({ marker, number, intro, text, title, ...props }) {
       text={intro || text}
       title={title}
       id={slugify(title)}
+      reveal
       {...props}
     />
   );

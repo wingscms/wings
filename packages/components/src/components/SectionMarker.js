@@ -58,7 +58,7 @@ const Number = styled.span`
 `;
 
 export default function SectionMarkerView({
-  reveal = true,
+  reveal,
   title = '',
   text = '',
   number = '',

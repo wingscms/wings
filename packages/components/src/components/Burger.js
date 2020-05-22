@@ -3,8 +3,8 @@ import fP from 'filter-invalid-dom-props';
 import styled, { css } from '../lib/styled';
 import { t } from '../theme';
 
-const getActiveState = position => ({ active, height, width, barHeight }) => {
-  if (active) {
+const getActiveState = position => ({ eaten, height, width, barHeight }) => {
+  if (eaten) {
     if (position === 'middle')
       return css`
         opacity: 0;
@@ -33,7 +33,7 @@ const getActiveState = position => ({ active, height, width, barHeight }) => {
 
 const Bar = styled('div').withConfig({
   shouldForwardProp: prop =>
-    !['height', 'width', 'barHeight', 'barBorderRadius', 'active'].includes(prop),
+    !['height', 'width', 'barHeight', 'barBorderRadius', 'eaten'].includes(prop),
 })`
   position: absolute;
   display: block;
@@ -82,7 +82,7 @@ const Container = styled('div').withConfig({
 `;
 
 export default ({
-  active,
+  eaten,
   color,
   hoverColor,
   width = 40,
@@ -92,7 +92,7 @@ export default ({
   ...props
 }) => {
   const barProps = {
-    active,
+    eaten,
     barHeight,
     barBorderRadius,
     height,

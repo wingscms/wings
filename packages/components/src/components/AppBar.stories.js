@@ -6,7 +6,7 @@ import { AppBar, Text } from '@wingscms/components';
 
 const props = ({ position = AppBar.Position.TOP } = {}) => ({
   position: select('position', AppBar.Position, position),
-  open: boolean('open', true),
+  hide: boolean('hide', false),
 });
 
 const ExampleContent = styled(Text)`

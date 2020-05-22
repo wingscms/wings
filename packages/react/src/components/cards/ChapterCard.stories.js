@@ -1,5 +1,5 @@
 import { ChapterCard } from '@wingscms/react';
-import { boolean, text, color, number } from '@storybook/addon-knobs/react';
+import { text, color, number } from '@storybook/addon-knobs/react';
 import { contentWrap } from '../../../../../utils';
 
 export default () =>
@@ -11,7 +11,6 @@ export default () =>
     textColor: color('textColor'),
     numberColor: color('numberColor'),
     numberOpacity: number('numberOpacity'),
-    reveal: boolean('reveal', true),
   });
 
 export const wrapStory = contentWrap;
