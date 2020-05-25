@@ -5,6 +5,7 @@ export { default as Burger } from './components/Burger';
 export { default as Button } from './components/Button';
 export { default as CallToAction } from './components/CallToAction';
 export { default as Card } from './components/Card';
+export { default as Collapse } from './components/Collapse';
 export { default as Counter } from './components/Counter';
 export { default as ProgressBar } from './components/ProgressBar';
 export { default as Drawer } from './components/Drawer';
