@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import classNames from 'classnames';
-import styled from '../lib/styled';
-import Icon from './Icon';
-import ProgressBar from './ProgressBar';
+import { Icon, ProgressBar } from '@wingscms/components';
+import styled from '../../../lib/styled';
 
 const Container = styled.div`
   display: flex;

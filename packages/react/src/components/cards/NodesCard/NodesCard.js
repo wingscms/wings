@@ -1,15 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import {
-  _WIDE,
-  Card,
-  FlexGrid,
-  Loading as _Loading,
-  PaginationControls,
-} from '@wingscms/components';
-import styled from '../../lib/styled';
-import useQueryString from '../../hooks/queryString';
-import { useWings } from '../../ctx/Wings';
-import createCard from '../../createCard';
+import { _WIDE, FlexGrid, Loading as _Loading, PaginationControls } from '@wingscms/components';
+import Card from './Card';
+import styled from '../../../lib/styled';
+import useQueryString from '../../../hooks/queryString';
+import { useWings } from '../../../ctx/Wings';
+import createCard from '../../../createCard';
 
 const Wide = styled.div`
   ${_WIDE};
