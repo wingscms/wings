@@ -11,7 +11,6 @@ export { default as Footer } from './components/Footer';
 export { default as Header } from './components/Header';
 export { default as Heading } from './components/Heading';
 export { default as Icon } from './components/Icon';
-export { default as Image } from './components/Image';
 export { default as Insight } from './components/Insight';
 export { default as Link } from './components/Link';
 export { default as List } from './components/List';
