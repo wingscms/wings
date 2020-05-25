@@ -1,23 +1,24 @@
+import faker from 'faker';
 import { QuoteCard } from '@wingscms/react';
 import { contentWrap } from '../../../../../utils';
+
+const payload = () => ({
+  text: faker.lorem.sentence(),
+  source: [faker.name.firstName(), faker.name.lastName()].join(' '),
+  sourceUrl: 'https://wings.dev',
+});
 
 export const BlockQuote = () =>
   QuoteCard.render({
     type: 'blockquote',
-    text:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    source: 'Source',
-    sourceUrl: 'http://example.com',
+    ...payload(),
   });
 
 export const PullQuote = () =>
   QuoteCard.render({
     type: 'pullquote',
-    text:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    source: 'Source',
-    sourceUrl: 'http://example.com',
     align: 'center',
+    ...payload(),
   });
 
 export const wrapStory = contentWrap;
