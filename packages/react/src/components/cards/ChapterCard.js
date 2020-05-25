@@ -25,9 +25,9 @@ const _SectionMarker = styled(SectionMarker)`
 function ChapterCardView({ marker, number, intro, text, title, ...props }) {
   return (
     <_SectionMarker
-      number={marker || number}
+      marker={marker || number}
       text={intro || text}
-      title={title}
+      sectionTitle={title}
       id={slugify(title)}
       reveal
       {...props}

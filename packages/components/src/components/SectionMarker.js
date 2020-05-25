@@ -57,15 +57,15 @@ const Number = styled.span`
   opacity: ${t((_, { numberOpacity }) => numberOpacity || _.sectionMarkerNumberOpacity)};
 `;
 
-export default function SectionMarkerView({
+export default function SectionMarker({
   reveal,
-  title = '',
+  sectionTitle = '',
   text = '',
-  number = '',
-  numberColor,
+  marker = '',
+  markerColor,
   titleColor,
   textColor,
-  numberOpacity,
+  markerOpacity,
   ...props
 }) {
   return (
@@ -73,11 +73,11 @@ export default function SectionMarkerView({
       <Chapter>
         <Reveal reveal={reveal}>
           <TitleWrap>
-            <Number numberColor={numberColor} numberOpacity={numberOpacity}>
-              {number}
+            <Number numberColor={markerColor} numberOpacity={markerOpacity}>
+              {marker}
             </Number>
-            <Title number={number} titleColor={titleColor} rank={1}>
-              {title}
+            <Title number={marker} titleColor={titleColor} rank={1}>
+              {sectionTitle}
             </Title>
           </TitleWrap>
           {text && <Text textColor={textColor}>{text}</Text>}
