@@ -187,10 +187,6 @@ export default function Campaign({
     petitionCounterMessage = intl.formatMessage('wings.Campaign.petitionCounter.message', {
       signatureCount,
     }),
-    petitionCounterGoalText = signatureGoal ? intl.formatNumber(signatureGoal) : null,
-    fundraiserTargetText = fundraiserTarget
-      ? `${fundraiserTarget.currency.symbol}${intl.formatNumber(fundraiserTarget.amount / 100)}`
-      : null,
     fundraiserCounterMessage = intl.formatMessage('wings.Campaign.fundraiserCounter.message'),
     eventInfoTitle = intl.formatMessage('wings.Campaign.eventInfo.title'),
     eventStartLabel = intl.formatMessage('wings.Campaign.eventStart.label'),
@@ -244,7 +240,6 @@ export default function Campaign({
                   current={_signatureCount || signatureCount}
                   goal={_signatureGoal || signatureGoal}
                   description={petitionCounterMessage}
-                  goalText={petitionCounterGoalText}
                 />
               </CounterContainer>
             )}
@@ -257,7 +252,6 @@ export default function Campaign({
                     current={fundraiserRaised.amount / 100}
                     goal={fundraiserTarget.amount / 100}
                     description={fundraiserCounterMessage}
-                    goalText={fundraiserTargetText}
                     symbol={fundraiserRaised.currency.symbol}
                   />
                 </CounterContainer>
