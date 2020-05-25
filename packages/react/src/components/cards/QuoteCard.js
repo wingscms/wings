@@ -2,24 +2,30 @@ import React from 'react';
 import { Blockquote, Pullquote } from '@wingscms/components';
 import createCard from '../../createCard';
 
-const Type = {
-  BLOCKQUOTE: 'blockquote',
-  PULLQUOTE: 'pullquote',
+const TYPE_COMPONENT_MAP = {
+  blockquote: Blockquote,
+  pullquote: Pullquote,
+  0: Blockquote,
+  1: Pullquote,
 };
 
-// for backwards compatibility
-const getAlign = align => {
-  if (align === Pullquote.Align.LEFT || align === 1) return Pullquote.Align.LEFT;
-  if (align === Pullquote.Align.RIGHT || align === 2) return Pullquote.Align.RIGHT;
-  return Pullquote.Align.CENTER;
+const DEFAULT_COMPONENT = TYPE_COMPONENT_MAP.blockquote;
+
+const ALIGN_MAP = {
+  center: 'center',
+  left: 'left',
+  right: 'right',
+  0: 'center',
+  1: 'left',
+  2: 'right',
 };
+
+const DEFAULT_ALIGN = ALIGN_MAP.center;
 
 function QuoteCardView({ align, float, type, ...props }) {
-  const _align = align || float;
-  // number check for compatibility
-  if (type === Type.PULLQUOTE || type === 1)
-    return <Pullquote align={getAlign(_align)} {...props} />;
-  return <Blockquote {...props} />;
+  const Component = TYPE_COMPONENT_MAP[type] || DEFAULT_COMPONENT;
+
+  return <Component align={ALIGN_MAP[align || float] || DEFAULT_ALIGN} {...props} />;
 }
 
 const QuoteCard = createCard({
@@ -28,5 +34,3 @@ const QuoteCard = createCard({
 });
 
 export default QuoteCard;
-
-QuoteCard.Type = Type;
