@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import fP from 'filter-invalid-dom-props';
-import styled from '../lib/styled';
+import styled, { css } from '../lib/styled';
 import { t } from '../theme';
 
 const ExpandableWrapper = styled.div`
@@ -22,21 +22,18 @@ const ExpandableWrapper = styled.div`
     margin: 0 auto;
   }
   ${props => {
-    if (props.expandable) {
-      if (!props.open) {
-        return `
-          height: ${props.height || '250px'};
-          overflow: hidden;
-          padding-bottom: 50px;
-        `;
-      }
-      return `
-        height: auto;
+    if (!props.open) {
+      return css`
+        height: ${props.height}px;
         overflow: hidden;
         padding-bottom: 50px;
       `;
     }
-    return '';
+    return css`
+      height: auto;
+      overflow: hidden;
+      padding-bottom: 50px;
+    `;
   }};
 `;
 
@@ -81,45 +78,35 @@ const Toggle = styled.div`
   )};
 `;
 
-export default ({
+export default function Expandable({
   backgroundColor,
   children,
   closeText = 'Less',
-  expandable = true,
-  height = '250px',
+  height = 250,
   openText = 'More',
   toggleColor,
   toggleHoverColor,
   toggleFontFamily,
   theme,
   ...props
-}) => {
+}) {
   const [open, setOpen] = useState(false);
   const toggleHeight = () => setOpen(!open);
 
   return (
-    <ExpandableWrapper
-      expandable={expandable}
-      open={open}
-      height={height}
-      backgroundColor={backgroundColor}
-      theme={theme}
-      {...fP(props)}
-    >
+    <ExpandableWrapper open={open} height={height} backgroundColor={backgroundColor} {...fP(props)}>
       {children}
-      {expandable ? (
-        <Toggle
-          backgroundColor={backgroundColor}
-          onClick={toggleHeight}
-          open={open}
-          toggleColor={toggleColor}
-          toggleHoverColor={toggleHoverColor}
-          toggleFontFamily={toggleFontFamily}
-          theme={theme}
-        >
-          {open ? closeText : openText}
-        </Toggle>
-      ) : null}
+
+      <Toggle
+        backgroundColor={backgroundColor}
+        onClick={toggleHeight}
+        open={open}
+        toggleColor={toggleColor}
+        toggleHoverColor={toggleHoverColor}
+        toggleFontFamily={toggleFontFamily}
+      >
+        {open ? closeText : openText}
+      </Toggle>
     </ExpandableWrapper>
   );
-};
+}
