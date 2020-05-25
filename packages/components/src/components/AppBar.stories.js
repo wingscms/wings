@@ -17,12 +17,9 @@ const ExampleContent = styled(Text)`
 
 export default () => <AppBar {...props()} />;
 
-export const withContent = () => {
-  faker.seed(1);
-  return (
-    <>
-      <AppBar {...props()} />
-      <ExampleContent>{faker.lorem.paragraphs(50)}</ExampleContent>
-    </>
-  );
-};
+export const withContent = () => (
+  <>
+    <AppBar {...props()} />
+    <ExampleContent>{faker.lorem.paragraphs(50)}</ExampleContent>
+  </>
+);

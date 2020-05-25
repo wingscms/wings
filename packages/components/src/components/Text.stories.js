@@ -16,9 +16,6 @@ const props = () => {
   };
 };
 
-export default () => {
-  faker.seed(1);
-  return <Text {...props()}>{faker.lorem.paragraphs(10)}</Text>;
-};
+export default () => <Text {...props()}>{faker.lorem.paragraphs(10)}</Text>;
 
 export const wrapStory = paddingWrap;
