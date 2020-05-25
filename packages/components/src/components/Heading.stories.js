@@ -15,7 +15,9 @@ const props = ({ rank = 1 } = {}) => ({
 
 export default () => (
   <>
-    <Heading {...props({ rank: number('rank', 1) })}>This is a Heading</Heading>
+    <Heading {...props({ rank: number('rank', 1, { range: true, min: 1, max: 6 }) })}>
+      This is a Heading
+    </Heading>
     <Heading {...props({ rank: 2 })}>This is a Heading</Heading>
     <Heading {...props({ rank: 3 })}>This is a Heading</Heading>
     <Heading {...props({ rank: 4 })}>This is a Heading</Heading>
