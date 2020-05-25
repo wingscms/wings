@@ -34,15 +34,9 @@ const getPageNumbers = ({ current, total, size: maxSize = 3 }) => {
   return new Array(size).fill(0).map((_, i) => first + i);
 };
 
-export default ({
-  currentPage,
-  hasNextPage,
-  hasPreviousPage,
-  onPageChange,
-  totalPages = 0,
-  size,
-  ...props
-}) => {
+export default ({ currentPage, onPageChange, totalPages = 0, size, ...props }) => {
+  const hasNextPage = currentPage < totalPages;
+  const hasPreviousPage = currentPage > 1;
   const nextPage = () => {
     if (totalPages && currentPage < totalPages) {
       onPageChange(currentPage + 1);
