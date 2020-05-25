@@ -1,20 +1,16 @@
 import React from 'react';
 import faker from 'faker';
-import { boolean, number } from '@storybook/addon-knobs/react';
+import { boolean, text } from '@storybook/addon-knobs/react';
 import { Text } from '@wingscms/components';
 import { paddingWrap } from '../../../../utils';
+import defaultTheme from '../theme/defaultTheme';
 
-const props = () => {
-  const bfs = number('baseFontSize', 0);
-  const bfst = number('baseTabletFontSize', 0);
-  const bfsm = number('baseMobileFontSize', 0);
-  return {
-    baseFontSize: bfs ? `${bfs}px` : null,
-    baseTabletFontSize: bfst ? `${bfst}px` : null,
-    baseMobileFontSize: bfsm ? `${bfsm}px` : null,
-    noSpacing: boolean('noSpacing', false),
-  };
-};
+const props = () => ({
+  baseFontSize: text('baseFontSize', defaultTheme.baseFontSize),
+  baseTabletFontSize: text('baseTabletFontSize', defaultTheme.baseTabletFontSize),
+  baseMobileFontSize: text('baseMobileFontSize', defaultTheme.baseMobileFontSize),
+  noSpacing: boolean('noSpacing', false),
+});
 
 export default () => <Text {...props()}>{faker.lorem.paragraphs(10)}</Text>;
 
