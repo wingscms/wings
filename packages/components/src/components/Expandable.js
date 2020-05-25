@@ -7,8 +7,7 @@ const ExpandableWrapper = styled.div`
   background-color: ${t(
     (_, { backgroundColor }) => backgroundColor || _.expandableBackgroundColor,
   )};
-  border-radius: ${({ borderRadius }) => `${borderRadius || 4}px`};
-  box-shadow: ${({ shadow }) => (shadow ? '0 0 20px 0 rgba(0, 0, 0, 0.05)' : 'none')};
+  box-shadow: ${t(_ => _.shadow)};
   color: ${t((_, { backgroundColor }) =>
     _.contrastColor({ backgroundColor: backgroundColor || _.expandableBackgroundColor }),
   )};
@@ -41,6 +40,7 @@ const ExpandableWrapper = styled.div`
   }};
 `;
 
+// TODO: add toggle color to theme
 const Toggle = styled.div`
   background-color: ${t(
     (_, { backgroundColor }) => backgroundColor || _.expandableBackgroundColor,
@@ -83,13 +83,11 @@ const Toggle = styled.div`
 
 export default ({
   backgroundColor,
-  borderRadius = 4,
   children,
   closeText = 'Less',
   expandable = true,
   height = '250px',
   openText = 'More',
-  shadow = true,
   toggleColor,
   toggleHoverColor,
   toggleFontFamily,
@@ -105,8 +103,6 @@ export default ({
       open={open}
       height={height}
       backgroundColor={backgroundColor}
-      shadow={shadow}
-      borderRadius={borderRadius}
       theme={theme}
       {...fP(props)}
     >

@@ -1,5 +1,5 @@
 import React from 'react';
-import { text, color, number, boolean } from '@storybook/addon-knobs/react';
+import { text, color, boolean } from '@storybook/addon-knobs/react';
 import faker from 'faker';
 import { Expandable, Text } from '@wingscms/components';
 import { paddingWrap } from '../../../../utils';
@@ -10,7 +10,6 @@ export default () => {
     <Expandable
       openText={text('openText', 'More')}
       closeText={text('closeText', 'Less')}
-      borderRadius={number('borderRadius', 4)}
       backgroundColor={color('backgroundColor', '')}
       toggleColor={color('toggleColor', '')}
       toggleHoverColor={color('toggleHoverColor', '')}
