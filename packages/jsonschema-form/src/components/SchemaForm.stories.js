@@ -38,11 +38,6 @@ export default () => (
             type: 'string',
             title: 'Bio',
           },
-          password: {
-            type: 'string',
-            title: 'Password',
-            minLength: 3,
-          },
           telephone: {
             type: 'string',
             title: 'Telephone',
