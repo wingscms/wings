@@ -1,9 +1,3 @@
-export { default as createCard } from './createCard';
-export { slugify } from './lib/utils';
-
-export { default as WingsProvider, useWings, withWings } from './ctx/Wings';
-export { IntlProvider, useIntl, withIntl } from './ctx/Intl';
-
 export { default as Content } from './components/Content';
 export { default as Campaign } from './components/Campaign/Campaign';
 export { default as CampaignConfirmed } from './components/CampaignConfirmed';
@@ -27,3 +21,9 @@ export {
   TestimonialCard,
   TextCard,
 } from './components/cards';
+
+export { default as createCard } from './createCard';
+export { slugify } from './lib/utils';
+
+export { default as WingsProvider, useWings, withWings } from './ctx/Wings';
+export { IntlProvider, useIntl, withIntl } from './ctx/Intl';
