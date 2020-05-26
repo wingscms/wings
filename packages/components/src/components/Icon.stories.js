@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Icon } from '@wingscms/components';
+import { select } from '@storybook/addon-knobs/react';
 import { paddingWrap } from '../../../../utils';
 
 const Wrapper = styled.div`
@@ -13,12 +14,12 @@ const Wrapper = styled.div`
   }
 `;
 
-export default () => {
-  return (
-    <Wrapper>
-      <Icon icon="facebook" />
-    </Wrapper>
-  );
-};
+const DEFAULT_ICON = 'facebook';
+
+export default () => (
+  <Wrapper>
+    <Icon icon={select('icon', Icon.ICON_NAMES, DEFAULT_ICON)} />
+  </Wrapper>
+);
 
 export const wrapStory = paddingWrap;
