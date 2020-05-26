@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@0.6.0...@wingscms/jsonschema-form@1.0.0) (2020-05-26)
+
+
+### Features
+
+* v1 ([843f910](https://github.com/wingscms/wings/commit/843f91096d03dc817f7ff86880ee5ed9cf43b2d2))
+
+
+### BREAKING CHANGES
+
+* Stabalizing the API.
+
+Co-authored-by: Mark Jackson <mark.j.jackson@me.com>
+
+
+
+
+
 # [0.6.0](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@0.5.0...@wingscms/jsonschema-form@0.6.0) (2020-05-12)
 
 

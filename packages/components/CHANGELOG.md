@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/wingscms/wings/compare/@wingscms/components@0.25.0...@wingscms/components@1.0.0) (2020-05-26)
+
+
+### Features
+
+* add Link and styles to component library ([#437](https://github.com/wingscms/wings/issues/437)) ([d64088f](https://github.com/wingscms/wings/commit/d64088f45a603abff5533c5c6f606676dcf28e61))
+* headings and responsive font sizes ([#454](https://github.com/wingscms/wings/issues/454)) ([0ff49da](https://github.com/wingscms/wings/commit/0ff49dac84a367db30e01d096d323239e4950415))
+* v1 ([843f910](https://github.com/wingscms/wings/commit/843f91096d03dc817f7ff86880ee5ed9cf43b2d2))
+
+
+### BREAKING CHANGES
+
+* Stabalizing the API.
+
+Co-authored-by: Mark Jackson <mark.j.jackson@me.com>
+
+
+
+
+
 # [0.25.0](https://github.com/wingscms/wings/compare/@wingscms/components@0.24.0...@wingscms/components@0.25.0) (2020-05-12)
 
 
