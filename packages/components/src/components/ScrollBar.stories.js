@@ -14,6 +14,6 @@ export const Controlled = () => (
   />
 );
 
-export const Uncontrolled = () => <ScrollBar barColor={color('barColor')} />;
+export default () => <ScrollBar barColor={color('barColor')} />;
 
 export const wrapStory = elem => <Container>{elem}</Container>;
