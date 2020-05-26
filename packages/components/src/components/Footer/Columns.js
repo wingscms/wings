@@ -79,68 +79,69 @@ export default ({ columns }) => {
   return columns.map((column, idx) => (
     <Column key={`footer-column-${idx}`}>
       {column.title && <Title rank={2}>{column.title}</Title>}
-      {column.rows.map(
-        wrapRow(row => {
-          switch (row.type) {
-            case 'text':
-              return (
-                <Text>
-                  {row.content
-                    .trim()
-                    .split('\n')
-                    .reduce((arr, text, i) => {
-                      if (i === 0) return [text.trim()];
-                      return [...arr, <br />, text.trim()];
-                    }, [])}
-                </Text>
-              );
-            case 'image':
-              return <ImageRow src={row.src} alt={row.alt} url={row.url} />;
-            case 'link':
-              return (
-                <Text>
-                  <Link href={row.url}>{row.content || row.url}</Link>
-                </Text>
-              );
-            case 'button':
-              return (
-                <Button href={row.url} size="small" as="a" intent={Button.Intent.SECONDARY}>
-                  {row.content}
-                </Button>
-              );
-            case 'social':
-              return (
-                <SocialButtons>
-                  {row.profiles.map(
-                    (
-                      {
-                        platform,
-                        url,
-                        iconColor,
-                        iconHoverColor,
-                        backgroundColor,
-                        backgroundHoverColor,
-                      },
-                      idx,
-                    ) => (
-                      <SocialButtons.Button
-                        icon={platform}
-                        url={url}
-                        key={idx}
-                        iconColor={iconColor}
-                        iconHoverColor={iconHoverColor}
-                        backgroundColor={backgroundColor}
-                        backgroundHoverColor={backgroundHoverColor}
-                      />
-                    ),
-                  )}
-                </SocialButtons>
-              );
-            default:
-              return <div />;
-          }
-        }),
-      )}
+      {Array.isArray(column.rows) &&
+        column.rows.map(
+          wrapRow(row => {
+            switch (row.type) {
+              case 'text':
+                return (
+                  <Text>
+                    {row.content
+                      .trim()
+                      .split('\n')
+                      .reduce((arr, text, i) => {
+                        if (i === 0) return [text.trim()];
+                        return [...arr, <br />, text.trim()];
+                      }, [])}
+                  </Text>
+                );
+              case 'image':
+                return <ImageRow src={row.src} alt={row.alt} url={row.url} />;
+              case 'link':
+                return (
+                  <Text>
+                    <Link href={row.url}>{row.content || row.url}</Link>
+                  </Text>
+                );
+              case 'button':
+                return (
+                  <Button href={row.url} size="small" as="a" intent={Button.Intent.SECONDARY}>
+                    {row.content}
+                  </Button>
+                );
+              case 'social':
+                return (
+                  <SocialButtons>
+                    {row.profiles.map(
+                      (
+                        {
+                          platform,
+                          url,
+                          iconColor,
+                          iconHoverColor,
+                          backgroundColor,
+                          backgroundHoverColor,
+                        },
+                        idx,
+                      ) => (
+                        <SocialButtons.Button
+                          icon={platform}
+                          url={url}
+                          key={idx}
+                          iconColor={iconColor}
+                          iconHoverColor={iconHoverColor}
+                          backgroundColor={backgroundColor}
+                          backgroundHoverColor={backgroundHoverColor}
+                        />
+                      ),
+                    )}
+                  </SocialButtons>
+                );
+              default:
+                return <div />;
+            }
+          }),
+        )}
     </Column>
   ));
 };

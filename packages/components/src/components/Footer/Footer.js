@@ -31,7 +31,7 @@ const Footer = ({ children, columns, title, ...props }) => {
   return (
     <Wrap {...fP(props)}>
       <Container>
-        {columns && <Columns columns={columns} />}
+        {Array.isArray(columns) && <Columns columns={columns} />}
         {children}
       </Container>
     </Wrap>
