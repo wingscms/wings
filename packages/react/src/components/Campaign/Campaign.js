@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Counter, Heading, useDimensions } from '@wingscms/components';
-import filterInvalidDOMProps from 'filter-invalid-dom-props';
+import fP from 'filter-invalid-dom-props';
 import styled from '../../lib/styled';
 
 import { t } from '../../theme';
@@ -210,7 +210,7 @@ export default function Campaign({
   const { intro, title, description } = node;
   const element = (
     <>
-      <MainContainerOuter {...filterInvalidDOMProps(props)} ref={campaignContainerRef}>
+      <MainContainerOuter {...fP(props)} ref={campaignContainerRef}>
         <MainContainerInner>
           <Proposition
             {...{ descriptionCollapse, descriptionExpand }}
