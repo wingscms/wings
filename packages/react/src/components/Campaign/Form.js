@@ -327,6 +327,7 @@ class CampaignForm extends Component {
       amountFieldLabel: intl.formatMessage('wings.CampaignForm.amountField.label'),
       newsletterFieldLabel: intl.formatMessage('wings.CampaignForm.newsletterField.label'),
       termsFieldLabel: intl.formatMessage('wings.CampaignForm.termsField.label', {
+        // TODO: use Link component instead of vanilla <a>
         a: str => (
           <a href={node?.settings?.legal?.terms?.url || '/terms'} target="_blank">
             {str}
