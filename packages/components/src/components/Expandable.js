@@ -15,10 +15,8 @@ const ExpandableWrapper = styled.div`
   transition: all 0.2s linear;
   width: 100%;
   position: relative;
-  max-width: 720px;
   > * {
     width: 100%;
-    max-width: 720px;
     margin: 0 auto;
   }
   ${props => {
