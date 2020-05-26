@@ -6,7 +6,7 @@ import { paddingWrap } from '../../../../utils';
 const props = ({ listType = List.Type.UNORDERED } = {}) => ({
   markerColor: color('markerColor'),
   textColor: color('textColor'),
-  type: select('type', List.Type, listType),
+  listType: select('listType', List.Type, listType),
 });
 
 export const OrderedList = () => (

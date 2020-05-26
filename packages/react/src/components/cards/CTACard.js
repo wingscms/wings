@@ -15,7 +15,6 @@ function CallToActionView({
   backgroundImage,
   buttonText,
   buttonUrl,
-  reveal,
   text,
   title,
   actionText,
@@ -29,9 +28,9 @@ function CallToActionView({
         backgroundImage={backgroundImage}
         buttonText={buttonText || actionText}
         buttonUrl={buttonUrl || actionUrl}
-        reveal={reveal}
         title={title}
         text={text}
+        reveal
         {...props}
       />
     </OffGridContainer>

@@ -5,13 +5,18 @@ import { paddingWrap } from '../../../../utils';
 
 export default () => (
   <SectionMarker
-    title={text('title', 'Section One')}
-    text={text('text', 'This is an introduction to the first section of the article')}
-    number={text('number', '1')}
+    sectionTitle={text('sectionTitle', 'Section One')}
     titleColor={color('titleColor')}
+    text={text('text', 'This is an introduction to the first section of the article')}
     textColor={color('textColor')}
-    numberColor={color('numberColor')}
-    numberOpacity={number('numberOpacity')}
+    marker={text('marker', '1')}
+    markerColor={color('markerColor')}
+    markerOpacity={number('markerOpacity', 1, {
+      range: true,
+      min: 0,
+      max: 1,
+      step: 0.1,
+    })}
     reveal={boolean('reveal', true)}
   />
 );

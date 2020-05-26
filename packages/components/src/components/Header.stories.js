@@ -18,13 +18,7 @@ const props = ({ type = Header.Type.SIMPLE } = {}) => ({
   caption: text('caption', 'A test caption'),
 });
 
-export default () => (
-  <StoryWrap>
-    <Header {...props()} />
-  </StoryWrap>
-);
-export const Cover = () => (
-  <StoryWrap>
-    <Header {...props({ type: Header.Type.COVER })} />
-  </StoryWrap>
-);
+export default () => <Header {...props()} />;
+export const Cover = () => <Header {...props({ type: Header.Type.COVER })} />;
+
+export const wrapStory = elem => <StoryWrap>{elem}</StoryWrap>;

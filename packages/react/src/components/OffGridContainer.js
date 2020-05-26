@@ -1,11 +1,11 @@
 import React from 'react';
 import fP from 'filter-invalid-dom-props';
-import { wide } from '@wingscms/components';
+import { _WIDE } from '@wingscms/components';
 import styled, { css } from '../lib/styled';
 import { t } from '../theme';
 
 const ContainerOuter = styled.div`
-  ${wide}
+  ${_WIDE}
   margin: ${t(_ => _.mediumSpacing)} initial;
  ${t(_ =>
    _.mobileQuery(

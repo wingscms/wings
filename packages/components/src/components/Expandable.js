@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import fP from 'filter-invalid-dom-props';
-import styled from '../lib/styled';
+import styled, { css } from '../lib/styled';
 import { t } from '../theme';
 
 const ExpandableWrapper = styled.div`
   background-color: ${t(
     (_, { backgroundColor }) => backgroundColor || _.expandableBackgroundColor,
   )};
-  border-radius: ${({ borderRadius }) => `${borderRadius || 4}px`};
-  box-shadow: ${({ shadow }) => (shadow ? '0 0 20px 0 rgba(0, 0, 0, 0.05)' : 'none')};
+  box-shadow: ${t(_ => _.shadow)};
   color: ${t((_, { backgroundColor }) =>
     _.contrastColor({ backgroundColor: backgroundColor || _.expandableBackgroundColor }),
   )};
@@ -16,31 +15,27 @@ const ExpandableWrapper = styled.div`
   transition: all 0.2s linear;
   width: 100%;
   position: relative;
-  max-width: 720px;
   > * {
     width: 100%;
-    max-width: 720px;
     margin: 0 auto;
   }
   ${props => {
-    if (props.expandable) {
-      if (!props.open) {
-        return `
-          height: ${props.height || '250px'};
-          overflow: hidden;
-          padding-bottom: 50px;
-        `;
-      }
-      return `
-        height: auto;
+    if (!props.open) {
+      return css`
+        height: ${props.height}px;
         overflow: hidden;
         padding-bottom: 50px;
       `;
     }
-    return '';
+    return css`
+      height: auto;
+      overflow: hidden;
+      padding-bottom: 50px;
+    `;
   }};
 `;
 
+// TODO: add toggle color to theme
 const Toggle = styled.div`
   background-color: ${t(
     (_, { backgroundColor }) => backgroundColor || _.expandableBackgroundColor,
@@ -81,49 +76,35 @@ const Toggle = styled.div`
   )};
 `;
 
-export default ({
+export default function Expandable({
   backgroundColor,
-  borderRadius = 4,
   children,
   closeText = 'Less',
-  expandable = true,
-  height = '250px',
+  height = 250,
   openText = 'More',
-  shadow = true,
   toggleColor,
   toggleHoverColor,
   toggleFontFamily,
   theme,
   ...props
-}) => {
+}) {
   const [open, setOpen] = useState(false);
   const toggleHeight = () => setOpen(!open);
 
   return (
-    <ExpandableWrapper
-      expandable={expandable}
-      open={open}
-      height={height}
-      backgroundColor={backgroundColor}
-      shadow={shadow}
-      borderRadius={borderRadius}
-      theme={theme}
-      {...fP(props)}
-    >
+    <ExpandableWrapper open={open} height={height} backgroundColor={backgroundColor} {...fP(props)}>
       {children}
-      {expandable ? (
-        <Toggle
-          backgroundColor={backgroundColor}
-          onClick={toggleHeight}
-          open={open}
-          toggleColor={toggleColor}
-          toggleHoverColor={toggleHoverColor}
-          toggleFontFamily={toggleFontFamily}
-          theme={theme}
-        >
-          {open ? closeText : openText}
-        </Toggle>
-      ) : null}
+
+      <Toggle
+        backgroundColor={backgroundColor}
+        onClick={toggleHeight}
+        open={open}
+        toggleColor={toggleColor}
+        toggleHoverColor={toggleHoverColor}
+        toggleFontFamily={toggleFontFamily}
+      >
+        {open ? closeText : openText}
+      </Toggle>
     </ExpandableWrapper>
   );
-};
+}

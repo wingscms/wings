@@ -87,11 +87,8 @@ const columns = [
 
 export default () => <Footer columns={object('columns', columns)} />;
 
-export const CustomContent = () => {
-  faker.seed(1);
-  return (
-    <Footer columns={object('columns', columns)}>
-      <div>{faker.lorem.paragraph()}</div>
-    </Footer>
-  );
-};
+export const CustomContent = () => (
+  <Footer columns={object('columns', columns)}>
+    <div>{faker.lorem.paragraph()}</div>
+  </Footer>
+);

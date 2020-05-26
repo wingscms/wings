@@ -3,7 +3,7 @@ import { compose, setPropTypes, setStatic } from 'recompose';
 import classNames from 'classnames';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import PropTypes from 'prop-types';
-import { Reveal, wide, ALIGNLEFT, ALIGNRIGHT } from '@wingscms/components';
+import { Reveal, _WIDE, _ALIGNLEFT, _ALIGNRIGHT } from '@wingscms/components';
 import styled from '../../lib/styled';
 import { enumerate } from '../../lib/utils';
 import createCard from '../../createCard';
@@ -60,7 +60,7 @@ const Image = styled.figure`
     margin-right: auto;
   }
   &.size-${SIZE.LARGE} {
-    ${wide};
+    ${_WIDE};
     img {
       max-width: 1200px;
       width: 100%;
@@ -75,7 +75,7 @@ const Image = styled.figure`
     }
   }
   &.size-${SIZE.EXTRALARGE} {
-    ${wide};
+    ${_WIDE};
     img {
       max-width: 1600px;
       width: 100%;
@@ -90,7 +90,7 @@ const Image = styled.figure`
     }
   }
   &.align-${FLOAT.LEFT} {
-    ${ALIGNLEFT};
+    ${_ALIGNLEFT};
     @media screen and (min-width: 800px) {
       figcaption {
         padding: 10px 0;
@@ -98,7 +98,7 @@ const Image = styled.figure`
     }
   }
   &.align-${FLOAT.RIGHT} {
-    ${ALIGNRIGHT};
+    ${_ALIGNRIGHT};
     @media screen and (min-width: 800px) {
       figcaption {
         padding: 10px 0;
@@ -110,32 +110,19 @@ const Image = styled.figure`
 const ImageCard = compose(
   setPropTypes(propTypes),
   setStatic('defaultProps', defaultProps),
-)(
-  ({
-    reveal = true,
-    size,
-    float,
-    className,
-    mediaId,
-    url,
-    caption,
-    onClick,
-    _mediaId,
-    ...props
-  }) => (
-    <Reveal reveal={reveal}>
-      <Image
-        onClick={onClick}
-        className={classNames(`size-${size}`, className, {
-          [`align-${float}`]: size === SIZE.MEDIUM,
-        })}
-      >
-        <img {...filterInvalidDOMProps(props)} />
-        {!caption ? null : <figcaption>{caption}</figcaption>}
-      </Image>
-    </Reveal>
-  ),
-);
+)(({ size, float, className, mediaId, url, caption, onClick, _mediaId, ...props }) => (
+  <Reveal reveal>
+    <Image
+      onClick={onClick}
+      className={classNames(`size-${size}`, className, {
+        [`align-${float}`]: size === SIZE.MEDIUM,
+      })}
+    >
+      <img {...filterInvalidDOMProps(props)} />
+      {!caption ? null : <figcaption>{caption}</figcaption>}
+    </Image>
+  </Reveal>
+));
 
 export default createCard({
   name: 'ImageCard',

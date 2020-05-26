@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
-import { wide } from '@wingscms/components';
+import { _WIDE } from '@wingscms/components';
 import styled from '../../lib/styled';
 import createCard from '../../createCard';
 import { t } from '../../theme';
 
 const Figure = styled.figure`
-  ${wide};
+  ${_WIDE};
   max-width: 1160px;
   margin-left: 50%;
   transform: translateX(-50%);

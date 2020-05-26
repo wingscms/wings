@@ -10,8 +10,9 @@ const props = ({
   loading = false,
   intent = Button.Intent.NONE,
   icon = DEFAULT_ICON,
+  buttonType = Button.Type.NORMAL,
 } = {}) => ({
-  buttonType: select('buttonType', { normal: 'normal', outline: 'outline' }, 'normal'),
+  buttonType: select('buttonType', Button.Type, buttonType),
   intent: select('intent', Button.Intent, intent),
   size: select('size', Button.Size, size),
   disabled: boolean('disabled', false),
@@ -22,6 +23,7 @@ const props = ({
 
 export default () => <Button {...props()} />;
 export const Primary = () => <Button {...props({ intent: Button.Intent.PRIMARY })} />;
+export const Outline = () => <Button {...props({ buttonType: Button.Type.OUTLINE })} />;
 export const Small = () => <Button {...props({ size: Button.Size.SMALL })} />;
 export const WithIcon = () => (
   <Button {...props({ icon: 'twitter', intent: Button.Intent.PRIMARY })} />

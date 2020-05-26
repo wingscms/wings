@@ -8,16 +8,12 @@ const Container = styled.div`
 `;
 
 export const Controlled = () => (
-  <Container>
-    <ScrollBar
-      percentage={number('percentage', 14, { range: true, min: 0, max: 100 })}
-      barColor={color('barColor')}
-    />
-  </Container>
+  <ScrollBar
+    percentage={number('percentage', 14, { range: true, min: 0, max: 100 })}
+    barColor={color('barColor')}
+  />
 );
 
-export const Uncontrolled = () => (
-  <Container>
-    <ScrollBar barColor={color('barColor')} />
-  </Container>
-);
+export default () => <ScrollBar barColor={color('barColor')} />;
+
+export const wrapStory = elem => <Container>{elem}</Container>;
