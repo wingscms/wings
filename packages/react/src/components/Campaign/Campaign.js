@@ -90,6 +90,7 @@ const FormContainer = styled.div`
   border-radius: 4px;
   box-shadow: ${t(_ => _.shadow)};
   align-self: flex-start;
+  /* TODO: use Link component instead of vanilla <a> */
   a {
     color: ${t(_ => _.campaignFormLinkTextColor)};
     text-decoration: none;
