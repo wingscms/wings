@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/wingscms/wings/compare/@wingscms/components@1.0.0...@wingscms/components@1.0.1) (2020-05-27)
+
+
+### Bug Fixes
+
+* render AppBar children ([#466](https://github.com/wingscms/wings/issues/466)) ([6a8f513](https://github.com/wingscms/wings/commit/6a8f513128c03c89583aa99491ba3c88948d13be))
+
+
+
+
+
 # [1.0.0](https://github.com/wingscms/wings/compare/@wingscms/components@0.25.0...@wingscms/components@1.0.0) (2020-05-26)
 
 
