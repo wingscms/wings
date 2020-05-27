@@ -19,7 +19,7 @@ export default () => <AppBar {...props()} />;
 
 export const withContent = () => (
   <>
-    <AppBar {...props()} />
+    <AppBar {...props()}>asdasd</AppBar>
     <ExampleContent>{faker.lorem.paragraphs(50)}</ExampleContent>
   </>
 );
