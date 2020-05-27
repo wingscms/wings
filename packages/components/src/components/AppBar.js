@@ -45,8 +45,12 @@ const Container = styled.div`
   ${getPosition}
 `;
 
-function AppBar({ hide, position = Position.BOTTOM, ...props }) {
-  return <Container hide={hide} position={position} {...fP(props)} />;
+function AppBar({ children, hide, position = Position.BOTTOM, ...props }) {
+  return (
+    <Container hide={hide} position={position} {...fP(props)}>
+      {children}
+    </Container>
+  );
 }
 
 AppBar.Position = Position;
