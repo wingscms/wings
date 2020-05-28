@@ -37,6 +37,7 @@ const IconWrap = styled.div`
 `;
 
 const Caption = styled.figcaption`
+  font-family: ${t(_ => _.textFontFamily)};
   margin-top: ${t(_ => _.smallSpacing)};
   color: ${t(_ => _.textColor)};
   text-align: center;
