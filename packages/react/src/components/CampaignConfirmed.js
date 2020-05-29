@@ -1,16 +1,8 @@
 import React from 'react';
 import fP from 'filter-invalid-dom-props';
-import { Heading, SocialButtons } from '@wingscms/components';
+import { Heading, SocialButtons, Text } from '@wingscms/components';
 
-import styled from '../lib/styled';
 import { useIntl } from '../ctx/Intl';
-
-const Text = styled.p`
-  font-size: 18px;
-  @media screen and (min-width: 800px) {
-    font-size: 24px;
-  }
-`;
 
 const ResourceType = {
   EVENT: 'node.event',

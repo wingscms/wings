@@ -6,6 +6,7 @@ import Heading from '../Heading';
 import SocialButtons from '../SocialButtons';
 
 const Column = styled.div`
+  font-family: ${t(_ => _.textFontFamily)};
   padding: ${t(_ => `${_.smallSpacing} ${_.smallSpacing} 0`)};
   color: inherit;
   text-align: left;

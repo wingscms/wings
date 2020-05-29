@@ -28,6 +28,7 @@ const MetaName = styled.div`
 `;
 
 const MetaContent = styled.div`
+  font-family: ${t(_ => _.textFontFamily)};
   display: inline-block;
   width: 50%;
   font-size: 18px;

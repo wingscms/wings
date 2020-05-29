@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/wingscms/wings/compare/@wingscms/components@1.0.1...@wingscms/components@1.0.2) (2020-05-29)
+
+
+### Bug Fixes
+
+* font family fixes ([#467](https://github.com/wingscms/wings/issues/467)) ([04f2e72](https://github.com/wingscms/wings/commit/04f2e728431a83ff92fb815e5ba54fb06b972992))
+
+
+
+
+
 ## [1.0.1](https://github.com/wingscms/wings/compare/@wingscms/components@1.0.0...@wingscms/components@1.0.1) (2020-05-27)
 
 

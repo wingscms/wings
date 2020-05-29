@@ -121,6 +121,7 @@ const FormContainer = styled.div`
 
 const FormContainerInner = styled.div`
   padding: ${t(_ => _.mediumSpacing)};
+  font-family: ${t(_ => _.textFontFamily)};
   display: block;
   @media screen and (max-width: 1000px) {
     padding: ${t(_ => _.smallSpacing)};
@@ -132,6 +133,7 @@ const FormContainerInner = styled.div`
 
 const Intro = styled.p`
   font-size: 1.2em;
+  font-family: ${t(_ => _.textFontFamily)};
   @media screen and (max-width: 600px) {
     font-size: 1em;
   }
