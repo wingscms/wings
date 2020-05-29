@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { FlexGrid, Icon, _WIDE } from '@wingscms/components';
+import { FlexGrid, Icon, _WIDE, Heading } from '@wingscms/components';
 import styled from '../../lib/styled';
 import createCard from '../../createCard';
 import { t } from '../../theme';
@@ -13,17 +13,6 @@ const WideContentWrap = styled.div`
   margin: 0 auto;
   max-width: 1200px;
   padding: 0 20px;
-`;
-
-const Title = styled.h3`
-  color: ${t(_ => _.textColor)};
-  font-size: 40px;
-  line-height: 42px;
-  font-weight: bold;
-  @media screen and (max-width: 645px) {
-    font-size: 24px;
-    line-height: 30px;
-  }
 `;
 
 const OrganisationContainer = styled.div`
@@ -59,10 +48,10 @@ const OrganisationContent = styled.div`
   }
 `;
 
-const OrganisationName = styled.h3`
-  color: ${t(_ => _.textColor)};
+const OrganisationName = styled(Heading)`
   text-align: left;
   padding: 0;
+  margin: 0;
   @media screen and (max-width: 900px) {
     text-align: center;
   }
@@ -89,11 +78,10 @@ const PersonImg = styled.img`
   margin-bottom: 10px;
 `;
 
-const PersonName = styled.h3`
-  color: ${t(_ => _.textColor)};
-  font-weight: 800;
+const PersonName = styled(Heading)`
   text-align: center;
   padding: 0;
+  margin: 0;
 `;
 
 const ProfilesWrapper = styled.div`
@@ -135,7 +123,7 @@ class CollectionCardView extends Component {
       <OrganisationContainer key={x._id} index={i}>
         {x.image ? <OrganisationImage src={x.image.url} /> : null}
         <OrganisationContent>
-          {x.name ? <OrganisationName>{x.name}</OrganisationName> : null}
+          {x.name ? <OrganisationName rank={4}>{x.name}</OrganisationName> : null}
           {x.description ? (
             <OrganisationDescription>{x.description.text}</OrganisationDescription>
           ) : null}
@@ -196,7 +184,7 @@ class CollectionCardView extends Component {
       // eslint-disable-next-line
       <PersonContainer key={x._id} index={i}>
         {x.image ? <PersonImg src={x.image.url} /> : null}
-        {x.name ? <PersonName>{x.name}</PersonName> : null}
+        {x.name ? <PersonName rank={4}>{x.name}</PersonName> : null}
         {x.profiles ? (
           <ProfilesWrapper>
             {x.profiles.website ? (
@@ -262,7 +250,7 @@ class CollectionCardView extends Component {
   renderPersonsCollection() {
     return (
       <>
-        {this.props.title ? <Title>{this.props.title}</Title> : null}
+        {this.props.title ? <Heading rank={3}>{this.props.title}</Heading> : null}
         <Wide>
           <WideContentWrap>
             <StyledFlexGrid
@@ -282,7 +270,7 @@ class CollectionCardView extends Component {
   renderOrganisationsCollection() {
     return (
       <>
-        {this.props.title ? <Title>{this.props.title}</Title> : null}
+        {this.props.title ? <Heading rank={3}>{this.props.title}</Heading> : null}
         <StyledFlexGrid
           divisions={1}
           margins={10}
