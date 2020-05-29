@@ -17,6 +17,7 @@ const Item = styled(Button)`
   width: ${({ size }) => size}px;
   height: ${({ size }) => size}px;
   margin-right: ${({ spacing }) => spacing}px;
+  margin-bottom: ${({ spacing }) => spacing}px;
   padding: ${({ padding }) => padding}px;
   border-radius: ${({ borderRadius }) => borderRadius}px;
   background-color: ${t(
