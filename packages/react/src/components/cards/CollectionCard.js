@@ -158,7 +158,7 @@ class CollectionCardView extends Component {
               {x.profiles.linkedIn ? (
                 <a href={x.profiles.linkedIn.url} target="_blank" rel="noopener noreferrer">
                   <ProfileImage>
-                    <Icon icon="linked-in" />
+                    <Icon icon="linkedin" />
                   </ProfileImage>
                 </a>
               ) : null}
