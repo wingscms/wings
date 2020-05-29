@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { useDimensions } from '@wingscms/components';
 
 import styled, { css } from '../../lib/styled';
@@ -83,16 +83,15 @@ export default function Proposition({
   const toggleRef = useRef(null);
   const { height: toggleHeight } = useDimensions(toggleRef, [children, show]);
 
-  const toggleShow = () => setShow(!show);
+  const toggleShow = () => {
+    onToggle(show);
+    setShow(!show);
+  };
 
   const margin = containerWidth < 400 ? 10 : 40;
   const padding = containerWidth < 400 ? 20 : 40;
   const height = !show ? initialHeight - 80 : contentHeight + padding + margin + toggleHeight;
   const showToggle = show || contentHeight + 160 > height;
-
-  useEffect(() => {
-    onToggle(show);
-  }, [show]);
 
   return (
     <Container ref={containerRef} show={show} height={height} formWidth={formWidth} {...props}>

@@ -218,7 +218,7 @@ export default function Campaign({
             {...{ descriptionCollapse, descriptionExpand }}
             initialHeight={formContainerRef?.current?.offsetHeight}
             onToggle={show => {
-              if (!campaignContainerRef?.current || show) return;
+              if (!campaignContainerRef?.current || !show) return;
               campaignContainerRef?.current?.scrollIntoView?.({
                 behavior: 'smooth',
                 block: 'start',
