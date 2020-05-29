@@ -13,7 +13,7 @@ const ContentWrapper = styled.div`
   }
 `;
 
-export default function Entry({ children, node, headerType, headerProps, ...props }) {
+export default function Entry({ children, node, headerType, headerProps, contentProps, ...props }) {
   const { image, title, content } = node;
   const { url, caption } = image || {};
   return (
@@ -26,7 +26,7 @@ export default function Entry({ children, node, headerType, headerProps, ...prop
         {...headerProps}
       />
       <ContentWrapper>
-        <Content content={content} />
+        <Content content={content} {...contentProps} />
       </ContentWrapper>
       {children}
     </div>
