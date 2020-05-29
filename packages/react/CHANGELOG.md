@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.3](https://github.com/wingscms/wings/compare/@wingscms/react@1.0.2...@wingscms/react@1.0.3) (2020-05-29)
+
+
+### Bug Fixes
+
+* campaign form width fix ([#468](https://github.com/wingscms/wings/issues/468)) ([f92f641](https://github.com/wingscms/wings/commit/f92f6419a3b3d01eb1de1814d4c25c6e612a2e6f))
+
+
+
+
+
 ## [1.0.2](https://github.com/wingscms/wings/compare/@wingscms/react@1.0.1...@wingscms/react@1.0.2) (2020-05-29)
 
 
