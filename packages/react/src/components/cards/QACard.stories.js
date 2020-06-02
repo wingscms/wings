@@ -1,7 +1,31 @@
 import { QACard } from '@wingscms/react';
+import faker from 'faker';
 import { contentWrap } from '../../../../../utils';
 
-export default () =>
+export const WithStrings = () => {
+  faker.seed(1);
+  return QACard.render({
+    type: 2,
+    title: 'Question and Answers',
+    intro: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    content: [
+      {
+        question: faker.lorem.sentence(),
+        answer: faker.lorem.paragraphs(3),
+      },
+      {
+        question: faker.lorem.sentence(),
+        answer: faker.lorem.paragraphs(3),
+      },
+      {
+        question: faker.lorem.sentence(),
+        answer: faker.lorem.paragraphs(3),
+      },
+    ],
+  });
+};
+
+export const WithMobiledoc = () =>
   QACard.render({
     type: 2,
     title: 'Question and Answers',
