@@ -1,7 +1,8 @@
 import { CollectionCard } from '@wingscms/react';
+import faker from 'faker';
 import { contentWrap, image } from '../../../../../utils';
 
-export default () =>
+export const People = () =>
   CollectionCard.render({
     type: 0,
     title: 'Collection',
@@ -96,6 +97,118 @@ export default () =>
           instagram: {
             username: 'example',
           },
+        },
+      },
+    ],
+  });
+
+export const Organisations = () =>
+  CollectionCard.render({
+    type: 1,
+    title: 'Organisations',
+    items: [
+      {
+        name: 'Wings',
+        profiles: {
+          website: {
+            url: 'https://wings.dev',
+          },
+          twitter: {
+            username: 'wingscms',
+          },
+          instagram: {
+            username: 'wingscms',
+          },
+          linkedIn: {
+            url: 'https://www.linkedin.com/company/wingscms',
+          },
+          facebook: {
+            url: 'https://www.facebook.com/wingscms',
+          },
+        },
+        description: {
+          text: faker.lorem.paragraphs(1),
+        },
+        image: {
+          url: image(),
+        },
+      },
+      {
+        name: 'Wings',
+        profiles: {
+          website: {
+            url: 'https://wings.dev',
+          },
+          twitter: {
+            username: 'wingscms',
+          },
+          instagram: {
+            username: 'wingscms',
+          },
+          linkedIn: {
+            url: 'https://www.linkedin.com/company/wingscms',
+          },
+          facebook: {
+            url: 'https://www.facebook.com/wingscms',
+          },
+        },
+        description: {
+          text: faker.lorem.paragraphs(1),
+        },
+        image: {
+          url: image(),
+        },
+      },
+      {
+        name: 'Wings',
+        profiles: {
+          website: {
+            url: 'https://wings.dev',
+          },
+          twitter: {
+            username: 'wingscms',
+          },
+          instagram: {
+            username: 'wingscms',
+          },
+          linkedIn: {
+            url: 'https://www.linkedin.com/company/wingscms',
+          },
+          facebook: {
+            url: 'https://www.facebook.com/wingscms',
+          },
+        },
+        description: {
+          text: faker.lorem.paragraphs(1),
+        },
+        image: {
+          url: image(),
+        },
+      },
+      {
+        name: 'Wings',
+        profiles: {
+          website: {
+            url: 'https://wings.dev',
+          },
+          twitter: {
+            username: 'wingscms',
+          },
+          instagram: {
+            username: 'wingscms',
+          },
+          linkedIn: {
+            url: 'https://www.linkedin.com/company/wingscms',
+          },
+          facebook: {
+            url: 'https://www.facebook.com/wingscms',
+          },
+        },
+        description: {
+          text: faker.lorem.paragraphs(1),
+        },
+        image: {
+          url: image(),
         },
       },
     ],
