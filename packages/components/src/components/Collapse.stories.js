@@ -1,7 +1,7 @@
 import React from 'react';
 import faker from 'faker';
 import { boolean, select } from '@storybook/addon-knobs/react';
-import { Collapse } from '@wingscms/components';
+import { Collapse, Text } from '@wingscms/components';
 import { paddingWrap } from '../../../../utils';
 import { text } from '@storybook/addon-knobs';
 
@@ -14,9 +14,9 @@ export const Controlled = () => {
         open={boolean('open', false)}
         label={text('label', faker.lorem.sentence())}
       >
-        {faker.lorem.paragraph(6)}
+        <Text>{faker.lorem.paragraph(6)}</Text>
       </Collapse>
-      {faker.lorem.paragraph(1)}
+      <Text>{faker.lorem.paragraph(1)}</Text>
     </>
   );
 };
@@ -29,9 +29,9 @@ export const Uncontrolled = () => {
         intent={select('intent', Collapse.Intent, Collapse.Intent.NONE)}
         label={text('label', faker.lorem.sentence())}
       >
-        {faker.lorem.paragraph(6)}
+        <Text>{faker.lorem.paragraph(6)}</Text>
       </Collapse>
-      {faker.lorem.paragraph(1)}
+      <Text>{faker.lorem.paragraph(1)}</Text>
     </>
   );
 };

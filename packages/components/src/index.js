@@ -1,3 +1,4 @@
+export { default as Accordion } from './components/Accordion';
 export { default as AppBar } from './components/AppBar';
 export { default as Blockquote } from './components/Blockquote';
 export { default as Burger } from './components/Burger';
