@@ -84,7 +84,7 @@ export default function Proposition({
   const { height: toggleHeight } = useDimensions(toggleRef, [children, show]);
 
   const toggleShow = () => {
-    onToggle(show);
+    onToggle(!show);
     setShow(!show);
   };
 
