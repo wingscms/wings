@@ -84,8 +84,9 @@ export default function Proposition({
   const { height: toggleHeight } = useDimensions(toggleRef, [children, show]);
 
   const toggleShow = () => {
-    onToggle(!show);
-    setShow(!show);
+    const newState = !show;
+    setShow(newState);
+    onToggle(newState);
   };
 
   const margin = containerWidth < 400 ? 10 : 40;
@@ -100,7 +101,7 @@ export default function Proposition({
         <ToggleButton
           showFade={!show}
           ref={toggleRef}
-          onClick={toggleShow}
+          onClick={() => toggleShow()}
           contentHeight={contentHeight}
         >
           {show ? descriptionCollapse : descriptionExpand}
