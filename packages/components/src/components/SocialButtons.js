@@ -61,7 +61,7 @@ const SocialButtons = ({
     {React.Children.map(children, (child, idx) => {
       const { linkProps, url, ...childProps } = child.props;
       return (
-        <a href={childProps.url} key={idx} {...fP(linkProps)}>
+        <a href={url} key={idx} {...fP(linkProps)}>
           {React.cloneElement(child, {
             iconColor,
             iconHoverColor,
