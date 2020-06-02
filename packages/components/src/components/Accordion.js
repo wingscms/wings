@@ -14,15 +14,18 @@ function Item({ ...props }) {
   return <Collapse {...props} />;
 }
 
-export default function Accordion({ children, ...props }) {
+export default function Accordion({ children, openIndex, ...props }) {
   const [openIdx, setOpenIdx] = useState(null);
+  const _openIdx = typeof openIndex !== 'undefined' ? openIndex : openIdx;
   return (
     <Container {...fP(props)}>
       {React.Children.map(children, (child, idx) => {
         if (isValidElement(child) && child.type === Item) {
           return cloneElement(child, {
-            open: idx === openIdx,
-            onClick: () => setOpenIdx(idx === openIdx ? null : idx),
+            open: idx === _openIdx,
+            ...(typeof openIndex !== 'undefined' || {
+              onClick: () => setOpenIdx(idx === _openIdx ? null : idx),
+            }),
           });
         }
         return child;
