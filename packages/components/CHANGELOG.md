@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/wingscms/wings/compare/@wingscms/components@1.0.2...@wingscms/components@1.1.0) (2020-06-02)
+
+
+### Features
+
+* add headerProps/contentProps props to Entry ([#472](https://github.com/wingscms/wings/issues/472)) ([dd57fba](https://github.com/wingscms/wings/commit/dd57fba7a8c883b2a59d4e71a6b06c9e49301138))
+
+
+
+
+
 ## [1.0.2](https://github.com/wingscms/wings/compare/@wingscms/components@1.0.1...@wingscms/components@1.0.2) (2020-05-29)
 
 
