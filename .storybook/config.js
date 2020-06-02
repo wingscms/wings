@@ -3,6 +3,7 @@ import { withKnobs } from '@storybook/addon-knobs/react';
 import { withContexts } from '@storybook/addon-contexts/react';
 
 import { capitalCase } from 'change-case';
+import faker from 'faker';
 import viewports from './viewports';
 import contexts from './contexts';
 
@@ -33,7 +34,10 @@ function loadStories() {
 
     const applyConfig = storyVariant => {
       const withWrap = storyMod.wrapStory || (s => s);
-      return () => withWrap(storyVariant());
+      return () => {
+        faker.seed(1);
+        return withWrap(storyVariant());
+      };
     };
 
     Object.keys(storyMod)

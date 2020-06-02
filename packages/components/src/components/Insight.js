@@ -40,7 +40,7 @@ const Inner = styled.div`
   )}
 `;
 
-export default function Insight({ reveal = true, children, ...props }) {
+export default function Insight({ reveal, children, ...props }) {
   return (
     <Container {...fP(props)}>
       <Reveal reveal={reveal}>

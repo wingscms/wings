@@ -65,7 +65,7 @@ export default function CallToAction({
   backgroundImage,
   buttonText,
   buttonUrl,
-  reveal = true,
+  reveal,
   title,
   text,
   ...props

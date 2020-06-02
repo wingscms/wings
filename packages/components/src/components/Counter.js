@@ -2,18 +2,18 @@ import React from 'react';
 import fP from 'filter-invalid-dom-props';
 import styled from '../lib/styled';
 import ProgressBar from './ProgressBar';
+import Text from './Text';
 import { t } from '../theme';
 import CountUp from 'react-countup';
 
 const Container = styled.div`
-  color: ${t((_, { textColor }) => textColor || _.counterTextColor)};
-  background-color: ${t((_, { backgroundColor }) => backgroundColor || _.counterBackgroundColor)};
+  color: ${t(_ => _.counterTextColor)};
+  background-color: ${t(_ => _.counterBackgroundColor)};
   display: block;
   position: relative;
   width: 100%;
 `;
 
-// TODO: generalise spacing of heights/spacing and font sizes
 const TopContainer = styled.div`
   position: relative;
   display: flex;
@@ -39,14 +39,11 @@ const Current = styled.div`
   }
 `;
 
-const Description = styled.div`
-  font-size: 16px;
-  line-height: 20px;
+const Description = styled(Text)`
   padding: 0 10px;
   min-width: 30%;
   width: auto;
   max-width: initial;
-  display: block;
 `;
 
 const GoalText = styled.div`
@@ -57,22 +54,19 @@ const GoalText = styled.div`
   margin-top: 10px;
 `;
 
-export default ({
-  backgroundColor,
+export default function Counter({
   barColor,
   current = 0,
   description,
   goal,
-  goalText,
-  symbol,
-  textColor,
+  symbol = '',
   ...props
-}) => {
+}) {
   return (
-    <Container textColor={textColor} backgroundColor={backgroundColor} {...fP(props)}>
+    <Container {...fP(props)}>
       <TopContainer>
         <Current>
-          {symbol ? symbol : ''}
+          {symbol}
           <CountUp end={current} duration={1.5} />
         </Current>
         <Description>{description}</Description>
@@ -80,9 +74,9 @@ export default ({
       {!goal ? null : (
         <>
           <ProgressBar barColor={barColor} intent="primary" current={current} max={goal} />
-          <GoalText>{goalText}</GoalText>
+          <GoalText>{symbol + goal}</GoalText>
         </>
       )}
     </Container>
   );
-};
+}

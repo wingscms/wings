@@ -63,34 +63,25 @@ const getSize = ({ position, size }) => {
 
 const Container = styled.div`
   position: fixed;
-  background-color: ${t((_, { backgroundColor }) => backgroundColor || _.drawerBackgroundColor)};
+  background-color: ${t(_ => _.drawerBackgroundColor)};
   transition: 0.2s all ease-in-out;
   z-index: 1000;
   ${getPosition}
   ${getSize}
 `;
 
-const Drawer = ({
+export default function Drawer({
   open,
-  backgroundColor,
   children,
   position = Position.RIGHT,
   size = '400px',
   ...props
-}) => {
+}) {
   return (
-    <Container
-      open={open}
-      backgroundColor={backgroundColor}
-      position={position}
-      size={size}
-      {...fP(props)}
-    >
+    <Container open={open} position={position} size={size} {...fP(props)}>
       {children}
     </Container>
   );
-};
+}
 
 Drawer.Position = Position;
-
-export default Drawer;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import qs from 'qs';
 import classNames from 'classnames';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
-import { wide } from '@wingscms/components';
+import { _WIDE } from '@wingscms/components';
 
 import { StickyContainer, Sticky } from '../../lib/react-sticky';
 import styled from '../../lib/styled';
@@ -11,7 +11,7 @@ import createCard from '../../createCard';
 import { t } from '../../theme';
 
 const Testimonial = styled.section`
-  ${wide};
+  ${_WIDE};
   background-color: ${t(_ => _.testimonialBackgroundColor)};
   margin-top: ${t(_ => _.largeSpacing)};
   margin-bottom: ${t(_ => _.largeSpacing)};

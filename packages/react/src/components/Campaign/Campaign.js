@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
-import { Counter, Heading, useDimensions } from '@wingscms/components';
-import filterInvalidDOMProps from 'filter-invalid-dom-props';
+import { Counter, Heading } from '@wingscms/components';
+import fP from 'filter-invalid-dom-props';
 import styled from '../../lib/styled';
 
 import { t } from '../../theme';
@@ -90,6 +90,7 @@ const FormContainer = styled.div`
   border-radius: 4px;
   box-shadow: ${t(_ => _.shadow)};
   align-self: flex-start;
+  /* TODO: use Link component instead of vanilla <a> */
   a {
     color: ${t(_ => _.campaignFormLinkTextColor)};
     text-decoration: none;
@@ -120,6 +121,7 @@ const FormContainer = styled.div`
 
 const FormContainerInner = styled.div`
   padding: ${t(_ => _.mediumSpacing)};
+  font-family: ${t(_ => _.textFontFamily)};
   display: block;
   @media screen and (max-width: 1000px) {
     padding: ${t(_ => _.smallSpacing)};
@@ -131,6 +133,7 @@ const FormContainerInner = styled.div`
 
 const Intro = styled.p`
   font-size: 1.2em;
+  font-family: ${t(_ => _.textFontFamily)};
   @media screen and (max-width: 600px) {
     font-size: 1em;
   }
@@ -159,7 +162,6 @@ export default function Campaign({
   ...props
 }) {
   const intl = useIntl();
-  const { width } = useDimensions();
   const campaignContainerRef = useRef(null);
   const formContainerRef = useRef(null);
   const [signatureCount, setSignatureCount] = useState(null);
@@ -187,10 +189,6 @@ export default function Campaign({
     petitionCounterMessage = intl.formatMessage('wings.Campaign.petitionCounter.message', {
       signatureCount,
     }),
-    petitionCounterGoalText = signatureGoal ? intl.formatNumber(signatureGoal) : null,
-    fundraiserTargetText = fundraiserTarget
-      ? `${fundraiserTarget.currency.symbol}${intl.formatNumber(fundraiserTarget.amount / 100)}`
-      : null,
     fundraiserCounterMessage = intl.formatMessage('wings.Campaign.fundraiserCounter.message'),
     eventInfoTitle = intl.formatMessage('wings.Campaign.eventInfo.title'),
     eventStartLabel = intl.formatMessage('wings.Campaign.eventStart.label'),
@@ -214,7 +212,7 @@ export default function Campaign({
   const { intro, title, description } = node;
   const element = (
     <>
-      <MainContainerOuter {...filterInvalidDOMProps(props)} ref={campaignContainerRef}>
+      <MainContainerOuter {...fP(props)} ref={campaignContainerRef}>
         <MainContainerInner>
           <Proposition
             {...{ descriptionCollapse, descriptionExpand }}
@@ -226,7 +224,7 @@ export default function Campaign({
                 block: 'start',
               });
             }}
-            style={{ width: width > 1000 ? `calc(100% - ${FORM_WIDTH})` : '100%' }}
+            formWidth={FORM_WIDTH}
           >
             {!(title || intro || description) ? null : (
               <>
@@ -244,7 +242,6 @@ export default function Campaign({
                   current={_signatureCount || signatureCount}
                   goal={_signatureGoal || signatureGoal}
                   description={petitionCounterMessage}
-                  goalText={petitionCounterGoalText}
                 />
               </CounterContainer>
             )}
@@ -257,7 +254,6 @@ export default function Campaign({
                     current={fundraiserRaised.amount / 100}
                     goal={fundraiserTarget.amount / 100}
                     description={fundraiserCounterMessage}
-                    goalText={fundraiserTargetText}
                     symbol={fundraiserRaised.currency.symbol}
                   />
                 </CounterContainer>

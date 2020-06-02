@@ -8,13 +8,13 @@ const Position = {
   TOP: 'top',
 };
 
-const getPosition = ({ position, open }) => {
+const getPosition = ({ position, hide }) => {
   switch (position) {
     case Position.TOP:
       return css`
         top: 0;
         left: 0;
-        ${!open &&
+        ${hide &&
           css`
             opacity: 0;
             transform: translateY(-100%);
@@ -24,7 +24,7 @@ const getPosition = ({ position, open }) => {
       return css`
         bottom: 0;
         left: 0;
-        ${!open &&
+        ${hide &&
           css`
             opacity: 0;
             transform: translateY(100%);
@@ -45,8 +45,12 @@ const Container = styled.div`
   ${getPosition}
 `;
 
-function AppBar({ open = true, position = Position.BOTTOM, ...props }) {
-  return <Container open={open} position={position} {...fP(props)} />;
+function AppBar({ children, hide, position = Position.BOTTOM, ...props }) {
+  return (
+    <Container hide={hide} position={position} {...fP(props)}>
+      {children}
+    </Container>
+  );
 }
 
 AppBar.Position = Position;

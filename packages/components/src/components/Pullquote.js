@@ -3,7 +3,7 @@ import fP from 'filter-invalid-dom-props';
 import styled, { css } from '../lib/styled';
 import { t } from '../theme';
 import Heading from './Heading';
-import { ALIGNLEFT, ALIGNRIGHT } from '../styles/floats';
+import { ALIGNLEFT, ALIGNRIGHT } from '../styles';
 import Link from './Link';
 
 const Align = {
@@ -46,6 +46,7 @@ const Quote = styled.blockquote`
 `;
 
 const Caption = styled.figcaption`
+  font-family: ${t(_ => _.textFontFamily)};
   margin-top: ${t(_ => _.smallSpacing)};
   color: ${t(_ => _.textColor)};
   text-align: center;

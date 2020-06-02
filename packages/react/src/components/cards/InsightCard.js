@@ -13,7 +13,9 @@ const OffGridContainer = styled(_OffGridContainer)`
 function InsightCardView({ text, ...props }) {
   return (
     <OffGridContainer>
-      <Insight {...props}>{text}</Insight>
+      <Insight {...props} reveal>
+        {text}
+      </Insight>
     </OffGridContainer>
   );
 }

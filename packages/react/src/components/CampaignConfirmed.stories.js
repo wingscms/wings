@@ -1,6 +1,7 @@
 import React from 'react';
 import { CampaignConfirmed } from '@wingscms/react';
 import { select } from '@storybook/addon-knobs/react';
+import { contentWrap } from '../../../../utils';
 
 const props = ({
   resourceType = CampaignConfirmed.ResourceType.PETITION,
@@ -33,12 +34,15 @@ const props = ({
 });
 
 export default () => <CampaignConfirmed {...props()} />;
+
 export const Petition = () => (
   <CampaignConfirmed {...props({ resourceType: CampaignConfirmed.ResourceType.PETITION })} />
 );
+
 export const Event = () => (
   <CampaignConfirmed {...props({ resourceType: CampaignConfirmed.ResourceType.EVENT })} />
 );
+
 export const Fundraiser = () => (
   <CampaignConfirmed
     {...props({
@@ -47,6 +51,9 @@ export const Fundraiser = () => (
     })}
   />
 );
+
 export const Signup = () => (
   <CampaignConfirmed {...props({ resourceType: CampaignConfirmed.ResourceType.SIGNUP })} />
 );
+
+export const wrapStory = contentWrap;

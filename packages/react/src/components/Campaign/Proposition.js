@@ -14,6 +14,13 @@ const Container = styled.div`
   box-shadow: ${t(_ => _.shadow)};
   height: ${({ height }) => height}px;
   transition: max-height 0.15s linear;
+  padding: 0 ${t(_ => _.smallSpacing)};
+  margin-bottom: ${t(_ => _.extraSmallSpacing)};
+  @media screen and (min-width: 1000px) {
+    padding: 0 ${t(_ => _.mediumSpacing)};
+    margin-top: ${t(_ => _.mediumSpacing)};
+    width: calc(100% - ${({ formWidth }) => formWidth});
+  }
 `;
 
 const Content = styled.div`
@@ -64,6 +71,7 @@ export default function Proposition({
   descriptionCollapse,
   descriptionExpand,
   onToggle = () => {},
+  formWidth,
   style,
   ...props
 }) {
@@ -87,13 +95,7 @@ export default function Proposition({
   }, [show]);
 
   return (
-    <Container
-      ref={containerRef}
-      show={show}
-      height={height}
-      style={{ ...style, padding: `${padding}px ${padding}px 0`, margin: `${margin}px 0` }}
-      {...props}
-    >
+    <Container ref={containerRef} show={show} height={height} formWidth={formWidth} {...props}>
       <Content ref={contentRef}>{children}</Content>
       {!showToggle ? null : (
         <ToggleButton

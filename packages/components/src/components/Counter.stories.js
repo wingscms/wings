@@ -8,9 +8,7 @@ export default () => (
     current={number('current', 76)}
     description={text('description', 'has been donated')}
     goal={number('goal', 100)}
-    goalText={text('goalText', '€100')}
     symbol={text('symbol', '€')}
-    backgroundColor={color('backgroundColor')}
     textColor={color('textColor')}
     barColor={color('barColor')}
   />

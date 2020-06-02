@@ -1,12 +1,12 @@
 import React from 'react';
-import { SectionMarker, wide } from '@wingscms/components';
+import { SectionMarker, _WIDE } from '@wingscms/components';
 import { slugify } from '../../lib/utils';
 import styled, { css } from '../../lib/styled';
 import createCard from '../../createCard';
 import { t } from '../../theme';
 
 const _SectionMarker = styled(SectionMarker)`
-  ${wide}
+  ${_WIDE}
   margin-top: ${t(_ => _.largeSpacing)};
   margin-bottom: ${t(_ => _.largeSpacing)};
   &:first-child {
@@ -25,10 +25,11 @@ const _SectionMarker = styled(SectionMarker)`
 function ChapterCardView({ marker, number, intro, text, title, ...props }) {
   return (
     <_SectionMarker
-      number={marker || number}
+      marker={marker || number}
       text={intro || text}
-      title={title}
+      sectionTitle={title}
       id={slugify(title)}
+      reveal
       {...props}
     />
   );

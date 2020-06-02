@@ -3,6 +3,56 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.3](https://github.com/wingscms/wings/compare/@wingscms/react@1.0.2...@wingscms/react@1.0.3) (2020-05-29)
+
+
+### Bug Fixes
+
+* campaign form width fix ([#468](https://github.com/wingscms/wings/issues/468)) ([f92f641](https://github.com/wingscms/wings/commit/f92f6419a3b3d01eb1de1814d4c25c6e612a2e6f))
+
+
+
+
+
+## [1.0.2](https://github.com/wingscms/wings/compare/@wingscms/react@1.0.1...@wingscms/react@1.0.2) (2020-05-29)
+
+
+### Bug Fixes
+
+* font family fixes ([#467](https://github.com/wingscms/wings/issues/467)) ([04f2e72](https://github.com/wingscms/wings/commit/04f2e728431a83ff92fb815e5ba54fb06b972992))
+
+
+
+
+
+## [1.0.1](https://github.com/wingscms/wings/compare/@wingscms/react@1.0.0...@wingscms/react@1.0.1) (2020-05-27)
+
+**Note:** Version bump only for package @wingscms/react
+
+
+
+
+
+# [1.0.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.36.0...@wingscms/react@1.0.0) (2020-05-26)
+
+
+### Features
+
+* add Link and styles to component library ([#437](https://github.com/wingscms/wings/issues/437)) ([d64088f](https://github.com/wingscms/wings/commit/d64088f45a603abff5533c5c6f606676dcf28e61))
+* headings and responsive font sizes ([#454](https://github.com/wingscms/wings/issues/454)) ([0ff49da](https://github.com/wingscms/wings/commit/0ff49dac84a367db30e01d096d323239e4950415))
+* v1 ([843f910](https://github.com/wingscms/wings/commit/843f91096d03dc817f7ff86880ee5ed9cf43b2d2))
+
+
+### BREAKING CHANGES
+
+* Stabalizing the API.
+
+Co-authored-by: Mark Jackson <mark.j.jackson@me.com>
+
+
+
+
+
 # [0.36.0](https://github.com/wingscms/wings/compare/@wingscms/react@0.35.0...@wingscms/react@0.36.0) (2020-05-12)
 
 
