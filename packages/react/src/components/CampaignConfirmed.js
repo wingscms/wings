@@ -125,8 +125,8 @@ export default function CampaignConfirmed({
         <>
           <Heading rank={2}>{shareTitle}</Heading>
           <SocialButtons>
-            {shareButtons.map(({ icon, url }, idx) => (
-              <SocialButtons.Button icon={icon} url={url} key={idx} />
+            {shareButtons.map(({ icon, url, ...props }, idx) => (
+              <SocialButtons.Button icon={icon} url={url} key={idx} {...props} />
             ))}
           </SocialButtons>
         </>
