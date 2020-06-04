@@ -51,4 +51,61 @@ export default () => (
   </Container>
 );
 
+export const AddressField = () => (
+  <Container>
+    <SchemaForm
+      schema={object('schema', {
+        title: 'A form with AddressField',
+        description: 'A simple form example.',
+        type: 'object',
+        required: [],
+        properties: {
+          firstName: {
+            type: 'string',
+            title: 'First name',
+            default: 'Chuck',
+          },
+          address: {
+            type: 'object',
+            country: 'NL',
+            title: 'Address',
+            properties: {
+              postcode: {
+                type: 'string',
+                title: 'Postcode',
+              },
+              number: {
+                type: 'integer',
+                title: 'Number',
+              },
+              numberAddition: {
+                type: 'string',
+                title: 'Number Addition',
+              },
+              street: {
+                type: 'string',
+                title: 'Street',
+              },
+              state: {
+                type: 'string',
+                title: 'State',
+              },
+              city: {
+                type: 'string',
+                title: 'City',
+              },
+              country: {
+                type: 'string',
+                title: 'Country',
+              },
+            },
+          },
+        },
+      })}
+    >
+      <Button intent={Button.Intent.SECONDARY}>Submit</Button>
+    </SchemaForm>
+  </Container>
+);
+
 export const wrapStory = contentWrap;
