@@ -44,6 +44,16 @@ const defaultWidgets = {
   URLWidget: URLInput,
 };
 
+const fields = {
+  address: props => console.log(props) || 'address',
+};
+
+const uiSchema = {
+  address: {
+    'ui:field': 'address',
+  },
+};
+
 export default function SchemaForm({ widgets = v => v, ...props }) {
   return (
     <StyledForm
@@ -60,6 +70,8 @@ export default function SchemaForm({ widgets = v => v, ...props }) {
       }
       {...props}
       widgets={widgets(defaultWidgets)}
+      fields={fields}
+      uiSchema={uiSchema}
     />
   );
 }
