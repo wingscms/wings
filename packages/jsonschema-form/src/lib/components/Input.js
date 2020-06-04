@@ -1,4 +1,4 @@
-import styled, { css } from '../../../../components/src/lib/styled';
+import styled, { css } from '../styled';
 
 export default styled.input`
   font-size: inherit;
