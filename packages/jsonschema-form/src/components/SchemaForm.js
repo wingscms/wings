@@ -14,6 +14,8 @@ import RangeInput from './RangeInput';
 import Select from './Select';
 import Textarea from './Textarea';
 import URLInput from './URLInput';
+import AddressField from './AddressField';
+
 
 const StyledForm = styled(Form)`
   fieldset {
@@ -45,7 +47,7 @@ const defaultWidgets = {
 };
 
 const fields = {
-  address: props => console.log(props) || 'address',
+  address: AddressField,
 };
 
 const uiSchema = {
