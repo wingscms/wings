@@ -14,11 +14,18 @@ const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
   margin-bottom: ${t(_ => _.largeSpacing)};
-  margin-top: -${t(_ => _.largeSpacing)};
   @media screen and (max-width: 800px) {
-    margin-top: -${t(_ => _.smallSpacing)};
     margin-bottom: ${t(_ => _.mediumSpacing)};
   }
+  ${({ imageUrl }) =>
+    imageUrl
+      ? css`
+          margin-top: -${t(_ => _.largeSpacing)};
+          @media screen and (max-width: 800px) {
+            margin-bottom: -${t(_ => _.mediumSpacing)};
+          }
+        `
+      : null}
 `;
 
 const Image = styled.div`
@@ -34,11 +41,9 @@ const Image = styled.div`
           background-repeat: no-repeat;
           min-height: 500px;
           max-height: 700px;
-          margin-top: ${t(_ => _.largeSpacing)};
           margin-bottom: ${({ imageMargin }) => `-${imageMargin}px` || 0};
           padding-top: 80px;
           @media screen and (max-width: 1000px) {
-            margin-top: ${t(_ => _.mediumSpacing)};
             min-height: 0;
             margin-bottom: 0;
             max-height: 0;
@@ -66,17 +71,15 @@ export const CampaignCardView = ({ id, resourceType, ...props }) => {
       id={id}
       resourceType={resourceType}
       {...props}
-      style={{ marginTop: '0' }}
-      wrapElement={(element, campaign) => (
-        <Wrapper>
-          <Image
-            ref={imageRef}
-            imageUrl={campaign && campaign.image && campaign.image.url}
-            imageMargin={imageMargin}
-          />
-          <Container>{element}</Container>
-        </Wrapper>
-      )}
+      wrapElement={(element, campaign) => {
+        const imageUrl = campaign && campaign.image && campaign.image.url;
+        return (
+          <Wrapper>
+            <Image ref={imageRef} imageUrl={imageUrl} imageMargin={imageMargin} />
+            <Container imageUrl={imageUrl}>{element}</Container>
+          </Wrapper>
+        );
+      }}
     />
   );
 };
