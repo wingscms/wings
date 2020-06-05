@@ -39,7 +39,6 @@ const fetchAddress = debounce(async ({ postcode, number }) => {
 });
 
 export default function AddressField({ schema, idSchema, onChange, formData }) {
-  console.log(formData);
   const {
     properties: { postcode, number, numberAddition, street, city, state },
   } = schema;
@@ -50,6 +49,7 @@ export default function AddressField({ schema, idSchema, onChange, formData }) {
   const setData = (...args) => {
     setResult(null);
     _setData(...args);
+    onChange(...args);
   };
 
   const updateAddress = async () => {
@@ -73,6 +73,8 @@ export default function AddressField({ schema, idSchema, onChange, formData }) {
     if (_postcode === '' || _number === -1) return;
     updateAddress();
   }, [_postcode, _number, _numberAddition]);
+
+  console.log({ formData, data });
 
   return (
     <div>
