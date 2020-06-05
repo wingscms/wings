@@ -38,9 +38,11 @@ const fetchAddress = debounce(async ({ postcode, number }) => {
   return res.json();
 });
 
-export default function AddressField({ schema, idSchema, onChange, formData }) {
+export default function AddressField({ schema, idSchema, errorSchema, onChange, ...props }) {
+  console.log(props);
   const {
     properties: { postcode, number, numberAddition, street, city, state },
+    country,
   } = schema;
   const [data, _setData] = useState({ postcode: '', number: -1, numberAddition: '' });
   const [result, setResult] = useState();
@@ -66,6 +68,7 @@ export default function AddressField({ schema, idSchema, onChange, formData }) {
       street: res.street,
       city: res.city,
       state: res.province,
+      country,
     });
   };
 
@@ -74,12 +77,11 @@ export default function AddressField({ schema, idSchema, onChange, formData }) {
     updateAddress();
   }, [_postcode, _number, _numberAddition]);
 
-  console.log({ formData, data });
-
   return (
     <div>
       <Label htmlFor={idSchema.postcode.$id} label={postcode.title} required />
       <Input
+        error={Object.keys(errorSchema).length}
         id={idSchema.postcode.$id}
         type="text"
         onChange={e => {
@@ -89,6 +91,7 @@ export default function AddressField({ schema, idSchema, onChange, formData }) {
 
       <Label htmlFor={idSchema.number.$id} label={number.title} required />
       <Input
+        error={Object.keys(errorSchema).length}
         id={idSchema.number.$id}
         type="text"
         onChange={e => {
@@ -98,12 +101,19 @@ export default function AddressField({ schema, idSchema, onChange, formData }) {
 
       <Label htmlFor={idSchema.numberAddition.$id} label={numberAddition.title} />
       <Input
+        error={Object.keys(errorSchema).length}
         id={idSchema.numberAddition.$id}
         type="text"
         onChange={e => {
           setData({ ...data, numberAddition: e.target.value });
         }}
       />
+
+      {Object.keys(errorSchema).length && (
+        <ul>
+          <li>address is invalid</li>
+        </ul>
+      )}
 
       <Label htmlFor={idSchema.street.$id} label={street.title} />
       <Input id={idSchema.street.$id} type="text" value={result?.street || ''} disabled />
