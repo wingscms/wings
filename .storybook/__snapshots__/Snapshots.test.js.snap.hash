@@ -38,13 +38,13 @@ Storyshots components/ScrollBar Default 1: 6075831204afcb0e741bc33f5f92fbc8
 Storyshots components/SectionMarker Default 1: b8407e50238d0bcff0428d1c56b8d44d
 Storyshots components/SocialButtons Default 1: aca648d133cd1c416447bce109a41404
 Storyshots components/Text Default 1: 51d94e07f8bcecaf8b50ad3ef1464068
-Storyshots jsonschema-form/SchemaForm Address Field 1: aedecd4729f08d3466473b9a13b6a121
-Storyshots jsonschema-form/SchemaForm Default 1: 96c63db1e19b5a8f227c00a4fb265f2f
-Storyshots react/Article Default 1: 282bfaed1c0bdf6d156fdfaa10e438ba
-Storyshots react/Article No Image 1: d59c533b94fa8b42828750d78cad078a
-Storyshots react/Campaign Event 1: c538652fecc72346262ef21c8d12254f
-Storyshots react/Campaign Fundraiser 1: 8bad831b481285930133bd063ac45b00
-Storyshots react/Campaign Petition 1: c01f3be5561cb6a6fac47f404b57c414
+Storyshots jsonschema-form/SchemaForm Address Field 1: 68e0c28260a235c7317ea097dc79a750
+Storyshots jsonschema-form/SchemaForm Default 1: 4643495022dd41aeb14d90acbc848324
+Storyshots react/Article Default 1: 3aa9edca60058facb3931da71c60965f
+Storyshots react/Article No Image 1: c8f1113b0de3f1fdb42a0505f3fd2891
+Storyshots react/Campaign Event 1: 60cf54a99c7dfdec95f40473564b4511
+Storyshots react/Campaign Fundraiser 1: dc1acd07d3871c20cb3b093613b38e40
+Storyshots react/Campaign Petition 1: 0fefd5fc1e39c634a9833b871ca88247
 Storyshots react/CampaignConfirmed Default 1: dc24780bae45ca93f3e33ba1d4ee947b
 Storyshots react/CampaignConfirmed Event 1: 127a3fdedbf30aefaf8bfd593fec9d9a
 Storyshots react/CampaignConfirmed Fundraiser 1: 697ddeee633c5b1bebecd856df8cceb9
@@ -66,5 +66,5 @@ Storyshots react/Cards/QuoteCard Pull Quote 1: 6592d75ed435258fab0ed694de943f9d
 Storyshots react/Cards/TestimonialCard Default 1: 399a7d804c898105ab6a81c9be3db351
 Storyshots react/Cards/TextCard Default 1: ed341dd5777f9fe4d4fa1a58bd05530f
 Storyshots react/Content Default 1: 6541db6d20fb433d69d59261fd097177
-Storyshots react/Content With Cards 1: 27d3f8c9de3f7a8aafc3e5555b31610c
-Storyshots react/Page Default 1: 89521eb825a215479690592af4c29ffc
+Storyshots react/Content With Cards 1: a925755f97363775ddf1aadfb454a201
+Storyshots react/Page Default 1: 971d63abdeb88e456ec3dc8285ca5c2a
