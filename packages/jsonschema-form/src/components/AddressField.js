@@ -38,8 +38,8 @@ const fetchAddress = debounce(async ({ postcode, number }) => {
   return res.json();
 });
 
-export default function AddressField({ schema, idSchema, ...props }) {
-  console.log(props);
+export default function AddressField({ schema, idSchema, onChange, formData }) {
+  console.log(formData);
   const {
     properties: { postcode, number, numberAddition, street, city, state },
   } = schema;
@@ -59,6 +59,14 @@ export default function AddressField({ schema, idSchema, ...props }) {
       numberAddition: _numberAddition,
     });
     setResult({ ...res, state: res.province });
+    onChange({
+      postcode: _postcode,
+      number: _number,
+      numberAddition: _numberAddition,
+      street: res.street,
+      city: res.city,
+      state: res.province,
+    });
   };
 
   useEffect(() => {
@@ -72,21 +80,27 @@ export default function AddressField({ schema, idSchema, ...props }) {
       <Input
         id={idSchema.postcode.$id}
         type="text"
-        onChange={e => setData({ ...data, postcode: e.target.value })}
+        onChange={e => {
+          setData({ ...data, postcode: e.target.value });
+        }}
       />
 
       <Label htmlFor={idSchema.number.$id} label={number.title} required />
       <Input
         id={idSchema.number.$id}
         type="text"
-        onChange={e => setData({ ...data, number: parseInt(e.target.value, 10) })}
+        onChange={e => {
+          setData({ ...data, number: parseInt(e.target.value, 10) });
+        }}
       />
 
       <Label htmlFor={idSchema.numberAddition.$id} label={numberAddition.title} />
       <Input
         id={idSchema.numberAddition.$id}
         type="text"
-        onChange={e => setData({ ...data, numberAddition: e.target.value })}
+        onChange={e => {
+          setData({ ...data, numberAddition: e.target.value });
+        }}
       />
 
       <Label htmlFor={idSchema.street.$id} label={street.title} />

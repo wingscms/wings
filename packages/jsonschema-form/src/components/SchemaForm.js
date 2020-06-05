@@ -16,7 +16,6 @@ import Textarea from './Textarea';
 import URLInput from './URLInput';
 import AddressField from './AddressField';
 
-
 const StyledForm = styled(Form)`
   fieldset {
     border: 0;
