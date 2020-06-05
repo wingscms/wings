@@ -1,6 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import Input from '../lib/components/Input';
+import Label from '../lib/components/Label';
 
 function BaseInput(props) {
   if (!props.id) {
@@ -66,12 +67,7 @@ function BaseInput(props) {
 
   return (
     <div>
-      {!schema && label ? (
-        <label htmlFor={id}>
-          {label}
-          {required ? '*' : ''}
-        </label>
-      ) : null}
+      {!schema && label ? <Label htmlFor={id} label={label} required={required} /> : null}
       <Input
         id={id}
         className={classnames('form-control', className)}

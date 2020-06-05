@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Input from '../lib/components/Input';
+import Label from '../lib/components/Label';
 
 const debounce = (fn, t = 1000) => {
   let timeout;
@@ -37,8 +38,8 @@ const fetchAddress = debounce(async ({ postcode, number }) => {
   return res.json();
 });
 
-export default function AddressField({ schema }) {
-  console.log(schema);
+export default function AddressField({ schema, ...props }) {
+  console.log(props);
   const {
     properties: { postcode, number, numberAddition, street, city, state },
   } = schema;
@@ -67,28 +68,25 @@ export default function AddressField({ schema }) {
 
   return (
     <div>
-      <label>
-        {postcode.title}
-        {}
-      </label>
+      <Label htmlFor={''} label={postcode.title} required />
       <Input type="text" onChange={e => setData({ ...data, postcode: e.target.value })} />
 
-      <label>{number.title}</label>
+      <Label htmlFor={''} label={number.title} required />
       <Input
         type="text"
         onChange={e => setData({ ...data, number: parseInt(e.target.value, 10) })}
       />
 
-      <label>{numberAddition.title}</label>
+      <Label htmlFor={''} label={numberAddition.title} />
       <Input type="text" onChange={e => setData({ ...data, numberAddition: e.target.value })} />
 
-      <label>{street.title}</label>
+      <Label htmlFor={''} label={street.title} />
       <Input type="text" disabled value={result?.street || ''} />
 
-      <label>{city.title}</label>
+      <Label htmlFor={''} label={city.title} />
       <Input type="text" disabled value={result?.city || ''} />
 
-      <label>{state.title}</label>
+      <Label htmlFor={''} label={state.title} />
       <Input type="text" disabled value={result?.state || ''} />
     </div>
   );
