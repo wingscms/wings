@@ -38,7 +38,7 @@ const fetchAddress = debounce(async ({ postcode, number }) => {
   return res.json();
 });
 
-export default function AddressField({ schema, ...props }) {
+export default function AddressField({ schema, idSchema, ...props }) {
   console.log(props);
   const {
     properties: { postcode, number, numberAddition, street, city, state },
@@ -68,26 +68,35 @@ export default function AddressField({ schema, ...props }) {
 
   return (
     <div>
-      <Label htmlFor={''} label={postcode.title} required />
-      <Input type="text" onChange={e => setData({ ...data, postcode: e.target.value })} />
-
-      <Label htmlFor={''} label={number.title} required />
+      <Label htmlFor={idSchema.postcode.$id} label={postcode.title} required />
       <Input
+        id={idSchema.postcode.$id}
+        type="text"
+        onChange={e => setData({ ...data, postcode: e.target.value })}
+      />
+
+      <Label htmlFor={idSchema.number.$id} label={number.title} required />
+      <Input
+        id={idSchema.number.$id}
         type="text"
         onChange={e => setData({ ...data, number: parseInt(e.target.value, 10) })}
       />
 
-      <Label htmlFor={''} label={numberAddition.title} />
-      <Input type="text" onChange={e => setData({ ...data, numberAddition: e.target.value })} />
+      <Label htmlFor={idSchema.numberAddition.$id} label={numberAddition.title} />
+      <Input
+        id={idSchema.numberAddition.$id}
+        type="text"
+        onChange={e => setData({ ...data, numberAddition: e.target.value })}
+      />
 
-      <Label htmlFor={''} label={street.title} />
-      <Input type="text" disabled value={result?.street || ''} />
+      <Label htmlFor={idSchema.street.$id} label={street.title} />
+      <Input id={idSchema.street.$id} type="text" value={result?.street || ''} disabled />
 
-      <Label htmlFor={''} label={city.title} />
-      <Input type="text" disabled value={result?.city || ''} />
+      <Label htmlFor={idSchema.city.$id} label={city.title} />
+      <Input id={idSchema.city.$id} type="text" value={result?.city || ''} disabled />
 
-      <Label htmlFor={''} label={state.title} />
-      <Input type="text" disabled value={result?.state || ''} />
+      <Label htmlFor={idSchema.state.$id} label={state.title} />
+      <Input id={idSchema.state.$id} type="text" value={result?.state || ''} disabled />
     </div>
   );
 }
