@@ -101,7 +101,6 @@ export default function AddressField({ schema, idSchema, errorSchema, onChange, 
 
       <Label htmlFor={idSchema.numberAddition.$id} label={numberAddition.title} />
       <Input
-        error={Object.keys(errorSchema).length}
         id={idSchema.numberAddition.$id}
         type="text"
         onChange={e => {
