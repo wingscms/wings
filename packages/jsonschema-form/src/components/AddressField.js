@@ -107,11 +107,11 @@ export default function AddressField({ schema, idSchema, errorSchema, onChange }
         }}
       />
 
-      {Object.keys(errorSchema).length && (
+      {Object.keys(errorSchema).length ? (
         <ul>
           <li>address is invalid</li>
         </ul>
-      )}
+      ) : null}
 
       <Label htmlFor={idSchema.street.$id} label={street.title} />
       <Input id={idSchema.street.$id} type="text" value={result?.street || ''} disabled />
