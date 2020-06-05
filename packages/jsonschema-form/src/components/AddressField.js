@@ -38,8 +38,7 @@ const fetchAddress = debounce(async ({ postcode, number }) => {
   return res.json();
 });
 
-export default function AddressField({ schema, idSchema, errorSchema, onChange, ...props }) {
-  console.log(props);
+export default function AddressField({ schema, idSchema, errorSchema, onChange }) {
   const {
     properties: { postcode, number, numberAddition, street, city, state },
     country,

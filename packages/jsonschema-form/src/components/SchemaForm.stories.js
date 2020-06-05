@@ -45,7 +45,6 @@ export default () => (
           },
         },
       })}
-      onSubmit={props => console.log(props)}
     >
       <Button intent={Button.Intent.SECONDARY}>Submit</Button>
     </SchemaForm>
@@ -83,7 +82,6 @@ export const AddressField = () => (
           privacyConsent: { title: 'Agree to our privacy policy', type: 'boolean', enum: [true] },
         },
       })}
-      onSubmit={props => console.log(props)}
     >
       <Button intent={Button.Intent.SECONDARY}>Submit</Button>
     </SchemaForm>
