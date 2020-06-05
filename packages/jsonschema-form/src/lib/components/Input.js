@@ -8,8 +8,8 @@ export default styled.input`
   width: 100%;
   background-color: #fff;
   &:disabled {
-    background-color: #eee;
-    color: #555;
+    background-color: #ddd;
+    color: #212121;
     cursor: not-allowed;
   }
   ${({ inputStyles }) => inputStyles || ''} &[type='color'] {
