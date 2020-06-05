@@ -15,7 +15,7 @@ module.exports = {
     ...config,
     watchOptions: {
       ...config.watchOptions,
-      poll: 1000
+      poll: 1000,
     },
     plugins: [
       ...config.plugins,
