@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@1.1.0...@wingscms/jsonschema-form@1.1.1) (2020-06-05)
+
+**Note:** Version bump only for package @wingscms/jsonschema-form
+
+
+
+
+
+# [1.1.0](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@1.0.0...@wingscms/jsonschema-form@1.1.0) (2020-06-05)
+
+
+### Features
+
+* **jsonschema-form:** add support for address fieldType ([#476](https://github.com/wingscms/wings/issues/476)) ([629a3e5](https://github.com/wingscms/wings/commit/629a3e5b2c62c9a72f78041e9d89c2c92c448f1b))
+
+
+
+
+
 # [1.0.0](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@0.6.0...@wingscms/jsonschema-form@1.0.0) (2020-05-26)
 
 
