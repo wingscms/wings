@@ -56,51 +56,31 @@ export const AddressField = () => (
   <Container>
     <SchemaForm
       schema={object('schema', {
-        title: 'A form with AddressField',
-        description: 'A simple form example.',
         type: 'object',
-        required: [],
+        required: ['firstName', 'lastName', 'email', 'terms', 'privacyConsent'],
         properties: {
-          firstName: {
-            type: 'string',
-            title: 'First name',
-            default: 'Chuck',
-          },
-          address: {
-            type: 'object',
-            country: 'NL',
+          firstName: { title: 'First name', type: 'string', minLength: 1 },
+          lastName: { title: 'Last name', type: 'string', minLength: 1 },
+          email: { title: 'Email address', type: 'string', format: 'email' },
+          urcaC7ufhSjvhYoc5: {
             title: 'Address',
+            type: 'object',
+            required: ['postcode', 'number', 'street', 'state', 'city', 'country'],
+            fieldType: 'address',
+            country: 'NL',
             properties: {
-              postcode: {
-                type: 'string',
-                title: 'Postcode',
-              },
-              number: {
-                type: 'integer',
-                title: 'Number',
-              },
-              numberAddition: {
-                type: 'string',
-                title: 'Number Addition',
-              },
-              street: {
-                type: 'string',
-                title: 'Street',
-              },
-              state: {
-                type: 'string',
-                title: 'State',
-              },
-              city: {
-                type: 'string',
-                title: 'City',
-              },
-              country: {
-                type: 'string',
-                title: 'Country',
-              },
+              postcode: { type: 'string', title: 'Postcode' },
+              number: { type: 'integer', title: 'Huisnummer' },
+              numberAddition: { type: 'string', title: 'Huisnr. Toevoeging' },
+              street: { type: 'string', title: 'Straat' },
+              state: { type: 'string', title: 'Provincie' },
+              city: { type: 'string', title: 'Plaatsnaam' },
+              country: { type: 'string', title: 'Land' },
             },
           },
+          newsletter: { title: 'Stay up to date', type: 'boolean' },
+          terms: { title: 'Agree to our terms & conditions', type: 'boolean', enum: [true] },
+          privacyConsent: { title: 'Agree to our privacy policy', type: 'boolean', enum: [true] },
         },
       })}
       onSubmit={props => console.log(props)}

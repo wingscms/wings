@@ -49,10 +49,16 @@ const fields = {
   address: AddressField,
 };
 
-const uiSchema = {
-  address: {
-    'ui:field': 'address',
-  },
+const createUiSchema = schema => {
+  return Object.keys(schema.properties).reduce((uiSchema, key) => {
+    const _uiSchema = { ...uiSchema };
+    if (schema.properties[key].fieldType === 'address') {
+      _uiSchema[key] = {
+        'ui:field': 'address',
+      };
+    }
+    return _uiSchema;
+  }, {});
 };
 
 export default function SchemaForm({ widgets = v => v, ...props }) {
@@ -72,7 +78,7 @@ export default function SchemaForm({ widgets = v => v, ...props }) {
       {...props}
       widgets={widgets(defaultWidgets)}
       fields={fields}
-      uiSchema={uiSchema}
+      uiSchema={createUiSchema(props.schema)}
     />
   );
 }
