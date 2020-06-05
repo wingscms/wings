@@ -14,6 +14,7 @@ import RangeInput from './RangeInput';
 import Select from './Select';
 import Textarea from './Textarea';
 import URLInput from './URLInput';
+import AddressField from './AddressField';
 
 const StyledForm = styled(Form)`
   fieldset {
@@ -44,6 +45,22 @@ const defaultWidgets = {
   URLWidget: URLInput,
 };
 
+const fields = {
+  address: AddressField,
+};
+
+const createUiSchema = schema => {
+  return Object.keys(schema.properties).reduce((uiSchema, key) => {
+    const _uiSchema = { ...uiSchema };
+    if (schema.properties[key].fieldType === 'address') {
+      _uiSchema[key] = {
+        'ui:field': 'address',
+      };
+    }
+    return _uiSchema;
+  }, {});
+};
+
 export default function SchemaForm({ widgets = v => v, ...props }) {
   return (
     <StyledForm
@@ -60,6 +77,8 @@ export default function SchemaForm({ widgets = v => v, ...props }) {
       }
       {...props}
       widgets={widgets(defaultWidgets)}
+      fields={fields}
+      uiSchema={createUiSchema(props.schema)}
     />
   );
 }
