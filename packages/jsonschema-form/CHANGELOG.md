@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@1.1.1...@wingscms/jsonschema-form@1.1.2) (2020-06-08)
+
+
+### Bug Fixes
+
+* **jsonschema-form:** infinite loop when removing housenumber form state ([653d496](https://github.com/wingscms/wings/commit/653d496e3ba7b1950753057d8f50ac2a665cf195))
+
+
+
+
+
 ## [1.1.1](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@1.1.0...@wingscms/jsonschema-form@1.1.1) (2020-06-05)
 
 **Note:** Version bump only for package @wingscms/jsonschema-form
