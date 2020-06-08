@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/wingscms/wings/compare/@wingscms/components@1.1.1...@wingscms/components@1.1.2) (2020-06-08)
+
+
+### Bug Fixes
+
+* **components:** render footer children below columns ([1c23262](https://github.com/wingscms/wings/commit/1c23262cfe931116164ee91054a3bb0115715c04))
+
+
+
+
+
 ## [1.1.1](https://github.com/wingscms/wings/compare/@wingscms/components@1.1.0...@wingscms/components@1.1.1) (2020-06-08)
 
 
