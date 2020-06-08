@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { FlexGrid, Icon, _WIDE, Heading } from '@wingscms/components';
+import { FlexGrid, Icon, _WIDE, Heading, Text } from '@wingscms/components';
 import styled from '../../lib/styled';
 import createCard from '../../createCard';
 import { t } from '../../theme';
@@ -57,9 +57,7 @@ const OrganisationName = styled(Heading)`
   }
 `;
 
-const OrganisationDescription = styled.p`
-  line-height: 25px;
-  font-size: 16px;
+const OrganisationDescription = styled(Text)`
   margin-top: 10px;
 `;
 
@@ -125,7 +123,7 @@ class CollectionCardView extends Component {
         <OrganisationContent>
           {x.name ? <OrganisationName rank={4}>{x.name}</OrganisationName> : null}
           {x.description ? (
-            <OrganisationDescription>{x.description.text}</OrganisationDescription>
+            <OrganisationDescription noSpacing>{x.description.text}</OrganisationDescription>
           ) : null}
           {x.profiles && (
             <OrgProfilesWrapper>
