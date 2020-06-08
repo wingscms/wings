@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.4](https://github.com/wingscms/wings/compare/@wingscms/react@1.1.3...@wingscms/react@1.1.4) (2020-06-08)
+
+
+### Bug Fixes
+
+* small share buttons fixes ([#471](https://github.com/wingscms/wings/issues/471)) ([6ccc7ab](https://github.com/wingscms/wings/commit/6ccc7abbce987217618a0cb6f6a71bb7775b54a9))
+* use Text component for description ([#478](https://github.com/wingscms/wings/issues/478)) ([7f57915](https://github.com/wingscms/wings/commit/7f57915fadb34ab3edef1196a71fba546ecbadcf))
+
+
+
+
+
 ## [1.1.3](https://github.com/wingscms/wings/compare/@wingscms/react@1.1.2...@wingscms/react@1.1.3) (2020-06-05)
 
 
