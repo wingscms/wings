@@ -94,7 +94,7 @@ export default function AddressField({ schema, idSchema, errorSchema, onChange }
         id={idSchema.number.$id}
         type="text"
         onChange={e => {
-          setData({ ...data, number: parseInt(e.target.value, 10) });
+          setData({ ...data, number: parseInt(e.target.value, 10) || -1 });
         }}
       />
 
