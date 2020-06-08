@@ -13,6 +13,10 @@ const rPkg = new RegExp(`^(@wingscms/(?:${packages.map(esc).join('|')}))$`);
 module.exports = {
   webpackFinal: config => ({
     ...config,
+    watchOptions: {
+      ...config.watchOptions,
+      poll: 1000,
+    },
     plugins: [
       ...config.plugins,
       // reference module source during development to support coverage reporting

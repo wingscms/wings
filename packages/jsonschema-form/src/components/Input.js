@@ -1,29 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
-import styled, { css } from '../lib/styled';
-
-const StyledInput = styled.input`
-  font-size: inherit;
-  padding: 10px;
-  border-radius: 4px;
-  border: none;
-  width: 100%;
-  background-color: #fff;
-  &:disabled {
-    background-color: #eee;
-    color: #555;
-    cursor: not-allowed;
-  }
-  ${({ inputStyles }) => inputStyles || ''} &[type='color'] {
-    min-height: 36px;
-  }
-  ${({ error }) =>
-    !error
-      ? null
-      : css`
-          background-color: #ffcfcf;
-        `};
-`;
+import Input from '../lib/components/Input';
+import Label from '../lib/components/Label';
 
 function BaseInput(props) {
   if (!props.id) {
@@ -89,13 +67,8 @@ function BaseInput(props) {
 
   return (
     <div>
-      {!schema && label ? (
-        <label htmlFor={id}>
-          {label}
-          {required ? '*' : ''}
-        </label>
-      ) : null}
-      <StyledInput
+      {!schema && label ? <Label htmlFor={id} label={label} required={required} /> : null}
+      <Input
         id={id}
         className={classnames('form-control', className)}
         readOnly={readonly}

@@ -3,6 +3,51 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/wingscms/wings/compare/@wingscms/react@1.1.2...@wingscms/react@1.1.3) (2020-06-05)
+
+
+### Bug Fixes
+
+* campaign card spacing when no image used ([#474](https://github.com/wingscms/wings/issues/474)) ([dec06bb](https://github.com/wingscms/wings/commit/dec06bb7d0ebf97a77b6698dee61212e8cd8d33a))
+* pass props to share buttons in CampaignConfirmed ([#475](https://github.com/wingscms/wings/issues/475)) ([28a0f87](https://github.com/wingscms/wings/commit/28a0f87e050218f8323fc01d1813e0cf2a696697))
+
+
+
+
+
+## [1.1.2](https://github.com/wingscms/wings/compare/@wingscms/react@1.1.1...@wingscms/react@1.1.2) (2020-06-05)
+
+**Note:** Version bump only for package @wingscms/react
+
+
+
+
+
+## [1.1.1](https://github.com/wingscms/wings/compare/@wingscms/react@1.1.0...@wingscms/react@1.1.1) (2020-06-05)
+
+**Note:** Version bump only for package @wingscms/react
+
+
+
+
+
+# [1.1.0](https://github.com/wingscms/wings/compare/@wingscms/react@1.0.3...@wingscms/react@1.1.0) (2020-06-02)
+
+
+### Bug Fixes
+
+* campaign toggle behaviour ([#470](https://github.com/wingscms/wings/issues/470)) ([756110b](https://github.com/wingscms/wings/commit/756110b1b88c00bcd9c64fbb698733673b22d67e))
+* collection card icon bug ([#469](https://github.com/wingscms/wings/issues/469)) ([a478856](https://github.com/wingscms/wings/commit/a478856a35d8351c9245ed977906d5a091251ed8))
+
+
+### Features
+
+* add headerProps/contentProps props to Entry ([#472](https://github.com/wingscms/wings/issues/472)) ([dd57fba](https://github.com/wingscms/wings/commit/dd57fba7a8c883b2a59d4e71a6b06c9e49301138))
+
+
+
+
+
 ## [1.0.3](https://github.com/wingscms/wings/compare/@wingscms/react@1.0.2...@wingscms/react@1.0.3) (2020-05-29)
 
 
