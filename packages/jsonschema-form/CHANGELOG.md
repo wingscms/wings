@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@1.1.2...@wingscms/jsonschema-form@1.2.0) (2020-06-09)
+
+
+### Features
+
+* allow overriding uiSchema, fields, widgets props on SchemaForm ([4da3c38](https://github.com/wingscms/wings/commit/4da3c380382e4bd6d4bf596a4cdaccf5f7382502))
+
+
+
+
+
 ## [1.1.2](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@1.1.1...@wingscms/jsonschema-form@1.1.2) (2020-06-08)
 
 
