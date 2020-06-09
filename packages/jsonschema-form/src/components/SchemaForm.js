@@ -45,7 +45,7 @@ const defaultWidgets = {
   URLWidget: URLInput,
 };
 
-const fields = {
+const defaultFields = {
   address: AddressField,
 };
 
@@ -61,7 +61,14 @@ const createUiSchema = schema => {
   }, {});
 };
 
-export default function SchemaForm({ widgets = v => v, ...props }) {
+const override = (v, ...args) => (typeof v === 'function' ? v(...args) : v);
+
+export default function SchemaForm({
+  widgets = v => v,
+  fields = v => v,
+  uiSchema = v => v,
+  ...props
+}) {
   return (
     <StyledForm
       ErrorList={() => null}
@@ -76,9 +83,9 @@ export default function SchemaForm({ widgets = v => v, ...props }) {
         })
       }
       {...props}
-      widgets={widgets(defaultWidgets)}
-      fields={fields}
-      uiSchema={createUiSchema(props.schema)}
+      widgets={override(widgets, defaultWidgets)}
+      fields={override(fields, defaultFields)}
+      uiSchema={override(uiSchema, createUiSchema(props.schema))}
     />
   );
 }
