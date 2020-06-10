@@ -54,13 +54,6 @@ class MobiledocRenderer extends Component {
 }
 
 export default styled(MobiledocRenderer)`
-  font-size: 16px;
-  @media screen and (min-width: 600px) {
-    font-size: 18px;
-  }
-  @media screen and (min-width: 800px) {
-    font-size: 23px;
-  }
   color: ${({ theme }) => theme.textColor};
   padding-bottom: ${({ mini }) => (mini ? '0' : '40px')};
   font-weight: ${({ theme }) => theme.bodyFontWeight};
@@ -96,20 +89,6 @@ export default styled(MobiledocRenderer)`
       margin: 0.075em 0.1em -0.1em 0;
       font-size: ${({ theme }) => theme.dropcapFontSize};
       font-family: ${({ theme }) => theme.headingFont};
-    }
-  }
-  > div {
-    > ul,
-    > ol {
-      li {
-        margin: 0;
-      }
-    }
-    > blockquote {
-      border-left: 2px solid ${({ theme }) => theme.primaryColor};
-      margin: 0;
-      padding: 0 0 0 1rem;
-      color: #000;
     }
   }
   &.drop-cap > div > div.headerContainer + p {
