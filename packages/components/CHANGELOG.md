@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.4](https://github.com/wingscms/wings/compare/@wingscms/components@1.1.3...@wingscms/components@1.1.4) (2020-06-10)
+
+
+### Bug Fixes
+
+* update README ([73d0aae](https://github.com/wingscms/wings/commit/73d0aae61ebebca26b9607ff8fa9b234a7c010dc))
+
+
+
+
+
 ## [1.1.3](https://github.com/wingscms/wings/compare/@wingscms/components@1.1.2...@wingscms/components@1.1.3) (2020-06-10)
 
 
