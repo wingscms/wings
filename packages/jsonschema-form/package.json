@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.7.7",
+    "@wingscms/components": "^1.1.2",
     "classnames": "^2.2.6",
     "react-jsonschema-form": "1.8.1"
   },

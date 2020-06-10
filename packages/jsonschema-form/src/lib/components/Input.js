@@ -1,7 +1,8 @@
+import { Text, t } from '@wingscms/components';
 import styled, { css } from '../styled';
 
 export default styled.input`
-  font-size: inherit;
+  ${t(Text.getStyles)}
   padding: 10px;
   border-radius: 4px;
   border: none;

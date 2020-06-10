@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from 'react-jsonschema-form';
+import { Text, t } from '@wingscms/components';
 import styled from '../lib/styled';
 import Amount from './Amount';
 import Checkbox from './CheckboxInput';
@@ -27,6 +28,9 @@ const StyledForm = styled(Form)`
     &:last-child {
       margin-bottom: 0;
     }
+  }
+  label {
+    ${t(Text.getStyles)};
   }
 `;
 
