@@ -10,7 +10,7 @@ export default {
   noneColor: '#EEEEEE',
   disabledColor: '#DDDDDD',
   backgroundColor: '#FFFFFF',
-  elementBackgroundColor: '#ECF2FC',
+  elementBackgroundColor: '#FFF',
   textColor: '#212121',
   textColorDark: '#FFFFFF',
   iconColor: '#212121',
