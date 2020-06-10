@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/wingscms/wings/compare/@wingscms/components@1.1.2...@wingscms/components@1.1.3) (2020-06-10)
+
+
+### Bug Fixes
+
+* **components:** change elementBackgroundColor default color to white ([73be87c](https://github.com/wingscms/wings/commit/73be87cccc8e0374b7d0dbb0a3cdb71403bba56b))
+
+
+
+
+
 ## [1.1.2](https://github.com/wingscms/wings/compare/@wingscms/components@1.1.1...@wingscms/components@1.1.2) (2020-06-08)
 
 
