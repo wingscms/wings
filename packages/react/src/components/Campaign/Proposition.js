@@ -67,7 +67,7 @@ const ToggleButton = styled.div`
 `;
 
 export default function Proposition({
-  formHeight = 400,
+  height: heightProp = 400,
   children,
   descriptionCollapse,
   descriptionExpand,
@@ -92,7 +92,7 @@ export default function Proposition({
 
   const margin = containerWidth < 400 ? 10 : 40;
   const padding = containerWidth < 400 ? 20 : 40;
-  const height = !show ? formHeight - 80 : contentHeight + padding + margin + toggleHeight;
+  const height = !show ? heightProp - 80 : contentHeight + padding + margin + toggleHeight;
   const showToggle = show || contentHeight + 160 > height;
 
   return (
