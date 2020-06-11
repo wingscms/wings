@@ -169,6 +169,7 @@ export default function Campaign({
   const [fundraiserRaised, setFundraiserRaised] = useState(null);
   const [fundraiserTarget, setFundraiserTarget] = useState(0);
   const [node, setNode] = useState(_node);
+  const [formHeight, setFormHeight] = useState(formContainerRef?.current?.offsetHeight);
   const handleCampaignLoad = campaign => {
     setNode(campaign);
     if (formProps.onLoad) formProps.onLoad(campaign);
@@ -216,7 +217,7 @@ export default function Campaign({
         <MainContainerInner>
           <Proposition
             {...{ descriptionCollapse, descriptionExpand }}
-            initialHeight={formContainerRef?.current?.offsetHeight}
+            formHeight={formHeight}
             onToggle={show => {
               if (!campaignContainerRef?.current || show) return;
               campaignContainerRef?.current?.scrollIntoView?.({
@@ -266,6 +267,7 @@ export default function Campaign({
                 redirectUrl={redirectUrlForNode(node)}
                 {...formProps}
                 onLoad={handleCampaignLoad}
+                onUpdate={() => setFormHeight(formContainerRef?.current?.offsetHeight)}
                 nodeFragment={NodeFragment}
                 campaignFragment={CampaignFragment}
               />
