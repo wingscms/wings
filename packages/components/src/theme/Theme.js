@@ -228,6 +228,10 @@ export default class Theme {
     return this.variables.landingSectionTitleBackgroundColor || null;
   }
 
+  set landingSectionTitleBackgroundColor(val) {
+    this.variables.landingSectionTitleBackgroundColor = val;
+  }
+
   get largeSpacing() {
     return this.variables.largeSpacing || this.calc(this.mediumSpacing, ms => ms * 2);
   }
