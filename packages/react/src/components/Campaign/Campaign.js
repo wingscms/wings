@@ -217,7 +217,7 @@ export default function Campaign({
         <MainContainerInner>
           <Proposition
             {...{ descriptionCollapse, descriptionExpand }}
-            height={formHeight}
+            height={formHeight - 80}
             onToggle={show => {
               if (!campaignContainerRef?.current || show) return;
               campaignContainerRef?.current?.scrollIntoView?.({
