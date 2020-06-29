@@ -31,7 +31,12 @@ export default class Theme {
   setVariables(variables) {
     this.variables = {};
     Object.keys(variables).forEach(v => {
-      if (!this[v]) this[v] = this.getVariableValue(v, variables[v]);
+      if (
+        !(
+          typeof Object.getOwnPropertyDescriptor(Object.getPrototypeOf(this), v)?.get === 'function'
+        )
+      )
+        this[v] = this.getVariableValue(v, variables[v]);
       this.variables[v] = this.getVariableValue(v, variables[v]);
     });
   }
@@ -86,16 +91,16 @@ export default class Theme {
     return mediaQuery(this.tabletBreakpoint, css);
   }
 
-  get baseTabletFontSize() {
-    return this.variables.baseTabletFontSize || this.baseFontSize;
-  }
-
   get appBarBackgroundColor() {
     return this.variables.appBarBackgroundColor || this.elementBackgroundColor;
   }
 
   get appBarHeight() {
     return this.variables.appBarHeight || this.largeSpacing;
+  }
+
+  get baseTabletFontSize() {
+    return this.variables.baseTabletFontSize || this.baseFontSize;
   }
 
   get blockquoteBackgroundColor() {
@@ -226,10 +231,6 @@ export default class Theme {
 
   get landingSectionTitleBackgroundColor() {
     return this.variables.landingSectionTitleBackgroundColor || null;
-  }
-
-  set landingSectionTitleBackgroundColor(val) {
-    this.variables.landingSectionTitleBackgroundColor = val;
   }
 
   get largeSpacing() {
