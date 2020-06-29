@@ -282,6 +282,7 @@ class CampaignForm extends Component {
     onSubmit: null,
     processSchema: s => s,
     processSubmission: s => s,
+    onUpdate: () => {},
     onLoad: () => {},
     disabledFields: [],
     schemaFormProps: {},
@@ -357,6 +358,7 @@ class CampaignForm extends Component {
 
   componentDidUpdate() {
     this.maybeFetch();
+    this.props.onUpdate();
   }
 
   maybeEmitOnLoad = () => {
