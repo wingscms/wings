@@ -28,15 +28,20 @@ export default class Theme {
     return v;
   }
 
+  checkForGetters(obj, v) {
+    const proto = Object.getPrototypeOf(obj);
+    if (!proto) return false;
+
+    const hasGetter =
+      typeof Object.getOwnPropertyDescriptor(Object.getPrototypeOf(obj), v)?.get === 'function';
+    if (hasGetter) return true;
+    return this.checkForGetters(proto, v);
+  }
+
   setVariables(variables) {
     this.variables = {};
     Object.keys(variables).forEach(v => {
-      if (
-        !(
-          typeof Object.getOwnPropertyDescriptor(Object.getPrototypeOf(this), v)?.get === 'function'
-        )
-      )
-        this[v] = this.getVariableValue(v, variables[v]);
+      if (!this.checkForGetters(this, v)) this[v] = this.getVariableValue(v, variables[v]);
       this.variables[v] = this.getVariableValue(v, variables[v]);
     });
   }
