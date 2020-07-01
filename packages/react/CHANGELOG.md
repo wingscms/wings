@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.11](https://github.com/wingscms/wings/compare/@wingscms/react@1.1.10...@wingscms/react@1.1.11) (2020-07-01)
+
+
+### Bug Fixes
+
+* **react:** campaign proposition height ([#482](https://github.com/wingscms/wings/issues/482)) ([f40abc1](https://github.com/wingscms/wings/commit/f40abc1b1ff3c2fa8053d407c69428024160bf1f))
+
+
+
+
+
 ## [1.1.10](https://github.com/wingscms/wings/compare/@wingscms/react@1.1.9...@wingscms/react@1.1.10) (2020-06-10)
 
 **Note:** Version bump only for package @wingscms/react

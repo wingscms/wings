@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.5](https://github.com/wingscms/wings/compare/@wingscms/components@1.1.4...@wingscms/components@1.1.5) (2020-07-01)
+
+
+### Bug Fixes
+
+* **components:** fix theme variable overrides that clash with custom getters ([#483](https://github.com/wingscms/wings/issues/483)) ([97ae66b](https://github.com/wingscms/wings/commit/97ae66b561dd9f1372b443d396e0cf5b333169ba))
+
+
+
+
+
 ## [1.1.4](https://github.com/wingscms/wings/compare/@wingscms/components@1.1.3...@wingscms/components@1.1.4) (2020-06-10)
 
 
