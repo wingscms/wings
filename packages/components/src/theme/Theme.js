@@ -28,10 +28,21 @@ export default class Theme {
     return v;
   }
 
+  checkForGetters(obj, v) {
+    // follows prototype chain: instance (skipped) -> class (React) -> class (Components)
+    const proto = Object.getPrototypeOf(obj);
+    if (!proto) return false;
+
+    const hasGetter =
+      typeof Object.getOwnPropertyDescriptor(Object.getPrototypeOf(obj), v)?.get === 'function';
+    if (hasGetter) return true;
+    return this.checkForGetters(proto, v);
+  }
+
   setVariables(variables) {
     this.variables = {};
     Object.keys(variables).forEach(v => {
-      if (!this[v]) this[v] = this.getVariableValue(v, variables[v]);
+      if (!this.checkForGetters(this, v)) this[v] = this.getVariableValue(v, variables[v]);
       this.variables[v] = this.getVariableValue(v, variables[v]);
     });
   }
@@ -86,16 +97,16 @@ export default class Theme {
     return mediaQuery(this.tabletBreakpoint, css);
   }
 
-  get baseTabletFontSize() {
-    return this.variables.baseTabletFontSize || this.baseFontSize;
-  }
-
   get appBarBackgroundColor() {
     return this.variables.appBarBackgroundColor || this.elementBackgroundColor;
   }
 
   get appBarHeight() {
     return this.variables.appBarHeight || this.largeSpacing;
+  }
+
+  get baseTabletFontSize() {
+    return this.variables.baseTabletFontSize || this.baseFontSize;
   }
 
   get blockquoteBackgroundColor() {
