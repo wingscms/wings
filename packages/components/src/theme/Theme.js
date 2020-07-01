@@ -29,6 +29,7 @@ export default class Theme {
   }
 
   checkForGetters(obj, v) {
+    // follows prototype chain: instance (skipped) -> class (React) -> class (Components)
     const proto = Object.getPrototypeOf(obj);
     if (!proto) return false;
 
