@@ -45,7 +45,18 @@ const buttonAlignStyles = ({ align }) => {
       `;
 };
 
-const getSpacing = (_, { spacing }) => {
+const getAlignStyles = (_, { align, plane }) => {
+  return css`
+    text-align: ${align};
+    ${plane === Plane.HORIZONTAL
+      ? _.tabletMinQuery(css`
+          text-align: left;
+        `)
+      : null}
+  `;
+};
+
+const getSpacingStyles = (_, { spacing }) => {
   switch (spacing) {
     case 'large':
       return css`
@@ -67,18 +78,18 @@ const Container = styled.div`
   background-color: ${t(_ => _.callToActionBackgroundColor)};
   box-shadow: ${t(_ => _.shadow)};
   ${({ backgroundImage }) => (backgroundImage ? backgroundImageStyles : '')}
-  ${t(getSpacing)}
+  ${t(getSpacingStyles)}
 `;
 
 const Text = styled(_Text)`
   color: ${t(_ => _.callToActionTextColor)};
-  text-align: ${({ align }) => align};
+  ${t(getAlignStyles)};
 `;
 
 const Heading = styled(_Heading)`
   margin-top: 0;
   color: ${t(_ => _.callToActionTextColor)};
-  text-align: ${({ align }) => align};
+  ${t(getAlignStyles)};
 `;
 
 const Button = styled(_Button)`
@@ -140,10 +151,12 @@ export default function CallToAction({
     >
       <Reveal reveal={reveal}>
         <InnerContainer plane={plane}>
-          <Heading rank={2} align={align}>
+          <Heading rank={2} align={align} plane={plane}>
             {title}
           </Heading>
-          <Text align={align}>{text}</Text>
+          <Text align={align} plane={plane}>
+            {text}
+          </Text>
           <a style={{ display: 'block', textDecoration: 'none' }} href={buttonUrl}>
             <Button
               align={align}
