@@ -108,15 +108,16 @@ const InnerContainer = styled.div`
           flex-wrap: wrap;
           flex-direction: row;
           align-items: center;
+          justify-content: space-between;
           > * {
             padding: 0;
             margin: 0;
           }
           ${Heading} {
-            flex: 0 0 30%;
+            flex: 1 0;
           }
           ${Text} {
-            flex: 1 1;
+            flex: 1 1 calc(50% - 200px);
             padding: 0 20px;
           }
           a {

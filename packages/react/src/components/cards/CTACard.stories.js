@@ -1,3 +1,4 @@
+import faker from 'faker';
 import { CTACard } from '@wingscms/react';
 import { CallToAction } from '@wingscms/components';
 import { contentWrap, image } from '../../../../../utils';
@@ -15,8 +16,8 @@ const props = ({
   buttonText: 'Sign up now',
   buttonUrl: 'http://example.com',
   reveal: true,
-  text: 'This is an introduction to the first section of the article',
-  title: 'Section One',
+  text: faker.lorem.paragraph(),
+  title: 'Sign Up Now',
 });
 
 export default () => CTACard.render(props());

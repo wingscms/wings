@@ -1,4 +1,5 @@
 import React from 'react';
+import faker from 'faker';
 import { boolean, select, text } from '@storybook/addon-knobs/react';
 import { CallToAction } from '@wingscms/components';
 import { paddingWrap, image } from '../../../../utils';
@@ -16,8 +17,8 @@ const props = ({
   buttonText: text('buttonText', 'Sign up now'),
   buttonUrl: text('buttonUrl', 'http://example.com'),
   reveal: boolean('reveal', true),
-  text: text('text', 'This is an introduction to the first section of the article'),
-  title: text('title', 'Section One'),
+  text: text('text', faker.lorem.paragraph()),
+  title: text('title', 'Sign Up Now'),
 });
 
 export default () => <CallToAction {...props()} />;
