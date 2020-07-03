@@ -10,10 +10,10 @@ Storyshots components/Button Outline 1: 1c0829a813fa829acae5b412641362ab
 Storyshots components/Button Primary 1: deff84b52f0fb12ee2599aa34e8622eb
 Storyshots components/Button Small 1: 70a77fc65e36e772c415fead2fdc6971
 Storyshots components/Button With Icon 1: 6f26b0f64f02d66b0b487bc1c9eb1bf4
-Storyshots components/CallToAction Background Image 1: 751673cdc020ef1d4d03ad463cf8ba7f
-Storyshots components/CallToAction Default 1: 9f6bef4b11bba197bf4e1f74fb4cd73b
-Storyshots components/CallToAction Horizontal 1: faaf20af4a264a2c1bbb2bc1859b5162
-Storyshots components/CallToAction Large Spacing 1: 1ff70c8549a5d5079251dca433cb4521
+Storyshots components/CallToAction Background Image 1: fb17b4f6d0d2386a8c1fe9677ff112fc
+Storyshots components/CallToAction Default 1: b5cb1a60498978ee7dd80373b1baafd0
+Storyshots components/CallToAction Horizontal 1: d9976bf2ad048271ee67923244b128db
+Storyshots components/CallToAction Large Spacing 1: 3aff18e4947c3f04f6ac7b74710c4a81
 Storyshots components/Counter Default 1: 086cd2b6cfed6ec508ab8f6be890b83d
 Storyshots components/Drawer Default 1: 22f59777eb87684354dca01d06196fbc
 Storyshots components/Expandable Default 1: 108f120100143cf1b9ff1067dd0159cd
@@ -42,8 +42,8 @@ Storyshots components/SocialButtons Default 1: aa71af95105e9232b2d85f6ffd8e50f3
 Storyshots components/Text Default 1: fac6b85eca43270dbf08e98e264f9d76
 Storyshots jsonschema-form/SchemaForm Address Field 1: 314cc42655b8759b48921d32d428f2ba
 Storyshots jsonschema-form/SchemaForm Default 1: 4db89e7b65bd602cc00453e84e454306
-Storyshots react/Article Default 1: 50d3e2476ba62c50e8c7bd7c025e5146
-Storyshots react/Article No Image 1: 828bd9ecfffcd6e1bfdf9bf66a5aecfa
+Storyshots react/Article Default 1: 6a6daa04ccc21837b94e7a9ec5e255cc
+Storyshots react/Article No Image 1: e81ca476c6e0dbb558e9d124ba22e99c
 Storyshots react/Campaign Event 1: 1611eef3f93079b387a788174d91a20a
 Storyshots react/Campaign Fundraiser 1: 87901e0a50d742a2f9a6adadf51bf5de
 Storyshots react/Campaign Petition 1: d006f8f3868a8c1c6ec1a131af766b6f
@@ -52,10 +52,10 @@ Storyshots react/CampaignConfirmed Event 1: 1ebe562ff128fb5ad499f0dcf7704b1e
 Storyshots react/CampaignConfirmed Fundraiser 1: 1c5efb319e4536242f9f7a2f6239fb2b
 Storyshots react/CampaignConfirmed Petition 1: 50ca38bb1b965329d13cad5d5dcb4625
 Storyshots react/CampaignConfirmed Signup 1: e63ba798d9cb5c37c0182f672542f954
-Storyshots react/Cards/CTACard Background Image 1: 36023180cc0f55137686f505402ca241
-Storyshots react/Cards/CTACard Default 1: 3b4540fbec1d6d4a4fb5fafc0c5799cf
-Storyshots react/Cards/CTACard Horizontal 1: fd7a882a3fa21dd436196d9d80cd4728
-Storyshots react/Cards/CTACard Spacing 1: d0a3d6f0fd525696e2782ec037b2a6d7
+Storyshots react/Cards/CTACard Background Image 1: 44b6b3bdbd4a0f85d48adf788c91b061
+Storyshots react/Cards/CTACard Default 1: 67ba2be53ff9013829ffb729315e5f51
+Storyshots react/Cards/CTACard Horizontal 1: 4aa96087fca3ec5d9a836dcc1b37329e
+Storyshots react/Cards/CTACard Spacing 1: f1e6b3f9346cf589296b058eb6f39957
 Storyshots react/Cards/CampaignCard Default 1: 7c7dccb28254f363a19c7c77427c5342
 Storyshots react/Cards/ChapterCard Default 1: eede5823b8acc44a97274e8bc8b5dfe9
 Storyshots react/Cards/CollectionCard Organisations 1: 11b36d7acc186aada91107bb4b330835
@@ -70,5 +70,5 @@ Storyshots react/Cards/QuoteCard Pull Quote 1: 33e15c12ad4cf9a09768bf8b5b3f2b2f
 Storyshots react/Cards/TestimonialCard Default 1: 316b842e382526886d9d165ff9ecea41
 Storyshots react/Cards/TextCard Default 1: aa7a98586e081158f4787f621299e513
 Storyshots react/Content Default 1: c2477eeebbb2b86c9909801acf0fe177
-Storyshots react/Content With Cards 1: 5d102b12887bb21a96e9e65637cfa85c
-Storyshots react/Page Default 1: 687dc2bc5034fe2b91d23c06d13b3689
+Storyshots react/Content With Cards 1: 9ce3a94e6133ec3a4beaf39eab6e825e
+Storyshots react/Page Default 1: a6fed86ba4bc0e9939ab9882774d562b

@@ -6,11 +6,11 @@ const props = ({
   backgroundImage = null,
   spacing = CallToAction.Spacing.SMALL,
   align = CallToAction.Align.LEFT,
-  plane = CallToAction.Plane.VERTICAL,
+  type = CallToAction.Type.VERTICAL,
 } = {}) => ({
   align,
   spacing,
-  plane,
+  type,
   backgroundImage,
   buttonText: 'Sign up now',
   buttonUrl: 'http://example.com',
@@ -38,7 +38,7 @@ export const Horizontal = () =>
       backgroundImage: image(),
       align: CallToAction.Align.CENTER,
       spacing: CallToAction.Spacing.MEDIUM,
-      plane: CallToAction.Plane.HORIZONTAL,
+      type: CallToAction.Type.HORIZONTAL,
     }),
   );
 

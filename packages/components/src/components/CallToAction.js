@@ -15,7 +15,7 @@ const Align = {
   RIGHT: 'right',
 };
 
-const Plane = {
+const Type = {
   VERTICAL: 'vertical',
   HORIZONTAL: 'horizontal',
 };
@@ -45,10 +45,10 @@ const buttonAlignStyles = ({ align }) => {
       `;
 };
 
-const getAlignStyles = (_, { align, plane }) => {
+const getAlignStyles = (_, { align, type }) => {
   return css`
     text-align: ${align};
-    ${plane === Plane.HORIZONTAL
+    ${type === Type.HORIZONTAL
       ? _.tabletMinQuery(css`
           text-align: left;
         `)
@@ -100,8 +100,8 @@ const Button = styled(_Button)`
 `;
 
 const InnerContainer = styled.div`
-  ${t((_, { plane }) =>
-    !(plane === Plane.HORIZONTAL)
+  ${t((_, { type }) =>
+    !(type === Type.HORIZONTAL)
       ? null
       : _.tabletMinQuery(css`
           display: flex;
@@ -136,7 +136,7 @@ export default function CallToAction({
   backgroundImage,
   buttonText,
   buttonUrl,
-  plane = Plane.VERTICAL,
+  type = Type.VERTICAL,
   reveal,
   spacing = Align.SMALL,
   title,
@@ -150,11 +150,11 @@ export default function CallToAction({
       {...filterInvalidDOMProps(props)}
     >
       <Reveal reveal={reveal}>
-        <InnerContainer plane={plane}>
-          <Heading rank={2} align={align} plane={plane}>
+        <InnerContainer type={type}>
+          <Heading rank={2} align={align} type={type}>
             {title}
           </Heading>
-          <Text align={align} plane={plane}>
+          <Text align={align} type={type}>
             {text}
           </Text>
           <a style={{ display: 'block', textDecoration: 'none' }} href={buttonUrl}>
@@ -173,4 +173,4 @@ export default function CallToAction({
 
 CallToAction.Align = Align;
 CallToAction.Spacing = Spacing;
-CallToAction.Plane = Plane;
+CallToAction.Type = Type;
