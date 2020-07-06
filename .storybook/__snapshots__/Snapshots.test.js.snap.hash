@@ -12,7 +12,7 @@ Storyshots components/Button Small 1: 70a77fc65e36e772c415fead2fdc6971
 Storyshots components/Button With Icon 1: 6f26b0f64f02d66b0b487bc1c9eb1bf4
 Storyshots components/CallToAction Background Image 1: 3b2ec05b2732dcfc39d41535cfb9fbb5
 Storyshots components/CallToAction Default 1: 98b924431610963d949960717a82c5e1
-Storyshots components/CallToAction Horizontal 1: 15a669ca225ca050caf976c7421a2269
+Storyshots components/CallToAction Horizontal 1: 9fbaa0b6c626358ab9ec39b5b01fff80
 Storyshots components/CallToAction Large Spacing 1: 7f2e82b741376f8bbd1dbca537f9da93
 Storyshots components/Counter Default 1: 086cd2b6cfed6ec508ab8f6be890b83d
 Storyshots components/Drawer Default 1: 22f59777eb87684354dca01d06196fbc
@@ -54,7 +54,7 @@ Storyshots react/CampaignConfirmed Petition 1: 50ca38bb1b965329d13cad5d5dcb4625
 Storyshots react/CampaignConfirmed Signup 1: e63ba798d9cb5c37c0182f672542f954
 Storyshots react/Cards/CTACard Background Image 1: 46da0d12ff89416072f2a892260aea47
 Storyshots react/Cards/CTACard Default 1: 09d2fcba59f30ee5367221fb986b4664
-Storyshots react/Cards/CTACard Horizontal 1: df59de7acbf7b0f9b4bb9c43806323db
+Storyshots react/Cards/CTACard Horizontal 1: 4dfde7557fce9f0d53f3fed9b360cd12
 Storyshots react/Cards/CTACard Spacing 1: 5292e6c467c82394eb8f3c4e77c6d808
 Storyshots react/Cards/CampaignCard Default 1: 7c7dccb28254f363a19c7c77427c5342
 Storyshots react/Cards/ChapterCard Default 1: eede5823b8acc44a97274e8bc8b5dfe9
