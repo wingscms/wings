@@ -3,6 +3,125 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.11](https://github.com/wingscms/wings/compare/@wingscms/react@1.1.10...@wingscms/react@1.1.11) (2020-07-01)
+
+
+### Bug Fixes
+
+* **react:** campaign proposition height ([#482](https://github.com/wingscms/wings/issues/482)) ([f40abc1](https://github.com/wingscms/wings/commit/f40abc1b1ff3c2fa8053d407c69428024160bf1f))
+
+
+
+
+
+## [1.1.10](https://github.com/wingscms/wings/compare/@wingscms/react@1.1.9...@wingscms/react@1.1.10) (2020-06-10)
+
+**Note:** Version bump only for package @wingscms/react
+
+
+
+
+
+## [1.1.9](https://github.com/wingscms/wings/compare/@wingscms/react@1.1.8...@wingscms/react@1.1.9) (2020-06-10)
+
+**Note:** Version bump only for package @wingscms/react
+
+
+
+
+
+## [1.1.8](https://github.com/wingscms/wings/compare/@wingscms/react@1.1.7...@wingscms/react@1.1.8) (2020-06-10)
+
+
+### Bug Fixes
+
+* form font fixes ([#481](https://github.com/wingscms/wings/issues/481)) ([7d40066](https://github.com/wingscms/wings/commit/7d40066ac1b19de3dc657f1a4acbd51ea423946b))
+
+
+
+
+
+## [1.1.7](https://github.com/wingscms/wings/compare/@wingscms/react@1.1.6...@wingscms/react@1.1.7) (2020-06-09)
+
+**Note:** Version bump only for package @wingscms/react
+
+
+
+
+
+## [1.1.6](https://github.com/wingscms/wings/compare/@wingscms/react@1.1.5...@wingscms/react@1.1.6) (2020-06-08)
+
+**Note:** Version bump only for package @wingscms/react
+
+
+
+
+
+## [1.1.5](https://github.com/wingscms/wings/compare/@wingscms/react@1.1.4...@wingscms/react@1.1.5) (2020-06-08)
+
+**Note:** Version bump only for package @wingscms/react
+
+
+
+
+
+## [1.1.4](https://github.com/wingscms/wings/compare/@wingscms/react@1.1.3...@wingscms/react@1.1.4) (2020-06-08)
+
+
+### Bug Fixes
+
+* small share buttons fixes ([#471](https://github.com/wingscms/wings/issues/471)) ([6ccc7ab](https://github.com/wingscms/wings/commit/6ccc7abbce987217618a0cb6f6a71bb7775b54a9))
+* use Text component for description ([#478](https://github.com/wingscms/wings/issues/478)) ([7f57915](https://github.com/wingscms/wings/commit/7f57915fadb34ab3edef1196a71fba546ecbadcf))
+
+
+
+
+
+## [1.1.3](https://github.com/wingscms/wings/compare/@wingscms/react@1.1.2...@wingscms/react@1.1.3) (2020-06-05)
+
+
+### Bug Fixes
+
+* campaign card spacing when no image used ([#474](https://github.com/wingscms/wings/issues/474)) ([dec06bb](https://github.com/wingscms/wings/commit/dec06bb7d0ebf97a77b6698dee61212e8cd8d33a))
+* pass props to share buttons in CampaignConfirmed ([#475](https://github.com/wingscms/wings/issues/475)) ([28a0f87](https://github.com/wingscms/wings/commit/28a0f87e050218f8323fc01d1813e0cf2a696697))
+
+
+
+
+
+## [1.1.2](https://github.com/wingscms/wings/compare/@wingscms/react@1.1.1...@wingscms/react@1.1.2) (2020-06-05)
+
+**Note:** Version bump only for package @wingscms/react
+
+
+
+
+
+## [1.1.1](https://github.com/wingscms/wings/compare/@wingscms/react@1.1.0...@wingscms/react@1.1.1) (2020-06-05)
+
+**Note:** Version bump only for package @wingscms/react
+
+
+
+
+
+# [1.1.0](https://github.com/wingscms/wings/compare/@wingscms/react@1.0.3...@wingscms/react@1.1.0) (2020-06-02)
+
+
+### Bug Fixes
+
+* campaign toggle behaviour ([#470](https://github.com/wingscms/wings/issues/470)) ([756110b](https://github.com/wingscms/wings/commit/756110b1b88c00bcd9c64fbb698733673b22d67e))
+* collection card icon bug ([#469](https://github.com/wingscms/wings/issues/469)) ([a478856](https://github.com/wingscms/wings/commit/a478856a35d8351c9245ed977906d5a091251ed8))
+
+
+### Features
+
+* add headerProps/contentProps props to Entry ([#472](https://github.com/wingscms/wings/issues/472)) ([dd57fba](https://github.com/wingscms/wings/commit/dd57fba7a8c883b2a59d4e71a6b06c9e49301138))
+
+
+
+
+
 ## [1.0.3](https://github.com/wingscms/wings/compare/@wingscms/react@1.0.2...@wingscms/react@1.0.3) (2020-05-29)
 
 

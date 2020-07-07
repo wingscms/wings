@@ -17,6 +17,7 @@ const Item = styled(Button)`
   width: ${({ size }) => size}px;
   height: ${({ size }) => size}px;
   margin-right: ${({ spacing }) => spacing}px;
+  margin-bottom: ${({ spacing }) => spacing}px;
   padding: ${({ padding }) => padding}px;
   border-radius: ${({ borderRadius }) => borderRadius}px;
   background-color: ${t(
@@ -60,7 +61,7 @@ const SocialButtons = ({
     {React.Children.map(children, (child, idx) => {
       const { linkProps, url, ...childProps } = child.props;
       return (
-        <a href={childProps.url} key={idx} {...fP(linkProps)}>
+        <a href={url} key={idx} {...fP(linkProps)}>
           {React.cloneElement(child, {
             iconColor,
             iconHoverColor,

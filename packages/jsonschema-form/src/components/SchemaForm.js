@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from 'react-jsonschema-form';
+import { Text, t } from '@wingscms/components';
 import styled from '../lib/styled';
 import Amount from './Amount';
 import Checkbox from './CheckboxInput';
@@ -14,6 +15,7 @@ import RangeInput from './RangeInput';
 import Select from './Select';
 import Textarea from './Textarea';
 import URLInput from './URLInput';
+import AddressField from './AddressField';
 
 const StyledForm = styled(Form)`
   fieldset {
@@ -26,6 +28,9 @@ const StyledForm = styled(Form)`
     &:last-child {
       margin-bottom: 0;
     }
+  }
+  label {
+    ${t(Text.getStyles)};
   }
 `;
 
@@ -44,7 +49,30 @@ const defaultWidgets = {
   URLWidget: URLInput,
 };
 
-export default function SchemaForm({ widgets = v => v, ...props }) {
+const defaultFields = {
+  address: AddressField,
+};
+
+const createUiSchema = schema => {
+  return Object.keys(schema.properties).reduce((uiSchema, key) => {
+    const _uiSchema = { ...uiSchema };
+    if (schema.properties[key].fieldType === 'address') {
+      _uiSchema[key] = {
+        'ui:field': 'address',
+      };
+    }
+    return _uiSchema;
+  }, {});
+};
+
+const override = (v, ...args) => (typeof v === 'function' ? v(...args) : v);
+
+export default function SchemaForm({
+  widgets = v => v,
+  fields = v => v,
+  uiSchema = v => v,
+  ...props
+}) {
   return (
     <StyledForm
       ErrorList={() => null}
@@ -59,7 +87,9 @@ export default function SchemaForm({ widgets = v => v, ...props }) {
         })
       }
       {...props}
-      widgets={widgets(defaultWidgets)}
+      widgets={override(widgets, defaultWidgets)}
+      fields={override(fields, defaultFields)}
+      uiSchema={override(uiSchema, createUiSchema(props.schema))}
     />
   );
 }

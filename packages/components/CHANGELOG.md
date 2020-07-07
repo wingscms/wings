@@ -3,6 +3,72 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.5](https://github.com/wingscms/wings/compare/@wingscms/components@1.1.4...@wingscms/components@1.1.5) (2020-07-01)
+
+
+### Bug Fixes
+
+* **components:** fix theme variable overrides that clash with custom getters ([#483](https://github.com/wingscms/wings/issues/483)) ([97ae66b](https://github.com/wingscms/wings/commit/97ae66b561dd9f1372b443d396e0cf5b333169ba))
+
+
+
+
+
+## [1.1.4](https://github.com/wingscms/wings/compare/@wingscms/components@1.1.3...@wingscms/components@1.1.4) (2020-06-10)
+
+
+### Bug Fixes
+
+* update README ([73d0aae](https://github.com/wingscms/wings/commit/73d0aae61ebebca26b9607ff8fa9b234a7c010dc))
+
+
+
+
+
+## [1.1.3](https://github.com/wingscms/wings/compare/@wingscms/components@1.1.2...@wingscms/components@1.1.3) (2020-06-10)
+
+
+### Bug Fixes
+
+* **components:** change elementBackgroundColor default color to white ([73be87c](https://github.com/wingscms/wings/commit/73be87cccc8e0374b7d0dbb0a3cdb71403bba56b))
+
+
+
+
+
+## [1.1.2](https://github.com/wingscms/wings/compare/@wingscms/components@1.1.1...@wingscms/components@1.1.2) (2020-06-08)
+
+
+### Bug Fixes
+
+* **components:** render footer children below columns ([1c23262](https://github.com/wingscms/wings/commit/1c23262cfe931116164ee91054a3bb0115715c04))
+
+
+
+
+
+## [1.1.1](https://github.com/wingscms/wings/compare/@wingscms/components@1.1.0...@wingscms/components@1.1.1) (2020-06-08)
+
+
+### Bug Fixes
+
+* small share buttons fixes ([#471](https://github.com/wingscms/wings/issues/471)) ([6ccc7ab](https://github.com/wingscms/wings/commit/6ccc7abbce987217618a0cb6f6a71bb7775b54a9))
+
+
+
+
+
+# [1.1.0](https://github.com/wingscms/wings/compare/@wingscms/components@1.0.2...@wingscms/components@1.1.0) (2020-06-02)
+
+
+### Features
+
+* add headerProps/contentProps props to Entry ([#472](https://github.com/wingscms/wings/issues/472)) ([dd57fba](https://github.com/wingscms/wings/commit/dd57fba7a8c883b2a59d4e71a6b06c9e49301138))
+
+
+
+
+
 ## [1.0.2](https://github.com/wingscms/wings/compare/@wingscms/components@1.0.1...@wingscms/components@1.0.2) (2020-05-29)
 
 

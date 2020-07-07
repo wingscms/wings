@@ -3,6 +3,82 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.4](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@1.2.3...@wingscms/jsonschema-form@1.2.4) (2020-07-01)
+
+**Note:** Version bump only for package @wingscms/jsonschema-form
+
+
+
+
+
+## [1.2.3](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@1.2.2...@wingscms/jsonschema-form@1.2.3) (2020-06-10)
+
+**Note:** Version bump only for package @wingscms/jsonschema-form
+
+
+
+
+
+## [1.2.2](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@1.2.1...@wingscms/jsonschema-form@1.2.2) (2020-06-10)
+
+**Note:** Version bump only for package @wingscms/jsonschema-form
+
+
+
+
+
+## [1.2.1](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@1.2.0...@wingscms/jsonschema-form@1.2.1) (2020-06-10)
+
+
+### Bug Fixes
+
+* form font fixes ([#481](https://github.com/wingscms/wings/issues/481)) ([7d40066](https://github.com/wingscms/wings/commit/7d40066ac1b19de3dc657f1a4acbd51ea423946b))
+
+
+
+
+
+# [1.2.0](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@1.1.2...@wingscms/jsonschema-form@1.2.0) (2020-06-09)
+
+
+### Features
+
+* allow overriding uiSchema, fields, widgets props on SchemaForm ([4da3c38](https://github.com/wingscms/wings/commit/4da3c380382e4bd6d4bf596a4cdaccf5f7382502))
+
+
+
+
+
+## [1.1.2](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@1.1.1...@wingscms/jsonschema-form@1.1.2) (2020-06-08)
+
+
+### Bug Fixes
+
+* **jsonschema-form:** infinite loop when removing housenumber form state ([653d496](https://github.com/wingscms/wings/commit/653d496e3ba7b1950753057d8f50ac2a665cf195))
+
+
+
+
+
+## [1.1.1](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@1.1.0...@wingscms/jsonschema-form@1.1.1) (2020-06-05)
+
+**Note:** Version bump only for package @wingscms/jsonschema-form
+
+
+
+
+
+# [1.1.0](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@1.0.0...@wingscms/jsonschema-form@1.1.0) (2020-06-05)
+
+
+### Features
+
+* **jsonschema-form:** add support for address fieldType ([#476](https://github.com/wingscms/wings/issues/476)) ([629a3e5](https://github.com/wingscms/wings/commit/629a3e5b2c62c9a72f78041e9d89c2c92c448f1b))
+
+
+
+
+
 # [1.0.0](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@0.6.0...@wingscms/jsonschema-form@1.0.0) (2020-05-26)
 
 

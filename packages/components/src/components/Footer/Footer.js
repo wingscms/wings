@@ -30,10 +30,8 @@ const Container = styled.div`
 const Footer = ({ children, columns, title, ...props }) => {
   return (
     <Wrap {...fP(props)}>
-      <Container>
-        {Array.isArray(columns) && <Columns columns={columns} />}
-        {children}
-      </Container>
+      <Container>{Array.isArray(columns) && <Columns columns={columns} />}</Container>
+      {children}
     </Wrap>
   );
 };

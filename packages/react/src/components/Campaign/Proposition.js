@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { useDimensions } from '@wingscms/components';
 
 import styled, { css } from '../../lib/styled';
@@ -12,7 +12,7 @@ const Container = styled.div`
   vertical-align: top;
   border-radius: 4px 0 0 4px;
   box-shadow: ${t(_ => _.shadow)};
-  height: ${({ height }) => height}px;
+  height: ${({ height, show }) => (show ? height : 400)}px;
   transition: max-height 0.15s linear;
   padding: 0 ${t(_ => _.smallSpacing)};
   margin-bottom: ${t(_ => _.extraSmallSpacing)};
@@ -20,6 +20,7 @@ const Container = styled.div`
     padding: 0 ${t(_ => _.mediumSpacing)};
     margin-top: ${t(_ => _.mediumSpacing)};
     width: calc(100% - ${({ formWidth }) => formWidth});
+    height: ${({ height }) => height}px;
   }
 `;
 
@@ -66,7 +67,7 @@ const ToggleButton = styled.div`
 `;
 
 export default function Proposition({
-  initialHeight = 400,
+  height: heightProp = 400,
   children,
   descriptionCollapse,
   descriptionExpand,
@@ -83,16 +84,16 @@ export default function Proposition({
   const toggleRef = useRef(null);
   const { height: toggleHeight } = useDimensions(toggleRef, [children, show]);
 
-  const toggleShow = () => setShow(!show);
+  const toggleShow = () => {
+    const newState = !show;
+    setShow(newState);
+    onToggle(newState);
+  };
 
   const margin = containerWidth < 400 ? 10 : 40;
   const padding = containerWidth < 400 ? 20 : 40;
-  const height = !show ? initialHeight - 80 : contentHeight + padding + margin + toggleHeight;
+  const height = !show ? heightProp : contentHeight + padding + margin + toggleHeight;
   const showToggle = show || contentHeight + 160 > height;
-
-  useEffect(() => {
-    onToggle(show);
-  }, [show]);
 
   return (
     <Container ref={containerRef} show={show} height={height} formWidth={formWidth} {...props}>
@@ -101,7 +102,7 @@ export default function Proposition({
         <ToggleButton
           showFade={!show}
           ref={toggleRef}
-          onClick={toggleShow}
+          onClick={() => toggleShow()}
           contentHeight={contentHeight}
         >
           {show ? descriptionCollapse : descriptionExpand}
