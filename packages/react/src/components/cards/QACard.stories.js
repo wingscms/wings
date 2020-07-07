@@ -2,9 +2,8 @@ import { QACard } from '@wingscms/react';
 import faker from 'faker';
 import { contentWrap } from '../../../../../utils';
 
-export const WithStrings = () => {
-  faker.seed(1);
-  return QACard.render({
+export const WithStrings = () =>
+  QACard.render({
     type: 2,
     title: 'Question and Answers',
     intro: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -23,7 +22,6 @@ export const WithStrings = () => {
       },
     ],
   });
-};
 
 export const WithMobiledoc = () =>
   QACard.render({
