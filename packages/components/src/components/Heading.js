@@ -11,6 +11,15 @@ const shared = css`
   line-height: 1.2;
 `;
 
+const getSpacing = (noSpacing, _css = css``) => {
+  if (noSpacing)
+    return css`
+      margin: 0;
+      padding: 0;
+    `;
+  return _css;
+};
+
 const getStyles = steps => (
   _,
   {
@@ -19,6 +28,7 @@ const getStyles = steps => (
     baseMobileFontSize,
     baseTabletFontSize,
     scaleRatio: _scaleRatio,
+    noSpacing,
   },
 ) => {
   const scaleRatio = _scaleRatio || _.headingScaleRatio;
@@ -27,18 +37,33 @@ const getStyles = steps => (
 
   const styles = css`
     font-size: ${fontSize(baseFontSize || _.baseFontSize)};
-    margin-bottom: ${_.smallSpacing};
+    ${getSpacing(
+      noSpacing,
+      css`
+        margin-bottom: ${_.smallSpacing};
+      `,
+    )}
   `;
   const tabletStyles = _.tabletQuery(
     css`
       font-size: ${fontSize(baseTabletFontSize || _.baseTabletFontSize)};
-      margin-bottom: ${_.extraSmallSpacing};
+      ${getSpacing(
+        noSpacing,
+        css`
+          margin-bottom: ${_.extraSmallSpacing};
+        `,
+      )}
     `,
   );
   const mobileStyles = _.mobileQuery(
     css`
       font-size: ${fontSize(baseMobileFontSize || _.baseMobileFontSize)};
-      margin-bottom: ${_.extraSmallSpacing};
+      ${getSpacing(
+        noSpacing,
+        css`
+          margin-bottom: ${_.extraSmallSpacing};
+        `,
+      )}
     `,
   );
 
@@ -90,6 +115,7 @@ export default function Heading({
   baseTabletFontSize,
   children,
   fontSize,
+  noSpacing,
   scaleRatio,
   rank = 1,
   uppercase,
@@ -105,6 +131,7 @@ export default function Heading({
       fontSize={fontSize}
       scaleRatio={scaleRatio}
       transform={uppercase && 'uppercase'}
+      noSpacing={noSpacing}
       {...fP(props)}
     >
       {children}
