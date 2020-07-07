@@ -19,7 +19,7 @@ export const Uncontrolled = () => (
 );
 
 export const Controlled = () => (
-  <Accordion openIndex={number('openIndex', null)}>
+  <Accordion openIndex={number('openIndex', -1)}>
     <Accordion.Item intent={Accordion.Item.Intent.PRIMARY} label={faker.lorem.sentence()}>
       <Text noSpacing>{faker.lorem.paragraph(6)}</Text>
     </Accordion.Item>
