@@ -7,7 +7,7 @@
     "build": "rollup -c",
     "prepublish": "cross-env NODE_ENV=production npm run build"
   },
-  "author": "Maarten Busstra <busstra.m@gmail.com>",
+  "author": "Wings <dev@wings.dev>",
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "7.7.7",
