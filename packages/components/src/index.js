@@ -1,8 +1,10 @@
+export { default as Accordion } from './components/Accordion';
 export { default as AppBar } from './components/AppBar';
 export { default as Blockquote } from './components/Blockquote';
 export { default as Burger } from './components/Burger';
 export { default as Button } from './components/Button';
 export { default as CallToAction } from './components/CallToAction';
+export { default as Collapse } from './components/Collapse';
 export { default as Counter } from './components/Counter';
 export { default as Drawer } from './components/Drawer';
 export { default as Expandable } from './components/Expandable';
