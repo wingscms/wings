@@ -23,7 +23,7 @@ export default {
   baseTabletFontSize: '16px',
   baseMobileFontSize: '14px',
   textLineHeight: '1.5',
-  textLetterSpacing: '0.01em',
+  textLetterSpacing: '0',
   textFontFamily: '"Source Sans Pro", sans-serif',
   headerFontFamily: '"Poppins", sans-serif',
   headingScaleRatio: 1.25,
