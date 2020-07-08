@@ -1,6 +1,6 @@
 {
   "name": "@wingscms/jsonschema-form",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "JSON schema forms for Wings",
   "main": "build/index.js",
   "scripts": {
@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.7.7",
-    "@wingscms/components": "^1.1.5",
+    "@wingscms/components": "^1.2.0",
     "classnames": "^2.2.6",
     "react-jsonschema-form": "1.8.1"
   },
