@@ -62,6 +62,7 @@ const Title = styled.h1`
 
 const Intro = styled.p`
   font-size: 1.2em;
+  font-family: ${t(_ => _.headerFontFamily)};
   font-weight: bold;
   @media screen and (max-width: 800px) {
     font-size: 1.2em;

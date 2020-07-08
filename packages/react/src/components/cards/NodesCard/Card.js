@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import classNames from 'classnames';
 import { Icon, ProgressBar } from '@wingscms/components';
+import { t } from '../../../theme';
 import styled from '../../../lib/styled';
 
 const Container = styled.div`
@@ -117,6 +118,7 @@ const BottomContent = styled.div`
     min-height: 86px;
     > h2 {
       user-select: none;
+      font-family: ${t(_ => _.headerFontFamily)};
       color: ${({ bottomBackground }) => (bottomBackground ? '#000000' : '#ffffff')};
       text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
       transition: 0.1s all linear;
@@ -156,6 +158,7 @@ const BottomContent = styled.div`
   }
   p {
     user-select: none;
+    font-family: ${t(_ => _.textFontFamily)};
     color: ${({ bottomBackground }) => (bottomBackground ? '#000000' : '#ffffff')};
     width: 100%;
     margin: 10px 0;
