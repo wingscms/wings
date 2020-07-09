@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/wingscms/wings/compare/@wingscms/components@1.1.5...@wingscms/components@1.2.0) (2020-07-07)
+
+
+### Features
+
+* add Accordion/Collapse components ([#473](https://github.com/wingscms/wings/issues/473)) ([b13e90b](https://github.com/wingscms/wings/commit/b13e90bfbef40401610187eee2a090e613c090d5))
+
+
+
+
+
 ## [1.1.5](https://github.com/wingscms/wings/compare/@wingscms/components@1.1.4...@wingscms/components@1.1.5) (2020-07-01)
 
 

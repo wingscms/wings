@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/wingscms/wings/compare/@wingscms/react@1.2.0...@wingscms/react@1.2.1) (2020-07-07)
+
+
+### Bug Fixes
+
+* **react:** NodesCard fonts ([#484](https://github.com/wingscms/wings/issues/484)) ([aa03ad6](https://github.com/wingscms/wings/commit/aa03ad6307be383053aaecb7462ec3947310d867))
+* **react:** testimonial introduction font style ([#490](https://github.com/wingscms/wings/issues/490)) ([388e4f2](https://github.com/wingscms/wings/commit/388e4f2e93dc71c0c19eb4fbd8661a04211294f2))
+
+
+
+
+
+# [1.2.0](https://github.com/wingscms/wings/compare/@wingscms/react@1.1.11...@wingscms/react@1.2.0) (2020-07-07)
+
+
+### Features
+
+* add Accordion/Collapse components ([#473](https://github.com/wingscms/wings/issues/473)) ([b13e90b](https://github.com/wingscms/wings/commit/b13e90bfbef40401610187eee2a090e613c090d5))
+
+
+
+
+
 ## [1.1.11](https://github.com/wingscms/wings/compare/@wingscms/react@1.1.10...@wingscms/react@1.1.11) (2020-07-01)
 
 
