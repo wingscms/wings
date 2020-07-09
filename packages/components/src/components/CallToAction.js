@@ -139,7 +139,7 @@ export default function CallToAction({
   buttonUrl,
   type = Type.VERTICAL,
   reveal,
-  spacing = Align.SMALL,
+  spacing = Spacing.SMALL,
   title,
   text,
   ...props
