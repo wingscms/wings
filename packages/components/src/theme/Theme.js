@@ -325,7 +325,7 @@ export default class Theme {
   }
 
   get scrollBarBackgroundColor() {
-    return this.variables.scrollBarColor || this.elementBackgroundColor;
+    return this.variables.scrollBarBackgroundColor || this.elementBackgroundColor;
   }
 
   get sectionMarkerBackgroundColor() {

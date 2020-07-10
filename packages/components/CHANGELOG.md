@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/wingscms/wings/compare/@wingscms/components@1.2.1...@wingscms/components@1.2.2) (2020-07-09)
+
+
+### Bug Fixes
+
+* **components:** scrollBarBackgroundColor fix ([d199cf1](https://github.com/wingscms/wings/commit/d199cf142cc188f34b44926c5a83f990d02b9aa7))
+
+
+
+
+
+## [1.2.1](https://github.com/wingscms/wings/compare/@wingscms/components@1.2.0...@wingscms/components@1.2.1) (2020-07-09)
+
+**Note:** Version bump only for package @wingscms/components
+
+
+
+
+
 # [1.2.0](https://github.com/wingscms/wings/compare/@wingscms/components@1.1.5...@wingscms/components@1.2.0) (2020-07-07)
 
 
