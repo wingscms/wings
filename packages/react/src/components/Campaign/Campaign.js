@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Counter, Heading } from '@wingscms/components';
+import { Counter, Heading, Text } from '@wingscms/components';
 import fP from 'filter-invalid-dom-props';
 import styled from '../../lib/styled';
 
@@ -131,13 +131,14 @@ const FormContainerInner = styled.div`
   }
 `;
 
-const Intro = styled.p`
+const Intro = styled(Text)`
+  font-weight: bold;
   font-size: 1.2em;
-  font-family: ${t(_ => _.textFontFamily)};
   @media screen and (max-width: 600px) {
     font-size: 1em;
   }
 `;
+
 const CounterContainer = styled.div`
   background-color: ${t(_ => _.counterBackgroundColor)};
   color: ${t(_ => _.counterTextColor)};
