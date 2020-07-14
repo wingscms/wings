@@ -143,7 +143,7 @@ export default class Theme {
   }
 
   get burgerHoverColor() {
-    return this.variables.burgerColor || this.iconHoverColor;
+    return this.variables.burgerHoverColor || this.iconHoverColor;
   }
 
   get callToActionBackgroundColor() {

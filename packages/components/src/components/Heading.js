@@ -37,6 +37,7 @@ const getStyles = steps => (
 
   const styles = css`
     font-size: ${fontSize(baseFontSize || _.baseFontSize)};
+    color: ${_.headingColor};
     ${getSpacing(
       noSpacing,
       css`
