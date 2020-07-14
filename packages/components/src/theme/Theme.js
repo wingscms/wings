@@ -97,6 +97,22 @@ export default class Theme {
     return mediaQuery(this.tabletBreakpoint, css);
   }
 
+  desktopQuery(css) {
+    return mediaQuery(this.desktopBreakpoint, css);
+  }
+
+  mobileMinQuery(css) {
+    return mediaQuery(this.mobileBreakpoint, css, 'min-width');
+  }
+
+  tabletMinQuery(css) {
+    return mediaQuery(this.tabletBreakpoint, css, 'min-width');
+  }
+
+  desktopMinQuery(css) {
+    return mediaQuery(this.desktopBreakpoint, css, 'min-width');
+  }
+
   get appBarBackgroundColor() {
     return this.variables.appBarBackgroundColor || this.elementBackgroundColor;
   }

@@ -31,6 +31,7 @@ export default {
   // misc
   mobileBreakpoint: BREAKPOINT_SIZE[BREAKPOINT_TYPE.MOBILE],
   tabletBreakpoint: BREAKPOINT_SIZE[BREAKPOINT_TYPE.TABLET],
+  desktopBreakpoint: BREAKPOINT_SIZE[BREAKPOINT_TYPE.DESKTOP],
   contrastLuminanceThreshold: 60,
   linkStyle: 'lineGrow',
   shadow: '0 0 40px 0 rgba(0, 0, 0, 0.05)',
