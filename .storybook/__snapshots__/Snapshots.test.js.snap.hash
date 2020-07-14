@@ -44,11 +44,11 @@ Storyshots components/SocialButtons Default 1: 2ef93ab1050770a16eab6d928d976113
 Storyshots components/Text Default 1: 755472de3af34f447f0e018becc9b595
 Storyshots jsonschema-form/SchemaForm Address Field 1: 1003d9cb1a3aac0c3027aacb69571d32
 Storyshots jsonschema-form/SchemaForm Default 1: 7c39815374f179635f0a48d2b40eb1d3
-Storyshots react/Article Default 1: 220ad752c19dd1162b7e1a91c500fc42
-Storyshots react/Article No Image 1: 444f2ad62c9694e8500ac985213c167f
-Storyshots react/Campaign Event 1: 498c4719a2915c4958801a05af415088
-Storyshots react/Campaign Fundraiser 1: 1e7a0b9f7a20a3ebf245cd5e3b790048
-Storyshots react/Campaign Petition 1: 3969076155bbd981a3ab87466e4881c5
+Storyshots react/Article Default 1: ec7db55b20410a955eb81cc291437eb2
+Storyshots react/Article No Image 1: a91a5fa3566bb21275b5b076fe59aa47
+Storyshots react/Campaign Event 1: ff7fb250a0ad5dc547031060f7f9fbe6
+Storyshots react/Campaign Fundraiser 1: feda82eb8a21466bf42a83cee0a1e7fe
+Storyshots react/Campaign Petition 1: 2966d5ddd801b2179443488c012b2e91
 Storyshots react/CampaignConfirmed Default 1: 07d3fdb99282215860a5f2401143e712
 Storyshots react/CampaignConfirmed Event 1: aa68f2442bd5ed2a1864020a72cbb50f
 Storyshots react/CampaignConfirmed Fundraiser 1: c5b0c145965bdb9fa286fe5173368319
@@ -71,5 +71,5 @@ Storyshots react/Cards/QuoteCard Pull Quote 1: 12a74dd48e4f67f9c5e970fa42bc4ede
 Storyshots react/Cards/TestimonialCard Default 1: c5c3f0dc364368f8b2550e84933be4ec
 Storyshots react/Cards/TextCard Default 1: 30acf82a88c347e87e41f765a9eda086
 Storyshots react/Content Default 1: 3520c90e31d93410bb54e41f98042ddc
-Storyshots react/Content With Cards 1: e26683efd0c267db88b2c80738ab1b4f
-Storyshots react/Page Default 1: 13f4127f0c6a49d7c670ad4331eb49e3
+Storyshots react/Content With Cards 1: 13d599b9c3b2b5d079bb1b151548fce9
+Storyshots react/Page Default 1: da4c79539916a8de7f13b580cac5a958
