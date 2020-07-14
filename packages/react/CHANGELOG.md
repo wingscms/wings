@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/wingscms/wings/compare/@wingscms/react@1.2.3...@wingscms/react@1.3.0) (2020-07-14)
+
+
+### Bug Fixes
+
+* **react:** Campaign introduction text fixes ([#503](https://github.com/wingscms/wings/issues/503)) ([9cd9d64](https://github.com/wingscms/wings/commit/9cd9d64d406f766cdd693165affd760807bc22f7))
+
+
+### Features
+
+* **components/react:** Add new CallToAction options ([#485](https://github.com/wingscms/wings/issues/485)) ([87c6ff4](https://github.com/wingscms/wings/commit/87c6ff4925f9e95e66a4eaccc5d7a0c07c7de1d4))
+
+
+
+
+
 ## [1.2.3](https://github.com/wingscms/wings/compare/@wingscms/react@1.2.2...@wingscms/react@1.2.3) (2020-07-09)
 
 **Note:** Version bump only for package @wingscms/react
