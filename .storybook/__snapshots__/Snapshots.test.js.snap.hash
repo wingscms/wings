@@ -46,11 +46,11 @@ Storyshots components/SocialButtons Default 1: 66cfc31a9bf719690a4c20ba9c519ef4
 Storyshots components/Text Default 1: 8bedf16c5fdbd9f04e9d6588728f3c72
 Storyshots jsonschema-form/SchemaForm Address Field 1: 0830487938dee60bd2bc844fbab38455
 Storyshots jsonschema-form/SchemaForm Default 1: 5a45fdcad4f17b0b17c7fda316d66190
-Storyshots react/Article Default 1: 580dca4d9b239a86b2aed4860d826d61
-Storyshots react/Article No Image 1: dff2ba1d49b6645b8fe35fb7946a703c
-Storyshots react/Campaign Event 1: a764ab6b51bf30a39861a306eae8fc9a
-Storyshots react/Campaign Fundraiser 1: 37e347b5d4603633f5e335b3236a5099
-Storyshots react/Campaign Petition 1: 6320ceef018a959eb997128faad39da6
+Storyshots react/Article Default 1: 19b339ec31e2e0972299a1fedeaf1a89
+Storyshots react/Article No Image 1: c27f020e426f4011fead4b3284a698fe
+Storyshots react/Campaign Event 1: 1f6f5f300b341dd8f0e19c30fdbbb883
+Storyshots react/Campaign Fundraiser 1: a460ee7f8bc1dfd006a31f12153c2aac
+Storyshots react/Campaign Petition 1: 2b97bb5a50265980bb64a69c7fb7f826
 Storyshots react/CampaignConfirmed Default 1: 96195b2028f6cf9c01db166bef2d1696
 Storyshots react/CampaignConfirmed Event 1: 7e3c38900b6f27191c9c3c5be1181fc1
 Storyshots react/CampaignConfirmed Fundraiser 1: d99e9a7c2654ae29cd793d50acd5bf19
@@ -60,14 +60,14 @@ Storyshots react/Cards/CTACard Background Image 1: 49a4debb1441ef5fb49af64cef23d
 Storyshots react/Cards/CTACard Default 1: 8fa3f5acca3512f7c49535e1b825550a
 Storyshots react/Cards/CTACard Horizontal 1: 3aa9bc73a7f47a2316f4b12a17033d5d
 Storyshots react/Cards/CTACard Spacing 1: 326b79cc17521478f46ba57f68b030f0
-Storyshots react/Cards/CampaignCard Default 1: 5ff5025423a66977326f8cc5be1c0a23
+Storyshots react/Cards/CampaignCard Default 1: e3a987db7ed33d8b1a5369e841b09c5a
 Storyshots react/Cards/ChapterCard Default 1: 5c701fc34522031a6c15dd41800629d6
 Storyshots react/Cards/CollectionCard Organisations 1: 76b20f11f80304a49b1bfec4b3b02afd
 Storyshots react/Cards/CollectionCard People 1: 061b662a31f7bade7b45a6a1f8c61bfc
 Storyshots react/Cards/EmbedCard Default 1: 1acf10399d3fba3289d6953eb111ae8e
 Storyshots react/Cards/ImageCard Default 1: f2a9d2db091b74f12724be171fdb8eaa
 Storyshots react/Cards/InsightCard Default 1: 772ed2b7ef06473b8c268111434dfdab
-Storyshots react/Cards/NodesCard Default 1: 16f4e4eb94fcfdf55ca014bebbfacea8
+Storyshots react/Cards/NodesCard Default 1: 3bbee966221b58c98b0e6d504c0cb5c9
 Storyshots react/Cards/QACard With Mobiledoc 1: e954493b4f44cb7a549df1061321a33e
 Storyshots react/Cards/QACard With Strings 1: 9ee38369cdf307e3272cb576feff56a2
 Storyshots react/Cards/QuoteCard Block Quote 1: 1b967bd239a1ee64e7b375bfa90db466
@@ -75,5 +75,5 @@ Storyshots react/Cards/QuoteCard Pull Quote 1: de79c9f1210b2f0ce4abb7c7bd58d40a
 Storyshots react/Cards/TestimonialCard Default 1: b946194efb658c22eb7eaec4938ffaf5
 Storyshots react/Cards/TextCard Default 1: 4972abf185febedf2cee9cfdac6bfb30
 Storyshots react/Content Default 1: 755570c2fc4d25be39c2b2f81dbf692a
-Storyshots react/Content With Cards 1: f1d0cfa0e51482e1d9c992724187149a
-Storyshots react/Page Default 1: 9df374cc524fcf7c1fc57594c2038c1a
+Storyshots react/Content With Cards 1: 3c003428e0bdc0a54996c78133c206a1
+Storyshots react/Page Default 1: 1f40f28153f4197a286991fd2fd6f848
