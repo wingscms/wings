@@ -80,27 +80,4 @@ export default styled(MobiledocRenderer)`
       margin-top: ${({ mini, theme }) => (mini ? '0' : theme.mediumSpacing)};
     }
   }
-  &.drop-cap > div > p:first-child {
-    &::first-letter {
-      font-weight: ${({ theme }) => theme.firstLetterFontWeight}!important;
-      color: ${({ theme }) => theme.primaryColor};
-      float: left;
-      line-height: ${({ theme }) => theme.firstLetterLineHeight};
-      margin: 0.075em 0.1em -0.1em 0;
-      font-size: ${({ theme }) => theme.dropcapFontSize};
-      font-family: ${({ theme }) => theme.headingFont};
-    }
-  }
-  &.drop-cap > div > div.headerContainer + p {
-    position: relative;
-    &::first-letter {
-      font-weight: ${({ theme }) => theme.firstLetterFontWeight}!important;
-      color: ${({ theme }) => theme.primaryColor};
-      float: left;
-      line-height: ${({ theme }) => theme.firstLetterLineHeight};
-      margin: 0.075em 0.1em -0.2em 0;
-      font-size: ${({ theme }) => theme.dropcapFontSize};
-      font-family: ${({ theme }) => theme.headingFont};
-    }
-  }
 `;

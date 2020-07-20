@@ -10,6 +10,8 @@ const props = () => ({
   baseTabletFontSize: text('baseTabletFontSize', defaultTheme.baseTabletFontSize),
   baseMobileFontSize: text('baseMobileFontSize', defaultTheme.baseMobileFontSize),
   noSpacing: boolean('noSpacing', false),
+  dropCap: boolean('dropCap', false),
+  dropCapSize: text('dropCapSize', '4em'),
 });
 
 export default () => <Text {...props()}>{faker.lorem.paragraphs(10)}</Text>;
