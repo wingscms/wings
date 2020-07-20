@@ -15,6 +15,8 @@ function CallToActionView({
   backgroundImage,
   buttonText,
   buttonUrl,
+  type,
+  spacing,
   text,
   title,
   actionText,
@@ -28,6 +30,8 @@ function CallToActionView({
         backgroundImage={backgroundImage}
         buttonText={buttonText || actionText}
         buttonUrl={buttonUrl || actionUrl}
+        type={type}
+        spacing={spacing}
         title={title}
         text={text}
         reveal

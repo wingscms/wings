@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/wingscms/wings/compare/@wingscms/components@1.2.2...@wingscms/components@1.3.0) (2020-07-14)
+
+
+### Bug Fixes
+
+* **components:** theme burgerHoverColor getter ([8e63051](https://github.com/wingscms/wings/commit/8e63051511ac3af1b35922719d6f5031a88a8efc))
+* **components:** use headingColor theme option in Heading component ([#506](https://github.com/wingscms/wings/issues/506)) ([dfe7974](https://github.com/wingscms/wings/commit/dfe79745bb0757af1c9e9b3b82a8b6ccef04d2e6))
+
+
+### Features
+
+* **components/react:** Add new CallToAction options ([#485](https://github.com/wingscms/wings/issues/485)) ([87c6ff4](https://github.com/wingscms/wings/commit/87c6ff4925f9e95e66a4eaccc5d7a0c07c7de1d4))
+
+
+
+
+
 ## [1.2.2](https://github.com/wingscms/wings/compare/@wingscms/components@1.2.1...@wingscms/components@1.2.2) (2020-07-09)
 
 
