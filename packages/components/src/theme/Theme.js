@@ -243,6 +243,14 @@ export default class Theme {
     );
   }
 
+  get landingSectionArrowColor() {
+    return this.variables.landingSectionArrowColor || this.landingSectionTitleColor;
+  }
+
+  get landingSectionGradientColor() {
+    return this.variables.landingSectionGradientColor || this.landingSectionGradientColor;
+  }
+
   get landingSectionBackgroundColor() {
     return this.variables.landingSectionBackgroundColor || this.primaryColor;
   }
