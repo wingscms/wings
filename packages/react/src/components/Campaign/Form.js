@@ -5,7 +5,7 @@ import SchemaForm from '@wingscms/jsonschema-form';
 import deepmerge from 'deepmerge';
 
 import styled from '../../lib/styled';
-import { t } from '../../theme';
+import { useTheme } from '../../theme';
 
 import { withWings } from '../../ctx/Wings';
 import { withIntl } from '../../ctx/Intl';
@@ -202,23 +202,25 @@ const FUNDRAISER_MUTATION = `
     }
   }
 `;
-const Button = styled(_Button)`
-  background-color: #000;
-  color: #fff;
-  margin-top: 40px;
-  width: auto;
 
-  &:after {
-    display: none;
-  }
-  &:hover {
-    text-decoration: none;
-    color: ${t(_ => _.primaryColor)};
-  }
-  @media screen and (max-width: 800px) {
-    font-size: 22px;
-  }
+const StyledButton = styled(_Button)`
+  margin-top: 40px;
 `;
+
+const Button = props => {
+  const _ = useTheme();
+  return (
+    <StyledButton
+      backgroundColor={_.campaignFormButtonBackgroundColor}
+      backgroundHoverColor={_.campaignFormButtonBackgroundHoverColor}
+      borderColor={_.campaignFormButtonBorderColor || _.campaignFormButtonBackgroundColor}
+      borderHoverColor={
+        _.campaignFormButtonBorderHoverColor || _.campaignFormButtonBackgroundHoverColor
+      }
+      {...props}
+    />
+  );
+};
 
 const PaymentMethodIcon = styled.img`
   display: inline;
@@ -669,7 +671,7 @@ class CampaignForm extends Component {
           >
             {this.props.type === 'fundraiser' ? this.renderPaymentMethodSelect() : null}
             {this.props.children || (
-              <Button loading={submitLoading} intent="primary">
+              <Button intent="secondary" loading={submitLoading}>
                 {this.getSubmitText()}
               </Button>
             )}
@@ -685,7 +687,7 @@ class CampaignForm extends Component {
           <div>
             <h1>{campaignErrorTitle}</h1>
             <p>{campaignErrorText}</p>
-            <Button onClick={() => this.setState({ stage: 'form' })}>
+            <Button intent="secondary" onClick={() => this.setState({ stage: 'form' })}>
               {campaignErrorButtonText}
             </Button>
           </div>
