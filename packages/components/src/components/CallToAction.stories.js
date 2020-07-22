@@ -1,7 +1,7 @@
 import React from 'react';
 import faker from 'faker';
-import { boolean, select, text } from '@storybook/addon-knobs/react';
-import { CallToAction } from '@wingscms/components';
+import { boolean, select, text, color } from '@storybook/addon-knobs/react';
+import { CallToAction, Button } from '@wingscms/components';
 import { paddingWrap, image } from '../../../../utils';
 
 const props = ({
@@ -16,6 +16,11 @@ const props = ({
   backgroundImage: text('backgroundImage', backgroundImage),
   buttonText: text('buttonText', 'Sign up now'),
   buttonUrl: text('buttonUrl', 'http://example.com'),
+  buttonType: select('buttonType', Button.Type),
+  buttonBackgroundColor: color('buttonBackgroundColor'),
+  buttonBackgroundHoverColor: color('buttonBackgroundHoverColor'),
+  buttonBorderColor: color('buttonBorderColor'),
+  buttonBorderHoverColor: color('buttonBorderHoverColor'),
   reveal: boolean('reveal', true),
   text: text('text', faker.lorem.paragraph()),
   title: text('title', 'Sign Up Now'),
