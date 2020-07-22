@@ -78,6 +78,10 @@ export default class Theme {
     }
   }
 
+  darken(color, amount = 0.2) {
+    return Color.fromValue(color).darken(amount);
+  }
+
   calc(str, cb) {
     const [val, unit] = this.separateUnit(str);
     return [cb(val), unit].join('');

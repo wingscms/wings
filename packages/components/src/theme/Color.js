@@ -19,6 +19,10 @@ export default class Color {
     return color(this.value);
   }
 
+  darken(amount) {
+    return this.toColor().darken(amount);
+  }
+
   toString() {
     return this.toColor().hex();
   }

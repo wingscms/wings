@@ -24,6 +24,7 @@ const Size = {
 
 const Type = {
   NORMAL: 'normal',
+  OPACITY: 'opacity',
   OUTLINE: 'outline',
 };
 
@@ -32,17 +33,51 @@ const LOADING_SIZE = {
   [Size.MEDIUM]: Loading.Size.SMALL,
 };
 
-const getType = ({ color, buttonType }) => {
+const getType = (_, { color, hoverColor, borderColor, borderHoverColor, buttonType }) => {
   switch (buttonType) {
     case Type.OUTLINE:
       return css`
+        padding: 12px 36px;
         border: 2px solid ${color};
         background-color: transparent;
         color: ${color};
-        padding: 12px 36px;
+        &:hover,
+        &:active {
+          border: 2px solid ${hoverColor};
+          color: ${hoverColor};
+          background-image: none;
+          text-decoration: none;
+        }
+      `;
+    case Type.OPACITY:
+      return css`
+        border: ${borderColor ? `2px solid ${borderColor}` : 'none'};
+        background-color: ${color};
+        color: ${_.contrastColor({ backgroundColor: color })};
+        &:hover,
+        &:active {
+          opacity: 0.9;
+          background-image: none;
+          text-decoration: none;
+        }
+        &:active {
+          transform: translateY(1px);
+        }
       `;
     default:
-      return '';
+      return css`
+        border: ${borderColor ? `2px solid ${borderColor}` : 'none'};
+        background-color: ${color};
+        color: ${_.contrastColor({ backgroundColor: color })};
+        &:hover,
+        &:active {
+          border: ${borderColor ? `2px solid ${borderHoverColor}` : 'none'};
+          background-color: ${hoverColor};
+          color: ${_.contrastColor({ backgroundColor: hoverColor })};
+          background-image: none;
+          text-decoration: none;
+        }
+      `;
   }
 };
 
@@ -71,54 +106,72 @@ const LoadingWrapper = styled.div`
 `;
 
 const Root = styled.button`
-  ${t((theme, { intent, size, buttonType, disabled }) => {
-    const color = theme.intentColor(intent);
-    const buttonTypeCSS = getType({ color, buttonType });
-    const sizeCSS = getSize({ size });
+  ${t(
+    (
+      _,
+      {
+        intent,
+        size,
+        buttonType,
+        backgroundColor,
+        backgroundHoverColor,
+        borderColor,
+        borderHoverColor,
+        disabled,
+      },
+    ) => {
+      const color = backgroundColor || _.intentColor(intent);
+      const hoverColor = backgroundHoverColor || _.darken(_.intentColor(intent));
+      const buttonTypeCSS = getType(_, {
+        color,
+        hoverColor,
+        borderColor,
+        borderHoverColor,
+        buttonType,
+      });
+      const sizeCSS = getSize({ size });
 
-    return css`
-      background-color: ${color};
-      color: ${theme.contrastColor({ backgroundColor: color })};
-      text-decoration: none;
-      background-image: none;
-      ${LoadingWrapper} {
+      return css`
         background-color: ${color};
-      }
-      font-size: 1em;
-      padding: 16px 40px;
-      border: 0;
-      cursor: pointer;
-      position: relative;
-      transition: all 0.15s ease-in-out;
-      font-family: ${theme.headerFontFamily};
-      font-weight: bold;
-      border-radius: 4px;
-      text-transform: ${theme.titleTransform};
-      &:hover,
-      &:active {
-        opacity: 0.8;
-        background-image: none;
+        color: ${_.contrastColor({ backgroundColor: color })};
         text-decoration: none;
-      }
-      &:active {
-        transform: translateY(1px);
-      }
-      ${buttonTypeCSS}
-      ${sizeCSS}
-      ${
-        !disabled
-          ? null
-          : css`
-              background-color: ${theme.disabledColor};
-              color: ${theme.contrastColor({ backgroundColor: theme.disabledColor })};
-              cursor: not-allowed;
-              ${LoadingWrapper} {
-                background-color: ${theme.disabledColor};
-              }
-            `
-      }
-    `;
-  })}
+        background-image: none;
+        ${LoadingWrapper} {
+          background-color: ${color};
+        }
+        font-size: 1em;
+        padding: ${borderColor ? '12px 36px' : '16px 40px'};
+        border: 0;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.15s ease-in-out;
+        font-family: ${_.headerFontFamily};
+        font-weight: bold;
+        border-radius: 4px;
+        text-transform: ${_.titleTransform};
+        ${buttonTypeCSS}
+        ${sizeCSS}
+        ${
+          !disabled
+            ? null
+            : css`
+                background-color: ${_.disabledColor};
+                border-color: ${_.disabledColor};
+                color: ${_.contrastColor({ backgroundColor: _.disabledColor })};
+                cursor: not-allowed;
+                ${LoadingWrapper} {
+                  background-color: ${_.disabledColor};
+                }
+                &:hover,
+                &:active {
+                  border-color: ${_.disabledColor};
+                  background-color: ${_.disabledColor};
+                }
+              `
+        }
+      `;
+    },
+  )}
 `;
 
 export default function Button({
@@ -128,12 +181,26 @@ export default function Button({
   children,
   intent,
   buttonType,
+  backgroundColor,
+  backgroundHoverColor,
+  borderColor,
+  borderHoverColor,
   size = Size.MEDIUM,
   ...props
 }) {
   const disabled = loading || disabledProp;
   return (
-    <Root disabled={disabled} intent={intent} size={size} buttonType={buttonType} {...fP(props)}>
+    <Root
+      disabled={disabled}
+      intent={intent}
+      size={size}
+      buttonType={buttonType}
+      backgroundColor={backgroundColor}
+      backgroundHoverColor={backgroundHoverColor}
+      borderColor={borderColor}
+      borderHoverColor={borderHoverColor}
+      {...fP(props)}
+    >
       {!loading ? null : (
         <LoadingWrapper>
           <Loading intent={intent} size={LOADING_SIZE[size]} />
