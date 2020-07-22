@@ -14,22 +14,46 @@ const Container = styled.div`
   }
 `;
 
-function QACardView({ content, title, ...props }) {
+function QACardView({
+  content,
+  title,
+  backgroundColor,
+  backgroundHoverColor,
+  intent = Accordion.Item.Intent.PRIMARY,
+  ...props
+}) {
   return (
     <Container {...filterInvalidDOMProps(props)}>
       {title ? <Heading rank={3}>{title}</Heading> : null}
       <Accordion>
-        {content.map(({ question, answer }, idx) => {
-          return (
-            <Accordion.Item
-              key={idx}
-              intent={Accordion.Item.Intent.PRIMARY}
-              label={isJSON(question) ? <Content content={question} mini /> : question} // <Content /> for backwards compatability
-            >
-              {isJSON(answer) ? <Content content={answer} mini /> : <Text noSpacing>{answer}</Text>}
-            </Accordion.Item>
-          );
-        })}
+        {content.map(
+          (
+            {
+              question,
+              answer,
+              intent: itemIntent,
+              backgroundColor: itemBackgroundColor,
+              backgroundHoverColor: itemBackgroundHoverColor,
+            },
+            idx,
+          ) => {
+            return (
+              <Accordion.Item
+                key={idx}
+                intent={itemIntent || intent}
+                backgroundColor={backgroundColor || itemBackgroundColor}
+                backgroundHoverColor={backgroundHoverColor || itemBackgroundHoverColor}
+                label={isJSON(question) ? <Content content={question} mini /> : question} // <Content /> for backwards compatability
+              >
+                {isJSON(answer) ? (
+                  <Content content={answer} mini />
+                ) : (
+                  <Text noSpacing>{answer}</Text>
+                )}
+              </Accordion.Item>
+            );
+          },
+        )}
       </Accordion>
     </Container>
   );
