@@ -37,7 +37,7 @@ const getType = (_, { color, hoverColor, borderColor, borderHoverColor, buttonTy
   switch (buttonType) {
     case Type.OUTLINE:
       return css`
-        padding: 12px 36px;
+        padding: 14px 38px;
         border: 2px solid ${color};
         background-color: transparent;
         color: ${color};
@@ -140,7 +140,7 @@ const Root = styled.button`
           background-color: ${color};
         }
         font-size: 1em;
-        padding: ${borderColor ? '12px 36px' : '16px 40px'};
+        padding: ${borderColor ? '14px 38px' : '16px 40px'};
         border: 0;
         cursor: pointer;
         position: relative;
