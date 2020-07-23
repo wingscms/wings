@@ -64,8 +64,9 @@ export default function Collapse({
     if (typeof open === 'boolean') return open;
     return _open;
   };
-  const color = backgroundColor || _.intentColor(intent);
-  const hoverColor = backgroundHoverColor || _.darken(_.intentColor(intent));
+  const color = backgroundColor || _.collapseBackgroundColor || _.intentColor(intent);
+  const hoverColor =
+    backgroundHoverColor || _.collapseBackgroundHoverColor || _.darken(_.intentColor(intent));
   return (
     <Container {...fP(props)}>
       <Label onClick={onClick || _onClick} intent={intent} color={color} hoverColor={hoverColor}>
