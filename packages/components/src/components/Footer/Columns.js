@@ -56,7 +56,7 @@ const Title = styled(Heading)`
 
 const wrapRow = fn => (row, idx) => (
   <React.Fragment key={idx}>
-    {row.title ? <Title rank={3}>{row.title}</Title> : null}
+    {row.title ? <Title rank={4}>{row.title}</Title> : null}
     {fn(row)}
   </React.Fragment>
 );
