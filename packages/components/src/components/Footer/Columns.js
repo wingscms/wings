@@ -3,6 +3,7 @@ import styled from '../../lib/styled';
 import { t } from '../../theme';
 import Button from '../Button';
 import Heading from '../Heading';
+import Text from '../Text';
 import SocialButtons from '../SocialButtons';
 
 const Column = styled.div`
@@ -44,10 +45,6 @@ const Link = styled.a`
   }
 `;
 
-const Text = styled.p`
-  margin: 0;
-`;
-
 const Title = styled(Heading)`
   color: ${t(_ => _.footerHeadingColor)};
   margin-top: ${t(_ => _.smallSpacing)};
@@ -87,7 +84,7 @@ export default ({ columns }) => {
             switch (row.type) {
               case 'text':
                 return (
-                  <Text>
+                  <Text noSpacing>
                     {row.content
                       .trim()
                       .split('\n')
