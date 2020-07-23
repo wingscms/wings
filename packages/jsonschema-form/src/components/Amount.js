@@ -25,7 +25,8 @@ const NumberInputSymbol = styled.div`
 `;
 
 const NumberInput = styled(_NumberInput)`
-  padding-left: 28px;
+  font-size: inherit;
+  padding: 8px 10px 8px 28px;
 `;
 
 const AmountButton = styled.div`
