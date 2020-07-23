@@ -49,6 +49,7 @@ const Text = styled.p`
 `;
 
 const Title = styled(Heading)`
+  color: ${t(_ => _.footerHeadingColor)};
   margin-top: ${t(_ => _.smallSpacing)};
   margin-bottom: ${t(_ => _.smallSpacing)};
   &:first-child {
