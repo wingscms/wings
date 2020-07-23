@@ -77,7 +77,7 @@ export default ({ columns }) => {
   if (!columns) return null;
   return columns.map((column, idx) => (
     <Column key={`footer-column-${idx}`}>
-      {column.title && <Title rank={2}>{column.title}</Title>}
+      {column.title && <Title rank={3}>{column.title}</Title>}
       {Array.isArray(column.rows) &&
         column.rows.map(
           wrapRow(row => {
