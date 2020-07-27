@@ -3,47 +3,103 @@ import fP from 'filter-invalid-dom-props';
 import Header from './Header';
 import Portal from '../Portal';
 import Overlay from '../Overlay';
-import styled from '../../lib/styled';
+import styled, { css } from '../../lib/styled';
 import { t } from '../../theme';
 
 const Size = {
   SMALL: 'small',
   MEDIUM: 'medium',
   LARGE: 'large',
-};
-
-const VerticalAlign = {
-  Top: 'top',
-  Center: 'center',
-  Middle: 'center',
-  Bottom: 'bottom',
+  FULL_WIDTH: 'full_width',
 };
 
 const HorizontalAlign = {
-  Left: 'left',
-  Center: 'center',
-  Middle: 'center',
-  Right: 'right',
+  LEFT: 'left',
+  CENTER: 'center',
+  RIGHT: 'right',
+};
+
+const VerticalAlign = {
+  TOP: 'top',
+  CENTER: 'center',
+  BOTTOM: 'bottom',
+};
+
+const getSize = (_, { size }) => {
+  switch (size) {
+    case Size.SMALL:
+      return css`
+        width: 100%;
+        max-width: 300px;
+      `;
+    case Size.LARGE:
+      return css`
+        width: 100%;
+        max-width: 800px;
+      `;
+    case Size.FULL_WIDTH:
+      return css`
+        width: 100%;
+      `;
+    default:
+      return css`
+        width: 100%;
+        max-width: 600px;
+      `;
+  }
+};
+
+const getHorizontalAlign = (_, { horizontalAlign }) => {
+  switch (horizontalAlign) {
+    case HorizontalAlign.LEFT:
+      return css`
+        justify-content: flex-start;
+      `;
+    case HorizontalAlign.RIGHT:
+      return css`
+        justify-content: flex-end;
+      `;
+    default:
+      return css`
+        justify-content: center;
+      `;
+  }
+};
+
+const getVerticalAlign = (_, { verticalAlign }) => {
+  switch (verticalAlign) {
+    case VerticalAlign.TOP:
+      return css`
+        align-items: flex-start;
+      `;
+    case VerticalAlign.BOTTOM:
+      return css`
+        align-items: flex-end;
+      `;
+    default:
+      return css`
+        align-items: center;
+      `;
+  }
 };
 
 const Wrapper = styled.div`
   width: 100vw;
-  height: 100vh;
-  position: fixed;
+  min-height: 100vh;
+  padding: ${t(_ => _.smallSpacing)};
+  position: absolute;
   top: 0;
   left: 0;
   overflow-y: auto;
+  display: flex;
+  ${t(getVerticalAlign)}
+  ${t(getHorizontalAlign)}
 `;
 
 const ModalContainer = styled.div`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  width: 50%;
-  height: 50%;
   background-color: ${t(_ => _.modalBackgroundColor)};
   box-shadow: ${t(_ => _.shadow)};
+  ${t(getSize)}
 `;
 
 export default function Modal({
@@ -52,6 +108,9 @@ export default function Modal({
   onClose = () => {},
   overlayProps = {},
   overlay,
+  size = Size.MEDIUM,
+  horizontalAlign = HorizontalAlign.CENTER,
+  verticalAlign = VerticalAlign.CENTER,
   ...props
 }) {
   const modalContainerRef = useRef(null);
@@ -69,8 +128,8 @@ export default function Modal({
     <>
       {overlay ? <Overlay {...overlayProps} /> : null}
       <Portal>
-        <Wrapper>
-          <ModalContainer ref={modalContainerRef} {...fP(props)}>
+        <Wrapper horizontalAlign={horizontalAlign} verticalAlign={verticalAlign}>
+          <ModalContainer ref={modalContainerRef} size={size} {...fP(props)}>
             {children}
           </ModalContainer>
         </Wrapper>
@@ -81,6 +140,6 @@ export default function Modal({
 
 Modal.Size = Size;
 Modal.VerticalAlign = VerticalAlign;
-Modal.HoritzontalAlign = HorizontalAlign;
+Modal.HorizontalAlign = HorizontalAlign;
 
 Modal.Header = Header;
