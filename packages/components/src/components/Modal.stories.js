@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import faker from 'faker';
 import { boolean } from '@storybook/addon-knobs/react';
-import { Modal } from '@wingscms/components';
+import { Button, Modal } from '@wingscms/components';
 import { paddingWrap } from '../../../../utils';
 
-export default () => (
-  <div>
-    {faker.lorem.paragraphs(8)}
-    {boolean('open') ? <Modal /> : null}
-  </div>
-);
+export default () => {
+  const [open, setOpen] = useState(false);
+  const overlay = boolean('overlay', true);
+  const clickOutsideToClose = boolean('clickOutsideToClose', true);
+  return (
+    <div>
+      <Button intent={Button.Intent.PRIMARY} onClick={() => setOpen(true)}>
+        Open Model
+      </Button>
+      <br />
+      {faker.lorem.paragraphs(8)}
+      {open ? (
+        <Modal
+          clickOutsideToClose={clickOutsideToClose}
+          overlay={overlay}
+          open={open}
+          onClose={() => setOpen(false)}
+        />
+      ) : null}
+    </div>
+  );
+};
 
 export const wrapStory = paddingWrap;
