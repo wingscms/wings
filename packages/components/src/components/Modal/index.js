@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import fP from 'filter-invalid-dom-props';
-import Portal from './Portal';
-import Overlay from './Overlay';
-import styled from '../lib/styled';
+import Header from './Header';
+import Portal from '../Portal';
+import Overlay from '../Overlay';
+import styled from '../../lib/styled';
+import { t } from '../../theme';
 
 const Size = {
   SMALL: 'small',
@@ -38,12 +40,14 @@ const ModalContainer = styled.div`
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
-  width: 20%;
-  height: 20%;
-  background-color: #fff;
+  width: 50%;
+  height: 50%;
+  background-color: ${t(_ => _.modalBackgroundColor)};
+  box-shadow: ${t(_ => _.shadow)};
 `;
 
 export default function Modal({
+  children,
   clickOutsideToClose = true,
   onClose = () => {},
   overlayProps = {},
@@ -51,19 +55,24 @@ export default function Modal({
   ...props
 }) {
   const modalContainerRef = useRef(null);
+
   const closeOnOutsideClick = e => !modalContainerRef.current.contains(e.target) && onClose();
+
   useEffect(() => {
     if (clickOutsideToClose && typeof window !== 'undefined') {
       window.addEventListener('click', closeOnOutsideClick);
       return () => window.removeEventListener('click', closeOnOutsideClick);
     }
   }, []);
+
   return (
     <>
       {overlay ? <Overlay {...overlayProps} /> : null}
       <Portal>
         <Wrapper>
-          <ModalContainer ref={modalContainerRef} {...fP(props)}></ModalContainer>
+          <ModalContainer ref={modalContainerRef} {...fP(props)}>
+            {children}
+          </ModalContainer>
         </Wrapper>
       </Portal>
     </>
@@ -73,3 +82,5 @@ export default function Modal({
 Modal.Size = Size;
 Modal.VerticalAlign = VerticalAlign;
 Modal.HoritzontalAlign = HorizontalAlign;
+
+Modal.Header = Header;

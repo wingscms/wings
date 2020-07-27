@@ -275,6 +275,10 @@ export default class Theme {
     return this.variables.listTextColor || this.textColor;
   }
 
+  get modalBackgroundColor() {
+    return this.variables.modalBackgroundColor || this.elementBackgroundColor;
+  }
+
   get navigationIconColor() {
     return this.variables.navigationIconColor || this.iconColor;
   }

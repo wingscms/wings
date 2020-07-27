@@ -21,7 +21,9 @@ export default () => {
           overlay={overlay}
           open={open}
           onClose={() => setOpen(false)}
-        />
+        >
+          <Modal.Header title="This is a modal" onClose={() => setOpen(false)} />
+        </Modal>
       ) : null}
     </div>
   );
