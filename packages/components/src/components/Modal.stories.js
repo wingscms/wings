@@ -20,8 +20,6 @@ export default () => {
       <Button intent={Button.Intent.PRIMARY} onClick={() => setOpen(true)}>
         Open Model
       </Button>
-      <br />
-      {faker.lorem.paragraphs(8)}
       {open ? (
         <Modal
           clickOutsideToClose={clickOutsideToClose}
