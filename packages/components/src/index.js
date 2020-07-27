@@ -18,6 +18,7 @@ export { default as Link } from './components/Link';
 export { default as List } from './components/List';
 export { default as Loading } from './components/Loading';
 export { default as Modal } from './components/Modal';
+export { default as Overlay } from './components/Overlay';
 export { default as PaginationControls } from './components/PaginationControls';
 export { default as Portal } from './components/Portal';
 export { default as ProgressBar } from './components/ProgressBar';
