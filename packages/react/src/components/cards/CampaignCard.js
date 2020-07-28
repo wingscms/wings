@@ -69,6 +69,7 @@ export const CampaignCardView = ({ id, resourceType, ...props }) => {
   return (
     <Campaign
       id={id}
+      headingRank={3}
       resourceType={resourceType}
       {...props}
       wrapElement={(element, campaign) => {
