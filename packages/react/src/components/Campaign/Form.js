@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Loading, Button as _Button } from '@wingscms/components';
+import {
+  Loading,
+  Button as _Button,
+  Text as _Text,
+  Heading as _Heading,
+} from '@wingscms/components';
 import SchemaForm from '@wingscms/jsonschema-form';
 import deepmerge from 'deepmerge';
 
@@ -9,6 +14,14 @@ import { t } from '../../theme';
 
 import { withWings } from '../../ctx/Wings';
 import { withIntl } from '../../ctx/Intl';
+
+const Heading = styled(_Heading)`
+  color: ${t(_ => _.campaignFormTextColor)};
+`;
+
+const Text = styled(_Text)`
+  color: ${t(_ => _.campaignFormTextColor)};
+`;
 
 const patchSchema = (schema, fieldDefinitions) =>
   deepmerge(schema, { properties: fieldDefinitions });
@@ -677,14 +690,14 @@ class CampaignForm extends Component {
         )}
         {!(stage === 'confirm') ? null : (
           <div ref={this.confirmedContainerRef}>
-            <h1>{campaignConfirmTitle}</h1>
-            <p>{campaignConfirmText}</p>
+            <Heading rank={2}>{campaignConfirmTitle}</Heading>
+            <Text>{campaignConfirmText}</Text>
           </div>
         )}
         {!(stage === 'error') ? null : (
           <div>
-            <h1>{campaignErrorTitle}</h1>
-            <p>{campaignErrorText}</p>
+            <Heading rank={2}>{campaignErrorTitle}</Heading>
+            <Text>{campaignErrorText}</Text>
             <Button onClick={() => this.setState({ stage: 'form' })}>
               {campaignErrorButtonText}
             </Button>
