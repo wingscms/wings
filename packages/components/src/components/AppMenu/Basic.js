@@ -10,11 +10,27 @@ import Portal from '../Portal';
 import { t, useTheme } from '../../theme';
 import styled from '../../lib/styled';
 
-const BarLayout = styled.div`
+const LayoutContainer = styled.div`
   display: block;
   position: relative;
   height: ${t(_ => _.largeSpacing)};
   width: 100%;
+`;
+
+const BarLayoutContainer = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  padding: 0 ${t(_ => _.smallSpacing)};
+  margin: 0 auto;
+  display: flex;
+`;
+
+const Logo = styled.img`
+  cursor: pointer;
+  height: calc(100% - ${t(_ => _.smallSpacing)});
+  margin-top: ${t(_ => _.extraSmallSpacing)};
 `;
 
 const AppBar = styled(_AppBar)`
@@ -35,9 +51,28 @@ const MenuItem = styled.div`
   margin-bottom: 1.3em;
 `;
 
-export default function Menu({ items = [] }) {
-  const [open, setOpen] = useState(false);
+const wrapLink = LinkWrap => Link => {
+  if (LinkWrap) {
+    return ({ href, children, ...props }) => (
+      <LinkWrap href={href} {...props}>
+        <Link>{children}</Link>
+      </LinkWrap>
+    );
+  }
+  return ({ href, children, ...props }) => (
+    <Link href={href} {...props}>
+      {children}
+    </Link>
+  );
+};
+
+export default function Menu({ items = [], linkWrap, logoImageUrl }) {
   const _ = useTheme();
+  const [open, setOpen] = useState(false);
+
+  const MenuLink = wrapLink(linkWrap)(Link);
+  const LogoLink = wrapLink(linkWrap)(({ children, ...props }) => <a {...props}>{children}</a>);
+
   const burgerProps = {
     eaten: open,
     height: _.burgerHeight,
@@ -46,26 +81,38 @@ export default function Menu({ items = [] }) {
     barBorderRadius: _.burgerBarBorderRadius,
     onClick: () => setOpen(!open),
   };
+
   return (
     <>
       <AppBar position={AppBar.Position.TOP}>
-        {!items.length ? null : (
-          <Burger {...burgerProps} color={_.burgerMenuColor} hoverColor={_.burgerMenuHoverColor} />
-        )}
+        <LayoutContainer>
+          <BarLayoutContainer>
+            <LogoLink href="/">
+              <Logo src={logoImageUrl || _.logoImageUrl} />
+            </LogoLink>
+          </BarLayoutContainer>
+          {!items.length ? null : (
+            <Burger
+              {...burgerProps}
+              color={_.burgerMenuColor}
+              hoverColor={_.burgerMenuHoverColor}
+            />
+          )}
+        </LayoutContainer>
       </AppBar>
       {!items.length ? null : (
         <Portal>
           <Drawer open={open}>
-            <BarLayout>
+            <LayoutContainer>
               <Burger
                 {...burgerProps}
                 color={_.burgerMenuOpenColor}
                 hoverColor={_.burgerMenuOpenHoverColor}
               />
-            </BarLayout>
+            </LayoutContainer>
             {items.map(item => (
               <MenuItem>
-                <Link>{item.text}</Link>
+                <MenuLink href={item.url}>{item.text}</MenuLink>
               </MenuItem>
             ))}
           </Drawer>
