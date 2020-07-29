@@ -251,10 +251,6 @@ export default class Theme {
     return this.variables.landingSectionArrowColor || this.landingSectionTitleColor;
   }
 
-  get landingSectionGradientColor() {
-    return this.variables.landingSectionGradientColor || this.landingSectionGradientColor;
-  }
-
   get landingSectionBackgroundColor() {
     return this.variables.landingSectionBackgroundColor || this.primaryColor;
   }
