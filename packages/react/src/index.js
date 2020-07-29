@@ -1,3 +1,4 @@
+export { default as AppMenu } from './components/AppMenu';
 export { default as Article } from './components/Article';
 export { default as Campaign } from './components/Campaign/Campaign';
 export { default as CampaignConfirmed } from './components/CampaignConfirmed';
