@@ -6,6 +6,7 @@ import Drawer from '../Drawer';
 import Heading from '../Heading';
 import Link from '../Link';
 import Portal from '../Portal';
+import _SocialButtons from '../SocialButtons';
 
 import { t, useTheme } from '../../theme';
 import styled from '../../lib/styled';
@@ -21,16 +22,43 @@ const BarLayoutContainer = styled.div`
   position: relative;
   width: 100%;
   max-width: 1200px;
-  height: 100%;
+  height: ${t(_ => _.largeSpacing)};
   padding: 0 ${t(_ => _.smallSpacing)};
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
+const BarLayoutRight = styled.div`
+  height: 100%;
+  margin: 0 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 `;
 
 const Logo = styled.img`
   cursor: pointer;
-  height: calc(100% - ${t(_ => _.smallSpacing)});
-  margin-top: ${t(_ => _.extraSmallSpacing)};
+  height: calc(${t(_ => _.largeSpacing)} - 20px);
+  display: block;
+  margin-right: auto;
+  padding: 0;
+  vertical-align: top;
+  justify-self: flex-start;
+`;
+
+const SocialButtons = styled(_SocialButtons)`
+  @media screen and (max-width: 1300px) {
+    margin-right: ${({ primaryItem }) => (primaryItem ? '0' : '50px')};
+  }
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
 `;
 
 const AppBar = styled(_AppBar)`
@@ -66,7 +94,7 @@ const wrapLink = LinkWrap => Link => {
   );
 };
 
-export default function Menu({ items = [], linkWrap, logoImageUrl }) {
+export default function Menu({ items = [], linkWrap, logoImageUrl, socialButtons }) {
   const _ = useTheme();
   const [open, setOpen] = useState(false);
 
@@ -87,9 +115,28 @@ export default function Menu({ items = [], linkWrap, logoImageUrl }) {
       <AppBar position={AppBar.Position.TOP}>
         <LayoutContainer>
           <BarLayoutContainer>
-            <LogoLink href="/">
-              <Logo src={logoImageUrl || _.logoImageUrl} />
-            </LogoLink>
+            {logoImageUrl || _.logoImageUrl ? (
+              <LogoLink href="/">
+                <Logo src={logoImageUrl || _.logoImageUrl} />
+              </LogoLink>
+            ) : null}
+            <BarLayoutRight>
+              <SocialButtons>
+                {socialButtons.map(({ platform, url }, i) => (
+                  <SocialButtons.Button
+                    key={i}
+                    icon={platform}
+                    backgroundColor={_.shareButtonMenuBackgroundColor}
+                    backgroundHoverColor={_.shareButtonMenuBackgroundHoverColor}
+                    iconColor={_.shareButtonMenuIconColor}
+                    iconHoverColor={_.shareButtonMenuIconHoverColor}
+                    spacingBottom={0}
+                    url={url}
+                    linkProps={{ target: '_blank' }}
+                  />
+                ))}
+              </SocialButtons>
+            </BarLayoutRight>
           </BarLayoutContainer>
           {!items.length ? null : (
             <Burger

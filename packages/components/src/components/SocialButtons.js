@@ -16,8 +16,8 @@ const Item = styled(Button)`
   margin: 0;
   width: ${({ size }) => size}px;
   height: ${({ size }) => size}px;
-  margin-right: ${({ spacing }) => spacing}px;
-  margin-bottom: ${({ spacing }) => spacing}px;
+  margin-right: ${({ spacingRight }) => spacingRight}px;
+  margin-bottom: ${({ spacingBottom }) => spacingBottom}px;
   padding: ${({ padding }) => padding}px;
   border-radius: ${({ borderRadius }) => borderRadius}px;
   background-color: ${t(
@@ -50,6 +50,7 @@ const SocialButtons = ({
   iconHoverColor,
   itemSize = 40,
   spacing = 10,
+  spacingBottom,
   itemBackgroundColor,
   itemBackgroundHoverColor,
   itemBorderRadius = 4,
@@ -70,7 +71,8 @@ const SocialButtons = ({
             borderRadius: itemBorderRadius,
             padding: itemPadding,
             size: itemSize,
-            spacing: idx < React.Children.count(children) ? spacing : 0,
+            spacingRight: idx < React.Children.count(children) ? spacing : 0,
+            spacingBottom: spacingBottom || spacing,
             ...childProps,
           })}
         </a>
