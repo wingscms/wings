@@ -17,7 +17,7 @@ export { default as Insight } from './components/Insight';
 export { default as Link } from './components/Link';
 export { default as List } from './components/List';
 export { default as Loading } from './components/Loading';
-export { default as Modal } from './components/Modal';
+export { default as Dialog } from './components/Dialog';
 export { default as Overlay } from './components/Overlay';
 export { default as PaginationControls } from './components/PaginationControls';
 export { default as Portal } from './components/Portal';

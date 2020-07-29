@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import faker from 'faker';
 import { boolean, select } from '@storybook/addon-knobs/react';
-import { Button, Modal, Text } from '@wingscms/components';
+import { Button, Dialog, Text } from '@wingscms/components';
 import { paddingWrap } from '../../../../utils';
 
 export default () => {
   const [open, setOpen] = useState(false);
   const overlay = boolean('overlay', true);
   const clickOutsideToClose = boolean('clickOutsideToClose', true);
-  const size = select('size', Modal.Size, Modal.Size.MEDIUM);
-  const verticalAlign = select('verticalAlign', Modal.VerticalAlign, Modal.VerticalAlign.CENTER);
+  const size = select('size', Dialog.Size, Dialog.Size.MEDIUM);
+  const verticalAlign = select('verticalAlign', Dialog.VerticalAlign, Dialog.VerticalAlign.CENTER);
   const horizontalAlign = select(
     'horizontalAlign',
-    Modal.HorizontalAlign,
-    Modal.HorizontalAlign.CENTER,
+    Dialog.HorizontalAlign,
+    Dialog.HorizontalAlign.CENTER,
   );
   return (
     <div>
@@ -21,7 +21,7 @@ export default () => {
         Open Model
       </Button>
       {open ? (
-        <Modal
+        <Dialog
           clickOutsideToClose={clickOutsideToClose}
           overlay={overlay}
           open={open}
@@ -30,9 +30,9 @@ export default () => {
           verticalAlign={verticalAlign}
           horizontalAlign={horizontalAlign}
         >
-          <Modal.Header title="This is a modal" onClose={() => setOpen(false)} />
+          <Dialog.Header title="This Is A Dialog" onClose={() => setOpen(false)} />
           <Text style={{ padding: '0 20px' }}>{faker.lorem.paragraphs(1)}</Text>
-        </Modal>
+        </Dialog>
       ) : null}
     </div>
   );

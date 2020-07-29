@@ -7,6 +7,7 @@ import {
   Drawer,
   Heading,
   Link,
+  Dialog,
   Portal,
   SocialButtons as _SocialButtons,
 } from '@wingscms/components';
@@ -140,6 +141,7 @@ export default function Menu({
 }) {
   const _ = useTheme();
   const [open, setOpen] = useState(false);
+  const [languageSelectOpen, setLanguageSelectOpen] = useState(false);
 
   const MenuLink = wrapLink(wrapMenuItem)(Link);
   const MenuPrimaryLink = wrapLink(wrapMenuItem)(({ children, ...props }) => (
@@ -160,7 +162,7 @@ export default function Menu({
   };
 
   return (
-    <>
+    <Portal>
       <AppBar position={AppBar.Position.TOP}>
         <LayoutContainer>
           <BarLayoutContainer>
@@ -171,7 +173,11 @@ export default function Menu({
             ) : null}
             <BarLayoutRight>
               <BarLayoutRightItem>
-                <LangaugeSelectButton intent={Button.Intent.PRIMARY} icon="globe" />
+                <LangaugeSelectButton
+                  intent={Button.Intent.PRIMARY}
+                  icon="globe"
+                  onClick={() => setLanguageSelectOpen(true)}
+                />
               </BarLayoutRightItem>
               {!primaryMenuItems.length
                 ? null
@@ -230,7 +236,13 @@ export default function Menu({
           </Drawer>
         </Portal>
       )}
-    </>
+      {!languageSelectOpen ? null : (
+        <Dialog size={Dialog.Size.MEDIUM} onClose={() => setLanguageSelectOpen(false)} overlay>
+          <Dialog.Header title="Select Language" onClose={() => setLanguageSelectOpen(false)} />
+          Language Select
+        </Dialog>
+      )}
+    </Portal>
   );
 }
 

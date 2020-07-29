@@ -39,7 +39,6 @@ const Container = styled.div`
   opacity: 1;
   width: 100%;
   background-color: ${t(_ => _.appBarBackgroundColor)};
-  z-index: 100;
   transform: none;
   transition: 0.1s all linear;
   ${getPosition}
