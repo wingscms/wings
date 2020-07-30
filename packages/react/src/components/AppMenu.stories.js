@@ -10,6 +10,8 @@ const props = () => ({
       { text: 'Sign Up', url: 'https://wings.dev', primary: true },
       { text: 'Second Primary', url: 'https://wings.dev', primary: true },
       { text: 'An Example Item', url: 'https://wings.dev' },
+      { text: 'An Example Item', url: 'https://wings.dev' },
+      { text: 'An Example Item', url: 'https://wings.dev' },
     ],
   },
   logo: {
@@ -34,15 +36,26 @@ const props = () => ({
       url: 'https://wings.dev',
     },
   ],
-  // translations: {
-  //   current: 'en',
-  //   translations: [
-  //     {
-  //       locale: 'en',
-
-  //     }
-  //   ]
-  // }
+  translations: {
+    current: 'en',
+    translations: [
+      {
+        id: 'de',
+        name: 'Deutsch',
+        url: 'https://wings.dev',
+      },
+      {
+        id: 'en',
+        name: 'English',
+        url: 'https://wings.dev',
+      },
+      {
+        id: 'nl',
+        name: 'Nederlands',
+        url: 'https://wings.dev',
+      },
+    ],
+  },
 });
 
 export default () => <AppMenu {...props()} />;

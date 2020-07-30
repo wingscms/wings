@@ -7,10 +7,11 @@ import {
   Drawer,
   Heading,
   Link,
-  Dialog,
   Portal,
   SocialButtons as _SocialButtons,
 } from '@wingscms/components';
+
+import LanguageSelectionDialog from '../LanguageSelectionDialog';
 
 import { t, useTheme } from '../../theme';
 import styled from '../../lib/styled';
@@ -114,10 +115,10 @@ const PrimaryItemBar = styled(Button)`
   }
 `;
 
-// const PrimaryItemDrawer = styled(Button)`
-//   margin: 0 auto;
-//   display: block;
-// `;
+const PrimaryItemDrawer = styled(Button)`
+  margin: 20px auto;
+  display: block;
+`;
 
 const wrapLink = LinkWrap => Link => {
   if (LinkWrap) {
@@ -138,6 +139,7 @@ export default function Menu({
   menu: { items: _menuItems = [], wrapItem: wrapMenuItem },
   logo: { url: logoUrl, alt: logoAlt = 'Logo', wrap: wrapLogo },
   socialButtons,
+  translations,
 }) {
   const _ = useTheme();
   const [open, setOpen] = useState(false);
@@ -145,7 +147,9 @@ export default function Menu({
 
   const MenuLink = wrapLink(wrapMenuItem)(Link);
   const MenuPrimaryLink = wrapLink(wrapMenuItem)(({ children, ...props }) => (
-    <a {...props}>{children}</a>
+    <a style={{ textDecoration: 'none' }} {...props}>
+      {children}
+    </a>
   ));
   const LogoLink = wrapLink(wrapLogo)(({ children, ...props }) => <a {...props}>{children}</a>);
 
@@ -233,14 +237,27 @@ export default function Menu({
                 <MenuLink href={item.url}>{item.text}</MenuLink>
               </MenuItem>
             ))}
+            {!primaryMenuItems.length
+              ? null
+              : primaryMenuItems.map(({ url, text, ...props }) => (
+                  <MenuPrimaryLink href={url}>
+                    <PrimaryItemDrawer
+                      size={Button.Size.SMALL}
+                      intent={Button.Intent.PRIMARY}
+                      {...props}
+                    >
+                      {text}
+                    </PrimaryItemDrawer>
+                  </MenuPrimaryLink>
+                ))}
           </Drawer>
         </Portal>
       )}
       {!languageSelectOpen ? null : (
-        <Dialog size={Dialog.Size.MEDIUM} onClose={() => setLanguageSelectOpen(false)} overlay>
-          <Dialog.Header title="Select Language" onClose={() => setLanguageSelectOpen(false)} />
-          Language Select
-        </Dialog>
+        <LanguageSelectionDialog
+          onClose={() => setLanguageSelectOpen(false)}
+          translations={translations}
+        />
       )}
     </Portal>
   );
