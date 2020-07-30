@@ -1,15 +1,15 @@
 import React from 'react';
-import Basic from './Basic';
+import Default from './Default';
 
 const Type = {
-  BASIC: 'basic',
+  DEFAULT: 'default',
 };
 
 const menus = {
-  [Type.BASIC]: Basic,
+  [Type.DEFAULT]: Default,
 };
 
-export default function AppMenu({ type = Type.BASIC, ...props }) {
+export default function AppMenu({ type = Type.DEFAULT, ...props }) {
   const Menu = menus[type];
   return <Menu {...props} />;
 }
