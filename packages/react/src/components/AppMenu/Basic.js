@@ -253,10 +253,12 @@ export default function Menu({
           </Drawer>
         </Portal>
       )}
-      {!languageSelectOpen ? null : (
+      {translations && !languageSelectOpen ? null : (
         <LanguageSelectionDialog
           onClose={() => setLanguageSelectOpen(false)}
-          translations={translations}
+          current={translations?.current}
+          translations={translations?.translations}
+          wrapTranslation={wrapLink(translations?.wrapTranslation)}
         />
       )}
     </Portal>

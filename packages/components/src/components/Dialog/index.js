@@ -96,13 +96,13 @@ const Wrapper = styled.div`
   ${t(getHorizontalAlign)}
 `;
 
-const ModalContainer = styled.div`
-  background-color: ${t(_ => _.modalBackgroundColor)};
+const DialogContainer = styled.div`
+  background-color: ${t(_ => _.dialogBackgroundColor)};
   box-shadow: ${t(_ => _.shadow)};
   ${t(getSize)}
 `;
 
-export default function Modal({
+export default function Dialog({
   children,
   clickOutsideToClose = true,
   onClose = () => {},
@@ -113,9 +113,9 @@ export default function Modal({
   verticalAlign = VerticalAlign.CENTER,
   ...props
 }) {
-  const modalContainerRef = useRef(null);
+  const dialogContainerRef = useRef(null);
 
-  const closeOnOutsideClick = e => !modalContainerRef.current.contains(e.target) && onClose();
+  const closeOnOutsideClick = e => !dialogContainerRef.current.contains(e.target) && onClose();
 
   useEffect(() => {
     if (clickOutsideToClose && typeof window !== 'undefined') {
@@ -129,17 +129,17 @@ export default function Modal({
       {overlay ? <Overlay {...overlayProps} /> : null}
       <Portal>
         <Wrapper horizontalAlign={horizontalAlign} verticalAlign={verticalAlign}>
-          <ModalContainer ref={modalContainerRef} size={size} {...fP(props)}>
+          <DialogContainer ref={dialogContainerRef} size={size} {...fP(props)}>
             {children}
-          </ModalContainer>
+          </DialogContainer>
         </Wrapper>
       </Portal>
     </>
   );
 }
 
-Modal.Size = Size;
-Modal.VerticalAlign = VerticalAlign;
-Modal.HorizontalAlign = HorizontalAlign;
+Dialog.Size = Size;
+Dialog.VerticalAlign = VerticalAlign;
+Dialog.HorizontalAlign = HorizontalAlign;
 
-Modal.Header = Header;
+Dialog.Header = Header;

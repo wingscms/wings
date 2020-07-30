@@ -14,7 +14,6 @@ const Title = styled(Heading)`
   margin: 0 auto;
   max-width: 95%;
   position: relative;
-  z-index: 2;
   @media screen and (min-width: 800px) {
     max-width: 1000px;
   }

@@ -1,7 +1,7 @@
 Storyshots components/Accordion Controlled 1: 296b77b7209c6d4a3db43e9ed57dfa5e
 Storyshots components/Accordion Uncontrolled 1: 78c015a0e15694e9d2be104436283768
-Storyshots components/AppBar Default 1: 18fcaa58dde27a40ebd4bae6d48bf2e9
-Storyshots components/AppBar With Content 1: ec2411acf0ce398d9807bf16131180d7
+Storyshots components/AppBar Default 1: 582fac8c7721f8e760f1b306d3381755
+Storyshots components/AppBar With Content 1: f667749036320a2755035c92897a5887
 Storyshots components/Blockquote Default 1: 84c973cc31ddec8b69a15b4735495612
 Storyshots components/Burger Active Red 1: 0f004bfc5effd171e9f8d8488e812623
 Storyshots components/Burger Default 1: 90e68f927e79ccc4a85bd90166203991
@@ -19,12 +19,13 @@ Storyshots components/CallToAction Large Spacing 1: a7a38862f8bbe5c25a8e9b5129ca
 Storyshots components/Collapse Controlled 1: 1bac5cbc508a021ee07c5a4f8228c763
 Storyshots components/Collapse Uncontrolled 1: b3bacf80cd3146d68444517932dc35ca
 Storyshots components/Counter Default 1: 41da27ec3a5b1b258ff59927820ce5e7
+Storyshots components/Dialog Default 1: 6a3024710758ef92744fd577d81f327a
 Storyshots components/Drawer Default 1: c5638b870e6118dc28623ea77e25ca59
 Storyshots components/Expandable Default 1: dde7236d66ecc6f8e80395486dfaeae7
 Storyshots components/FlexGrid Default 1: 74fd12c3a3c987bb669f539fcea58de8
-Storyshots components/Footer Custom Content 1: c1d8d235cf3a8565e31dd2b740f4a306
-Storyshots components/Footer Default 1: 31413215f02dc0c0e64599c3edaedbad
-Storyshots components/Header Cover 1: 820a3cd88731168719fe8d8a583fd804
+Storyshots components/Footer Custom Content 1: 090c99cfb98c7fd64ce8f53d8c50cc7c
+Storyshots components/Footer Default 1: 4b291d253995bdded61d0b242755b6c9
+Storyshots components/Header Cover 1: 0db549ad0c911717aa6d0c082b4de2d1
 Storyshots components/Header Default 1: b598629e88fcdeae28c8cac5d59d7f7a
 Storyshots components/Heading Default 1: 509bff20f22bcffce6379369915d0c17
 Storyshots components/Icon Default 1: 2b4854aea8bb788de69e7ee8d5a8ccff
@@ -35,7 +36,7 @@ Storyshots components/Link No Styling 1: adb3db303682dbb4caacdf625ba3b315
 Storyshots components/List Ordered List 1: 8265bddbd062645e32ac2b82b3f099c0
 Storyshots components/List Unordered List 1: 2808ac542c67d048962964c52dc0a1c3
 Storyshots components/Loading Default 1: 613fe8024a34f3218fcffaf00671d631
-Storyshots components/Modal Default 1: 910e6ae30176184d91d0af7aba17ac5a
+Storyshots components/Overlay Default 1: 62f83650fd66a6d2c5c23b841ae6d224
 Storyshots components/PaginationControls Default 1: 09985f32aca8fbf9eb46ac2bcee39e0d
 Storyshots components/Portal Default 1: 8be6df85a4bb5bc51f884e0fbfb1a28e
 Storyshots components/ProgressBar Default 1: 234180e950aaa90afb9e311eaaae8168
@@ -44,32 +45,34 @@ Storyshots components/Reveal Default 1: 9a0e9db572671878774fb373b3d1ec6e
 Storyshots components/ScrollBar Controlled 1: b140443d6920dbadd75354279d741d46
 Storyshots components/ScrollBar Default 1: 542ffacc8f95fd753af529c81221f4a1
 Storyshots components/SectionMarker Default 1: 802be41eb20b93fa32bedbfb992798b5
-Storyshots components/SocialButtons Default 1: b5f6e2559677cd61ccd62f75b83378a7
+Storyshots components/SocialButtons Default 1: 915227e30f09d41d1eb048c615d585b1
 Storyshots components/Text Default 1: ff65f46bcf7a60e8f16f2bea5d098293
 Storyshots jsonschema-form/SchemaForm Address Field 1: db62692357915a58c14e1a03765a0535
 Storyshots jsonschema-form/SchemaForm Default 1: d3be2c51af07c441ec4f4328adf26852
-Storyshots react/Article Default 1: 1e50e40eec7a1e2d93fe172b86b99095
-Storyshots react/Article No Image 1: 13770df1a88673c6e7265968364e706f
-Storyshots react/Campaign Event 1: b6f74affea83b37e95cd5c143e5171a6
-Storyshots react/Campaign Fundraiser 1: 01ab8c2ca9b7363d93578d9f308b5421
-Storyshots react/Campaign Petition 1: 823d1d4bf28aae802dea767fbca7f3b2
-Storyshots react/CampaignConfirmed Default 1: 1abb866b9d3be4bcf145cc080bad9042
-Storyshots react/CampaignConfirmed Event 1: 31355f8bba7291a8e6839dc2130ec893
-Storyshots react/CampaignConfirmed Fundraiser 1: 0a2406a7ec3385bad3f86d2bd6b92bf9
-Storyshots react/CampaignConfirmed Petition 1: 1abb866b9d3be4bcf145cc080bad9042
-Storyshots react/CampaignConfirmed Signup 1: 7bd72accc25c7917b719f3d7ffbdb8f8
+Storyshots react/AppMenu Default 1: 9fa6108ecc8ca3d4b6222858e2720d71
+Storyshots react/Article Default 1: 87bc9a81c6d74404107d2c275680e404
+Storyshots react/Article No Image 1: ee5d0050d9bc56de592a3aff7d39e234
+Storyshots react/Article With Menu And Footer 1: b7b24f8da75f5895c7ee0bbc7e76d4c3
+Storyshots react/Campaign Event 1: cede28fc43e09b861939bcbca3fe37de
+Storyshots react/Campaign Fundraiser 1: 626f37b2649cf1e13aee68c735d6340f
+Storyshots react/Campaign Petition 1: 870717ab17011c412e81c23b3dc334e1
+Storyshots react/CampaignConfirmed Default 1: 1055306e484d34154535a1e0519de5c5
+Storyshots react/CampaignConfirmed Event 1: 3c9af23b12c7dbee2dc722ba6ccdb479
+Storyshots react/CampaignConfirmed Fundraiser 1: f54d81be879ecd4e8ed86d32390f2abc
+Storyshots react/CampaignConfirmed Petition 1: 1055306e484d34154535a1e0519de5c5
+Storyshots react/CampaignConfirmed Signup 1: f22aabd212a203cbe6cdd425477d4078
 Storyshots react/Cards/CTACard Background Image 1: 2c7f6a1187e8547a76aaf257b3721a7f
 Storyshots react/Cards/CTACard Default 1: b52d2f56d15b71d33379fe387c7b88b9
 Storyshots react/Cards/CTACard Horizontal 1: f75578bb3c57e121c142f4f452366c4b
 Storyshots react/Cards/CTACard Spacing 1: a850ef6372e2e06964f6e6923ec11692
-Storyshots react/Cards/CampaignCard Default 1: 83c55d8651200eb5a958c7296d5bd93c
+Storyshots react/Cards/CampaignCard Default 1: 6fb320aa0372a2be6ba60b58cf1dada3
 Storyshots react/Cards/ChapterCard Default 1: d117837f1784b481cbe8f3ef5f9000c9
-Storyshots react/Cards/CollectionCard Organisations 1: 87dce98011d51d0865e6fd8414d0f9c0
+Storyshots react/Cards/CollectionCard Organisations 1: e97e27e7979e539adce2f9144a55f7a9
 Storyshots react/Cards/CollectionCard People 1: c51ea5462a84780bfc888e68a46d193b
 Storyshots react/Cards/EmbedCard Default 1: 4fc798f2df4b7f13f6cbdf707380e6f7
 Storyshots react/Cards/ImageCard Default 1: dcc4d65f8cbaa1e431e42c4fa4b091eb
 Storyshots react/Cards/InsightCard Default 1: b9eec5db33bd55c9d4dddfb15fcf7112
-Storyshots react/Cards/NodesCard Default 1: 9e02677b195e4dd74f406cd168899cc8
+Storyshots react/Cards/NodesCard Default 1: 8e57d28d75d2108844854ababe9a1c48
 Storyshots react/Cards/QACard With Mobiledoc 1: cd1819216171a328680af691feb452df
 Storyshots react/Cards/QACard With Strings 1: 4b1b036278842f95f1f8adf653561a29
 Storyshots react/Cards/QuoteCard Block Quote 1: b9b725948906e9ecf032c346ff815596
@@ -77,5 +80,6 @@ Storyshots react/Cards/QuoteCard Pull Quote 1: 50f30081aa4c838f7f319813db1122b3
 Storyshots react/Cards/TestimonialCard Default 1: 57f725869f8347f7317b64db1fc17f7b
 Storyshots react/Cards/TextCard Default 1: 5be577eaaf4720150a3f3715f3587dda
 Storyshots react/Content Default 1: acda17fb5ad17cf0a7c37372cceaec1d
-Storyshots react/Content With Cards 1: f98577150f452844bf0ca90610df5a5f
-Storyshots react/Page Default 1: 63ac3d9e1010277e6dfb5ae28c497e6b
+Storyshots react/Content With Cards 1: d23dbfc91185936d7fbac0743a52857b
+Storyshots react/LanguageSelectionDialog Default 1: 246a018a7b4a5e44f14ef33caea95567
+Storyshots react/Page Default 1: ac112dc2d0a9df65441c4b8e3c4725a5

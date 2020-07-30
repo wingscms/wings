@@ -1,36 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
 import faker from 'faker';
 import { boolean, select } from '@storybook/addon-knobs/react';
-import { Button, Dialog, Text } from '@wingscms/components';
+import { Dialog, Text } from '@wingscms/components';
 import { paddingWrap } from '../../../../utils';
 
 export default () => {
-  const [open, setOpen] = useState(false);
-  const overlay = boolean('overlay', true);
-  const clickOutsideToClose = boolean('clickOutsideToClose', true);
-  const size = select('size', Dialog.Size, Dialog.Size.MEDIUM);
-  const verticalAlign = select('verticalAlign', Dialog.VerticalAlign, Dialog.VerticalAlign.CENTER);
-  const horizontalAlign = select(
-    'horizontalAlign',
-    Dialog.HorizontalAlign,
-    Dialog.HorizontalAlign.CENTER,
-  );
   return (
     <div>
-      <Button intent={Button.Intent.PRIMARY} onClick={() => setOpen(true)}>
-        Open Model
-      </Button>
-      {open ? (
+      {boolean('open', true) ? (
         <Dialog
-          clickOutsideToClose={clickOutsideToClose}
-          overlay={overlay}
+          clickOutsideToClose={boolean('clickOutsideToClose', true)}
+          overlay={boolean('overlay', true)}
           open={open}
-          onClose={() => setOpen(false)}
-          size={size}
-          verticalAlign={verticalAlign}
-          horizontalAlign={horizontalAlign}
+          onClose={() => {}}
+          size={select('size', Dialog.Size, Dialog.Size.MEDIUM)}
+          verticalAlign={select('verticalAlign', Dialog.VerticalAlign, Dialog.VerticalAlign.CENTER)}
+          horizontalAlign={select(
+            'horizontalAlign',
+            Dialog.HorizontalAlign,
+            Dialog.HorizontalAlign.CENTER,
+          )}
         >
-          <Dialog.Header title="This Is A Dialog" onClose={() => setOpen(false)} />
+          <Dialog.Header title="This Is A Dialog" onClose={() => {}} />
           <Text style={{ padding: '0 20px' }}>{faker.lorem.paragraphs(1)}</Text>
         </Dialog>
       ) : null}

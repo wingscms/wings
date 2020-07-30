@@ -167,6 +167,19 @@ export default class Theme {
     return this.variables.counterTextColor || this.textColor;
   }
 
+  get dialogBackgroundColor() {
+    return this.variables.dialogBackgroundColor || this.backgroundColor;
+  }
+
+  get dialogTextColor() {
+    return (
+      this.variables.dialogTextColor ||
+      this.contrastColor({
+        backgroundColor: this.dialogBackgroundColor,
+      })
+    );
+  }
+
   get drawerBackgroundColor() {
     return this.variables.drawerBackgroundColor || this.elementBackgroundColor;
   }
@@ -273,10 +286,6 @@ export default class Theme {
 
   get listTextColor() {
     return this.variables.listTextColor || this.textColor;
-  }
-
-  get modalBackgroundColor() {
-    return this.variables.modalBackgroundColor || this.elementBackgroundColor;
   }
 
   get navigationIconColor() {
