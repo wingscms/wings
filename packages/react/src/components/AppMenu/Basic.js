@@ -4,7 +4,7 @@ import {
   AppBar as _AppBar,
   Burger as _Burger,
   Button,
-  Drawer,
+  Drawer as _Drawer,
   Heading,
   Link,
   Portal,
@@ -78,6 +78,7 @@ const SocialButtons = styled(_SocialButtons)`
 `;
 
 const AppBar = styled(_AppBar)`
+  background-color: ${t(_ => _.appMenuBarBackgroundColor)};
   height: ${t(_ => _.largeSpacing)};
   box-shadow: ${t(_ => _.shadow)};
 `;
@@ -93,6 +94,9 @@ const MenuItem = styled.div`
   ${t(Heading.getStyles(1))}
   text-align: center;
   margin-bottom: 1.3em;
+  a {
+    color: ${t(_ => _.appMenuDrawerTextColor)};
+  }
 `;
 
 const LangaugeSelectButton = styled(Button)`
@@ -103,6 +107,10 @@ const LangaugeSelectButton = styled(Button)`
   svg {
     margin: 0;
   }
+`;
+
+const Drawer = styled(_Drawer)`
+  background-color: ${t(_ => _.appMenuDrawerBackgroundColor)};
 `;
 
 const PrimaryItemBar = styled(Button)`
@@ -234,7 +242,9 @@ export default function Menu({
             </LayoutContainer>
             {menuItems.map(item => (
               <MenuItem>
-                <MenuLink href={item.url}>{item.text}</MenuLink>
+                <MenuLink type={Link.Style.LINE_GROW} chref={item.url}>
+                  {item.text}
+                </MenuLink>
               </MenuItem>
             ))}
             {!primaryMenuItems.length
