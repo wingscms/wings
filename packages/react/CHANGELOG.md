@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/wingscms/wings/compare/@wingscms/react@1.3.0...@wingscms/react@1.3.1) (2020-07-28)
+
+
+### Bug Fixes
+
+* **react:** campaign heading sizes ([#525](https://github.com/wingscms/wings/issues/525)) ([3d00f7e](https://github.com/wingscms/wings/commit/3d00f7ea16ad72a78a042fd55e7a2d0c52ce0430))
+* **react:** Use Text/Heading components for campaign form texts ([#520](https://github.com/wingscms/wings/issues/520)) ([b2361a6](https://github.com/wingscms/wings/commit/b2361a6d4a3e437c7d9dbce9a305e0ff61b89842))
+
+
+
+
+
 # [1.3.0](https://github.com/wingscms/wings/compare/@wingscms/react@1.2.3...@wingscms/react@1.3.0) (2020-07-14)
 
 

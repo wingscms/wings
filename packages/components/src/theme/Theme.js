@@ -209,6 +209,10 @@ export default class Theme {
     );
   }
 
+  get footerHeadingColor() {
+    return this.variables.footerHeadingColor || this.footerTextColor;
+  }
+
   get formBackgroundColor() {
     return this.variables.formBackgroundColor || this.primaryColor;
   }
