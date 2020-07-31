@@ -247,6 +247,10 @@ export default class Theme {
     );
   }
 
+  get landingSectionArrowColor() {
+    return this.variables.landingSectionArrowColor || this.landingSectionTitleColor;
+  }
+
   get landingSectionBackgroundColor() {
     return this.variables.landingSectionBackgroundColor || this.primaryColor;
   }
