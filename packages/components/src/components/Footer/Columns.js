@@ -3,6 +3,7 @@ import styled from '../../lib/styled';
 import { t } from '../../theme';
 import Button from '../Button';
 import Heading from '../Heading';
+import Text from '../Text';
 import SocialButtons from '../SocialButtons';
 
 const Column = styled.div`
@@ -44,11 +45,8 @@ const Link = styled.a`
   }
 `;
 
-const Text = styled.p`
-  margin: 0;
-`;
-
 const Title = styled(Heading)`
+  color: ${t(_ => _.footerHeadingColor)};
   margin-top: ${t(_ => _.smallSpacing)};
   margin-bottom: ${t(_ => _.smallSpacing)};
   &:first-child {
@@ -58,7 +56,7 @@ const Title = styled(Heading)`
 
 const wrapRow = fn => (row, idx) => (
   <React.Fragment key={idx}>
-    {row.title ? <Title rank={3}>{row.title}</Title> : null}
+    {row.title ? <Title rank={4}>{row.title}</Title> : null}
     {fn(row)}
   </React.Fragment>
 );
@@ -79,14 +77,14 @@ export default ({ columns }) => {
   if (!columns) return null;
   return columns.map((column, idx) => (
     <Column key={`footer-column-${idx}`}>
-      {column.title && <Title rank={2}>{column.title}</Title>}
+      {column.title && <Title rank={3}>{column.title}</Title>}
       {Array.isArray(column.rows) &&
         column.rows.map(
           wrapRow(row => {
             switch (row.type) {
               case 'text':
                 return (
-                  <Text>
+                  <Text noSpacing>
                     {row.content
                       .trim()
                       .split('\n')

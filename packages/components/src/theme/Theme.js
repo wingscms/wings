@@ -200,6 +200,10 @@ export default class Theme {
     );
   }
 
+  get footerHeadingColor() {
+    return this.variables.footerHeadingColor || this.footerTextColor;
+  }
+
   get formBackgroundColor() {
     return this.variables.formBackgroundColor || this.primaryColor;
   }
@@ -245,6 +249,10 @@ export default class Theme {
         backgroundColor: this.insightBackgroundColor,
       })
     );
+  }
+
+  get landingSectionArrowColor() {
+    return this.variables.landingSectionArrowColor || this.landingSectionTitleColor;
   }
 
   get landingSectionBackgroundColor() {

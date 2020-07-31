@@ -152,6 +152,7 @@ const CounterContainer = styled.div`
 
 export default function Campaign({
   id,
+  headingRank = 1,
   resourceType,
   node: _node = {},
   formProps = {},
@@ -230,7 +231,7 @@ export default function Campaign({
           >
             {!(title || intro || description) ? null : (
               <>
-                {title ? <Heading rank={1}>{title}</Heading> : null}
+                {title ? <Heading rank={headingRank}>{title}</Heading> : null}
                 {intro ? <Intro fullWidth>{intro}</Intro> : null}
                 <Content content={description} mini />
               </>
