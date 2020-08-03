@@ -137,11 +137,7 @@ export default function CallToAction({
   backgroundImage,
   buttonText,
   buttonUrl,
-  buttonType,
-  buttonBackgroundColor,
-  buttonBackgroundHoverColor,
-  buttonBorderColor,
-  buttonBorderHoverColor,
+  buttonProps,
   type = Type.VERTICAL,
   reveal,
   spacing = Spacing.SMALL,
@@ -167,11 +163,7 @@ export default function CallToAction({
             <Button
               align={align}
               intent={!backgroundImage ? Button.Intent.SECONDARY : Button.Intent.PRIMARY}
-              buttonType={buttonType}
-              backgroundColor={buttonBackgroundColor}
-              backgroundHoverColor={buttonBackgroundHoverColor}
-              borderColor={buttonBorderColor}
-              borderHoverColor={buttonBorderHoverColor}
+              {...buttonProps}
             >
               {buttonText}
             </Button>
