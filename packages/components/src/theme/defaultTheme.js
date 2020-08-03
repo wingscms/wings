@@ -11,6 +11,7 @@ export default {
   disabledColor: '#DDDDDD',
   backgroundColor: '#FFFFFF',
   elementBackgroundColor: '#FFF',
+  edgeColor: '#DDDDDD',
   textColor: '#212121',
   textColorDark: '#FFFFFF',
   iconColor: '#212121',

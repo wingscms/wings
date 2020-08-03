@@ -97,6 +97,7 @@ const Wrapper = styled.div`
 `;
 
 const DialogContainer = styled.div`
+  border: 1px solid ${t(_ => _.edgeColor)};
   background-color: ${t(_ => _.dialogBackgroundColor)};
   box-shadow: ${t(_ => _.shadow)};
   ${t(getSize)}
