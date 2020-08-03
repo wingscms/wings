@@ -5,12 +5,10 @@ import {
   Button,
   Drawer as _Drawer,
   Heading,
-  Link,
   Portal,
 } from '@wingscms/components';
 
 import { t } from '../../../theme';
-import { wrapLink } from '../../../lib/utils';
 import styled from '../../../lib/styled';
 
 const LayoutContainer = styled.div`
@@ -49,16 +47,10 @@ export default function MenuDefaultDrawer({
   burgerProps,
   menuItems,
   primaryMenuItems,
-  wrapMenuItem,
   open,
+  wrapMenuItem,
+  wrapPrimaryItem,
 }) {
-  const MenuLink = wrapLink(wrapMenuItem)(Link);
-  const PrimaryItemLink = wrapLink(wrapMenuItem)(({ children, ...props }) => (
-    <a style={{ textDecoration: 'none' }} {...props}>
-      {children}
-    </a>
-  ));
-
   return !menuItems.length ? null : (
     <Portal>
       <Drawer open={open}>
@@ -66,25 +58,22 @@ export default function MenuDefaultDrawer({
           <Burger {...burgerProps} />
         </LayoutContainer>
         {menuItems.map(item => (
-          <MenuItem>
-            <MenuLink type={Link.Style.LINE_GROW} chref={item.url}>
-              {item.text}
-            </MenuLink>
-          </MenuItem>
+          <MenuItem>{wrapMenuItem(item.text, { url: item.url })}</MenuItem>
         ))}
         {!primaryMenuItems.length
           ? null
-          : primaryMenuItems.map(({ url, text, ...props }) => (
-              <PrimaryItemLink href={url}>
+          : primaryMenuItems.map(({ url, text, ...props }) =>
+              wrapPrimaryItem(
                 <PrimaryItemDrawer
                   size={Button.Size.SMALL}
                   intent={Button.Intent.PRIMARY}
                   {...props}
                 >
                   {text}
-                </PrimaryItemDrawer>
-              </PrimaryItemLink>
-            ))}
+                </PrimaryItemDrawer>,
+                { url: url },
+              ),
+            )}
       </Drawer>
     </Portal>
   );

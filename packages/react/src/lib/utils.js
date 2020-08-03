@@ -30,18 +30,3 @@ export const isJSON = item => {
 
   return false;
 };
-
-export const wrapLink = LinkWrap => Link => {
-  if (LinkWrap) {
-    return ({ href, children, ...props }) => (
-      <LinkWrap href={href} {...props}>
-        <Link>{children}</Link>
-      </LinkWrap>
-    );
-  }
-  return ({ href, children, ...props }) => (
-    <Link href={href} {...props}>
-      {children}
-    </Link>
-  );
-};

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { AppMenu } from '@wingscms/react';
 
 import { image } from '../../../../utils';
@@ -15,7 +14,8 @@ const props = () => ({
     ],
   },
   logo: {
-    url: image(320, 100),
+    url: '/',
+    imageUrl: image(320, 100),
     alt: '',
   },
   socialButtons: [

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Portal } from '@wingscms/components';
+import { Link, Portal } from '@wingscms/components';
 
 import LanguageSelectionDialog from '../../LanguageSelectionDialog';
 import { wrapLink } from '../../../lib/utils';
@@ -9,8 +9,20 @@ import Bar from './Bar';
 import Drawer from './Drawer';
 
 export default function DefaultMenu({
-  menu: { items: _menuItems = [], wrapItem: wrapMenuItem },
-  logo,
+  menu: {
+    items: _menuItems = [],
+    wrapItem: wrapMenuItem = (e, { url }) => (
+      <Link type={Link.Style.LINE_GROW} href={url}>
+        {e}
+      </Link>
+    ),
+    wrapPrimaryItem = (e, { url }) => (
+      <a style={{ textDecoration: 'none' }} href={url}>
+        {e}
+      </a>
+    ),
+  },
+  logo: { wrap: wrapLogo = (e, { url }) => <a href={url}>{e}</a>, ...logo },
   socialButtons,
   translations,
 }) {
@@ -48,12 +60,12 @@ export default function DefaultMenu({
           hoverColor: _.burgerMenuHoverColor,
         }}
         languageSelectOnClick={() => setLanguageSelectOpen(true)}
-        logo={{ ...logo, url: logo.url || _.logoImageUrl }}
+        logo={{ ...logo, imageUrl: logo.imageUrl || _.logoImageUrl, wrap: wrapLogo }}
         menuItems={menuItems}
         primaryMenuItems={primaryMenuItems}
         socialButtons={socialButtons}
         socialButtonsProps={socialButtonsProps}
-        wrapMenuItem={wrapMenuItem}
+        wrapPrimaryItem={wrapPrimaryItem}
       />
       <Drawer
         burgerProps={{
@@ -65,6 +77,7 @@ export default function DefaultMenu({
         open={open}
         primaryMenuItems={primaryMenuItems}
         wrapMenuItem={wrapMenuItem}
+        wrapPrimaryItem={wrapPrimaryItem}
       />
       {translations && !languageSelectOpen ? null : (
         <LanguageSelectionDialog

@@ -107,30 +107,25 @@ const Burger = styled(_Burger)`
 
 export default function MenuDefaultBar({
   burgerProps,
-  logo: { url: logoUrl, alt: logoAlt = 'Logo', wrap: wrapLogo },
+  logo: { imageUrl: logoImageUrl, alt: logoImageAlt = 'Logo', wrap: wrapLogo } = {},
   languageSelectOnClick,
   menuItems,
   primaryMenuItems,
   socialButtons,
   socialButtonsProps,
-  wrapMenuItem,
+  wrapPrimaryItem,
 }) {
-  const LogoLink = wrapLink(wrapLogo)(({ children, ...props }) => <a {...props}>{children}</a>);
-  const PrimaryItemLink = wrapLink(wrapMenuItem)(({ children, ...props }) => (
-    <a style={{ textDecoration: 'none' }} {...props}>
-      {children}
-    </a>
-  ));
+  const wrappedLogo = wrapLogo(<Logo alt={logoImageAlt} src={logoImageUrl} />, {
+    imageUrl: logoImageUrl,
+    imageAlt: logoImageAlt,
+    url: '/',
+  });
 
   return (
     <AppBar position={AppBar.Position.TOP}>
       <LayoutContainer>
         <BarLayoutContainer>
-          {logoUrl ? (
-            <LogoLink href="/">
-              <Logo alt={logoAlt} src={logoUrl} />
-            </LogoLink>
-          ) : null}
+          {logoImageUrl ? wrappedLogo : null}
           <BarLayoutRight>
             <BarLayoutRightItem>
               <LangaugeSelectButton
@@ -143,11 +138,12 @@ export default function MenuDefaultBar({
               ? null
               : primaryMenuItems.map(({ url, text, ...props }) => (
                   <BarLayoutRightItem>
-                    <PrimaryItemLink href={url}>
+                    {wrapPrimaryItem(
                       <PrimaryItem intent={Button.Intent.PRIMARY} {...props}>
                         {text}
-                      </PrimaryItem>
-                    </PrimaryItemLink>
+                      </PrimaryItem>,
+                      { url },
+                    )}
                   </BarLayoutRightItem>
                 ))}
             <BarLayoutRightItem>
