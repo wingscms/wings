@@ -7,7 +7,7 @@ import { t } from '../../theme';
 
 const Container = styled.div`
   position: relative;
-  background-color: ${t(_ => _.modalBackgroundColor)};
+  background-color: ${t(_ => _.dialogBackgroundColor)};
   padding: ${t(_ => _.smallSpacing)};
   min-height: 60px;
 `;
