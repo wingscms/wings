@@ -1,7 +1,7 @@
 import React from 'react';
 import faker from 'faker';
-import { boolean, select, text, color } from '@storybook/addon-knobs/react';
-import { CallToAction, Button } from '@wingscms/components';
+import { boolean, select, text } from '@storybook/addon-knobs/react';
+import { CallToAction } from '@wingscms/components';
 import { paddingWrap, image } from '../../../../utils';
 
 const props = ({
