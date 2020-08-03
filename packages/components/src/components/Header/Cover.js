@@ -51,7 +51,11 @@ const BackgroundOverlay = styled.div`
   height: 100%;
   width: 100%;
   position: absolute;
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.3) 90%);
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 60%,
+    ${t(_ => _.landingSectionGradientColor)} 100%
+  );
 `;
 
 const backgroundImage = props => {
@@ -103,7 +107,7 @@ const ArrowContainer = styled.div`
     height: 25px;
     margin: 10px auto;
     g {
-      fill: ${t(_ => _.landingSectionTitleColor)};
+      fill: ${t(_ => _.landingSectionArrowColor)};
     }
   }
   @media screen and (max-width: 800px) {

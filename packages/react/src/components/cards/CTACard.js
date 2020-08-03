@@ -15,6 +15,11 @@ function CallToActionView({
   backgroundImage,
   buttonText,
   buttonUrl,
+  buttonType,
+  buttonBackgroundColor,
+  buttonBackgroundHoverColor,
+  buttonBorderColor,
+  buttonBorderHoverColor,
   type,
   spacing,
   text,
@@ -30,6 +35,11 @@ function CallToActionView({
         backgroundImage={backgroundImage}
         buttonText={buttonText || actionText}
         buttonUrl={buttonUrl || actionUrl}
+        buttonType={buttonType}
+        backgroundColor={buttonBackgroundColor}
+        backgroundHoverColor={buttonBackgroundHoverColor}
+        borderColor={buttonBorderColor}
+        borderHoverColor={buttonBorderHoverColor}
         type={type}
         spacing={spacing}
         title={title}

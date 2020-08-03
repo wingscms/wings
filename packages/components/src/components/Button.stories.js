@@ -1,5 +1,5 @@
 import React from 'react';
-import { text, select, boolean } from '@storybook/addon-knobs/react';
+import { text, select, boolean, color } from '@storybook/addon-knobs/react';
 import { Button, Icon } from '@wingscms/components';
 import { paddingWrap } from '../../../../utils';
 
@@ -19,10 +19,15 @@ const props = ({
   loading: boolean('loading', loading),
   children: text('children', 'Click me!'),
   icon: select('icon', [DEFAULT_ICON, ...Icon.ICON_NAMES], icon),
+  backgroundColor: color('backgroundColor'),
+  backgroundHoverColor: color('backgroundHoverColor'),
+  borderColor: color('borderColor'),
+  borderHoverColor: color('borderHoverColor'),
 });
 
 export default () => <Button {...props()} />;
 export const Primary = () => <Button {...props({ intent: Button.Intent.PRIMARY })} />;
+export const Opacity = () => <Button {...props({ buttonType: Button.Type.OPACITY })} />;
 export const Outline = () => <Button {...props({ buttonType: Button.Type.OUTLINE })} />;
 export const Small = () => <Button {...props({ size: Button.Size.SMALL })} />;
 export const WithIcon = () => (
