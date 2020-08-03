@@ -137,6 +137,7 @@ export default function CallToAction({
   backgroundImage,
   buttonText,
   buttonUrl,
+  buttonProps,
   type = Type.VERTICAL,
   reveal,
   spacing = Spacing.SMALL,
@@ -162,6 +163,7 @@ export default function CallToAction({
             <Button
               align={align}
               intent={!backgroundImage ? Button.Intent.SECONDARY : Button.Intent.PRIMARY}
+              {...buttonProps}
             >
               {buttonText}
             </Button>

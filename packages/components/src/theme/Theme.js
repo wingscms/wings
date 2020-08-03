@@ -78,6 +78,10 @@ export default class Theme {
     }
   }
 
+  darken(color, amount = 0.2) {
+    return Color.fromValue(color).darken(amount);
+  }
+
   calc(str, cb) {
     const [val, unit] = this.separateUnit(str);
     return [cb(val), unit].join('');
@@ -196,6 +200,10 @@ export default class Theme {
     );
   }
 
+  get footerHeadingColor() {
+    return this.variables.footerHeadingColor || this.footerTextColor;
+  }
+
   get formBackgroundColor() {
     return this.variables.formBackgroundColor || this.primaryColor;
   }
@@ -241,6 +249,10 @@ export default class Theme {
         backgroundColor: this.insightBackgroundColor,
       })
     );
+  }
+
+  get landingSectionArrowColor() {
+    return this.variables.landingSectionArrowColor || this.landingSectionTitleColor;
   }
 
   get landingSectionBackgroundColor() {

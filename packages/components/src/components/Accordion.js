@@ -14,7 +14,14 @@ function Item({ ...props }) {
   return <Collapse {...props} />;
 }
 
-export default function Accordion({ children, openIndex, ...props }) {
+export default function Accordion({
+  children,
+  intent,
+  backgroundColor,
+  backgroundHoverColor,
+  openIndex,
+  ...props
+}) {
   const [openIdx, setOpenIdx] = useState(null);
   const _openIdx = typeof openIndex !== 'undefined' ? openIndex : openIdx;
   return (
@@ -23,6 +30,9 @@ export default function Accordion({ children, openIndex, ...props }) {
         if (isValidElement(child) && child.type === Item) {
           return cloneElement(child, {
             open: idx === _openIdx,
+            intent: child.props.intent || intent,
+            backgroundColor: child.props.backgroundColor || backgroundColor,
+            backgroundHoverColor: child.props.backgroundHoverColor || backgroundHoverColor,
             ...(typeof openIndex !== 'undefined' || {
               onClick: () => setOpenIdx(idx === _openIdx ? null : idx),
             }),

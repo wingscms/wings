@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.9](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@1.2.8...@wingscms/jsonschema-form@1.2.9) (2020-07-28)
+
+
+### Bug Fixes
+
+* **react/jsonschema-form:** Amount input fixes ([#524](https://github.com/wingscms/wings/issues/524)) ([ffb5963](https://github.com/wingscms/wings/commit/ffb596314459cd312cafe833ea0fe15e013c0f78))
+
+
+
+
+
 ## [1.2.8](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@1.2.7...@wingscms/jsonschema-form@1.2.8) (2020-07-14)
 
 **Note:** Version bump only for package @wingscms/jsonschema-form
