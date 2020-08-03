@@ -71,7 +71,7 @@ export default function MenuDefaultDrawer({
                 >
                   {text}
                 </PrimaryItemDrawer>,
-                { url: url },
+                { url },
               ),
             )}
       </Drawer>
