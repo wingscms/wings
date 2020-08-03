@@ -1,5 +1,5 @@
 import React from 'react';
-import { color, select } from '@storybook/addon-knobs/react';
+import { color, select, text } from '@storybook/addon-knobs/react';
 import { List } from '@wingscms/components';
 import { paddingWrap } from '../../../../utils';
 
@@ -7,6 +7,7 @@ const props = ({ listType = List.Type.UNORDERED } = {}) => ({
   markerColor: color('markerColor'),
   textColor: color('textColor'),
   listType: select('listType', List.Type, listType),
+  itemSpacing: text('itemSpacing'),
 });
 
 export const OrderedList = () => (
