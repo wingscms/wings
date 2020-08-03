@@ -5,6 +5,7 @@ import {
   Button as _Button,
   Text as _Text,
   Heading as _Heading,
+  Intent,
 } from '@wingscms/components';
 import SchemaForm from '@wingscms/jsonschema-form';
 import deepmerge from 'deepmerge';
@@ -684,7 +685,7 @@ class CampaignForm extends Component {
           >
             {this.props.type === 'fundraiser' ? this.renderPaymentMethodSelect() : null}
             {this.props.children || (
-              <Button intent="secondary" loading={submitLoading}>
+              <Button intent={Intent.SECONDARY} loading={submitLoading}>
                 {this.getSubmitText()}
               </Button>
             )}
@@ -700,7 +701,7 @@ class CampaignForm extends Component {
           <div>
             <Heading rank={2}>{campaignErrorTitle}</Heading>
             <Text>{campaignErrorText}</Text>
-            <Button intent="secondary" onClick={() => this.setState({ stage: 'form' })}>
+            <Button intent={Intent.SECONDARY} onClick={() => this.setState({ stage: 'form' })}>
               {campaignErrorButtonText}
             </Button>
           </div>
