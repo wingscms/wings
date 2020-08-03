@@ -8,7 +8,6 @@ import {
 } from '@wingscms/components';
 
 import { t } from '../../../theme';
-import { wrapLink } from '../../../lib/utils';
 import styled from '../../../lib/styled';
 
 const LayoutContainer = styled.div`
