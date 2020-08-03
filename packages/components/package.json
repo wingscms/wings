@@ -23,12 +23,12 @@
     "filter-invalid-dom-props": "^2.0.0",
     "param-case": "^3.0.3",
     "react-countup": "^4.3.3",
-    "react-dom": "^16.13.1",
     "react-reveal": "^1.2.2"
   },
   "peerDependencies": {
     "prop-types": "^15",
     "react": "^16",
+    "react-dom": "^16",
     "styled-components": "^5"
   }
 }
