@@ -13,16 +13,16 @@ const Size = {
   FULL_WIDTH: 'full_width',
 };
 
-const HorizontalAlign = {
+const Position = {
+  TOP_LEFT: 'top_left',
+  TOP: 'top',
+  TOP_RIGHT: 'top_right',
   LEFT: 'left',
   CENTER: 'center',
   RIGHT: 'right',
-};
-
-const VerticalAlign = {
-  TOP: 'top',
-  CENTER: 'center',
+  BOTTOM_LEFT: 'bottom_left',
   BOTTOM: 'bottom',
+  BOTTOM_RIGHT: 'bottom_right',
 };
 
 const getSize = (_, { size }) => {
@@ -49,13 +49,17 @@ const getSize = (_, { size }) => {
   }
 };
 
-const getHorizontalAlign = (_, { horizontalAlign }) => {
-  switch (horizontalAlign) {
-    case HorizontalAlign.LEFT:
+const getHorizontalAlign = (_, { position }) => {
+  switch (position) {
+    case Position.TOP_LEFT:
+    case Position.LEFT:
+    case Position.BOTTOM_LEFT:
       return css`
         justify-content: flex-start;
       `;
-    case HorizontalAlign.RIGHT:
+    case Position.TOP_RIGHT:
+    case Position.RIGHT:
+    case Position.BOTTOM_RIGHT:
       return css`
         justify-content: flex-end;
       `;
@@ -66,13 +70,17 @@ const getHorizontalAlign = (_, { horizontalAlign }) => {
   }
 };
 
-const getVerticalAlign = (_, { verticalAlign }) => {
-  switch (verticalAlign) {
-    case VerticalAlign.TOP:
+const getVerticalAlign = (_, { position }) => {
+  switch (position) {
+    case Position.TOP_LEFT:
+    case Position.TOP:
+    case Position.TOP_RIGHT:
       return css`
         align-items: flex-start;
       `;
-    case VerticalAlign.BOTTOM:
+    case Position.BOTTOM_LEFT:
+    case Position.BOTTOM:
+    case Position.BOTTOM_RIGHT:
       return css`
         align-items: flex-end;
       `;
@@ -110,8 +118,7 @@ export default function Dialog({
   overlayProps = {},
   overlay,
   size = Size.MEDIUM,
-  horizontalAlign = HorizontalAlign.CENTER,
-  verticalAlign = VerticalAlign.CENTER,
+  position = Position.CENTER,
   ...props
 }) {
   const dialogContainerRef = useRef(null);
@@ -123,13 +130,13 @@ export default function Dialog({
       window.addEventListener('click', closeOnOutsideClick);
       return () => window.removeEventListener('click', closeOnOutsideClick);
     }
-  }, []);
+  }, [clickOutsideToClose]);
 
   return (
     <>
       {overlay ? <Overlay {...overlayProps} /> : null}
       <Portal>
-        <Wrapper horizontalAlign={horizontalAlign} verticalAlign={verticalAlign}>
+        <Wrapper position={position}>
           <DialogContainer ref={dialogContainerRef} size={size} {...fP(props)}>
             {children}
           </DialogContainer>
@@ -140,7 +147,6 @@ export default function Dialog({
 }
 
 Dialog.Size = Size;
-Dialog.VerticalAlign = VerticalAlign;
-Dialog.HorizontalAlign = HorizontalAlign;
+Dialog.Position = Position;
 
 Dialog.Header = Header;
