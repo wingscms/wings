@@ -16,3 +16,5 @@ export const useTheme = () => {
 export const ThemeProvider = ({ theme, ...props }) => (
   <_ThemeProvider {...props} theme={getThemeInstance(theme)} />
 );
+
+export const Intent = Theme.Intent;
