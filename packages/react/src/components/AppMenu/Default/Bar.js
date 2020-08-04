@@ -147,8 +147,14 @@ export default function MenuDefaultBar({
                 ))}
             <BarLayoutRightItem>
               <SocialButtons>
-                {socialButtons.map(({ platform, url }, i) => (
-                  <SocialButtons.Button {...socialButtonsProps} key={i} icon={platform} url={url} />
+                {socialButtons.map(({ platform, url, buttonProps }, i) => (
+                  <SocialButtons.Button
+                    {...socialButtonsProps}
+                    {...buttonProps}
+                    key={i}
+                    icon={platform}
+                    url={url}
+                  />
                 ))}
               </SocialButtons>
             </BarLayoutRightItem>
