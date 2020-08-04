@@ -100,6 +100,7 @@ const Wrapper = styled.div`
   left: 0;
   overflow-y: auto;
   display: flex;
+  z-index: 100;
   ${t(getVerticalAlign)}
   ${t(getHorizontalAlign)}
 `;
