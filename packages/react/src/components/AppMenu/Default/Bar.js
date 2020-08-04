@@ -121,7 +121,7 @@ export default function MenuDefaultBar({
   });
 
   return (
-    <AppBar position={AppBar.Position.TOP}>
+    <AppBar>
       <LayoutContainer>
         <BarLayoutContainer>
           {logoImageUrl ? wrappedLogo : null}
