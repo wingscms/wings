@@ -23,7 +23,10 @@ export default function DefaultMenu({
   },
   logo: { wrap: wrapLogo = (e, { url }) => <a href={url}>{e}</a>, ...logo },
   socialButtons,
-  translations: { wrap: wrapTranslation = (e, { url }) => <a href={url}>{e}</a>, ...translations },
+  translations: {
+    wrap: wrapTranslation = (e, { translation: { url } }) => <a href={url}>{e}</a>,
+    ...translations
+  },
 }) {
   const _ = useTheme();
   const [open, setOpen] = useState(false);

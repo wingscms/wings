@@ -28,12 +28,12 @@ const Button = styled(_Button)`
 export default function LanguageSelect({ translations, wrapTranslation = x => x }) {
   return (
     <Container>
-      {translations.map(({ name, url }, idx) =>
+      {translations.map((translation, idx) =>
         wrapTranslation(
-          <Button size={Button.Size.SMALL} intent={Button.Intent.PRIMARY} key={idx} href={url}>
-            {name}
+          <Button size={Button.Size.SMALL} intent={Button.Intent.PRIMARY} key={idx}>
+            {translation.name}
           </Button>,
-          { url },
+          { translation },
         ),
       )}
     </Container>
