@@ -1,5 +1,4 @@
 import _slugify from 'slugify';
-import React from 'react';
 
 export const slugify = s =>
   _slugify(s, {
