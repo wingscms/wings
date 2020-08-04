@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/wingscms/wings/compare/@wingscms/react@1.3.1...@wingscms/react@1.4.0) (2020-08-04)
+
+
+### Features
+
+* button and accordion theming improvements ([#522](https://github.com/wingscms/wings/issues/522)) ([cf3c883](https://github.com/wingscms/wings/commit/cf3c883988ed42d786a6da559d0a142520d09aa9))
+* **components/react:** Portal; Overlay; Dialog; Language Switcher; Menu ([#529](https://github.com/wingscms/wings/issues/529)) ([6ac764f](https://github.com/wingscms/wings/commit/6ac764ff1afbffd90440399c3947c5e93b47b941))
+
+
+
+
+
 ## [1.3.1](https://github.com/wingscms/wings/compare/@wingscms/react@1.3.0...@wingscms/react@1.3.1) (2020-07-28)
 
 
