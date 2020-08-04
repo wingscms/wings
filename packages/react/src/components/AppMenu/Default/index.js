@@ -78,11 +78,11 @@ export default function DefaultMenu({
         wrapMenuItem={wrapMenuItem}
         wrapPrimaryItem={wrapPrimaryItem}
       />
-      {translations && !languageSelectOpen ? null : (
+      {!translations || !languageSelectOpen ? null : (
         <LanguageSelectionDialog
           onClose={() => setLanguageSelectOpen(false)}
-          current={translations?.current}
-          translations={translations?.translations}
+          current={translations.current}
+          translations={translations.translations}
           wrapTranslation={wrapTranslation}
         />
       )}
