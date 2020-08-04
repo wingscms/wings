@@ -90,8 +90,8 @@ const LangaugeSelectButton = styled(Button)`
 const PrimaryItem = styled(Button)`
   font-size: 16px;
   line-height: 40px;
-  padding: 0 20px;
-  margin-left: 10px;
+  padding: ${t(_ => `0 ${_.smallSpacing}`)};
+  margin-left: ${t(_ => _.extraSmallSpacing)};
   @media screen and (max-width: 500px) {
     display: none;
   }
