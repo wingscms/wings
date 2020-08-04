@@ -26,20 +26,16 @@ const Button = styled(_Button)`
 `;
 
 export default function LanguageSelect({ translations, wrapTranslation = x => x }) {
-  const Link = wrapTranslation(({ children, ...props }) => (
-    <a style={{ textDecoration: 'none' }} {...props}>
-      {children}
-    </a>
-  ));
   return (
     <Container>
-      {translations.map(({ name, url }, idx) => (
-        <Link href={url}>
+      {translations.map(({ name, url }, idx) =>
+        wrapTranslation(
           <Button size={Button.Size.SMALL} intent={Button.Intent.PRIMARY} key={idx} href={url}>
             {name}
-          </Button>
-        </Link>
-      ))}
+          </Button>,
+          { url },
+        ),
+      )}
     </Container>
   );
 }

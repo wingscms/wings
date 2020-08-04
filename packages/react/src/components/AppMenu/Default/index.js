@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link, Portal } from '@wingscms/components';
 
 import LanguageSelectionDialog from '../../LanguageSelectionDialog';
-import { wrapLink } from '../../../lib/utils';
 import { useTheme } from '../../../theme';
 
 import Bar from './Bar';
@@ -24,7 +23,7 @@ export default function DefaultMenu({
   },
   logo: { wrap: wrapLogo = (e, { url }) => <a href={url}>{e}</a>, ...logo },
   socialButtons,
-  translations,
+  translations: { wrap: wrapTranslation = (e, { url }) => <a href={url}>{e}</a>, ...translations },
 }) {
   const _ = useTheme();
   const [open, setOpen] = useState(false);
@@ -84,7 +83,7 @@ export default function DefaultMenu({
           onClose={() => setLanguageSelectOpen(false)}
           current={translations?.current}
           translations={translations?.translations}
-          wrapTranslation={wrapLink(translations?.wrapTranslation)}
+          wrapTranslation={wrapTranslation}
         />
       )}
     </Portal>
