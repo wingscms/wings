@@ -65,7 +65,7 @@ const Container = styled.div`
   position: fixed;
   background-color: ${t(_ => _.drawerBackgroundColor)};
   transition-property: opacity, transform;
-  transition-duration: 0s, 0.2s;
+  transition-duration: 0.2s;
   animation-timing-function: ease-in-out;
   opacity: ${({ open }) => (open ? 1 : 0)};
   z-index: 1000;
