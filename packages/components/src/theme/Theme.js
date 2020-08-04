@@ -171,6 +171,19 @@ export default class Theme {
     return this.variables.counterTextColor || this.textColor;
   }
 
+  get dialogBackgroundColor() {
+    return this.variables.dialogBackgroundColor || this.backgroundColor;
+  }
+
+  get dialogTextColor() {
+    return (
+      this.variables.dialogTextColor ||
+      this.contrastColor({
+        backgroundColor: this.dialogBackgroundColor,
+      })
+    );
+  }
+
   get drawerBackgroundColor() {
     return this.variables.drawerBackgroundColor || this.elementBackgroundColor;
   }
@@ -383,11 +396,23 @@ export default class Theme {
   }
 
   get shareButtonIconColor() {
-    return this.variables.shareButtonIconColor || this.iconColor;
+    return (
+      this.variables.shareButtonIconColor ||
+      this.contrastColor({
+        backgroundColor: this.shareButtonBackgroundColor,
+        colors: { light: this.iconColor, dark: this.iconColorDark },
+      })
+    );
   }
 
   get shareButtonIconHoverColor() {
-    return this.variables.shareButtonIconHoverColor || this.iconColor;
+    return (
+      this.variables.shareButtonIconHoverColor ||
+      this.contrastColor({
+        backgroundColor: this.shareButtonBackgroundHoverColor,
+        colors: { light: this.iconColor, dark: this.iconColorDark },
+      })
+    );
   }
 
   get smallSpacing() {

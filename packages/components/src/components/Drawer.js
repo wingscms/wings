@@ -64,7 +64,10 @@ const getSize = ({ position, size }) => {
 const Container = styled.div`
   position: fixed;
   background-color: ${t(_ => _.drawerBackgroundColor)};
-  transition: 0.2s all ease-in-out;
+  transition-property: opacity, transform;
+  transition-duration: 0.2s;
+  animation-timing-function: ease-in-out;
+  opacity: ${({ open }) => (open ? 1 : 0)};
   z-index: 1000;
   ${getPosition}
   ${getSize}

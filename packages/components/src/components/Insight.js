@@ -9,7 +9,6 @@ const Container = styled.div`
   background-color: ${t(_ => _.insightBackgroundColor)};
   padding: ${t(_ => _.largeSpacing)};
   text-align: center;
-  color: ${t(_ => _.insightTextColor)};
   ${t(_ =>
     _.tabletQuery(
       css`
@@ -21,6 +20,7 @@ const Container = styled.div`
 
 const Inner = styled.div`
   ${t(Heading.getStyles(5))}
+  color: ${t(_ => _.insightTextColor)};
   font-weight: bold;
   max-width: 1160px;
   margin: 0 auto;
@@ -28,6 +28,7 @@ const Inner = styled.div`
     _.tabletQuery(
       css`
         ${t(Heading.getStyles(4))}
+        color: ${t(_ => _.insightTextColor)};
       `,
     ),
   )}
@@ -35,6 +36,7 @@ const Inner = styled.div`
     _.mobileQuery(
       css`
         ${t(Heading.getStyles(3))}
+        color: ${t(_ => _.insightTextColor)};
       `,
     ),
   )}
