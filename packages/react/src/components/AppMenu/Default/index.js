@@ -70,7 +70,7 @@ export default function DefaultMenu({
         burgerProps={{
           ...burgerProps,
           color: _.burgerMenuOpenColor,
-          hoverColor: _.burgerMenuHoverOpenColor,
+          hoverColor: _.burgerMenuOpenHoverColor,
         }}
         menuItems={menuItems}
         open={open}
