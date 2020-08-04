@@ -81,7 +81,7 @@ const LangaugeSelectButton = styled(Button)`
   font-size: 16px;
   height: 40px;
   padding: 0 10px;
-  margin-left: 20px;
+  margin: ${t(_ => `0 ${_.extraSmallSpacing} 0 ${_.smallSpacing}`)};
   svg {
     margin: 0;
   }
