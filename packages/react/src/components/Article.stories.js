@@ -19,6 +19,7 @@ const Default = () => <Article node={node} />;
 
 export default Default;
 export const NoImage = () => <Article node={{ ...node, image: null }} />;
+export const NoHeader = () => <Article showHeader={false} node={{ ...node, image: null }} />;
 export const WithMenuAndFooter = () => (
   <>
     <AppMenu {...menuProps} />

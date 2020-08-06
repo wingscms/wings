@@ -13,18 +13,28 @@ const ContentWrapper = styled.div`
   }
 `;
 
-export default function Entry({ children, node, headerType, headerProps, contentProps, ...props }) {
+export default function Entry({
+  children,
+  node,
+  headerType,
+  headerProps,
+  showHeader = true,
+  contentProps,
+  ...props
+}) {
   const { image, title, content } = node;
   const { url, caption } = image || {};
   return (
     <div {...props}>
-      <Header
-        headerTitle={title}
-        imageUrl={url}
-        imageCaption={caption}
-        type={headerType}
-        {...headerProps}
-      />
+      {showHeader ? (
+        <Header
+          headerTitle={title}
+          imageUrl={url}
+          imageCaption={caption}
+          type={headerType}
+          {...headerProps}
+        />
+      ) : null}
       <ContentWrapper>
         <Content content={content} {...contentProps} />
       </ContentWrapper>
