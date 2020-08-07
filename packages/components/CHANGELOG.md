@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/wingscms/wings/compare/@wingscms/components@1.4.0...@wingscms/components@1.4.1) (2020-08-07)
+
+
+### Bug Fixes
+
+* **components:** check if document is defined when creating Portal ([#532](https://github.com/wingscms/wings/issues/532)) ([8071738](https://github.com/wingscms/wings/commit/80717386c2f7ae356b0eb46f0100f0272cb85b77))
+
+
+
+
+
 # [1.4.0](https://github.com/wingscms/wings/compare/@wingscms/components@1.3.1...@wingscms/components@1.4.0) (2020-08-04)
 
 
