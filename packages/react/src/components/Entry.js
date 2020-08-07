@@ -18,7 +18,7 @@ export default function Entry({
   node,
   headerType,
   headerProps,
-  showHeader = true,
+  hideHeader,
   contentProps,
   ...props
 }) {
@@ -26,7 +26,7 @@ export default function Entry({
   const { url, caption } = image || {};
   return (
     <div {...props}>
-      {showHeader ? (
+      {!hideHeader ? (
         <Header
           headerTitle={title}
           imageUrl={url}
