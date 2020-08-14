@@ -1,7 +1,7 @@
 import React from 'react';
 import fP from 'filter-invalid-dom-props';
 import styled, { css } from '../lib/styled';
-import { t } from '../theme';
+import { t, useTheme } from '../theme';
 import Heading from './Heading';
 import { ALIGNLEFT, ALIGNRIGHT } from '../styles';
 import Link from './Link';
@@ -61,9 +61,19 @@ export default function Pullquote({
   sourceUrl,
   ...props
 }) {
+  const _ = useTheme();
+  const getElevation = elevation => {
+    if (typeof elevation === 'number') {
+      return elevation;
+    }
+    if (_.pullquoteBackgroundColor !== _.backgroundColor) {
+      return 1;
+    }
+    return 0;
+  };
   return (
     <Container align={align}>
-      <Surface elevation={elevation} {...fP(props)}>
+      <Surface elevation={getElevation(elevation)} {...fP(props)}>
         <Quote>{text}</Quote>
         {!source ? null : (
           <Caption>{!sourceUrl ? source : <Link href={sourceUrl}>{source}</Link>}</Caption>

@@ -55,7 +55,7 @@ class Theme extends _Theme {
   }
 
   get testimonialBackgroundColor() {
-    return this.variables.testimonialBackgroundColor || this.elementBackgroundColor;
+    return this.variables.testimonialBackgroundColor || this.surfaceBackgroundColor;
   }
 }
 

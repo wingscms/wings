@@ -49,7 +49,7 @@ export default class Theme {
 
   contrastColor({
     backgroundColor,
-    colors: { light = this.textColor, dark = this.textColorDark } = {},
+    colors: { light = this.variables.textColor, dark = this.variables.textColorDark } = {},
     threshold = this.contrastLuminanceThreshold,
   }) {
     const lightness = this.color(backgroundColor).hsl().color[2];
@@ -118,7 +118,7 @@ export default class Theme {
   }
 
   get appBarBackgroundColor() {
-    return this.variables.appBarBackgroundColor || this.elementBackgroundColor;
+    return this.variables.appBarBackgroundColor || this.surfaceBackgroundColor;
   }
 
   get appBarHeight() {
@@ -130,7 +130,7 @@ export default class Theme {
   }
 
   get blockquoteBackgroundColor() {
-    return this.variables.blockquoteBackgroundColor || this.elementBackgroundColor;
+    return this.variables.blockquoteBackgroundColor || this.surfaceBackgroundColor;
   }
 
   get blockquoteTextColor() {
@@ -185,11 +185,11 @@ export default class Theme {
   }
 
   get drawerBackgroundColor() {
-    return this.variables.drawerBackgroundColor || this.elementBackgroundColor;
+    return this.variables.drawerBackgroundColor || this.surfaceBackgroundColor;
   }
 
   get expandableBackgroundColor() {
-    return this.variables.expandableBackgroundColor || this.elementBackgroundColor;
+    return this.variables.expandableBackgroundColor || this.surfaceBackgroundColor;
   }
 
   get extraLargeSpacing() {
@@ -350,7 +350,7 @@ export default class Theme {
   }
 
   get scrollBarBackgroundColor() {
-    return this.variables.scrollBarBackgroundColor || this.elementBackgroundColor;
+    return this.variables.scrollBarBackgroundColor || this.surfaceBackgroundColor;
   }
 
   get sectionMarkerBackgroundColor() {
@@ -417,6 +417,10 @@ export default class Theme {
 
   get smallSpacing() {
     return this.variables.smallSpacing || this.calc(this.mediumSpacing, ms => ms / 2);
+  }
+
+  get textColor() {
+    return this.contrastColor({ backgroundColor: this.backgroundColor });
   }
 
   get titleTransform() {

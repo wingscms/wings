@@ -10,7 +10,10 @@ import { t } from '../../theme';
 const TextWrapper = styled(_Surface)`
   margin: ${t(_ => _.mediumSpacing)} 0;
   padding: ${t(_ => _.mediumSpacing)};
-  background-color: ${t(_ => _.elementBackgroundColor)};
+  background-color: ${t(_ => _.surfaceBackgroundColor)};
+  * {
+    color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))} !important;
+  }
   p:last-child {
     margin-bottom: 0;
   }

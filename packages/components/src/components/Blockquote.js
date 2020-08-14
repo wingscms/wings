@@ -4,8 +4,8 @@ import styled from '../lib/styled';
 import { t } from '../theme';
 
 import Icon from './Icon';
-import Link from './Link';
-import Text from './Text';
+import _Link from './Link';
+import _Text from './Text';
 import Surface from './Surface';
 
 const Container = styled.div`
@@ -21,8 +21,11 @@ const Figure = styled(Surface)`
 `;
 
 const Quote = styled.blockquote`
-  color: ${t(_ => _.blockquoteTextColor)};
   margin: 0;
+`;
+
+const Text = styled(_Text)`
+  color: ${t(_ => _.blockquoteTextColor)};
 `;
 
 const IconWrap = styled.div`
@@ -40,8 +43,11 @@ const IconWrap = styled.div`
 const Caption = styled.figcaption`
   font-family: ${t(_ => _.textFontFamily)};
   margin-top: ${t(_ => _.smallSpacing)};
-  color: ${t(_ => _.textColor)};
   text-align: center;
+`;
+
+const Link = styled(_Link)`
+  color: ${t(_ => _.blockquoteTextColor)};
 `;
 
 export default function Blockquote({ elevation = 1, text, source, sourceUrl, ...props }) {

@@ -22,7 +22,19 @@ export default [
     title: 'Theme',
     components: [ThemeProvider],
     params: [
-      { name: 'None', props: {}, default: true },
+      { name: 'Wings', props: {}, default: true },
+      {
+        name: 'Wings Dark',
+        props: {
+          theme: {
+            backgroundColor: '#212121',
+            surfaceBackgroundColor: '#323232',
+            surfaceBorderRadius: '5px',
+            pullquoteBackgroundColor: '#323232',
+          },
+        },
+        default: true,
+      },
       {
         name: 'Red',
         props: {

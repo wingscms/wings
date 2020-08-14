@@ -1,6 +1,9 @@
 import React from 'react';
 import fP from 'filter-invalid-dom-props';
 import styled, { css } from '../lib/styled';
+
+import _Surface from './Surface';
+
 import { t } from '../theme';
 
 const Position = {
@@ -33,8 +36,9 @@ const getPosition = ({ position, hide }) => {
   }
 };
 
-const Container = styled.div`
+const Surface = styled(_Surface)`
   position: fixed;
+  border-radius: 0;
   height: ${t(_ => _.appBarHeight)};
   opacity: 1;
   width: 100%;
@@ -44,11 +48,11 @@ const Container = styled.div`
   ${getPosition}
 `;
 
-function AppBar({ children, hide, position = Position.TOP, ...props }) {
+function AppBar({ elevation = 2, children, hide, position = Position.TOP, ...props }) {
   return (
-    <Container hide={hide} position={position} {...fP(props)}>
+    <Surface elevation={elevation} hide={hide} position={position} {...fP(props)}>
       {children}
-    </Container>
+    </Surface>
   );
 }
 

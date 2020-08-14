@@ -10,7 +10,6 @@ export default {
   noneColor: '#EEEEEE',
   disabledColor: '#DDDDDD',
   backgroundColor: '#FFFFFF',
-  elementBackgroundColor: '#FFF',
   edgeColor: '#DDDDDD',
   textColor: '#212121',
   textColorDark: '#FFFFFF',
