@@ -1,6 +1,6 @@
 import React from 'react';
 import faker from 'faker';
-import { boolean, select, text } from '@storybook/addon-knobs/react';
+import { boolean, number, select, text } from '@storybook/addon-knobs/react';
 import { CallToAction } from '@wingscms/components';
 import { paddingWrap, image } from '../../../../utils';
 
@@ -11,6 +11,7 @@ const props = ({
   type = CallToAction.Type.VERTICAL,
 } = {}) => ({
   align: select('align', CallToAction.Align, align),
+  elevation: number('elevation', 0, { range: true, min: 0, max: 5 }),
   spacing: select('spacing', CallToAction.Spacing, spacing),
   type: select('type', CallToAction.Type, type),
   backgroundImage: text('backgroundImage', backgroundImage),

@@ -51,7 +51,6 @@ const Wrapper = styled.div`
   margin: 0 auto ${t(_ => _.largeSpacing)} auto;
   padding: 20px;
   background-color: #fff !important;
-  border-radius: 4px;
   box-shadow: ${t(_ => _.shadow)};
   text-align: center;
   @media screen and (max-width: 800px) {

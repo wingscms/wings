@@ -87,7 +87,6 @@ const FormContainer = styled.div`
   background-color: ${t(_ => _.campaignFormBackgroundColor)};
   color: ${t(_ => _.campaignFormTextColor)};
   vertical-align: top;
-  border-radius: 4px;
   box-shadow: ${t(_ => _.shadow)};
   align-self: flex-start;
   /* TODO: use Link component instead of vanilla <a> */
@@ -142,7 +141,6 @@ const Intro = styled(Text)`
 const CounterContainer = styled.div`
   background-color: ${t(_ => _.counterBackgroundColor)};
   color: ${t(_ => _.counterTextColor)};
-  border-radius: 4px 4px 0 0;
   padding: ${t(_ => `${_.smallSpacing} ${_.mediumSpacing}`)};
   width: 100%;
   @media screen and (max-width: 1000px) {

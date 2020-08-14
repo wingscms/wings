@@ -27,6 +27,7 @@ export { default as Reveal } from './components/Reveal';
 export { default as ScrollBar } from './components/ScrollBar';
 export { default as SectionMarker } from './components/SectionMarker';
 export { default as SocialButtons } from './components/SocialButtons';
+export { default as Surface } from './components/Surface';
 export { default as Text } from './components/Text';
 
 export { default as Theme, t, useTheme, ThemeProvider, Intent } from './theme';

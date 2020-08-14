@@ -7,6 +7,7 @@ import { t } from '../theme';
 import _Button from './Button';
 import Reveal from './Reveal';
 import _Heading from './Heading';
+import _Surface from './Surface';
 import _Text from './Text';
 
 const Align = {
@@ -73,10 +74,8 @@ const getSpacingStyles = (_, { spacing }) => {
   }
 };
 
-const Container = styled.div`
-  width: 100%;
+const Surface = styled(_Surface)`
   background-color: ${t(_ => _.callToActionBackgroundColor)};
-  box-shadow: ${t(_ => _.shadow)};
   ${({ backgroundImage }) => (backgroundImage ? backgroundImageStyles : '')}
   ${t(getSpacingStyles)}
 `;
@@ -138,6 +137,7 @@ export default function CallToAction({
   buttonText,
   buttonUrl,
   buttonProps,
+  elevation = 1,
   type = Type.VERTICAL,
   reveal,
   spacing = Spacing.SMALL,
@@ -146,8 +146,9 @@ export default function CallToAction({
   ...props
 }) {
   return (
-    <Container
+    <Surface
       backgroundImage={backgroundImage}
+      elevation={elevation}
       spacing={spacing}
       {...filterInvalidDOMProps(props)}
     >
@@ -170,7 +171,7 @@ export default function CallToAction({
           </a>
         </InnerContainer>
       </Reveal>
-    </Container>
+    </Surface>
   );
 }
 

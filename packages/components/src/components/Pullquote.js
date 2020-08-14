@@ -5,6 +5,7 @@ import { t } from '../theme';
 import Heading from './Heading';
 import { ALIGNLEFT, ALIGNRIGHT } from '../styles';
 import Link from './Link';
+import _Surface from './Surface';
 
 const Align = {
   LEFT: 'left',
@@ -30,7 +31,7 @@ const Container = styled.div`
   ${getContainerStyles}
 `;
 
-const Figure = styled.figure`
+const Surface = styled(_Surface)`
   background-color: ${t(_ => _.pullquoteBackgroundColor)};
   padding: ${t(_ => _.mediumSpacing)};
   position: relative;
@@ -52,15 +53,22 @@ const Caption = styled.figcaption`
   text-align: center;
 `;
 
-export default function Pullquote({ align = Align.CENTER, text, source, sourceUrl, ...props }) {
+export default function Pullquote({
+  align = Align.CENTER,
+  elevation,
+  text,
+  source,
+  sourceUrl,
+  ...props
+}) {
   return (
     <Container align={align}>
-      <Figure {...fP(props)}>
+      <Surface elevation={elevation} {...fP(props)}>
         <Quote>{text}</Quote>
         {!source ? null : (
           <Caption>{!sourceUrl ? source : <Link href={sourceUrl}>{source}</Link>}</Caption>
         )}
-      </Figure>
+      </Surface>
     </Container>
   );
 }

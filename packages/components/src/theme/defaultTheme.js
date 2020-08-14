@@ -18,6 +18,9 @@ export default {
   iconColorDark: '#FFFFFF',
   navigationLanguagePickerColor: '#FFFFFF',
   landingSectionGradientColor: 'rgba(0, 0, 0, 0.3)',
+  // ui options
+  surfaceBackgroundColor: '#FFFFFF',
+  surfaceBorderRadius: '0',
   // spacing
   mediumSpacing: '40px',
   // typography

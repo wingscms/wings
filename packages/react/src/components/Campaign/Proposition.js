@@ -10,7 +10,6 @@ const Container = styled.div`
   overflow: hidden;
   background-color: #fff;
   vertical-align: top;
-  border-radius: 4px 0 0 4px;
   box-shadow: ${t(_ => _.shadow)};
   height: ${({ height, show }) => (show ? height : 400)}px;
   transition: max-height 0.15s linear;
@@ -41,7 +40,6 @@ const ToggleButton = styled.div`
   font-weight: bold;
   bottom: 0;
   left: 0;
-  border-radius: 4px;
   z-index: 10;
   background-color: #fff;
   cursor: pointer;
