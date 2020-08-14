@@ -68,7 +68,7 @@ addParameters({
   },
   viewport: {
     viewports,
-    defaultViewport: 'iphonex',
+    defaultViewport: 'desktop',
   },
 });
 
