@@ -150,13 +150,21 @@ export default class Theme {
     return this.variables.burgerHoverColor || this.iconHoverColor;
   }
 
+  get burgerColorDark() {
+    return this.variables.burgerColorDark || this.iconColorDark;
+  }
+
+  get buttonBorderRadius() {
+    return this.variables.buttonBorderRadius || this.surfaceBorderRadius;
+  }
+
   get callToActionBackgroundColor() {
     return this.variables.callToActionBackgroundColor || this.primaryColor;
   }
 
   get callToActionTextColor() {
     return (
-      this.variables.allToActionTextColor ||
+      this.variables.callToActionTextColor ||
       this.contrastColor({
         backgroundColor: this.callToActionBackgroundColor,
       })
@@ -172,7 +180,7 @@ export default class Theme {
   }
 
   get dialogBackgroundColor() {
-    return this.variables.dialogBackgroundColor || this.backgroundColor;
+    return this.variables.dialogBackgroundColor || this.surfaceBackgroundColor;
   }
 
   get dialogTextColor() {
@@ -180,6 +188,16 @@ export default class Theme {
       this.variables.dialogTextColor ||
       this.contrastColor({
         backgroundColor: this.dialogBackgroundColor,
+      })
+    );
+  }
+
+  get dialogCloseColor() {
+    return (
+      this.variables.dialogCloseColor ||
+      this.contrastColor({
+        backgroundColor: this.dialogBackgroundColor,
+        colors: { light: this.iconColor, dark: this.iconColorDark },
       })
     );
   }
@@ -392,7 +410,9 @@ export default class Theme {
   }
 
   get shareButtonBackgroundHoverColor() {
-    return this.variables.shareButtonBackgroundHoverColor || this.secondaryColor;
+    return (
+      this.variables.shareButtonBackgroundHoverColor || this.darken(this.shareButtonBackgroundColor)
+    );
   }
 
   get shareButtonIconColor() {

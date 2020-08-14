@@ -14,6 +14,7 @@ const Text = styled(_Text)`
 `;
 
 const Surface = styled(_Surface)`
+  border-radius: 0;
   width: 100%;
   background: ${t(_ => _.sectionMarkerBackgroundColor)};
   &:first-child {
@@ -52,8 +53,8 @@ const Title = styled(Heading)`
 `;
 
 const Number = styled.span`
-  color: ${t((_, { numberColor }) => numberColor || _.sectionMarkerNumberColor)};
   ${t(Heading.getStyles(7))}
+  color: ${t((_, { numberColor }) => numberColor || _.sectionMarkerNumberColor)};
   font-weight: bold;
   opacity: ${t((_, { numberOpacity }) => numberOpacity || _.sectionMarkerNumberOpacity)};
 `;

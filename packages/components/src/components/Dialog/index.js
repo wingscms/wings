@@ -1,8 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import fP from 'filter-invalid-dom-props';
+
 import Header from './Header';
 import Portal from '../Portal';
 import Overlay from '../Overlay';
+import _Surface from '../Surface';
+
 import styled, { css } from '../../lib/styled';
 import { t } from '../../theme';
 
@@ -104,16 +107,15 @@ const Wrapper = styled.div`
   ${t(getHorizontalAlign)}
 `;
 
-const DialogContainer = styled.div`
-  border: 1px solid ${t(_ => _.edgeColor)};
+const Surface = styled(_Surface)`
   background-color: ${t(_ => _.dialogBackgroundColor)};
-  box-shadow: ${t(_ => _.shadow)};
   ${t(getSize)}
 `;
 
 export default function Dialog({
   children,
   clickOutsideToClose = true,
+  elevation = 2,
   onClose = () => {},
   overlayProps = {},
   overlay,
@@ -137,9 +139,9 @@ export default function Dialog({
       {overlay ? <Overlay {...overlayProps} /> : null}
       <Portal>
         <Wrapper position={position}>
-          <DialogContainer ref={dialogContainerRef} size={size} {...fP(props)}>
+          <Surface elevation={elevation} ref={dialogContainerRef} size={size} {...fP(props)}>
             {children}
-          </DialogContainer>
+          </Surface>
         </Wrapper>
       </Portal>
     </>

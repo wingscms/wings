@@ -2,7 +2,7 @@ import React from 'react';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 
 import styled, { css } from '../lib/styled';
-import { t } from '../theme';
+import { t, useTheme } from '../theme';
 
 import _Button from './Button';
 import Reveal from './Reveal';
@@ -145,6 +145,7 @@ export default function CallToAction({
   text,
   ...props
 }) {
+  const _ = useTheme();
   return (
     <Surface
       backgroundImage={backgroundImage}
@@ -164,7 +165,7 @@ export default function CallToAction({
             <Button
               align={align}
               intent={!backgroundImage ? Button.Intent.SECONDARY : Button.Intent.PRIMARY}
-              {...buttonProps}
+              {...{ backgroundColor: _.callToActionButtonColor, ...buttonProps }}
             >
               {buttonText}
             </Button>

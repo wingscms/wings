@@ -30,6 +30,7 @@ export default function Surface({
   elevation,
   height,
   width,
+  ref,
   ...props
 }) {
   return (
@@ -40,6 +41,7 @@ export default function Surface({
       elevation={elevation}
       height={height}
       width={width}
+      ref={ref}
       {...fP(props)}
     >
       {children}

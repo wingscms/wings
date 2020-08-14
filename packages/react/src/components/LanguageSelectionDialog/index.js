@@ -22,7 +22,7 @@ export default function LanguageSelectionDialog({
   ...props
 }) {
   return (
-    <Dialog size={Dialog.Size.MEDIUM} onClose={onClose} overlay {...fP(props)}>
+    <Dialog size={Dialog.Size.MEDIUM} onClose={onClose} elevation={5} {...fP(props)}>
       <Dialog.Header title={title} onClose={onClose} />
       <Text>{intro}</Text>
       <LanguageSelect

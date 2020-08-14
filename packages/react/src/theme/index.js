@@ -9,8 +9,36 @@ class Theme extends _Theme {
     return this.variables.appMenuBarBackgroundColor || this.appBarBackgroundColor;
   }
 
+  get appMenuBarBurgerColor() {
+    return (
+      this.variables.appMenuBarBurgerColor ||
+      this.contrastColor({
+        colors: { light: this.burgerColor, dark: this.burgerColorDark },
+        backgroundColor: this.appMenuBarBackgroundColor,
+      })
+    );
+  }
+
+  get appMenuBarBurgerHoverColor() {
+    return this.variables.appMenuBarBurgerHoverColor || this.primaryColor;
+  }
+
   get appMenuDrawerBackgroundColor() {
     return this.variables.appMenuDrawerBackgroundColor || this.drawerBackgroundColor;
+  }
+
+  get appMenuDrawerBurgerColor() {
+    return (
+      this.variables.appMenuDrawerBurgerColor ||
+      this.contrastColor({
+        colors: { light: this.burgerColor, dark: this.burgerColorDark },
+        backgroundColor: this.appMenuDrawerBackgroundColor,
+      })
+    );
+  }
+
+  get appMenuDrawerBurgerHoverColor() {
+    return this.variables.appMenuDrawerBurgerHoverColor || this.primaryColor;
   }
 
   get appMenuDrawerTextColor() {
