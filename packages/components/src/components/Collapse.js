@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import fP from 'filter-invalid-dom-props';
+
+import _Heading from './Heading';
+import _Surface from './Surface';
+
 import styled, { css } from '../lib/styled';
 import Theme, { t, useTheme } from '../theme';
-import _Heading from './Heading';
 
-const Container = styled.div`
+const Surface = styled(_Surface)`
   width: 100%;
   margin-bottom: ${t(_ => _.smallSpacing)};
 `;
@@ -35,12 +38,10 @@ const Content = styled.div`
   opacity: 1;
   transition: all 0.15s ease-in-out;
   height: auto;
-  border: 1px solid ${({ color }) => color};
   border-top: 0px;
   ${({ open }) =>
     !open &&
     css`
-      border: 1px solid transparent;
       height: 0;
       padding: 0 ${t(_ => _.smallSpacing)};
       overflow: hidden;
@@ -68,7 +69,7 @@ export default function Collapse({
   const hoverColor =
     backgroundHoverColor || _.collapseBackgroundHoverColor || _.darken(_.intentColor(intent));
   return (
-    <Container {...fP(props)}>
+    <Surface elevation={1} {...fP(props)}>
       <Label onClick={onClick || _onClick} intent={intent} color={color} hoverColor={hoverColor}>
         <Heading noSpacing rank={4} color={color} hoverColor={hoverColor}>
           {label}
@@ -77,7 +78,7 @@ export default function Collapse({
       <Content open={getOpen()} intent={intent} color={color}>
         {children}
       </Content>
-    </Container>
+    </Surface>
   );
 }
 

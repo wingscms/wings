@@ -65,9 +65,11 @@ const Toggle = styled.div`
       : `&:after {
     display: block;
     position: absolute;
-    background-image: ${(_.color(backgroundColor) || _.elementBackgroundColor).getLinearGradient({
-      to: 'top',
-    })};
+    background-image: ${(_.color(backgroundColor) || _.expandableBackgroundColor).getLinearGradient(
+      {
+        to: 'top',
+      },
+    )};
     top: -50px;
     height: 50px;
     width: 100%;
