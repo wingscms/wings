@@ -9,7 +9,7 @@ import { image, backgroundWrap } from '../../../../utils';
 const node = {
   title: 'This is a test article',
   image: {
-    url: image(800, 600),
+    url: image(1600, 1200),
     caption: 'A test image',
   },
   content: JSON.stringify(richMd),
