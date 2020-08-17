@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import fP from 'filter-invalid-dom-props';
 import { t } from '../theme';
 import styled from '../lib/styled';
@@ -22,17 +22,10 @@ const Container = styled.div`
   transition: all 0.3s ease-in-out;
 `;
 
-export default function Surface({
-  backgroundColor,
-  borderColor,
-  borderRadius,
-  children,
-  elevation,
-  height,
-  width,
+function Surface(
+  { backgroundColor, borderColor, borderRadius, children, elevation, height, width, ...props },
   ref,
-  ...props
-}) {
+) {
   return (
     <Container
       backgroundColor={backgroundColor}
@@ -48,3 +41,5 @@ export default function Surface({
     </Container>
   );
 }
+
+export default forwardRef(Surface);

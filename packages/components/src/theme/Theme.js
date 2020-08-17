@@ -172,11 +172,14 @@ export default class Theme {
   }
 
   get counterBackgroundColor() {
-    return this.variables.counterBackgroundColor || this.backgroundColor;
+    return this.variables.counterBackgroundColor || this.surfaceBackgroundColor;
   }
 
   get counterTextColor() {
-    return this.variables.counterTextColor || this.textColor;
+    return (
+      this.variables.counterTextColor ||
+      this.contrastColor({ backgroundColor: this.surfaceBackgroundColor })
+    );
   }
 
   get dialogBackgroundColor() {

@@ -82,6 +82,10 @@ class Theme extends _Theme {
     return this.variables.campaignFormTextColor || this.formTextColor;
   }
 
+  get campaignPropositionBackgroundColor() {
+    return this.variables.campaignPropositionBackgroundColor || this.surfaceBackgroundColor;
+  }
+
   get testimonialBackgroundColor() {
     return this.variables.testimonialBackgroundColor || this.surfaceBackgroundColor;
   }
