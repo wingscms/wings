@@ -6,7 +6,7 @@ import { color, number, text } from '@storybook/addon-knobs/react';
 const props = () => ({
   backgroundColor: color('backgroundColor'),
   borderRadius: text('borderRadius', '0px'),
-  elevation: number('elevation', 0, { range: true, min: 0, max: 5 }),
+  elevation: number('elevation', 1, { range: true, min: 0, max: 5 }),
   height: text('height', '300px'),
   width: text('width', '300px'),
 });
