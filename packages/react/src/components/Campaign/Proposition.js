@@ -41,7 +41,7 @@ const ToggleButton = styled.div`
   font-weight: bold;
   bottom: 0;
   left: 0;
-  z-index: 10;
+  z-index: 1;
   background-color: ${t(_ => _.campaignPropositionBackgroundColor)};
   color: ${t(_ => _.contrastColor({ backgroundColor: _.campaignPropositionBackgroundColor }))};
   cursor: pointer;

@@ -213,70 +213,68 @@ export default function Campaign({
   } = copy;
   const { intro, title, description } = node;
   const element = (
-    <>
-      <MainContainerOuter {...fP(props)} ref={campaignContainerRef}>
-        <MainContainerInner>
-          <Proposition
-            {...{ descriptionCollapse, descriptionExpand }}
-            height={formHeight - 80}
-            onToggle={show => {
-              if (!campaignContainerRef?.current || show) return;
-              campaignContainerRef?.current?.scrollIntoView?.({
-                behavior: 'smooth',
-                block: 'start',
-              });
-            }}
-            formWidth={FORM_WIDTH}
-            elevation={1}
-          >
-            {!(title || intro || description) ? null : (
-              <>
-                {title ? <Heading rank={headingRank}>{title}</Heading> : null}
-                {intro ? <Intro fullWidth>{intro}</Intro> : null}
-                <Content content={description} mini />
-              </>
-            )}
-          </Proposition>
-          <FormSurface ref={formContainerRef} elevation={2}>
-            {/* Petition counter */}
-            {typeof signatureCount === 'number' && node.resourceType === 'node.petition' && (
+    <MainContainerOuter {...fP(props)} ref={campaignContainerRef}>
+      <MainContainerInner>
+        <Proposition
+          {...{ descriptionCollapse, descriptionExpand }}
+          height={formHeight - 80}
+          onToggle={show => {
+            if (!campaignContainerRef?.current || show) return;
+            campaignContainerRef?.current?.scrollIntoView?.({
+              behavior: 'smooth',
+              block: 'start',
+            });
+          }}
+          formWidth={FORM_WIDTH}
+          elevation={1}
+        >
+          {!(title || intro || description) ? null : (
+            <>
+              {title ? <Heading rank={headingRank}>{title}</Heading> : null}
+              {intro ? <Intro fullWidth>{intro}</Intro> : null}
+              <Content content={description} mini />
+            </>
+          )}
+        </Proposition>
+        <FormSurface ref={formContainerRef} elevation={2}>
+          {/* Petition counter */}
+          {typeof signatureCount === 'number' && node.resourceType === 'node.petition' && (
+            <CounterSurface>
+              <Counter
+                current={_signatureCount || signatureCount}
+                goal={_signatureGoal || signatureGoal}
+                description={petitionCounterMessage}
+              />
+            </CounterSurface>
+          )}
+          {/* Fundraiser counter */}
+          {fundraiserRaised &&
+            typeof fundraiserRaised.amount === 'number' &&
+            node.resourceType === 'node.fundraiser' && (
               <CounterSurface>
                 <Counter
-                  current={_signatureCount || signatureCount}
-                  goal={_signatureGoal || signatureGoal}
-                  description={petitionCounterMessage}
+                  current={fundraiserRaised.amount / 100}
+                  goal={fundraiserTarget.amount / 100}
+                  description={fundraiserCounterMessage}
+                  symbol={fundraiserRaised.currency.symbol}
                 />
               </CounterSurface>
             )}
-            {/* Fundraiser counter */}
-            {fundraiserRaised &&
-              typeof fundraiserRaised.amount === 'number' &&
-              node.resourceType === 'node.fundraiser' && (
-                <CounterSurface>
-                  <Counter
-                    current={fundraiserRaised.amount / 100}
-                    goal={fundraiserTarget.amount / 100}
-                    description={fundraiserCounterMessage}
-                    symbol={fundraiserRaised.currency.symbol}
-                  />
-                </CounterSurface>
-              )}
-            <FormContainerInner>
-              <CampaignForm
-                type={resourceType.split('.')[1]}
-                id={id}
-                node={node}
-                redirectUrl={redirectUrlForNode(node)}
-                {...formProps}
-                onLoad={handleCampaignLoad}
-                onUpdate={() => setFormHeight(formContainerRef?.current?.offsetHeight)}
-                nodeFragment={NodeFragment}
-                campaignFragment={CampaignFragment}
-              />
-            </FormContainerInner>
-          </FormSurface>
-        </MainContainerInner>
-      </MainContainerOuter>
+          <FormContainerInner>
+            <CampaignForm
+              type={resourceType.split('.')[1]}
+              id={id}
+              node={node}
+              redirectUrl={redirectUrlForNode(node)}
+              {...formProps}
+              onLoad={handleCampaignLoad}
+              onUpdate={() => setFormHeight(formContainerRef?.current?.offsetHeight)}
+              nodeFragment={NodeFragment}
+              campaignFragment={CampaignFragment}
+            />
+          </FormContainerInner>
+        </FormSurface>
+      </MainContainerInner>
       {resourceType === 'node.event' && (node.schedule || node.fee || node.location) && (
         <EventDetails
           title={<Heading rank={2}>{eventInfoTitle}</Heading>}
@@ -292,7 +290,7 @@ export default function Campaign({
           }}
         />
       )}
-    </>
+    </MainContainerOuter>
   );
   return wrapElement(element, node);
 }
