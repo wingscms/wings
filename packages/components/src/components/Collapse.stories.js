@@ -12,18 +12,18 @@ const props = () => ({
   backgroundHoverColor: color('backgroundHoverColor'),
 });
 
-export const Controlled = () => (
+export default () => (
   <>
-    <Collapse {...props()} open={boolean('open', false)}>
+    <Collapse {...props()}>
       <Text>{faker.lorem.paragraph(6)}</Text>
     </Collapse>
     <Text>{faker.lorem.paragraph(1)}</Text>
   </>
 );
 
-export const Uncontrolled = () => (
+export const Controlled = () => (
   <>
-    <Collapse {...props()}>
+    <Collapse {...props()} open={boolean('open', false)}>
       <Text>{faker.lorem.paragraph(6)}</Text>
     </Collapse>
     <Text>{faker.lorem.paragraph(1)}</Text>
