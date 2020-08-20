@@ -321,7 +321,7 @@ export default function Card({
         size={size}
         shadow={shadow}
         borderRadius={borderRadius || 4}
-        elevation={active ? 2 : 1}
+        elevation={active ? 3 : 1}
       >
         {image ? <Image className="cardImage" backgroundImage={image} /> : null}
         <TopContent className="topContent" topBackground={topBackground}>
