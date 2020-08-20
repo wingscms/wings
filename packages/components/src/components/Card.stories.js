@@ -4,7 +4,7 @@ import { Card } from '@wingscms/components';
 import { number, text } from '@storybook/addon-knobs/react';
 import { paddingWrap, image } from '../../../../utils';
 
-const cardProps = ({ width = '300px', ratio = undefined } = {}) => ({
+const cardProps = ({ width = '320px', ratio = undefined } = {}) => ({
   width: text('width', width, 'Card Props'),
   ratio: text('ratio', ratio, 'Card Props'),
 });
