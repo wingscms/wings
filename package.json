@@ -9,8 +9,8 @@
     "lint": "eslint .",
     "version": "lerna version",
     "release": "cross-env HUSKY_BYPASS=true lerna publish from-git",
-    "storybook": "node storybook.js",
-    "build-storybook": "node .storybook/bootstrap.js && build-storybook -o .storybook-build --quiet"
+    "storybook": "NODE_ENV=development node storybook.js",
+    "build-storybook": "NODE_ENV=development node .storybook/bootstrap.js && build-storybook -o .storybook-build --quiet"
   },
   "workspaces": {
     "packages": [
