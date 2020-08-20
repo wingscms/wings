@@ -16,10 +16,12 @@ const Surface = styled(_Surface)`
 
 const Heading = styled(_Heading)`
   font-size: 20px;
+  text-decoration: none;
 `;
 
 const Text = styled(_Text)`
   font-size: 16px;
+  text-decoration: none;
 `;
 
 const Title = ({ characterLimit, title = '', children }) => (
