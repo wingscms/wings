@@ -10,7 +10,7 @@ import { t } from '../../theme';
 
 const Surface = styled(_Surface)`
   width: 100%;
-  padding: ${t(_ => _.extraSmallSpacing)};
+  padding: ${t(_ => _.smallSpacing)};
   position: relative;
 `;
 
