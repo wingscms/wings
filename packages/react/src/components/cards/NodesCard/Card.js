@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import classNames from 'classnames';
-import { Icon, ProgressBar } from '@wingscms/components';
+import { Icon, ProgressBar, Surface as _Surface } from '@wingscms/components';
 import { t } from '../../../theme';
 import styled from '../../../lib/styled';
 
-const Container = styled.div`
+const Container = styled(_Surface)`
   display: flex;
   position: relative;
-  box-shadow: ${({ shadow }) => (shadow ? '0 0 20px 0 rgba(0, 0, 0, 0.2)' : 'none')};
-  background-color: #fff;
+  background-color: ${t(_ => _.surfaceBackgroundColor)};
+  border-radius: ${t(_ => _.surfaceBorderRadius)};
   overflow: hidden;
-  border-radius: ${({ borderRadius }) => `${borderRadius || 4}px`};
   &.medium {
     padding-top: 130%;
   }
@@ -35,7 +34,6 @@ const StyledContainer = styled(Container)`
   &.active,
   &:active,
   &:hover {
-    box-shadow: ${({ shadow }) => (shadow ? '0 0 20px 0 rgba(0, 0, 0, 0.6)' : 'none')};
     .bottomContent {
       transform: translateY(-99%);
       > .titleWrapper {
@@ -105,7 +103,7 @@ const BottomContent = styled.div`
   transition: all 0.2s ease-in-out;
   text-shadow: ${({ bottomBackground }) =>
     bottomBackground ? 'none' : '0px 0px 5px rgba(0, 0, 0, 0.7);'};
-  background-color: ${({ bottomBackground }) => (bottomBackground ? '#ffffff' : 'transparent')};
+  background-color: ${t(_ => _.surfaceBackgroundColor)};
   box-shadow: ${({ bottomBackground }) =>
     bottomBackground ? '0 0 20px 0 rgba(0, 0, 0, 0.2)' : 'none'};
   > .titleWrapper {
@@ -146,10 +144,10 @@ const BottomContent = styled.div`
         content: '';
         position: absolute;
         right: 0;
-        width: 1rem;
+        width: 1.1rem;
         height: 2rem;
         margin-top: 0.3rem;
-        background: #ffffff;
+        background: ${t(_ => _.surfaceBackgroundColor)};
         z-index: 10;
         ${({ bottomBackground }) =>
           bottomBackground ? 'display: block' : 'display: none;'} z-index: 10;
@@ -323,6 +321,7 @@ export default function Card({
         size={size}
         shadow={shadow}
         borderRadius={borderRadius || 4}
+        elevation={active ? 2 : 1}
       >
         {image ? <Image className="cardImage" backgroundImage={image} /> : null}
         <TopContent className="topContent" topBackground={topBackground}>
