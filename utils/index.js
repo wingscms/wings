@@ -22,13 +22,8 @@ const WebfontWrap = ({ children }) => {
 const ContentWrapper = styled.div`
   background-color: ${t(_ => _.backgroundColor)};
   margin: 0 auto;
-  margin-top: 2em;
   max-width: 760px;
   min-height: 100vh;
-  padding: 0 20px;
-  @media screen and (min-width: 800px) {
-    margin-top: 3em;
-  }
 `;
 
 const PaddingWrap = styled.div`
@@ -38,19 +33,24 @@ const PaddingWrap = styled.div`
 `;
 
 const BackgroundWrap = styled.div`
+  overflow: auto;
   background-color: ${t(_ => _.backgroundColor)};
   min-height: 100vh;
 `;
 
 export const contentWrap = elem => (
   <WebfontWrap>
-    <ContentWrapper>{elem}</ContentWrapper>
+    <BackgroundWrap>
+      <ContentWrapper>{elem}</ContentWrapper>
+    </BackgroundWrap>
   </WebfontWrap>
 );
 
 export const paddingWrap = elem => (
   <WebfontWrap>
-    <PaddingWrap>{elem}</PaddingWrap>
+    <BackgroundWrap>
+      <PaddingWrap>{elem}</PaddingWrap>
+    </BackgroundWrap>
   </WebfontWrap>
 );
 
