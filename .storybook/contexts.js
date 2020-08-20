@@ -68,37 +68,6 @@ export default [
         },
       },
       {
-        name: 'Haxxxor',
-        props: {
-          theme: {
-            primaryColor: '#20C20E',
-            secondaryColor: '#000000',
-            textFontFamily: 'courier',
-            headerFontFamily: 'courier',
-            backgroundColor: '#000000',
-            textColor: '#000000',
-            textColorDark: '#FFFFFF',
-            iconColor: '#000000',
-            iconColorDark: '#FFFFFF',
-            headingColor: '#20C20E',
-            surfaceBackgroundColor: '#212121',
-            uppercaseTitles: true,
-            footerBackgroundColor: '#000000',
-            sectionMarkerBackgroundColor: '#212121',
-            sectionMarkerNumberColor: '#FFFFFF',
-            sectionMarkerTextColor: '#20C20E',
-            sectionMarkerTitleColor: '#20C20E',
-            insightBackgroundColor: '#212121',
-            insightTextColor: '#20C20E',
-            callToActionBackgroundColor: '#212121',
-            callToActionButtonColor: '#20C20E',
-            landingSectionArrowColor: '#20C20E',
-            landingSectionTitleColor: '#20C20E',
-            landingSectionGradientColor: 'rgba(0, 0, 0, 0.3)',
-          },
-        },
-      },
-      {
         name: 'openoverabortus.humanistischverbond.nl',
         props: {
           theme: {

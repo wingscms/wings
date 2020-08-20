@@ -3,20 +3,7 @@ import React from 'react';
 import AspectRatio from '../AspectRatio';
 import _Surface from '../Surface';
 
-import styled, { css } from '../../lib/styled';
-
-const getPosition = ({ position }) => {
-  switch (position) {
-    case 'bottom':
-      return css`
-        align-self: end;
-      `;
-    default:
-      return css`
-        align-self: start;
-      `;
-  }
-};
+import styled from '../../lib/styled';
 
 const Surface = styled(_Surface)`
   background-image: url('${({ image }) => image}');
@@ -24,11 +11,11 @@ const Surface = styled(_Surface)`
   background-size: cover;
   width: 100%;
   position: relative;
-  ${getPosition};
+  border-radius: 0;
 `;
 
-export default ({ image = {}, elevation, ratio = '16:9', position = 'top', ...props }) => (
-  <Surface elevation={elevation} image={image.src} position={position} {...props}>
+export default ({ image = {}, elevation, ratio = '16:9', ...props }) => (
+  <Surface elevation={elevation} image={image.src} {...props}>
     <AspectRatio ratio={ratio}></AspectRatio>
   </Surface>
 );

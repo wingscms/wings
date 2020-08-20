@@ -1,15 +1,55 @@
 import React from 'react';
 import faker from 'faker';
 import { Card } from '@wingscms/components';
+import { number, text } from '@storybook/addon-knobs/react';
 import { paddingWrap, image } from '../../../../utils';
 
+const cardProps = ({ width = '300px', ratio = undefined } = {}) => ({
+  width: text('width', width, 'Card Props'),
+  ratio: text('ratio', ratio, 'Card Props'),
+});
+
+const imageProps = ({ ratio = '16:9' } = {}) => ({
+  ratio: text('ratio', ratio, 'Image Props'),
+});
+
+const titleProps = ({ characterLimit = 50 } = {}) => ({
+  characterLimit: number('characterLimit', characterLimit, {}, 'Title Props'),
+  title: text('title text', faker.lorem.sentences(1), 'Title Props'),
+});
+
+const subtitleProps = ({ characterLimit = 150 } = {}) => ({
+  characterLimit: number('characterLimit', characterLimit, {}, 'Subtitle Props'),
+  subtitle: text('title text', faker.lorem.sentences(3), 'Subtitle Props'),
+});
+
 export default () => (
-  <Card>
-    <Card.Image position="bottom" image={{ src: image() }} />
-    <Card.Heading position="top">
-      <Card.Heading.Title>A title</Card.Heading.Title>
-      <Card.Heading.Subtitle>{faker.lorem.sentences(2)}</Card.Heading.Subtitle>
-    </Card.Heading>
+  <Card {...cardProps()}>
+    <Card.Header>
+      <Card.Image image={{ src: image() }} {...imageProps()} />
+    </Card.Header>
+    <Card.Main></Card.Main>
+    <Card.Footer>
+      <Card.Heading>
+        <Card.Heading.Title {...titleProps()} />
+        <Card.Heading.Subtitle {...subtitleProps()} />
+      </Card.Heading>
+    </Card.Footer>
+  </Card>
+);
+
+export const AspectRatio = () => (
+  <Card {...cardProps({ ratio: '3:4' })}>
+    <Card.Header>
+      <Card.Image image={{ src: image() }} {...imageProps()} />
+    </Card.Header>
+    <Card.Main>
+      <Card.Heading>
+        <Card.Heading.Title {...titleProps()} />
+        <Card.Heading.Subtitle {...subtitleProps()} />
+      </Card.Heading>
+    </Card.Main>
+    <Card.Footer></Card.Footer>
   </Card>
 );
 

@@ -4,27 +4,14 @@ import _Heading from '../Heading';
 import _Surface from '../Surface';
 import _Text from '../Text';
 
-import styled, { css } from '../../lib/styled';
+import styled from '../../lib/styled';
+import { limitCharacters } from '../../lib/utils';
 import { t } from '../../theme';
-
-const getPosition = ({ position }) => {
-  switch (position) {
-    case 'bottom':
-      return css`
-        align-self: end;
-      `;
-    default:
-      return css`
-        align-self: start;
-      `;
-  }
-};
 
 const Surface = styled(_Surface)`
   width: 100%;
   padding: ${t(_ => _.extraSmallSpacing)};
   position: relative;
-  ${getPosition};
 `;
 
 const Heading = styled(_Heading)`
@@ -35,13 +22,28 @@ const Text = styled(_Text)`
   font-size: 16px;
 `;
 
-const Title = ({ children }) => <Heading noSpacing>{children}</Heading>;
+const Title = ({ characterLimit, title = '', children }) => (
+  <Heading noSpacing>
+    {characterLimit
+      ? limitCharacters(title, { limit: characterLimit, suffix: '...', subtractSuffix: true })
+      : title}
+    {children}
+  </Heading>
+);
 
-const Subtitle = ({ children }) => <Text noSpacing>{children}</Text>;
+const Subtitle = ({ characterLimit, subtitle = '', children }) => (
+  <Text noSpacing>
+    {' '}
+    {characterLimit
+      ? limitCharacters(subtitle, { limit: characterLimit, suffix: '...', subtractSuffix: true })
+      : subtitle}
+    {children}
+  </Text>
+);
 
-function CardHeading({ elevation, position = 'top', children, ...props }) {
+function CardHeading({ elevation, children, ...props }) {
   return (
-    <Surface elevation={elevation} position={position} {...props}>
+    <Surface elevation={elevation} {...props}>
       {children}
     </Surface>
   );
