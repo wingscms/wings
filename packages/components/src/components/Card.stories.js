@@ -53,4 +53,26 @@ export const AspectRatio = () => (
   </Card>
 );
 
+export const BackgroundImage = () => (
+  <Card backgroundImage={image()} {...cardProps({ ratio: '3:4' })}>
+    <Card.Header>
+      <Card.Heading>
+        <Card.Heading.Title
+          style={{ color: '#fff', textShadow: '0px 0px 3px #000' }}
+          {...titleProps({ characterLimit: 0 })}
+        />
+      </Card.Heading>
+    </Card.Header>
+    <Card.Main></Card.Main>
+    <Card.Footer>
+      <Card.Heading>
+        <Card.Heading.Subtitle
+          style={{ color: '#fff', textShadow: '0px 0px 3px #000' }}
+          {...subtitleProps({ characterLimit: 0 })}
+        />
+      </Card.Heading>
+    </Card.Footer>
+  </Card>
+);
+
 export const wrapStory = paddingWrap;

@@ -12,6 +12,7 @@ const Surface = styled(_Surface)`
   width: 100%;
   padding: ${t(_ => _.smallSpacing)};
   position: relative;
+  background-color: transparent;
 `;
 
 const Heading = styled(_Heading)`
@@ -24,8 +25,8 @@ const Text = styled(_Text)`
   text-decoration: none;
 `;
 
-const Title = ({ characterLimit, title = '', children }) => (
-  <Heading noSpacing>
+const Title = ({ characterLimit, title = '', children, ...props }) => (
+  <Heading noSpacing {...props}>
     {characterLimit
       ? limitCharacters(title, { limit: characterLimit, suffix: '...', subtractSuffix: true })
       : title}
@@ -33,8 +34,8 @@ const Title = ({ characterLimit, title = '', children }) => (
   </Heading>
 );
 
-const Subtitle = ({ characterLimit, subtitle = '', children }) => (
-  <Text noSpacing>
+const Subtitle = ({ characterLimit, subtitle = '', children, ...props }) => (
+  <Text noSpacing {...props}>
     {' '}
     {characterLimit
       ? limitCharacters(subtitle, { limit: characterLimit, suffix: '...', subtractSuffix: true })

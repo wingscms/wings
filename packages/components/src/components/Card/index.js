@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import AspectRatio from '../AspectRatio';
 import _Surface from '../Surface';
@@ -6,9 +6,17 @@ import _Surface from '../Surface';
 import Image from './Image';
 import Heading from './Heading';
 
-import styled from '../../lib/styled';
+import styled, { css } from '../../lib/styled';
 
 const Surface = styled(_Surface)`
+  ${({ backgroundImage }) =>
+    !backgroundImage
+      ? null
+      : css`
+        background-image: url('${backgroundImage}');
+        background-position: center;
+        background-size: cover;
+  `}
   width: ${({ width }) => width};
   position: relative;
   overflow: hidden;
@@ -45,9 +53,18 @@ const Footer = styled.footer`
   flex-shrink: 0;
 `;
 
-function Card({ children, ratio, width }) {
+function Card({ backgroundImage, children, ratio, width }) {
+  const [active, setActive] = useState(false);
   return (
-    <Surface elevation={1} width={width}>
+    <Surface
+      backgroundImage={backgroundImage}
+      elevation={active ? 3 : 1}
+      width={width}
+      onMouseEnter={() => setActive(true)}
+      onTouchStart={() => setActive(true)}
+      onTouchEnd={() => setActive(false)}
+      onMouseLeave={() => setActive(false)}
+    >
       {ratio ? (
         <AspectRatio ratio={ratio}>
           <ContentAspectRatio>{children}</ContentAspectRatio>
