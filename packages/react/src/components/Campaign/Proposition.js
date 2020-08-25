@@ -64,7 +64,12 @@ const ToggleButton = styled.div`
             background: linear-gradient(
               to top,
               ${t(_ => _.campaignPropositionBackgroundColor)},
-              rgba(255, 255, 255, 0) 50%
+              ${t(
+                _ =>
+                  `rgba(${_.color(_.campaignPropositionBackgroundColor)
+                    .toColor()
+                    .color.join(', ')}, 0) 50%`,
+              )}
             );
           }
         `}
