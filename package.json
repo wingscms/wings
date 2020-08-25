@@ -10,7 +10,7 @@
     "version": "lerna version",
     "release": "cross-env HUSKY_BYPASS=true lerna publish from-git",
     "storybook": "NODE_ENV=development node storybook.js",
-    "build-storybook": "NODE_ENV=development node .storybook/bootstrap.js && build-storybook -o .storybook-build --quiet"
+    "build-storybook": "NODE_ENV=production node .storybook/bootstrap.js && build-storybook -o .storybook-build --quiet"
   },
   "workspaces": {
     "packages": [
