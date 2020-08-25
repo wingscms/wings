@@ -75,4 +75,13 @@ export const BackgroundImage = () => (
   </Card>
 );
 
+export const ContentReveal = () => (
+  <Card backgroundImage={image()} {...cardProps({ ratio: '3:4' })}>
+    <Card.HeadingReveal
+      title={text('title text', faker.lorem.sentences(1))}
+      subtitle={text('subtitle text', faker.lorem.sentences(2))}
+    />
+  </Card>
+);
+
 export const wrapStory = paddingWrap;

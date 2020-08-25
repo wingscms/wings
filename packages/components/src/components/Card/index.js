@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, cloneElement } from 'react';
 
 import AspectRatio from '../AspectRatio';
 import _Surface from '../Surface';
 
 import Image from './Image';
 import Heading from './Heading';
+import HeadingReveal from './HeadingReveal';
 
 import styled, { css } from '../../lib/styled';
 
@@ -53,8 +54,15 @@ const Footer = styled.footer`
   flex-shrink: 0;
 `;
 
-function Card({ backgroundImage, children, ratio, width }) {
+function Card({ backgroundImage, children: _children, ratio, width }) {
   const [active, setActive] = useState(false);
+
+  const children = React.Children.map(_children, child => {
+    return cloneElement(child, {
+      active,
+    });
+  });
+
   return (
     <Surface
       backgroundImage={backgroundImage}
@@ -79,6 +87,7 @@ function Card({ backgroundImage, children, ratio, width }) {
 export default Card;
 
 Card.Header = Header;
+Card.HeadingReveal = HeadingReveal;
 Card.Main = Main;
 Card.Footer = Footer;
 Card.Image = Image;
