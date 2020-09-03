@@ -15,6 +15,7 @@ const Surface = styled(_Surface)`
   max-width: 100%;
   padding: 10px 20px 10px 20px;
   height: auto;
+  border-radius: 0;
   top: 100%;
   transform: translateY(-106px);
   transition: all 0.2s ease-in-out;
