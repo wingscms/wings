@@ -12,6 +12,7 @@ class MobiledocRenderer extends Component {
     content: PropTypes.string,
     cards: PropTypes.array,
     unknownCardHandler: PropTypes.func,
+    additionalProps: PropTypes.object,
   };
 
   static defaultProps = {
@@ -20,15 +21,17 @@ class MobiledocRenderer extends Component {
     cardProps: {},
     unknownCardHandler: ({ env: { name } }) =>
       console.error(`Unknown card type ${name} encountered.`), // eslint-disable-line no-console
+    additionlProps: {},
   };
 
   createRenderer() {
-    const { cards, unknownCardHandler } = this.props;
+    const { cards, additionalProps, unknownCardHandler } = this.props;
     return new Renderer({
       cards: cards.map(this.injectCardProps),
       sections,
       unknownCardHandler,
       markups,
+      additionalProps,
     });
   }
 

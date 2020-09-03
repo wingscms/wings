@@ -15,7 +15,16 @@ const _List = listType => props => (
 );
 
 export default [
-  { name: 'p', component: Text },
+  {
+    name: 'p',
+    component: ({ _mobiledocInfo, dropCap, ...props }) => {
+      const showDropCap =
+        dropCap &&
+        (_mobiledocInfo?.nodeKey === 0 ||
+          _mobiledocInfo?.previousSection?.cardInformation?.name === 'ChapterCard');
+      return <Text dropCap={showDropCap} {...props} />;
+    },
+  },
   { name: 'ul', component: _List(List.Type.UNORDERED) },
   { name: 'ol', component: _List(List.Type.ORDERED) },
   ...headings,

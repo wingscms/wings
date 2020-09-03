@@ -28,6 +28,7 @@ export default {
   headerFontFamily: '"Poppins", sans-serif',
   headingScaleRatio: 1.25,
   uppercaseTitles: false,
+  dropCap: true,
   // misc
   mobileBreakpoint: BREAKPOINT_SIZE[BREAKPOINT_TYPE.MOBILE],
   tabletBreakpoint: BREAKPOINT_SIZE[BREAKPOINT_TYPE.TABLET],
