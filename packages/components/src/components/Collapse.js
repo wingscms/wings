@@ -10,6 +10,7 @@ import Theme, { t, useTheme } from '../theme';
 const Surface = styled(_Surface)`
   width: 100%;
   margin-bottom: ${t(_ => _.smallSpacing)};
+  overflow: hidden;
 `;
 
 const Label = styled.div`
