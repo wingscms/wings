@@ -17,12 +17,19 @@ export default function LanguageSelectionDialog({
   title = 'Select Language',
   intro = 'Select your preferred language:',
   current,
+  overlay,
   translations = [],
   wrapTranslation,
   ...props
 }) {
   return (
-    <Dialog size={Dialog.Size.MEDIUM} onClose={onClose} elevation={5} {...fP(props)}>
+    <Dialog
+      size={Dialog.Size.MEDIUM}
+      onClose={onClose}
+      elevation={5}
+      overlay={overlay}
+      {...fP(props)}
+    >
       <Dialog.Header title={title} onClose={onClose} />
       <Text>{intro}</Text>
       <LanguageSelect

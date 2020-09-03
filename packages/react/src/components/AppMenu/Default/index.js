@@ -87,6 +87,7 @@ export default function DefaultMenu({
           current={translations.current}
           translations={translations.translations}
           wrapTranslation={wrapTranslation}
+          overlay
         />
       )}
     </Portal>
