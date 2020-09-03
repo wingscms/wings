@@ -11,7 +11,7 @@ const tt = [
       markups: [],
       sections: [[1, 'p', [[0, [], 0, 'Hello world!']]]],
     },
-    expected: '<div class="Mobiledoc"><p>Hello world!</p></div>',
+    expected: '<div class="Mobiledoc"><p _mobiledocInfo="[object Object]">Hello world!</p></div>',
   },
   {
     name: 'link',
@@ -23,7 +23,7 @@ const tt = [
       sections: [[1, 'p', [[0, [], 0, 'A link '], [0, [0], 1, 'Hello world!']]]],
     },
     expected:
-      '<div class="Mobiledoc"><p>A link <a href="https://wings.dev">Hello world!</a></p></div>',
+      '<div class="Mobiledoc"><p _mobiledocInfo="[object Object]">A link <a href="https://wings.dev">Hello world!</a></p></div>',
   },
   {
     name: 'bold',
@@ -34,7 +34,8 @@ const tt = [
       markups: [['strong']],
       sections: [[1, 'p', [[0, [0], 1, 'Hello world!']]]],
     },
-    expected: '<div class="Mobiledoc"><p><strong>Hello world!</strong></p></div>',
+    expected:
+      '<div class="Mobiledoc"><p _mobiledocInfo="[object Object]"><strong>Hello world!</strong></p></div>',
   },
   {
     name: 'italic',
@@ -45,7 +46,8 @@ const tt = [
       markups: [['em']],
       sections: [[1, 'p', [[0, [0], 1, 'Hello world!']]]],
     },
-    expected: '<div class="Mobiledoc"><p><em>Hello world!</em></p></div>',
+    expected:
+      '<div class="Mobiledoc"><p _mobiledocInfo="[object Object]"><em>Hello world!</em></p></div>',
   },
   {
     name: 'underline',
@@ -56,7 +58,8 @@ const tt = [
       markups: [['u']],
       sections: [[1, 'p', [[0, [0], 1, 'Hello world!']]]],
     },
-    expected: '<div class="Mobiledoc"><p><u>Hello world!</u></p></div>',
+    expected:
+      '<div class="Mobiledoc"><p _mobiledocInfo="[object Object]"><u>Hello world!</u></p></div>',
   },
   {
     name: 'strikethrough',
@@ -67,7 +70,8 @@ const tt = [
       markups: [['s']],
       sections: [[1, 'p', [[0, [0], 1, 'Hello world!']]]],
     },
-    expected: '<div class="Mobiledoc"><p><s>Hello world!</s></p></div>',
+    expected:
+      '<div class="Mobiledoc"><p _mobiledocInfo="[object Object]"><s>Hello world!</s></p></div>',
   },
   {
     name: 'nested markup',
@@ -78,7 +82,8 @@ const tt = [
       markups: [['strong'], ['em']],
       sections: [[1, 'p', [[0, [], 0, 'Some '], [0, [0], 0, 'nested '], [0, [1], 2, 'markup']]]],
     },
-    expected: '<div class="Mobiledoc"><p>Some <strong>nested <em>markup</em></strong></p></div>',
+    expected:
+      '<div class="Mobiledoc"><p _mobiledocInfo="[object Object]">Some <strong>nested <em>markup</em></strong></p></div>',
   },
   {
     name: 'complex nested markup',
@@ -101,7 +106,7 @@ const tt = [
       ],
     },
     expected:
-      '<div class="Mobiledoc"><p>Some <strong>nested <em>markup </em></strong>then normal</p></div>',
+      '<div class="Mobiledoc"><p _mobiledocInfo="[object Object]">Some <strong>nested <em>markup </em></strong>then normal</p></div>',
   },
   {
     name: 'muiltiple paragraphs',
@@ -116,7 +121,7 @@ const tt = [
       ],
     },
     expected:
-      '<div class="Mobiledoc"><p>This is the first paragraph.</p><p>This is the second paragraph.</p></div>',
+      '<div class="Mobiledoc"><p _mobiledocInfo="[object Object]">This is the first paragraph.</p><p _mobiledocInfo="[object Object]">This is the second paragraph.</p></div>',
   },
 ];
 
