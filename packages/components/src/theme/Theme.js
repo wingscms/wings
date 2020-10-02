@@ -171,6 +171,10 @@ export default class Theme {
     );
   }
 
+  get counterBarColor() {
+    return this.variables.counterBarColor || this.primaryColor;
+  }
+
   get counterBackgroundColor() {
     return this.variables.counterBackgroundColor || this.surfaceBackgroundColor;
   }
