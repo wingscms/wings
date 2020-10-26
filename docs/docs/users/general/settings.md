@@ -4,15 +4,23 @@ title: Settings
 
 When you click `Settings`, you’ll find the the following settings pages. We will go over them one by one.
 
-![](https://screens.wings.dev/CleanShot-2020-02-23-at-17.29.48-1582475407.png)
+![](https://screens.wings.dev/CleanShot-2020-09-07-at-13.34.00-1599478452.png)
 
 ## Apps
 Most Wings projects have one frontend application – a _website_ – but it is possible to have multiple frontend apps: separate websites that share the same Wings project, or a mobile app or smart speaker application, for example. Regular users will only use the following settings:
 
-![](https://screens.wings.dev/CleanShot-2020-02-23-at-17.32.39-1582475603.png)
+![](https://screens.wings.dev/CleanShot-2020-09-07-at-13.47.01-1599479244.png)
 
-- **Main Menu**: select which menu (which can be managed on the Settings -> Menu tab) is to be used as a main navigation menu on your website.
-- **Homepage**: choose which node (page, article or campaign) should serve as the home page of your website. **Note**: the node that is selected here will no longer be found at its usual path & slug.
+1. **Theme**: you can select the theme for your site. A theme is a collection of style settings, such as colours and fonts; they can be configured at Settings -> Themes.
+2. **Main Menu**: select which menu (which can be managed on the Settings -> Menu tab) is to be used as a main navigation menu on your website.
+3. **Homepage**: choose which node (page, article or campaign) should serve as the home page of your website. **Note**: the node that is selected here will no longer be found at its usual path & slug.
+
+**Tip**: If you want to experiment with a theme, create a new theme first, then create a new app, and configure the app to use your new theme.
+
+## Themes
+On the Themes page, you can configure your themes. **Note**: when you edit the theme that is currently set to be active on your site, you will immediately change the presentation of your website. 
+
+![](https://screens.wings.dev/CleanShot-2020-09-07-at-13.50.20-1599479432.png)
 
 ## Menus
 You can configure menus here. Click `Add Menu Item` to add an item and type its title and path. **Note**: you do not need to enter the entire url; you can use relative paths. For example, for a page with the slug '`our-team`', you can enter the path `/our-team` (with a `/` at the start). Remember that articles, signups, fundraisers, events and petitions should be linked with a path that includes their node type. A fundraiser with the slug `save-the-day` has a path called `/fundraisers/save-the-day`. The same goes for `/articles/`, `/petitions/`, `/events/` and `/signups/`, respectively.
@@ -32,11 +40,9 @@ Do you want to publish the secondary (or tertiary) language pages separate from 
 
 ![](https://screens.wings.dev/CleanShot-2020-02-23-at-17.43.42-1582476248.png)  
 
-Do you want to publish the same page in multiple languages? Then, simply publish the same page/article/campaign in a different language, but **use the same slug as the one published in the primary language** In the example above, there is also an English article with the slug `/demo-article`, which you can see at [demo.wings.dev/articles/demo-article](https://demo.wings.dev/articles/demo-article). As you can see, it displays a language switcher that lets you visit the same page in a different language:
+Do you want to publish the same page in multiple languages? Then, simply publish the same page/article/campaign in a different language, but **use the same slug as the one published in the primary language** In the example above, there is also an English article with the slug `/demo-article`, which you can see at [demo.wings.dev/articles/demo-article](https://demo.wings.dev/articles/demo-article). 
 
-![](https://screens.wings.dev/CleanShot-2020-02-23-at-17.50.39-1582476652.png)
-
-As you might expect, the Dutch version can be found at [demo.wings.dev/articles/nl/articles/demo-article](https://demo.wings.dev/nl/articles/demo-article). 
+As you might expect, the Dutch version can be found at [demo.wings.dev/articles/articles/demo-article?lang=nl](https://demo.wings.dev/articles/demo-article?lang=nl). 
 
 ## Commerce
 At the Commerce Settings page, you can set up payment integrations for payment processors Stripe or Mollie. If you use Stripe, you should fill out your Public Key and Secret. In case of Mollie, just fill out your API key. Your Fundraiser campaigns should work automatically. Tip: fill out your test credentials at first so you can test the payment flow without making actual payments, and change these to your live credentials after publishing your website.

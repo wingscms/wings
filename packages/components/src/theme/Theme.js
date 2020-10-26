@@ -156,7 +156,7 @@ export default class Theme {
 
   get callToActionTextColor() {
     return (
-      this.variables.allToActionTextColor ||
+      this.variables.callToActionTextColor ||
       this.contrastColor({
         backgroundColor: this.callToActionBackgroundColor,
       })
