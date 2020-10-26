@@ -12,9 +12,25 @@ const getSpacing = ({ noSpacing }) => {
   return '';
 };
 
-const getStyles = (_, { baseFontSize, baseMobileFontSize, baseTabletFontSize }) => {
+const getStyles = (
+  _,
+  { baseFontSize, baseMobileFontSize, baseTabletFontSize, dropCap, dropCapSize = '4em' },
+) => {
   const styles = css`
     font-size: ${baseFontSize || _.baseFontSize};
+    ${dropCap
+      ? css`
+          &::first-letter {
+            font-weight: bold;
+            color: ${_.primaryColor};
+            float: left;
+            line-height: 1;
+            margin-right: 0.15em;
+            font-size: ${dropCapSize};
+            font-family: ${({ theme }) => theme.headingFont};
+          }
+        `
+      : null}
   `;
   const tabletStyles = _.tabletQuery(
     css`
@@ -47,6 +63,8 @@ export default function Text({
   baseMobileFontSize,
   baseTabletFontSize,
   children,
+  dropCap,
+  dropCapSize,
   uppercase,
   noSpacing,
   ...props
@@ -57,6 +75,8 @@ export default function Text({
       baseMobileFontSize={baseMobileFontSize}
       baseTabletFontSize={baseTabletFontSize}
       noSpacing={noSpacing}
+      dropCap={dropCap}
+      dropCapSize={dropCapSize}
       {...fP(props)}
     >
       {children}

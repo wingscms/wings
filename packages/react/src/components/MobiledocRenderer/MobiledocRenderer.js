@@ -12,6 +12,7 @@ class MobiledocRenderer extends Component {
     content: PropTypes.string,
     cards: PropTypes.array,
     unknownCardHandler: PropTypes.func,
+    additionalProps: PropTypes.object,
   };
 
   static defaultProps = {
@@ -20,15 +21,17 @@ class MobiledocRenderer extends Component {
     cardProps: {},
     unknownCardHandler: ({ env: { name } }) =>
       console.error(`Unknown card type ${name} encountered.`), // eslint-disable-line no-console
+    additionlProps: {},
   };
 
   createRenderer() {
-    const { cards, unknownCardHandler } = this.props;
+    const { cards, additionalProps, unknownCardHandler } = this.props;
     return new Renderer({
       cards: cards.map(this.injectCardProps),
       sections,
       unknownCardHandler,
       markups,
+      additionalProps,
     });
   }
 
@@ -78,29 +81,6 @@ export default styled(MobiledocRenderer)`
     margin-top: ${({ mini, theme }) => (mini ? '0' : theme.largeSpacing)};
     @media screen and (max-width: 800px) {
       margin-top: ${({ mini, theme }) => (mini ? '0' : theme.mediumSpacing)};
-    }
-  }
-  &.drop-cap > div > p:first-child {
-    &::first-letter {
-      font-weight: ${({ theme }) => theme.firstLetterFontWeight}!important;
-      color: ${({ theme }) => theme.primaryColor};
-      float: left;
-      line-height: ${({ theme }) => theme.firstLetterLineHeight};
-      margin: 0.075em 0.1em -0.1em 0;
-      font-size: ${({ theme }) => theme.dropcapFontSize};
-      font-family: ${({ theme }) => theme.headingFont};
-    }
-  }
-  &.drop-cap > div > div.headerContainer + p {
-    position: relative;
-    &::first-letter {
-      font-weight: ${({ theme }) => theme.firstLetterFontWeight}!important;
-      color: ${({ theme }) => theme.primaryColor};
-      float: left;
-      line-height: ${({ theme }) => theme.firstLetterLineHeight};
-      margin: 0.075em 0.1em -0.2em 0;
-      font-size: ${({ theme }) => theme.dropcapFontSize};
-      font-family: ${({ theme }) => theme.headingFont};
     }
   }
 `;

@@ -38,6 +38,24 @@ export default class Renderer {
     return renderedSections;
   }
 
+  sectionInformation(nodeKey) {
+    if (nodeKey < 0) return null;
+    const section = this.mobiledoc.sections[nodeKey];
+    const [type] = section;
+    return {
+      nodeKey,
+      section,
+      cardInformation:
+        type !== CARD_SECTION_TYPE
+          ? {}
+          : {
+              name: this.mobiledoc.cards[section[1]][0],
+              props: this.mobiledoc.cards[section[1]][1],
+            },
+      previousSection: this.sectionInformation(nodeKey - 1),
+    };
+  }
+
   renderSections() {
     return this.mobiledoc.sections.map((section, index) => this.renderSection(section, index));
   }
@@ -47,31 +65,32 @@ export default class Renderer {
     const customSection = this.sections.find(s => s.name === TagName);
     const Component = customSection?.component || TagName;
     const section = [type, Component, markers];
+    const info = this.sectionInformation(nodeKey);
 
     switch (type) {
       case MARKUP_SECTION_TYPE:
-        return this.renderMarkupSection(section, nodeKey);
+        return this.renderMarkupSection(section, nodeKey, info);
       case LIST_SECTION_TYPE:
-        return this.renderListSection(section, nodeKey);
+        return this.renderListSection(section, nodeKey, info);
       case CARD_SECTION_TYPE:
-        return this.renderCardSection(section, nodeKey);
+        return this.renderCardSection(section, nodeKey, info);
       default:
         return null;
     }
   }
 
-  renderMarkupSection([, TagName, markers], nodeKey) {
+  renderMarkupSection([, TagName, markers], nodeKey, info) {
     return this.renderMarkersOnElement(
-      <TagName key={nodeKey} {...this.additionalProps}>
+      <TagName key={nodeKey} _mobiledocInfo={info} {...this.additionalProps}>
         {[]}
       </TagName>,
       markers,
     );
   }
 
-  renderListSection([, TagName, markers], nodeKey) {
+  renderListSection([, TagName, markers], nodeKey, info) {
     return (
-      <TagName key={nodeKey} {...this.additionalProps}>
+      <TagName key={nodeKey} _mobiledocInfo={info} {...this.additionalProps}>
         {markers.map((item, index) => this.renderMarkersOnElement(<li key={index}>{[]}</li>, item))}
       </TagName>
     );
@@ -102,7 +121,7 @@ export default class Renderer {
     return null;
   }
 
-  renderCardSection([, index], nodeKey) {
+  renderCardSection([, index], nodeKey, info) {
     const [name, payload] = this.mobiledoc.cards[index];
     const card = this.cards.find(c => c.name === name);
 
@@ -118,6 +137,7 @@ export default class Renderer {
         env,
         options,
         payload: { ...payload, key: nodeKey, ...this.additionalProps },
+        _mobiledocInfo: info,
       };
 
       return card.render(props);
