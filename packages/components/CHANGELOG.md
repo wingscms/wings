@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/wingscms/wings/compare/@wingscms/components@1.4.0...@wingscms/components@1.4.1) (2020-08-07)
+
+
+### Bug Fixes
+
+* **components:** check if document is defined when creating Portal ([#532](https://github.com/wingscms/wings/issues/532)) ([8071738](https://github.com/wingscms/wings/commit/80717386c2f7ae356b0eb46f0100f0272cb85b77))
+
+
+
+
+
+# [1.4.0](https://github.com/wingscms/wings/compare/@wingscms/components@1.3.1...@wingscms/components@1.4.0) (2020-08-04)
+
+
+### Features
+
+* **components:** add new theme options for Header Cover type ([#521](https://github.com/wingscms/wings/issues/521)) ([525c110](https://github.com/wingscms/wings/commit/525c1107ae1b71e381a231508548681434667054))
+* button and accordion theming improvements ([#522](https://github.com/wingscms/wings/issues/522)) ([cf3c883](https://github.com/wingscms/wings/commit/cf3c883988ed42d786a6da559d0a142520d09aa9))
+* **components:** List item spacing ([#523](https://github.com/wingscms/wings/issues/523)) ([b5d9fbb](https://github.com/wingscms/wings/commit/b5d9fbbd71b9d6143f7b29f2022e7ef2c89019a0))
+* **components/react:** Portal; Overlay; Dialog; Language Switcher; Menu ([#529](https://github.com/wingscms/wings/issues/529)) ([6ac764f](https://github.com/wingscms/wings/commit/6ac764ff1afbffd90440399c3947c5e93b47b941))
+
+
+
+
+
+## [1.3.1](https://github.com/wingscms/wings/compare/@wingscms/components@1.3.0...@wingscms/components@1.3.1) (2020-07-28)
+
+
+### Bug Fixes
+
+* **components:** footer improvements ([#526](https://github.com/wingscms/wings/issues/526)) ([6916eb1](https://github.com/wingscms/wings/commit/6916eb1ea1e2ec6129ac8d8db2af54b14882dc9d))
+
+
+
+
+
 # [1.3.0](https://github.com/wingscms/wings/compare/@wingscms/components@1.2.2...@wingscms/components@1.3.0) (2020-07-14)
 
 

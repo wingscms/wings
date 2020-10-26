@@ -52,7 +52,6 @@ const Title = styled.h1`
   line-height: 1;
   font-family: ${t(_ => _.headerFontFamily)};
   position: relative;
-  z-index: 1;
   font-size: 32px;
   @media screen and (min-width: 800px) {
     font-size: 60px;
@@ -73,7 +72,6 @@ const Intro = styled.p`
   max-width: 760px;
   margin: 0 auto;
   position: relative;
-  z-index: 2;
 `;
 
 const Image = styled.figure`

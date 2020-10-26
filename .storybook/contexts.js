@@ -23,7 +23,15 @@ export default [
     components: [ThemeProvider],
     params: [
       { name: 'None', props: {}, default: true },
-      { name: 'Red', props: { theme: { primaryColor: '#ff0000' } } },
+      {
+        name: 'Red',
+        props: {
+          theme: {
+            primaryColor: '#ff0000',
+            secondaryColor: '#990000',
+          },
+        },
+      },
     ],
     options: {
       deep: true,

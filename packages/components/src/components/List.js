@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { isValidElement, cloneElement } from 'react';
 import fP from 'filter-invalid-dom-props';
 import styled from '../lib/styled';
 import { t } from '../theme';
@@ -8,6 +8,7 @@ const ItemLi = styled.li`
   ${t(Text.getStyles)}
   font-family: ${t(_ => _.headerFontFamily)};
   padding-left: .5em;
+  margin-bottom: ${t((_, { itemSpacing }) => itemSpacing || _.listItemSpacing)};
 `;
 
 const ItemSpan = styled.span`
@@ -41,9 +42,9 @@ const Components = {
   [Type.UNORDERED]: UnorderedList,
 };
 
-const Item = ({ children, ...props }) => {
+const Item = ({ children, itemSpacing, ...props }) => {
   return (
-    <ItemLi {...fP(props)}>
+    <ItemLi itemSpacing={itemSpacing} {...fP(props)}>
       <ItemSpan>{children}</ItemSpan>
     </ItemLi>
   );
@@ -51,15 +52,24 @@ const Item = ({ children, ...props }) => {
 
 export default function List({
   children,
+  itemSpacing,
+  listType = Type.UNORDERED,
   markerColor,
   textColor,
-  listType = Type.UNORDERED,
   ...props
 }) {
   const _List = Components[listType];
   return (
     <_List markerColor={markerColor} textColor={textColor} {...fP(props)}>
-      {children}
+      {React.Children.map(children, child => {
+        if (isValidElement(child) && child.type === Item) {
+          return cloneElement(child, {
+            itemSpacing,
+            ...child.props,
+          });
+        }
+        return child;
+      })}
     </_List>
   );
 }

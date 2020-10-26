@@ -39,13 +39,12 @@ const Container = styled.div`
   opacity: 1;
   width: 100%;
   background-color: ${t(_ => _.appBarBackgroundColor)};
-  z-index: 100;
   transform: none;
   transition: 0.1s all linear;
   ${getPosition}
 `;
 
-function AppBar({ children, hide, position = Position.BOTTOM, ...props }) {
+function AppBar({ children, hide, position = Position.TOP, ...props }) {
   return (
     <Container hide={hide} position={position} {...fP(props)}>
       {children}

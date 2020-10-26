@@ -17,7 +17,10 @@ export { default as Insight } from './components/Insight';
 export { default as Link } from './components/Link';
 export { default as List } from './components/List';
 export { default as Loading } from './components/Loading';
+export { default as Dialog } from './components/Dialog';
+export { default as Overlay } from './components/Overlay';
 export { default as PaginationControls } from './components/PaginationControls';
+export { default as Portal } from './components/Portal';
 export { default as ProgressBar } from './components/ProgressBar';
 export { default as Pullquote } from './components/Pullquote';
 export { default as Reveal } from './components/Reveal';
@@ -26,7 +29,7 @@ export { default as SectionMarker } from './components/SectionMarker';
 export { default as SocialButtons } from './components/SocialButtons';
 export { default as Text } from './components/Text';
 
-export { default as Theme, t, useTheme, ThemeProvider } from './theme';
+export { default as Theme, t, useTheme, ThemeProvider, Intent } from './theme';
 export { default as useDimensions } from './hooks/useDimensions';
 
 export { mediaQuery, modularScale } from './lib/utils';

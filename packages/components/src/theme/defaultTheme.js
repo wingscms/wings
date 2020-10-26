@@ -11,11 +11,13 @@ export default {
   disabledColor: '#DDDDDD',
   backgroundColor: '#FFFFFF',
   elementBackgroundColor: '#FFF',
+  edgeColor: '#DDDDDD',
   textColor: '#212121',
   textColorDark: '#FFFFFF',
   iconColor: '#212121',
   iconColorDark: '#FFFFFF',
   navigationLanguagePickerColor: '#FFFFFF',
+  landingSectionGradientColor: 'rgba(0, 0, 0, 0.3)',
   // spacing
   mediumSpacing: '40px',
   // typography

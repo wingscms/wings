@@ -5,8 +5,41 @@ class Theme extends _Theme {
     return new Theme(...args);
   };
 
+  get appMenuBarBackgroundColor() {
+    return this.variables.appMenuBarBackgroundColor || this.appBarBackgroundColor;
+  }
+
+  get appMenuDrawerBackgroundColor() {
+    return this.variables.appMenuDrawerBackgroundColor || this.drawerBackgroundColor;
+  }
+
+  get appMenuDrawerTextColor() {
+    return (
+      this.variables.appMenuDrawerTextColor ||
+      this.contrastColor({
+        backgroundColor: this.appMenuDrawerBackgroundColor,
+      })
+    );
+  }
+
   get campaignFormBackgroundColor() {
     return this.variables.campaignFormBackgroundColor || this.formBackgroundColor;
+  }
+
+  get campaignFormButtonBackgroundColor() {
+    return this.variables.campaignFormButtonBackgroundColor || null;
+  }
+
+  get campaignFormButtonBackgroundHoverColor() {
+    return this.variables.campaignFormButtonBackgroundHoverColor || null;
+  }
+
+  get campaignFormButtonBorderColor() {
+    return this.variables.campaignFormButtonBorderColor || null;
+  }
+
+  get campaignFormButtonBorderHoverColor() {
+    return this.variables.campaignFormButtonBorderHoverColor || null;
   }
 
   get campaignFormLinkLineColor() {

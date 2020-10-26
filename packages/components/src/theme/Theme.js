@@ -78,6 +78,10 @@ export default class Theme {
     }
   }
 
+  darken(color, amount = 0.2) {
+    return Color.fromValue(color).darken(amount);
+  }
+
   calc(str, cb) {
     const [val, unit] = this.separateUnit(str);
     return [cb(val), unit].join('');
@@ -152,7 +156,7 @@ export default class Theme {
 
   get callToActionTextColor() {
     return (
-      this.variables.allToActionTextColor ||
+      this.variables.callToActionTextColor ||
       this.contrastColor({
         backgroundColor: this.callToActionBackgroundColor,
       })
@@ -165,6 +169,19 @@ export default class Theme {
 
   get counterTextColor() {
     return this.variables.counterTextColor || this.textColor;
+  }
+
+  get dialogBackgroundColor() {
+    return this.variables.dialogBackgroundColor || this.backgroundColor;
+  }
+
+  get dialogTextColor() {
+    return (
+      this.variables.dialogTextColor ||
+      this.contrastColor({
+        backgroundColor: this.dialogBackgroundColor,
+      })
+    );
   }
 
   get drawerBackgroundColor() {
@@ -194,6 +211,10 @@ export default class Theme {
         backgroundColor: this.footerBackgroundColor,
       })
     );
+  }
+
+  get footerHeadingColor() {
+    return this.variables.footerHeadingColor || this.footerTextColor;
   }
 
   get formBackgroundColor() {
@@ -241,6 +262,10 @@ export default class Theme {
         backgroundColor: this.insightBackgroundColor,
       })
     );
+  }
+
+  get landingSectionArrowColor() {
+    return this.variables.landingSectionArrowColor || this.landingSectionTitleColor;
   }
 
   get landingSectionBackgroundColor() {
@@ -371,11 +396,23 @@ export default class Theme {
   }
 
   get shareButtonIconColor() {
-    return this.variables.shareButtonIconColor || this.iconColor;
+    return (
+      this.variables.shareButtonIconColor ||
+      this.contrastColor({
+        backgroundColor: this.shareButtonBackgroundColor,
+        colors: { light: this.iconColor, dark: this.iconColorDark },
+      })
+    );
   }
 
   get shareButtonIconHoverColor() {
-    return this.variables.shareButtonIconHoverColor || this.iconColor;
+    return (
+      this.variables.shareButtonIconHoverColor ||
+      this.contrastColor({
+        backgroundColor: this.shareButtonBackgroundHoverColor,
+        colors: { light: this.iconColor, dark: this.iconColorDark },
+      })
+    );
   }
 
   get smallSpacing() {

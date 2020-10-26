@@ -119,7 +119,7 @@ const BottomContent = styled.div`
     > h2 {
       user-select: none;
       font-family: ${t(_ => _.headerFontFamily)};
-      color: ${({ bottomBackground }) => (bottomBackground ? '#000000' : '#ffffff')};
+      color: ${t(_ => _.textColor)};
       text-transform: ${({ theme }) => (theme.uppercaseTitles ? 'uppercase' : 'none')};
       transition: 0.1s all linear;
       font-size: 20px;
@@ -159,7 +159,7 @@ const BottomContent = styled.div`
   p {
     user-select: none;
     font-family: ${t(_ => _.textFontFamily)};
-    color: ${({ bottomBackground }) => (bottomBackground ? '#000000' : '#ffffff')};
+    color: ${t(_ => _.textColor)};
     width: 100%;
     margin: 10px 0;
     padding: 0;
@@ -181,9 +181,11 @@ const BottomContent = styled.div`
           font-size: 30px;
           line-height: 40px;
           max-height: 40px;
+          color: ${t(_ => _.textColor)};
         }
         > p {
           font-size: 20px;
+          color: ${t(_ => _.textColor)};
         }
       }
     }
