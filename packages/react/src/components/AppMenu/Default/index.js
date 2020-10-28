@@ -26,7 +26,7 @@ export default function DefaultMenu({
   translations: {
     wrap: wrapTranslation = (e, { translation: { url } }) => <a href={url}>{e}</a>,
     ...translations
-  },
+  } = {},
 }) {
   const _ = useTheme();
   const [open, setOpen] = useState(false);
@@ -61,7 +61,8 @@ export default function DefaultMenu({
           color: _.appMenuBarBurgerColor,
           hoverColor: _.appMenuBarBurgerHoverColor,
         }}
-        languageSelectOnClick={() => setLanguageSelectOpen(true)}
+        showLanguageSelect={!!translations?.translations?.length}
+        onLanguageSelectClick={() => setLanguageSelectOpen(true)}
         logo={{ ...logo, imageUrl: logo.imageUrl || _.logoImageUrl, wrap: wrapLogo }}
         menuItems={menuItems}
         primaryMenuItems={primaryMenuItems}

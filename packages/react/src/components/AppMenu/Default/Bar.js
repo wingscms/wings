@@ -106,7 +106,8 @@ const Burger = styled(_Burger)`
 export default function MenuDefaultBar({
   burgerProps,
   logo: { imageUrl: logoImageUrl, alt: logoImageAlt = 'Logo', wrap: wrapLogo } = {},
-  languageSelectOnClick,
+  showLanguageSelect,
+  onLanguageSelectClick,
   menuItems,
   primaryMenuItems,
   socialButtons,
@@ -126,11 +127,13 @@ export default function MenuDefaultBar({
           {logoImageUrl ? wrappedLogo : null}
           <BarLayoutRight>
             <BarLayoutRightItem>
-              <LangaugeSelectButton
-                intent={Button.Intent.PRIMARY}
-                icon="globe"
-                onClick={languageSelectOnClick}
-              />
+              {!showLanguageSelect ? null : (
+                <LangaugeSelectButton
+                  intent={Button.Intent.PRIMARY}
+                  icon="globe"
+                  onClick={onLanguageSelectClick}
+                />
+              )}
             </BarLayoutRightItem>
             {!primaryMenuItems.length
               ? null

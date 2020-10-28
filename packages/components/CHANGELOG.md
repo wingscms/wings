@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.2](https://github.com/wingscms/wings/compare/@wingscms/components@1.4.1...@wingscms/components@1.4.2) (2020-10-27)
+
+
+### Bug Fixes
+
+* CallToAction text color theme variable name ([#547](https://github.com/wingscms/wings/issues/547)) ([0284abd](https://github.com/wingscms/wings/commit/0284abd01d3540f813987040f96355c1b0339cf8))
+
+
+
+
+
 ## [1.4.1](https://github.com/wingscms/wings/compare/@wingscms/components@1.4.0...@wingscms/components@1.4.1) (2020-08-07)
 
 
