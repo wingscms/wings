@@ -7,15 +7,42 @@ When you click `Settings`, you’ll find the the following settings pages. We wi
 ![](https://screens.wings.dev/CleanShot-2020-09-07-at-13.34.00-1599478452.png)
 
 ## Apps
-Most Wings projects have one frontend application – a _website_ – but it is possible to have multiple frontend apps: separate websites that share the same Wings project, or a mobile app or smart speaker application, for example. Regular users will only use the following settings:
+Most Wings projects have one frontend application – a _website_ – but it is possible to have multiple frontend apps: separate websites that share the same Wings project, or a mobile app or smart speaker application, for example.
 
-![](https://screens.wings.dev/CleanShot-2020-09-07-at-13.47.01-1599479244.png)
+### General app settings
+On the General page, you can configure these ssettings 
+
+![](https://screens.wings.dev/CleanShot-2020-10-31-at-11.03.41-2x-1604138699.png)
 
 1. **Theme**: you can select the theme for your site. A theme is a collection of style settings, such as colours and fonts; they can be configured at Settings -> Themes.
 2. **Main Menu**: select which menu (which can be managed on the Settings -> Menu tab) is to be used as a main navigation menu on your website.
 3. **Homepage**: choose which node (page, article or campaign) should serve as the home page of your website. **Note**: the node that is selected here will no longer be found at its usual path & slug.
 
 **Tip**: If you want to experiment with a theme, create a new theme first, then create a new app, and configure the app to use your new theme.
+
+### Translation settings
+On the the Translations settings of your App, you can select the Translation you have created (see below at 'Languages')
+
+![](https://screens.wings.dev/CleanShot-2020-10-31-at-10.59.26-2x-1604138403.png)
+
+### Domains
+On the Domains tab, you can configure a custom domain. You have to register and configure a domain name with a domain registrar and point your (sub)domain to 
+
+If you use only a subdomain for your Wings project, create a CNAME record for your subdomain and point it to `app.wings.dev`. Then, add your custom domain in Wings.
+
+
+If you use a root domain for your Wings project, you have to create two DNS records. If your domain registrar supports ALIAS records, do the following:
+
+- create an ALIAS record for yourdomain.com (without www) and point it to app.wings.dev. 
+- reate a CNAME record for www.yourdomain.com and point it to yourdomain.com. 
+
+If your registrar does not support ALIAS records, do the following:
+
+- create an A record for your domain (without www) and point it to `34.76.238.51`
+- create a CNAME record for www.yourdomain.com and point it to yourdomain.com
+
+
+![](https://screens.wings.dev/CleanShot-2020-10-31-at-11.07.57-2x-1604138897.png)
 
 ## Themes
 On the Themes page, you can configure your themes. **Note**: when you edit the theme that is currently set to be active on your site, you will immediately change the presentation of your website. 
@@ -27,16 +54,33 @@ You can configure menus here. Click `Add Menu Item` to add an item and type its 
 
 ![](https://screens.wings.dev/Screen-Recording-2020-02-23-17-36-31-1582475796.gif)
 
-## Languages
-![](https://screens.wings.dev/CleanShot-2020-02-23-at-17.42.29-1582476165.png)
-
+## Languages (and custom copy)
 You can set a primary language here, as well as other languages you would like to use.
+
+![](https://screens.wings.dev/CleanShot-2020-10-31-at-10.44.29-2x-1604137489.png)
+
+### Project-wide translations for strings
+There are quite a few copy strings set by default, such ass "... has been donated to this fundraiser" on fundraiser pages. However, you can configure your own default project-wide copy strings, and even override these if you want to use specific copy for individual campaigns. 
+
+Go to Languages -> Translations to create a 'translation' for a language:
+
+![](https://screens.wings.dev/CleanShot-2020-10-31-at-10.58.32-2x-1604138327.png)
+
+Then, go to the Translations settings of your App, and select the Translation you just created:
+
+![](https://screens.wings.dev/CleanShot-2020-10-31-at-10.59.26-2x-1604138403.png)
+
+### Copy overrides for specific campaigns
+Visit the 'Copy' tab for a campaign to override the default strings.
+
+![](https://screens.wings.dev/CleanShot-2020-10-31-at-11.01.13-2x-1604138508.png)
+
 
 ### How to use multiple languages
 
 If you want to use multiple languages, first add them on this settings page. 
 
-Do you want to publish the secondary (or tertiary) language pages separate from the primary language pages? In that case, just publish them and link to them separately from other pages or link to them in the main menu. **Note**: pages in other languages than the one set as the primary language, get the language code added to their path. For example, the article you see below, will get the path `/nl/articles/demo-article`.
+Do you want to publish the secondary (or tertiary) language pages separate from the primary language pages? In that case, just publish them and link to them separately from other pages or link to them in the main menu. **Note**: pages in other languages than the one set as the primary language, get the language code added as a url parameter. For example, the article you see below, will get the path `/articles/demo-article?lang=nl`.
 
 ![](https://screens.wings.dev/CleanShot-2020-02-23-at-17.43.42-1582476248.png)  
 
