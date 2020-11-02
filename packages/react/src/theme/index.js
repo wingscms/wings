@@ -9,6 +9,10 @@ class Theme extends _Theme {
     return this.variables.appMenuBarBackgroundColor || this.appBarBackgroundColor;
   }
 
+  get appMenuButtonBackgroundColor() {
+    return this.variables.appMenuButtonBackgroundColor || this.primaryColor;
+  }
+
   get appMenuDrawerBackgroundColor() {
     return this.variables.appMenuDrawerBackgroundColor || this.drawerBackgroundColor;
   }
