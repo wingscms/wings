@@ -10,7 +10,7 @@ When you click `Settings`, you’ll find the the following settings pages. We wi
 Most Wings projects have one frontend application – a _website_ – but it is possible to have multiple frontend apps: separate websites that share the same Wings project, or a mobile app or smart speaker application, for example.
 
 ### General app settings
-On the General page, you can configure these ssettings 
+On the General page, you can configure these settings 
 
 ![](https://screens.wings.dev/CleanShot-2020-10-31-at-11.03.41-2x-1604138699.png)
 
