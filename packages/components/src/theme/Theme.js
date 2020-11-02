@@ -392,7 +392,7 @@ export default class Theme {
   }
 
   get shareButtonBackgroundHoverColor() {
-    return this.variables.shareButtonBackgroundHoverColor || this.secondaryColor;
+    return this.variables.shareButtonBackgroundHoverColor || null;
   }
 
   get shareButtonIconColor() {
