@@ -44,7 +44,7 @@ const bootstrap = async () => {
   }
 
   const data = await client.query(`
-    query LocaleData($locale: String) {
+    query LocaleData {
       defaultAppCopy {
         message {
           messageId
