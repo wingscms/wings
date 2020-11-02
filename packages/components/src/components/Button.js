@@ -69,6 +69,9 @@ const getType = (_, { color, hoverColor, borderColor, borderHoverColor, buttonTy
         border: ${borderColor ? `2px solid ${borderColor}` : 'none'};
         background-color: ${color};
         color: ${_.contrastColor({ backgroundColor: color })};
+        svg {
+          fill: currentColor;
+        }
         &:hover,
         &:active {
           border: ${borderColor ? `2px solid ${borderHoverColor}` : 'none'};
@@ -121,7 +124,7 @@ const Root = styled.button`
       },
     ) => {
       const color = backgroundColor || _.intentColor(intent);
-      const hoverColor = backgroundHoverColor || _.darken(_.intentColor(intent));
+      const hoverColor = backgroundHoverColor || _.darken(color);
       const buttonTypeCSS = getType(_, {
         color,
         hoverColor,
