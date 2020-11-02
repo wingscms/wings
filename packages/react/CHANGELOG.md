@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/wingscms/wings/compare/@wingscms/react@1.5.0...@wingscms/react@1.5.1) (2020-10-27)
+
+
+### Bug Fixes
+
+* **react:** hide lang select if no translations are provided ([cf4d1f3](https://github.com/wingscms/wings/commit/cf4d1f3f89d2dd14300006596b086b86c31db56c))
+
+
+
+
+
 # [1.5.0](https://github.com/wingscms/wings/compare/@wingscms/react@1.4.0...@wingscms/react@1.5.0) (2020-08-07)
 
 

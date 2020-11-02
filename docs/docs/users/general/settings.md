@@ -14,6 +14,7 @@ On the General page, you can configure these ssettings
 
 ![](https://screens.wings.dev/CleanShot-2020-10-31-at-11.03.41-2x-1604138699.png)
 
+
 1. **Theme**: you can select the theme for your site. A theme is a collection of style settings, such as colours and fonts; they can be configured at Settings -> Themes.
 2. **Main Menu**: select which menu (which can be managed on the Settings -> Menu tab) is to be used as a main navigation menu on your website.
 3. **Homepage**: choose which node (page, article or campaign) should serve as the home page of your website. **Note**: the node that is selected here will no longer be found at its usual path & slug.
@@ -41,8 +42,8 @@ If your registrar does not support ALIAS records, do the following:
 - create an A record for your domain (without www) and point it to `34.76.238.51`
 - create a CNAME record for www.yourdomain.com and point it to yourdomain.com
 
-
 ![](https://screens.wings.dev/CleanShot-2020-10-31-at-11.07.57-2x-1604138897.png)
+
 
 ## Themes
 On the Themes page, you can configure your themes. **Note**: when you edit the theme that is currently set to be active on your site, you will immediately change the presentation of your website. 
