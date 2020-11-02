@@ -34,13 +34,13 @@ If you use only a subdomain for your Wings project, create a CNAME record for yo
 
 If you use a root domain for your Wings project, you have to create two DNS records. If your domain registrar supports ALIAS records, do the following:
 
-- create an ALIAS record for yourdomain.com (without www) and point it to app.wings.dev. 
-- reate a CNAME record for www.yourdomain.com and point it to yourdomain.com. 
+- create an ALIAS record for yourdomain.com (without www) and point it to `app.wings.dev`
+- create a CNAME record for www.yourdomain.com and point it to `yourdomain.com`
 
 If your registrar does not support ALIAS records, do the following:
 
 - create an A record for your domain (without www) and point it to `34.76.238.51`
-- create a CNAME record for www.yourdomain.com and point it to yourdomain.com
+- create a CNAME record for www.yourdomain.com and point it to `yourdomain.com`
 
 ![](https://screens.wings.dev/CleanShot-2020-10-31-at-11.07.57-2x-1604138897.png)
 
