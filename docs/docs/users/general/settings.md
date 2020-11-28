@@ -114,7 +114,7 @@ This confirmation flow is useful to verify that a user's submission contains a v
 
 Another advantage of this flow is that the 'confirmed' page contains call to action links that let a user share the campaign with their friends.
 
-## Configuring the confirmation emails
+### Configuring the confirmation emails
 All campaigns only record a user's information after they have clicked a confirmation link in the email that is sent by Wings. Note: all campaigns of a certain campaign type get the same email. In other words: petition signers will receive the same petition confirmation email regardless of the petition being signed.
 
 ![](https://bureaubolster.s3-eu-west-1.amazonaws.com/IMG_1108.jpeg)
@@ -127,6 +127,55 @@ All campaigns only record a user's information after they have clicked a confirm
 
 ### 2. Notification or Thank You emails
 Alternatively, you can configure the email as a simple 'thank you' email with perhaps a followup call to action link.
+
+## Webhooks
+Webhooks provide a lightweight yet powerful way to send form submissions to third party services. For more information, please read [What are webhooks?](https://zapier.com/blog/what-are-webhooks/), an insightful article by Zapier, a service that lets any user automate workflows, including using webhooks. 
+
+To use webhooks, you need to use a service that can receive webhooks. We will use Zapier as an example, and we will show you how to send petition submissions to [The Action Network](https://actionnetwork.org/).
+
+First, go to Zapier.com to create a Zap, with these settings:
+
+![](https://screens.wings.dev/CleanShot-2020-11-28-at-14.53.25-1606571612.png)
+
+First, we will configure the Zapier **trigger**, the event that sends data to Zapier, so it can do something with it.
+
+Zapier will generate a webhook url you can copy, so you can paste this into your Wings webhooks settings:
+
+![](https://screens.wings.dev/CleanShot-2020-11-28-at-14.54.07-1606571668.png)
+
+Then, configure a webhook in Wings settings:
+
+![](https://screens.wings.dev/CleanShot-2020-11-28-at-14.55.24-1606571756.png)
+
+1. Go to 'Webhooks' in settings
+2. Choose 'Add Webhook'
+3. Give your webhook a name
+4. Paste the webhook URL you were given by Zapier
+5. choose which event should trigger a webhook. It is recommended to pick "confirmed.signatures" - this will fire the webhook only after a user has clicked the confirmation link in the email Wings sent to them. 
+6. You may optionally add additional values here
+7. Save the webhook.
+
+Next, it is best to fill out the petition form yourself, because you will need this test data for the next step in Zapier.
+
+If you follow the instructions in Zapier, you can test your trigger. If you have submitted and confirmed a petition form entry, Zapier should receive your information:
+
+![](https://screens.wings.dev/CleanShot-2020-11-28-at-14.59.58-1606572021.png)
+
+Click 'continue' to setup the Action. In this case, we will first add a filter step by clicking the blue + sign, because we only want to subscribe persons who ticked the box that says they want to subscribe to the newsletter:
+
+![](https://screens.wings.dev/CleanShot-2020-11-28-at-15.03.33-1606572223.png)
+
+Then, you will be able to configure the last step, by subscribing a person in Action Network. 
+
+![](https://screens.wings.dev/CleanShot-2020-11-28-at-15.04.49-1606572306.png)
+
+Of course, you can also choose to connect any of the countless services supported by Zapier. If you use the intermediary filter step, you can create some smart integrations. Here are a few ideas:
+
+- Create a Discord notification for every donation to notify activists that someone donated (be sure to not include identifiable information!)
+- Create a Trello to-do card with a due date 2 days in the future and add a colleague as a card member, instructing them to send a personal thank you note to someone who donated more than $ 250
+- Use the Gmail integration to send a personalized 'thank you' email to people who signed a petition, or use the intermediary 'Delay' step by Zapier to send a followup email to people who signed your petition 24 hours after they signed
+
+Webhooks are a very powerful tool - experiment away!
 
 ## Schemas
 Schemas will be typically used by developers.
