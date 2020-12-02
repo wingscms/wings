@@ -10,9 +10,9 @@ When you click `Settings`, you’ll find the the following settings pages. We wi
 Most Wings projects have one frontend application – a _website_ – but it is possible to have multiple frontend apps: separate websites that share the same Wings project, or a mobile app or smart speaker application, for example.
 
 ### General app settings
-On the General page, you can configure these settings 
+On the General page, you can configure these settings: 
 
-![](https://screens.wings.dev/CleanShot-2020-10-31-at-11.03.41-2x-1604138699.png)
+![](https://screens.wings.dev/CleanShot-2020-12-02-at-11.49.47-1606906227.png)
 
 
 1. **Theme**: you can select the theme for your site. A theme is a collection of style settings, such as colours and fonts; they can be configured at Settings -> Themes.
@@ -24,7 +24,7 @@ On the General page, you can configure these settings
 ### Translation settings
 On the the Translations settings of your App, you can select the Translation you have created (see below at 'Languages')
 
-![](https://screens.wings.dev/CleanShot-2020-10-31-at-10.59.26-2x-1604138403.png)
+![](https://screens.wings.dev/CleanShot-2020-12-02-at-11.48.21-1606906138.png)
 
 ### Domains
 On the Domains tab, you can configure a custom domain. You have to register and configure a domain name with a domain registrar and point your (sub)domain to 
@@ -42,8 +42,26 @@ If your registrar does not support ALIAS records, do the following:
 - create an A record for your domain (without www) and point it to `34.76.238.51`
 - create a CNAME record for www.yourdomain.com and point it to `yourdomain.com`
 
-![](https://screens.wings.dev/CleanShot-2020-10-31-at-11.07.57-2x-1604138897.png)
+![](https://screens.wings.dev/CleanShot-2020-12-02-at-11.51.45-1606906317.png)
 
+### Scripts
+It is easy to add custom scripts to your application. For example, you could add a Google Tag Manager script.
+
+![](https://screens.wings.dev/CleanShot-2020-12-02-at-11.52.51-1606906389.png)
+
+1. Visit the 'Scripts' tab for your app
+2. Click 'Edit scripts'.
+
+Then, you can easily add the scripts:
+
+![](https://screens.wings.dev/CleanShot-2020-12-02-at-11.54.25-1606906541.png)
+
+1. Give your script a name.
+2. Paste the script here. It should start with `<script>` and end with `</script>`.
+3. Choose a location.
+4. Add additional scripts if you need.
+5. Click Finish
+6. And save your new settings.
 
 ## Themes
 On the Themes page, you can configure your themes. **Note**: when you edit the theme that is currently set to be active on your site, you will immediately change the presentation of your website. 
