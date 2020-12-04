@@ -147,9 +147,24 @@ All campaigns only record a user's information after they have clicked a confirm
 Alternatively, you can configure the email as a simple 'thank you' email with perhaps a followup call to action link.
 
 ## Webhooks
-Webhooks provide a lightweight yet powerful way to send form submissions to third party services. For more information, please read [What are webhooks?](https://zapier.com/blog/what-are-webhooks/), an insightful article by Zapier, a service that lets any user automate workflows, including using webhooks. 
+Webhooks provide a lightweight yet powerful way to send form submissions as well as information about created, updated and deleted nodes (articles, pages and campaigns) to third party services. For an introduction to webhooks, please read [What are webhooks?](https://zapier.com/blog/what-are-webhooks/), an insightful article by Zapier, a service that lets any user automate workflows, including using webhooks. 
 
-To use webhooks, you need to use a service that can receive webhooks. We will use Zapier as an example, and we will show you how to send petition submissions to [The Action Network](https://actionnetwork.org/).
+To use webhooks, you need to use a service that can receive webhooks. 
+
+### Test webhooks
+You can use a service such as [webhook.site](https://webhook.site) to test webhooks. You will be given a webhook url you can copy:
+
+![](https://screens.wings.dev/CleanShot-2020-12-04-at-13.08.22-1607083724.png)
+
+The, you can paste this url in the webhooks field in your Wings settings page.
+ 
+![](https://screens.wings.dev/CleanShot-2020-12-04-at-13.09.43-1607083810.png)
+
+If you then submit one of your campaign forms, you will see the submission with all related fields show up on webhook.site.
+
+### Use Zapier to process form submissions
+
+We will use Zapier as an example, and we will show you how to send petition submissions to [The Action Network](https://actionnetwork.org/).
 
 First, go to Zapier.com to create a Zap, with these settings:
 
@@ -194,6 +209,12 @@ Of course, you can also choose to connect any of the countless services supporte
 - Use the Gmail integration to send a personalized 'thank you' email to people who signed a petition, or use the intermediary 'Delay' step by Zapier to send a followup email to people who signed your petition 24 hours after they signed
 
 Webhooks are a very powerful tool - experiment away!
+
+
+### Use webhooks to process content updates
+You can also use webhooks to send updates about the creation, modification and deletion of nodes (pages, articles, and campaigns) to third party services. You can easily find the right event triggers in your webhooks settings.
+
+![](https://screens.wings.dev/CleanShot-2020-12-04-at-13.12.36-1607083971.png)
 
 ## Schemas
 Schemas will be typically used by developers.
