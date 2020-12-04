@@ -2,7 +2,7 @@
 
 exports[`render button with text 1`] = `
 <button
-  class="sc-AxgMl jzUThp"
+  class="sc-AxgMl jlqPqV"
 >
   Test Message
 </button>

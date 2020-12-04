@@ -7,15 +7,43 @@ When you click `Settings`, you’ll find the the following settings pages. We wi
 ![](https://screens.wings.dev/CleanShot-2020-09-07-at-13.34.00-1599478452.png)
 
 ## Apps
-Most Wings projects have one frontend application – a _website_ – but it is possible to have multiple frontend apps: separate websites that share the same Wings project, or a mobile app or smart speaker application, for example. Regular users will only use the following settings:
+Most Wings projects have one frontend application – a _website_ – but it is possible to have multiple frontend apps: separate websites that share the same Wings project, or a mobile app or smart speaker application, for example.
 
-![](https://screens.wings.dev/CleanShot-2020-09-07-at-13.47.01-1599479244.png)
+### General app settings
+On the General page, you can configure these settings 
+
+![](https://screens.wings.dev/CleanShot-2020-10-31-at-11.03.41-2x-1604138699.png)
+
 
 1. **Theme**: you can select the theme for your site. A theme is a collection of style settings, such as colours and fonts; they can be configured at Settings -> Themes.
 2. **Main Menu**: select which menu (which can be managed on the Settings -> Menu tab) is to be used as a main navigation menu on your website.
 3. **Homepage**: choose which node (page, article or campaign) should serve as the home page of your website. **Note**: the node that is selected here will no longer be found at its usual path & slug.
 
 **Tip**: If you want to experiment with a theme, create a new theme first, then create a new app, and configure the app to use your new theme.
+
+### Translation settings
+On the the Translations settings of your App, you can select the Translation you have created (see below at 'Languages')
+
+![](https://screens.wings.dev/CleanShot-2020-10-31-at-10.59.26-2x-1604138403.png)
+
+### Domains
+On the Domains tab, you can configure a custom domain. You have to register and configure a domain name with a domain registrar and point your (sub)domain to 
+
+If you use only a subdomain for your Wings project, create a CNAME record for your subdomain and point it to `app.wings.dev`. Then, add your custom domain in Wings.
+
+
+If you use a root domain for your Wings project, you have to create two DNS records. If your domain registrar supports ALIAS records, do the following:
+
+- create an ALIAS record for yourdomain.com (without www) and point it to `app.wings.dev`
+- create a CNAME record for www.yourdomain.com and point it to `yourdomain.com`
+
+If your registrar does not support ALIAS records, do the following:
+
+- create an A record for your domain (without www) and point it to `34.76.238.51`
+- create a CNAME record for www.yourdomain.com and point it to `yourdomain.com`
+
+![](https://screens.wings.dev/CleanShot-2020-10-31-at-11.07.57-2x-1604138897.png)
+
 
 ## Themes
 On the Themes page, you can configure your themes. **Note**: when you edit the theme that is currently set to be active on your site, you will immediately change the presentation of your website. 
@@ -27,16 +55,33 @@ You can configure menus here. Click `Add Menu Item` to add an item and type its 
 
 ![](https://screens.wings.dev/Screen-Recording-2020-02-23-17-36-31-1582475796.gif)
 
-## Languages
-![](https://screens.wings.dev/CleanShot-2020-02-23-at-17.42.29-1582476165.png)
-
+## Languages (and custom copy)
 You can set a primary language here, as well as other languages you would like to use.
+
+![](https://screens.wings.dev/CleanShot-2020-10-31-at-10.44.29-2x-1604137489.png)
+
+### Project-wide translations for strings
+There are quite a few copy strings set by default, such ass "... has been donated to this fundraiser" on fundraiser pages. However, you can configure your own default project-wide copy strings, and even override these if you want to use specific copy for individual campaigns. 
+
+Go to Languages -> Translations to create a 'translation' for a language:
+
+![](https://screens.wings.dev/CleanShot-2020-10-31-at-10.58.32-2x-1604138327.png)
+
+Then, go to the Translations settings of your App, and select the Translation you just created:
+
+![](https://screens.wings.dev/CleanShot-2020-10-31-at-10.59.26-2x-1604138403.png)
+
+### Copy overrides for specific campaigns
+Visit the 'Copy' tab for a campaign to override the default strings.
+
+![](https://screens.wings.dev/CleanShot-2020-10-31-at-11.01.13-2x-1604138508.png)
+
 
 ### How to use multiple languages
 
 If you want to use multiple languages, first add them on this settings page. 
 
-Do you want to publish the secondary (or tertiary) language pages separate from the primary language pages? In that case, just publish them and link to them separately from other pages or link to them in the main menu. **Note**: pages in other languages than the one set as the primary language, get the language code added to their path. For example, the article you see below, will get the path `/nl/articles/demo-article`.
+Do you want to publish the secondary (or tertiary) language pages separate from the primary language pages? In that case, just publish them and link to them separately from other pages or link to them in the main menu. **Note**: pages in other languages than the one set as the primary language, get the language code added as a url parameter. For example, the article you see below, will get the path `/articles/demo-article?lang=nl`.
 
 ![](https://screens.wings.dev/CleanShot-2020-02-23-at-17.43.42-1582476248.png)  
 
@@ -69,7 +114,7 @@ This confirmation flow is useful to verify that a user's submission contains a v
 
 Another advantage of this flow is that the 'confirmed' page contains call to action links that let a user share the campaign with their friends.
 
-## Configuring the confirmation emails
+### Configuring the confirmation emails
 All campaigns only record a user's information after they have clicked a confirmation link in the email that is sent by Wings. Note: all campaigns of a certain campaign type get the same email. In other words: petition signers will receive the same petition confirmation email regardless of the petition being signed.
 
 ![](https://bureaubolster.s3-eu-west-1.amazonaws.com/IMG_1108.jpeg)
@@ -82,6 +127,55 @@ All campaigns only record a user's information after they have clicked a confirm
 
 ### 2. Notification or Thank You emails
 Alternatively, you can configure the email as a simple 'thank you' email with perhaps a followup call to action link.
+
+## Webhooks
+Webhooks provide a lightweight yet powerful way to send form submissions to third party services. For more information, please read [What are webhooks?](https://zapier.com/blog/what-are-webhooks/), an insightful article by Zapier, a service that lets any user automate workflows, including using webhooks. 
+
+To use webhooks, you need to use a service that can receive webhooks. We will use Zapier as an example, and we will show you how to send petition submissions to [The Action Network](https://actionnetwork.org/).
+
+First, go to Zapier.com to create a Zap, with these settings:
+
+![](https://screens.wings.dev/CleanShot-2020-11-28-at-14.53.25-1606571612.png)
+
+First, we will configure the Zapier **trigger**, the event that sends data to Zapier, so it can do something with it.
+
+Zapier will generate a webhook url you can copy, so you can paste this into your Wings webhooks settings:
+
+![](https://screens.wings.dev/CleanShot-2020-11-28-at-14.54.07-1606571668.png)
+
+Then, configure a webhook in Wings settings:
+
+![](https://screens.wings.dev/CleanShot-2020-11-28-at-14.55.24-1606571756.png)
+
+1. Go to 'Webhooks' in settings
+2. Choose 'Add Webhook'
+3. Give your webhook a name
+4. Paste the webhook URL you were given by Zapier
+5. choose which event should trigger a webhook. It is recommended to pick "confirmed.signatures" - this will fire the webhook only after a user has clicked the confirmation link in the email Wings sent to them. 
+6. You may optionally add additional values here
+7. Save the webhook.
+
+Next, it is best to fill out the petition form yourself, because you will need this test data for the next step in Zapier.
+
+If you follow the instructions in Zapier, you can test your trigger. If you have submitted and confirmed a petition form entry, Zapier should receive your information:
+
+![](https://screens.wings.dev/CleanShot-2020-11-28-at-14.59.58-1606572021.png)
+
+Click 'continue' to setup the Action. In this case, we will first add a filter step by clicking the blue + sign, because we only want to subscribe persons who ticked the box that says they want to subscribe to the newsletter:
+
+![](https://screens.wings.dev/CleanShot-2020-11-28-at-15.03.33-1606572223.png)
+
+Then, you will be able to configure the last step, by subscribing a person in Action Network. 
+
+![](https://screens.wings.dev/CleanShot-2020-11-28-at-15.04.49-1606572306.png)
+
+Of course, you can also choose to connect any of the countless services supported by Zapier. If you use the intermediary filter step, you can create some smart integrations. Here are a few ideas:
+
+- Create a Discord notification for every donation to notify activists that someone donated (be sure to not include identifiable information!)
+- Create a Trello to-do card with a due date 2 days in the future and add a colleague as a card member, instructing them to send a personal thank you note to someone who donated more than $ 250
+- Use the Gmail integration to send a personalized 'thank you' email to people who signed a petition, or use the intermediary 'Delay' step by Zapier to send a followup email to people who signed your petition 24 hours after they signed
+
+Webhooks are a very powerful tool - experiment away!
 
 ## Schemas
 Schemas will be typically used by developers.

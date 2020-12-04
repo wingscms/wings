@@ -8,7 +8,7 @@ import {
   Portal,
 } from '@wingscms/components';
 
-import { t } from '../../../theme';
+import { t, useTheme } from '../../../theme';
 import styled from '../../../lib/styled';
 
 const LayoutContainer = styled.div`
@@ -51,6 +51,7 @@ export default function MenuDefaultDrawer({
   wrapMenuItem,
   wrapPrimaryItem,
 }) {
+  const theme = useTheme();
   return !menuItems.length ? null : (
     <Portal>
       <Drawer open={open}>
@@ -67,6 +68,8 @@ export default function MenuDefaultDrawer({
                 <PrimaryItemDrawer
                   size={Button.Size.SMALL}
                   intent={Button.Intent.PRIMARY}
+                  backgroundColor={theme.appMenuButtonBackgroundColor}
+                  backgroundHoverColor={theme.appMenuButtonBackgroundHoverColor}
                   {...props}
                 >
                   {text}

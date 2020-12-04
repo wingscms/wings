@@ -1,7 +1,7 @@
 import React from 'react';
 import fP from 'filter-invalid-dom-props';
 import Button from './Button';
-import { t } from '../theme';
+import { useTheme } from '../theme';
 import styled from '../lib/styled';
 
 const Container = styled.div`
@@ -20,27 +20,13 @@ const Item = styled(Button)`
   margin-bottom: ${({ spacingBottom }) => spacingBottom}px;
   padding: ${({ padding }) => padding}px;
   border-radius: ${({ borderRadius }) => borderRadius}px;
-  background-color: ${t(
-    (_, { backgroundColor }) => backgroundColor || _.shareButtonBackgroundColor,
-  )};
   transition: 0.2s all ease-in-out;
   svg {
     position: relative;
     display: block;
     width: 100%;
     height: 100%;
-    fill: ${t((_, { iconColor }) => iconColor || _.shareButtonIconColor)};
     transition: 0.2s all ease-in-out;
-  }
-  &:hover,
-  &:active {
-    opacity: 1;
-    background-color: ${t(
-      (_, { backgroundHoverColor }) => backgroundHoverColor || _.shareButtonBackgroundHoverColor,
-    )};
-    svg {
-      fill: ${t((_, { iconHoverColor }) => iconHoverColor || _.shareButtonIconHoverColor)};
-    }
   }
 `;
 
@@ -57,29 +43,33 @@ const SocialButtons = ({
   itemPadding = 8,
   items,
   ...props
-}) => (
-  <Container {...fP(props)}>
-    {React.Children.map(children, (child, idx) => {
-      const { linkProps, url, ...childProps } = child.props;
-      return (
-        <a href={url} key={idx} {...fP(linkProps)}>
-          {React.cloneElement(child, {
-            iconColor,
-            iconHoverColor,
-            backgroundColor: itemBackgroundColor,
-            backgroundHoverColor: itemBackgroundHoverColor,
-            borderRadius: itemBorderRadius,
-            padding: itemPadding,
-            size: itemSize,
-            spacingRight: idx < React.Children.count(children) ? spacing : 0,
-            spacingBottom: spacingBottom || spacing,
-            ...childProps,
-          })}
-        </a>
-      );
-    })}
-  </Container>
-);
+}) => {
+  const theme = useTheme();
+  return (
+    <Container {...fP(props)}>
+      {React.Children.map(children, (child, idx) => {
+        const { linkProps, url, ...childProps } = child.props;
+        return (
+          <a href={url} key={idx} {...fP(linkProps)}>
+            {React.cloneElement(child, {
+              iconColor,
+              iconHoverColor,
+              backgroundColor: itemBackgroundColor || theme.shareButtonBackgroundColor,
+              backgroundHoverColor:
+                itemBackgroundHoverColor || theme.shareButtonBackgroundHoverColor,
+              borderRadius: itemBorderRadius,
+              padding: itemPadding,
+              size: itemSize,
+              spacingRight: idx < React.Children.count(children) ? spacing : 0,
+              spacingBottom: spacingBottom || spacing,
+              ...childProps,
+            })}
+          </a>
+        );
+      })}
+    </Container>
+  );
+};
 
 SocialButtons.Button = Item;
 

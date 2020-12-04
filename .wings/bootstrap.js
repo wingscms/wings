@@ -36,8 +36,6 @@ class Wings {
 
 const schemaPath = path.join(__dirname, 'data', 'introspectionResult.json');
 
-const locales = ['en', 'de', 'nl'];
-
 const bootstrap = async () => {
   const client = new Wings({ domain: 'localhost' });
   if (!fs.existsSync(schemaPath)) {
@@ -45,41 +43,31 @@ const bootstrap = async () => {
     fs.writeFileSync(schemaPath, JSON.stringify(data, null, 2));
   }
 
-  const pLocales = locales.map(async locale => {
-    const localePath = path.join(__dirname, 'data', `${locale}.json`);
-
-    if (!fs.existsSync(localePath)) {
-      const data = await client.query(
-        `
-      query LocaleData($locale: String) {
-        currentApp {
-          ... on WebApp {
-            copy(localeId: $locale) {
-              message {
-                messageId
-                message
-              }
-            }
-          }
+  const data = await client.query(`
+    query LocaleData {
+      defaultAppCopy {
+        message {
+          messageId
+          message
         }
-      }`,
-        { locale },
-      );
+        locale {
+          id
+        }
+      }
+    }
+  `);
 
-      fs.writeFileSync(
-        localePath,
-        JSON.stringify(
-          data.currentApp.copy.reduce(
-            (messages, entry) => ({
-              ...messages,
-              [entry.message.messageId]: entry.message.message,
-            }),
-            {},
-          ),
-          null,
-          2,
-        ),
-      );
+  const locales = data.defaultAppCopy.reduce((l, c) => {
+    return {
+      ...l,
+      [c.locale.id]: { ...l[c.locale.id], [c.message.messageId]: c.message.message },
+    };
+  }, {});
+
+  const pLocales = Object.keys(locales).map(async locale => {
+    const localePath = path.join(__dirname, 'data', `${locale}.json`);
+    if (!fs.existsSync(localePath)) {
+      fs.writeFileSync(localePath, JSON.stringify(locales[locale], null, 2));
     }
   });
 

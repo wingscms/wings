@@ -45,10 +45,8 @@ export default function DefaultMenu({
   };
 
   const socialButtonsProps = {
-    backgroundColor: _.shareButtonMenuBackgroundColor,
-    backgroundHoverColor: _.shareButtonMenuBackgroundHoverColor,
-    iconColor: _.shareButtonMenuIconColor,
-    iconHoverColor: _.shareButtonMenuIconHoverColor,
+    backgroundColor: _.appMenuButtonBackgroundColor,
+    backgroundHoverColor: null, // Overrides default behavior
     spacingBottom: 0,
     linkProps: { target: '_blank' },
   };

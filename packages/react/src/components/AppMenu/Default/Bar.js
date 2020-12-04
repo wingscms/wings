@@ -7,7 +7,7 @@ import {
   SocialButtons as _SocialButtons,
 } from '@wingscms/components';
 
-import { t } from '../../../theme';
+import { t, useTheme } from '../../../theme';
 import styled from '../../../lib/styled';
 
 const LayoutContainer = styled.div`
@@ -114,6 +114,7 @@ export default function MenuDefaultBar({
   socialButtonsProps,
   wrapPrimaryItem,
 }) {
+  const theme = useTheme();
   const wrappedLogo = wrapLogo(<Logo alt={logoImageAlt} src={logoImageUrl} />, {
     imageUrl: logoImageUrl,
     imageAlt: logoImageAlt,
@@ -129,7 +130,8 @@ export default function MenuDefaultBar({
             <BarLayoutRightItem>
               {!showLanguageSelect ? null : (
                 <LangaugeSelectButton
-                  intent={Button.Intent.PRIMARY}
+                  backgroundColor={theme.appMenuButtonBackgroundColor}
+                  backgroundHoverColor={theme.appMenuButtonBackgroundHoverColor}
                   icon="globe"
                   onClick={onLanguageSelectClick}
                 />
@@ -140,7 +142,11 @@ export default function MenuDefaultBar({
               : primaryMenuItems.map(({ url, text, ...props }) => (
                   <BarLayoutRightItem>
                     {wrapPrimaryItem(
-                      <PrimaryItem intent={Button.Intent.PRIMARY} {...props}>
+                      <PrimaryItem
+                        backgroundColor={theme.appMenuButtonBackgroundColor}
+                        backgroundHoverColor={theme.appMenuButtonBackgroundHoverColor}
+                        {...props}
+                      >
                         {text}
                       </PrimaryItem>,
                       { url },
