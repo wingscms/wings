@@ -210,6 +210,45 @@ Of course, you can also choose to connect any of the countless services supporte
 
 Webhooks are a very powerful tool - experiment away!
 
+### Create a contact form with notifications via Zapier
+
+Using webhooks, it is also possible to turn a signup campaign into a contact form that will send you an email notification.
+
+To do this, create a Zapier zap that uses a webhook as a trigger to send an email:
+
+![](https://screens.wings.dev/CleanShot-2020-12-05-at-13.25.40-2x-1607171150.png)
+
+Next, copy the webhook url (and click 'Continue'):
+
+![](https://screens.wings.dev/CleanShot-2020-12-05-at-13.27.19-2x-1607171262.png)
+
+Then, go to your Wings project App settings and create a webhook:
+
+![](https://screens.wings.dev/CleanShot-2020-12-05-at-13.28.59-2x-1607171477.png)
+
+1. Choose 'Add webhook'
+2. Give your webhook a name
+3. Paste the webhook url Zapier gave you into this field
+4. Choose `submission.created` as a trigger. Alternatively, you could choose to only process form submissions after the user has confirmed it by clicking on the confirmation link in the  email Wings will send them.
+5. Save the webhook.
+
+Then, create a Signup campaign that you will use as a contact form, and fill out the campaign form as a test.
+
+![](https://screens.wings.dev/CleanShot-2020-12-05-at-13.33.38-2x-1607171634.png)
+
+Then head back to Zapier and click 'Test trigger':
+
+![](https://screens.wings.dev/CleanShot-2020-12-05-at-13.34.14-2x-1607171664.png)
+
+Zapier will show you it has received the form submission. Next, we will set up a filter to **only** process zaps for this particular form – you may have other signup campaigns set up, and we want to create a notification that is only sent out if this contact form is used. We could look at the campaign title 'Contact form' but we could be a little more specific and use its ID, which is unique. You may have other forms set up in your project that you could also name 'Contact form', so this lets us be more precise and use the `submission_projectId` which we will use in a later step.
+
+![](https://screens.wings.dev/CleanShot-2020-12-05-at-13.54.05-2x-1607172900.png) 
+
+Click continue until you can configure the 'outbound email'. Then you will be able to configure the email notification. You can use all the information that Wings 
+
+![](https://screens.wings.dev/CleanShot-2020-12-05-at-14.17.37-2x-1607174267.png)
+
+After configuring the email, you should be able to activate this zap and try it out.
 
 ### Use webhooks to process content updates
 You can also use webhooks to send updates about the creation, modification and deletion of nodes (pages, articles, and campaigns) to third party services. You can easily find the right event triggers in your webhooks settings.
