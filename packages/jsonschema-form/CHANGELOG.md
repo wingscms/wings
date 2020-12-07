@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.14](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@1.2.13...@wingscms/jsonschema-form@1.2.14) (2020-12-07)
+
+
+### Bug Fixes
+
+* **jsonschema-form:** fix required form fields ([#553](https://github.com/wingscms/wings/issues/553)) ([174ca4e](https://github.com/wingscms/wings/commit/174ca4eddb7aec7003175a6a505dc9ef3c5cdbfc))
+
+
+
+
+
 ## [1.2.13](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@1.2.12...@wingscms/jsonschema-form@1.2.13) (2020-11-02)
 
 **Note:** Version bump only for package @wingscms/jsonschema-form
