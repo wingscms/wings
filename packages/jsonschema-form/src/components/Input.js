@@ -77,6 +77,7 @@ function BaseInput(props) {
         theme={formContext.theme}
         inputStyles={formContext.inputStyles}
         error={rawErrors && rawErrors.length}
+        required={required}
         {...inputProps}
         autoFocus={autofocus}
         onChange={_onChange}
