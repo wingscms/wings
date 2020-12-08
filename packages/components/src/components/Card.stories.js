@@ -78,8 +78,8 @@ export const BackgroundImage = () => (
 export const ContentReveal = () => (
   <Card backgroundImage={image()} {...cardProps({ ratio: '3:4' })}>
     <Card.HeadingReveal
-      title={text('title text', faker.lorem.sentences(1))}
-      subtitle={text('subtitle text', faker.lorem.sentences(2))}
+      title={text('title text', faker.lorem.sentences(1), 'HeadingReveal Props')}
+      subtitle={text('subtitle text', faker.lorem.sentences(2), 'HeadingReveal Props')}
     />
   </Card>
 );
