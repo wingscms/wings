@@ -18,7 +18,7 @@ const titleProps = ({ characterLimit = 50 } = {}) => ({
   title: text('title text', faker.lorem.sentences(1), 'Title Props'),
 });
 
-const subtitleProps = ({ characterLimit = 150 } = {}) => ({
+const subtitleProps = ({ characterLimit = 120 } = {}) => ({
   characterLimit: number('characterLimit', characterLimit, {}, 'Subtitle Props'),
   subtitle: text('title text', faker.lorem.sentences(3), 'Subtitle Props'),
 });
@@ -68,7 +68,7 @@ export const BackgroundImage = () => (
       <Card.Heading>
         <Card.Heading.Subtitle
           style={{ color: '#fff', textShadow: '0px 0px 3px #000' }}
-          {...subtitleProps({ characterLimit: 0 })}
+          {...subtitleProps({ characterLimit: 120 })}
         />
       </Card.Heading>
     </Card.Footer>
