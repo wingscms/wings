@@ -48,7 +48,7 @@ const Surface = styled(_Surface)`
   ${getPosition}
 `;
 
-function AppBar({ elevation = 2, children, hide, position = Position.TOP, ...props }) {
+function AppBar({ elevation = 1, children, hide, position = Position.TOP, ...props }) {
   return (
     <Surface elevation={elevation} hide={hide} position={position} {...fP(props)}>
       {children}
