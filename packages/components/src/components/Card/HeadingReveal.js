@@ -47,7 +47,6 @@ const TitleWrapper = styled(_Surface)`
 
 const Title = styled(Heading)`
   position: relative;
-  user-select: none;
   transition: 0.2s all ease-in-out;
   font-size: 20px;
   line-height: 26px;
@@ -85,7 +84,6 @@ const Title = styled(Heading)`
 `;
 
 const Subtitle = styled(Text)`
-  user-select: none;
   width: 100%;
   margin: 10px 0;
   padding: 0;
