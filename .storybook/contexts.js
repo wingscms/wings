@@ -6,8 +6,7 @@ import en from '../.wings/data/en.json';
 import de from '../.wings/data/de.json';
 import nl from '../.wings/data/nl.json';
 
-import exampleThemes from './themes/examples';
-import developmentThemes from './themes/development';
+import themes from './themes';
 
 export default [
   {
@@ -25,10 +24,7 @@ export default [
     icon: 'paintbrush',
     title: 'Theme',
     components: [ThemeProvider],
-    params: [
-      ...exampleThemes,
-      ...(process.env.NODE_ENV === 'development' ? developmentThemes : []),
-    ],
+    params: [...themes],
     options: {
       deep: true,
       disable: false,
