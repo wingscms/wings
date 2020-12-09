@@ -19,6 +19,9 @@ const ItemSpan = styled.span`
 const UnorderedList = styled.ul`
   color: ${t((_, { markerColor }) => markerColor || _.unorderedListMarkerColor)};
   font-family: ${t(_ => _.headerFontFamily)};
+  ${ItemLi} {
+    color: ${t((_, { markerColor }) => markerColor || _.unorderedListMarkerColor)};
+  }
   ${ItemSpan} {
     color: ${t((_, { textColor }) => textColor || _.unorderedListTextColor)};
   }
@@ -27,6 +30,9 @@ const UnorderedList = styled.ul`
 const OrderedList = styled.ol`
   color: ${t((_, { markerColor }) => markerColor || _.orderedListMarkerColor)};
   font-weight: bold;
+  ${ItemLi} {
+    color: ${t((_, { markerColor }) => markerColor || _.orderedListMarkerColor)};
+  }
   ${ItemSpan} {
     color: ${t((_, { textColor }) => textColor || _.orderedListTextColor)};
   }

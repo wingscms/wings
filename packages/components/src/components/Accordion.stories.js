@@ -10,7 +10,7 @@ const props = () => ({
   backgroundHoverColor: color('backgroundHoverColor'),
 });
 
-export const Uncontrolled = () => (
+export default () => (
   <Accordion {...props()}>
     <Accordion.Item label={faker.lorem.sentence()}>
       <Text noSpacing>{faker.lorem.paragraph(6)}</Text>

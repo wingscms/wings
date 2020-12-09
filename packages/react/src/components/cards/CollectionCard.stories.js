@@ -2,10 +2,10 @@ import { CollectionCard } from '@wingscms/react';
 import faker from 'faker';
 import { contentWrap, image } from '../../../../../utils';
 
-export const People = () =>
+export const Person = () =>
   CollectionCard.render({
     type: 0,
-    title: 'Collection',
+    title: 'Persom Collection (Deprecated)',
     items: [
       {
         image: {
@@ -102,10 +102,10 @@ export const People = () =>
     ],
   });
 
-export const Organisations = () =>
+export const Organisation = () =>
   CollectionCard.render({
     type: 1,
-    title: 'Organisations',
+    title: 'Organisation Collection (Deprecated)',
     items: [
       {
         name: 'Wings',

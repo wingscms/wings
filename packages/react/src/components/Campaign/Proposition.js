@@ -1,22 +1,22 @@
 import React, { useState, useRef } from 'react';
-import { useDimensions } from '@wingscms/components';
+import { Surface as _Surface, useDimensions } from '@wingscms/components';
 
 import styled, { css } from '../../lib/styled';
 import { t } from '../../theme';
 
-const Container = styled.div`
+const Surface = styled(_Surface)`
   display: inline-block;
   position: relative;
   overflow: hidden;
-  background-color: #fff;
+  background-color: ${t(_ => _.campaignPropositionBackgroundColor)};
   vertical-align: top;
-  border-radius: 4px 0 0 4px;
-  box-shadow: ${t(_ => _.shadow)};
   height: ${({ height, show }) => (show ? height : 400)}px;
   transition: max-height 0.15s linear;
   padding: 0 ${t(_ => _.smallSpacing)};
   margin-bottom: ${t(_ => _.extraSmallSpacing)};
+
   @media screen and (min-width: 1000px) {
+    border-radius: ${t(_ => `${_.surfaceBorderRadius} 0 0 ${_.surfaceBorderRadius}`)};
     padding: 0 ${t(_ => _.mediumSpacing)};
     margin-top: ${t(_ => _.mediumSpacing)};
     width: calc(100% - ${({ formWidth }) => formWidth});
@@ -41,9 +41,9 @@ const ToggleButton = styled.div`
   font-weight: bold;
   bottom: 0;
   left: 0;
-  border-radius: 4px;
-  z-index: 10;
-  background-color: #fff;
+  z-index: 1;
+  background-color: ${t(_ => _.campaignPropositionBackgroundColor)};
+  color: ${t(_ => _.contrastColor({ backgroundColor: _.campaignPropositionBackgroundColor }))};
   cursor: pointer;
   &:hover {
     color: ${t(_ => _.primaryColor)};
@@ -61,7 +61,16 @@ const ToggleButton = styled.div`
             width: 100%;
             height: 100px;
             transform: translateY(-100%);
-            background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0) 50%);
+            background: linear-gradient(
+              to top,
+              ${t(_ => _.campaignPropositionBackgroundColor)},
+              ${t(
+                _ =>
+                  `rgba(${_.color(_.campaignPropositionBackgroundColor)
+                    .toColor()
+                    .color.join(', ')}, 0) 50%`,
+              )}
+            );
           }
         `}
 `;
@@ -73,6 +82,7 @@ export default function Proposition({
   descriptionExpand,
   onToggle = () => {},
   formWidth,
+  elevation = 1,
   style,
   ...props
 }) {
@@ -96,7 +106,14 @@ export default function Proposition({
   const showToggle = show || contentHeight + 160 > height;
 
   return (
-    <Container ref={containerRef} show={show} height={height} formWidth={formWidth} {...props}>
+    <Surface
+      ref={containerRef}
+      show={show}
+      height={height}
+      formWidth={formWidth}
+      elevation={elevation}
+      {...props}
+    >
       <Content ref={contentRef}>{children}</Content>
       {!showToggle ? null : (
         <ToggleButton
@@ -108,6 +125,6 @@ export default function Proposition({
           {show ? descriptionCollapse : descriptionExpand}
         </ToggleButton>
       )}
-    </Container>
+    </Surface>
   );
 }

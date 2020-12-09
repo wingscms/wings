@@ -39,7 +39,7 @@ const SocialButtons = ({
   spacingBottom,
   itemBackgroundColor,
   itemBackgroundHoverColor,
-  itemBorderRadius = 4,
+  itemBorderRadius,
   itemPadding = 8,
   items,
   ...props

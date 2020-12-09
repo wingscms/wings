@@ -1,9 +1,12 @@
 import { WingsProvider, IntlProvider } from '@wingscms/react';
 import { ThemeProvider } from '@wingscms/components';
 import client from '../.wings/wings';
+
 import en from '../.wings/data/en.json';
 import de from '../.wings/data/de.json';
 import nl from '../.wings/data/nl.json';
+
+import themes from './themes';
 
 export default [
   {
@@ -21,18 +24,7 @@ export default [
     icon: 'paintbrush',
     title: 'Theme',
     components: [ThemeProvider],
-    params: [
-      { name: 'None', props: {}, default: true },
-      {
-        name: 'Red',
-        props: {
-          theme: {
-            primaryColor: '#ff0000',
-            secondaryColor: '#990000',
-          },
-        },
-      },
-    ],
+    params: [...themes],
     options: {
       deep: true,
       disable: false,

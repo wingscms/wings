@@ -11,13 +11,18 @@ const StyledCounter = styled.div`
   border-radius: 7.5px;
   background-color: transparent;
   border: 1px solid ${t((_, { barColor, intent }) => barColor || _.intentColor(intent))};
+  overflow: hidden;
 `;
 
 const StyledCounterInner = styled(StyledCounter)`
   width: ${props => `${props.width || 0}%`};
   height: ${({ height }) => `${height - 2}px` || '12px'};
   margin-top: 0;
+  border: 0;
+  border-radius: 0;
   background-color: ${t((_, { barColor, intent }) => barColor || _.intentColor(intent))};
+  position: relative;
+  overflow: visible;
 `;
 
 export default function ProgressBar({ barColor, current, max, height = 12, intent, ...props }) {

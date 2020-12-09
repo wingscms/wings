@@ -2,17 +2,18 @@ import React from 'react';
 import fP from 'filter-invalid-dom-props';
 import styled from '../lib/styled';
 import { t } from '../theme';
+
 import Icon from './Icon';
-import Link from './Link';
-import Text from './Text';
+import _Link from './Link';
+import _Text from './Text';
+import Surface from './Surface';
 
 const Container = styled.div`
   padding-top: ${t(_ => _.smallSpacing)};
 `;
 
-const Figure = styled.figure`
+const Figure = styled(Surface)`
   background-color: ${t(_ => _.blockquoteBackgroundColor)};
-  box-shadow: ${t(_ => _.shadow)};
   padding: ${t(_ => _.mediumSpacing)};
   position: relative;
   clear: both;
@@ -20,8 +21,11 @@ const Figure = styled.figure`
 `;
 
 const Quote = styled.blockquote`
-  color: ${t(_ => _.blockquoteTextColor)};
   margin: 0;
+`;
+
+const Text = styled(_Text)`
+  color: ${t(_ => _.blockquoteTextColor)};
 `;
 
 const IconWrap = styled.div`
@@ -39,14 +43,17 @@ const IconWrap = styled.div`
 const Caption = styled.figcaption`
   font-family: ${t(_ => _.textFontFamily)};
   margin-top: ${t(_ => _.smallSpacing)};
-  color: ${t(_ => _.textColor)};
   text-align: center;
 `;
 
-export default function Blockquote({ text, source, sourceUrl, ...props }) {
+const Link = styled(_Link)`
+  color: ${t(_ => _.blockquoteTextColor)};
+`;
+
+export default function Blockquote({ elevation = 1, text, source, sourceUrl, ...props }) {
   return (
     <Container>
-      <Figure {...fP(props)}>
+      <Figure elevation={elevation} {...fP(props)}>
         <IconWrap>
           <Icon icon="quote" />
         </IconWrap>

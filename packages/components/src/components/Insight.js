@@ -4,8 +4,9 @@ import styled, { css } from '../lib/styled';
 import { t } from '../theme';
 import Reveal from './Reveal';
 import Heading from './Heading';
+import _Surface from './Surface';
 
-const Container = styled.div`
+const Surface = styled(_Surface)`
   background-color: ${t(_ => _.insightBackgroundColor)};
   padding: ${t(_ => _.largeSpacing)};
   text-align: center;
@@ -18,7 +19,8 @@ const Container = styled.div`
   )}
 `;
 
-const Inner = styled.div`
+const InnerSurface = styled(_Surface)`
+  background-color: transparent;
   ${t(Heading.getStyles(5))}
   color: ${t(_ => _.insightTextColor)};
   font-weight: bold;
@@ -42,12 +44,12 @@ const Inner = styled.div`
   )}
 `;
 
-export default function Insight({ reveal, children, ...props }) {
+export default function Insight({ elevation = 1, reveal, children, ...props }) {
   return (
-    <Container {...fP(props)}>
+    <Surface elevation={elevation} {...fP(props)}>
       <Reveal reveal={reveal}>
-        <Inner>{children}</Inner>
+        <InnerSurface>{children}</InnerSurface>
       </Reveal>
-    </Container>
+    </Surface>
   );
 }

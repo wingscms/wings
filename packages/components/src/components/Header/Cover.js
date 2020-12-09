@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import fP from 'filter-invalid-dom-props';
 import { mediaUrl } from '@wingscms/sdk';
+
+import Icon from '../Icon';
+import Heading from '../Heading';
+
+import { t } from '../../theme';
 import styled, { css } from '../../lib/styled';
 import { getViewportDimensions } from '../../lib/utils';
 import useWindow from '../../hooks/useWindow';
-import Icon from '../Icon';
-import Heading from '../Heading';
-import { t } from '../../theme';
 
 const Title = styled(Heading)`
   color: ${t(_ => _.landingSectionTitleColor)};
+  border-radius: ${t(_ => _.surfaceBorderRadius)};
   text-align: center;
   margin: 0 auto;
   max-width: 95%;
@@ -23,6 +26,7 @@ const Title = styled(Heading)`
       line-height: 1.4;
       span {
         background: ${v};
+        border-radius: ${t(_ => _.surfaceBorderRadius)};
         line-height: 1.4;
         padding: 0 0.25em;
         box-decoration-break: clone;

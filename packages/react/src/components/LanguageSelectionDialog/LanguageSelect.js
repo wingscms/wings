@@ -1,10 +1,11 @@
 import React from 'react';
-import { Button as _Button } from '@wingscms/components';
+import { Button as _Button, Surface as _Surface } from '@wingscms/components';
 
 import { t } from '../../theme';
 import styled, { css } from '../../lib/styled';
 
-const Container = styled.div`
+const Surface = styled(_Surface)`
+  background-color: ${t(_ => _.dialogBackgroundColor)};
   padding: ${t(_ => _.smallSpacing)};
   display: flex;
   flex-wrap: wrap;
@@ -27,7 +28,7 @@ const Button = styled(_Button)`
 
 export default function LanguageSelect({ translations, wrapTranslation = x => x }) {
   return (
-    <Container>
+    <Surface>
       {translations.map((translation, idx) =>
         wrapTranslation(
           <Button size={Button.Size.SMALL} intent={Button.Intent.PRIMARY} key={idx}>
@@ -36,6 +37,6 @@ export default function LanguageSelect({ translations, wrapTranslation = x => x 
           { translation },
         ),
       )}
-    </Container>
+    </Surface>
   );
 }

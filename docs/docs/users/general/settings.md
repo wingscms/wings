@@ -147,6 +147,7 @@ All campaigns only record a user's information after they have clicked a confirm
 Alternatively, you can configure the email as a simple 'thank you' email with perhaps a followup call to action link.
 
 ## Webhooks
+
 Webhooks provide a lightweight yet powerful way to send form submissions as well as information about created, updated and deleted nodes (articles, pages and campaigns) to third party services. For an introduction to webhooks, please read [What are webhooks?](https://zapier.com/blog/what-are-webhooks/), an insightful article by Zapier, a service that lets any user automate workflows, including using webhooks. 
 
 To use webhooks, you need to use a service that can receive webhooks. 

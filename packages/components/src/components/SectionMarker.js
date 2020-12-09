@@ -6,13 +6,15 @@ import { t } from '../theme';
 import Reveal from './Reveal';
 import Heading from './Heading';
 import _Text from './Text';
+import _Surface from './Surface';
 
 const Text = styled(_Text)`
   color: ${t((_, { textColor }) => textColor || _.sectionMarkerTextColor)};
   margin-bottom: 0;
 `;
 
-const Container = styled.div`
+const Surface = styled(_Surface)`
+  border-radius: 0;
   width: 100%;
   background: ${t(_ => _.sectionMarkerBackgroundColor)};
   &:first-child {
@@ -51,13 +53,14 @@ const Title = styled(Heading)`
 `;
 
 const Number = styled.span`
-  color: ${t((_, { numberColor }) => numberColor || _.sectionMarkerNumberColor)};
   ${t(Heading.getStyles(7))}
+  color: ${t((_, { numberColor }) => numberColor || _.sectionMarkerNumberColor)};
   font-weight: bold;
   opacity: ${t((_, { numberOpacity }) => numberOpacity || _.sectionMarkerNumberOpacity)};
 `;
 
 export default function SectionMarker({
+  elevation = 1,
   reveal,
   sectionTitle = '',
   text = '',
@@ -69,7 +72,7 @@ export default function SectionMarker({
   ...props
 }) {
   return (
-    <Container {...fp(props)}>
+    <Surface elevation={elevation} {...fp(props)}>
       <Chapter>
         <Reveal reveal={reveal}>
           <TitleWrap>
@@ -83,6 +86,6 @@ export default function SectionMarker({
           {text && <Text textColor={textColor}>{text}</Text>}
         </Reveal>
       </Chapter>
-    </Container>
+    </Surface>
   );
 }

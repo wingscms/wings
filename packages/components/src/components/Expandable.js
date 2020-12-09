@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import fP from 'filter-invalid-dom-props';
 import styled, { css } from '../lib/styled';
+import _Surface from './Surface';
 import { t } from '../theme';
 
-const ExpandableWrapper = styled.div`
+const Surface = styled(_Surface)`
   background-color: ${t(
     (_, { backgroundColor }) => backgroundColor || _.expandableBackgroundColor,
   )};
-  box-shadow: ${t(_ => _.shadow)};
   color: ${t((_, { backgroundColor }) =>
     _.contrastColor({ backgroundColor: backgroundColor || _.expandableBackgroundColor }),
   )};
@@ -65,9 +65,11 @@ const Toggle = styled.div`
       : `&:after {
     display: block;
     position: absolute;
-    background-image: ${(_.color(backgroundColor) || _.elementBackgroundColor).getLinearGradient({
-      to: 'top',
-    })};
+    background-image: ${(_.color(backgroundColor) || _.expandableBackgroundColor).getLinearGradient(
+      {
+        to: 'top',
+      },
+    )};
     top: -50px;
     height: 50px;
     width: 100%;
@@ -80,6 +82,7 @@ export default function Expandable({
   backgroundColor,
   children,
   closeText = 'Less',
+  elevation = 1,
   height = 250,
   openText = 'More',
   toggleColor,
@@ -92,7 +95,13 @@ export default function Expandable({
   const toggleHeight = () => setOpen(!open);
 
   return (
-    <ExpandableWrapper open={open} height={height} backgroundColor={backgroundColor} {...fP(props)}>
+    <Surface
+      elevation={elevation}
+      open={open}
+      height={height}
+      backgroundColor={backgroundColor}
+      {...fP(props)}
+    >
       {children}
 
       <Toggle
@@ -105,6 +114,6 @@ export default function Expandable({
       >
         {open ? closeText : openText}
       </Toggle>
-    </ExpandableWrapper>
+    </Surface>
   );
 }
