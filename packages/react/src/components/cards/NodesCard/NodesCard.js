@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { _WIDE, FlexGrid, Loading as _Loading, PaginationControls } from '@wingscms/components';
-import Card from './Card';
+import {
+  _WIDE,
+  FlexGrid,
+  Loading as _Loading,
+  PaginationControls,
+  Card,
+} from '@wingscms/components';
 import styled from '../../../lib/styled';
 import useQueryString from '../../../hooks/queryString';
 import { useWings } from '../../../ctx/Wings';
@@ -115,15 +120,15 @@ const getNodeQueryParams = ({ items, selector, type, first, after }) => {
 
 const ItemDefault = ({ node, ...props }) => (
   <Card
+    backgroundImage={node.featured && node.featured.image && node.featured.image.url}
+    ratio="3:4"
     {...props}
-    item={node}
-    title={node.featured && node.featured.title}
-    image={node.featured && node.featured.image && node.featured.image.url}
-    summary={node.featured && node.featured.description}
-    size="medium"
-    bottomBackground
-    shadow
-  />
+  >
+    <Card.HeadingReveal
+      title={node.featured && node.featured.title}
+      subtitle={node.featured && node.featured.description}
+    />
+  </Card>
 );
 
 const NodesCardView = ({ text, ...props }) => {

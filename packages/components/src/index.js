@@ -1,9 +1,11 @@
 export { default as Accordion } from './components/Accordion';
 export { default as AppBar } from './components/AppBar';
+export { default as AspectRatio } from './components/AspectRatio';
 export { default as Blockquote } from './components/Blockquote';
 export { default as Burger } from './components/Burger';
 export { default as Button } from './components/Button';
 export { default as CallToAction } from './components/CallToAction';
+export { default as Card } from './components/Card';
 export { default as Collapse } from './components/Collapse';
 export { default as Counter } from './components/Counter';
 export { default as Drawer } from './components/Drawer';
@@ -27,6 +29,7 @@ export { default as Reveal } from './components/Reveal';
 export { default as ScrollBar } from './components/ScrollBar';
 export { default as SectionMarker } from './components/SectionMarker';
 export { default as SocialButtons } from './components/SocialButtons';
+export { default as Surface } from './components/Surface';
 export { default as Text } from './components/Text';
 
 export { default as Theme, t, useTheme, ThemeProvider, Intent } from './theme';

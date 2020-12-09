@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Counter, Heading, Text } from '@wingscms/components';
+import { Counter, Heading, Text, Surface as _Surface } from '@wingscms/components';
 import fP from 'filter-invalid-dom-props';
 import styled from '../../lib/styled';
 
@@ -59,7 +59,6 @@ const CampaignFragment = `
 
 const MainContainerOuter = styled(Container)`
   background-color: transparent;
-  overflow: auto;
   margin-bottom: ${t(_ => _.largeSpacing)};
   @media screen and (max-width: 800px) {
     margin-bottom: ${t(_ => _.mediumSpacing)};
@@ -73,23 +72,23 @@ const MainContainerInner = styled(Container)`
   display: flex;
   flex-direction: row;
   margin: 0 auto;
+  padding: ${t(_ => _.smallSpacing)};
   @media screen and (max-width: 1000px) {
     flex-direction: column;
-    padding: 0 10px;
   }
 `;
 
 const FORM_WIDTH = '460px';
 
-const FormContainer = styled.div`
+const FormSurface = styled(_Surface)`
   display: inline-block;
   width: ${FORM_WIDTH};
   background-color: ${t(_ => _.campaignFormBackgroundColor)};
   color: ${t(_ => _.campaignFormTextColor)};
   vertical-align: top;
-  border-radius: 4px;
-  box-shadow: ${t(_ => _.shadow)};
   align-self: flex-start;
+  position: relative;
+  z-index: 1;
   /* TODO: use Link component instead of vanilla <a> */
   a {
     color: ${t(_ => _.campaignFormLinkTextColor)};
@@ -139,10 +138,10 @@ const Intro = styled(Text)`
   }
 `;
 
-const CounterContainer = styled.div`
+const CounterSurface = styled(_Surface)`
   background-color: ${t(_ => _.counterBackgroundColor)};
+  border-radius: ${t(_ => `${_.surfaceBorderRadius} ${_.surfaceBorderRadius} 0 0`)};
   color: ${t(_ => _.counterTextColor)};
-  border-radius: 4px 4px 0 0;
   padding: ${t(_ => `${_.smallSpacing} ${_.mediumSpacing}`)};
   width: 100%;
   @media screen and (max-width: 1000px) {
@@ -214,69 +213,68 @@ export default function Campaign({
   } = copy;
   const { intro, title, description } = node;
   const element = (
-    <>
-      <MainContainerOuter {...fP(props)} ref={campaignContainerRef}>
-        <MainContainerInner>
-          <Proposition
-            {...{ descriptionCollapse, descriptionExpand }}
-            height={formHeight - 80}
-            onToggle={show => {
-              if (!campaignContainerRef?.current || show) return;
-              campaignContainerRef?.current?.scrollIntoView?.({
-                behavior: 'smooth',
-                block: 'start',
-              });
-            }}
-            formWidth={FORM_WIDTH}
-          >
-            {!(title || intro || description) ? null : (
-              <>
-                {title ? <Heading rank={headingRank}>{title}</Heading> : null}
-                {intro ? <Intro fullWidth>{intro}</Intro> : null}
-                <Content content={description} mini />
-              </>
-            )}
-          </Proposition>
-          <FormContainer ref={formContainerRef}>
-            {/* Petition counter */}
-            {typeof signatureCount === 'number' && node.resourceType === 'node.petition' && (
-              <CounterContainer>
-                <Counter
-                  current={_signatureCount || signatureCount}
-                  goal={_signatureGoal || signatureGoal}
-                  description={petitionCounterMessage}
-                />
-              </CounterContainer>
-            )}
-            {/* Fundraiser counter */}
-            {fundraiserRaised &&
-              typeof fundraiserRaised.amount === 'number' &&
-              node.resourceType === 'node.fundraiser' && (
-                <CounterContainer>
-                  <Counter
-                    current={fundraiserRaised.amount / 100}
-                    goal={fundraiserTarget.amount / 100}
-                    description={fundraiserCounterMessage}
-                    symbol={fundraiserRaised.currency.symbol}
-                  />
-                </CounterContainer>
-              )}
-            <FormContainerInner>
-              <CampaignForm
-                type={resourceType.split('.')[1]}
-                id={id}
-                node={node}
-                redirectUrl={redirectUrlForNode(node)}
-                {...formProps}
-                onLoad={handleCampaignLoad}
-                onUpdate={() => setFormHeight(formContainerRef?.current?.offsetHeight)}
-                nodeFragment={NodeFragment}
-                campaignFragment={CampaignFragment}
+    <MainContainerOuter {...fP(props)} ref={campaignContainerRef}>
+      <MainContainerInner>
+        <Proposition
+          {...{ descriptionCollapse, descriptionExpand }}
+          height={formHeight - 80}
+          onToggle={show => {
+            if (!campaignContainerRef?.current || show) return;
+            campaignContainerRef?.current?.scrollIntoView?.({
+              behavior: 'smooth',
+              block: 'start',
+            });
+          }}
+          formWidth={FORM_WIDTH}
+          elevation={1}
+        >
+          {!(title || intro || description) ? null : (
+            <>
+              {title ? <Heading rank={headingRank}>{title}</Heading> : null}
+              {intro ? <Intro fullWidth>{intro}</Intro> : null}
+              <Content content={description} mini />
+            </>
+          )}
+        </Proposition>
+        <FormSurface ref={formContainerRef} elevation={2}>
+          {/* Petition counter */}
+          {typeof signatureCount === 'number' && node.resourceType === 'node.petition' && (
+            <CounterSurface>
+              <Counter
+                current={_signatureCount || signatureCount}
+                goal={_signatureGoal || signatureGoal}
+                description={petitionCounterMessage}
               />
-            </FormContainerInner>
-          </FormContainer>
-        </MainContainerInner>
-      </MainContainerOuter>
+            </CounterSurface>
+          )}
+          {/* Fundraiser counter */}
+          {fundraiserRaised &&
+            typeof fundraiserRaised.amount === 'number' &&
+            node.resourceType === 'node.fundraiser' && (
+              <CounterSurface>
+                <Counter
+                  current={fundraiserRaised.amount / 100}
+                  goal={fundraiserTarget.amount / 100}
+                  description={fundraiserCounterMessage}
+                  symbol={fundraiserRaised.currency.symbol}
+                />
+              </CounterSurface>
+            )}
+          <FormContainerInner>
+            <CampaignForm
+              type={resourceType.split('.')[1]}
+              id={id}
+              node={node}
+              redirectUrl={redirectUrlForNode(node)}
+              {...formProps}
+              onLoad={handleCampaignLoad}
+              onUpdate={() => setFormHeight(formContainerRef?.current?.offsetHeight)}
+              nodeFragment={NodeFragment}
+              campaignFragment={CampaignFragment}
+            />
+          </FormContainerInner>
+        </FormSurface>
+      </MainContainerInner>
       {resourceType === 'node.event' && (node.schedule || node.fee || node.location) && (
         <EventDetails
           title={<Heading rank={2}>{eventInfoTitle}</Heading>}
@@ -292,7 +290,7 @@ export default function Campaign({
           }}
         />
       )}
-    </>
+    </MainContainerOuter>
   );
   return wrapElement(element, node);
 }

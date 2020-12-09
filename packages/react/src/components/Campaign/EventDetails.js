@@ -1,4 +1,6 @@
 import React from 'react';
+import { Surface as _Surface } from '@wingscms/components';
+
 import styled from '../../lib/styled';
 import { t } from '../../theme';
 
@@ -15,6 +17,7 @@ const MetaContainer = styled.div`
 
 const MetaName = styled.div`
   font-family: ${t(_ => _.headerFontFamily)};
+  color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
   text-transform: ${t(_ => _.titleTransform)};
   display: inline-block;
   width: 50%;
@@ -29,6 +32,7 @@ const MetaName = styled.div`
 
 const MetaContent = styled.div`
   font-family: ${t(_ => _.textFontFamily)};
+  color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
   display: inline-block;
   width: 50%;
   font-size: 18px;
@@ -43,20 +47,18 @@ const MetaContent = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
+const Surface = styled(_Surface)`
   display: block;
   position: relative;
   width: calc(100% - 20px);
   max-width: 800px;
-  margin: 0 auto ${t(_ => _.largeSpacing)} auto;
+  margin: 0 auto;
   padding: 20px;
-  background-color: #fff !important;
-  border-radius: 4px;
   box-shadow: ${t(_ => _.shadow)};
   text-align: center;
   @media screen and (max-width: 800px) {
     padding: 40px;
-    margin: ${t(_ => _.mediumSpacing)} auto ${t(_ => _.mediumSpacing)} auto;
+    margin: 0 auto;
   }
 `;
 
@@ -72,7 +74,7 @@ export default function EventDetails({
   eventFee,
 }) {
   return (
-    <Wrapper>
+    <Surface>
       {title}
       <InfoContainer>
         {eventStartTime ? (
@@ -106,6 +108,6 @@ export default function EventDetails({
           </MetaContainer>
         ) : null}
       </InfoContainer>
-    </Wrapper>
+    </Surface>
   );
 }

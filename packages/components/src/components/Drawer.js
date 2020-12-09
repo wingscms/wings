@@ -1,6 +1,9 @@
 import React from 'react';
 import fP from 'filter-invalid-dom-props';
 import styled, { css } from '../lib/styled';
+
+import _Surface from './Surface';
+
 import { t } from '../theme';
 
 const Position = {
@@ -61,7 +64,7 @@ const getSize = ({ position, size }) => {
   }
 };
 
-const Container = styled.div`
+const Surface = styled(_Surface)`
   position: fixed;
   background-color: ${t(_ => _.drawerBackgroundColor)};
   transition-property: opacity, transform;
@@ -75,15 +78,16 @@ const Container = styled.div`
 
 export default function Drawer({
   open,
+  elevation = 2,
   children,
   position = Position.RIGHT,
   size = '400px',
   ...props
 }) {
   return (
-    <Container open={open} position={position} size={size} {...fP(props)}>
+    <Surface elevation={elevation} open={open} position={position} size={size} {...fP(props)}>
       {children}
-    </Container>
+    </Surface>
   );
 }
 

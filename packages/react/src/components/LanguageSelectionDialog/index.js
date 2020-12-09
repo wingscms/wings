@@ -1,7 +1,7 @@
 import React from 'react';
 import fP from 'filter-invalid-dom-props';
 
-import { Dialog, Text as _Text } from '@wingscms/components';
+import { Dialog as _Dialog, Text as _Text } from '@wingscms/components';
 import LanguageSelect from './LanguageSelect';
 
 import { t } from '../../theme';
@@ -12,17 +12,28 @@ const Text = styled(_Text)`
   margin: 0 ${t(_ => _.smallSpacing)};
 `;
 
+const Dialog = styled(_Dialog)`
+  overflow: hidden;
+`;
+
 export default function LanguageSelectionDialog({
   onClose,
   title = 'Select Language',
   intro = 'Select your preferred language:',
   current,
+  overlay,
   translations = [],
   wrapTranslation,
   ...props
 }) {
   return (
-    <Dialog size={Dialog.Size.MEDIUM} onClose={onClose} overlay {...fP(props)}>
+    <Dialog
+      size={Dialog.Size.MEDIUM}
+      onClose={onClose}
+      elevation={5}
+      overlay={overlay}
+      {...fP(props)}
+    >
       <Dialog.Header title={title} onClose={onClose} />
       <Text>{intro}</Text>
       <LanguageSelect

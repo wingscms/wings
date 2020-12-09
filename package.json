@@ -9,8 +9,8 @@
     "lint": "eslint .",
     "version": "lerna version",
     "release": "cross-env HUSKY_BYPASS=true lerna publish from-git",
-    "storybook": "node storybook.js",
-    "build-storybook": "node .storybook/bootstrap.js && build-storybook -o .storybook-build --quiet"
+    "storybook": "NODE_ENV=development node storybook.js",
+    "build-storybook": "NODE_ENV=production node .storybook/bootstrap.js && build-storybook -o .storybook-build --quiet"
   },
   "workspaces": {
     "packages": [
@@ -78,6 +78,7 @@
     "rollup": "1.28.0",
     "rollup-plugin-babel": "4.3.3",
     "rollup-plugin-commonjs": "10.1.0",
-    "rollup-plugin-node-resolve": "5.2.0"
+    "rollup-plugin-node-resolve": "5.2.0",
+    "webfontloader": "^1.6.28"
   }
 }

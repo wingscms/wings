@@ -3,7 +3,7 @@ import fP from 'filter-invalid-dom-props';
 import styled from '../lib/styled';
 import ProgressBar from './ProgressBar';
 import Text from './Text';
-import { t } from '../theme';
+import { t, useTheme } from '../theme';
 import CountUp from 'react-countup';
 
 const Container = styled.div`
@@ -62,6 +62,7 @@ export default function Counter({
   symbol = '',
   ...props
 }) {
+  const { counterBarColor } = useTheme();
   return (
     <Container {...fP(props)}>
       <TopContainer>
@@ -73,7 +74,12 @@ export default function Counter({
       </TopContainer>
       {!goal ? null : (
         <>
-          <ProgressBar barColor={barColor} intent="primary" current={current} max={goal} />
+          <ProgressBar
+            barColor={barColor || counterBarColor}
+            intent="primary"
+            current={current}
+            max={goal}
+          />
           <GoalText>{symbol + goal}</GoalText>
         </>
       )}

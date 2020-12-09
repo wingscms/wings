@@ -1,9 +1,11 @@
 import React from 'react';
 import fP from 'filter-invalid-dom-props';
 import styled from '../../lib/styled';
+
 import Heading from '../Heading';
 import Burger from '../Burger';
-import { t } from '../../theme';
+
+import { t, useTheme } from '../../theme';
 
 const Container = styled.div`
   position: relative;
@@ -23,6 +25,7 @@ const Close = styled(Burger)`
 `;
 
 export default function Header({ onClose, title, ...props }) {
+  const _ = useTheme();
   return (
     <Container onClose={onClose} {...fP(props)}>
       {title ? (
@@ -30,7 +33,9 @@ export default function Header({ onClose, title, ...props }) {
           {title}
         </Title>
       ) : null}
-      {onClose ? <Close eaten={true} onClick={onClose} width={25} height={25} /> : null}
+      {onClose ? (
+        <Close color={_.dialogCloseColor} eaten={true} onClick={onClose} width={25} height={25} />
+      ) : null}
     </Container>
   );
 }

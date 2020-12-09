@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
-import { _WIDE } from '@wingscms/components';
+import { _WIDE, Surface as _Surface } from '@wingscms/components';
 import styled from '../../lib/styled';
 import createCard from '../../createCard';
 import { t } from '../../theme';
 
-const Figure = styled.figure`
+const Surface = styled(_Surface)`
   ${_WIDE};
   max-width: 1160px;
   margin-left: 50%;
@@ -76,13 +76,13 @@ class EmbedCard extends Component {
     const { html, ...props } = this.props;
 
     return (
-      <Figure {...filterInvalidDOMProps(props)}>
+      <Surface elevation={1} {...filterInvalidDOMProps(props)}>
         <div
           className="video-wrapper"
           style={{ paddingBottom: `${this.state.percentage}%` }}
           dangerouslySetInnerHTML={{ __html: html }} // eslint-disable-line react/no-danger
         />
-      </Figure>
+      </Surface>
     );
   }
 }

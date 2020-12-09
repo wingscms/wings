@@ -1,11 +1,13 @@
 import React, { useState, isValidElement, cloneElement } from 'react';
 import fP from 'filter-invalid-dom-props';
-import styled from '../lib/styled';
-import Theme from '../theme';
+
 import _Collapse from './Collapse';
 
+import styled from '../lib/styled';
+import Theme, { t } from '../theme';
+
 const Collapse = styled(_Collapse)`
-  margin-bottom: 1px;
+  margin-bottom: ${t(_ => _.extraSmallSpacing)};
 `;
 
 const Container = styled.div``;

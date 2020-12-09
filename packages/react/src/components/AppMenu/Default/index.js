@@ -56,8 +56,8 @@ export default function DefaultMenu({
       <Bar
         burgerProps={{
           ...burgerProps,
-          color: _.burgerMenuColor,
-          hoverColor: _.burgerMenuHoverColor,
+          color: _.appMenuBarBurgerColor,
+          hoverColor: _.appMenuBarBurgerHoverColor,
         }}
         showLanguageSelect={!!translations?.translations?.length}
         onLanguageSelectClick={() => setLanguageSelectOpen(true)}
@@ -71,8 +71,8 @@ export default function DefaultMenu({
       <Drawer
         burgerProps={{
           ...burgerProps,
-          color: _.burgerMenuOpenColor,
-          hoverColor: _.burgerMenuOpenHoverColor,
+          color: _.appMenuDrawerBurgerColor,
+          hoverColor: _.appMenuDrawerBurgerHoverColor,
         }}
         menuItems={menuItems}
         open={open}
@@ -86,6 +86,7 @@ export default function DefaultMenu({
           current={translations.current}
           translations={translations.translations}
           wrapTranslation={wrapTranslation}
+          overlay
         />
       )}
     </Portal>

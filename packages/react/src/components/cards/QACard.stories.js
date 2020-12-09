@@ -2,7 +2,7 @@ import { QACard } from '@wingscms/react';
 import faker from 'faker';
 import { contentWrap, mobiledocWithText } from '../../../../../utils';
 
-export const WithStrings = () =>
+export default () =>
   QACard.render({
     title: 'Question and Answers',
     intro: faker.lorem.paragraphs(1),

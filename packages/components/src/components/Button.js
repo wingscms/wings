@@ -1,9 +1,12 @@
 import React from 'react';
 import fP from 'filter-invalid-dom-props';
-import styled, { css } from '../lib/styled';
-import Theme, { t } from '../theme';
+
 import { default as _Icon } from './Icon';
 import _Loading from './Loading';
+import _Surface from './Surface';
+
+import Theme, { t } from '../theme';
+import styled, { css } from '../lib/styled';
 
 const Icon = styled(_Icon)`
   display: inline;
@@ -108,7 +111,7 @@ const LoadingWrapper = styled.div`
   border-radius: 4px;
 `;
 
-const Root = styled.button`
+const Surface = styled(_Surface)`
   ${t(
     (
       _,
@@ -145,12 +148,12 @@ const Root = styled.button`
         font-size: 1em;
         padding: ${borderColor ? '14px 38px' : '16px 40px'};
         border: 0;
+        border-radius: ${_.buttonBorderRadius};
         cursor: pointer;
         position: relative;
         transition: all 0.15s ease-in-out;
         font-family: ${_.headerFontFamily};
         font-weight: bold;
-        border-radius: 4px;
         text-transform: ${_.titleTransform};
         ${buttonTypeCSS}
         ${sizeCSS}
@@ -193,7 +196,8 @@ export default function Button({
 }) {
   const disabled = loading || disabledProp;
   return (
-    <Root
+    <Surface
+      as="button"
       disabled={disabled}
       intent={intent}
       size={size}
@@ -211,7 +215,7 @@ export default function Button({
       )}
       {icon && <Icon intent={intent} icon={icon} />}
       {children}
-    </Root>
+    </Surface>
   );
 }
 

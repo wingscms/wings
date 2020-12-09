@@ -8,7 +8,7 @@ const props = () => ({
   iconHoverColor: color('iconHoverColor'),
   itemBackgroundColor: color('itemBackgroundColor'),
   itemBackgroundHoverColor: color('itemBackgroundHoverColor'),
-  itemBorderRadius: number('itemBorderRadius', 4),
+  itemBorderRadius: number('itemBorderRadius'),
   itemPadding: number('itemPadding', 8),
   size: number('size', 40),
   spacing: number('spacing', 10),

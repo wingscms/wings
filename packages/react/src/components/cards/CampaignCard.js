@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled, { css } from '../../lib/styled';
-import { _WIDE } from '@wingscms/components';
+import { _WIDE, Surface as _Surface } from '@wingscms/components';
 import Campaign from '../Campaign/Campaign';
 import createCard from '../../createCard';
 import { t } from '../../theme';
@@ -28,7 +28,7 @@ const Container = styled.div`
       : null}
 `;
 
-const Image = styled.div`
+const ImageSurface = styled(_Surface)`
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
@@ -76,7 +76,12 @@ export const CampaignCardView = ({ id, resourceType, ...props }) => {
         const imageUrl = campaign && campaign.image && campaign.image.url;
         return (
           <Wrapper>
-            <Image ref={imageRef} imageUrl={imageUrl} imageMargin={imageMargin} />
+            <ImageSurface
+              elevation={1}
+              ref={imageRef}
+              imageUrl={imageUrl}
+              imageMargin={imageMargin}
+            />
             <Container imageUrl={imageUrl}>{element}</Container>
           </Wrapper>
         );

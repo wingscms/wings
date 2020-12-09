@@ -57,6 +57,10 @@ const server = mockServer(
             amount: 500,
           },
         },
+        image: {
+          url: image(1600, 1200),
+          caption: 'A test image',
+        },
       }),
       petition: () => ({
         description:
@@ -68,12 +72,16 @@ const server = mockServer(
         signatureGoal: 500,
         intro:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        image: {
+          url: image(1600, 1200),
+          caption: 'A test image',
+        },
       }),
       fundraiser: () => ({
         id: 'asdasd',
         title: 'This is a test campaign',
         image: {
-          url: image(800, 600),
+          url: image(1600, 1200),
           caption: 'A test image',
         },
         intro:

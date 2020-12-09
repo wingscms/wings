@@ -74,7 +74,6 @@ const SocialButtons = styled(_SocialButtons)`
 const AppBar = styled(_AppBar)`
   background-color: ${t(_ => _.appMenuBarBackgroundColor)};
   height: ${t(_ => _.largeSpacing)};
-  box-shadow: ${t(_ => _.shadow)};
 `;
 
 const LangaugeSelectButton = styled(Button)`

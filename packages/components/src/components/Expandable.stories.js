@@ -9,6 +9,7 @@ export default () => (
     openText={text('openText', 'More')}
     closeText={text('closeText', 'Less')}
     backgroundColor={color('backgroundColor', '')}
+    elevation={number('elevation', 1, { range: true, min: 0, max: 5 })}
     toggleColor={color('toggleColor', '')}
     toggleHoverColor={color('toggleHoverColor', '')}
     height={number('height', 250)}

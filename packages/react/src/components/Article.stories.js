@@ -4,12 +4,12 @@ import { AppMenu, Article } from '@wingscms/react';
 import richMd from '../../fixtures/mobiledocRich.json';
 import menuProps from '../../fixtures/menuProps';
 import footerProps from '../../fixtures/footerProps';
-import { image } from '../../../../utils';
+import { image, backgroundWrap } from '../../../../utils';
 
 const node = {
   title: 'This is a test article',
   image: {
-    url: image(800, 600),
+    url: image(1600, 1200),
     caption: 'A test image',
   },
   content: JSON.stringify(richMd),
@@ -30,3 +30,5 @@ export const WithMenuAndFooter = () => (
 
 Default.snapshotDelay = 1;
 NoImage.snapshotDelay = 1;
+
+export const wrapStory = backgroundWrap;

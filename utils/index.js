@@ -1,19 +1,64 @@
 import React from 'react';
 import styled from 'styled-components';
+import { t, useTheme } from '@wingscms/components';
+
+const WebfontLoader = ({ children, config }) => {
+  if (typeof window !== 'undefined' && config) {
+    const WebFont = require('webfontloader');
+    WebFont.load(config);
+  }
+  return children;
+};
+
+const WebfontWrap = ({ children }) => {
+  const _ = useTheme();
+  return (
+    <WebfontLoader config={_.webFontConfig && JSON.parse(_.webFontConfig)}>
+      {children}
+    </WebfontLoader>
+  );
+};
 
 const ContentWrapper = styled.div`
+  background-color: ${t(_ => _.backgroundColor)};
   margin: 0 auto;
-  margin-top: 2em;
   max-width: 760px;
-  padding: 0 20px;
-  @media screen and (min-width: 800px) {
-    margin-top: 3em;
-  }
+  min-height: 100vh;
 `;
 
-export const contentWrap = elem => <ContentWrapper>{elem}</ContentWrapper>;
+const PaddingWrap = styled.div`
+  background-color: ${t(_ => _.backgroundColor)};
+  padding: 1rem;
+  min-height: 100vh;
+`;
 
-export const paddingWrap = elem => <div style={{ padding: '1rem' }}>{elem}</div>;
+const BackgroundWrap = styled.div`
+  overflow: auto;
+  background-color: ${t(_ => _.backgroundColor)};
+  min-height: 100vh;
+`;
+
+export const contentWrap = elem => (
+  <WebfontWrap>
+    <BackgroundWrap>
+      <ContentWrapper>{elem}</ContentWrapper>
+    </BackgroundWrap>
+  </WebfontWrap>
+);
+
+export const paddingWrap = elem => (
+  <WebfontWrap>
+    <BackgroundWrap>
+      <PaddingWrap>{elem}</PaddingWrap>
+    </BackgroundWrap>
+  </WebfontWrap>
+);
+
+export const backgroundWrap = elem => (
+  <WebfontWrap>
+    <BackgroundWrap>{elem}</BackgroundWrap>
+  </WebfontWrap>
+);
 
 export const image = (width = 800, height = 600) => `https://picsum.photos/${width}/${height}`;
 

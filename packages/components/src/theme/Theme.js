@@ -49,7 +49,7 @@ export default class Theme {
 
   contrastColor({
     backgroundColor,
-    colors: { light = this.textColor, dark = this.textColorDark } = {},
+    colors: { light = this.variables.textColor, dark = this.variables.textColorDark } = {},
     threshold = this.contrastLuminanceThreshold,
   }) {
     const lightness = this.color(backgroundColor).hsl().color[2];
@@ -118,7 +118,7 @@ export default class Theme {
   }
 
   get appBarBackgroundColor() {
-    return this.variables.appBarBackgroundColor || this.elementBackgroundColor;
+    return this.variables.appBarBackgroundColor || this.surfaceBackgroundColor;
   }
 
   get appBarHeight() {
@@ -130,7 +130,7 @@ export default class Theme {
   }
 
   get blockquoteBackgroundColor() {
-    return this.variables.blockquoteBackgroundColor || this.elementBackgroundColor;
+    return this.variables.blockquoteBackgroundColor || this.surfaceBackgroundColor;
   }
 
   get blockquoteTextColor() {
@@ -150,6 +150,14 @@ export default class Theme {
     return this.variables.burgerHoverColor || this.iconHoverColor;
   }
 
+  get burgerColorDark() {
+    return this.variables.burgerColorDark || this.iconColorDark;
+  }
+
+  get buttonBorderRadius() {
+    return this.variables.buttonBorderRadius || this.surfaceBorderRadius;
+  }
+
   get callToActionBackgroundColor() {
     return this.variables.callToActionBackgroundColor || this.primaryColor;
   }
@@ -163,16 +171,23 @@ export default class Theme {
     );
   }
 
+  get counterBarColor() {
+    return this.variables.counterBarColor || this.primaryColor;
+  }
+
   get counterBackgroundColor() {
-    return this.variables.counterBackgroundColor || this.backgroundColor;
+    return this.variables.counterBackgroundColor || this.surfaceBackgroundColor;
   }
 
   get counterTextColor() {
-    return this.variables.counterTextColor || this.textColor;
+    return (
+      this.variables.counterTextColor ||
+      this.contrastColor({ backgroundColor: this.surfaceBackgroundColor })
+    );
   }
 
   get dialogBackgroundColor() {
-    return this.variables.dialogBackgroundColor || this.backgroundColor;
+    return this.variables.dialogBackgroundColor || this.surfaceBackgroundColor;
   }
 
   get dialogTextColor() {
@@ -184,12 +199,22 @@ export default class Theme {
     );
   }
 
+  get dialogCloseColor() {
+    return (
+      this.variables.dialogCloseColor ||
+      this.contrastColor({
+        backgroundColor: this.dialogBackgroundColor,
+        colors: { light: this.iconColor, dark: this.iconColorDark },
+      })
+    );
+  }
+
   get drawerBackgroundColor() {
-    return this.variables.drawerBackgroundColor || this.elementBackgroundColor;
+    return this.variables.drawerBackgroundColor || this.surfaceBackgroundColor;
   }
 
   get expandableBackgroundColor() {
-    return this.variables.expandableBackgroundColor || this.elementBackgroundColor;
+    return this.variables.expandableBackgroundColor || this.surfaceBackgroundColor;
   }
 
   get extraLargeSpacing() {
@@ -350,7 +375,7 @@ export default class Theme {
   }
 
   get scrollBarBackgroundColor() {
-    return this.variables.scrollBarBackgroundColor || this.elementBackgroundColor;
+    return this.variables.scrollBarBackgroundColor || this.surfaceBackgroundColor;
   }
 
   get sectionMarkerBackgroundColor() {
@@ -392,7 +417,9 @@ export default class Theme {
   }
 
   get shareButtonBackgroundHoverColor() {
-    return this.variables.shareButtonBackgroundHoverColor || null;
+    return (
+      this.variables.shareButtonBackgroundHoverColor || this.darken(this.shareButtonBackgroundColor)
+    );
   }
 
   get shareButtonIconColor() {
@@ -417,6 +444,10 @@ export default class Theme {
 
   get smallSpacing() {
     return this.variables.smallSpacing || this.calc(this.mediumSpacing, ms => ms / 2);
+  }
+
+  get textColor() {
+    return this.contrastColor({ backgroundColor: this.backgroundColor });
   }
 
   get titleTransform() {
