@@ -55,7 +55,8 @@ const Image = styled.figure`
     font-family: sans-serif;
   }
   &.size-${SIZE.MEDIUM} {
-    max-width: 400px;
+    width: 100%;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
   }
