@@ -11,7 +11,7 @@ export default () => (
     textColor={color('textColor')}
     marker={text('marker', '1')}
     markerColor={color('markerColor')}
-    markerOpacity={number('markerOpacity', 1, {
+    markerOpacity={number('markerOpacity', 0.5, {
       range: true,
       min: 0,
       max: 1,
