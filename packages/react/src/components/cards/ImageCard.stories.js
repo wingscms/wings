@@ -4,7 +4,7 @@ import { contentWrap, image } from '../../../../../utils';
 export default () =>
   ImageCard.render({
     src: image(),
-    caption: null,
+    caption: 'A caption',
     alt: null,
     size: 0,
     float: 0,
