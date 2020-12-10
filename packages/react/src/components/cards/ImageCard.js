@@ -3,7 +3,7 @@ import { compose, setPropTypes, setStatic } from 'recompose';
 import classNames from 'classnames';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import PropTypes from 'prop-types';
-import { Reveal, _WIDE, _ALIGNLEFT, _ALIGNRIGHT } from '@wingscms/components';
+import { Reveal, _WIDE, _ALIGNLEFT, _ALIGNRIGHT, Text } from '@wingscms/components';
 import styled from '../../lib/styled';
 import { enumerate } from '../../lib/utils';
 import createCard from '../../createCard';
@@ -50,9 +50,8 @@ const Image = styled.figure`
   }
   figcaption {
     padding: 10px;
-    color: #888;
     text-align: center;
-    font-family: sans-serif;
+    ${t(_ => Text.getStyles(_))}
   }
   &.size-${SIZE.MEDIUM} {
     width: 100%;

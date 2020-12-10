@@ -12,7 +12,7 @@ const getSpacing = ({ noSpacing }) => {
   return '';
 };
 
-const getStyles = (_, { baseFontSize, baseMobileFontSize, baseTabletFontSize }) => {
+const getStyles = (_, { baseFontSize, baseMobileFontSize, baseTabletFontSize } = {}) => {
   const styles = css`
     font-size: ${baseFontSize || _.baseFontSize};
   `;
