@@ -3,11 +3,13 @@ import { compose, setPropTypes, setStatic } from 'recompose';
 import classNames from 'classnames';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import PropTypes from 'prop-types';
-import { Reveal, _WIDE, _ALIGNLEFT, _ALIGNRIGHT } from '@wingscms/components';
+import { Reveal, _WIDE, _ALIGNLEFT, _ALIGNRIGHT, Text } from '@wingscms/components';
 import styled from '../../lib/styled';
 import { enumerate } from '../../lib/utils';
 import createCard from '../../createCard';
 import { t } from '../../theme';
+
+// TODO: refactor and create Image more versatile component in components package
 
 const SIZE = enumerate('MEDIUM', 'LARGE', 'EXTRALARGE');
 const FLOAT = enumerate('NONE', 'LEFT', 'RIGHT');
@@ -47,15 +49,13 @@ const Image = styled.figure`
     width: 100%;
   }
   figcaption {
-    font-size: 0.7em;
-    line-height: 1.4;
     padding: 10px;
-    color: #888;
     text-align: center;
-    font-family: sans-serif;
+    ${t(_ => Text.getStyles(_))}
   }
   &.size-${SIZE.MEDIUM} {
-    max-width: 400px;
+    width: 100%;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
   }

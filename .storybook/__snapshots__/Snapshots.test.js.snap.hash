@@ -56,10 +56,10 @@ Storyshots components/Text Default 1: e23261815b9a095bbfaa3975a57f34b4
 Storyshots jsonschema-form/SchemaForm Address Field 1: 55f1d6336371d2119e0684148550073e
 Storyshots jsonschema-form/SchemaForm Default 1: 71d0ed77dfd82e4dd483a28d6081bfa5
 Storyshots react/AppMenu Default 1: 397502969190214b5321eba4b162a54b
-Storyshots react/Article Default 1: 486a7f1c91a5b0f600e03349e5fb1df7
-Storyshots react/Article No Header 1: 7626d391bb5094bca88f2438ecc19cfc
-Storyshots react/Article No Image 1: e00687a4d487e4cef08ea5e342b786b0
-Storyshots react/Article With Menu And Footer 1: f40cccdf1c064bd49a67a2a169621bda
+Storyshots react/Article Default 1: 8b164f7d64a5e4ecda04c46548f50206
+Storyshots react/Article No Header 1: 45cb9ff62c0650a6dbb39880faf44f14
+Storyshots react/Article No Image 1: de7b120334ed802f1ed33596f179c6ed
+Storyshots react/Article With Menu And Footer 1: 335bd18a14c9f2f1ba3addecfcbf544b
 Storyshots react/Campaign Event 1: 9aeb7d4a7d6e4c4b18f09b358c197831
 Storyshots react/Campaign Fundraiser 1: 2a8fa60abe4cb520a1be006f9785cf53
 Storyshots react/Campaign Petition 1: a56108468db5b1dd84173256bcb48e93
@@ -77,7 +77,7 @@ Storyshots react/Cards/ChapterCard Default 1: 4f1bd2bc559c17fcca18fc4e64ce4fce
 Storyshots react/Cards/CollectionCard Organisation 1: 9f8fca9d6a434f8797a8e7f975edcdab
 Storyshots react/Cards/CollectionCard Person 1: 81005a937c5ef18d1cc5d649f79af848
 Storyshots react/Cards/EmbedCard Default 1: 426487e6278cfd4323c6fe27fe02852f
-Storyshots react/Cards/ImageCard Default 1: e72bd7c6c574a181ce2c0e526ec97233
+Storyshots react/Cards/ImageCard Default 1: 331b97b9917fe5521149b0ad47e78ab1
 Storyshots react/Cards/InsightCard Default 1: 42988678c0de5f65099cd2a79200de76
 Storyshots react/Cards/NodesCard Default 1: ec62f01fdd0258ca80621e73282fac5e
 Storyshots react/Cards/QACard Default 1: fb889576f1b7c63451fae3429f23de7d
@@ -87,6 +87,6 @@ Storyshots react/Cards/QuoteCard Pull Quote 1: 0f97da4a964ac8680ff92ab86c79c8d5
 Storyshots react/Cards/TestimonialCard Default 1: a5c8814be65ded04a3a676fba0674ca2
 Storyshots react/Cards/TextCard Default 1: d7d0a2cb4481760a676a208b571bf9c4
 Storyshots react/Content Default 1: 7e29d98a7996f2bbbadc600919cefbb2
-Storyshots react/Content With Cards 1: 8a6ae7e367e2a2d34bf313510a00e39d
+Storyshots react/Content With Cards 1: c2d417e2d5574659d9b0112c566ec0cc
 Storyshots react/LanguageSelectionDialog Default 1: 5b6ca5b7af536758b02d892a795e5c42
-Storyshots react/Page Default 1: 9213227b45d1f28acd9feeba12f77799
+Storyshots react/Page Default 1: 5b3a2db4231688e00a200e5cb64909f9
