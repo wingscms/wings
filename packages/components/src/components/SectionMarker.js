@@ -47,16 +47,21 @@ const TitleWrap = styled.div`
 const Title = styled(Heading)`
   color: ${t((_, { titleColor }) => titleColor || _.sectionMarkerTitleColor)};
   text-transform: ${t(_ => _.titleTransform)};
-  position: ${({ number }) => (number ? 'absolute' : 'relative')};
+  position: relative;
   top: 0;
   width: 100%;
-`;
-
-const Number = styled.span`
-  ${t(Heading.getStyles(7))}
-  color: ${t((_, { numberColor }) => numberColor || _.sectionMarkerNumberColor)};
-  font-weight: bold;
-  opacity: ${t((_, { numberOpacity }) => numberOpacity || _.sectionMarkerNumberOpacity)};
+  &:before {
+    content: '${({ number }) => number}';
+    font-size: 1.7em;
+    color: ${t((_, { numberColor }) => numberColor || _.sectionMarkerNumberColor)};
+    font-weight: bold;
+    opacity: ${t((_, { numberOpacity }) => numberOpacity || _.sectionMarkerNumberOpacity)};
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
 `;
 
 export default function SectionMarker({
@@ -76,10 +81,13 @@ export default function SectionMarker({
       <Chapter>
         <Reveal reveal={reveal}>
           <TitleWrap>
-            <Number numberColor={markerColor} numberOpacity={markerOpacity}>
-              {marker}
-            </Number>
-            <Title number={marker} titleColor={titleColor} rank={1}>
+            <Title
+              number={marker}
+              titleColor={titleColor}
+              rank={1}
+              numberColor={markerColor}
+              numberOpacity={markerOpacity}
+            >
               {sectionTitle}
             </Title>
           </TitleWrap>
