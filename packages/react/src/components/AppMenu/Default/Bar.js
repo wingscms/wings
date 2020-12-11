@@ -145,6 +145,8 @@ export default function MenuDefaultBar({
                       <PrimaryItem
                         backgroundColor={theme.appMenuButtonBackgroundColor}
                         backgroundHoverColor={theme.appMenuButtonBackgroundHoverColor}
+                        textColor={theme.appMenuButtonTextColor}
+                        textHoverColor={theme.appMenuButtonTextHoverColor}
                         {...props}
                       >
                         {text}

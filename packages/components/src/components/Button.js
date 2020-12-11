@@ -36,18 +36,21 @@ const LOADING_SIZE = {
   [Size.MEDIUM]: Loading.Size.SMALL,
 };
 
-const getType = (_, { color, hoverColor, borderColor, borderHoverColor, buttonType }) => {
+const getType = (
+  _,
+  { color, hoverColor, borderColor, borderHoverColor, buttonType, textColor, textHoverColor },
+) => {
   switch (buttonType) {
     case Type.OUTLINE:
       return css`
         padding: 14px 38px;
         border: 2px solid ${color};
         background-color: transparent;
-        color: ${color};
+        color: ${textColor || color};
         &:hover,
         &:active {
           border: 2px solid ${hoverColor};
-          color: ${hoverColor};
+          color: ${textHoverColor || hoverColor};
           background-image: none;
           text-decoration: none;
         }
@@ -56,7 +59,7 @@ const getType = (_, { color, hoverColor, borderColor, borderHoverColor, buttonTy
       return css`
         border: ${borderColor ? `2px solid ${borderColor}` : 'none'};
         background-color: ${color};
-        color: ${_.contrastColor({ backgroundColor: color })};
+        color: ${textColor || _.contrastColor({ backgroundColor: color })};
         &:hover,
         &:active {
           opacity: 0.9;
@@ -71,7 +74,7 @@ const getType = (_, { color, hoverColor, borderColor, borderHoverColor, buttonTy
       return css`
         border: ${borderColor ? `2px solid ${borderColor}` : 'none'};
         background-color: ${color};
-        color: ${_.contrastColor({ backgroundColor: color })};
+        color: ${textColor || _.contrastColor({ backgroundColor: color })};
         svg {
           fill: currentColor;
         }
@@ -79,7 +82,7 @@ const getType = (_, { color, hoverColor, borderColor, borderHoverColor, buttonTy
         &:active {
           border: ${borderColor ? `2px solid ${borderHoverColor}` : 'none'};
           background-color: ${hoverColor};
-          color: ${_.contrastColor({ backgroundColor: hoverColor })};
+          color: ${textHoverColor || _.contrastColor({ backgroundColor: hoverColor })};
           background-image: none;
           text-decoration: none;
         }
@@ -123,6 +126,8 @@ const Surface = styled(_Surface)`
         backgroundHoverColor,
         borderColor,
         borderHoverColor,
+        textColor,
+        textHoverColor,
         disabled,
       },
     ) => {
@@ -134,6 +139,8 @@ const Surface = styled(_Surface)`
         borderColor,
         borderHoverColor,
         buttonType,
+        textColor,
+        textHoverColor,
       });
       const sizeCSS = getSize({ size });
 
@@ -191,6 +198,8 @@ export default function Button({
   backgroundHoverColor,
   borderColor,
   borderHoverColor,
+  textColor,
+  textHoverColor,
   size = Size.MEDIUM,
   ...props
 }) {
@@ -206,6 +215,8 @@ export default function Button({
       backgroundHoverColor={backgroundHoverColor}
       borderColor={borderColor}
       borderHoverColor={borderHoverColor}
+      textColor={textColor}
+      textHoverColor={textHoverColor}
       {...fP(props)}
     >
       {!loading ? null : (
