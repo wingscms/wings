@@ -23,6 +23,8 @@ const props = ({
   backgroundHoverColor: color('backgroundHoverColor'),
   borderColor: color('borderColor'),
   borderHoverColor: color('borderHoverColor'),
+  textColor: color('textColor'),
+  textHoverColor: color('textHoverColor'),
 });
 
 export default () => <Button {...props()} />;

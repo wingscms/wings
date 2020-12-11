@@ -27,6 +27,18 @@ class Theme extends _Theme {
     return this.variables.appMenuButtonBackgroundColor || this.primaryColor;
   }
 
+  get appMenuButtonBackgroundHoverColor() {
+    return this.variables.appMenuButtonBackgroundHoverColor || null;
+  }
+
+  get appMenuButtonTextColor() {
+    return this.variables.appMenuButtonTextColor || null;
+  }
+
+  get appMenuButtonTextHoverColor() {
+    return this.variables.appMenuButtonTextHoverColor || null;
+  }
+
   get appMenuDrawerBackgroundColor() {
     return this.variables.appMenuDrawerBackgroundColor || this.drawerBackgroundColor;
   }

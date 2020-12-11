@@ -46,7 +46,9 @@ export default function DefaultMenu({
 
   const socialButtonsProps = {
     backgroundColor: _.appMenuButtonBackgroundColor,
-    backgroundHoverColor: null, // Overrides default behavior
+    backgroundHoverColor: _.appMenuButtonBackgroundHoverColor,
+    textColor: _.appMenuButtonTextColor,
+    textHoverColor: _.appMenuButtonTextHoverColor,
     spacingBottom: 0,
     linkProps: { target: '_blank' },
   };
