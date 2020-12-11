@@ -70,6 +70,8 @@ export default function MenuDefaultDrawer({
                   intent={Button.Intent.PRIMARY}
                   backgroundColor={theme.appMenuButtonBackgroundColor}
                   backgroundHoverColor={theme.appMenuButtonBackgroundHoverColor}
+                  textColor={theme.appMenuButtonTextColor}
+                  textHoverColor={theme.appMenuButtonTextHoverColor}
                   {...props}
                 >
                   {text}
