@@ -47,13 +47,13 @@ const buttonAlignStyles = ({ align }) => {
 };
 
 const getAlignStyles = (_, { align, type }) => {
+  // including css inside css broke VS Code syntax highlighting
+  const horizontalStyles = css`
+    text-align: left;
+  `;
   return css`
     text-align: ${align};
-    ${type === Type.HORIZONTAL
-      ? _.tabletMinQuery(css`
-          text-align: left;
-        `)
-      : null}
+    ${type === Type.HORIZONTAL ? _.tabletMinQuery(horizontalStyles) : ''}
   `;
 };
 
@@ -99,36 +99,35 @@ const Button = styled(_Button)`
 `;
 
 const InnerContainer = styled.div`
-  ${t((_, { type }) =>
-    !(type === Type.HORIZONTAL)
-      ? null
-      : _.tabletMinQuery(css`
-          display: flex;
-          flex-wrap: wrap;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-          > * {
-            padding: 0;
-            margin: 0;
-          }
-          ${Heading} {
-            flex: 1 0;
-          }
-          ${Text} {
-            flex: 1 1 calc(50% - 200px);
-            padding: 0 20px;
-          }
-          a {
-            flex: 0 0 200px;
-            width: 20%;
-            ${Button} {
-              margin: 0;
-              width: 100%;
-            }
-          }
-        `),
-  )};
+  ${t((_, { type }) => {
+    const horizontalStyles = css`
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      > * {
+        padding: 0;
+        margin: 0;
+      }
+      ${Heading} {
+        flex: 1 0;
+      }
+      ${Text} {
+        flex: 1 1 calc(50% - 200px);
+        padding: 0 20px;
+      }
+      a {
+        flex: 0 0 200px;
+        width: 20%;
+        ${Button} {
+          margin: 0;
+          width: 100%;
+        }
+      }
+    `;
+    return !(type === Type.HORIZONTAL) ? null : _.tabletMinQuery(horizontalStyles);
+  })}
 `;
 
 export default function CallToAction({
@@ -165,7 +164,11 @@ export default function CallToAction({
             <Button
               align={align}
               intent={!backgroundImage ? Button.Intent.SECONDARY : Button.Intent.PRIMARY}
-              {...{ backgroundColor: _.callToActionButtonColor, ...buttonProps }}
+              backgroundColor={_.callToActionButtonBackgroundColor}
+              backgroundHoverColor={_.callToActionButtonBackgroundHoverColor}
+              textColor={_.callToActionButtonTextColor}
+              textHoverColor={_.callToActionButtonTextHoverColor}
+              {...buttonProps}
             >
               {buttonText}
             </Button>

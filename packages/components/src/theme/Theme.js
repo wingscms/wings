@@ -171,6 +171,22 @@ export default class Theme {
     );
   }
 
+  get callToActionButtonBackgroundColor() {
+    return this.variables.callToActionButtonBackgroundColor || null;
+  }
+
+  get callToActionButtonBackgroundHoverColor() {
+    return this.variables.callToActionButtonBackgroundHoverColor || null;
+  }
+
+  get callToActionButtonTextColor() {
+    return this.variables.callToActionButtonTextColor || null;
+  }
+
+  get callToActionButtonTextHoverColor() {
+    return this.variables.callToActionButtonTextHoverColor || null;
+  }
+
   get counterBarColor() {
     return this.variables.counterBarColor || this.primaryColor;
   }
