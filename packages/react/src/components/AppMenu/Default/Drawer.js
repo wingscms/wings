@@ -27,11 +27,17 @@ const Burger = styled(_Burger)`
 
 const MenuItem = styled.div`
   ${t(Heading.getStyles(1))}
+  font-weight: bold;
   text-align: center;
-  margin-bottom: 1.3em;
+  margin-bottom: ${t(_ => _.mediumSpacing)};
   a {
     color: ${t(_ => _.appMenuDrawerTextColor)};
   }
+  ${t(_ =>
+    _.mobileQuery(`
+      margin-bottom: ${_.smallSpacing};
+    `),
+  )}
 `;
 
 const Drawer = styled(_Drawer)`
