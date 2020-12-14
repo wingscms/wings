@@ -52,8 +52,8 @@ const SocialButtons = ({
         return (
           <a href={url} key={idx} {...fP(linkProps)}>
             {React.cloneElement(child, {
-              iconColor,
-              iconHoverColor,
+              textColor: iconColor || theme.shareButtonIconColor,
+              textHoverColor: iconHoverColor || theme.shareButtonIconHoverColor,
               backgroundColor: itemBackgroundColor || theme.shareButtonBackgroundColor,
               backgroundHoverColor:
                 itemBackgroundHoverColor || theme.shareButtonBackgroundHoverColor,
