@@ -133,6 +133,10 @@ export default class Theme {
     return this.variables.blockquoteBackgroundColor || this.surfaceBackgroundColor;
   }
 
+  get blockquoteIconColor() {
+    return this.variables.blockquoteIconColor || this.primaryColor;
+  }
+
   get blockquoteTextColor() {
     return (
       this.variables.blockquoteTextColor ||

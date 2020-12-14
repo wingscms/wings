@@ -36,7 +36,7 @@ const IconWrap = styled.div`
   transform: translateX(-50%) translateY(-${t(_ => _.smallSpacing)});
   svg {
     width: 100%;
-    fill: ${t(_ => _.primaryColor)};
+    fill: ${t(_ => _.blockquoteIconColor)};
   }
 `;
 
