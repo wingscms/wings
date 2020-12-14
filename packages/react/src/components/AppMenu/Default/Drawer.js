@@ -9,7 +9,7 @@ import {
 } from '@wingscms/components';
 
 import { t, useTheme } from '../../../theme';
-import styled, { css } from '../../../lib/styled';
+import styled from '../../../lib/styled';
 
 const LayoutContainer = styled.div`
   display: block;
@@ -34,7 +34,7 @@ const MenuItem = styled.div`
     color: ${t(_ => _.appMenuDrawerTextColor)};
   }
   ${t(_ =>
-    _.mobileQuery(css`
+    _.mobileQuery(`
       margin-bottom: ${_.smallSpacing};
     `),
   )}
