@@ -227,10 +227,8 @@ const Button = props => {
     <StyledButton
       backgroundColor={_.campaignFormButtonBackgroundColor}
       backgroundHoverColor={_.campaignFormButtonBackgroundHoverColor}
-      borderColor={_.campaignFormButtonBorderColor || _.campaignFormButtonBackgroundColor}
-      borderHoverColor={
-        _.campaignFormButtonBorderHoverColor || _.campaignFormButtonBackgroundHoverColor
-      }
+      textColor={_.campaignFormButtonTextColor}
+      textHoverColor={_.campaignFormButtonTextHoverColor}
       {...props}
     />
   );

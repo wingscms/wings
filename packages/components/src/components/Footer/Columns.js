@@ -104,7 +104,13 @@ export default ({ columns }) => {
                 );
               case 'button':
                 return (
-                  <Button href={row.url} size="small" as="a" intent={Button.Intent.SECONDARY}>
+                  <Button
+                    href={row.url}
+                    size="small"
+                    as="a"
+                    intent={Button.Intent.SECONDARY}
+                    {...row}
+                  >
                     {row.content}
                   </Button>
                 );
@@ -118,8 +124,11 @@ export default ({ columns }) => {
                           url,
                           iconColor,
                           iconHoverColor,
+                          intent,
                           backgroundColor,
                           backgroundHoverColor,
+                          textColor,
+                          textHoverColor,
                         },
                         idx,
                       ) => (
@@ -127,10 +136,13 @@ export default ({ columns }) => {
                           icon={platform}
                           url={url}
                           key={idx}
+                          intent={intent || Button.Intent.SECONDARY}
                           iconColor={iconColor}
                           iconHoverColor={iconHoverColor}
                           backgroundColor={backgroundColor}
                           backgroundHoverColor={backgroundHoverColor}
+                          textColor={textColor}
+                          textHoverColor={textHoverColor}
                         />
                       ),
                     )}
