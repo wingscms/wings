@@ -55,11 +55,11 @@ Storyshots components/Surface Default 1: 67daf46c6f11a72aeb12d77c6bc6220a
 Storyshots components/Text Default 1: e23261815b9a095bbfaa3975a57f34b4
 Storyshots jsonschema-form/SchemaForm Address Field 1: 55f1d6336371d2119e0684148550073e
 Storyshots jsonschema-form/SchemaForm Default 1: 71d0ed77dfd82e4dd483a28d6081bfa5
-Storyshots react/AppMenu Default 1: ecebfef15295a3aab14c500890b3efa5
+Storyshots react/AppMenu Default 1: 19efdd3c818b2d41bbf9abea272e8264
 Storyshots react/Article Default 1: d85247539b5f14617d1d348afbca9513
 Storyshots react/Article No Header 1: 331b66afae693ee3c3711edcc9ca1bd1
 Storyshots react/Article No Image 1: e01a5d5622c7136327cfadfccc736e8b
-Storyshots react/Article With Menu And Footer 1: f1933e1f1b6e191863e04fd7ae013cd2
+Storyshots react/Article With Menu And Footer 1: db723fe29518c5349ed89c4b6dd59ef1
 Storyshots react/Campaign Event 1: d9a0fc26cad5a6df86d0aa37984a821c
 Storyshots react/Campaign Fundraiser 1: 5fa4b3f2119006caf7f288eb2186824c
 Storyshots react/Campaign Petition 1: e73a21997d1a683cfa2f2dd86b2e2da3
@@ -88,5 +88,5 @@ Storyshots react/Cards/TestimonialCard Default 1: a5c8814be65ded04a3a676fba0674c
 Storyshots react/Cards/TextCard Default 1: d7d0a2cb4481760a676a208b571bf9c4
 Storyshots react/Content Default 1: 7e29d98a7996f2bbbadc600919cefbb2
 Storyshots react/Content With Cards 1: aed8e7f340170065ae34b0816dd51b71
-Storyshots react/LanguageSelectionDialog Default 1: 5b6ca5b7af536758b02d892a795e5c42
+Storyshots react/LanguageSelectionDialog Default 1: 5a8f315a0265ab96a77de061254be7ec
 Storyshots react/Page Default 1: 1b1100666b6d275513f2df55b1413077
