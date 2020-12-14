@@ -422,22 +422,24 @@ export default class Theme {
     );
   }
 
-  get shareButtonIconColor() {
+  get shareButtonTextColor() {
     return (
-      this.variables.shareButtonIconColor ||
+      this.variables.shareButtonTextColor ||
+      this.variables.shareButtonIconColor || // Deprecated
       this.contrastColor({
         backgroundColor: this.shareButtonBackgroundColor,
-        colors: { light: this.iconColor, dark: this.iconColorDark },
+        colors: { light: this.buttonTextColor, dark: this.buttonTextColorDark },
       })
     );
   }
 
-  get shareButtonIconHoverColor() {
+  get shareButtonTextHoverColor() {
     return (
-      this.variables.shareButtonIconHoverColor ||
+      this.variables.shareButtonTextHoverColor ||
+      this.variables.shareButtonIconHoverColor || // Deprecated
       this.contrastColor({
         backgroundColor: this.shareButtonBackgroundHoverColor,
-        colors: { light: this.iconColor, dark: this.iconColorDark },
+        colors: { light: this.buttonTextColor, dark: this.buttonTextColorDark },
       })
     );
   }

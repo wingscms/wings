@@ -78,12 +78,12 @@ class Theme extends _Theme {
     return this.variables.campaignFormButtonBackgroundHoverColor || null;
   }
 
-  get campaignFormButtonBorderColor() {
-    return this.variables.campaignFormButtonBorderColor || null;
+  get campaignFormButtonTextColor() {
+    return this.variables.campaignFormButtonTextColor || null;
   }
 
-  get campaignFormButtonBorderHoverColor() {
-    return this.variables.campaignFormButtonBorderHoverColor || null;
+  get campaignFormButtonTextHoverColor() {
+    return this.variables.campaignFormButtonTextHoverColor || null;
   }
 
   get campaignFormLinkLineColor() {
