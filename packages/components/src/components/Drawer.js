@@ -70,6 +70,7 @@ const Surface = styled(_Surface)`
   transition-property: opacity, transform;
   transition-duration: 0.2s;
   animation-timing-function: ease-in-out;
+  overflow-y: auto;
   opacity: ${({ open }) => (open ? 1 : 0)};
   z-index: 1000;
   ${getPosition}
