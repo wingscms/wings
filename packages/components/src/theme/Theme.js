@@ -337,6 +337,10 @@ export default class Theme {
     return this.variables.linkSecondaryColor || this.secondaryColor;
   }
 
+  get linkStyle() {
+    return this.variables.linkStyle || 'lineGrow';
+  }
+
   get listMarkerColor() {
     return this.variables.listMarkerColor || this.primaryColor;
   }

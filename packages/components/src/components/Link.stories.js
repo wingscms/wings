@@ -16,6 +16,10 @@ export const LineGrow = () => (
   <Link {...props({ linkStyle: Link.Style.LINE_GROW })}>This is a link</Link>
 );
 
+export const SolidBackground = () => (
+  <Link {...props({ linkStyle: Link.Style.SOLID_BACKGROUND })}>This is a link</Link>
+);
+
 export const NoStyling = () => (
   <Link {...props({ linkStyle: Link.Style.NONE })}>This is a link</Link>
 );

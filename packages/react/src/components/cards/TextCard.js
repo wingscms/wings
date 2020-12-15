@@ -12,7 +12,7 @@ const TextWrapper = styled(_Surface)`
   padding: ${t(_ => _.mediumSpacing)};
   background-color: ${t(_ => _.surfaceBackgroundColor)};
   * {
-    color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))} !important;
+    color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
   }
   p:last-child {
     margin-bottom: 0;
