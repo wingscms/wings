@@ -229,6 +229,10 @@ export default class Theme {
     );
   }
 
+  get disableElevation() {
+    return this.variables.disableElevation || false;
+  }
+
   get drawerBackgroundColor() {
     return this.variables.drawerBackgroundColor || this.surfaceBackgroundColor;
   }
