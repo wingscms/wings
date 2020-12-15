@@ -31,6 +31,7 @@ const StyledForm = styled(Form)`
   }
   label {
     ${t(Text.getStyles)};
+    color: ${t(_ => _.formTextColor)};
   }
 `;
 

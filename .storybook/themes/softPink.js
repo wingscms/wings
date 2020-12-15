@@ -26,6 +26,7 @@ export default {
       landingSectionArrowColor: '#FFECF0',
       landingSectionTitleBackgroundColor: '#FFECF0',
       landingSectionGradientColor: 'rgba(255, 225, 225, 0.3)',
+      linkStyle: 'solidBackground',
     },
   },
 };

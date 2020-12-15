@@ -1,0 +1,25 @@
+export default {
+  name: 'Keep it Simple',
+  props: {
+    theme: {
+      primaryColor: '#333',
+      secondaryColor: '#333',
+      appMenuButtonBackgroundColor: '#fff',
+      appMenuBarBurgerColor: '#333',
+      appMenuBarBurgerHoverColor: '#000',
+      appMenuDrawerBurgerColor: '#333',
+      appMenuDrawerBurgerHoverColor: '#000',
+      textFontFamily: 'serif',
+      headerFontFamily: 'sans-serif',
+      sectionMarkerNumberColor: 'rgba(0,0,0,0)',
+      campaignFormTextColor: '#fff',
+      campaignFormButtonBackgroundColor: '#fff',
+      footerBackgroundColor: '#fff',
+      baseFontSize: '16px',
+      textLineHeight: 2,
+      linkStyle: 'basic',
+      linkColor: '#777',
+    },
+  },
+  default: true,
+};

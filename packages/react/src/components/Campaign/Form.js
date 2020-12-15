@@ -7,7 +7,7 @@ import {
   Heading as _Heading,
   Intent,
 } from '@wingscms/components';
-import SchemaForm from '@wingscms/jsonschema-form';
+import _SchemaForm from '@wingscms/jsonschema-form';
 import deepmerge from 'deepmerge';
 
 import styled from '../../lib/styled';
@@ -26,6 +26,12 @@ const Text = styled(_Text)`
 
 const patchSchema = (schema, fieldDefinitions) =>
   deepmerge(schema, { properties: fieldDefinitions });
+
+const SchemaForm = styled(_SchemaForm)`
+  label {
+    color: ${t(_ => _.campaignFormTextColor)};
+  }
+`;
 
 const SIGNUP_QUERY = `
   query ($selector: SignupSelectorInput) {

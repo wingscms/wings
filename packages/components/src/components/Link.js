@@ -34,15 +34,32 @@ const LineGrow = css`
   }
 `;
 
+const SolidBackground = css`
+  color: ${t((_, { primaryColor }) =>
+    _.contrastColor({ backgroundColor: primaryColor || _.linkColor }),
+  )} !important;
+  text-decoration: none;
+  background: ${t((_, { primaryColor }) => primaryColor || _.linkColor)};
+  &:hover,
+  &:focus {
+    color: ${t((_, { primaryColor }) =>
+      _.contrastColor({ backgroundColor: _.darken(primaryColor || _.linkColor) }),
+    )} !important;
+    background: ${t((_, { primaryColor }) => _.darken(primaryColor || _.linkColor))};
+  }
+`;
+
 const Style = {
   BASIC: 'basic',
   LINE_GROW: 'lineGrow',
+  SOLID_BACKGROUND: 'solidBackground',
   NONE: 'none',
 };
 
 const CSS = {
   [Style.BASIC]: Basic,
   [Style.LINE_GROW]: LineGrow,
+  [Style.SOLID_BACKGROUND]: SolidBackground,
   [Style.NONE]: css``,
 };
 
