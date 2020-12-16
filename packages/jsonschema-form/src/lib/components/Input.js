@@ -4,7 +4,6 @@ import styled, { css } from '../styled';
 export default styled.input`
   ${t(Text.getStyles)}
   padding: 10px;
-  border-radius: 4px;
   border: none;
   width: 100%;
   background-color: #fff;

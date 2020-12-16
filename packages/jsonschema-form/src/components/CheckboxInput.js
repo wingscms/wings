@@ -25,7 +25,6 @@ const StyledLabel = styled.label`
     transform: translateY(-50%);
     left: 0px;
     z-index: 1;
-    border-radius: 4px;
   }
   &.checked:after {
     background-color: #000;
