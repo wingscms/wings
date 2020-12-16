@@ -33,7 +33,6 @@ const AmountButton = styled.div`
   height: 100%;
   padding: 10px;
   border: 0;
-  border-radius: 4px;
   background-color: #000;
   color: #fff;
   cursor: pointer;

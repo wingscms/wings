@@ -6,7 +6,6 @@ import { getValue, processValue } from './formUtils';
 const StyledSelect = styled.select`
   font-size: inherit;
   padding: 10px;
-  border-radius: 4px;
   border: none;
   width: 100%;
   background-color: #fff;
