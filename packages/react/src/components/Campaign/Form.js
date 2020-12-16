@@ -28,6 +28,7 @@ const patchSchema = (schema, fieldDefinitions) =>
   deepmerge(schema, { properties: fieldDefinitions });
 
 const SchemaForm = styled(_SchemaForm)`
+  background-color: ${t(_ => _.campaignFormBackgroundColor)};
   label {
     color: ${t(_ => _.campaignFormTextColor)};
   }

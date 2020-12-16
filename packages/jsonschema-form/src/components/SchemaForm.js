@@ -18,6 +18,7 @@ import URLInput from './URLInput';
 import AddressField from './AddressField';
 
 const StyledForm = styled(Form)`
+  background-color: ${t(_ => _.formBackgroundColor)};
   fieldset {
     border: 0;
     padding: 0;

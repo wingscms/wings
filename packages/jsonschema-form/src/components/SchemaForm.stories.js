@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button } from '@wingscms/components';
+import { Button, t } from '@wingscms/components';
 import SchemaForm from '@wingscms/jsonschema-form';
 import { object } from '@storybook/addon-knobs/react';
 import { contentWrap } from '../../../../utils';
 
 const Container = styled.div`
-  background-color: rgb(65, 125, 232);
+  background-color: ${t(_ => _.formBackgroundColor)};
   color: #fff;
   border-radius: 4px;
   padding: 20px;

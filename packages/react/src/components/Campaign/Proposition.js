@@ -14,7 +14,6 @@ const Surface = styled(_Surface)`
   transition: max-height 0.15s linear;
   padding: 0 ${t(_ => _.smallSpacing)};
   margin-bottom: ${t(_ => _.extraSmallSpacing)};
-
   @media screen and (min-width: 1000px) {
     border-radius: ${t(_ => `${_.surfaceBorderRadius} 0 0 ${_.surfaceBorderRadius}`)};
     padding: 0 ${t(_ => _.mediumSpacing)};
@@ -27,6 +26,15 @@ const Surface = styled(_Surface)`
 const Content = styled.div`
   width: 100%;
   height: auto;
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: ${t(_ => _.contrastColor({ backgroundColor: _.campaignPropositionBackgroundColor }))};
+  }
 `;
 
 const ToggleButton = styled.div`
