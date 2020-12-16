@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/wingscms/wings/compare/@wingscms/components@1.5.0...@wingscms/components@1.6.0) (2020-12-16)
+
+
+### Bug Fixes
+
+* AppMenu item spacing and font styles ([#563](https://github.com/wingscms/wings/issues/563)) ([fd3f944](https://github.com/wingscms/wings/commit/fd3f9449140851ab2d9fbbe52a1d55a6dee14a49))
+* **components/react:** section marker text alignment ([#556](https://github.com/wingscms/wings/issues/556)) ([648b322](https://github.com/wingscms/wings/commit/648b322668e78500ae80d95e598617aa0a9efc6e))
+* **react:** ImageCard captions ([#557](https://github.com/wingscms/wings/issues/557)) ([697d9fb](https://github.com/wingscms/wings/commit/697d9fb57ec3f641a0b41c9ee0a8e7f45092fe20))
+
+
+### Features
+
+* add blockquoteIconColor theme variable ([#564](https://github.com/wingscms/wings/issues/564)) ([81d0633](https://github.com/wingscms/wings/commit/81d0633fe61f26e922acad69714074a7685a782c))
+* add more AppMenu button theming options ([#559](https://github.com/wingscms/wings/issues/559)) ([18a4ed7](https://github.com/wingscms/wings/commit/18a4ed72c5b0c851d3f763b4bf3b368720f2d7ec))
+* button fixes and theming improvements ([#560](https://github.com/wingscms/wings/issues/560)) ([b453562](https://github.com/wingscms/wings/commit/b45356272c04cae7e7f334081eec20acda5126e8))
+* disableElevation option ([#566](https://github.com/wingscms/wings/issues/566)) ([b762e03](https://github.com/wingscms/wings/commit/b762e03a67c59a105834b96a7105e498594ed8c2))
+* solidBackground style for Link ([#565](https://github.com/wingscms/wings/issues/565)) ([6d391b5](https://github.com/wingscms/wings/commit/6d391b573d0487516201a8186660ab795586ce46))
+* surfaces, cards, styling fixes, storybook improvements ([#541](https://github.com/wingscms/wings/issues/541)) ([dd7729c](https://github.com/wingscms/wings/commit/dd7729c95de011dce0ae1677ba77d2af5e860935))
+* update CallToAction theme options ([#562](https://github.com/wingscms/wings/issues/562)) ([3f2ab25](https://github.com/wingscms/wings/commit/3f2ab256fc8cba6508c1163f3f5b4a07f3d11fdb))
+
+
+
+
+
 # [1.5.0](https://github.com/wingscms/wings/compare/@wingscms/components@1.4.2...@wingscms/components@1.5.0) (2020-11-02)
 
 

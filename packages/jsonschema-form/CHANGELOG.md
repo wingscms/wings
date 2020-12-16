@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@1.2.14...@wingscms/jsonschema-form@1.3.0) (2020-12-16)
+
+
+### Bug Fixes
+
+* forms theme variable and styling fixes ([#567](https://github.com/wingscms/wings/issues/567)) ([be79d64](https://github.com/wingscms/wings/commit/be79d642c6bcca0aca53f15ddfb368cf8a51fd4f))
+
+
+### Features
+
+* solidBackground style for Link ([#565](https://github.com/wingscms/wings/issues/565)) ([6d391b5](https://github.com/wingscms/wings/commit/6d391b573d0487516201a8186660ab795586ce46))
+
+
+
+
+
 ## [1.2.14](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@1.2.13...@wingscms/jsonschema-form@1.2.14) (2020-12-07)
 
 

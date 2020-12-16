@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/wingscms/wings/compare/@wingscms/react@1.6.1...@wingscms/react@1.7.0) (2020-12-16)
+
+
+### Bug Fixes
+
+* AppMenu item spacing and font styles ([#563](https://github.com/wingscms/wings/issues/563)) ([fd3f944](https://github.com/wingscms/wings/commit/fd3f9449140851ab2d9fbbe52a1d55a6dee14a49))
+* forms theme variable and styling fixes ([#567](https://github.com/wingscms/wings/issues/567)) ([be79d64](https://github.com/wingscms/wings/commit/be79d642c6bcca0aca53f15ddfb368cf8a51fd4f))
+* **react:** ImageCard captions ([#557](https://github.com/wingscms/wings/issues/557)) ([697d9fb](https://github.com/wingscms/wings/commit/697d9fb57ec3f641a0b41c9ee0a8e7f45092fe20))
+
+
+### Features
+
+* add more AppMenu button theming options ([#559](https://github.com/wingscms/wings/issues/559)) ([18a4ed7](https://github.com/wingscms/wings/commit/18a4ed72c5b0c851d3f763b4bf3b368720f2d7ec))
+* button fixes and theming improvements ([#560](https://github.com/wingscms/wings/issues/560)) ([b453562](https://github.com/wingscms/wings/commit/b45356272c04cae7e7f334081eec20acda5126e8))
+* solidBackground style for Link ([#565](https://github.com/wingscms/wings/issues/565)) ([6d391b5](https://github.com/wingscms/wings/commit/6d391b573d0487516201a8186660ab795586ce46))
+* surfaces, cards, styling fixes, storybook improvements ([#541](https://github.com/wingscms/wings/issues/541)) ([dd7729c](https://github.com/wingscms/wings/commit/dd7729c95de011dce0ae1677ba77d2af5e860935))
+
+
+
+
+
 ## [1.6.1](https://github.com/wingscms/wings/compare/@wingscms/react@1.6.0...@wingscms/react@1.6.1) (2020-12-07)
 
 **Note:** Version bump only for package @wingscms/react
