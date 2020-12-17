@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.1](https://github.com/wingscms/wings/compare/@wingscms/components@1.6.0...@wingscms/components@1.6.1) (2020-12-17)
+
+
+### Bug Fixes
+
+* use Dialog theme variables correctly ([#568](https://github.com/wingscms/wings/issues/568)) ([b88ef28](https://github.com/wingscms/wings/commit/b88ef288620c287b2ba289764b9cf75197bdf252))
+* use toString() after using darken() method on colors ([#569](https://github.com/wingscms/wings/issues/569)) ([0a95c1d](https://github.com/wingscms/wings/commit/0a95c1d1e65c6ec0cc00ff59fa794e07e7881466))
+
+
+
+
+
 # [1.6.0](https://github.com/wingscms/wings/compare/@wingscms/components@1.5.0...@wingscms/components@1.6.0) (2020-12-16)
 
 
