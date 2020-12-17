@@ -16,6 +16,7 @@ const Container = styled.div`
 
 const Title = styled(Heading)`
   width: calc(100% - 40px);
+  color: ${t(_ => _.dialogTextColor)};
 `;
 
 const Close = styled(Burger)`
@@ -34,7 +35,14 @@ export default function Header({ onClose, title, ...props }) {
         </Title>
       ) : null}
       {onClose ? (
-        <Close color={_.dialogCloseColor} eaten={true} onClick={onClose} width={25} height={25} />
+        <Close
+          color={_.dialogCloseColor}
+          hoverColor={_.dialogCloseHoverColor}
+          eaten={true}
+          onClick={onClose}
+          width={25}
+          height={25}
+        />
       ) : null}
     </Container>
   );
