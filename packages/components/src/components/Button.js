@@ -132,7 +132,7 @@ const Surface = styled(_Surface)`
       },
     ) => {
       const color = backgroundColor || _.intentColor(intent);
-      const hoverColor = backgroundHoverColor || _.darken(color);
+      const hoverColor = backgroundHoverColor || _.darken(color).toString();
       const buttonTypeCSS = getType(_, {
         color,
         hoverColor,

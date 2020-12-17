@@ -43,9 +43,9 @@ const SolidBackground = css`
   &:hover,
   &:focus {
     color: ${t((_, { primaryColor }) =>
-      _.contrastColor({ backgroundColor: _.darken(primaryColor || _.linkColor) }),
+      _.contrastColor({ backgroundColor: _.darken(primaryColor || _.linkColor).toString() }),
     )} !important;
-    background: ${t((_, { primaryColor }) => _.darken(primaryColor || _.linkColor))};
+    background: ${t((_, { primaryColor }) => _.darken(primaryColor || _.linkColor).toString())};
   }
 `;
 
