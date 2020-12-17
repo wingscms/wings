@@ -68,7 +68,9 @@ export default function Collapse({
   };
   const color = backgroundColor || _.collapseBackgroundColor || _.intentColor(intent);
   const hoverColor =
-    backgroundHoverColor || _.collapseBackgroundHoverColor || _.darken(_.intentColor(intent));
+    backgroundHoverColor ||
+    _.collapseBackgroundHoverColor ||
+    _.darken(_.intentColor(intent)).toString();
   return (
     <Surface elevation={1} {...fP(props)}>
       <Label onClick={onClick || _onClick} intent={intent} color={color} hoverColor={hoverColor}>
