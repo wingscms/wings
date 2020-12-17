@@ -2,8 +2,14 @@ import React from 'react';
 import faker from 'faker';
 import { boolean, select } from '@storybook/addon-knobs/react';
 import { action } from '@storybook/addon-actions';
-import { Dialog, Text } from '@wingscms/components';
+import { Dialog, Text as _Text } from '@wingscms/components';
+import styled from '../lib/styled';
+import { t } from '../theme';
 import { paddingWrap } from '../../../../utils';
+
+const Text = styled(_Text)`
+  color: ${t(_ => _.dialogTextColor)};
+`;
 
 export default () => {
   return (
