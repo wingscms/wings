@@ -3,7 +3,7 @@ import styled from '../../lib/styled';
 import { t } from '../../theme';
 import Button from '../Button';
 import Heading from '../Heading';
-import Text from '../Text';
+import _Text from '../Text';
 import SocialButtons from '../SocialButtons';
 
 const Column = styled.div`
@@ -33,6 +33,10 @@ const Column = styled.div`
   }
   .title {
   }
+`;
+
+const Text = styled(_Text)`
+  color: ${t(_ => _.footerTextColor)};
 `;
 
 const Link = styled.a`
