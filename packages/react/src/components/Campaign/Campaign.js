@@ -4,7 +4,7 @@ import fP from 'filter-invalid-dom-props';
 import styled from '../../lib/styled';
 
 import { t } from '../../theme';
-import { useIntl } from '../../ctx/Intl';
+import { useIntl, createIntl } from '../../ctx/Intl';
 
 import Content from '../MobiledocRenderer';
 import CampaignForm from './Form';
@@ -48,6 +48,13 @@ const NodeFragment = `
     }
     status
     nodeType
+    copy {
+      message {
+        messageId
+        description
+        message
+      }
+    }
   }`;
 
 const CampaignFragment = `
@@ -162,7 +169,8 @@ export default function Campaign({
   signatureGoal: _signatureGoal,
   ...props
 }) {
-  const intl = useIntl();
+  const _intl = useIntl();
+  const [intl, setIntl] = useState(_intl);
   const campaignContainerRef = useRef(null);
   const formContainerRef = useRef(null);
   const [signatureCount, setSignatureCount] = useState(null);
@@ -172,6 +180,10 @@ export default function Campaign({
   const [node, setNode] = useState(_node);
   const [formHeight, setFormHeight] = useState(formContainerRef?.current?.offsetHeight);
   const handleCampaignLoad = campaign => {
+    if (campaign.copy) {
+      const newIntl = createIntl(campaign);
+      setIntl(newIntl);
+    }
     setNode(campaign);
     if (formProps.onLoad) formProps.onLoad(campaign);
     if (resourceType === 'node.petition') {

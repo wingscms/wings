@@ -1,5 +1,9 @@
 import React from 'react';
-import { IntlProvider as ReactIntlProvider, useIntl as useReactIntl } from 'react-intl';
+import {
+  IntlProvider as ReactIntlProvider,
+  useIntl as useReactIntl,
+  createIntl as _createIntl,
+} from 'react-intl';
 
 const useMessages = node =>
   !node
@@ -30,6 +34,25 @@ export const useIntl = () => {
   newFn._wings = true;
   intl.formatMessage = newFn;
   return intl;
+};
+
+export const createIntl = node => {
+  const newIntl = _createIntl({
+    locale: 'en',
+    messages: node.copy.reduce(
+      (messages, entry) => ({
+        ...messages,
+        [entry.message.messageId]: entry.message.message,
+      }),
+      {},
+    ),
+  });
+  let old = newIntl.formatMessage;
+  old = old.bind(newIntl);
+  const newFn = (id, ...args) => old({ id }, ...args);
+  newFn._wings = true;
+  newIntl.formatMessage = newFn;
+  return newIntl;
 };
 
 export const withIntl = Comp => props => {
