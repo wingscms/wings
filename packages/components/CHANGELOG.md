@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.2](https://github.com/wingscms/wings/compare/@wingscms/components@1.6.1...@wingscms/components@1.6.2) (2020-12-21)
+
+
+### Bug Fixes
+
+* use correct text color in footer ([#570](https://github.com/wingscms/wings/issues/570)) ([3b6ab97](https://github.com/wingscms/wings/commit/3b6ab9797167d6e9b0946c6459aa55f2a9be328a))
+
+
+
+
+
 ## [1.6.1](https://github.com/wingscms/wings/compare/@wingscms/components@1.6.0...@wingscms/components@1.6.1) (2020-12-17)
 
 
