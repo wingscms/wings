@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.3](https://github.com/wingscms/wings/compare/@wingscms/react@1.7.2...@wingscms/react@1.7.3) (2020-12-21)
+
+
+### Bug Fixes
+
+* campaign card copy ([#571](https://github.com/wingscms/wings/issues/571)) ([93810e1](https://github.com/wingscms/wings/commit/93810e1a175d5c448334a5ec5c8b35c1b53bd146))
+
+
+
+
+
 ## [1.7.2](https://github.com/wingscms/wings/compare/@wingscms/react@1.7.1...@wingscms/react@1.7.2) (2020-12-21)
 
 **Note:** Version bump only for package @wingscms/react
