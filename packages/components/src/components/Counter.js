@@ -40,6 +40,7 @@ const Current = styled.div`
 `;
 
 const Description = styled(Text)`
+  color: ${t(_ => _.counterTextColor)};
   padding: 0 10px;
   min-width: 30%;
   width: auto;
@@ -47,6 +48,7 @@ const Description = styled(Text)`
 `;
 
 const GoalText = styled.div`
+  color: ${t(_ => _.counterTextColor)};
   text-align: right;
   font-weight: 800;
   font-family: ${t(_ => _.headerFontFamily)};

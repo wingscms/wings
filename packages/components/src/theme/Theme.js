@@ -202,7 +202,7 @@ export default class Theme {
   get counterTextColor() {
     return (
       this.variables.counterTextColor ||
-      this.contrastColor({ backgroundColor: this.surfaceBackgroundColor })
+      this.contrastColor({ backgroundColor: this.counterBackgroundColor })
     );
   }
 

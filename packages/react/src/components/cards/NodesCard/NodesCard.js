@@ -127,6 +127,7 @@ const ItemDefault = ({ node, ...props }) => (
     <Card.HeadingReveal
       title={node.featured && node.featured.title}
       subtitle={node.featured && node.featured.description}
+      {...props}
     />
   </Card>
 );
@@ -212,6 +213,7 @@ const NodesCardView = ({ text, ...props }) => {
                   onClick={e => {
                     onNodeClick(node, { event: e });
                   }}
+                  {...props}
                 />
               );
               return (
