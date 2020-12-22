@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.5](https://github.com/wingscms/wings/compare/@wingscms/react@1.7.4...@wingscms/react@1.7.5) (2020-12-22)
+
+
+### Bug Fixes
+
+* campaign proposition responsive behaviour ([#573](https://github.com/wingscms/wings/issues/573)) ([2f887f2](https://github.com/wingscms/wings/commit/2f887f2fdb603731034a191a0f7c9175850e2a1d))
+
+
+
+
+
 ## [1.7.4](https://github.com/wingscms/wings/compare/@wingscms/react@1.7.3...@wingscms/react@1.7.4) (2020-12-22)
 
 
