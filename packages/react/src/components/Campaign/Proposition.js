@@ -14,7 +14,7 @@ const Surface = styled(_Surface)`
   transition: max-height 0.15s linear;
   padding: 0 ${t(_ => _.smallSpacing)};
   margin-bottom: ${t(_ => _.extraSmallSpacing)};
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 999px) {
     border-radius: ${t(_ => `${_.surfaceBorderRadius} 0 0 ${_.surfaceBorderRadius}`)};
     padding: 0 ${t(_ => _.mediumSpacing)};
     margin-top: ${t(_ => _.mediumSpacing)};
@@ -101,17 +101,17 @@ export default function Proposition({
   const { height: contentHeight } = useDimensions(contentRef, [children]);
   const toggleRef = useRef(null);
   const { height: toggleHeight } = useDimensions(toggleRef, [children, show]);
+  const { width: windowWidth } = useDimensions();
 
   const toggleShow = () => {
     const newState = !show;
     setShow(newState);
     onToggle(newState);
   };
-
   const margin = containerWidth < 400 ? 10 : 40;
   const padding = containerWidth < 400 ? 20 : 40;
   const height = !show ? heightProp : contentHeight + padding + margin + toggleHeight;
-  const showToggle = show || contentHeight + 160 > height;
+  const showToggle = show || contentHeight + 160 > (windowWidth > 999 ? height : 400);
 
   return (
     <Surface
