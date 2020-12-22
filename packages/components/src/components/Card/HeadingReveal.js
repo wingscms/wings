@@ -55,6 +55,7 @@ const Title = styled(Heading)`
   overflow: hidden;
   padding: 0 1rem 0 0;
   width: 100%;
+  color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
   &:before {
     font-size: 20px;
     content: '...';
@@ -63,6 +64,7 @@ const Title = styled(Heading)`
     bottom: 0;
     font-weight: bold;
     z-index: 5;
+    color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
   }
   &:after {
     content: '';
@@ -84,6 +86,7 @@ const Title = styled(Heading)`
 `;
 
 const Subtitle = styled(Text)`
+  color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
   width: 100%;
   margin: 10px 0;
   padding: 0;
