@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.7](https://github.com/wingscms/wings/compare/@wingscms/react@1.7.6...@wingscms/react@1.7.7) (2021-01-04)
+
+
+### Bug Fixes
+
+* QA card mobiledoc text color on dark surface backgrounds ([#576](https://github.com/wingscms/wings/issues/576)) ([ee88472](https://github.com/wingscms/wings/commit/ee88472e12622acdcac4eb40c6561b5a4adaa8a9))
+
+
+
+
+
 ## [1.7.6](https://github.com/wingscms/wings/compare/@wingscms/react@1.7.5...@wingscms/react@1.7.6) (2021-01-04)
 
 
