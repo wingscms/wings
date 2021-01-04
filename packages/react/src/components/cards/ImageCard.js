@@ -36,6 +36,11 @@ const defaultProps = {
   float: FLOAT.NONE,
 };
 
+const calcCaptionFontSize = _ => {
+  const [val, unit] = _.separateUnit(_.baseFontSize);
+  return [val * 0.8, unit].join('');
+};
+
 const Image = styled.figure`
   margin: ${t(_ => _.mediumSpacing)} 0;
   @media screen and (min-width: 800px) {
@@ -51,7 +56,8 @@ const Image = styled.figure`
   figcaption {
     padding: 10px;
     text-align: center;
-    ${t(_ => Text.getStyles(_))}
+    ${t(_ => Text.getStyles(_, { baseFontSize: calcCaptionFontSize(_) }))}
+    color: ${t(_ => _.imageCaptionTextColor)};
   }
   &.size-${SIZE.MEDIUM} {
     width: 100%;
