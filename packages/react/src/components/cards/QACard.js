@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '../../lib/styled';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
-import { Accordion, Heading, Text, Intent } from '@wingscms/components';
+import { Accordion, Heading, Text as _Text, Intent } from '@wingscms/components';
 import createCard from '../../createCard';
 import Content from '../MobiledocRenderer';
 import { isJSON } from '../../lib/utils';
@@ -12,6 +12,10 @@ const Container = styled.div`
   @media screen and (min-width: 800px) {
     margin: ${t(_ => _.largeSpacing)} 0;
   }
+`;
+
+const Text = styled(_Text)`
+  color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
 `;
 
 function QACardView({ content, title, backgroundColor, backgroundHoverColor, ...props }) {
