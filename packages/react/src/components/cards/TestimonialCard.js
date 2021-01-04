@@ -51,6 +51,7 @@ const Title = styled.h1`
   text-transform: ${t(_ => _.titleTransform)};
   line-height: 1;
   font-family: ${t(_ => _.headerFontFamily)};
+  color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
   position: relative;
   font-size: 32px;
   @media screen and (min-width: 800px) {
@@ -60,6 +61,7 @@ const Title = styled.h1`
 `;
 
 const Intro = styled.p`
+  color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
   font-size: 1.2em;
   font-family: ${t(_ => _.headerFontFamily)};
   font-weight: bold;
@@ -135,6 +137,9 @@ const ContentWrap = styled.div`
   @media screen and (min-width: 1720px) {
     padding: 0;
     width: 760px;
+  }
+  * {
+    color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
   }
 `;
 
