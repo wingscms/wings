@@ -14,7 +14,7 @@ const Surface = styled(_Surface)`
   a {
     width: calc(33% - ${t(_ => _.extraSmallSpacing)});
     ${t(_ =>
-      _.mobileQuery(css`
+      _.tabletQuery(css`
         width: 100%;
       `),
     )}

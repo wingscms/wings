@@ -14,6 +14,8 @@ const Text = styled(_Text)`
 
 const Dialog = styled(_Dialog)`
   overflow: hidden;
+  max-height: 90vh;
+  overflow-y: auto;
 `;
 
 export default function LanguageSelectionDialog({
