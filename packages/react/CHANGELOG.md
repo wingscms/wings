@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.6](https://github.com/wingscms/wings/compare/@wingscms/react@1.7.5...@wingscms/react@1.7.6) (2021-01-04)
+
+
+### Bug Fixes
+
+* dark background text fixes ([#575](https://github.com/wingscms/wings/issues/575)) ([588204e](https://github.com/wingscms/wings/commit/588204efaf3680de3c3e07ebf259660bb1d0ab11))
+* language switcher buttons responsive styling ([#574](https://github.com/wingscms/wings/issues/574)) ([b3d9093](https://github.com/wingscms/wings/commit/b3d909330519d4ef19054424bc33c9daec2fc9a5))
+
+
+
+
+
 ## [1.7.5](https://github.com/wingscms/wings/compare/@wingscms/react@1.7.4...@wingscms/react@1.7.5) (2020-12-22)
 
 
