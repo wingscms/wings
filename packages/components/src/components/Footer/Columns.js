@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '../../lib/styled';
-import { t } from '../../theme';
+import { t, useTheme } from '../../theme';
 import Button from '../Button';
 import Heading from '../Heading';
 import _Text from '../Text';
@@ -79,6 +79,7 @@ const ImageRow = ({ src, alt, url }) => {
 
 export default ({ columns }) => {
   if (!columns) return null;
+  const theme = useTheme();
   return columns.map((column, idx) => (
     <Column key={`footer-column-${idx}`}>
       {column.title && <Title rank={3}>{column.title}</Title>}
@@ -141,12 +142,14 @@ export default ({ columns }) => {
                           url={url}
                           key={idx}
                           intent={intent || Button.Intent.SECONDARY}
-                          iconColor={iconColor}
-                          iconHoverColor={iconHoverColor}
-                          backgroundColor={backgroundColor}
-                          backgroundHoverColor={backgroundHoverColor}
-                          textColor={textColor}
-                          textHoverColor={textHoverColor}
+                          iconColor={iconColor || theme.shareButtonTextColor}
+                          iconHoverColor={iconHoverColor || theme.shareButtonTextHoverColor}
+                          backgroundColor={backgroundColor || theme.shareButtonBackgroundColor}
+                          backgroundHoverColor={
+                            backgroundHoverColor || theme.shareButtonBackgroundHoverColor
+                          }
+                          textColor={textColor || theme.shareButtonTextColor}
+                          textHoverColor={textHoverColor || theme.shareButtonTextHoverColor}
                         />
                       ),
                     )}

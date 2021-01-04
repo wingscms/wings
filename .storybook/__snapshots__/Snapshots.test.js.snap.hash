@@ -29,8 +29,8 @@ Storyshots components/Dialog Default 1: a8dfb4ea27026326bce4571a9016e708
 Storyshots components/Drawer Default 1: 17d79bd3e3c2a479a09dd248f11da9e4
 Storyshots components/Expandable Default 1: bd0969d2a6c1ef14a018b411e2003324
 Storyshots components/FlexGrid Default 1: 761574aeb01c443d1d9ab93826694263
-Storyshots components/Footer Custom Content 1: 84555d39532dd095496d35dae0ba1642
-Storyshots components/Footer Default 1: 3491f9ff9a54193b247848646ac07289
+Storyshots components/Footer Custom Content 1: b2aad4d49303c5678baa0495eeed2335
+Storyshots components/Footer Default 1: 4c5cf666cfc35661b6c84fbf04c17f69
 Storyshots components/Header Cover 1: 6baf49ebf3cacd5d2f9fd158d3fbb3f4
 Storyshots components/Header Default 1: d26f87d37ed41f329c088cc75ff93adf
 Storyshots components/Heading Default 1: 492eed65d113b45376b863585fa8acbc
@@ -60,7 +60,7 @@ Storyshots react/AppMenu Default 1: e757ed433878fac991e3fc56cce3b7ae
 Storyshots react/Article Default 1: 3fe97112c5ec2e43a237bb98b2b9fa47
 Storyshots react/Article No Header 1: f0fea9c7b0e5c3744e71bf14b556ba53
 Storyshots react/Article No Image 1: 2da172b7bcf217f40f5ee2387381fa81
-Storyshots react/Article With Menu And Footer 1: 7c79db45597e8bda032afb353c69ff7b
+Storyshots react/Article With Menu And Footer 1: 2fa0d9879f072a4ee009422106fdec8a
 Storyshots react/Campaign Event 1: 390345a2f9893a5760663ad2bda1a6ab
 Storyshots react/Campaign Fundraiser 1: 78a9eadadfcf6b36ef43b73721524717
 Storyshots react/Campaign Petition 1: 5148b1be133cf6599ff51300fac19aa9
