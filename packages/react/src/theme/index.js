@@ -102,6 +102,10 @@ class Theme extends _Theme {
     return this.variables.campaignPropositionBackgroundColor || this.surfaceBackgroundColor;
   }
 
+  get imageCaptionTextColor() {
+    return this.variables.imageCaptionTextColor || '#555';
+  }
+
   get testimonialBackgroundColor() {
     return this.variables.testimonialBackgroundColor || this.surfaceBackgroundColor;
   }
