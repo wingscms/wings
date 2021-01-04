@@ -18,6 +18,12 @@ const Text = styled(_Text)`
   color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
 `;
 
+const AnswerContent = styled(Content)`
+  * {
+    color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
+  }
+`;
+
 function QACardView({ content, title, backgroundColor, backgroundHoverColor, ...props }) {
   return (
     <Container {...filterInvalidDOMProps(props)}>
@@ -33,7 +39,11 @@ function QACardView({ content, title, backgroundColor, backgroundHoverColor, ...
               key={idx}
               label={isJSON(question) ? <Content content={question} mini /> : question} // <Content /> for backwards compatability
             >
-              {isJSON(answer) ? <Content content={answer} mini /> : <Text noSpacing>{answer}</Text>}
+              {isJSON(answer) ? (
+                <AnswerContent content={answer} mini />
+              ) : (
+                <Text noSpacing>{answer}</Text>
+              )}
             </Accordion.Item>
           );
         })}
