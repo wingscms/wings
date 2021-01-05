@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.1](https://github.com/wingscms/wings/compare/@wingscms/react@1.8.0...@wingscms/react@1.8.1) (2021-01-05)
+
+
+### Bug Fixes
+
+* fix youtube embed ([#579](https://github.com/wingscms/wings/issues/579)) ([710b319](https://github.com/wingscms/wings/commit/710b319fa596c8e7973b99864575c22edcb68f2b))
+
+
+
+
+
 # [1.8.0](https://github.com/wingscms/wings/compare/@wingscms/react@1.7.7...@wingscms/react@1.8.0) (2021-01-04)
 
 
