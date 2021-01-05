@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import qs from 'qs';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import { _WIDE, Surface as _Surface } from '@wingscms/components';
 import styled from '../../lib/styled';
@@ -74,13 +75,15 @@ class EmbedCard extends Component {
 
   render() {
     const { html, ...props } = this.props;
-
+    const resourceId = qs.parse(this.props.src.split('?')[1]).v;
     return (
       <Surface elevation={1} {...filterInvalidDOMProps(props)}>
         <div
           className="video-wrapper"
           style={{ paddingBottom: `${this.state.percentage}%` }}
-          dangerouslySetInnerHTML={{ __html: html }} // eslint-disable-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: `<iframe width="480" height="270" src="https://www.youtube.com/embed/${resourceId}?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
+          }} // eslint-disable-line react/no-danger
         />
       </Surface>
     );
