@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlexGrid, Icon, _WIDE, Heading, Text } from '@wingscms/components';
+import { FlexGrid, Icon, _WIDE, Heading, Surface, Text } from '@wingscms/components';
 import styled from '../../../lib/styled';
 import { t } from '../../../theme';
 
@@ -18,10 +18,9 @@ const StyledFlexGrid = styled(FlexGrid)`
   padding: 10px;
 `;
 
-const OrganisationContainer = styled.div`
+const OrganisationContainer = styled(Surface)`
   display: block;
-  padding: 20px;
-  background-color: ${t(_ => _.elementBackgroundColor)};
+  padding: ${t(_ => _.smallSpacing)};
   position: relative;
   margin-bottom: 30px;
   height: auto;
@@ -31,7 +30,7 @@ const OrganisationImage = styled.img`
   display: inline-block;
   width: 100%;
   max-width: 30%;
-  vertical-align: middle;
+  vertical-align: top;
   margin-bottom: 0;
   @media screen and (max-width: 900px) {
     max-width: 100%;
@@ -52,6 +51,8 @@ const OrganisationContent = styled.div`
 `;
 
 const OrganisationName = styled(Heading)`
+  color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
+
   text-align: left;
   padding: 0;
   margin: 0;
@@ -61,13 +62,13 @@ const OrganisationName = styled(Heading)`
 `;
 
 const OrganisationDescription = styled(Text)`
+  color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
   margin-top: 10px;
 `;
 
-const PersonContainer = styled.div`
+const PersonContainer = styled(Surface)`
   display: block;
-  padding: 20px;
-  background-color: ${t(_ => _.elementBackgroundColor)};
+  padding: ${t(_ => _.smallSpacing)};
   position: relative;
   margin-bottom: 30px;
   height: auto;
@@ -80,6 +81,8 @@ const PersonImg = styled.img`
 `;
 
 const PersonName = styled(Heading)`
+  color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
+  width: 17px;
   text-align: center;
   padding: 0;
   margin: 0;
@@ -106,6 +109,7 @@ const OrgProfilesWrapper = styled(ProfilesWrapper)`
 const ProfileImage = styled.div`
   display: inline-block;
   > svg {
+    fill: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
     width: 17px;
     height: 17px;
     margin: 10px 5px;
@@ -124,7 +128,7 @@ export function OrganisationCollection({ title, items }) {
       >
         {items.map((x, i) => (
           // eslint-disable-next-line
-          <OrganisationContainer key={x._id} index={i}>
+          <OrganisationContainer key={x._id} index={i} elevation={1}>
             {x.image ? <OrganisationImage src={x.image.url} /> : null}
             <OrganisationContent>
               {x.name ? <OrganisationName rank={4}>{x.name}</OrganisationName> : null}
@@ -195,7 +199,7 @@ export function PersonCollection({ title, items }) {
           <StyledFlexGrid divisions={4} margins={10} alignItems="stretch" style={{ width: '100%' }}>
             {items.map((x, i) => (
               // eslint-disable-next-line
-              <PersonContainer key={x._id} index={i}>
+              <PersonContainer key={x._id} index={i} elevation={1}>
                 {x.image ? <PersonImg src={x.image.url} /> : null}
                 {x.name ? <PersonName rank={4}>{x.name}</PersonName> : null}
                 {x.profiles ? (
