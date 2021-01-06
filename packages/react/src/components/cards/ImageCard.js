@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 import PropTypes from 'prop-types';
 import { Reveal, _WIDE, _ALIGNLEFT, _ALIGNRIGHT, Text } from '@wingscms/components';
-import styled from '../../lib/styled';
+import styled, { css } from '../../lib/styled';
 import { enumerate } from '../../lib/utils';
 import createCard from '../../createCard';
 import { t } from '../../theme';
@@ -36,9 +36,9 @@ const defaultProps = {
   float: FLOAT.NONE,
 };
 
-const calcCaptionFontSize = _ => {
-  const [val, unit] = _.separateUnit(_.baseFontSize);
-  return [val * 0.8, unit].join('');
+const calcCaptionFontSize = (_, fontSize, n = 0.9) => {
+  const [val, unit] = _.separateUnit(fontSize);
+  return [val * n, unit].join('');
 };
 
 const Image = styled.figure`
@@ -56,8 +56,22 @@ const Image = styled.figure`
   figcaption {
     padding: 10px;
     text-align: center;
-    ${t(_ => Text.getStyles(_, { baseFontSize: calcCaptionFontSize(_) }))}
+    ${t(_ => Text.getStyles(_, { baseFontSize: calcCaptionFontSize(_, _.baseFontSize) }))}
     color: ${t(_ => _.imageCaptionTextColor)};
+    ${t(_ =>
+      _.tabletQuery(
+        css`
+          font-size: ${t(_ => calcCaptionFontSize(_, _.baseTabletFontSize))};
+        `,
+      ),
+    )}
+    ${t(_ =>
+      _.mobileQuery(
+        css`
+          font-size: ${t(_ => calcCaptionFontSize(_, _.baseMobileFontSize))};
+        `,
+      ),
+    )}
   }
   &.size-${SIZE.MEDIUM} {
     width: 100%;

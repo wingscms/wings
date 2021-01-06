@@ -57,10 +57,10 @@ Storyshots components/Text Default 1: 58c1c1562429a4b0ea0d51b2b0d2786e
 Storyshots jsonschema-form/SchemaForm Address Field 1: 5b068ef897aae50a9f63cb4f4284ffe9
 Storyshots jsonschema-form/SchemaForm Default 1: 9c9c679befd668599e640e1cdab1dc5e
 Storyshots react/AppMenu Default 1: e757ed433878fac991e3fc56cce3b7ae
-Storyshots react/Article Default 1: 3fe97112c5ec2e43a237bb98b2b9fa47
-Storyshots react/Article No Header 1: f0fea9c7b0e5c3744e71bf14b556ba53
-Storyshots react/Article No Image 1: 2da172b7bcf217f40f5ee2387381fa81
-Storyshots react/Article With Menu And Footer 1: 2fa0d9879f072a4ee009422106fdec8a
+Storyshots react/Article Default 1: 13bc8ebcb86b488181bcafd82ae4f71b
+Storyshots react/Article No Header 1: fd5198c8dba6cec3fe2f3f20cc574cec
+Storyshots react/Article No Image 1: 83ff9550975eae279683300cc1140056
+Storyshots react/Article With Menu And Footer 1: 195ab585f066dc44e413747289f7142c
 Storyshots react/Campaign Event 1: 390345a2f9893a5760663ad2bda1a6ab
 Storyshots react/Campaign Fundraiser 1: 78a9eadadfcf6b36ef43b73721524717
 Storyshots react/Campaign Petition 1: 5148b1be133cf6599ff51300fac19aa9
@@ -78,7 +78,7 @@ Storyshots react/Cards/ChapterCard Default 1: 4361763e909810d51d09db9dfb084708
 Storyshots react/Cards/CollectionCard Organisation 1: cdb8e95b50bd775c844a2ca557e4c795
 Storyshots react/Cards/CollectionCard Person 1: 5f49bd0923c2a2fa65713fcfd6ac438d
 Storyshots react/Cards/EmbedCard Default 1: 6541d92662309e7de7d9b8f22bc3c124
-Storyshots react/Cards/ImageCard Default 1: 3bead2a0f56f0760e5fb2a2c40d41580
+Storyshots react/Cards/ImageCard Default 1: 600401e2d99161a96bc00e0e82c90f60
 Storyshots react/Cards/InsightCard Default 1: d3dc33e0ba64ff550a1c3756594868fe
 Storyshots react/Cards/NodesCard Default 1: 1bed795e0d40022904dc58f83d014732
 Storyshots react/Cards/QACard Default 1: 4455b9d5b6879affe7e22c31b27b1295
@@ -88,6 +88,6 @@ Storyshots react/Cards/QuoteCard Pull Quote 1: 10846921f94dadf1fdbc5734e79f87d2
 Storyshots react/Cards/TestimonialCard Default 1: 7beb770e8131c1193c3029111d5e3a60
 Storyshots react/Cards/TextCard Default 1: 6b8c68ea6bed1855fce4251ea834e90b
 Storyshots react/Content Default 1: b2578efdc0c062c6808b3904a82e15c2
-Storyshots react/Content With Cards 1: e5843a192c2cf733518b52093e9662ad
+Storyshots react/Content With Cards 1: 7d4bfe63f74964db3ed1aa168a74f1de
 Storyshots react/LanguageSelectionDialog Default 1: bd99ce3e1464232c2a6a28f48741e314
-Storyshots react/Page Default 1: d02b4ca4df86d946be710478074e8a0b
+Storyshots react/Page Default 1: 1f4dced574b4ddcdaef53a8640ce7654
