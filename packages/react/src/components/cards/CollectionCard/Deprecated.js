@@ -82,7 +82,6 @@ const PersonImg = styled.img`
 
 const PersonName = styled(Heading)`
   color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
-  width: 17px;
   text-align: center;
   padding: 0;
   margin: 0;
