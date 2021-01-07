@@ -80,7 +80,15 @@ const PersonImg = styled.img`
   margin-bottom: 10px;
 `;
 
-const PersonName = styled(Heading)`
+const PersonName = styled(Text)`
+  font-weight: bold;
+  color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
+  text-align: center;
+  padding: 0;
+  margin: 0;
+`;
+
+const PersonDescription = styled(Text)`
   color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
   text-align: center;
   padding: 0;
@@ -205,7 +213,8 @@ export function PersonCollection({ title, items }) {
               // eslint-disable-next-line
               <PersonContainer key={x._id} index={i} elevation={1}>
                 {x.image ? <PersonImg src={x.image.url} /> : null}
-                {x.name ? <PersonName rank={4}>{x.name}</PersonName> : null}
+                {x.name ? <PersonName>{x.name}</PersonName> : null}
+                {x.description ? <PersonDescription>{x.description}</PersonDescription> : null}
                 {x.profiles ? (
                   <ProfilesWrapper>
                     {x.profiles.website ? (
