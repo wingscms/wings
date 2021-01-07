@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/wingscms/wings/compare/@wingscms/react@1.8.1...@wingscms/react@1.9.0) (2021-01-07)
+
+
+### Bug Fixes
+
+* **react:** ImageCard caption sizes ([#580](https://github.com/wingscms/wings/issues/580)) ([98deded](https://github.com/wingscms/wings/commit/98deded79465c2fc7c1ba8bcaea9adb2781ad9ce))
+
+
+### Features
+
+* add surface styling to collections ([#581](https://github.com/wingscms/wings/issues/581)) ([6003ffd](https://github.com/wingscms/wings/commit/6003ffdfbfc6f78b9a073501050271768187d5cc))
+
+
+
+
+
 ## [1.8.1](https://github.com/wingscms/wings/compare/@wingscms/react@1.8.0...@wingscms/react@1.8.1) (2021-01-05)
 
 
