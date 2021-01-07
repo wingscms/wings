@@ -43,7 +43,7 @@ Storyshots components/Link Solid Background 1: 33968c7f87064372b0b00738cb2bf9f6
 Storyshots components/List Ordered List 1: 3894f89d34728014ee81ca95c3a4fe05
 Storyshots components/List Unordered List 1: d64e6c1663f67bd21b019041263cb7ff
 Storyshots components/Loading Default 1: 6337f3b0475c4f2dc783c21593b25c9d
-Storyshots components/Overlay Default 1: 9af7585e9f3386f48d94b652419cbe4a
+Storyshots components/Overlay Default 1: 289a3333e2a670df82bee4232eb9efff
 Storyshots components/PaginationControls Default 1: e8130b84e0328f418a4e1a7ae121ea00
 Storyshots components/ProgressBar Default 1: 017d4baed8f0138fdc14954f66dd4d31
 Storyshots components/Pullquote Default 1: b8bae339ba74225fc1d58ba0d0072cfc
@@ -56,14 +56,14 @@ Storyshots components/Surface Default 1: 25b99e386dd69d5a3a916b0fac352e39
 Storyshots components/Text Default 1: 58c1c1562429a4b0ea0d51b2b0d2786e
 Storyshots jsonschema-form/SchemaForm Address Field 1: 5b068ef897aae50a9f63cb4f4284ffe9
 Storyshots jsonschema-form/SchemaForm Default 1: 9c9c679befd668599e640e1cdab1dc5e
-Storyshots react/AppMenu Default 1: e757ed433878fac991e3fc56cce3b7ae
-Storyshots react/Article Default 1: 13bc8ebcb86b488181bcafd82ae4f71b
-Storyshots react/Article No Header 1: fd5198c8dba6cec3fe2f3f20cc574cec
-Storyshots react/Article No Image 1: 83ff9550975eae279683300cc1140056
-Storyshots react/Article With Menu And Footer 1: 195ab585f066dc44e413747289f7142c
-Storyshots react/Campaign Event 1: 390345a2f9893a5760663ad2bda1a6ab
-Storyshots react/Campaign Fundraiser 1: 78a9eadadfcf6b36ef43b73721524717
-Storyshots react/Campaign Petition 1: 5148b1be133cf6599ff51300fac19aa9
+Storyshots react/AppMenu Default 1: 84704fcdbc6c458240ead4a23cd2762e
+Storyshots react/Article Default 1: 1b3ebdf1d0c21697c064ad297d987e5e
+Storyshots react/Article No Header 1: 81f10dc841936fbc829a95626477e0d8
+Storyshots react/Article No Image 1: 9ba1496eafea3f1ce5c7a5442cb062d9
+Storyshots react/Article With Menu And Footer 1: 21dab831222261f6c20490b5e464b043
+Storyshots react/Campaign Event 1: 54e4e5adf1512672291483527f1fc0e2
+Storyshots react/Campaign Fundraiser 1: b4cbe758bab0c53e31b88801bd194b79
+Storyshots react/Campaign Petition 1: 5fb54fc20adaf8519ca5a02d8fd2dead
 Storyshots react/CampaignConfirmed Default 1: 2862fcfabf592b2e3952a3f21d9d4cb5
 Storyshots react/CampaignConfirmed Event 1: 164561507ea7e3e2166989ddc34ff8a1
 Storyshots react/CampaignConfirmed Fundraiser 1: 1920bf988ffac0912f3d66ad18b597cf
@@ -73,10 +73,10 @@ Storyshots react/Cards/CTACard Background Image 1: 8e2da7e20a8ac248d73d62b1d7a3b
 Storyshots react/Cards/CTACard Default 1: 3cd4636f0a49343e4a342ba99765bd6d
 Storyshots react/Cards/CTACard Horizontal 1: b2cce976f3c740b6a8fd90c4ff114830
 Storyshots react/Cards/CTACard Spacing 1: 9fa349555244d12ae89363a0cdffaaa0
-Storyshots react/Cards/CampaignCard Default 1: 8d2c38b33cd0b0596ff1cc7c77d4090f
+Storyshots react/Cards/CampaignCard Default 1: ef3bde8544082b0297d38d94fe685ccf
 Storyshots react/Cards/ChapterCard Default 1: 4361763e909810d51d09db9dfb084708
-Storyshots react/Cards/CollectionCard Organisation 1: cdb8e95b50bd775c844a2ca557e4c795
-Storyshots react/Cards/CollectionCard Person 1: 5f49bd0923c2a2fa65713fcfd6ac438d
+Storyshots react/Cards/CollectionCard Organisation 1: 30da563bfb9232274515df8ab181981d
+Storyshots react/Cards/CollectionCard Person 1: 66bd9eb881b6570d7321c1ba0249160f
 Storyshots react/Cards/EmbedCard Default 1: 6541d92662309e7de7d9b8f22bc3c124
 Storyshots react/Cards/ImageCard Default 1: 600401e2d99161a96bc00e0e82c90f60
 Storyshots react/Cards/InsightCard Default 1: d3dc33e0ba64ff550a1c3756594868fe
@@ -88,6 +88,6 @@ Storyshots react/Cards/QuoteCard Pull Quote 1: 10846921f94dadf1fdbc5734e79f87d2
 Storyshots react/Cards/TestimonialCard Default 1: 7beb770e8131c1193c3029111d5e3a60
 Storyshots react/Cards/TextCard Default 1: 6b8c68ea6bed1855fce4251ea834e90b
 Storyshots react/Content Default 1: b2578efdc0c062c6808b3904a82e15c2
-Storyshots react/Content With Cards 1: 7d4bfe63f74964db3ed1aa168a74f1de
-Storyshots react/LanguageSelectionDialog Default 1: bd99ce3e1464232c2a6a28f48741e314
-Storyshots react/Page Default 1: 1f4dced574b4ddcdaef53a8640ce7654
+Storyshots react/Content With Cards 1: 7175dbb58a09caa99b9c48f732661785
+Storyshots react/LanguageSelectionDialog Default 1: 97036977eb90bdabdcdc4812b38bbfd3
+Storyshots react/Page Default 1: 1b37115bf96320fc33b14443f28d17cd

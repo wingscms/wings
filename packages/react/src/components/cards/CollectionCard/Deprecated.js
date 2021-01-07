@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlexGrid, Icon, _WIDE, Heading, Text } from '@wingscms/components';
+import { FlexGrid, Icon, _WIDE, Heading, Surface, Text } from '@wingscms/components';
 import styled from '../../../lib/styled';
 import { t } from '../../../theme';
 
@@ -9,21 +9,20 @@ const Wide = styled.div`
 
 const WideContentWrap = styled.div`
   margin: 0 auto;
+  width: 100%;
   max-width: 1200px;
-  padding: 0 20px;
+  padding: 0 30px;
 `;
 
 const StyledFlexGrid = styled(FlexGrid)`
   background-color: ${t(_ => _.backgroundColor)};
-  padding: 10px;
 `;
 
-const OrganisationContainer = styled.div`
+const OrganisationContainer = styled(Surface)`
   display: block;
-  padding: 20px;
-  background-color: ${t(_ => _.elementBackgroundColor)};
+  padding: ${t(_ => _.smallSpacing)};
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: ${t(_ => _.smallSpacing)};
   height: auto;
 `;
 
@@ -31,7 +30,7 @@ const OrganisationImage = styled.img`
   display: inline-block;
   width: 100%;
   max-width: 30%;
-  vertical-align: middle;
+  vertical-align: top;
   margin-bottom: 0;
   @media screen and (max-width: 900px) {
     max-width: 100%;
@@ -43,15 +42,17 @@ const OrganisationContent = styled.div`
   display: inline-block;
   width: 100%;
   max-width: 70%;
-  vertical-align: middle;
+  vertical-align: top;
   padding: 0 20px;
   @media screen and (max-width: 900px) {
     max-width: 100%;
+    width: 100%;
     text-align: center;
   }
 `;
 
 const OrganisationName = styled(Heading)`
+  color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
   text-align: left;
   padding: 0;
   margin: 0;
@@ -61,15 +62,15 @@ const OrganisationName = styled(Heading)`
 `;
 
 const OrganisationDescription = styled(Text)`
+  color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
   margin-top: 10px;
 `;
 
-const PersonContainer = styled.div`
+const PersonContainer = styled(Surface)`
   display: block;
-  padding: 20px;
-  background-color: ${t(_ => _.elementBackgroundColor)};
+  padding: ${t(_ => _.smallSpacing)};
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: ${t(_ => _.smallSpacing)};
   height: auto;
 `;
 
@@ -79,7 +80,16 @@ const PersonImg = styled.img`
   margin-bottom: 10px;
 `;
 
-const PersonName = styled(Heading)`
+const PersonName = styled(Text)`
+  font-weight: bold;
+  color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
+  text-align: center;
+  padding: 0;
+  margin: 0;
+`;
+
+const PersonDescription = styled(Text)`
+  color: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
   text-align: center;
   padding: 0;
   margin: 0;
@@ -106,6 +116,7 @@ const OrgProfilesWrapper = styled(ProfilesWrapper)`
 const ProfileImage = styled.div`
   display: inline-block;
   > svg {
+    fill: ${t(_ => _.contrastColor({ backgroundColor: _.surfaceBackgroundColor }))};
     width: 17px;
     height: 17px;
     margin: 10px 5px;
@@ -120,11 +131,11 @@ export function OrganisationCollection({ title, items }) {
         divisions={1}
         margins={10}
         alignItems="stretch"
-        style={{ marginLeft: '-20px', width: 'calc(100% + 40px)' }}
+        style={{ marginLeft: '-10px', width: 'calc(100% + 20px)' }}
       >
         {items.map((x, i) => (
           // eslint-disable-next-line
-          <OrganisationContainer key={x._id} index={i}>
+          <OrganisationContainer key={x._id} index={i} elevation={1}>
             {x.image ? <OrganisationImage src={x.image.url} /> : null}
             <OrganisationContent>
               {x.name ? <OrganisationName rank={4}>{x.name}</OrganisationName> : null}
@@ -192,12 +203,18 @@ export function PersonCollection({ title, items }) {
       {title ? <Heading rank={3}>{title}</Heading> : null}
       <Wide>
         <WideContentWrap>
-          <StyledFlexGrid divisions={4} margins={10} alignItems="stretch" style={{ width: '100%' }}>
+          <StyledFlexGrid
+            divisions={4}
+            margins={10}
+            alignItems="stretch"
+            style={{ marginLeft: '-20px', width: 'calc(100% + 40px)' }}
+          >
             {items.map((x, i) => (
               // eslint-disable-next-line
-              <PersonContainer key={x._id} index={i}>
+              <PersonContainer key={x._id} index={i} elevation={1}>
                 {x.image ? <PersonImg src={x.image.url} /> : null}
-                {x.name ? <PersonName rank={4}>{x.name}</PersonName> : null}
+                {x.name ? <PersonName>{x.name}</PersonName> : null}
+                {x.description ? <PersonDescription>{x.description}</PersonDescription> : null}
                 {x.profiles ? (
                   <ProfilesWrapper>
                     {x.profiles.website ? (

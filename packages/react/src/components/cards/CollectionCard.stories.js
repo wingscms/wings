@@ -5,13 +5,14 @@ import { contentWrap, image } from '../../../../../utils';
 export const Person = () =>
   CollectionCard.render({
     type: 0,
-    title: 'Persom Collection (Deprecated)',
+    title: 'Person Collection (Deprecated)',
     items: [
       {
         image: {
           url: image(),
         },
         name: 'Lorem Ipsum',
+        description: 'This is a person',
         profiles: {
           website: {
             url: 'example.com',
@@ -32,6 +33,7 @@ export const Person = () =>
       },
       {
         name: 'Lorem Ipsum',
+        description: 'This is a person',
         image: {
           url: image(),
         },
@@ -58,6 +60,7 @@ export const Person = () =>
           url: image(),
         },
         name: 'Lorem Ipsum',
+        description: 'This is a person',
         profiles: {
           website: {
             url: 'example.com',
@@ -78,6 +81,7 @@ export const Person = () =>
       },
       {
         name: 'Lorem Ipsum',
+        description: 'This is a person',
         image: {
           url: image(),
         },
