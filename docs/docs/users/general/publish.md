@@ -139,7 +139,7 @@ An 'organizations' collection shows a list of organization profiles:
 ![](https://screens.wings.dev/CleanShot-2020-02-23-at-15.32.33-1582468374.png)
 
 
-## Platforms: SEO & Social
+## Platforms: SEO and Social
 At the Platforms tab, you can configure settings for search engines and social media.
 
 ![](https://screens.wings.dev/CleanShot-2020-02-23-at-15.33.39-1582468459.png)
