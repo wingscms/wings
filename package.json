@@ -63,7 +63,7 @@
     "graphql": "14.6.0",
     "graphql-request": "1.8.2",
     "graphql-tools": "4.0.8",
-    "husky": "3.0.9",
+    "husky": "4.3.8",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.9.0",
     "jest-styled-components": "7.0.2",
