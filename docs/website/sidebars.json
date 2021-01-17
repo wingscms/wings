@@ -1,12 +1,13 @@
 {
   "users": {
-    "General": [
+    "Setting Up": [
       "users/general/getting-started",
       "users/general/settings",
-      "users/general/publish",
-      "users/general/creating-campaigns",
-      "users/general/webhooks"
-    ]
+      "users/general/webhooks",
+      "users/general/languages",
+      "users/general/domains"
+    ],
+    "Content and Campaigns": ["users/general/publish", "users/general/creating-campaigns"]
   },
   "developers": {
     "General": ["dev/general/getting-started", "dev/general/data-model"],
