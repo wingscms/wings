@@ -22,27 +22,55 @@ On the General page, you can configure these settings:
 **Tip**: If you want to experiment with a theme, create a new theme first, then create a new app, and configure the app to use your new theme.
 
 ### Translation settings
-On the the Translations settings of your App, you can select the Translation you have created (see below at 'Languages')
+On the the Translations settings of your App, you can select the Translation you have created (see the separate [webhooks page](/docs/users/general/webhooks) for more information).
 
 ![](https://screens.wings.dev/CleanShot-2020-12-02-at-11.48.21-1606906138.png)
 
-### Domains
-On the Domains tab, you can configure a custom domain. You have to register and configure a domain name with a domain registrar and point your (sub)domain to 
+### Domains: pointing a domain to Wings
+On the Domains tab, you can configure a custom domain. You have to register and configure a domain name with a domain registrar and point your (sub)domain to Wings.
 
-If you use only a subdomain for your Wings project, create a CNAME record for your subdomain and point it to `app.wings.dev`. Then, add your custom domain in Wings.
+1. If you only want to use a subdomain of an existing domain for your Wings project - for example: `action.mywebsite.com`, create a CNAME record for your subdomain and point it to `app.wings.dev`. 
+2. If you want to use a root domain for your Wings project (for example: `mywingswebsite.com`), you have to create a DNS record for the main domain as well as for the `www` subdomain, so that your website will be accessible *with and without* the `www` part. Before you do this, it is wise – but not strictly necessary – to set the TTL for your domain to a low value, at least 24 hours before you plan change your DNS servers and point your domain to Wings. (This means that DNS servers will check for updated settings for this domain more often – for example, every minute instead of once per day – so that a DNS change will be executed more quickly and easily.) Next, you will have to create two DNS records. 
 
-
-If you use a root domain for your Wings project, you have to create two DNS records. If your domain registrar supports ALIAS records, do the following:
+2A: If your domain registrar supports ALIAS records (for example: DNSimple), do the following:
 
 - create an ALIAS record for yourdomain.com (without www) and point it to `app.wings.dev`
 - create a CNAME record for www.yourdomain.com and point it to `yourdomain.com`
 
-If your registrar does not support ALIAS records, do the following:
+2B: If your registrar does not support ALIAS records (if you are unsure, you can safely assume your register does not support it), do the following:
 
 - create an A record for your domain (without www) and point it to `34.76.238.51`
-- create a CNAME record for www.yourdomain.com and point it to `yourdomain.com`
+- create a CNAME record for www.yourdomain.com and point it to `yourdomain.com`.
 
-![](https://screens.wings.dev/CleanShot-2020-12-02-at-11.51.45-1606906317.png)
+
+### Domains: configuring your domain in Wings
+
+After you made sure your domain points to Wings, you still have to configure your domain in your Wings project. **Note**: it is best to wait until the DNS changes have propagated, and your domain actually points to Wings. 
+
+Go to Settings -> Apps -> Domains and click 'edit domains':
+
+![](https://screens.wings.dev/CleanShot-2021-01-17-at-17.00.12-2x-XL84VSnTuhE9xqUZjTpyYFLRdCcmRaX5U5dRFQ8I1ZBdHaUyMWeDHVmTbcM0eLScdBAU1yAFpb7wAkB4c5B5wv79YjVSxaG6RTTg.png)
+
+Then, you can set your primary domain. If you use a root domain instead of a subdomain, for example `mycoolwingswebsite.com`, you have to choose if the www-version or the non-www-version should be the primary domain. The other one will be redirected to this primary domain, as configured in the next step.
+
+![](https://screens.wings.dev/CleanShot-2021-01-17-at-17.02.20-2x-BPGwnXBJen2fXdlLTgtFLeet0A55bPYPUpzbCJ57gCPgFZ8pSFEcsULgwHCPLjE45A4iAw5YqUFjbUb1iouy3pSq2I0VryaK84Xf.png)
+
+After clicking 'Next', you can configure the secondary domain. This is optional and probably only necessary if you use a new domain for your website. If you chose the 'www'-version of your domain in the previous step, such as `www.mycoolwingswebsite.com`, you should fill out the non-www-version here – **or vice versa**. 
+
+Make sure to tick the checkbox that says the secondary domain should redirect to the primary domain, and click 'Finish'.
+
+![](https://screens.wings.dev/CleanShot-2021-01-17-at-17.05.42-2x-H0VRyjrEBBBSekBZNHuRk8EiW6aiKUTIMt3979d2luwUwaAs3rZ1fW4X1632zhEoD1HBOT7QkemsqBp522fF3UXtMZdCTQeRaunE.png)
+
+Then, you can check if the settings are OK, and **don't forget to save**:
+
+![](https://screens.wings.dev/CleanShot-2021-01-17-at-17.06.39-2x-iGO4apZeTh5bzxOfnl4qwIv7hAviHdsKZ3in1WKYZfbMSvFDqWdMSDaETu55gq2fsDoeF9YpyDishXA5voqBS4ixtuDQ3N7exD48.png)
+
+Next up, you can visit your domain in a browser and wait till the Wings website shows up. A couple of notes:
+
+- The new domain will only work if your domain points to Wings and DNS changes have propagated (meaning: servers on the internet will be redirected to the Wings server if they visit your domain name);
+- After saving your settings, Wings will automatically set a free Let's Encrypt certificate so all pages will be served over https. This will take a couple of minutes. Just wait a bit and refresh your browser.
+- If your domain does not work after an hour or so, it is likely that your domain was not propagated yet and the Let's Encrypt certificate was not installed successfully. Simply visit your Domains settings again and re-enter your custom domain and hit 'save' again. Wings will retry and it should work. 
+
 
 ### Scripts
 It is easy to add custom scripts to your application. For example, you could add a Google Tag Manager script.
@@ -73,39 +101,8 @@ You can configure menus here. Click `Add Menu Item` to add an item and type its 
 
 ![](https://screens.wings.dev/Screen-Recording-2020-02-23-17-36-31-1582475796.gif)
 
-## Languages (and custom copy)
-You can set a primary language here, as well as other languages you would like to use.
-
-![](https://screens.wings.dev/CleanShot-2020-10-31-at-10.44.29-2x-1604137489.png)
-
-### Project-wide translations for strings
-There are quite a few copy strings set by default, such ass "... has been donated to this fundraiser" on fundraiser pages. However, you can configure your own default project-wide copy strings, and even override these if you want to use specific copy for individual campaigns. 
-
-Go to Languages -> Translations to create a 'translation' for a language:
-
-![](https://screens.wings.dev/CleanShot-2020-10-31-at-10.58.32-2x-1604138327.png)
-
-Then, go to the Translations settings of your App, and select the Translation you just created:
-
-![](https://screens.wings.dev/CleanShot-2020-10-31-at-10.59.26-2x-1604138403.png)
-
-### Copy overrides for specific campaigns
-Visit the 'Copy' tab for a campaign to override the default strings.
-
-![](https://screens.wings.dev/CleanShot-2020-10-31-at-11.01.13-2x-1604138508.png)
-
-
-### How to use multiple languages
-
-If you want to use multiple languages, first add them on this settings page. 
-
-Do you want to publish the secondary (or tertiary) language pages separate from the primary language pages? In that case, just publish them and link to them separately from other pages or link to them in the main menu. **Note**: pages in other languages than the one set as the primary language, get the language code added as a url parameter. For example, the article you see below, will get the path `/articles/demo-article?lang=nl`.
-
-![](https://screens.wings.dev/CleanShot-2020-02-23-at-17.43.42-1582476248.png)  
-
-Do you want to publish the same page in multiple languages? Then, simply publish the same page/article/campaign in a different language, but **use the same slug as the one published in the primary language** In the example above, there is also an English article with the slug `/demo-article`, which you can see at [demo.wings.dev/articles/demo-article](https://demo.wings.dev/articles/demo-article). 
-
-As you might expect, the Dutch version can be found at [demo.wings.dev/articles/articles/demo-article?lang=nl](https://demo.wings.dev/articles/demo-article?lang=nl). 
+## Languages
+See the separate [Languages](/docs/users/general/webhooks) page for more information.
 
 ## Commerce
 At the Commerce Settings page, you can set up payment integrations for payment processors Stripe or Mollie. If you use Stripe, you should fill out your Public Key and Secret. In case of Mollie, just fill out your API key. Your Fundraiser campaigns should work automatically. Tip: fill out your test credentials at first so you can test the payment flow without making actual payments, and change these to your live credentials after publishing your website.
@@ -148,113 +145,7 @@ Alternatively, you can configure the email as a simple 'thank you' email with pe
 
 ## Webhooks
 
-Webhooks provide a lightweight yet powerful way to send form submissions as well as information about created, updated and deleted nodes (articles, pages and campaigns) to third party services. For an introduction to webhooks, please read [What are webhooks?](https://zapier.com/blog/what-are-webhooks/), an insightful article by Zapier, a service that lets any user automate workflows, including using webhooks. 
-
-To use webhooks, you need to use a service that can receive webhooks. 
-
-### Test webhooks
-You can use a service such as [webhook.site](https://webhook.site) to test webhooks. You will be given a webhook url you can copy:
-
-![](https://screens.wings.dev/CleanShot-2020-12-04-at-13.08.22-1607083724.png)
-
-The, you can paste this url in the webhooks field in your Wings settings page.
- 
-![](https://screens.wings.dev/CleanShot-2020-12-04-at-13.09.43-1607083810.png)
-
-If you then submit one of your campaign forms, you will see the submission with all related fields show up on webhook.site.
-
-### Use Zapier to process form submissions
-
-We will use Zapier as an example, and we will show you how to send petition submissions to [The Action Network](https://actionnetwork.org/).
-
-First, go to Zapier.com to create a Zap, with these settings:
-
-![](https://screens.wings.dev/CleanShot-2020-11-28-at-14.53.25-1606571612.png)
-
-First, we will configure the Zapier **trigger**, the event that sends data to Zapier, so it can do something with it.
-
-Zapier will generate a webhook url you can copy, so you can paste this into your Wings webhooks settings:
-
-![](https://screens.wings.dev/CleanShot-2020-11-28-at-14.54.07-1606571668.png)
-
-Then, configure a webhook in Wings settings:
-
-![](https://screens.wings.dev/CleanShot-2020-11-28-at-14.55.24-1606571756.png)
-
-1. Go to 'Webhooks' in settings
-2. Choose 'Add Webhook'
-3. Give your webhook a name
-4. Paste the webhook URL you were given by Zapier
-5. choose which event should trigger a webhook. It is recommended to pick "confirmed.signatures" - this will fire the webhook only after a user has clicked the confirmation link in the email Wings sent to them. 
-6. You may optionally add additional values here
-7. Save the webhook.
-
-Next, it is best to fill out the petition form yourself, because you will need this test data for the next step in Zapier.
-
-If you follow the instructions in Zapier, you can test your trigger. If you have submitted and confirmed a petition form entry, Zapier should receive your information:
-
-![](https://screens.wings.dev/CleanShot-2020-11-28-at-14.59.58-1606572021.png)
-
-Click 'continue' to setup the Action. In this case, we will first add a filter step by clicking the blue + sign, because we only want to subscribe persons who ticked the box that says they want to subscribe to the newsletter:
-
-![](https://screens.wings.dev/CleanShot-2020-11-28-at-15.03.33-1606572223.png)
-
-Then, you will be able to configure the last step, by subscribing a person in Action Network. 
-
-![](https://screens.wings.dev/CleanShot-2020-11-28-at-15.04.49-1606572306.png)
-
-Of course, you can also choose to connect any of the countless services supported by Zapier. If you use the intermediary filter step, you can create some smart integrations. Here are a few ideas:
-
-- Create a Discord notification for every donation to notify activists that someone donated (be sure to not include identifiable information!)
-- Create a Trello to-do card with a due date 2 days in the future and add a colleague as a card member, instructing them to send a personal thank you note to someone who donated more than $ 250
-- Use the Gmail integration to send a personalized 'thank you' email to people who signed a petition, or use the intermediary 'Delay' step by Zapier to send a followup email to people who signed your petition 24 hours after they signed
-
-Webhooks are a very powerful tool - experiment away!
-
-### Create a contact form with notifications via Zapier
-
-Using webhooks, it is also possible to turn a signup campaign into a contact form that will send you an email notification.
-
-To do this, create a Zapier zap that uses a webhook as a trigger to send an email:
-
-![](https://screens.wings.dev/CleanShot-2020-12-05-at-13.25.40-2x-1607171150.png)
-
-Next, copy the webhook url (and click 'Continue'):
-
-![](https://screens.wings.dev/CleanShot-2020-12-05-at-13.27.19-2x-1607171262.png)
-
-Then, go to your Wings project App settings and create a webhook:
-
-![](https://screens.wings.dev/CleanShot-2020-12-05-at-13.28.59-2x-1607171477.png)
-
-1. Choose 'Add webhook'
-2. Give your webhook a name
-3. Paste the webhook url Zapier gave you into this field
-4. Choose `submission.created` as a trigger. Alternatively, you could choose to only process form submissions after the user has confirmed it by clicking on the confirmation link in the  email Wings will send them.
-5. Save the webhook.
-
-Then, create a Signup campaign that you will use as a contact form, and fill out the campaign form as a test.
-
-![](https://screens.wings.dev/CleanShot-2020-12-05-at-13.33.38-2x-1607171634.png)
-
-Then head back to Zapier and click 'Test trigger':
-
-![](https://screens.wings.dev/CleanShot-2020-12-05-at-13.34.14-2x-1607171664.png)
-
-Zapier will show you it has received the form submission. Next, we will set up a filter to **only** process zaps for this particular form – you may have other signup campaigns set up, and we want to create a notification that is only sent out if this contact form is used. We could look at the campaign title 'Contact form' but we could be a little more specific and use its ID, which is unique. You may have other forms set up in your project that you could also name 'Contact form', so this lets us be more precise and use the `submission_projectId` which we will use in a later step.
-
-![](https://screens.wings.dev/CleanShot-2020-12-05-at-13.54.05-2x-1607172900.png) 
-
-Click continue until you can configure the 'outbound email'. Then you will be able to configure the email notification. You can use all the information that Wings 
-
-![](https://screens.wings.dev/CleanShot-2020-12-05-at-14.17.37-2x-1607174267.png)
-
-After configuring the email, you should be able to activate this zap and try it out.
-
-### Use webhooks to process content updates
-You can also use webhooks to send updates about the creation, modification and deletion of nodes (pages, articles, and campaigns) to third party services. You can easily find the right event triggers in your webhooks settings.
-
-![](https://screens.wings.dev/CleanShot-2020-12-04-at-13.12.36-1607083971.png)
+See [/docs/users/general/webhooks](webhooks) for a separate documentation page about Webhooks
 
 ## Schemas
 Schemas will be typically used by developers.
