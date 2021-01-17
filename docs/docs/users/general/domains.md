@@ -13,17 +13,21 @@ More importantly, this temporary domain is chosen randomly and can only be known
 
 Note: even after you add a custom domain, this temporary domain will continue to work. This does not affect the performance of your website in any way.
 
+First, decide if you want to use a subdomain of an existing domain ( `action.mywebsite.com`) or use a 'root' or 'apex' domain, **both with and without** `www`.). 
 
-## Using a subdomain
+
+## 1. Using a subdomain
 If you only want to use a subdomain of an existing domain for your Wings project - for example: `action.mywebsite.com`, create a CNAME record for your subdomain and point it to `app.wings.dev`. 
 
-## Using an apex domain 
-If you want to use an apex domain (a 'root' domain without a subdomain or with the `www` subdomain, for example: `mycoolwingswebsite.com` / `www.mycoolwingswebsite.com` ), you have to create a DNS record for the apex domain as well as for the `www` subdomain, so that your website will be accessible *with and without* the `www` part. 
+**Note**: if you use a subdomain, skip step 2 below and go directly to [the step after that](docs/users/general/domains#configure-your-domain-in-wings).
 
-### First: set the TTL
+## 2. Using an apex domain 
+If you want to use an apex domain (a 'root' domain without a subdomain or with the `www` subdomain, for example: `mycoolwingswebsite.com` / `www.mycoolwingswebsite.com` ), you have to create a DNS record for the apex domain as well as for the `www` subdomain, so that your website will be accessible *with and without* the `www` part. Follow the steps below to do this.
+
+### 2A) Set the TTL
 Before you do this, it is wise – but not strictly necessary – to set the TTL for your domain to a low value, at least 24 hours before you plan change your DNS servers and point your domain to Wings. (This means that DNS servers will check for updated settings for this domain more often – for example, every minute instead of once per day – so that a DNS change will be executed more quickly and easily.) Next, you will have to create two DNS records. 
 
-### Create the DNS records
+### 2B) Create the DNS records
 
 If your domain registrar supports ALIAS records (for example: DNSimple), do the following:
 
