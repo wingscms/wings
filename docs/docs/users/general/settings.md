@@ -27,6 +27,7 @@ On the the Translations settings of your App, you can select the Translation you
 ![](https://screens.wings.dev/CleanShot-2020-12-02-at-11.48.21-1606906138.png)
 
 ### Domains settings
+See [here](/docs/users/general/domains) for a separate documentation page about domains.
 
 ### Scripts
 It is easy to add custom scripts to your application. For example, you could add a Google Tag Manager script.
@@ -101,7 +102,7 @@ Alternatively, you can configure the email as a simple 'thank you' email with pe
 
 ## Webhooks
 
-See [/docs/users/general/webhooks](webhooks) for a separate documentation page about Webhooks
+See [here](/docs/users/general/webhooks) for a separate documentation page about Webhooks
 
 ## Schemas
 Schemas will be typically used by developers.
