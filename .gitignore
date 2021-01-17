@@ -12,3 +12,4 @@ lerna-debug.log
 !.wings/data/.gitkeep
 .jest/public
 coverage
+package-lock.json

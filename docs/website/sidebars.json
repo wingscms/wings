@@ -1,12 +1,23 @@
 {
   "users": {
-    "General": ["users/general/getting-started", "users/general/settings", "users/general/publish", "users/general/creating-campaigns"]
+    "General": [
+      "users/general/getting-started",
+      "users/general/settings",
+      "users/general/publish",
+      "users/general/creating-campaigns",
+      "users/general/webhooks"
+    ]
   },
   "developers": {
     "General": ["dev/general/getting-started", "dev/general/data-model"],
     "Publishing": ["dev/publishing/editor"],
     "API": ["dev/api/authentication"],
     "Crane": ["dev/crane/utils"],
-    "Hummingbird": ["dev/hummingbird/getting-started", "dev/hummingbird/config", "dev/hummingbird/shadowing", "dev/hummingbird/deployment"]
+    "Hummingbird": [
+      "dev/hummingbird/getting-started",
+      "dev/hummingbird/config",
+      "dev/hummingbird/shadowing",
+      "dev/hummingbird/deployment"
+    ]
   }
 }

@@ -139,7 +139,7 @@ An 'organizations' collection shows a list of organization profiles:
 ![](https://screens.wings.dev/CleanShot-2020-02-23-at-15.32.33-1582468374.png)
 
 
-## Platforms: SEO & Social
+## Platforms: SEO and Social
 At the Platforms tab, you can configure settings for search engines and social media.
 
 ![](https://screens.wings.dev/CleanShot-2020-02-23-at-15.33.39-1582468459.png)
@@ -151,7 +151,3 @@ If you click the 'Platforms' tab, you can configure the following:
 - **Facebook**: set a title, description and meta image for Facebook and other social media platforms, which are used to display a 'card' when any user shares a link to the page you are editing on social media. The Facebook settings are also used for Twitter and WhatsApp, **unless** you configure those separately
 - **Twitter**: enter details here if you want to use a different title, description and image than you have configured for Facebook.
 - **WhatsApp**: configure a default share message.
-
-
-
-
