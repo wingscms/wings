@@ -22,7 +22,7 @@ If you then submit one of your campaign forms, you will see the submission with 
 
 We will use Zapier as an example, and we will show you how to send petition submissions to [The Action Network](https://actionnetwork.org/).
 
-### Setup a 'catch webhook' trigger in Zapier
+### 1. Setup a 'catch webhook' trigger in Zapier
 
 First, go to Zapier.com to create a Zap, with these settings:
 
@@ -34,7 +34,7 @@ Zapier will generate a webhook url you can copy, to paste into your Wings webhoo
 
 ![](https://screens.wings.dev/CleanShot-2020-11-28-at-14.54.07-1606571668.png)
 
-### Set up the webhook in Wings
+### 2. Set up the webhook in Wings
 
 Now that Zapier has provided us with a webhook – the secure URL where it wants to receive form submissions – we have to tell Wings that certain form submissions should be sent to that location. **Note**: you will continue configuring our Zapier 'zap' in just a bit, so it is best to leave your Zapier browser tab open and visit your Wings project in a different tab or window.
 
@@ -50,11 +50,13 @@ So, go to the Settings page in your Wings project and configure a webhook:
 6. You may optionally add additional values here
 7. Save the webhook.
 
-### Submit a form submission
+### 3. Submit a form
 Before we continue configuring the webhook setup in Zapier 
 Next, we need to fill out a campaign form, to fire off the webhook we just configured, so that Zapier will receive a test submission which is necessary to complete the Zapier configuration.
 
-### Continue configuring your Zap
+![](https://screens.wings.dev/CleanShot-2021-01-17-at-21.02.19-2x-ANnYCapD3sFwUd6meXHb1ErRX0ruCpBIkLt15xGRxmv6mu0VcFKk1YIvfltXEiKNsFglFZ6OW2q9gmF03fILKogoOVtU88hcK67R.png)
+
+### 4. Continue configuring your Zap
 
 If you follow the instructions in Zapier, you can test your trigger. If you have submitted and confirmed a petition form entry, Zapier should receive your information:
 
@@ -62,7 +64,7 @@ If you follow the instructions in Zapier, you can test your trigger. If you have
 
 Click 'continue' to setup the Action. 
 
-### Optional intermediary step: extract custom fields
+### 5. Optional intermediary step: extract custom fields
 If you have added custom fields to your Wings campaign and you want to process the user information that was provided by filling out these fields, you need to add an additional step, because all custom fields information is wrapped up in a single object. Think of custom fields as a number of boxes that are first put together in a single big cardboard box that needs to be unpacked first.
 
 To do this, add a 'Formatter' action:
@@ -91,7 +93,7 @@ Then, you will see that this step will split up the custom field values into sep
 
 ![](https://screens.wings.dev/CleanShot-2021-01-16-at-14.17.24-2x-nJjL6AZ0dMLg6vcx2dqbFDeRZUeF9ZTFFDVL423c3poTSfF7Lc2Ed0ZNH5oJOD8cJ3OjcsgYzoJUCnkS4HbFSg1trYHtmmj8Tjir.png).
 
-### Optional intermediary step: Filter
+### 6. Optional intermediary step: Filter
 Often, you may not want to send **all** form submissions to a third party service. For instance, Wings Petition / Event / Donation forms have a tick box that asks users whether they want to stay updated. In this case, you will only want to send those users who opt in to a service like The Action Network or an email marketing service.
 
 So, let's look at how to add a filter step by clicking the blue + sign, because we only want to subscribe persons who ticked the box that says they want to subscribe to the newsletter:
@@ -106,7 +108,11 @@ Alternatively, you can also filter based on a checkbox that was added as a custo
 2. Select the the Utilities step where we split up the custom fields
 3. Select the correct element that returns 'true' or 'false'.
 
-If you click 'continue', you will be able to configure the last step, by subscribing a person in Action Network. 
+If you click 'continue', you will be able to configure the last step.
+
+### 7. Send the data to a third party service
+
+The last step of a Zapier sequence is sending the data off to a third party service. In this example, we are sending the user submission to The Action Network. 
 
 ![](https://screens.wings.dev/CleanShot-2020-11-28-at-15.04.49-1606572306.png)
 
