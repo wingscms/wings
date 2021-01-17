@@ -21,6 +21,7 @@ If you only want to use a subdomain of an existing domain for your Wings project
 
 **Note**: if you use a subdomain, skip step 2 below and go directly to [the step after that](/docs/users/general/domains#configure-your-domain-in-wings).
 
+
 ## 2. Using an apex domain 
 If you want to use an apex domain (a 'root' domain without a subdomain or with the `www` subdomain, for example: `mycoolwingswebsite.com` / `www.mycoolwingswebsite.com` ), you have to create a DNS record for the apex domain as well as for the `www` subdomain, so that your website will be accessible *with and without* the `www` part. Follow the steps below to do this.
 
