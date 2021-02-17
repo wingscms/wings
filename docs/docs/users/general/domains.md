@@ -31,13 +31,13 @@ Before you do this, it is wise – but not strictly necessary – to set the TTL
 
 If your domain registrar supports ALIAS records (for example: DNSimple), do the following:
 
-- create an ALIAS record for yourdomain.com (without www) and point it to `app.wings.dev`
-- create a CNAME record for www.yourdomain.com and point it to `yourdomain.com`
+- create an ALIAS record for your domain (without www); the 'value' will typically be empty or should be a 'wildcard', either `*` or `@` ; it should point to `app.wings.dev`
+- create a CNAME record for your www subdomain; the value you have to enter is `www` and it should be pointed to  `yourdomain.com`
 
-If your registrar does not support ALIAS records (this includes DNSimple and Namecheap; if you are unsure, you can safely assume your register does not support it), do the following:
+If your registrar does not support ALIAS records, do the following:
 
-- create an A record for your domain (without www) and point it to `34.76.238.51`
-- create a CNAME record for www.yourdomain.com and point it to `yourdomain.com`.
+- create an A record for your domain (without www); the value will typically be `@` or `*` (which is a placeholder for the apex domain) and point it to `34.76.238.51`
+- create a CNAME record for your www subdomain; the value you have to enter is `www` and it should be pointed to `yourdomain.com`.
 
 
 ## Configure your domain in Wings
