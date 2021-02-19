@@ -28,7 +28,7 @@ const getCopy = (copy, resourceType, transactionStatus) => {
       'wings.CampaignConfirmed.main.fundraiserDefaultTitle',
     ),
     fundraiserDefaultText = intl.formatMessage(
-      'wings.CampaignConfirmed.main.fundraiserDefaultTitle',
+      'wings.CampaignConfirmed.main.fundraiserDefaultText',
     ),
     fundraiserFailedTitle = intl.formatMessage(
       'wings.CampaignConfirmed.main.fundraiserFailedTitle',
