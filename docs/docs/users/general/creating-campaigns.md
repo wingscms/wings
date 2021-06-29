@@ -76,6 +76,14 @@ Petition campaigns have a couple of special options:
 
 ![](https://screens.wings.dev/CleanShot-2020-02-23-at-22.37.37-1582493891.png)
 
+## Changing microcopy
+
+If you want to change the default copy of a campaign, for example the Campaign firm confirm text which is `We have sent you an email with a confirmation link. Please click that link for confirmation.` by default, head over to the **Copy** tab, where you can find fields to override every string. 
+
+![](https://screens.wings.dev/CleanShot-2021-06-29-at-09.01.00-15V2q3EV3eye7VCKU0hTEkyBbuZAC7XCRNwcQ3fUFk66TUsO4xDMEcXgypkTb3z5HHSGb8TCD2JubqzwsRTZ4Xd5uvQhlj3TXE5R.png)
+
+**Note**: if you want to change the default copy for *every* campaign, you can create your own 'translation'. [Look here for instructions.](https://docs.wings.dev/docs/users/general/languages#project-wide-translations-for-strings). 
+
 ## Event settings
 Events have a couple of additional settings, pertaining to the event date and the location details which are displayed on the frontend as well.
 
