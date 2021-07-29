@@ -1,6 +1,6 @@
 {
   "name": "@wingscms/mobiledoc-renderer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mobiledoc renderer for React",
   "main": "build/index.js",
   "scripts": {
