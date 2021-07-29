@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.5](https://github.com/wingscms/wings/compare/@wingscms/components@1.6.3...@wingscms/components@1.6.5) (2021-07-29)
+
+
+### Bug Fixes
+
+* **components:** use theme variables for social buttons in footer ([#578](https://github.com/wingscms/wings/issues/578)) ([c19f974](https://github.com/wingscms/wings/commit/c19f97460de2213f3e68f30f8733972cb3dfb063))
+
+
+
+
+
 ## [1.6.4](https://github.com/wingscms/wings/compare/@wingscms/components@1.6.3...@wingscms/components@1.6.4) (2021-01-05)
 
 

@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/wingscms/wings/compare/@wingscms/react@1.7.5...@wingscms/react@1.10.0) (2021-07-29)
+
+
+### Bug Fixes
+
+* display fundraiser text instead of title ([#589](https://github.com/wingscms/wings/issues/589)) ([4ff8980](https://github.com/wingscms/wings/commit/4ff898041f7e4c080b94bbd0ffd4fe60f58f98db))
+* **react:** ImageCard caption sizes ([#580](https://github.com/wingscms/wings/issues/580)) ([98deded](https://github.com/wingscms/wings/commit/98deded79465c2fc7c1ba8bcaea9adb2781ad9ce))
+* dark background text fixes ([#575](https://github.com/wingscms/wings/issues/575)) ([588204e](https://github.com/wingscms/wings/commit/588204efaf3680de3c3e07ebf259660bb1d0ab11))
+* fix youtube embed ([#579](https://github.com/wingscms/wings/issues/579)) ([710b319](https://github.com/wingscms/wings/commit/710b319fa596c8e7973b99864575c22edcb68f2b))
+* language switcher buttons responsive styling ([#574](https://github.com/wingscms/wings/issues/574)) ([b3d9093](https://github.com/wingscms/wings/commit/b3d909330519d4ef19054424bc33c9daec2fc9a5))
+* QA card mobiledoc text color on dark surface backgrounds ([#576](https://github.com/wingscms/wings/issues/576)) ([ee88472](https://github.com/wingscms/wings/commit/ee88472e12622acdcac4eb40c6561b5a4adaa8a9))
+
+
+### Features
+
+* add surface styling to collections ([#581](https://github.com/wingscms/wings/issues/581)) ([6003ffd](https://github.com/wingscms/wings/commit/6003ffdfbfc6f78b9a073501050271768187d5cc))
+* **react:** ImageCard caption color ([#577](https://github.com/wingscms/wings/issues/577)) ([af0a764](https://github.com/wingscms/wings/commit/af0a764ccaf40a5fd692e3719a7084ef20a85a22))
+
+
+
+
+
 # [1.9.0](https://github.com/wingscms/wings/compare/@wingscms/react@1.8.1...@wingscms/react@1.9.0) (2021-01-07)
 
 
