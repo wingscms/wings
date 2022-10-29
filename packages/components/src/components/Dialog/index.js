@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react'; // useEffect, useRef
 import fP from 'filter-invalid-dom-props';
 
 import Header from './Header';
@@ -114,32 +114,37 @@ const Surface = styled(_Surface)`
 
 export default function Dialog({
   children,
-  clickOutsideToClose = true,
+  // clickOutsideToClose = true,
   elevation = 2,
-  onClose = () => {},
+  // onClose = () => {},
   overlayProps = {},
   overlay,
   size = Size.MEDIUM,
   position = Position.CENTER,
   ...props
 }) {
-  const dialogContainerRef = useRef(null);
+  // const dialogContainerRef = useRef(null);
 
-  const closeOnOutsideClick = e => !dialogContainerRef.current.contains(e.target) && onClose();
+  // const closeOnOutsideClick = e => !dialogContainerRef.current.contains(e.target) && onClose();
 
-  useEffect(() => {
-    if (clickOutsideToClose && typeof window !== 'undefined') {
-      window.addEventListener('click', closeOnOutsideClick);
-      return () => window.removeEventListener('click', closeOnOutsideClick);
-    }
-  }, [clickOutsideToClose]);
+  // useEffect(() => {
+  //   if (clickOutsideToClose && typeof window !== 'undefined') {
+  //     window.addEventListener('click', closeOnOutsideClick);
+  //     return () => window.removeEventListener('click', closeOnOutsideClick);
+  //   }
+  // }, [clickOutsideToClose]);
 
   return (
     <>
       {overlay ? <Overlay {...overlayProps} /> : null}
       <Portal>
         <Wrapper position={position}>
-          <Surface elevation={elevation} ref={dialogContainerRef} size={size} {...fP(props)}>
+          <Surface
+            elevation={elevation}
+            // ref={dialogContainerRef}
+            size={size}
+            {...fP(props)}
+          >
             {children}
           </Surface>
         </Wrapper>
