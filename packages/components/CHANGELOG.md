@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.7](https://github.com/wingscms/wings/compare/@wingscms/components@1.6.6...@wingscms/components@1.6.7) (2022-10-29)
+
+
+### Bug Fixes
+
+* temporarily disable closeOnOutsideClick due to issue with React 18 ([160de2d](https://github.com/wingscms/wings/commit/160de2d96ef33132f5527cd62dd99cae325b699f))
+
+
+
+
+
 ## [1.6.6](https://github.com/wingscms/wings/compare/@wingscms/components@1.6.5...@wingscms/components@1.6.6) (2021-07-29)
 
 **Note:** Version bump only for package @wingscms/components

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.7](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@1.3.6...@wingscms/jsonschema-form@1.3.7) (2022-10-29)
+
+**Note:** Version bump only for package @wingscms/jsonschema-form
+
+
+
+
+
 ## [1.3.6](https://github.com/wingscms/wings/compare/@wingscms/jsonschema-form@1.3.5...@wingscms/jsonschema-form@1.3.6) (2021-07-29)
 
 **Note:** Version bump only for package @wingscms/jsonschema-form

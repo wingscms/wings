@@ -1,6 +1,6 @@
 {
   "name": "@wingscms/react",
-  "version": "1.10.1",
+  "version": "1.10.2",
   "main": "build/index.js",
   "scripts": {
     "start": "rollup -c -w",
@@ -24,8 +24,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.7.7",
-    "@wingscms/components": "^1.6.6",
-    "@wingscms/jsonschema-form": "^1.3.6",
+    "@wingscms/components": "^1.6.7",
+    "@wingscms/jsonschema-form": "^1.3.7",
     "@wingscms/mobiledoc-renderer": "^1.0.1",
     "classnames": "^2.2.6",
     "deepmerge": "^4.2.2",
